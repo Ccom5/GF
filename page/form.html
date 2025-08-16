@@ -204,25 +204,6 @@
 </form>
         </div>
 
-        <!-- Aquí aparecerán los comentarios de Disqus -->
-        <div id="disqus_thread"></div>
-        <script>
-          var disqus_config = function () {
-            this.page.url = window.location.href;
-            this.page.identifier = window.location.pathname;
-          };
-
-          (function() {
-            var d = document, s = d.createElement('script');
-            s.src = 'https://resonancias-1.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-          })();
-        </script>
-        <noscript>Por favor habilita JavaScript para ver los
-          <a href="https://disqus.com/" rel="nofollow">comentarios de Disqus</a>.
-        </noscript>
-
         <!-- Script de búsqueda -->
         <script src="../search.js"></script>
 
@@ -270,9 +251,5 @@
                 document.querySelector(".telegram").href = `https://t.me/share/url?url=${pageUrl}&text=${text}`;
             });
         </script>
-
-        <!-- Script contador de comentarios Disqus -->
-        <script id="dsq-count-scr" src="//resonancias-1.disqus.com/count.js" async></script>
     </body>
 </html>
-
