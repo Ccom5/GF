@@ -1,0 +1,89 @@
+/* Tarjetas para la página de obras */
+.obra {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    gap: 2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin-bottom: 4rem;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+.obras-section {
+    max-width: var(--max-width); /* usa el ancho máximo definido en base.css */
+    margin: 0 auto; /* centra la sección */
+    text-align: center; /* Centra el h1 en la página */
+
+    padding: 8rem 2rem 2rem; /* espacio arriba y a los lados */
+}
+.obras-section h1 {
+    margin-bottom: 5rem; /* espacio debajo del título */
+}
+.obra:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.obra img {
+    max-width: 300px;
+    border-radius: 8px;
+    border: 1px solid var(--color-soft);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.58);
+}
+
+.obra-text {
+    max-width: 600px; /* Limita el ancho máximo del texto */
+    flex: 0 2 auto; /* No ocupa todo el espacio disponible */
+    background-color: var(--color-mid);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: left;
+}
+
+/* Responsive con breakpoints estandarizados */
+
+/* Mobile y tablet: tarjetas en columna */
+@media (max-width: 767px) {
+    .obra {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+        padding: 0.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .obra img {
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .obra-text {
+        padding: 1rem;
+        text-align: center;
+    }
+}
+
+/* Mobile small: ajustes adicionales */
+@media (max-width: 575px) {
+    .obra {
+        padding: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .obra-text {
+        padding: 0.8rem;
+    }
+
+    .obras-section {
+        padding: 6rem 1rem 1rem;
+    }
+
+    .obras-section h1 {
+        margin-bottom: 3rem;
+    }
+}

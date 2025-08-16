@@ -1,0 +1,48 @@
+.btn-primary {
+    background-color: var(--color-accent);
+    color: var(--color-light);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #8f5600;
+}
+
+.card {
+    background-color: var(--color-mid);
+    padding: 0.1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+.text-secondary {
+    color: var(--color-dark);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.lead {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+.quote-section blockquote {
+    font-style: italic;
+    color: var(--color-dark);
+    border-left: 4px solid var(--color-accent);
+    padding: 1rem 2rem;
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.form {
+    background-color: var(--color-mid);
+}

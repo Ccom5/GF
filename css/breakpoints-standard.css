@@ -1,0 +1,263 @@
+/* ====================================
+   BREAKPOINTS ESTANDARIZADOS GLOBALES
+   ==================================== */
+
+/* Variables de breakpoints */
+:root {
+    /* Breakpoints estandarizados */
+    --mobile-small: 320px;
+    --mobile-large: 576px;
+    --tablet: 768px;
+    --desktop-small: 992px;
+    --desktop-large: 1200px;
+    
+    /* Contenedores responsive */
+    --container-mobile: calc(100% - 2rem);
+    --container-tablet: 750px;
+    --container-desktop: 970px;
+    --container-large: 1170px;
+}
+
+/* ====================================
+   MOBILE SMALL (320px - 575px)
+   ==================================== */
+@media (max-width: 575px) {
+    .container {
+        max-width: var(--container-mobile);
+        padding: 0.8rem;
+    }
+    
+    .main-content {
+        padding: 1rem 0.8rem;
+        padding-top: 4rem;
+    }
+    
+    .header {
+        padding: 0.5rem 0.8rem;
+    }
+    
+    .nav-container {
+        gap: 0.5rem;
+    }
+    
+    /* Tipografía mobile small */
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.2rem; }
+    h3 { font-size: 1.1rem; }
+    h4 { font-size: 1.5rem; }
+    
+    /* Hero adjustments */
+    .hero-card {
+        padding: 0.8rem;
+        margin: 0.5rem;
+    }
+    
+    .hero-content h4 {
+        font-size: 1.3rem;
+    }
+    
+    .subtitle-1 {
+        font-size: 0.9rem;
+    }
+}
+
+/* ====================================
+   MOBILE LARGE (576px - 767px)
+   ==================================== */
+@media (min-width: 576px) and (max-width: 767px) {
+    .container {
+        max-width: var(--container-mobile);
+        padding: 1rem;
+    }
+    
+    .main-content {
+        padding: 1.2rem;
+        padding-top: 4.5rem;
+    }
+    
+    .header {
+        padding: 0.6rem 1rem;
+    }
+    
+    /* Tipografía mobile large */
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.3rem; }
+    h3 { font-size: 1.2rem; }
+    h4 { font-size: 1.8rem; }
+    
+    /* Hero adjustments */
+    .hero-card {
+        padding: 1rem;
+        margin: 0.8rem;
+    }
+    
+    .hero-content h4 {
+        font-size: 1.5rem;
+    }
+    
+    .subtitle-1 {
+        font-size: 1rem;
+    }
+}
+
+/* ====================================
+   TABLET (768px - 991px)
+   ==================================== */
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        max-width: var(--container-tablet);
+        padding: 1rem;
+    }
+    
+    .main-content {
+        padding: 1.5rem;
+        padding-top: 5rem;
+    }
+    
+    .header {
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .nav-container {
+        gap: 1rem;
+    }
+    
+    /* Tipografía tablet */
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.3rem; }
+    h4 { font-size: 2.2rem; }
+    
+    /* Hero adjustments */
+    .hero-card {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .hero-content h4 {
+        font-size: 1.8rem;
+    }
+    
+    .subtitle-1 {
+        font-size: 1.2rem;
+    }
+    
+    /* Grid adjustments */
+    .grid-3-cols {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* ====================================
+   DESKTOP SMALL (992px - 1199px)
+   ==================================== */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .container {
+        max-width: var(--container-desktop);
+    }
+    
+    .main-content {
+        padding: 2rem;
+        padding-top: 6rem;
+    }
+    
+    .header {
+        padding: 1rem 2rem;
+    }
+    
+    .nav-container {
+        gap: 1.5rem;
+    }
+    
+    /* Tipografía desktop small */
+    h1 { font-size: 2.3rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 2.8rem; }
+    
+    /* Grid adjustments */
+    .grid-3-cols {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ====================================
+   DESKTOP LARGE (1200px+)
+   ==================================== */
+@media (min-width: 1200px) {
+    .container {
+        max-width: var(--container-large);
+    }
+    
+    .main-content {
+        padding: 2rem;
+        padding-top: 6rem;
+    }
+    
+    .header {
+        padding: 1rem 2rem;
+    }
+    
+    .nav-container {
+        gap: 2rem;
+    }
+    
+    /* Tipografía desktop large */
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.6rem; }
+    h4 { font-size: 3rem; }
+    
+    /* Grid adjustments */
+    .grid-3-cols {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Spacing optimizations */
+    .section {
+        margin-bottom: 5rem;
+    }
+}
+
+/* ====================================
+   UTILITY CLASSES RESPONSIVE
+   ==================================== */
+
+/* Hide/Show por breakpoint */
+.hide-mobile {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .hide-mobile {
+        display: initial;
+    }
+    
+    .hide-desktop {
+        display: none;
+    }
+}
+
+/* Text alignment responsive */
+@media (max-width: 767px) {
+    .text-center-mobile {
+        text-align: center !important;
+    }
+}
+
+/* Padding responsive utilities */
+.p-responsive {
+    padding: 0.8rem;
+}
+
+@media (min-width: 768px) {
+    .p-responsive {
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .p-responsive {
+        padding: 2rem;
+    }
+}

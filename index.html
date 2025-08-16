@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>RESONANCIAS</title>
+
+        <!-- Estilos principales -->
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/breakpoints-standard.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/obras.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/redes-sociales.css" />
+        <link rel="stylesheet" href="css/search.css" />
+        <link rel="stylesheet" href="css/hero.css" />
+
+        <!-- Estilos menú lateral -->
+        <link rel="stylesheet" href="css/menu-lateral.css" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="nav-container">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <img src="img/logo.png" alt="Logo GF" />
+                </a>
+
+                <!-- Navegación principal -->
+                <nav class="main-nav">
+                    <a href="index.html">Inicio</a>
+                    <a href="page/obras.html">Libros</a>
+                    <a href="page/blog-entradas.html">Blog</a>
+                    <a href="page/definiciones.html">Quién soy</a>
+                    <a href="page/form.html">Contacto</a>
+                </nav>
+
+                <!-- Buscador y Redes sociales -->
+                <div class="social-nav">
+                    <!-- Icono de búsqueda -->
+                    <div class="search-container">
+                        <button id="searchToggle" class="search-toggle" aria-label="Buscar">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7 7 7 0 0 1-7 7Z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="social-links">
+                        <a
+                            href="https://www.facebook.com/profile.php?id=100088341563677"
+                            target="_blank"
+                            aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M22.675 0h-21.35C.595 0 0 .595 0 
+                        1.325v21.351C0 23.405.595 24 1.325 
+                        24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 
+                        1.893-4.788 4.657-4.788 1.325 0 2.463.099 
+                        2.795.143v3.24l-1.919.001c-1.504 0-1.794.715-1.794 
+                        1.763v2.312h3.587l-.467 3.622h-3.12V24h6.116C23.405 
+                        24 24 23.405 24 22.676V1.325C24 .595 23.405 
+                        0 22.675 0z" />
+                            </svg>
+                        </a>
+                        <a href="https://x.com/Miguel_CCom5" target="_blank" aria-label="X (Twitter)">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M18.244 2H21.5l-7.5 8.65L22.5 
+                        22h-6.999l-5.5-6.65L4 
+                        22H.5l8.25-9.5L1 2h7l4.75 
+                        5.75L18.244 2z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@Gabriel-Ferre-v3l" target="_blank" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M19.615 3.184A3.005 3.005 0 0 0 
+                        17.922 2H6.078c-1.054 0-2.042.558-2.693 
+                        1.184C2.46 4.014 2 5.387 2 
+                        7.053v9.894c0 1.666.46 3.039 
+                        1.385 3.869.651.626 1.639 
+                        1.184 2.693 1.184h11.844c1.054 
+                        0 2.042-.558 2.693-1.184C21.54 
+                        20.986 22 19.613 22 17.947V7.053c0-1.666-.46-3.039-1.385-3.869zM10 
+                        15.5v-7l6 3.5-6 3.5z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Botón hamburguesa -->
+                <button class="hamburger-btn" onclick="toggleMenu()" aria-label="Menú de navegación">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Overlay -->
+        <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+        <!-- Menú lateral -->
+        <div class="side-menu" id="sideMenu">
+            <div class="menu-header">
+                <h2 class="menu-title">Navegación</h2>
+                <button class="close-btn" onclick="closeMenu()" aria-label="Cerrar menú">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="accordion-item">
+                <div class="header-content">
+                    <a href="index.html"
+                        ><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 
+            0 001 1h3m10-11l2 2m-2-2v10a1 1 0 
+            01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 
+            011-1h2a1 1 0 011 1v4a1 1 0 
+            001 1m-6 0h6"></path></svg
+                        >Inicio</a
+                    >
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="header-content">
+                    <a href="page/obras.html"
+                        ><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 
+            5 7.5 5S4.168 5.477 3 6.253v13C4.168 
+            18.477 5.754 18 7.5 18s3.332.477 4.5 
+            1.253m0-13C13.168 5.477 14.754 5 16.5 
+            5c1.747 0 3.332.477 4.5 1.253v13C19.832 
+            18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 
+            1.253"></path></svg
+                        >Libros</a
+                    >
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="header-content">
+                    <a href="page/blog-entradas.html"
+                        ><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 
+            01-2-2V5a2 2 0 012-2h5.586a1 1 
+            0 01.707.293l5.414 5.414a1 1 0 
+            01.293.707V19a2 2 0 01-2 2z"></path></svg
+                        >Blog</a
+                    >
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="header-content">
+                    <a href="page/definiciones.html"
+                        ><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M16 7a4 4 0 11-8 0 4 4 0 
+            018 0zM12 14a7 7 0 00-7 7h14a7 7 
+            0 00-7-7z"></path></svg
+                        >Quién soy</a
+                    >
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="header-content">
+                    <a href="page/form.html"
+                        ><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 
+            0L21 8M5 19h14a2 2 0 002-2V7a2 2 
+            0 00-2-2H5a2 2 0 00-2 2v10a2 2 
+            0 002 2z"></path></svg
+                        >Contacto</a
+                    >
+                </div>
+            </div>
+        </div>
+        <section class="hero-section">
+            <video autoplay muted loop playsinline class="hero-video">
+                <!-- Versión ligera para móviles -->
+                <source src="video/Loop_2_mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+                <!-- Versión normal para escritorio -->
+                <source src="video/Loop_2.mp4" type="video/mp4" />
+                Tu navegador no soporta el tag de video.
+            </video>
+
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-card">
+                    <p class="subtitle-1">Imagina Crea Comparte</p>
+                    <h4>Descubre la Ficción</h4>
+                    <h4>Ética Filosófica.</h4>
+                    <a href="page/obras.html" class="btn-primary">Mis Obras</a>
+                    <div class="hero"></div>
+                </div>
+            </div>
+        </section>
+
+        <div style="text-align: center">
+            <h1 style="margin-top: 5rem">Bienvenidos a Resonancias</h1>
+        </div>
+
+        <h3>Ensayos, relatos y reflexiones sobre la palabra, la imaginación y el futuro</h3>
+        <main class="main-content">
+            <!-- Contenedor para las tarjetas -->
+            <div class="tarjetas-container">
+                <!-- Tarjeta 1 -->
+                <div class="obra">
+                    <a href="page/carousel.html" target="_blank">
+                        <img src="img/libro-regalo.jpg" alt="el regalo" />
+                    </a>
+                    <div class="obra-text">
+                        <h2 id="regalo-escondido-titulo">El Regalo Escondido</h2>
+
+                        <p>
+                            Entre las sombras y la luz<br />
+                            existe un hilo invisible.
+                        </p>
+
+                        <p>Une tus pasos con algo más grande que tú.</p>
+
+                        <p>
+                            Este breve manuscrito<br />
+                            es un destello de ese hilo:<br />
+                            una invitación a detener el tiempo,<br />
+                            a escuchar el murmullo oculto de lo simple,<br />
+                            y a descubrir que lo extraordinario<br />
+                            se esconde en lo cotidiano.
+                        </p>
+
+                        <p>
+                            No es un obsequio para guardar,<br />
+                            sino una llave.
+                        </p>
+
+                        <p>
+                            Una llave para abrir<br />
+                            otra forma de mirar.<br />
+                            Otra forma de vivir.
+                        </p>
+
+                        <p>
+                            Haz clic en la imagen&hellip;<br />
+                            y deja que las palabras<br />
+                            encuentren el camino<br />
+                            hacia tu propio tesoro oculto.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="obra">
+                    <img src="img/voz.jpg" alt="otro libro" />
+                    <div class="obra-text">
+                        <h2>Tu Voz Importa</h2>
+                        <p>
+                            Si te apasionan las historias que no solo entretienen, sino que también hacen pensar, estas
+                            en el lugar correcto
+                        </p>
+                        <p>
+                            Este blog es para quienes creen que imaginar futuros posibles, también es una forma de
+                            cambiar el presente.
+                        </p>
+                        <p>
+                            Únete y comparte tus historias y experiencias. Explora las obras. Sumérgete en narrativas
+                            que despiertan la reflexión y la imaginación.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin contenedor tarjetas -->
+        </main>
+        <section
+            class="container"
+            style="
+                margin: 3rem auto;
+                padding: 2rem;
+                background-color: var(--color-mid);
+                border-radius: 12px;
+                max-width: 800px;
+            ">
+            <h3 style="text-align: center; color: var(--color-dark); margin-bottom: 1.5rem">📖 Guía de Lectura</h3>
+
+            <div style="color: var(--color-darklight); line-height: 1.8; font-size: 1.1rem">
+                <p style="margin-bottom: 1rem">
+                    ¡Hola! Te doy la bienvenida a este rincón literario. Para leer mis obras, simplemente haz clic en
+                    las imágenes de las portadas que encuentres por el sitio.
+                </p>
+
+                <p style="margin-bottom: 1rem">
+                    Algunos libros están disponibles en formato PDF y se abren directamente aquí, sin necesidad de
+                    instalar nada en tu dispositivo. Como experimento, también he publicado dos obras en formato web:
+                    puedes leerlas como si fuera otra página más, con todas las ventajas que esto conlleva: ajuste del
+                    tamaño de letra, lectura por voz, y mucha más comodidad.
+                </p>
+
+                <p style="margin-bottom: 1rem">
+                    Estoy trabajando constantemente para mejorar la accesibilidad del sitio y hacer que la experiencia
+                    de lectura sea cada vez mejor.
+                </p>
+
+                <p style="margin-bottom: 1.5rem">
+                    <strong>Tu participación es valiosa:</strong> no olvides comentar, criticar constructivamente y
+                    aportar tus ideas.💬 También puedes:
+                </p>
+
+                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem">
+                    <li style="margin-bottom: 0.5rem">
+                        🔗 Compartir el contenido usando los botones de redes sociales que encontrarás al pie de cada
+                        página
+                    </li>
+                    <li style="margin-bottom: 0.5rem">
+                        📧 Contactarme a través del
+                        <a href="page/form.html" style="color: var(--color-accent); text-decoration: underline"
+                            >formulario de contacto</a
+                        >
+                    </li>
+                    <li style="margin-bottom: 0.5rem">
+                        🧑‍🤝‍🧑 Conectar conmigo en las redes sociales (los íconos están arriba, en la barra de navegación)
+                    </li>
+                </ul>
+
+                <p style="text-align: center; font-style: italic; color: var(--color-soft); margin-top: 1.5rem">
+                    Muchas gracias por acompañarme en esta aventura literaria. ¡Que disfrutes la lectura!
+                </p>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-content">
+                <a href="index.html" class="footer-logo-link">
+                    <img src="img/logo2_footer.png" alt="Logo de RESONANCIAS" class="footer-logo" />
+                </a>
+                <p>&copy; 2025 RESONANCIAS · Todos los derechos reservados</p>
+                <div class="spacer"></div>
+            </div>
+        </footer>
+
+        <!-- Script de búsqueda -->
+        <script src="search.js"></script>
+
+        <!-- Script menú lateral -->
+        <script>
+            let isMenuOpen = false;
+            const sideMenu = document.getElementById("sideMenu");
+            const overlay = document.getElementById("overlay");
+
+            function toggleMenu() {
+                isMenuOpen = !isMenuOpen;
+                if (isMenuOpen) {
+                    sideMenu.classList.add("active");
+                    overlay.classList.add("active");
+                    document.body.style.overflow = "hidden";
+                } else {
+                    closeMenu();
+                }
+            }
+            function closeMenu() {
+                isMenuOpen = false;
+                sideMenu.classList.remove("active");
+                overlay.classList.remove("active");
+                document.body.style.overflow = "";
+            }
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && isMenuOpen) {
+                    closeMenu();
+                }
+            });
+        </script>
+    </body>
+</html>
