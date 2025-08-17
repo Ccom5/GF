@@ -110,6 +110,21 @@
     z-index: 0;
 }
 
+/* Estilos específicos para entrada-1.html */
+.entrada-1 .hero-2 {
+    background-image: url("../img/ero-2-entrada-1.jpg");
+}
+
+/* Estilos específicos para entrada-2.html */
+.entrada-2 .hero-2 {
+    background-image: url("../img/ero-2-entrada-2.png");
+}
+
+/* Estilos específicos para obras.html */
+.obras .hero-2 {
+    background-image: url("../img/ero-2-obras.jpg");
+}
+
 .hero-2::before {
     content: "";
     position: absolute;
