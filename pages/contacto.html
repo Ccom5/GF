@@ -709,7 +709,7 @@
             </div>
         </div>
 
-        <!-- Script para el formulario -->
+             <!-- Script para el formulario -->
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 const form = document.getElementById("contactForm");
@@ -732,28 +732,31 @@
 
                 // Envío del formulario
                 form.addEventListener("submit", function (e) {
-                    e.preventDefault();
+                    // Solo validar campos, no prevenir el envío
+                    const requiredFields = form.querySelectorAll('[required]');
+                    let allValid = true;
+                    
+                    requiredFields.forEach(field => {
+                        if (!field.checkValidity()) {
+                            allValid = false;
+                            field.style.borderColor = '#ff6b6b';
+                        }
+                    });
+                    
+                    // Solo prevenir envío si hay errores de validación
+                    if (!allValid) {
+                        e.preventDefault();
+                        return false;
+                    }
 
-                    // Simular envío (aquí iría la lógica real de envío)
+                    // Si todo está válido, mostrar indicador y permitir envío a Formspree
                     const button = form.querySelector('button[type="submit"]');
-                    const originalText = button.innerHTML;
-
                     button.innerHTML =
                         '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;"><circle cx="12" cy="12" r="10"></circle></svg> Enviando...';
                     button.disabled = true;
-
-                    setTimeout(() => {
-                        button.innerHTML =
-                            '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"></polyline></svg> ¡Mensaje enviado!';
-                        button.style.background = "#28a745";
-
-                        setTimeout(() => {
-                            form.reset();
-                            button.innerHTML = originalText;
-                            button.style.background = "var(--color-secondary)";
-                            button.disabled = false;
-                        }, 3000);
-                    }, 2000);
+                    
+                    // Permitir que el formulario se envíe normalmente a Formspree
+                    return true;
                 });
 
                 // Hover effects para redes sociales
