@@ -316,190 +316,56 @@
                                 Envíame un mensaje
                             </h2>
 
-                            <form
+                           <form
     id="contactForm"
     class="contact-form"
     action="https://formspree.io/f/mwpqynwp"
     method="POST"
     style="display: flex; flex-direction: column; gap: var(--spacing-lg)">
-                                <div class="form-group">
-                                    <label
-                                        for="name"
-                                        style="
-                                            display: block;
-                                            margin-bottom: var(--spacing-sm);
-                                            color: var(--color-dark);
-                                            font-weight: 600;
-                                        ">
-                                        Nombre *
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        name="name"
-                                        required
-                                        style="
-                                            width: 100%;
-                                            padding: var(--spacing-md);
-                                            border: 2px solid var(--color-mid);
-                                            border-radius: 8px;
-                                            font-size: var(--font-size-base);
-                                            transition: border-color var(--transition-fast);
-                                        "
-                                        placeholder="Tu nombre completo" />
-                                </div>
+    
+    <div class="form-group">
+        <label for="name">Nombre *</label>
+        <input type="text" id="name" name="name" required placeholder="Tu nombre completo" />
+    </div>
 
-                                <div class="form-group">
-                                    <label
-                                        for="email"
-                                        style="
-                                            display: block;
-                                            margin-bottom: var(--spacing-sm);
-                                            color: var(--color-dark);
-                                            font-weight: 600;
-                                        ">
-                                        Email *
-                                    </label>
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        name="email"
-                                        required
-                                        style="
-                                            width: 100%;
-                                            padding: var(--spacing-md);
-                                            border: 2px solid var(--color-mid);
-                                            border-radius: 8px;
-                                            font-size: var(--font-size-base);
-                                            transition: border-color var(--transition-fast);
-                                        "
-                                        placeholder="tu@email.com" />
-                                </div>
+    <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required placeholder="tu@email.com" />
+    </div>
 
-                                <div class="form-group">
-                                    <label
-                                        for="subject"
-                                        style="
-                                            display: block;
-                                            margin-bottom: var(--spacing-sm);
-                                            color: var(--color-dark);
-                                            font-weight: 600;
-                                        ">
-                                        Asunto *
-                                    </label>
-                                    <select
-                                        id="subject"
-                                        name="subject"
-                                        required
-                                        style="
-                                            width: 100%;
-                                            padding: var(--spacing-md);
-                                            border: 2px solid var(--color-mid);
-                                            border-radius: 8px;
-                                            font-size: var(--font-size-base);
-                                            background: white;
-                                            transition: border-color var(--transition-fast);
-                                        ">
-                                        <option value="">Selecciona un tema</option>
-                                        <option value="comentario">Comentario sobre una obra</option>
-                                        <option value="colaboracion">Propuesta de colaboración</option>
-                                        <option value="consulta">Consulta general</option>
-                                        <option value="prensa">Consulta de prensa</option>
-                                        <option value="tecnico">Problema técnico del sitio</option>
-                                        <option value="otro">Otro tema</option>
-                                    </select>
-                                </div>
+    <div class="form-group">
+        <label for="subject">Asunto *</label>
+        <select id="subject" name="subject" required>
+            <option value="">Selecciona un tema</option>
+            <option value="comentario">Comentario sobre una obra</option>
+            <option value="colaboracion">Propuesta de colaboración</option>
+            <option value="consulta">Consulta general</option>
+            <option value="prensa">Consulta de prensa</option>
+            <option value="tecnico">Problema técnico del sitio</option>
+            <option value="otro">Otro tema</option>
+        </select>
+    </div>
 
-                                <div class="form-group">
-                                    <label
-                                        for="message"
-                                        style="
-                                            display: block;
-                                            margin-bottom: var(--spacing-sm);
-                                            color: var(--color-dark);
-                                            font-weight: 600;
-                                        ">
-                                        Mensaje *
-                                    </label>
-                                    <textarea
-                                        id="message"
-                                        name="message"
-                                        required
-                                        rows="6"
-                                        style="
-                                            width: 100%;
-                                            padding: var(--spacing-md);
-                                            border: 2px solid var(--color-mid);
-                                            border-radius: 8px;
-                                            font-size: var(--font-size-base);
-                                            resize: vertical;
-                                            font-family: inherit;
-                                            line-height: 1.5;
-                                            transition: border-color var(--transition-fast);
-                                        "
-                                        placeholder="Escribe tu mensaje aquí..."></textarea>
-                                </div>
+    <div class="form-group">
+        <label for="message">Mensaje *</label>
+        <textarea id="message" name="message" rows="6" required placeholder="Escribe tu mensaje aquí..."></textarea>
+    </div>
 
-                                <div
-                                    class="form-group"
-                                    style="display: flex; align-items: flex-start; gap: var(--spacing-sm)">
-                                    <input
-                                        type="checkbox"
-                                        id="newsletter"
-                                        name="newsletter"
-                                        style="margin-top: 0.25rem" />
-                                    <label
-                                        for="newsletter"
-                                        style="
-                                            color: var(--color-warm);
-                                            font-size: var(--font-size-sm);
-                                            line-height: 1.5;
-                                        ">
-                                        Me gustaría recibir notificaciones ocasionales sobre nuevas publicaciones
-                                        (opcional)
-                                    </label>
-                                </div>
+    <div class="form-group">
+        <input type="checkbox" id="newsletter" name="newsletter" />
+        <label for="newsletter">Me gustaría recibir notificaciones ocasionales sobre nuevas publicaciones (opcional)</label>
+    </div>
 
-                                <button
-                                    type="submit"
-                                    style="
-                                        background: var(--color-secondary);
-                                        color: var(--color-light);
-                                        border: none;
-                                        padding: var(--spacing-md) var(--spacing-xl);
-                                        border-radius: 8px;
-                                        font-size: var(--font-size-lg);
-                                        font-weight: 600;
-                                        cursor: pointer;
-                                        transition: all var(--transition-fast);
-                                        display: flex;
-                                        align-items: center;
-                                        justify-content: center;
-                                        gap: var(--spacing-sm);
-                                    ">
-                                    <svg
-                                        width="20"
-                                        height="20"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M22 2L11 13"></path>
-                                        <polygon points="22,2 15,22 11,13 2,9"></polygon>
-                                    </svg>
-                                    Enviar mensaje
-                                </button>
+    <button type="submit">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 2L11 13"></path>
+            <polygon points="22,2 15,22 11,13 2,9"></polygon>
+        </svg>
+        Enviar mensaje
+    </button>
 
-                                <p
-                                    style="
-                                        font-size: var(--font-size-sm);
-                                        color: var(--color-neutral);
-                                        text-align: center;
-                                        margin-top: var(--spacing-md);
-                                    ">
-                                    * Campos obligatorios. Responderé a la brevedad posible.
-                                </p>
-                            </form>
+    <p>* Campos obligatorios. Responderé a la brevedad posible.</p>
+</form>
                         </div>
 
                         <!-- Información de contacto -->
