@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>RESONANCIAS - Ficción Ética Filosófica</title>
+        <meta
+            name="description"
+            content="Ensayos, relatos y reflexiones sobre la palabra, la imaginación y el futuro. Descubre la ficción ética filosófica en RESONANCIAS." />
+
+        <!-- SEO y Accesibilidad -->
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Gabriel Ferré" />
+        <meta name="keywords" content="literatura, filosofía, ficción ética, ensayos, relatos, Gabriel Ferré" />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="RESONANCIAS - Ficción Ética Filosófica" />
+        <meta
+            property="og:description"
+            content="Ensayos, relatos y reflexiones sobre la palabra, la imaginación y el futuro" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://resonancias.netlify.app" />
+
+        <!-- Favicon -->
+        <link rel="icon" href="img/favicon.png" type="image/png" />
+
+        <!-- Estilos -->
+        <link rel="stylesheet" href="scr/styles/main.css" />
+        <link rel="stylesheet" href="scr/styles/voice.css" />
+
+        <!-- Scripts de accesibilidad -->
+        <script src="scr/js/accessibility.js" defer></script>
+        <script src="scr/js/main.js" defer></script>
+        <script src="scr/js/voice/textToSpeech.js" defer></script>
+    </head>
+    <body>
+        <!-- Skip to main content -->
+        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="nav-container">
+                <a href="index.html" class="logo" aria-label="RESONANCIAS - Inicio">
+                    <img src="img/logo.png" alt="Logo RESONANCIAS" width="40" height="40" />
+                </a>
+
+                <!-- Navegación principal -->
+                <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+                    <a href="index.html" aria-current="page">Inicio</a>
+                    <a href="pages/obras.html">Libros</a>
+                    <a href="pages/blog.html">Blog</a>
+                    <a href="pages/quien-soy.html">Quién soy</a>
+                    <a href="pages/contacto.html">Contacto</a>
+                </nav>
+
+                <!-- Redes sociales y búsqueda -->
+                <div class="social-nav">
+                    <div class="search-container">
+                        <button id="searchToggle" class="search-toggle" aria-label="Buscar" aria-expanded="false">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="M21 21L16.65 16.65"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="social-links">
+                        <a
+                            href="https://www.facebook.com/profile.php?id=100088341563677"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a
+                            href="https://x.com/Miguel_CCom5"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="X (Twitter)">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <a
+                            href="https://www.youtube.com/@Gabriel-Ferre-v3l"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Botón menú móvil -->
+                <button
+                    class="hamburger-btn"
+                    aria-label="Menú de navegación"
+                    aria-expanded="false"
+                    aria-controls="sideMenu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Menú lateral móvil mejorado -->
+        <div class="side-menu" id="sideMenu" aria-hidden="true" tabindex="-1">
+            <div class="menu-header">
+                <h2 class="menu-title">Menú</h2>
+                <button class="close-btn" aria-label="Cerrar menú">×</button>
+            </div>
+            <nav class="side-nav">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="index.html" class="accordion-link" aria-current="page">Inicio</a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="pages/obras.html" class="accordion-link">Libros</a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="pages/blog.html" class="accordion-link">Blog</a>
+                    </div>
+                </div>
+                <!-- Example Accordion Item -->
+                <div class="accordion-item">
+                    <button class="accordion-toggle" aria-expanded="false">Más</button>
+                    <div class="accordion-content">
+                        <a href="pages/quien-soy.html">Quién soy</a>
+                        <a href="pages/contacto.html">Contacto</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="menu-overlay" aria-hidden="true"></div>
+
+        <!-- Contenido principal -->
+        <main id="main-content" role="main">
+            <!-- Sección Hero -->
+            <section class="hero-section" aria-labelledby="hero-title">
+                <video autoplay muted loop playsinline class="hero-video" aria-hidden="true">
+                    <source src="img/Loop_2.mp4" type="video/mp4" />
+                    Tu navegador no soporta el tag de video.
+                </video>
+
+                <div class="hero-content">
+                    <div class="hero-card">
+                        <p class="subtitle-1">Imagina Crea Comparte</p>
+                        <h1 id="hero-title">Descubre la Ficción<br />Ética Filosófica.</h1>
+                        <a href="pages/obras.html" class="btn-primary">Mis Obras</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de bienvenida -->
+            <section class="welcome-section" aria-labelledby="welcome-title">
+                <div class="container">
+                    <h2 id="welcome-title">Bienvenidos a Resonancias</h2>
+                    <p class="lead">Ensayos, relatos y reflexiones sobre la palabra, la imaginación y el futuro</p>
+                </div>
+            </section>
+
+            <!-- Sección de obras destacadas -->
+            <section class="featured-works" aria-labelledby="featured-title">
+                <div class="container">
+                    <h2 id="featured-title" class="section-title">Obras Destacadas</h2>
+                    <div class="works-grid">
+                        <article class="work-card" id="work-card-1">
+                            <a href="pages/carousel.html" class="work-image-link">
+                                <img
+                                    src="img/libro-regalo.jpg"
+                                    alt="Portada del libro El Regalo Escondido"
+                                    loading="lazy" />
+                            </a>
+                            <div class="work-content">
+                                <h3>El Regalo Escondido</h3>
+                                <p>
+                                    Entre las sombras y la luz existe un hilo invisible. Une tus pasos con algo más
+                                    grande que tú.
+                                </p>
+                                <p>
+                                    Este breve manuscrito es un destello de ese hilo: una invitación a detener el
+                                    tiempo, a escuchar el murmullo oculto de lo simple, y a descubrir que lo
+                                    extraordinario se esconde en lo cotidiano.
+                                </p>
+                                <p>
+                                    No es un obsequio para guardar, sino una llave. Una llave para abrir otra forma de
+                                    mirar. Otra forma de vivir.
+                                </p>
+                                <a href="pages/carousel.html" class="read-more-link">clik en imagen para tu regalo →</a>
+                            </div>
+                        </article>
+
+                        <article class="work-card" id="work-card-2">
+                            <div class="work-image">
+                                <img
+                                    src="img/voz.jpg"
+                                    alt="Imagen representativa sobre la importancia de tu voz"
+                                    loading="lazy" />
+                            </div>
+                            <div class="work-content">
+                                <h3>Tu Voz Importa</h3>
+                                <p>
+                                    Si te apasionan las historias que no solo entretienen, sino que también hacen
+                                    pensar, estás en el lugar correcto.
+                                </p>
+                                <p>
+                                    Este blog es para quienes creen que imaginar futuros posibles, también es una forma
+                                    de cambiar el presente.
+                                </p>
+                                <p>
+                                    Únete y comparte tus historias y experiencias. Explora las obras. Sumérgete en
+                                    narrativas que despiertan la reflexión y la imaginación.
+                                </p>
+                                <a href="pages/blog.html" class="read-more-link">Explorar blog →</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Guía de lectura -->
+            <section class="reading-guide" aria-labelledby="guide-title">
+                <div class="container">
+                    <div class="guide-card" id="guide-card-1">
+                        <h3 id="guide-title">📖 Guía de Lectura</h3>
+                        <div class="guide-content">
+                            <p>
+                                ¡Hola! Te doy la bienvenida a este rincón literario. Para leer mis obras, simplemente
+                                haz clic en las imágenes de las portadas que encuentres por el sitio.
+                            </p>
+
+                            <p>
+                                Algunos libros están disponibles en formato PDF y se abren directamente aquí, sin
+                                necesidad de instalar nada en tu dispositivo. Como experimento, también he publicado dos
+                                obras en formato web: puedes leerlas como si fuera otra página más, con todas las
+                                ventajas que esto conlleva: ajuste del tamaño de letra, lectura por voz, y mucha más
+                                comodidad.
+                            </p>
+
+                            <p>
+                                Estoy trabajando constantemente para mejorar la accesibilidad del sitio y hacer que la
+                                experiencia de lectura sea cada vez mejor.
+                            </p>
+
+                            <p>
+                                <strong>Tu participación es valiosa:</strong> no olvides comentar, criticar
+                                constructivamente y aportar tus ideas. 💬 También puedes:
+                            </p>
+
+                            <ul>
+                                <li>🔗 Compartir el contenido usando los botones de redes sociales</li>
+                                <li>
+                                    📧 Contactarme a través del
+                                    <a href="pages/contacto.html">formulario de contacto</a>
+                                </li>
+                                <li>🧑‍🤝‍🧑 Conectar conmigo en las redes sociales</li>
+                            </ul>
+
+                            <p class="closing-message">
+                                Muchas gracias por acompañarme en esta aventura literaria. ¡Que disfrutes la lectura!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content">
+                <!-- Botones de compartir integrados en el footer -->
+                <nav class="share-footer" aria-label="Compartir página">
+                    <span class="share-title">Compartir</span>
+                    <a
+                        href="https://www.facebook.com/sharer/sharer.php?u=https://resonancias.netlify.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="share-btn facebook"
+                        title="Compartir en Facebook"
+                        aria-label="Compartir en Facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </a>
+                    <a
+                        href="https://twitter.com/intent/tweet?url=https://resonancias.netlify.app&text=Descubre%20la%20Ficción%20Ética%20Filosófica%20en%20RESONANCIAS"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="share-btn twitter"
+                        title="Compartir en X"
+                        aria-label="Compartir en X">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                    </a>
+                    <a
+                        href="https://www.youtube.com/@Gabriel-Ferre-v3l"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="share-btn youtube"
+                        title="Compartir en YouTube"
+                        aria-label="Compartir en YouTube">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
+                    </a>
+                </nav>
+            </div>
+
+            <p>
+                <a href="index.html" class="footer-logo-link">
+                    <img src="img/logo2_footer.png" alt="Logo RESONANCIAS" width="90" height="40" />
+                </a>
+                © 2025 RESONANCIAS · Todos los derechos reservados
+            </p>
+        </footer>
+
+        <!-- Modal de búsqueda -->
+        <div id="searchModal" class="search-modal" role="dialog" aria-labelledby="search-title" aria-hidden="true">
+            <div class="search-modal-content">
+                <div class="search-modal-header">
+                    <h2 id="search-title">Buscar en el sitio</h2>
+                    <button class="search-close" aria-label="Cerrar búsqueda">×</button>
+                </div>
+                <div class="search-input-container">
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Escribe tu búsqueda..."
+                        aria-label="Términos de búsqueda" />
+                    <button id="searchButton" aria-label="Buscar">
+                        <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="M21 21L16.65 16.65"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="searchResults" class="search-results">
+                    <div class="no-results">Escribe algo para comenzar la búsqueda...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controles de accesibilidad flotantes -->
+        <div
+            id="accessibility-controls"
+            class="accessibility-floating"
+            role="toolbar"
+            aria-label="Controles de accesibilidad">
+            <button
+                id="increase-font"
+                class="accessibility-btn"
+                aria-label="Aumentar tamaño de fuente"
+                title="Aumentar texto">
+                A+
+            </button>
+            <button
+                id="decrease-font"
+                class="accessibility-btn"
+                aria-label="Disminuir tamaño de fuente"
+                title="Disminuir texto">
+                A-
+            </button>
+            <button
+                id="high-contrast"
+                class="accessibility-btn"
+                aria-label="Activar alto contraste"
+                title="Alto contraste (Alt + C)">
+                ◐
+            </button>
+            <button
+                id="reset-settings"
+                class="accessibility-btn"
+                aria-label="Restablecer configuración"
+                title="Restablecer (Alt + R)">
+                ↺
+            </button>
+            <button
+                id="tts-pause"
+                class="accessibility-btn"
+                aria-label="Pausar/reanudar lectura por voz"
+                title="Pausa suave (Alt + P)">
+                ⏸️
+            </button>
+        </div>
+    </body>
+</html>

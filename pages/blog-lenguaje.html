@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lenguaje, identidad y cultura social - Blog - RESONANCIAS</title>
+        <meta
+            name="description"
+            content="Una charla entre signos sobre cómo las palabras construyen nuestra realidad social." />
+
+        <!-- SEO y Accesibilidad -->
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Gabriel Ferré" />
+        <meta name="keywords" content="lenguaje, identidad, cultura social, filosofía, comunicación" />
+
+        <!-- Favicon -->
+        <link rel="icon" href="../img/favicon.png" type="image/png" />
+
+        <!-- Estilos -->
+        <link rel="stylesheet" href="../scr/styles/main.css" />
+        <link rel="stylesheet" href="../scr/styles/voice.css" />
+
+        <!-- Scripts -->
+        <script src="../scr/js/accessibility.js" defer></script>
+        <script src="../scr/js/main.js" defer></script>
+        <script src="../scr/js/voice/textToSpeech.js" defer></script>
+    </head>
+    <body>
+        <!-- Skip to main content -->
+        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="nav-container">
+                <a href="../index.html" class="logo" aria-label="RESONANCIAS - Inicio">
+                    <img src="../img/logo.png" alt="Logo RESONANCIAS" width="40" height="40" />
+                </a>
+
+                <!-- Navegación principal -->
+                <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+                    <a href="../index.html">Inicio</a>
+                    <a href="obras.html">Libros</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="quien-soy.html">Quién soy</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+
+                <!-- Redes sociales y búsqueda -->
+                <div class="social-nav">
+                    <div class="search-container">
+                        <button id="searchToggle" class="search-toggle" aria-label="Buscar" aria-expanded="false">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="M21 21L16.65 16.65"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="social-links">
+                        <a
+                            href="https://www.facebook.com/profile.php?id=100088341563677"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a
+                            href="https://x.com/Miguel_CCom5"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="X (Twitter)">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <a
+                            href="https://www.youtube.com/@Gabriel-Ferre-v3l"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Botón menú móvil -->
+                <button
+                    class="hamburger-btn"
+                    aria-label="Menú de navegación"
+                    aria-expanded="false"
+                    aria-controls="sideMenu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Menú lateral móvil -->
+        <aside class="side-menu" id="sideMenu" role="navigation" aria-label="Menú de navegación lateral">
+            <div class="menu-header">
+                <h2 class="menu-title">Navegación</h2>
+                <button class="close-btn" aria-label="Cerrar menú">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Menú tipo acordeón -->
+            <div class="accordion-menu">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="../index.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                            </svg>
+                            Inicio
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="obras.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                            Libros
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="blog.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14,2 14,8 20,8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                            </svg>
+                            Blog
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="quien-soy.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            Quién soy
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="contacto.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            Contacto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Overlay para menú -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+        <section
+            class="works-hero"
+            style="
+                margin-top: 0 !important;
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                    url('../img/ero-2-entrada-2.png');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                color: var(--color-light);
+                padding: var(--spacing-3xl) 0;
+                text-align: center;
+                min-height: 400px;
+                display: flex;
+                align-items: center;
+            ">
+            <div class="container">
+                <h1
+                    style="
+                        font-size: var(--font-size-4xl);
+                        margin-bottom: var(--spacing-lg);
+                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                    ">
+                    Identidad Social
+                </h1>
+                <p
+                    style="
+                        font-size: var(--font-size-xl);
+                        max-width: 600px;
+                        margin: 0 auto;
+                        line-height: 1.6;
+                        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+                    ">
+                    Una Charla entre Signos
+                </p>
+            </div>
+        </section>
+        <!-- Contenido principal -->
+        <main id="main-content" role="main">
+            <!-- Breadcrumb -->
+            <nav aria-label="Breadcrumb" style="padding: var(--spacing-lg) 0"></nav>
+
+            <!-- Artículo principal -->
+            <div class="content-card">
+                <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+                    <div class="container" style="max-width: 800px; margin: 0 auto">
+                        <!-- Header del artículo -->
+                        <header style="margin-bottom: var(--spacing-2xl); text-align: center">
+                            <div style="margin-bottom: var(--spacing-lg)"></div>
+                            <h1
+                                id="article-title"
+                                style="
+                                    font-size: var(--font-size-3xl);
+                                    margin-bottom: var(--spacing-lg);
+                                    color: var(--color-dark);
+                                ">
+                                Lenguaje, identidad y cultura social: una charla entre signos
+                            </h1>
+                            <div style="color: var(--color-neutral); font-size: var(--font-size-sm)">
+                                📅 Enero 2025 · ⏱️ 10 min de lectura
+                            </div>
+                        </header>
+
+                        <!-- Contenido del artículo -->
+                        <div class="article-content" style="line-height: 1.8; color: var(--color-dark)">
+                            <p
+                                id="intro-paragraph"
+                                style="
+                                    font-size: var(--font-size-lg);
+                                    margin-bottom: var(--spacing-xl);
+                                    color: var(--color-warm);
+                                    font-style: italic;
+                                    position: relative;
+                                ">
+                                A veces me gusta imaginar que las palabras que usamos no son solo herramientas para
+                                comunicarnos, sino pequeños ladrillos con los que vamos construyendo la realidad que
+                                habitamos. Una invitación a mirar de cerca algo que usamos todos los días.
+                            </p>
+
+                            <div id="section-1" style="margin-bottom: var(--spacing-xl); position: relative">
+                                <h2 style="color: var(--color-dark); margin-bottom: var(--spacing-lg)">
+                                    Las palabras como arquitectura
+                                </h2>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    Cada vez que nombramos algo, no solo lo identificamos: lo construimos. Las palabras
+                                    no son espejos neutros de la realidad; son herramientas activas que moldean lo que
+                                    percibimos y, por extensión, lo que somos.
+                                </p>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    Pensemos en conceptos como "hogar" versus "vivienda". Ambos pueden referirse al
+                                    mismo espacio físico, pero cada palabra convoca emociones, memorias y expectativas
+                                    completamente diferentes. "Hogar" evoca calidez, pertenencia, historia personal.
+                                    "Vivienda" sugiere funcionalidad, transacción, temporalidad.
+                                </p>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    Esta diferencia no es solo estilística. Es política, social, existencial. Las
+                                    palabras que elegimos para habitar el mundo determinan, en gran medida, el tipo de
+                                    mundo que habitamos.
+                                </p>
+                            </div>
+
+                            <div id="section-2" style="margin-bottom: var(--spacing-xl); position: relative">
+                                <h2 style="color: var(--color-dark); margin-bottom: var(--spacing-lg)">
+                                    La identidad como narrativa
+                                </h2>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    Somos, en gran medida, las historias que nos contamos sobre nosotros mismos. Y esas
+                                    historias están hechas de palabras que no elegimos en aislamiento, sino que
+                                    heredamos, modificamos y transmitimos dentro de culturas específicas.
+                                </p>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    El lenguaje que usamos para definirnos no es neutral. Viene cargado de valores,
+                                    prejuicios, posibilidades y limitaciones que han sido sedimentados durante
+                                    generaciones. Cuando alguien dice "soy una persona exitosa", no solo describe una
+                                    condición: invoca todo un sistema de valores sobre qué constituye el éxito y por qué
+                                    debería importarnos.
+                                </p>
+
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    La pregunta inquietante es: ¿hasta qué punto elegimos conscientemente las palabras
+                                    que nos definen, y hasta qué punto somos elegidos por ellas?
+                                </p>
+                                <img
+                                    src="../img/ero-2-entrada-2.png"
+                                    alt="Infografía sobre crónicas de literatura"
+                                    style="
+                                        width: 100%;
+                                        height: auto;
+                                        max-height: 600px;
+                                        object-fit: contain;
+                                        border-radius: 8px;
+                                        margin-bottom: var(--spacing-md);
+                                    " />
+                            </div>
+
+                            <div id="section-3" style="margin-bottom: var(--spacing-xl); position: relative">
+                                <h2 style="color: var(--color-dark); margin-bottom: var(--spacing-lg)">
+                                    El poder de nombrar
+                                </h2>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    Quien controla el lenguaje controla los límites de lo pensable. No es casualidad que
+                                    los sistemas de poder inviertan tanto esfuerzo en definir los términos del debate
+                                    público. Desde la propaganda política hasta el marketing comercial, la batalla por
+                                    el sentido se libra fundamentalmente en el territorio de las palabras.
+                                </p>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    Pero el lenguaje también es territorio de resistencia. Cada vez que recuperamos una
+                                    palabra secuestrada por el poder, cada vez que inventamos nuevos términos para
+                                    experiencias que el sistema prefiere mantener innombrables, estamos ejerciendo una
+                                    forma de rebeldía creativa.
+                                </p>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    La literatura, en este sentido, no es solo arte: es laboratorio de lenguaje, espacio
+                                    donde se experimenta con nuevas formas de nombrar lo humano.
+                                </p>
+                            </div>
+
+                            <div id="section-4" style="margin-bottom: var(--spacing-xl); position: relative">
+                                <h2 style="color: var(--color-dark); margin-bottom: var(--spacing-lg)">
+                                    La cultura como conversación
+                                </h2>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    Las culturas no son museos de tradiciones fijas, sino conversaciones vivas entre
+                                    generaciones. Y estas conversaciones suceden principalmente a través del lenguaje:
+                                    en las historias que contamos, en las metáforas que usamos, en los silencios que
+                                    mantenemos.
+                                </p>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    Cada generación hereda un idioma, pero también lo modifica. Añade palabras, cambia
+                                    significados, crea nuevas conexiones. Este proceso no es automático: requiere
+                                    conciencia, intención, cuidado.
+                                </p>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    En tiempos de cambio acelerado, esta responsabilidad se vuelve más urgente.
+                                    Necesitamos palabras para experiencias que no existían antes, para dilemas que
+                                    nuestros antepasados no enfrentaron, para formas de relación que estamos apenas
+                                    aprendiendo a imaginar.
+                                </p>
+                            </div>
+
+                            <div id="section-5" style="margin-bottom: var(--spacing-xl); position: relative">
+                                <h2 style="color: var(--color-dark); margin-bottom: var(--spacing-lg)">
+                                    La responsabilidad de las palabras
+                                </h2>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    Si las palabras construyen realidad, entonces tenemos una responsabilidad ética con
+                                    el lenguaje que usamos. No solo en términos de precisión o corrección, sino en
+                                    términos de las posibilidades que abrimos o cerramos con nuestras elecciones
+                                    lingüísticas.
+                                </p>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    Esto no significa autocensura, sino conciencia. Entender que cada palabra es también
+                                    una acción, que cada frase contribuye a construir o destruir puentes entre las
+                                    personas, que cada texto participa en la creación del mundo común que compartimos.
+                                </p>
+                            </div>
+
+                            <div id="conclusion" style="margin-bottom: var(--spacing-xl); position: relative">
+                                <blockquote
+                                    style="
+                                        border-left: 4px solid var(--color-secondary);
+                                        padding-left: var(--spacing-lg);
+                                        margin: var(--spacing-xl) 0;
+                                        font-style: italic;
+                                        color: var(--color-warm);
+                                    ">
+                                    "Las palabras no son herramientas inocentes. Son semillas. Y lo que crece de ellas
+                                    depende de la tierra donde las plantemos."
+                                </blockquote>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    En un mundo saturado de información, recuperar la conciencia sobre el lenguaje no es
+                                    lujo intelectual: es necesidad práctica. Necesitamos palabras que nos ayuden a
+                                    pensar con mayor claridad, a sentir con mayor precisión, a relacionarnos con mayor
+                                    autenticidad.
+                                </p>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    La charla entre signos nunca termina. Cada conversación es una oportunidad de
+                                    refinar nuestro vocabulario emocional, de expandir nuestro repertorio expresivo, de
+                                    contribuir a esa construcción colectiva que llamamos cultura.
+                                </p>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    Y quizás, al final, esa sea nuestra forma más radical de resistencia: insistir en
+                                    que las palabras importen, que el lenguaje tenga consecuencias, que la manera en que
+                                    hablamos del mundo determine, efectivamente, el tipo de mundo en el que vivimos.
+                                </p>
+                            </div>
+                        </div>
+                        <section
+                            class="blog-subscription"
+                            style="
+                                margin-top: var(--spacing-3xl);
+                                background: var(--color-mid);
+                                padding: var(--spacing-2xl);
+                                border-radius: 12px;
+                                text-align: center;
+                            ">
+                            <h3
+                                style="
+                                    color: var(--color-dark);
+                                    margin-bottom: var(--spacing-md);
+                                    font-size: var(--font-size-2xl);
+                                ">
+                                📭 Mantente al día
+                            </h3>
+                            <p
+                                style="
+                                    color: var(--color-warm);
+                                    margin-bottom: var(--spacing-xl);
+                                    max-width: 500px;
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                    line-height: 1.6;
+                                ">
+                                Recibe notificaciones cuando publique nuevos ensayos y reflexiones. Sin spam, solo
+                                contenido de calidad.
+                            </p>
+                            <div
+                                style="
+                                    display: flex;
+                                    gap: var(--spacing-md);
+                                    max-width: 400px;
+                                    margin: 0 auto;
+                                    flex-wrap: wrap;
+                                ">
+                                <input
+                                    type="email"
+                                    placeholder="Tu email..."
+                                    style="
+                                        flex: 1;
+                                        min-width: 200px;
+                                        padding: var(--spacing-md);
+                                        border: 2px solid var(--color-secondary);
+                                        border-radius: 8px;
+                                        font-size: var(--font-size-base);
+                                    " />
+                                <button
+                                    style="
+                                        background: var(--color-secondary);
+                                        color: var(--color-light);
+                                        border: none;
+                                        padding: var(--spacing-md) var(--spacing-xl);
+                                        border-radius: 8px;
+                                        font-weight: 600;
+                                        cursor: pointer;
+                                        transition: all var(--transition-fast);
+                                    ">
+                                    Suscribirse
+                                </button>
+                            </div>
+                            <p
+                                style="
+                                    font-size: var(--font-size-sm);
+                                    color: var(--color-neutral);
+                                    margin-top: var(--spacing-md);
+                                ">
+                                * Puedes darte de baja en cualquier momento
+                            </p>
+                        </section>
+                        <!-- Footer del artículo -->
+                        <footer
+                            style="
+                                margin-top: var(--spacing-2xl);
+                                padding-top: var(--spacing-xl);
+                                border-top: 1px solid var(--color-mid);
+                            ">
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    flex-wrap: wrap;
+                                    gap: var(--spacing-md);
+                                ">
+                                <div>
+                                    <p style="color: var(--color-neutral); font-size: var(--font-size-sm); margin: 0">
+                                        Publicado el <time datetime="2025-01">Enero 2025</time>
+                                    </p>
+                                </div>
+                                <div style="display: flex; gap: var(--spacing-sm)">
+                                    <a
+                                        href="blog.html"
+                                        style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                                        ← Volver al blog
+                                    </a>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content">
+                <p>
+                    <a href="../index.html" class="footer-logo-link">
+                        <img
+                            src="../img/logo2_footer.png"
+                            alt="Logo RESONANCIAS"
+                            width="90"
+                            height="40" />
+                    </a>
+                    © 2025 RESONANCIAS · Todos los derechos reservados
+                </p>
+            </div>
+        </footer>
+
+        <!-- Controles de accesibilidad flotantes -->
+        <div
+            id="accessibility-controls"
+            class="accessibility-floating"
+            role="toolbar"
+            aria-label="Controles de accesibilidad">
+            <button
+                id="increase-font"
+                class="accessibility-btn"
+                aria-label="Aumentar tamaño de fuente"
+                title="Aumentar texto">
+                A+
+            </button>
+            <button
+                id="decrease-font"
+                class="accessibility-btn"
+                aria-label="Disminuir tamaño de fuente"
+                title="Disminuir texto">
+                A-
+            </button>
+            <button
+                id="high-contrast"
+                class="accessibility-btn"
+                aria-label="Activar alto contraste"
+                title="Alto contraste (Alt + C)">
+                ◐
+            </button>
+            <button
+                id="reset-settings"
+                class="accessibility-btn"
+                aria-label="Restablecer configuración"
+                title="Restablecer (Alt + R)">
+                ↺
+            </button>
+            <button
+                id="tts-pause"
+                class="accessibility-btn"
+                aria-label="Pausar/reanudar lectura por voz"
+                title="Pausa suave (Alt + P)">
+                ⏸️
+            </button>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,951 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contacto - RESONANCIAS</title>
+        <meta
+            name="description"
+            content="Ponte en contacto con Gabriel Ferré. Formulario de contacto para consultas, comentarios y colaboraciones." />
+
+        <!-- SEO y Accesibilidad -->
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Gabriel Ferré" />
+        <meta name="keywords" content="contacto, Gabriel Ferré, formulario, consultas, colaboraciones" />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Contacto - RESONANCIAS" />
+        <meta property="og:description" content="Ponte en contacto con Gabriel Ferré para consultas y colaboraciones" />
+        <meta property="og:type" content="website" />
+
+        <!-- Favicon -->
+        <link rel="icon" href="../img/favicon.png" type="image/png" />
+
+        <!-- Estilos -->
+        <link rel="stylesheet" href="../scr/styles/main.css" />
+        <link rel="stylesheet" href="../scr/styles/voice.css" />
+
+        <!-- Scripts de accesibilidad -->
+        <script src="../scr/js/accessibility.js" defer></script>
+        <script src="../scr/js/main.js" defer></script>
+        <script src="../scr/js/voice/textToSpeech.js" defer></script>
+    </head>
+    <body>
+        <!-- Skip to main content -->
+        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="nav-container">
+                <a href="../index.html" class="logo" aria-label="RESONANCIAS - Inicio">
+                    <img src="../img/logo.png" alt="Logo RESONANCIAS" width="40" height="40" />
+                </a>
+
+                <!-- Navegación principal -->
+                <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+                    <a href="../index.html">Inicio</a>
+                    <a href="obras.html">Libros</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="quien-soy.html">Quién soy</a>
+                    <a href="contacto.html" aria-current="page">Contacto</a>
+                </nav>
+
+                <!-- Redes sociales y búsqueda -->
+                <div class="social-nav">
+                    <div class="search-container">
+                        <button id="searchToggle" class="search-toggle" aria-label="Buscar" aria-expanded="false">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="M21 21L16.65 16.65"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="social-links">
+                        <a
+                            href="https://www.facebook.com/profile.php?id=100088341563677"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a
+                            href="https://x.com/Miguel_CCom5"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="X (Twitter)">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <a
+                            href="https://www.youtube.com/@Gabriel-Ferre-v3l"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Botón menú móvil -->
+                <button
+                    class="hamburger-btn"
+                    aria-label="Menú de navegación"
+                    aria-expanded="false"
+                    aria-controls="sideMenu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Menú lateral móvil -->
+        <aside class="side-menu" id="sideMenu" role="navigation" aria-label="Menú de navegación lateral">
+            <div class="menu-header">
+                <h2 class="menu-title">Navegación</h2>
+                <button class="close-btn" aria-label="Cerrar menú">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Menú tipo acordeón -->
+            <div class="accordion-menu">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="../index.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                            </svg>
+                            Inicio
+                        </a>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <button class="accordion-toggle" aria-expanded="false">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                            Libros
+                            <svg
+                                class="accordion-arrow"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="accordion-content">
+                        <a href="obras.html">Todas las obras</a>
+                        <a href="carousel.html">El Regalo Escondido</a>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <button class="accordion-toggle" aria-expanded="false">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14,2 14,8 20,8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10,9 9,9 8,9"></polyline>
+                            </svg>
+                            Blog
+                            <svg
+                                class="accordion-arrow"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="accordion-content">
+                        <a href="blog.html">Todas las entradas</a>
+                        <a href="blog-literatura.html">Literatura sin filtro</a>
+                        <a href="blog-lenguaje.html">Lenguaje e identidad</a>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="quien-soy.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            Quién soy
+                        </a>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="contacto.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            Contacto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Overlay para menú -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+
+        <!-- Contenido principal -->
+        <main id="main-content" role="main">
+            <!-- Hero de contacto -->
+            <section
+                class="works-hero"
+                style="
+                    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/ero-2.jpg');
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    color: var(--color-light);
+                    padding: var(--spacing-3xl) 0;
+                    text-align: center;
+                    min-height: 400px;
+                    display: flex;
+                    align-items: center;
+                ">
+                <div class="container">
+                    <h1
+                        style="
+                            font-size: var(--font-size-4xl);
+                            margin-bottom: var(--spacing-lg);
+                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                        ">
+                        Contacto
+                    </h1>
+                    <p
+                        style="
+                            font-size: var(--font-size-xl);
+                            max-width: 600px;
+                            margin: 0 auto;
+                            line-height: 1.6;
+                            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+                        ">
+                        ¿Tienes alguna pregunta, comentario o propuesta? Me encantaría escucharte.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Formulario de contacto -->
+            <section class="contact-form-section" style="padding: var(--spacing-3xl) 0">
+                <div class="container">
+                    <div class="contact-grid">
+                        <!-- Formulario -->
+                        <div
+                            class="contact-form-container"
+                            style="
+                                background: var(--color-light);
+                                padding: var(--spacing-2xl);
+                                border-radius: 12px;
+                                box-shadow: var(--shadow-md);
+                            ">
+                            <h2
+                                style="
+                                    color: var(--color-dark);
+                                    margin-bottom: var(--spacing-xl);
+                                    font-size: var(--font-size-2xl);
+                                ">
+                                Envíame un mensaje
+                            </h2>
+
+                            <form
+                                id="contactForm"
+                                class="contact-form"
+                                style="display: flex; flex-direction: column; gap: var(--spacing-lg)">
+                                <div class="form-group">
+                                    <label
+                                        for="name"
+                                        style="
+                                            display: block;
+                                            margin-bottom: var(--spacing-sm);
+                                            color: var(--color-dark);
+                                            font-weight: 600;
+                                        ">
+                                        Nombre *
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        required
+                                        style="
+                                            width: 100%;
+                                            padding: var(--spacing-md);
+                                            border: 2px solid var(--color-mid);
+                                            border-radius: 8px;
+                                            font-size: var(--font-size-base);
+                                            transition: border-color var(--transition-fast);
+                                        "
+                                        placeholder="Tu nombre completo" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label
+                                        for="email"
+                                        style="
+                                            display: block;
+                                            margin-bottom: var(--spacing-sm);
+                                            color: var(--color-dark);
+                                            font-weight: 600;
+                                        ">
+                                        Email *
+                                    </label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        required
+                                        style="
+                                            width: 100%;
+                                            padding: var(--spacing-md);
+                                            border: 2px solid var(--color-mid);
+                                            border-radius: 8px;
+                                            font-size: var(--font-size-base);
+                                            transition: border-color var(--transition-fast);
+                                        "
+                                        placeholder="tu@email.com" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label
+                                        for="subject"
+                                        style="
+                                            display: block;
+                                            margin-bottom: var(--spacing-sm);
+                                            color: var(--color-dark);
+                                            font-weight: 600;
+                                        ">
+                                        Asunto *
+                                    </label>
+                                    <select
+                                        id="subject"
+                                        name="subject"
+                                        required
+                                        style="
+                                            width: 100%;
+                                            padding: var(--spacing-md);
+                                            border: 2px solid var(--color-mid);
+                                            border-radius: 8px;
+                                            font-size: var(--font-size-base);
+                                            background: white;
+                                            transition: border-color var(--transition-fast);
+                                        ">
+                                        <option value="">Selecciona un tema</option>
+                                        <option value="comentario">Comentario sobre una obra</option>
+                                        <option value="colaboracion">Propuesta de colaboración</option>
+                                        <option value="consulta">Consulta general</option>
+                                        <option value="prensa">Consulta de prensa</option>
+                                        <option value="tecnico">Problema técnico del sitio</option>
+                                        <option value="otro">Otro tema</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label
+                                        for="message"
+                                        style="
+                                            display: block;
+                                            margin-bottom: var(--spacing-sm);
+                                            color: var(--color-dark);
+                                            font-weight: 600;
+                                        ">
+                                        Mensaje *
+                                    </label>
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        required
+                                        rows="6"
+                                        style="
+                                            width: 100%;
+                                            padding: var(--spacing-md);
+                                            border: 2px solid var(--color-mid);
+                                            border-radius: 8px;
+                                            font-size: var(--font-size-base);
+                                            resize: vertical;
+                                            font-family: inherit;
+                                            line-height: 1.5;
+                                            transition: border-color var(--transition-fast);
+                                        "
+                                        placeholder="Escribe tu mensaje aquí..."></textarea>
+                                </div>
+
+                                <div
+                                    class="form-group"
+                                    style="display: flex; align-items: flex-start; gap: var(--spacing-sm)">
+                                    <input
+                                        type="checkbox"
+                                        id="newsletter"
+                                        name="newsletter"
+                                        style="margin-top: 0.25rem" />
+                                    <label
+                                        for="newsletter"
+                                        style="
+                                            color: var(--color-warm);
+                                            font-size: var(--font-size-sm);
+                                            line-height: 1.5;
+                                        ">
+                                        Me gustaría recibir notificaciones ocasionales sobre nuevas publicaciones
+                                        (opcional)
+                                    </label>
+                                </div>
+
+                                <button
+                                    type="submit"
+                                    style="
+                                        background: var(--color-secondary);
+                                        color: var(--color-light);
+                                        border: none;
+                                        padding: var(--spacing-md) var(--spacing-xl);
+                                        border-radius: 8px;
+                                        font-size: var(--font-size-lg);
+                                        font-weight: 600;
+                                        cursor: pointer;
+                                        transition: all var(--transition-fast);
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        gap: var(--spacing-sm);
+                                    ">
+                                    <svg
+                                        width="20"
+                                        height="20"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M22 2L11 13"></path>
+                                        <polygon points="22,2 15,22 11,13 2,9"></polygon>
+                                    </svg>
+                                    Enviar mensaje
+                                </button>
+
+                                <p
+                                    style="
+                                        font-size: var(--font-size-sm);
+                                        color: var(--color-neutral);
+                                        text-align: center;
+                                        margin-top: var(--spacing-md);
+                                    ">
+                                    * Campos obligatorios. Responderé a la brevedad posible.
+                                </p>
+                            </form>
+                        </div>
+
+                        <!-- Información de contacto -->
+                        <div class="contact-info" style="display: flex; flex-direction: column; gap: var(--spacing-xl)">
+                            <!-- Información general -->
+                            <div
+                                style="background: var(--color-mid); padding: var(--spacing-xl); border-radius: 12px;">
+                                <h3
+                                    style="
+                                        color: var(--color-dark);
+                                        margin-bottom: var(--spacing-lg);
+                                        display: flex;
+                                        align-items: center;
+                                        gap: var(--spacing-sm);
+                                    ">
+                                    <svg
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                    Sobre el contacto
+                                </h3>
+                                <p style="color: var(--color-dark); line-height: 1.6; margin-bottom: var(--spacing-md)">
+                                    Me complace recibir comentarios, críticas constructivas y propuestas de
+                                    colaboración. También valoro mucho las reflexiones y experiencias que compartes
+                                    después de leer alguna de mis obras.
+                                </p>
+                                <p style="color: var(--color-warm); line-height: 1.6">
+                                    Generalmente respondo en un plazo de 24-48 horas. Si tu consulta es urgente, no
+                                    dudes en mencionarlo en el mensaje.
+                                </p>
+                            </div>
+
+                            <!-- Redes sociales -->
+                            <div
+                                style="
+                                    background: var(--color-primary);
+                                    padding: var(--spacing-xl);
+                                    border-radius: 12px;
+                                ">
+                                <h3
+                                    style="
+                                        color: var(--color-dark);
+                                        margin-bottom: var(--spacing-lg);
+                                        display: flex;
+                                        align-items: center;
+                                        gap: var(--spacing-sm);
+                                    ">
+                                    <svg
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                    </svg>
+                                    Sígueme en redes
+                                </h3>
+                                <div style="display: flex; flex-direction: column; gap: var(--spacing-md)">
+                                    <a
+                                        href="https://www.facebook.com/profile.php?id=100088341563677"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style="
+                                            display: flex;
+                                            align-items: center;
+                                            gap: var(--spacing-md);
+                                            color: var(--color-dark);
+                                            text-decoration: none;
+                                            padding: var(--spacing-sm);
+                                            border-radius: 8px;
+                                            transition: all var(--transition-fast);
+                                        ">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                            <path
+                                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                        </svg>
+                                        Facebook
+                                    </a>
+                                    <a
+                                        href="https://x.com/Miguel_CCom5"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style="
+                                            display: flex;
+                                            align-items: center;
+                                            gap: var(--spacing-md);
+                                            color: var(--color-dark);
+                                            text-decoration: none;
+                                            padding: var(--spacing-sm);
+                                            border-radius: 8px;
+                                            transition: all var(--transition-fast);
+                                        ">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                            <path
+                                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                        </svg>
+                                        X (Twitter)
+                                    </a>
+                                    <a
+                                        href="https://www.youtube.com/@Gabriel-Ferre-v3l"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style="
+                                            display: flex;
+                                            align-items: center;
+                                            gap: var(--spacing-md);
+                                            color: var(--color-dark);
+                                            text-decoration: none;
+                                            padding: var(--spacing-sm);
+                                            border-radius: 8px;
+                                            transition: all var(--transition-fast);
+                                        ">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                            <path
+                                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                                        </svg>
+                                        YouTube
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Preguntas frecuentes -->
+                            <div
+                                style="
+                                    background: var(--color-light);
+                                    padding: var(--spacing-xl);
+                                    border-radius: 12px;
+                                    box-shadow: var(--shadow-sm);
+                                ">
+                                <h3
+                                    style="
+                                        color: var(--color-dark);
+                                        margin-bottom: var(--spacing-lg);
+                                        display: flex;
+                                        align-items: center;
+                                        gap: var(--spacing-sm);
+                                    ">
+                                    <svg
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                        <point cx="12" cy="17" fill="currentColor"></point>
+                                    </svg>
+                                    Preguntas frecuentes
+                                </h3>
+                                <div style="display: flex; flex-direction: column; gap: var(--spacing-md)">
+                                    <details
+                                        style="
+                                            border: 1px solid var(--color-mid);
+                                            border-radius: 8px;
+                                            padding: var(--spacing-md);
+                                        ">
+                                        <summary
+                                            style="font-weight: 600; color: var(--color-secondary); cursor: pointer">
+                                            ¿Puedo usar tus obras en mi proyecto?
+                                        </summary>
+                                        <p
+                                            style="
+                                                margin-top: var(--spacing-sm);
+                                                color: var(--color-warm);
+                                                font-size: var(--font-size-sm);
+                                                line-height: 1.5;
+                                            ">
+                                            Sí, mis obras están bajo licencia Creative Commons BY-NC-SA 4.0. Puedes
+                                            usarlas para fines no comerciales con la debida atribución.
+                                        </p>
+                                    </details>
+                                    <details
+                                        style="
+                                            border: 1px solid var(--color-mid);
+                                            border-radius: 8px;
+                                            padding: var(--spacing-md);
+                                        ">
+                                        <summary
+                                            style="font-weight: 600; color: var(--color-secondary); cursor: pointer">
+                                            ¿Aceptas colaboraciones?
+                                        </summary>
+                                        <p
+                                            style="
+                                                margin-top: var(--spacing-sm);
+                                                color: var(--color-warm);
+                                                font-size: var(--font-size-sm);
+                                                line-height: 1.5;
+                                            ">
+                                            Estoy abierto a colaboraciones que se alineen con mis intereses en
+                                            literatura filosófica y pensamiento crítico. Escríbeme con tu propuesta.
+                                        </p>
+                                    </details>
+                                    <details
+                                        style="
+                                            border: 1px solid var(--color-mid);
+                                            border-radius: 8px;
+                                            padding: var(--spacing-md);
+                                        ">
+                                        <summary
+                                            style="font-weight: 600; color: var(--color-secondary); cursor: pointer">
+                                            ¿Tienes planes de publicar más obras?
+                                        </summary>
+                                        <p
+                                            style="
+                                                margin-top: var(--spacing-sm);
+                                                color: var(--color-warm);
+                                                font-size: var(--font-size-sm);
+                                                line-height: 1.5;
+                                            ">
+                                            Constantemente trabajo en nuevos proyectos. Suscríbete al blog para recibir
+                                            notificaciones sobre nuevas publicaciones.
+                                        </p>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content">
+                <!-- Botones de compartir integrados en el footer -->
+                <nav class="share-footer" aria-label="Compartir página">
+                    <span class="share-title">Compartir</span>
+                    <a
+                        href="https://www.facebook.com/sharer/sharer.php?u=https://resonancias.netlify.app/pages/contacto.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="share-btn facebook"
+                        title="Compartir en Facebook"
+                        aria-label="Compartir en Facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </a>
+                    <a
+                        href="https://twitter.com/intent/tweet?url=https://resonancias.netlify.app/pages/contacto.html&text=Contacto%20-%20RESONANCIAS"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="share-btn twitter"
+                        title="Compartir en X"
+                        aria-label="Compartir en X">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                    </a>
+                    <a
+                        href="https://www.youtube.com/@Gabriel-Ferre-v3l"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="share-btn youtube"
+                        title="Compartir en YouTube"
+                        aria-label="Compartir en YouTube">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
+                    </a>
+                    <a
+                        href="https://api.whatsapp.com/send?text=Contacto%20-%20RESONANCIAS%20https://resonancias.netlify.app/pages/contacto.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="share-btn whatsapp"
+                        title="Compartir en WhatsApp"
+                        aria-label="Compartir en WhatsApp">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
+                        </svg>
+                    </a>
+                    <a
+                        href="https://t.me/share/url?url=https://resonancias.netlify.app/pages/contacto.html&text=Contacto%20-%20RESONANCIAS"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="share-btn telegram"
+                        title="Compartir en Telegram"
+                        aria-label="Compartir en Telegram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                        </svg>
+                    </a>
+                </nav>
+
+                <p>
+                    <a href="../index.html" class="footer-logo-link">
+                        <img
+                            src="../img/logo2_footer.png"
+                            alt="Logo RESONANCIAS"
+                            width="90"
+                            height="40" />
+                    </a>
+                    © 2025 RESONANCIAS · Todos los derechos reservados
+                </p>
+            </div>
+        </footer>
+
+        <!-- Modal de búsqueda -->
+        <div id="searchModal" class="search-modal" role="dialog" aria-labelledby="search-title" aria-hidden="true">
+            <div class="search-modal-content">
+                <div class="search-modal-header">
+                    <h2 id="search-title">Buscar en el sitio</h2>
+                    <button class="search-close" aria-label="Cerrar búsqueda">×</button>
+                </div>
+                <div class="search-input-container">
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Escribe tu búsqueda..."
+                        aria-label="Términos de búsqueda" />
+                    <button id="searchButton" aria-label="Buscar">
+                        <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="M21 21L16.65 16.65"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="searchResults" class="search-results">
+                    <div class="no-results">Escribe algo para comenzar la búsqueda...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Script para el formulario -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const form = document.getElementById("contactForm");
+                const inputs = form.querySelectorAll("input, select, textarea");
+
+                // Validación en tiempo real
+                inputs.forEach((input) => {
+                    input.addEventListener("blur", validateField);
+                    input.addEventListener("focus", clearErrors);
+                });
+
+                function validateField(e) {
+                    const field = e.target;
+                    field.style.borderColor = field.checkValidity() ? "var(--color-mid)" : "#ff6b6b";
+                }
+
+                function clearErrors(e) {
+                    e.target.style.borderColor = "var(--color-secondary)";
+                }
+
+                // Envío del formulario
+                form.addEventListener("submit", function (e) {
+                    e.preventDefault();
+
+                    // Simular envío (aquí iría la lógica real de envío)
+                    const button = form.querySelector('button[type="submit"]');
+                    const originalText = button.innerHTML;
+
+                    button.innerHTML =
+                        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;"><circle cx="12" cy="12" r="10"></circle></svg> Enviando...';
+                    button.disabled = true;
+
+                    setTimeout(() => {
+                        button.innerHTML =
+                            '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"></polyline></svg> ¡Mensaje enviado!';
+                        button.style.background = "#28a745";
+
+                        setTimeout(() => {
+                            form.reset();
+                            button.innerHTML = originalText;
+                            button.style.background = "var(--color-secondary)";
+                            button.disabled = false;
+                        }, 3000);
+                    }, 2000);
+                });
+
+                // Hover effects para redes sociales
+                const socialLinks = document.querySelectorAll(
+                    '.contact-info a[href*="facebook"], .contact-info a[href*="twitter"], .contact-info a[href*="youtube"]'
+                );
+                socialLinks.forEach((link) => {
+                    link.addEventListener("mouseenter", () => {
+                        link.style.background = "var(--color-mid)";
+                        link.style.transform = "translateX(5px)";
+                    });
+                    link.addEventListener("mouseleave", () => {
+                        link.style.background = "transparent";
+                        link.style.transform = "translateX(0)";
+                    });
+                });
+            });
+        </script>
+
+<!-- Controles de accesibilidad flotantes -->
+        <div
+            id="accessibility-controls"
+            class="accessibility-floating"
+            role="toolbar"
+            aria-label="Controles de accesibilidad">
+            <button
+                id="increase-font"
+                class="accessibility-btn"
+                aria-label="Aumentar tamaño de fuente"
+                title="Aumentar texto">
+                A+
+            </button>
+            <button
+                id="decrease-font"
+                class="accessibility-btn"
+                aria-label="Disminuir tamaño de fuente"
+                title="Disminuir texto">
+                A-
+            </button>
+            <button
+                id="high-contrast"
+                class="accessibility-btn"
+                aria-label="Activar alto contraste"
+                title="Alto contraste (Alt + C)">
+                ◐
+            </button>
+            <button
+                id="reset-settings"
+                class="accessibility-btn"
+                aria-label="Restablecer configuración"
+                title="Restablecer (Alt + R)">
+                ↺
+            </button>
+            <button
+                id="tts-pause"
+                class="accessibility-btn"
+                aria-label="Pausar/reanudar lectura por voz"
+                title="Pausa suave (Alt + P)">
+                ⏸️
+            </button>
+        </div>
+    </body>
+</html>
