@@ -490,9 +490,7 @@
 
                         <!-- Entrada 3: Sobre la escritura -->
                         <article
-                            id="blog-escritura"
                             class="blog-entry-card"
-                            data-category="ensayo"
                             style="
                                 background: var(--color-light);
                                 border-radius: 12px;
@@ -500,54 +498,29 @@
                                 box-shadow: var(--shadow-md);
                                 transition: all var(--transition-fast);
                             ">
-                            <div
-                                class="entry-image"
-                                style="
-                                    height: 250px;
-                                    background: linear-gradient(45deg, var(--color-mid), var(--color-neutral));
-                                    position: relative;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    color: var(--color-dark);
-                                ">
-                                <div style="text-align: center">
-                                    <svg
-                                        width="80"
-                                        height="80"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="1">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                        <polyline points="14,2 14,8 20,8"></polyline>
-                                        <line x1="16" y1="13" x2="8" y2="13"></line>
-                                        <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    </svg>
-                                    <p
-                                        style="
-                                            margin-top: var(--spacing-md);
-                                            font-size: var(--font-size-sm);
-                                            opacity: 0.7;
-                                        ">
-                                        Próximamente
-                                    </p>
-                                </div>
+                            <!-- Imagen -->
+                            <div class="entry-image" style="height: 250px; position: relative; overflow: hidden">
+                                <img
+                                    src="../img/programacion.jpg"
+                                    alt="Descripción de la imagen"
+                                    style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8" />
                                 <div
                                     style="
                                         position: absolute;
                                         top: var(--spacing-md);
                                         right: var(--spacing-md);
-                                        background: var(--color-neutral);
+                                        background: var(--color-accent);
                                         color: var(--color-light);
                                         padding: var(--spacing-xs) var(--spacing-sm);
                                         border-radius: 15px;
                                         font-size: var(--font-size-sm);
                                         font-weight: 600;
                                     ">
-                                    Ensayo
+                                    Pregunta
                                 </div>
                             </div>
+
+                            <!-- Contenido -->
                             <div style="padding: var(--spacing-xl); position: relative">
                                 <h3
                                     style="
@@ -555,31 +528,49 @@
                                         margin-bottom: var(--spacing-md);
                                         color: var(--color-dark);
                                     ">
-                                    Horizontes
+                                    <a
+                                        href="entrada-p.html"
+                                        style="
+                                            text-decoration: none;
+                                            color: inherit;
+                                            transition: color var(--transition-fast);
+                                        ">
+                                        Por qué programamos en inglés
+                                    </a>
                                 </h3>
+
                                 <p style="color: var(--color-dark); margin-bottom: var(--spacing-lg); line-height: 1.6">
-                                    Razonar una idea o concepto requiere de un poco de atención para poder asimilar y
-                                    comprender. Este proceso natural de la mente no es del agrado de la mayoría, la
-                                    mente se niega a prestar atención, primero surge la distracción, luego la
-                                    somnolencia y por ultimo el rechazo. Siempre me preocupo el hecho sea más
-                                    pronunciado en adolescentes que en adultos. ¿Se preguntaron por que sucede tan a
-                                    menudo?.
+                                    ¿Alguna vez te detuviste a pensar en esto? Como programador, pasás horas escribiendo
+                                    if, while, for, class. Son las primeras palabras que aprendemos, los ladrillos de
+                                    nuestro mundo digital. Las escribimos sin preguntar, asumiendo que son una ley
+                                    universal de la computación.
                                 </p>
+
                                 <div style="display: flex; justify-content: space-between; align-items: center">
                                     <span style="font-size: var(--font-size-sm); color: var(--color-neutral)">
-                                        📅 Próximamente
+                                        📅 FECHA
                                     </span>
-                                    <span
+                                    <a
+                                        href="entrada-p.html"
                                         style="
-                                            color: var(--color-neutral);
+                                            color: var(--color-secondary);
+                                            text-decoration: none;
                                             font-weight: 600;
                                             display: flex;
                                             align-items: center;
                                             gap: var(--spacing-xs);
-                                            opacity: 0.6;
                                         ">
-                                        En desarrollo
-                                    </span>
+                                        Leer más
+                                        <svg
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2">
+                                            <path d="M7 17l9.2-9.2M17 17V7H7" />
+                                        </svg>
+                                    </a>
                                 </div>
                             </div>
                         </article>

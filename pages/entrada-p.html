@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Por qué programamos en inglés: El accidente que se volvió estándar - Blog - RESONANCIAS</title>
+        <meta
+            name="description"
+            content="Una reflexión sobre la hegemonía del inglés en la programación y por qué deberíamos considerar alternativas en nuestro idioma nativo." />
+
+        <!-- SEO y Accesibilidad -->
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Gabriel Ferré" />
+        <meta name="keywords" content="programación, idiomas, tecnología, soberanía digital, español, desarrollo" />
+
+        <!-- Favicon -->
+        <link rel="icon" href="../img/favicon.png" type="image/png" />
+
+        <!-- Estilos -->
+        <link rel="stylesheet" href="../scr/styles/main.css" />
+        <link rel="stylesheet" href="../scr/styles/voice.css" />
+
+        <!-- Scripts -->
+        <script src="../scr/js/accessibility.js" defer></script>
+        <script src="../scr/js/main.js" defer></script>
+        <script src="../scr/js/voice/textToSpeech.js" defer></script>
+    </head>
+    <body>
+        <!-- Skip to main content -->
+        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="nav-container">
+                <a href="../index.html" class="logo" aria-label="RESONANCIAS - Inicio">
+                    <img src="../img/logo.png" alt="Logo RESONANCIAS" width="40" height="40" />
+                </a>
+
+                <!-- Navegación principal -->
+                <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+                    <a href="../index.html">Inicio</a>
+                    <a href="obras.html">Libros</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="quien-soy.html">Quién soy</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+
+                <!-- Redes sociales y búsqueda -->
+                <div class="social-nav">
+                    <div class="search-container">
+                        <button id="searchToggle" class="search-toggle" aria-label="Buscar" aria-expanded="false">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="M21 21L16.65 16.65"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="social-links">
+                        <a
+                            href="https://www.facebook.com/profile.php?id=100088341563677"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a
+                            href="https://x.com/Miguel_CCom5"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="X (Twitter)">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <a
+                            href="https://www.youtube.com/@Gabriel-Ferre-v3l"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Botón menú móvil -->
+                <button
+                    class="hamburger-btn"
+                    aria-label="Menú de navegación"
+                    aria-expanded="false"
+                    aria-controls="sideMenu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Menú lateral móvil -->
+        <aside class="side-menu" id="sideMenu" role="navigation" aria-label="Menú de navegación lateral">
+            <div class="menu-header">
+                <h2 class="menu-title">Navegación</h2>
+                <button class="close-btn" aria-label="Cerrar menú">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Menú tipo acordeón -->
+            <div class="accordion-menu">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="../index.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                            </svg>
+                            Inicio
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="obras.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                            Libros
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="blog.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14,2 14,8 20,8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                            </svg>
+                            Blog
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="quien-soy.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            Quién soy
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="contacto.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            Contacto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Overlay para menú -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+
+        <!-- Sección Hero -->
+        <section
+            class="works-hero"
+            style="
+                margin-top: 0 !important;
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                    url(&quot;../img/programacion.jpg&quot;);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                color: var(--color-light);
+                padding: var(--spacing-3xl) 0;
+                text-align: center;
+                min-height: 400px;
+                display: flex;
+                align-items: center;
+            ">
+            <div class="container">
+                <h1
+                    style="
+                        font-size: var(--font-size-4xl);
+                        margin-bottom: var(--spacing-lg);
+                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                    ">
+                    Código en Español
+                </h1>
+                <p
+                    style="
+                        font-size: var(--font-size-xl);
+                        max-width: 600px;
+                        margin: 0 auto;
+                        line-height: 1.6;
+                        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+                    ">
+                    Reclamando nuestro idioma en la programación
+                </p>
+            </div>
+        </section>
+
+        <!-- Contenido principal -->
+        <main id="main-content" role="main">
+            <!-- Breadcrumb -->
+            <nav aria-label="Breadcrumb" style="padding: var(--spacing-lg) 0"></nav>
+
+            <!-- Artículo principal -->
+            <div class="content-card">
+                <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+                    <div class="container" style="max-width: 800px; margin: 0 auto">
+                        <!-- Header del artículo -->
+                        <header style="margin-bottom: var(--spacing-2xl); text-align: center">
+                            <div style="margin-bottom: var(--spacing-lg)"></div>
+                            <h1
+                                id="article-title"
+                                style="
+                                    font-size: var(--font-size-3xl);
+                                    margin-bottom: var(--spacing-lg);
+                                    color: var(--color-dark);
+                                ">
+                                Por qué programamos en inglés: El accidente que se volvió estándar
+                            </h1>
+                            <div style="color: var(--color-neutral); font-size: var(--font-size-sm)">
+                                📅 2024-12-15 · ⏱️ 5 min de lectura
+                            </div>
+                        </header>
+
+                        <!-- Contenido del artículo -->
+                        <div class="article-content" style="line-height: 1.8; color: var(--color-dark)">
+                            <p
+                                id="intro-paragraph"
+                                style="
+                                    font-size: var(--font-size-lg);
+                                    margin-bottom: var(--spacing-xl);
+                                    color: var(--color-warm);
+                                    font-style: italic;
+                                    position: relative;
+                                "></p>
+                            <p>
+                                ¿Alguna vez te detuviste a pensar en esto? Como programador, pasás horas escribiendo
+                                <code>if</code>, <code>while</code>, <code>for</code>, <code>class</code>. Son las
+                                primeras palabras que aprendemos, los ladrillos de nuestro mundo digital. Las escribimos
+                                sin preguntar, asumiendo que son una ley universal de la computación.
+                            </p>
+
+                            <p><br /></p>
+
+                            <div id="section-1" style="margin-bottom: var(--spacing-xl); position: relative">
+                                <h2 style="color: var(--color-dark); margin-bottom: var(--spacing-lg)">
+                                    El accidente histórico que se volvió estándar
+                                </h2>
+                                <p>
+                                    La programación moderna nació en Estados Unidos y el Reino Unido. Sus pioneros,
+                                    lógicamente, usaron su propio idioma para nombrar las instrucciones.
+                                    <code>IF</code> (si), <code>WHILE</code> (mientras), <code>PRINT</code> (imprimir).
+                                    Tenía sentido para ellos. Lo que empezó como una conveniencia local, gracias al
+                                    poder cultural y económico anglosajón, se exportó al mundo como un estándar global.
+                                </p>
+                                <p>
+                                    Y todos lo aceptamos. Asumimos que para pensar lógicamente frente a una pantalla,
+                                    debíamos hacerlo con palabras de otro idioma.
+                                </p>
+                                <p>
+                                    Pero la verdad es simple y reveladora:
+                                    <strong>la máquina nunca necesitó inglés</strong>. El único lenguaje que una
+                                    computadora entiende es el binario. Todo lo que escribimos, sea en el idioma que
+                                    sea, es traducido por un compilador o un intérprete a ese nivel fundamental. El
+                                    problema nunca fue el lenguaje máquina, sino el idioma de la interfaz que usamos
+                                    para ingresar los comandos.
+                                </p>
+                            </div>
+
+                            <div id="section-2" style="margin-bottom: var(--spacing-xl); position: relative">
+                                <h2 style="color: var(--color-dark); margin-bottom: var(--spacing-lg)">
+                                    Lo que perdimos en la traducción
+                                </h2>
+                                <p>
+                                    Al aceptar el inglés como la <em>lingua franca</em> obligatoria del código, dejamos
+                                    varias cosas en el camino. No es un detalle menor, es una barrera invisible con
+                                    costos muy reales.
+                                </p>
+                                <h3>1. Una barrera de entrada injusta</h3>
+                                <p>
+                                    Para un argentino, aprender a programar implica una doble carga cognitiva. No solo
+                                    tenés que entender la lógica abstracta de un algoritmo, sino que además tenés que
+                                    aprender el vocabulario técnico en otro idioma. Es una traba que un chico de Silicon
+                                    Valley no tiene. Limita el acceso y profundiza la desigualdad.
+                                </p>
+                                <h3>2. Un sesgo cultural silencioso</h3>
+                                <p>
+                                    El código no es neutral. La forma en que se diseñan los lenguajes de programación
+                                    refleja las prioridades y los valores de sus creadores. Al permitir que un solo
+                                    idioma domine la conversación, aceptamos una única mirada sobre cómo resolver
+                                    problemas, qué es eficiente o qué es importante. Democratizar el lenguaje es también
+                                    democratizar la mirada.
+                                </p>
+                                <h3>3. Colonialismo simbólico</h3>
+                                <p>
+                                    Que el estándar global sea el inglés no es una decisión técnica, es una herencia de
+                                    poder. Es una forma sutil de colonialismo digital que nos recuerda, línea por línea
+                                    de código, dónde se sigue concentrando el poder tecnológico.
+                                </p>
+                            </div>
+                            <img
+                                src="../img/programacion.jpg"
+                                alt="Infografía sobre crónicas de literatura"
+                                style="
+                                    width: 100%;
+                                    height: auto;
+                                    max-height: 600px;
+                                    object-fit: contain;
+                                    border-radius: 8px;
+                                    margin-bottom: var(--spacing-md);
+                                " />
+                            <div id="section-3" style="margin-bottom: var(--spacing-xl); position: relative">
+                                <h2 style="color: var(--color-dark); margin-bottom: var(--spacing-lg)">
+                                    ¿Se puede programar en nuestro idioma?
+                                </h2>
+                                <p>
+                                    Esto no es una fantasía. La viabilidad técnica de programar en la lengua materna
+                                    está demostrada hace décadas.
+                                </p>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            <strong>ALGOL 68</strong>, un lenguaje de 1968, permitía usar palabras clave
+                                            en diferentes idiomas. Se podía escribir
+                                            <code>IF day &lt; length THEN</code> en inglés, o
+                                            <code>WENN tag &lt; monatslaenge DANN</code> en alemán. El resultado era el
+                                            mismo.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <strong>Excel</strong>, la herramienta que usa todo el mundo, traduce sus
+                                            funciones. Nosotros escribimos
+                                            <code>=SI(A1&gt;10, &quot;Mayor&quot;, &quot;Menor&quot;)</code>. Un
+                                            angloparlante escribe
+                                            <code>=IF(A1&gt;10, &quot;Greater&quot;, &quot;Lesser&quot;)</code>. La
+                                            lógica es la misma, la funcionalidad es idéntica. El idioma es una capa
+                                            superficial.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <strong>Scratch</strong>, la plataforma que usan millones de chicos para
+                                            aprender a programar, está traducida a más de 70 idiomas, incluyendo el
+                                            español. Saben que para aprender, nada es más poderoso que la lengua
+                                            materna.
+                                        </p>
+                                    </li>
+                                </ul>
+                                <p>
+                                    Existen lenguajes diseñados enteramente en francés (<strong>Linotte</strong>), en
+                                    tamil (<strong>Ezhil</strong>) o incluso en árabe con escritura de derecha a
+                                    izquierda (<strong>Qalb</strong>). Funcionan perfecto, porque al final del día, el
+                                    compilador hace su trabajo: convertir nuestras ideas en el único lenguaje universal,
+                                    el binario.
+                                </p>
+                            </div>
+
+                            <div id="section-4" style="margin-bottom: var(--spacing-xl); position: relative">
+                                <h2 style="color: var(--color-dark); margin-bottom: var(--spacing-lg)">
+                                    Un llamado a la acción cultural: recuperemos el código
+                                </h2>
+                                <p>
+                                    La hegemonía del inglés en la programación no es una ley de la física. Es una
+                                    convención. Y las convenciones se pueden cambiar.
+                                </p>
+                                <p>
+                                    No se trata de erradicar el inglés, sino de <strong>construir alternativas</strong>.
+                                    De imaginar un futuro donde un estudiante en Salta, un profesional en Córdoba o un
+                                    curioso en Buenos Aires puedan aprender y crear tecnología sin la barrera de un
+                                    idioma ajeno.
+                                </p>
+                                <p>
+                                    Este es un llamado a la acción cultural para nuestra comunidad, en distintos
+                                    niveles:
+                                </p>
+                                <h3>Para los educadores</h3>
+                                <p>
+                                    Enseñemos primero la lógica en español. Usemos herramientas como Scratch para que
+                                    los más chicos descubran la programación en su idioma. Desmitifiquemos la idea de
+                                    que el inglés es un requisito para pensar como programador.
+                                </p>
+                                <h3>Para la comunidad de desarrollo</h3>
+                                <p>
+                                    Podemos empezar hoy mismo. Apoyemos proyectos de localización, creemos más
+                                    documentación, tutoriales y foros en español. Hagamos que el ecosistema que rodea al
+                                    código hable nuestro idioma.
+                                </p>
+                                <h3>Para un futuro soberano</h3>
+                                <p>
+                                    Y pensemos en grande. Crear un entorno de programación verdaderamente nativo no es
+                                    solo traducir palabras. Implica un
+                                    <strong
+                                        >proyecto colaborativo ambicioso, idealmente junto a nuestras universidades
+                                        tecnológicas</strong
+                                    >, para diseñar desde cero una gramática completa. Significa definir cómo un
+                                    <em>parser</em> debe interpretar nuestros <em>tokens</em> (las palabras y símbolos
+                                    de nuestro idioma) y nuestras reglas sintácticas. Como ya dijimos, el lenguaje
+                                    máquina no es el problema; el desafío es construir una interfaz humana que piense y
+                                    hable en nuestro idioma.
+                                </p>
+                                <h3>Para todos</h3>
+                                <p>
+                                    Empecemos a tener esta conversación. Cuestionemos la inercia. Preguntémonos qué
+                                    ganaríamos si el código también hablara nuestro idioma.
+                                </p>
+                            </div>
+
+                            <div id="section-5" style="margin-bottom: var(--spacing-xl); position: relative">
+                                <h2 style="color: var(--color-dark); margin-bottom: var(--spacing-lg)">Conclusión</h2>
+                                <p>
+                                    Reclamar nuestro idioma en el código no es un acto de nostalgia, es un paso hacia la
+                                    soberanía tecnológica. Es construir un futuro donde la innovación no tenga un idioma
+                                    predefinido, sino que hable con todos nuestros acentos. Es, en definitiva, hacer que
+                                    la puerta de entrada al futuro sea un poco más ancha para todos.
+                                </p>
+                            </div>
+
+                            <div id="section-6" style="margin-bottom: var(--spacing-xl); position: relative">
+                                <h2 style="color: var(--color-dark); margin-bottom: var(--spacing-lg)">Sección 6</h2>
+                                <p>Esta sección no tiene contenido disponible.</p>
+                            </div>
+
+                            <div id="conclusion" style="margin-bottom: var(--spacing-xl); position: relative">
+                                <p>
+                                    Reclamar nuestro idioma en el código no es un acto de nostalgia, es un paso hacia la
+                                    soberanía tecnológica. Es construir un futuro donde la innovación no tenga un idioma
+                                    predefinido, sino que hable con todos nuestros acentos. Es, en definitiva, hacer que
+                                    la puerta de entrada al futuro sea un poco más ancha para todos.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Sección de suscripción al blog -->
+                        <section
+                            class="blog-subscription"
+                            style="
+                                margin-top: var(--spacing-3xl);
+                                background: var(--color-mid);
+                                padding: var(--spacing-2xl);
+                                border-radius: 12px;
+                                text-align: center;
+                            ">
+                            <h3
+                                style="
+                                    color: var(--color-dark);
+                                    margin-bottom: var(--spacing-md);
+                                    font-size: var(--font-size-2xl);
+                                ">
+                                📭 Mantente al día
+                            </h3>
+                            <p
+                                style="
+                                    color: var(--color-warm);
+                                    margin-bottom: var(--spacing-xl);
+                                    max-width: 500px;
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                    line-height: 1.6;
+                                ">
+                                Recibe notificaciones cuando publique nuevos ensayos y reflexiones. Sin spam, solo
+                                contenido de calidad.
+                            </p>
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    gap: var(--spacing-md);
+                                    max-width: 400px;
+                                    margin: 0 auto;
+                                    flex-wrap: wrap;
+                                ">
+                                <a
+                                    href="contacto.html"
+                                    style="
+                                        background: var(--color-secondary);
+                                        color: var(--color-light);
+                                        border: none;
+                                        padding: var(--spacing-md) var(--spacing-xl);
+                                        border-radius: 8px;
+                                        font-weight: 600;
+                                        text-decoration: none;
+                                        cursor: pointer;
+                                        transition: all var(--transition-fast);
+                                        display: inline-flex;
+                                        align-items: center;
+                                        gap: var(--spacing-sm);
+                                    "
+                                    onmouseover="this.style.background='var(--color-warm)'; this.style.transform='translateY(-2px)'"
+                                    onmouseout="this.style.background='var(--color-secondary)'; this.style.transform='translateY(0)'">
+                                    <svg
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                    Contáctame
+                                </a>
+                            </div>
+                            <p
+                                style="
+                                    font-size: var(--font-size-sm);
+                                    color: var(--color-neutral);
+                                    margin-top: var(--spacing-md);
+                                ">
+                                * Puedes darte de baja en cualquier momento
+                            </p>
+                        </section>
+
+                        <!-- Footer del artículo -->
+                        <footer
+                            style="
+                                margin-top: var(--spacing-2xl);
+                                padding-top: var(--spacing-xl);
+                                border-top: 1px solid var(--color-mid);
+                            ">
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    flex-wrap: wrap;
+                                    gap: var(--spacing-md);
+                                ">
+                                <div>
+                                    <p style="color: var(--color-neutral); font-size: var(--font-size-sm); margin: 0">
+                                        Publicado el <time datetime="2024-12-15">2024-12-15</time>
+                                    </p>
+                                </div>
+                                <div style="display: flex; gap: var(--spacing-sm)">
+                                    <a
+                                        href="blog.html"
+                                        style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                                        ← Volver al blog
+                                    </a>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content">
+                <p>
+                    <a href="../index.html" class="footer-logo-link">
+                        <img src="../img/logo2_footer.png" alt="Logo RESONANCIAS" width="90" height="40" />
+                    </a>
+                    © 2025 RESONANCIAS · Todos los derechos reservados
+                </p>
+            </div>
+        </footer>
+
+        <!-- Controles de accesibilidad flotantes -->
+        <div
+            id="accessibility-controls"
+            class="accessibility-floating"
+            role="toolbar"
+            aria-label="Controles de accesibilidad">
+            <button
+                id="increase-font"
+                class="accessibility-btn"
+                aria-label="Aumentar tamaño de fuente"
+                title="Aumentar texto">
+                A+
+            </button>
+            <button
+                id="decrease-font"
+                class="accessibility-btn"
+                aria-label="Disminuir tamaño de fuente"
+                title="Disminuir texto">
+                A-
+            </button>
+            <button
+                id="high-contrast"
+                class="accessibility-btn"
+                aria-label="Activar alto contraste"
+                title="Alto contraste (Alt + C)">
+                ◐
+            </button>
+            <button
+                id="reset-settings"
+                class="accessibility-btn"
+                aria-label="Restablecer configuración"
+                title="Restablecer (Alt + R)">
+                ↺
+            </button>
+            <button
+                id="tts-pause"
+                class="accessibility-btn"
+                aria-label="Pausar/reanudar lectura por voz"
+                title="Pausa suave (Alt + P)">
+                ⏸️
+            </button>
+        </div>
+    </body>
+</html>
