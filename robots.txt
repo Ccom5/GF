@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gf-amd.pages.dev/sitemap.xml

@@ -1,0 +1,51 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Book",
+      "@id": "https://gf-amd.pages.dev/pages/libros/cronicas#book",
+      "name": "Crónicas de la Expiación",
+      "author": { "@type": "Person", "name": "Gabriel Ferré" },
+      "description": "Ensayo literario y reflexivo sobre la imaginación y la palabra.",
+      "inLanguage": "es",
+      "isAccessibleForFree": true,
+      "url": "https://gf-amd.pages.dev/pages/libros/cronicas",
+      "mainEntityOfPage": "https://gf-amd.pages.dev/pages/libros/cronicas",
+      "encoding": [
+        { "@type": "MediaObject", "encodingFormat": "text/html", "contentUrl": "https://gf-amd.pages.dev/pages/libros/cronicas" },
+        { "@type": "MediaObject", "encodingFormat": "application/pdf", "contentUrl": "https://drive.google.com/file/d/1WHYULSARp77vleV4d6CHk4Z0huVafBQK/view?usp=sharing" }
+      ]
+    },
+    {
+      "@type": "Book",
+      "@id": "https://gf-amd.pages.dev/pages/libros/saber#book",
+      "name": "El Saber No Percibido",
+      "author": { "@type": "Person", "name": "Gabriel Ferré" },
+      "description": "Ensayo de libre difusión sobre la percepción y la reflexión cultural.",
+      "inLanguage": "es",
+      "isAccessibleForFree": true,
+      "url": "https://gf-amd.pages.dev/pages/libros/saber.html",
+      "mainEntityOfPage": "https://gf-amd.pages.dev/pages/libros/saber.html",
+      "encoding": [
+        { "@type": "MediaObject", "encodingFormat": "text/html", "contentUrl": "https://gf-amd.pages.dev/pages/libros/saber.html" },
+        { "@type": "MediaObject", "encodingFormat": "application/pdf", "contentUrl": "https://drive.google.com/file/d/1z3YoKek4BohBwi1amvTqCt6ylDWZktmq/view?usp=sharing" }
+      ]
+    },
+    {
+      "@type": "Book",
+      "@id": "https://gf-amd.pages.dev/pages/libros/incómodo#book",
+      "name": "El Derecho a Ser Incómodo",
+      "author": { "@type": "Person", "name": "Gabriel Ferré" },
+      "description": "Ensayo de libre difusión sobre la crítica social y cultural.",
+      "inLanguage": "es",
+      "isAccessibleForFree": true,
+      "url": "https://drive.google.com/file/d/1Fk0bF2vY7jDSQt98HWAmNs-4iiX9PvPm/view?pli=1",
+      "mainEntityOfPage": "https://gf-amd.pages.dev/pages/obras",
+      "encoding": [
+        { "@type": "MediaObject", "encodingFormat": "application/pdf", "contentUrl": "https://drive.google.com/file/d/1Fk0bF2vY7jDSQt98HWAmNs-4iiX9PvPm/view?pli=1" }
+      ]
+    }
+  ]
+}
+</script>
