@@ -966,6 +966,11 @@ main section:first-of-type {
   color: white;
 }
 
+.share-btn.bluesky {
+  background: #0085ff;
+  color: white;
+}
+
 .share-btn:hover {
   transform: scale(1.1);
 }
