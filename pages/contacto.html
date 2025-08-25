@@ -16,6 +16,7 @@
         <!-- Open Graph -->
         <meta property="og:title" content="Contacto - RESONANCIAS" />
         <meta property="og:description" content="Ponte en contacto con Gabriel Ferré para consultas y colaboraciones" />
+        <meta property="og:image" content="https://resonancias.netlify.app/img/ero-2.jpg" />
         <meta property="og:type" content="website" />
 
         <!-- Favicon -->
@@ -261,7 +262,8 @@
             <section
                 class="works-hero"
                 style="
-                    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/ero-2.jpg');
+                    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                        url(&quot;../img/ero-2.jpg&quot;);
                     background-size: cover;
                     background-position: center;
                     background-repeat: no-repeat;
@@ -315,64 +317,80 @@
                                 ">
                                 Envíame un mensaje
                             </h2>
+                            <form
+                                id="contactForm"
+                                class="contact-form"
+                                action="https://formspree.io/f/mwpqynwp"
+                                method="POST"
+                                style="display: flex; flex-direction: column; gap: var(--spacing-lg)">
+                                <div class="form-group">
+                                    <label for="name">Nombre *</label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        required
+                                        placeholder="Tu nombre completo" />
+                                </div>
 
-                           <form
-    id="contactForm"
-    class="contact-form"
-    action="https://formspree.io/f/mwpqynwp"
-    method="POST"
-    style="display: flex; flex-direction: column; gap: var(--spacing-lg)">
-    
-    <div class="form-group">
-        <label for="name">Nombre *</label>
-        <input type="text" id="name" name="name" required placeholder="Tu nombre completo" />
-    </div>
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" required placeholder="tu@email.com" />
+                                </div>
 
-    <div class="form-group">
-        <label for="email">Email *</label>
-        <input type="email" id="email" name="email" required placeholder="tu@email.com" />
-    </div>
+                                <div class="form-group">
+                                    <label for="subject">Asunto *</label>
+                                    <select id="subject" name="subject" required>
+                                        <option value="">Selecciona un tema</option>
+                                        <option value="comentario">Comentario sobre una obra</option>
+                                        <option value="colaboracion">Propuesta de colaboración</option>
+                                        <option value="consulta">Consulta general</option>
+                                        <option value="prensa">Consulta de prensa</option>
+                                        <option value="tecnico">Problema técnico del sitio</option>
+                                        <option value="otro">Otro tema</option>
+                                    </select>
+                                </div>
 
-    <div class="form-group">
-        <label for="subject">Asunto *</label>
-        <select id="subject" name="subject" required>
-            <option value="">Selecciona un tema</option>
-            <option value="comentario">Comentario sobre una obra</option>
-            <option value="colaboracion">Propuesta de colaboración</option>
-            <option value="consulta">Consulta general</option>
-            <option value="prensa">Consulta de prensa</option>
-            <option value="tecnico">Problema técnico del sitio</option>
-            <option value="otro">Otro tema</option>
-        </select>
-    </div>
+                                <div class="form-group">
+                                    <label for="message">Mensaje *</label>
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        rows="6"
+                                        required
+                                        placeholder="Escribe tu mensaje aquí..."></textarea>
+                                </div>
 
-    <div class="form-group">
-        <label for="message">Mensaje *</label>
-        <textarea id="message" name="message" rows="6" required placeholder="Escribe tu mensaje aquí..."></textarea>
-    </div>
+                                <div class="form-group">
+                                    <input type="checkbox" id="newsletter" name="newsletter" />
+                                    <label for="newsletter"
+                                        >Me gustaría recibir notificaciones ocasionales sobre nuevas publicaciones
+                                        (opcional)</label
+                                    >
+                                </div>
 
-    <div class="form-group">
-        <input type="checkbox" id="newsletter" name="newsletter" />
-        <label for="newsletter">Me gustaría recibir notificaciones ocasionales sobre nuevas publicaciones (opcional)</label>
-    </div>
+                                <button type="submit">
+                                    <svg
+                                        width="20"
+                                        height="20"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M22 2L11 13"></path>
+                                        <polygon points="22,2 15,22 11,13 2,9"></polygon>
+                                    </svg>
+                                    Enviar mensaje
+                                </button>
 
-    <button type="submit">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 2L11 13"></path>
-            <polygon points="22,2 15,22 11,13 2,9"></polygon>
-        </svg>
-        Enviar mensaje
-    </button>
-
-    <p>* Campos obligatorios. Responderé a la brevedad posible.</p>
-</form>
+                                <p>* Campos obligatorios. Responderé a la brevedad posible.</p>
+                            </form>
                         </div>
 
                         <!-- Información de contacto -->
                         <div class="contact-info" style="display: flex; flex-direction: column; gap: var(--spacing-xl)">
                             <!-- Información general -->
-                            <div
-                                style="background: var(--color-mid); padding: var(--spacing-xl); border-radius: 12px;">
+                            <div style="background: var(--color-mid); padding: var(--spacing-xl); border-radius: 12px">
                                 <h3
                                     style="
                                         color: var(--color-dark);
@@ -666,11 +684,7 @@
 
                 <p>
                     <a href="../index.html" class="footer-logo-link">
-                        <img
-                            src="../img/logo2_footer.png"
-                            alt="Logo RESONANCIAS"
-                            width="90"
-                            height="40" />
+                        <img src="../img/logo2_footer.png" alt="Logo RESONANCIAS" width="90" height="40" />
                     </a>
                     © 2025 RESONANCIAS · Todos los derechos reservados
                 </p>
@@ -709,7 +723,7 @@
             </div>
         </div>
 
-             <!-- Script para el formulario -->
+        <!-- Script para el formulario -->
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 const form = document.getElementById("contactForm");
@@ -776,7 +790,7 @@
             });
         </script>
 
-<!-- Controles de accesibilidad flotantes -->
+        <!-- Controles de accesibilidad flotantes -->
         <div
             id="accessibility-controls"
             class="accessibility-floating"
