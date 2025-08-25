@@ -128,22 +128,22 @@ body {
   gap: var(--spacing-sm);
   margin: var(--spacing-lg) 0;
   padding: var(--spacing-md);
-  background: rgba(255, 255, 255, 0.1);
+  background: --color-mid;
   border-radius: 25px;
-  backdrop-filter: blur(5px);
 }
 
-/* Controles de accesibilidad - FLOTANTES */
+/* Controles de accesibilidad - FLOTANTES VERTICALES EN MARGEN IZQUIERDO (pantallas grandes) */
 .accessibility-floating {
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 70vh;
+  left: 10px;
+  transform: translateY(-50%);
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: var(--spacing-sm);
   background: rgba(18, 11, 5, 0.95);
-  padding: var(--spacing-sm) var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-sm);
   border-radius: 25px;
   box-shadow: var(--shadow-lg);
   backdrop-filter: blur(10px);
@@ -991,9 +991,13 @@ main section:first-of-type {
     padding: var(--spacing-sm);
   }
 
-  /* Los controles de accesibilidad flotantes se adaptan en móvil */
+  /* Los controles de accesibilidad vuelven al centro abajo en móvil */
   .accessibility-floating {
+    top: auto;
     bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
     padding: var(--spacing-xs) var(--spacing-sm);
   }
 
