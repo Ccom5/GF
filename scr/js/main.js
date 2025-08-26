@@ -17,6 +17,7 @@ class ResonanciasApp {
         this.setupScrollEffects();
         this.setupKeyboardNavigation();
         this.setupCardTTS(); // Initialize card TTS functionality
+        this.setupChapterHighlighting(); // Setup chapter highlighting
         console.log('RESONANCIAS - Sitio cargado correctamente');
     }
 
@@ -797,6 +798,73 @@ class ResonanciasApp {
                 activeCardIndicator = null;
             }
         });
+    }
+
+    /**
+     * Configurar el resaltado del capítulo activo en el índice lateral.
+     */
+    setupChapterHighlighting() {
+        const chapterSections = document.querySelectorAll('.book-content .chapter');
+        const chapterLinks = document.querySelectorAll('.chapter-list a');
+
+        if (chapterSections.length === 0 || chapterLinks.length === 0) {
+            return; // No hay capítulos o índice para resaltar
+        }
+
+        const observerOptions = {
+            root: null, // viewport
+            rootMargin: '0px 0px -50% 0px', // Cuando el 50% del elemento está visible
+            threshold: 0 // Dispara cuando el elemento entra o sale del viewport
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const currentChapterId = entry.target.id;
+                    chapterLinks.forEach(link => {
+                        if (link.getAttribute('href') === `#${currentChapterId}`) {
+                            link.classList.add('active');
+                        } else {
+                            link.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        chapterSections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Resaltar el capítulo inicial al cargar la página
+        // Esto es útil si la página se carga con un hash en la URL o si el primer capítulo ya está visible
+        const highlightInitialChapter = () => {
+            let foundActive = false;
+            for (let i = 0; i < chapterSections.length; i++) {
+                const section = chapterSections[i];
+                const rect = section.getBoundingClientRect();
+                // Si el capítulo está al menos parcialmente visible en la parte superior de la ventana
+                if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                    const currentChapterId = section.id;
+                    chapterLinks.forEach(link => {
+                        if (link.getAttribute('href') === `#${currentChapterId}`) {
+                            link.classList.add('active');
+                        } else {
+                            link.classList.remove('active');
+                        }
+                    });
+                    foundActive = true;
+                    break;
+                }
+            }
+            // Si no se encontró ningún capítulo activo (ej. al inicio de la página), activar el primero
+            if (!foundActive && chapterLinks.length > 0) {
+                chapterLinks[0].classList.add('active');
+            }
+        };
+
+        // Ejecutar al cargar la página para establecer el estado inicial
+        window.addEventListener('load', highlightInitialChapter);
     }
 }
 

@@ -36,50 +36,10 @@
         <link rel="icon" href="../../img/favicon.png" type="image/png" />
 
         <!-- Estilos -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="../../scr/styles/main.css" />
-        <link rel="stylesheet" href="../../scr/styles/voice.css" />
-        <style>
-            /* Estilos específicos para el sistema de voz */
-            .voice-icon {
-                border: none;
-                background: transparent;
-                font-size: 16px;
-                cursor: pointer;
-                margin-left: 8px;
-                padding: 4px;
-                border-radius: 4px;
-                transition: all 0.3s ease;
-                opacity: 0.7;
-            }
+        <link rel="stylesheet" href="../../scr/styles/indice-hover.css" />
 
-            .voice-icon:hover {
-                opacity: 1;
-                transform: scale(1.1);
-                background-color: rgba(0, 0, 0, 0.1);
-            }
-
-            .voice-icon.playing {
-                background-color: rgba(34, 197, 94, 0.2);
-                opacity: 1;
-                transform: scale(1.1);
-            }
-
-            .voice-icon.error {
-                background-color: rgba(239, 68, 68, 0.2);
-            }
-
-            /* Contenedor flotante para iconos de voz en contenido */
-            .voice-container {
-                position: absolute;
-                top: 10px;
-                right: 10px;
-                z-index: 10;
-                background: rgba(255, 255, 255, 0.9);
-                border-radius: 20px;
-                padding: 5px;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            }
-        </style>
         <style>
             .book-content {
                 position: relative;
@@ -145,7 +105,6 @@
         <!-- Scripts de accesibilidad -->
         <script src="../../scr/js/accessibility.js" defer></script>
         <script src="../../scr/js/main.js" defer></script>
-        <script src="../../scr/js/voice/textToSpeech.js" defer></script>
     </head>
     <body>
         <!-- Skip to main content -->
@@ -171,16 +130,7 @@
                 <div class="social-nav">
                     <div class="search-container">
                         <button id="searchToggle" class="search-toggle" aria-label="Buscar" aria-expanded="false">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2">
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <path d="M21 21L16.65 16.65"></path>
-                            </svg>
+                            <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </div>
                     <div class="social-links">
@@ -189,30 +139,28 @@
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Facebook">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                            </svg>
+                            <i class="fa-brands fa-facebook"></i>
                         </a>
                         <a
                             href="https://x.com/Miguel_CCom5"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="X (Twitter)">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                            </svg>
+                            <i class="fa-brands fa-x-twitter"></i>
                         </a>
                         <a
                             href="https://www.youtube.com/@Gabriel-Ferre-v3l"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="YouTube">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                            </svg>
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a
+                            href="https://bsky.app/profile/gabrielferre.bsky.social"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Bluesky">
+                            <i class="fa-brands fa-bluesky"></i>
                         </a>
                     </div>
                 </div>
@@ -311,10 +259,11 @@
                                 <polyline points="10,9 9,9 8,9"></polyline>
                             </svg>
                             Índice de Capítulos
+                            <span style="font-size: 12px; color: #666; margin-left: 8px">💬</span>
                         </div>
                     </div>
                     <div
-                        class="chapter-index"
+                        class="chapter-index chapter-list"
                         style="
                             display: flex;
                             flex-direction: column;
@@ -401,7 +350,7 @@
                         >
                         <a
                             href="#107"
-                            class="accordion-link tts-chapter-link"
+                            class="accordion-link"
                             style="
                                 padding: 0.5rem 1.5rem;
                                 display: flex;
@@ -445,7 +394,7 @@
             class="works-hero"
             style="
                 background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                    url(&quot;../../img/libros.jpg&quot;);
+                    url(&quot;../../img/ero-2-obras.jpg&quot;);
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -463,7 +412,7 @@
                         margin-bottom: var(--spacing-lg);
                         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
                     ">
-                    Crónicas de la Expiación
+                    El Saber no Percibido
                 </h1>
                 <p
                     style="
@@ -473,7 +422,7 @@
                         line-height: 1.6;
                         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
                     ">
-                    Una alegoría inquietante sobre la ética, la memoria y la resistencia
+                    Reflexiones sobre la cárcel de la mente, la materia herida y el saber que permanece
                 </p>
             </div>
         </section>
@@ -488,14 +437,14 @@
             <aside
                 id="bookSidebar"
                 class="book-sidebar"
-                style="
-                    width: 350px;
+                style=" width: 320px;
                     background: var(--color-light);
                     box-shadow: var(--shadow-md);
-                    padding: var(--spacing-xl);
+                    padding: var(--spacing-lg);
                     position: sticky; /* Cambiado de fixed a sticky */
                     top: 100px; /* Espacio desde arriba para que se pegue */
-                    left: 50px;
+                    margin-left: 80px; /* Alejado del margen izquierdo */
+                    margin-right: 40px; /* Más cerca del contenido central */
                     max-height: calc(100vh - 120px); /* Altura máxima para permitir scroll */
                     overflow-y: auto;
                     z-index: 30;
@@ -510,12 +459,14 @@
                     ">
                     Índice
                 </h2>
-                <ul style="list-style: none; padding: 0">
-                    <li style="margin-bottom: var(--spacing-xs)">
+
+                <ul class="list-unstyled" id="lista-saber" style="padding: 0">
+                    <li style="margin-bottom: var(--spacing-sm)">
                         <a
-                            href="#100"
+                            href="#1"
+                            class="indice-link"
                             style="
-                                color: var(--color-secondary);
+                                color: var(--color-dark);
                                 text-decoration: none;
                                 font-weight: 600;
                                 display: flex;
@@ -526,47 +477,47 @@
                         </a>
                     </li>
                     <li style="margin-bottom: var(--spacing-sm)">
-                        <a href="#101" style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                        <a href="#101" class="indice-link" style="color: var(--color-dark); text-decoration: none; font-weight: 600">
                             Paredes de la Mente
                         </a>
                     </li>
                     <li style="margin-bottom: var(--spacing-sm)">
-                        <a href="#102" style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                        <a href="#102" class="indice-link" style="color: var(--color-dark); text-decoration: none; font-weight: 600">
                             Materia Herida
                         </a>
                     </li>
                     <li style="margin-bottom: var(--spacing-sm)">
-                        <a href="#103" style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                        <a href="#103" class="indice-link" style="color: var(--color-dark); text-decoration: none; font-weight: 600">
                             El Ciclo de la Caída
                         </a>
                     </li>
                     <li style="margin-bottom: var(--spacing-sm)">
-                        <a href="#104" style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                        <a href="#104" class="indice-link" style="color: var(--color-dark); text-decoration: none; font-weight: 600">
                             El Retorno no Explicado
                         </a>
                     </li>
                     <li style="margin-bottom: var(--spacing-sm)">
-                        <a href="#105" style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                        <a href="#105" class="indice-link" style="color: var(--color-dark); text-decoration: none; font-weight: 600">
                             El Latido Escondido
                         </a>
                     </li>
                     <li style="margin-bottom: var(--spacing-sm)">
-                        <a href="#106" style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                        <a href="#106" class="indice-link" style="color: var(--color-dark); text-decoration: none; font-weight: 600">
                             Notas, Silencios y números
                         </a>
                     </li>
                     <li style="margin-bottom: var(--spacing-sm)">
-                        <a href="#107" style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                        <a href="#107" class="indice-link" style="color: var(--color-dark); text-decoration: none; font-weight: 600">
                             El Rumbo y el Instante
                         </a>
                     </li>
                     <li style="margin-bottom: var(--spacing-sm)">
-                        <a href="#108" style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                        <a href="#108" class="indice-link" style="color: var(--color-dark); text-decoration: none; font-weight: 600">
                             La Sombra y la Luz
                         </a>
                     </li>
                     <li style="margin-bottom: var(--spacing-sm)">
-                        <a href="#109" style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                        <a href="#109" class="indice-link" style="color: var(--color-dark); text-decoration: none; font-weight: 600">
                             El Saber que Permanece
                         </a>
                     </li>
@@ -634,7 +585,7 @@
                     </p>
                     <br />
                     <h2 class="paragraph-P11"><a id="101"></a><span class="text-T1">Las Paredes de la Mente</span></h2>
-                    <p class="paragraph-P10"> </p>
+                    <p class="paragraph-P10"></p>
                     <p class="paragraph-Standard">
                         <span class="text-T1"
                             >Los muros m&aacute;s s&oacute;lidos no est&aacute;n hechos de piedra.<br />Son pensamientos
@@ -663,7 +614,7 @@
                     </p>
                     <br />
                     <h2 class="paragraph-P12"><a id="102"></a><span class="text-T1"> Materia Herida</span></h2>
-                    <p> </p>
+                    <p></p>
                     <p class="paragraph-Text_20_body">
                         <span class="text-Emphasis"
                             ><span class="text-T1"
@@ -749,17 +700,17 @@
                     </p>
                     <p class="paragraph-Text_20_body">
                         <span class="text-T1">Dejo de ser c&aacute;rcel.<br />Dejo de ser muro.<br /></span
-                        ><span class="text-T3">Me convierto en un campo abierto de materia  </span>
+                        ><span class="text-T3">Me convierto en un campo abierto de materia </span>
                     </p>
                     <p class="paragraph-Text_20_body">
                         <span class="text-T3">En </span><span class="text-T4">evoluci&oacute;n incesante</span>
                     </p>
-                    <p class="paragraph-Text_20_body"> </p>
-                    <p class="paragraph-Text_20_body"> </p>
+                    <p class="paragraph-Text_20_body"></p>
+                    <p class="paragraph-Text_20_body"></p>
                     <h2 class="paragraph-P12">
                         <a id="103"></a><span class="text-T1">El Ciclo de la Ca&iacute;da</span>
                     </h2>
-                    <p> </p>
+                    <p></p>
                     <p class="paragraph-Text_20_body">
                         <span class="text-Emphasis"
                             ><span class="text-T1">El proceso inevitable de ca&iacute;da y levantamiento</span></span
@@ -870,10 +821,10 @@
                     <p class="paragraph-Text_20_body">
                         <span class="text-T1">Sin adornos.<br />Sin gloria.<br />Solo por estar vivo.</span>
                     </p>
-                    <p class="paragraph-Text_20_body"> </p>
-                    <p class="paragraph-Text_20_body"> </p>
+                    <p class="paragraph-Text_20_body"></p>
+                    <p class="paragraph-Text_20_body"></p>
                     <h2 class="paragraph-P12"><a id="104"></a><span class="text-T1">El Latido Escondido</span></h2>
-                    <p> </p>
+                    <p></p>
                     <p class="paragraph-Text_20_body">
                         <span class="text-Emphasis"
                             ><span class="text-T1"
@@ -941,12 +892,12 @@
                         <span class="text-T1">Sin hero&iacute;smo.<br />Sin esc&aacute;ndalo.</span>
                     </p>
                     <p class="paragraph-Text_20_body"><span class="text-T1">Solo por estar vivo.</span></p>
-                    <p class="paragraph-Text_20_body"> </p>
-                    <p class="paragraph-Text_20_body"> </p>
+                    <p class="paragraph-Text_20_body"></p>
+                    <p class="paragraph-Text_20_body"></p>
                     <h2 class="paragraph-P12">
                         <a id="105"></a><span class="text-T1">Notas, Silencios y N&uacute;meros</span>
                     </h2>
-                    <p> </p>
+                    <p></p>
                     <p class="paragraph-Text_20_body">
                         <span class="text-Emphasis"><span class="text-T1">La conexi&oacute;n con lo simple</span></span>
                     </p>
@@ -1014,10 +965,10 @@
                             >Y cada vez, sin excepci&oacute;n, ese gesto me devuelve a m&iacute; mismo.</span
                         >
                     </p>
-                    <p class="paragraph-Text_20_body"> </p>
-                    <p class="paragraph-P10"> </p>
+                    <p class="paragraph-Text_20_body"></p>
+                    <p class="paragraph-P10"></p>
                     <h2 class="paragraph-P6"><a id="106"></a><span class="text-T1">El Rumbo y el Instante</span></h2>
-                    <p class="paragraph-P10"> </p>
+                    <p class="paragraph-P10"></p>
                     <p class="paragraph-Standard">
                         <span class="text-T1"
                             >Con el tiempo descubr&iacute; que perder el rumbo no ocurre de golpe.<br />No es un gran
@@ -1044,10 +995,10 @@
                             recorrido que construyes, instante a instante.</span
                         >
                     </p>
-                    <p class="paragraph-Standard"> </p>
-                    <p class="paragraph-Standard"> </p>
+                    <p class="paragraph-Standard"></p>
+                    <p class="paragraph-Standard"></p>
                     <h2 class="paragraph-P14"><a id="107"></a><span class="text-T1">La Sombra y la Luz</span></h2>
-                    <p class="paragraph-P10"> </p>
+                    <p class="paragraph-P10"></p>
                     <p class="paragraph-Standard">
                         <span class="text-T1"
                             >La sombra no es enemiga de la luz.<br />No es su opuesto.<br />Es su consecuencia.<br /><br />Sin
@@ -1068,10 +1019,10 @@
                             entonces, la sombra deja de ser amenaza y se convierte en aliada.</span
                         >
                     </p>
-                    <p class="paragraph-Standard"> </p>
-                    <p class="paragraph-Standard"> </p>
+                    <p class="paragraph-Standard"></p>
+                    <p class="paragraph-Standard"></p>
                     <h2 class="paragraph-P6"><a id="108"></a><span class="text-T1">El Saber Que Permanece</span></h2>
-                    <p class="paragraph-P10"> </p>
+                    <p class="paragraph-P10"></p>
                     <p class="paragraph-P15">
                         <span class="text-T1"
                             >Despu&eacute;s de todo lo pensado, vivido y aprendido, el verdadero saber se resume en
@@ -1148,7 +1099,8 @@
                         title="Compartir en Bluesky"
                         aria-label="Compartir en Bluesky">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12.008 7.26c1.26-1.694 3.065-3.684 5.168-4.93C19.342.822 21.744.822 21.744 3.358c0 .455-.092.91-.183 1.365-.909 4.549-2.268 8.645-4.537 10.794-2.176 2.057-4.445 1.148-4.537.546-.092-.455-.092-.91.183-1.364 1.177-1.819 2.36-4.322 2.269-6.287.091-1.148-.183-2.3-.5-3.315z M11.992 7.26c-1.26-1.694-3.065-3.684-5.168-4.93C4.658.822 2.256.822 2.256 3.358c0 .455.092.91.183 1.365.909 4.549 2.268 8.645 4.537 10.794 2.176 2.057 4.445 1.148 4.537.546.092-.455.092-.91-.183-1.364-1.177-1.819 2.36-4.322 2.269-6.287-.091-1.148.183-2.3.5-3.315z"/>
+                            <path
+                                d="M12.008 7.26c1.26-1.694 3.065-3.684 5.168-4.93C19.342.822 21.744.822 21.744 3.358c0 .455-.092.91-.183 1.365-.909 4.549-2.268 8.645-4.537 10.794-2.176 2.057-4.445 1.148-4.537.546-.092-.455-.092-.91.183-1.364 1.177-1.819 2.36-4.322 2.269-6.287.091-1.148-.183-2.3-.5-3.315z M11.992 7.26c-1.26-1.694-3.065-3.684-5.168-4.93C4.658.822 2.256.822 2.256 3.358c0 .455.092.91.183 1.365.909 4.549 2.268 8.645 4.537 10.794 2.176 2.057 4.445 1.148 4.537.546.092-.455.092-.91-.183-1.364-1.177-1.819 2.36-4.322 2.269-6.287-.091-1.148.183-2.3.5-3.315z" />
                         </svg>
                     </a>
                 </nav>
@@ -1231,13 +1183,7 @@
                 title="Restablecer (Alt + R)">
                 ↺
             </button>
-            <button
-                id="tts-pause"
-                class="accessibility-btn"
-                aria-label="Pausar/reanudar lectura por voz"
-                title="Pausa suave (Alt + P)">
-                ⏸️
-            </button>
         </div>
+        <script src="../../scr/js/indice-hover.js"></script>
     </body>
 </html>

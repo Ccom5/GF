@@ -15,6 +15,7 @@ class TextToSpeechSystem {
         this.utterance = null;
         this.isPlaying = false;
         this.currentIcon = null;
+        this.currentChapterLink = null;
         this.currentText = '';
         this.voices = [];
         this.preferredVoice = null;
@@ -70,15 +71,15 @@ class TextToSpeechSystem {
     }
 
     setupChapterIcons() {
-        // Solo ejecutar en la página de crónicas
-        if (!window.location.pathname.includes('cronicas.html')) return;
+        // Ejecutar en páginas de libros (cronicas.html y saber.html)
+        if (!window.location.pathname.includes('cronicas.html') && !window.location.pathname.includes('saber.html')) return;
 
-        // Agregar iconos de voz a los enlaces de capítulos en el menú lateral
+        // Agregar funcionalidad de voz directamente a los enlaces de capítulos
         const chapterLinks = document.querySelectorAll('.book-sidebar a[href^="#"], .chapter-index a[href^="#"]');
         
         chapterLinks.forEach(link => {
             const targetId = link.getAttribute('href').substring(1); // Remover el #
-            this.addVoiceIcon(link, targetId, 'chapter');
+            this.addChapterClickHandler(link, targetId);
         });
 
         // Agregar iconos a elementos con contenido específico si existen
@@ -90,11 +91,75 @@ class TextToSpeechSystem {
         });
     }
 
+    addChapterClickHandler(link, targetId) {
+        // Agregar clase para identificar enlaces con voz
+        link.classList.add('tts-enabled');
+        
+        // Añadir estilos visuales para indicar que tiene funcionalidad de voz
+        link.style.transition = 'all 0.3s ease';
+        
+        // Evento hover para indicar funcionalidad
+        link.addEventListener('mouseenter', () => {
+            if (!link.classList.contains('tts-playing') && !link.classList.contains('tts-paused')) {
+                link.style.backgroundColor = 'rgba(34, 197, 94, 0.1)';
+                link.style.borderRadius = '4px';
+                link.style.padding = '2px 6px';
+                link.style.transform = 'translateX(2px)';
+            }
+            link.setAttribute('title', 'Click para leer este capítulo con voz');
+        });
+        
+        link.addEventListener('mouseleave', () => {
+            if (!link.classList.contains('tts-playing') && !link.classList.contains('tts-paused')) {
+                link.style.backgroundColor = '';
+                link.style.padding = '';
+                link.style.transform = '';
+            }
+        });
+        
+        // Evento click principal
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            this.handleChapterClick(link, targetId);
+        });
+    }
+    
+    handleChapterClick(link, targetId) {
+        // Si ya está reproduciendo este capítulo, pausar
+        if (this.isPlaying && this.currentChapterLink === link) {
+            this.stopReading();
+            return;
+        }
+        
+        // Si está reproduciendo otro capítulo, detener
+        if (this.isPlaying) {
+            this.stopReading();
+        }
+        
+        // Establecer el enlace actual
+        this.currentChapterLink = link;
+        
+        // Obtener el texto del capítulo
+        const textToRead = this.getCleanedTextForTarget(targetId, 'chapter');
+        
+        if (textToRead) {
+            // Navegar al capítulo
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+            
+            // Iniciar lectura
+            this.startReading(textToRead);
+        }
+    }
+
     addVoiceIcon(element, targetId, type) {
         // Crear icono de voz
         const voiceIcon = document.createElement('button');
         voiceIcon.className = 'voice-icon';
-        voiceIcon.innerHTML = '🔊';
+        voiceIcon.innerHTML = '';
         voiceIcon.setAttribute('aria-label', 'Reproducir con voz');
         voiceIcon.setAttribute('title', 'Reproducir con voz');
         voiceIcon.dataset.targetId = targetId;
@@ -207,8 +272,25 @@ class TextToSpeechSystem {
 
         // Leer hasta encontrar el siguiente capítulo (h2) o fin del contenido
         while (currentElement && currentElement.tagName !== 'H2') {
-            if (currentElement.textContent.trim()) {
-                text += currentElement.textContent + ' ';
+            // Excluir elementos de navegación y UI
+            if (currentElement.textContent.trim() && 
+                !currentElement.classList.contains('voice-container') &&
+                !currentElement.classList.contains('voice-icon') &&
+                !currentElement.classList.contains('tts-icon-placeholder')) {
+                
+                // Añadir pausas naturales para diferentes tipos de elementos
+                const tagName = currentElement.tagName.toLowerCase();
+                let elementText = currentElement.textContent.trim();
+                
+                if (tagName === 'h3' || tagName === 'h4') {
+                    text += elementText + '. ';
+                } else if (tagName === 'p' || tagName === 'blockquote') {
+                    text += elementText + ' ';
+                } else if (tagName === 'li') {
+                    text += elementText + '. ';
+                } else {
+                    text += elementText + ' ';
+                }
             }
             currentElement = currentElement.nextElementSibling;
         }
@@ -331,6 +413,9 @@ class TextToSpeechSystem {
                 if (this.currentIcon) {
                     this.updateIconState(this.currentIcon, 'playing');
                 }
+                if (this.currentChapterLink) {
+                    this.updateChapterLinkState(this.currentChapterLink, 'playing');
+                }
                 document.dispatchEvent(new CustomEvent('tts-started'));
             }
         };
@@ -373,6 +458,9 @@ class TextToSpeechSystem {
             if (this.currentIcon) {
                 this.updateIconState(this.currentIcon, 'playing');
             }
+            if (this.currentChapterLink) {
+                this.updateChapterLinkState(this.currentChapterLink, 'playing');
+            }
             document.dispatchEvent(new CustomEvent('tts-started'));
         };
 
@@ -402,6 +490,16 @@ class TextToSpeechSystem {
             }
             this.currentIcon = null;
         }
+        
+        if (this.currentChapterLink) {
+            if (isError) {
+                this.updateChapterLinkState(this.currentChapterLink, 'error');
+            } else {
+                this.updateChapterLinkState(this.currentChapterLink, 'stopped');
+            }
+            this.currentChapterLink = null;
+        }
+        
         document.dispatchEvent(new CustomEvent('tts-stopped'));
     }
 
@@ -411,6 +509,9 @@ class TextToSpeechSystem {
             this.isPlaying = false;
             if (this.currentIcon) {
                 this.updateIconState(this.currentIcon, 'paused');
+            }
+            if (this.currentChapterLink) {
+                this.updateChapterLinkState(this.currentChapterLink, 'paused');
             }
             document.dispatchEvent(new CustomEvent('tts-stopped'));
         }
@@ -426,7 +527,11 @@ class TextToSpeechSystem {
         if (this.currentIcon) {
             this.updateIconState(this.currentIcon, 'stopped');
         }
+        if (this.currentChapterLink) {
+            this.updateChapterLinkState(this.currentChapterLink, 'stopped');
+        }
         this.currentIcon = null;
+        this.currentChapterLink = null;
         this.utterance = null;
         this.currentText = '';
         document.dispatchEvent(new CustomEvent('tts-stopped'));
@@ -449,7 +554,7 @@ class TextToSpeechSystem {
                 break;
             case 'paused':
             case 'stopped':
-                icon.innerHTML = '🔊';
+                icon.innerHTML = '';
                 icon.style.backgroundColor = 'transparent';
                 icon.style.transform = 'scale(1)';
                 icon.setAttribute('title', 'Reproducir con voz');
@@ -460,6 +565,47 @@ class TextToSpeechSystem {
                 icon.setAttribute('title', 'Error en reproducción');
                 setTimeout(() => {
                     this.updateIconState(icon, 'stopped');
+                }, 2000);
+                break;
+        }
+    }
+    
+    updateChapterLinkState(link, state) {
+        // Remover clases previas
+        link.classList.remove('tts-playing', 'tts-paused', 'tts-stopped', 'tts-error');
+        
+        // Agregar nueva clase
+        link.classList.add(`tts-${state}`);
+        
+        // Actualizar estilos visuales
+        switch (state) {
+            case 'playing':
+                link.style.backgroundColor = 'rgba(34, 197, 94, 0.2)';
+                link.style.borderRadius = '4px';
+                link.style.padding = '2px 6px';
+                link.style.fontWeight = 'bold';
+                link.setAttribute('title', 'Reproduciendo... Click para pausar');
+                break;
+            case 'paused':
+                link.style.backgroundColor = 'rgba(255, 193, 7, 0.2)';
+                link.style.borderRadius = '4px';
+                link.style.padding = '2px 6px';
+                link.style.fontWeight = 'bold';
+                link.setAttribute('title', 'Pausado - Click para continuar');
+                break;
+            case 'stopped':
+                link.style.backgroundColor = '';
+                link.style.padding = '';
+                link.style.fontWeight = '';
+                link.setAttribute('title', 'Click para leer este capítulo');
+                break;
+            case 'error':
+                link.style.backgroundColor = 'rgba(239, 68, 68, 0.2)';
+                link.style.borderRadius = '4px';
+                link.style.padding = '2px 6px';
+                link.setAttribute('title', 'Error en reproducción');
+                setTimeout(() => {
+                    this.updateChapterLinkState(link, 'stopped');
                 }, 2000);
                 break;
         }
@@ -487,6 +633,7 @@ class TextToSpeechSystem {
             this.stopReading();
         }
         this.currentIcon = null; // No hay icono específico para las tarjetas
+        this.currentChapterLink = null; // No hay enlace de capítulo para las tarjetas
         this.startReading(this.cleanText(text));
     }
 
