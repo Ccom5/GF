@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lenguaje, identidad y cultura social - Blog - RESONANCIAS</title>
+        <meta
+            name="description"
+            content="Una charla entre signos sobre cómo las palabras construyen nuestra realidad social." />
+
+        <!-- SEO y Accesibilidad -->
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Gabriel Ferré" />
+        <meta name="keywords" content="lenguaje, identidad, cultura social, filosofía, comunicación" />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Lenguaje, identidad y cultura social - Blog - RESONANCIAS" />
+        <meta
+            property="og:description"
+            content="Una charla entre signos sobre cómo las palabras construyen nuestra realidad social." />
+        <meta property="og:image" content="https://gf-amd.pages.dev/img/vestido-letras.jpg" />
+        <meta property="og:url" content="https://gf-amd.pages.dev/pages/blog-lenguaje.html" />
+        <meta property="og:type" content="article" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Lenguaje, identidad y cultura social - Blog - RESONANCIAS" />
+        <meta
+            name="twitter:description"
+            content="Una charla entre signos sobre cómo las palabras construyen nuestra realidad social." />
+        <meta name="twitter:image" content="https://gf-amd.pages.dev/img/vestido-letras.jpg" />
+
+        <!-- Favicon -->
+        <link rel="icon" href="../img/favicon.png" type="image/png" />
+
+        <!-- Estilos -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../scr/styles/main.css" />
+        <link rel="stylesheet" href="../scr/styles/voice.css" />
+
+        <!-- Scripts -->
+        <script src="../scr/js/accessibility.js" defer></script>
+        <script src="../scr/js/main.js" defer></script>
+        <script src="../scr/js/voice/textToSpeech.js" defer></script>
+
+        <!-- Estilos responsivos para el layout del artículo -->
+        <style>
+            @media (max-width: 768px) {
+                .article-layout {
+                    flex-direction: column !important;
+                    gap: var(--spacing-lg) !important;
+                }
+                .image-card {
+                    position: relative !important;
+                    top: auto !important;
+                    width: 100% !important;
+                    min-width: auto !important;
+                    margin-bottom: var(--spacing-lg) !important;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Skip to main content -->
+        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="nav-container">
+                <a href="../index.html" class="logo" aria-label="RESONANCIAS - Inicio">
+                    <img src="../img/logo.png" alt="Logo RESONANCIAS" width="40" height="40" />
+                </a>
+
+                <!-- Navegación principal -->
+                <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+                    <a href="../index.html">Inicio</a>
+                    <a href="obras.html">Libros</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="quien-soy.html">Quién soy</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+
+                <!-- Redes sociales y búsqueda -->
+                <div class="social-nav">
+                    <div class="search-container">
+                        <button id="searchToggle" class="search-toggle" aria-label="Buscar" aria-expanded="false">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    <div class="social-links">
+                        <a
+                            href="https://www.facebook.com/profile.php?id=100088341563677"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Facebook">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a
+                            href="https://x.com/Miguel_CCom5"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="X (Twitter)">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a
+                            href="https://www.youtube.com/@Gabriel-Ferre-v3l"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Botón menú móvil -->
+                <button
+                    class="hamburger-btn"
+                    aria-label="Menú de navegación"
+                    aria-expanded="false"
+                    aria-controls="sideMenu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Menú lateral móvil -->
+        <aside class="side-menu" id="sideMenu" role="navigation" aria-label="Menú de navegación lateral">
+            <div class="menu-header">
+                <h2 class="menu-title">Navegación</h2>
+                <button class="close-btn" aria-label="Cerrar menú">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Menú tipo acordeón -->
+            <div class="accordion-menu">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="../index.html" class="accordion-link">
+                            <i class="fa-solid fa-house"></i>
+                            Inicio
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="obras.html" class="accordion-link">
+                            <i class="fa-solid fa-book"></i>
+                            Libros
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="blog.html" class="accordion-link">
+                            <i class="fa-solid fa-blog"></i>
+                            Blog
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="quien-soy.html" class="accordion-link">
+                            <i class="fa-solid fa-user"></i>
+                            Quién soy
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="contacto.html" class="accordion-link">
+                            <i class="fa-solid fa-envelope"></i>
+                            Contacto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Overlay para menú -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+        <section
+            class="works-hero"
+            style="
+                margin-top: 0 !important;
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                    url(&quot;../img/nota-IA.jpg &quot;);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                color: var(--color-light);
+                padding: var(--spacing-3xl) 0;
+                text-align: center;
+                min-height: 400px;
+                display: flex;
+                align-items: center;
+            ">
+            <div class="container">
+                <h1
+                    style="
+                        font-size: var(--font-size-4xl);
+                        margin-bottom: var(--spacing-lg);
+                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                    ">
+                    Necesitamos Humanidad
+                </h1>
+                <p
+                    style="
+                        font-size: var(--font-size-xl);
+                        max-width: 600px;
+                        margin: 0 auto;
+                        line-height: 1.6;
+                        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+                    ">
+                    Antes que IA
+                </p>
+            </div>
+        </section>
+        <!-- Contenido principal -->
+        <main id="main-content" role="main">
+            <!-- Artículo principal -->
+            <div class="content-card">
+                <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+                    <div class="container" style="max-width: 800px; margin: 0 auto">
+                        <!-- Header del artículo -->
+                        <header class="post-header" style="text-align: center; margin-bottom: var(--spacing-2xl)">
+                            <h1
+                                style="
+                                    font-size: var(--font-size-3xl);
+                                    color: var(--color-dark);
+                                    margin-bottom: var(--spacing-lg);
+                                ">
+                                Título
+                            </h1>
+                            <div
+                                class="post-meta"
+                                style="
+                                    display: flex;
+                                    justify-content: center;
+                                    gap: var(--spacing-lg);
+                                    color: var(--color-neutral);
+                                    font-size: var(--font-size-sm);
+                                    flex-wrap: wrap;
+                                ">
+                                <time datetime="2025-08">Agosto 2025</time>
+                                <span>· Gabriel Ferré</span>
+                                <span>· 3 min de lectura</span>
+                            </div>
+                        </header>
+
+                        <!-- Contenido del artículo -->
+                        <div
+                            class="article-layout"
+                            style="display: flex; gap: var(--spacing-xl); align-items: flex-start">
+                            <div class="article-content" style="flex: 1; line-height: 1.5; color: var(--color-dark)">
+                                <p
+                                    id="intro-paragraph"
+                                    style="
+                                        font-size: var(--font-size-lg);
+                                        margin-bottom: var(--spacing-2xl);
+                                        color: var(--color-warm);
+                                        font-style: italic;
+                                        position: relative;
+                                    ">
+                                    <!-- texto del artículo -->
+                                </p>
+
+                                <h1>Antes de la inteligencia artificial, necesitamos humanidad</h1>
+                                <br />
+                                <br />
+                                <h3>La IA en Argentina: ¿progreso para pocos o esperanza para todos?</h3>
+                                <br />
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    Estaba leyendo que la inteligencia artificial podría aportar miles de millones de
+                                    dólares al desarrollo económico de países de la región. En Chile, por ejemplo, se
+                                    habla de un crecimiento anual del 1,21% —unos 3.381 millones de dólares— gracias a
+                                    la IA. Suena futurista. Prometedor. Pero mientras leía eso desde mi escritorio, con
+                                    wifi estable y dos pantallas, no pude evitar acordarme de un lugar muy distinto.
+                                </p>
+                                <p></p>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    Un lugar sin luz. Sin cloacas. Sin red eléctrica. Sin señal de celular.<br />Un
+                                    lugar a 4.000 metros de altura, en lo alto de los Andes, donde el viento corta la
+                                    cara y el oxígeno escasea.<br />La escuela de Alto de Anfama.
+                                </p>
+                                <p></p>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    Hace algunos años, fuimos hasta allá con un grupo de voluntarios. No era una misión
+                                    tecnológica ni científica, era simplemente un intento de ayudar. La escuela era el
+                                    único edificio construido con materiales sólidos; el resto eran viviendas de adobe y
+                                    chapa. Era el núcleo social del pueblo. Allí se enseñaba, se votaba, se reunía la
+                                    comunidad. Pero no había electricidad. Ni internet. Ni siquiera un cargador de
+                                    celular que funcionara con regularidad.
+                                </p>
+                                <p></p>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    Logramos instalar un panel solar mejorado para que al menos pudieran tener algo de
+                                    energía para luces y una radio. Y, con mucho esfuerzo, pusimos una radio de onda
+                                    corta y OM** para que, en caso de emergencia —un parto, una enfermedad grave, una
+                                    tormenta— pudieran comunicarse con la ciudad más cercana. Fue un triunfo. Un avance.
+                                    Pero cuando alguien sugirió llevar una computadora, todos nos miramos en silencio.
+                                </p>
+
+                                <p>
+                                    ¿Para qué?<br />No había forma de mantenerla encendida.<br />No había conexión.<br />No
+                                    había soporte técnico a 150 kilómetros a la redonda.
+                                </p>
+                                <p></p>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    Y entonces me di cuenta: mientras en Buenos Aires o en Córdoba se discute cómo usar
+                                    IA para optimizar campañas publicitarias o automatizar procesos bancarios,
+                                    <strong
+                                        >en lugares como Alto de Anfama, ni siquiera existe la posibilidad de soñar con
+                                        tecnología básica</strong
+                                    >
+                                </p>
+                                <br />
+                                <hr />
+                                <h3>Antes de la inteligencia artificial, necesitamos electricidad y dignidad</h3>
+                                <p></p>
+                                <p style="margin-bottom: var(--spacing-md)"></p>
+                                <p>
+                                    No podemos hablar de IA como si fuera un paso natural. Para muchos argentinos, ese
+                                    paso ni siquiera está en el mapa. Hablar de inteligencia artificial en un país donde
+                                    miles de escuelas no tienen luz, conexión o calefacción suena casi como una burla.
+                                    Primero hay que garantizar lo elemental. La tecnología no llega por arte de magia:
+                                    llega sobre cimientos. Y muchos de esos cimientos aún no existen.
+                                </p>
+                                <br />
+                                <h3>La automatización viene… pero ¿para quiénes?</h3>
+                                <br />
+                                <p>
+                                    Sí, la IA va a transformar el trabajo. Ya lo está haciendo. Pero en Argentina, donde
+                                    el empleo informal ronda el 40%, y donde muchas personas viven al día, automatizar
+                                    sin plan ni protección social es sinónimo de exclusión. Si no hay políticas de
+                                    reconversión, formación técnica o acompañamiento estatal, la IA no será progreso:
+                                    será otro muro entre los que tienen y los que no.
+                                </p>
+                                <br />
+                                <img
+                                    src="../img/nota-IA.jpg"
+                                    alt="Infografía sobre crónicas de literatura"
+                                    style="
+                                        width: 100%;
+                                        height: auto;
+                                        max-height: 600px;
+                                        object-fit: contain;
+                                        border-radius: 8px;
+                                        margin-bottom: var(--spacing-md);
+                                    " />
+                                <br />
+                                <h3>¿Y si usáramos la IA para cerrar brechas, no para ampliarlas?</h3>
+                                <p>
+                                    <br />
+                                    Imaginate que en vez de usar modelos de IA para vender más seguros o detectar
+                                    fraudes bancarios, los usáramos para que una maestra en una escuela de 2 maestros,
+                                    como la de Anfama, pudiera tener un asistente pedagógico virtual. Algo que le
+                                    sugiera actividades, adapte contenidos, traduzca textos o incluso funcione sin
+                                    internet.<br />O que un centro de salud rural pudiera contar con un sistema que
+                                    ayude a diagnosticar enfermedades con solo una foto y una descripción.<br />Esa es
+                                    la IA que necesitamos: no la que optimiza ganancias, sino la que salva vidas.
+                                </p>
+                                <br />
+                                <h3>Tenemos talento, pero falta visión y compromiso</h3>
+                                <p>
+                                    <br />
+                                    Argentina tiene mentes brillantes. Desarrolladores, científicos, docentes que
+                                    podrían estar a la vanguardia de una IA con identidad propia. Pero si solo usamos
+                                    ese talento para servir al mercado global o para replicar modelos extranjeros,
+                                    perdemos la oportunidad de construir tecnología con sentido local. Una IA que
+                                    entienda el quechua, el aymara, el guaraní. Que sepa que no todos tienen 4G, que
+                                    muchos aprenden en aulas sin calefacción, que el frío en la Puna no es un dato
+                                    climático: es una condición de supervivencia.
+                                </p>
+                                <br />
+                                <h3>La pregunta no es “¿tenemos IA?”, sino “¿para quién es la IA?”</h3>
+                                <p>
+                                    <br />
+                                    Porque si seguimos por este camino, la inteligencia artificial no va a unificar. Va
+                                    a dividir aún más. Entre los que entienden el código y los que ni siquiera tienen
+                                    una toma de corriente.<br />Pero también puede ser al revés.<br />Puede ser una
+                                    maestra cuando no hay maestros.<br />Un médico cuando no hay hospitales.<br />Una
+                                    voz cuando no hay señal.
+                                </p>
+                                <p>
+                                    Pero solo si decidimos, <strong>desde ya</strong>, que la tecnología no es un
+                                    privilegio de unos pocos, sino un derecho de todos.
+                                </p>
+                                <br />
+                                <br />
+                                <hr />
+                                <h3>Cierro con lo que vi en Anfama</h3>
+                                <p>
+                                    <br />
+                                    Cuando nos fuimos, la maestra nos agradeció las baterías, el panel, la radio. Dijo
+                                    que ahora, al menos, si un niño se enfermaba, podrían pedir ayuda.<br />Me
+                                    emocionó.<br />Y también me dolió.<br />Porque en esta década, en un país con tantos
+                                    científicos y talento, que eso sea un logro… dice mucho.<br />Pero también me hizo
+                                    pensar:<br />¿Qué pasaría si en vez de llevar paneles, lleváramos herramientas que
+                                    multiplicaran su fuerza?<br />No computadoras que no pueden usar, sino tecnología
+                                    liviana, accesible, pensada para su realidad?
+                                </p>
+                                <p></p>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    Yo sueño con una Argentina donde la inteligencia artificial no sirva para hacer más
+                                    ricos a los que ya tienen, sino para que un niño en la Puna termine la primaria.<br />Para
+                                    que una comunidad aislada pueda pedir ayuda sin tener que bajar caminando por la
+                                    montaña.<br />Para que la educación no dependa de si hay luz o no.
+                                </p>
+                                <p></p>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    No es utopía.<br />Es una decisión.<br />Política.<br />Ética.<br />Y, sobre todo,
+                                    humana.
+                                </p>
+
+                                <!-- texto del artículo -->
+                            </div>
+                        </div>
+                        <section
+                            class="blog-subscription"
+                            style="
+                                margin-top: var(--spacing-3xl);
+                                background: var(--color-mid);
+                                padding: var(--spacing-2xl);
+                                border-radius: 12px;
+                                text-align: center;
+                            ">
+                            <nav class="share-footer" aria-label="Compartir página">
+                                <a
+                                    href="https://www.facebook.com/sharer/sharer.php?u=https://resonancias.netlify.app/pages/obras.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn facebook"
+                                    title="Compartir en Facebook"
+                                    aria-label="Compartir en Facebook">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                                <a
+                                    href="https://twitter.com/intent/tweet?url=https://resonancias.netlify.app/pages/obras.html&text=Obras%20del%20Autor%20-%20RESONANCIAS"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn twitter"
+                                    title="Compartir en X"
+                                    aria-label="Compartir en X">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+
+                                <a
+                                    href="https://api.whatsapp.com/send?text=Obras%20del%20Autor%20-%20RESONANCIAS%20https://resonancias.netlify.app/pages/obras.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn whatsapp"
+                                    title="Compartir en WhatsApp"
+                                    aria-label="Compartir en WhatsApp">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                                <a
+                                    href="https://bsky.app/intent/compose?text=Obras%20del%20Autor%20-%20RESONANCIAS%20https://resonancias.netlify.app/pages/obras.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn bluesky"
+                                    title="Compartir en Bluesky"
+                                    aria-label="Compartir en Bluesky">
+                                    <i class="fa-brands fa-bluesky"></i>
+                                </a>
+                            </nav>
+                            <h3
+                                style="
+                                    color: var(--color-dark);
+                                    margin-bottom: var(--spacing-md);
+                                    font-size: var(--font-size-2xl);
+                                ">
+                                Comparte en tus redes
+                            </h3>
+                            <h4>Suscribete</h4>
+
+                            <p
+                                style="
+                                    color: var(--color-warm);
+                                    margin-bottom: var(--spacing-xl);
+                                    max-width: 500px;
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                    line-height: 1.6;
+                                ">
+                                Recibe notificaciones cuando publique nuevos ensayos y reflexiones. Sin spam, solo
+                                contenido de calidad.
+                            </p>
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    gap: var(--spacing-md);
+                                    max-width: 400px;
+                                    margin: 0 auto;
+                                    flex-wrap: wrap;
+                                ">
+                                <a
+                                    href="contacto.html"
+                                    style="
+                                        background: var(--color-secondary);
+                                        color: var(--color-light);
+                                        border: none;
+                                        padding: var(--spacing-md) var(--spacing-xl);
+                                        border-radius: 8px;
+                                        font-weight: 600;
+                                        text-decoration: none;
+                                        cursor: pointer;
+                                        transition: all var(--transition-fast);
+                                        display: inline-flex;
+                                        align-items: center;
+                                        gap: var(--spacing-sm);
+                                    "
+                                    onmouseover="this.style.background='var(--color-warm)'; this.style.transform='translateY(-2px)'"
+                                    onmouseout="this.style.background='var(--color-secondary)'; this.style.transform='translateY(0)'">
+                                    <svg
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                    Contáctame
+                                </a>
+                            </div>
+                            <p
+                                style="
+                                    font-size: var(--font-size-sm);
+                                    color: var(--color-neutral);
+                                    margin-top: var(--spacing-md);
+                                ">
+                                * Puedes darte de baja en cualquier momento
+                            </p>
+                        </section>
+                        <!-- Footer del artículo -->
+
+                        <footer
+                            style="
+                                margin-top: var(--spacing-2xl);
+                                padding-top: var(--spacing-xl);
+                                border-top: 1px solid var(--color-mid);
+                            ">
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    flex-wrap: wrap;
+                                    gap: var(--spacing-md);
+                                ">
+                                <div>
+                                    <p style="color: var(--color-neutral); font-size: var(--font-size-sm); margin: 0">
+                                        Publicado el <time datetime="2025-01">Enero 2025</time>
+                                    </p>
+                                </div>
+                                <div style="display: flex; gap: var(--spacing-sm)">
+                                    <a
+                                        href="blog.html"
+                                        style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                                        ← Volver al blog
+                                    </a>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content">
+                <p>
+                    <a href="../index.html" class="footer-logo-link">
+                        <img src="../img/logo2_footer.png" alt="Logo RESONANCIAS" width="90" height="40" />
+                    </a>
+                    © 2025 RESONANCIAS · Todos los derechos reservados
+                </p>
+            </div>
+        </footer>
+
+        <!-- Controles de accesibilidad flotantes -->
+        <div
+            id="accessibility-controls"
+            class="accessibility-floating"
+            role="toolbar"
+            aria-label="Controles de accesibilidad">
+            <button
+                id="increase-font"
+                class="accessibility-btn"
+                aria-label="Aumentar tamaño de fuente"
+                title="Aumentar texto">
+                A+
+            </button>
+            <button
+                id="decrease-font"
+                class="accessibility-btn"
+                aria-label="Disminuir tamaño de fuente"
+                title="Disminuir texto">
+                A-
+            </button>
+            <button
+                id="high-contrast"
+                class="accessibility-btn"
+                aria-label="Activar alto contraste"
+                title="Alto contraste (Alt + C)">
+                ◐
+            </button>
+            <button
+                id="reset-settings"
+                class="accessibility-btn"
+                aria-label="Restablecer configuración"
+                title="Restablecer (Alt + R)">
+                ↺
+            </button>
+            <button
+                id="tts-pause"
+                class="accessibility-btn"
+                aria-label="Pausar/reanudar lectura por voz"
+                title="Pausa suave (Alt + P)">
+                ⏸️
+            </button>
+        </div>
+    </body>
+</html>
