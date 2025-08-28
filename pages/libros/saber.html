@@ -345,7 +345,7 @@
 
                 <ul class="list-unstyled" id="lista-saber" style="padding: 0">
                     <li style="margin-bottom: var(--spacing-sm)">
-                        <a href="#1" class="indice-link" style="
+                        <a href="#100" class="indice-link" style="
                                 color: var(--color-dark);
                                 text-decoration: none;
                                 font-weight: 600;
@@ -424,7 +424,7 @@
                     </h1>
                     <br>
 
-                    <h2 id="100">Carcel Inventada.</h2>
+                    <h2 id="100" class="paragraph-P11"><span class="text-T1">Carcel Inventada.</span></h2>
                     <p>
                         <br>
                         <span class="text-T1">En esta cárcel sin barrotes, donde las paredes no son de piedra ni de hierro, sino
@@ -881,8 +881,29 @@
             <button id="reset-settings" class="accessibility-btn" aria-label="Restablecer configuración" title="Restablecer (Alt + R)">
                 ↺
             </button>
+            <button id="tts-pause" class="accessibility-btn" aria-label="Pausar/reanudar lectura por voz" title="Pausa suave (Alt + P)">
+                ⏸️
+            </button>
         </div>
         <script src="../../scr/js/indice-hover.js"></script>
     
 
+                <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Add data-tts-chapter to chapter links
+    document.querySelectorAll('.book-sidebar a[href^="#"], .chapter-index a[href^="#"]').forEach(element => {
+        element.setAttribute('data-tts-chapter', '');
+    });
+
+    // Add data-tts-paragraph to paragraphs
+    const bookContent = document.querySelector('.book-content');
+    if (bookContent) {
+        const paragraphs = bookContent.querySelectorAll('p');
+        paragraphs.forEach((p) => {
+            p.setAttribute('data-tts-paragraph', '');
+        });
+    }
+});
+</script>
+        <script src="../../scr/js/voice/textToSpeech.js" defer></script>
 </body></html>

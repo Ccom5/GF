@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>SEO & Accesibilidad Helper (Local)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* === Dark theme fijo === */
+    :root {
+      --bg: #121212;
+      --panel: #1e1e1e;
+      --text: #e0e0e0;
+      --muted: #bdbdbd;
+      --border: #333;
+      --accent: #4fc3f7;
+      --ok: #80e27e;
+      --warn: #ffb74d;
+      --err: #ef5350;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      margin: 20px;
+      background: var(--bg);
+      color: var(--text);
+    }
+    h1, h2 { margin: 10px 0; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+    }
+    textarea, pre, input[type="text"] {
+      width: 100%;
+      background: #171717;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px;
+    }
+    pre { white-space: pre-wrap; word-wrap: break-word; max-height: 420px; overflow: auto; }
+    button {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: #222;
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 6px 6px 0 0;
+    }
+    button:hover { background: #2a2a2a; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul { list-style: none; padding-left: 0; margin: 6px 0; }
+    li { margin: 4px 0; }
+    .ok { color: var(--ok); }
+    .warn { color: var(--warn); }
+    .error { color: var(--err); }
+
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid var(--border); padding: 6px 8px; text-align: center; }
+    th { background: #262626; }
+
+    .small { color: var(--muted); font-size: 0.9rem; }
+    #errors { white-space: pre-wrap; }
+    .filelist { max-height: 240px; overflow: auto; }
+    @media (max-width: 960px){ .row{ grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <h1>SEO & Accesibilidad Helper (Local)</h1>
+  <p class="small">Tip: abrilo desde <code>http://localhost</code> (no <code>file:///</code>). Si tu server no lista directorios, usa “Seleccionar carpeta del blog”.</p>
+
+  <div class="row">
+    <div class="panel">
+      <h2>Entrada</h2>
+      <input type="file" id="fileInput" />
+      <div style="margin-top:8px;">
+        <button id="btnAnalizar">Analizar y Corregir (textarea)</button>
+        <button id="btnDescargar">Descargar HTML Corregido</button>
+      </div>
+      <textarea id="htmlInput" placeholder="Pega aquí tu HTML..."></textarea>
+    </div>
+
+    <div class="panel">
+      <h2>Explorar Blog</h2>
+      <div>
+        <input type="text" id="rutaBlog" value="/blog/" />
+        <button id="btnListarSrv">Listar (vía servidor)</button>
+        <button id="btnElegirCarpeta">Seleccionar carpeta del blog (local)</button>
+        <button id="btnAnalizarLote">Analizar todo</button>
+      </div>
+      <div class="small">Origen actual: <span id="origen">—</span></div>
+      <ul id="fileList" class="filelist"></ul>
+      <div id="errors" class="error"></div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top:16px;">
+    <div class="panel">
+      <h2>Checklist (última página)</h2>
+      <ul id="checklist"></ul>
+      <h2>HTML Corregido</h2>
+      <pre id="output"></pre>
+    </div>
+
+    <div class="panel">
+      <h2>Informe del Blog</h2>
+      <div id="blogReport"></div>
+    </div>
+  </div>
+
+  <script>
+    // ---------- Estado ----------
+    let htmlCorregido = "";
+    let archivos = [];           // Lista de archivos para lote
+    let origenArchivos = "";     // "servidor" | "carpeta"
+    let handles = [];            // FileSystemFileHandle[] si origen=carpeta
+
+    // ---------- Utilidades ----------
+    const $ = sel => document.querySelector(sel);
+    const el = (tag, props={}) => Object.assign(document.createElement(tag), props);
+    const showError = (msg) => { $("#errors").textContent = msg || ""; };
+    const setOrigen = (txt) => { origenArchivos = txt; $("#origen").textContent = txt || "—"; };
+    const ensureSlash = (p) => p.endsWith("/") ? p : (p + "/");
+
+    // Construye URL absoluta segura
+    function absURL(path){
+      try { return new URL(path, window.location.origin).toString(); }
+      catch(e){ return path; }
+    }
+
+    // Heurística para og:image: primera <img> absoluta si existe
+    function pickImageURL(doc){
+      const img = doc.querySelector("img[src]");
+      if(!img) return "";
+      try {
+        const u = new URL(img.getAttribute("src"), window.location.origin);
+        return u.toString();
+      } catch { return img.getAttribute("src"); }
+    }
+
+    // ---------- Carga de archivo manual ----------
+    $("#fileInput").addEventListener("change", (e)=>{
+      const file = e.target.files?.[0];
+      if(!file) return;
+      const reader = new FileReader();
+      reader.onload = () => { $("#htmlInput").value = String(reader.result || ""); };
+      reader.readAsText(file);
+    });
+
+    // ---------- Listar vía servidor ----------
+    $("#btnListarSrv").addEventListener("click", async ()=>{
+      showError("");
+      const ruta = ensureSlash($("#rutaBlog").value.trim() || "/blog/");
+      try {
+        const url = absURL(ruta);
+        const res = await fetch(url, { credentials: "same-origin" });
+        if(!res.ok) throw new Error(`HTTP ${res.status} al solicitar ${ruta}`);
+        const html = await res.text();
+
+        // Parsear todos los <a> que apunten a .html
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, "text/html");
+        const links = [...doc.querySelectorAll("a[href]")];
+        const found = [];
+        for(const a of links){
+          const href = a.getAttribute("href");
+          if(!href) continue;
+          if(href.endsWith("/")) continue; // carpeta
+          if(href.toLowerCase().endsWith(".html")){
+            // Normalizar ruta relativa a ruta base
+            const full = new URL(href, url).pathname;
+            found.push(full);
+          }
+        }
+
+        $("#fileList").innerHTML = "";
+        archivos = found;
+        handles = [];
+        setOrigen("servidor");
+        if(found.length === 0){
+          $("#fileList").append(el("li",{textContent:"No se encontraron .html (¿el servidor no lista o no hay enlaces a .html?)"}));
+          showError("Si tu servidor no muestra listado de carpetas, usá el botón “Seleccionar carpeta del blog”.");
+          return;
+        }
+        found.forEach(path=>{
+          const li = el("li");
+          const a = el("a",{href:"#", textContent:path});
+          a.addEventListener("click", async (ev)=>{
+            ev.preventDefault();
+            try {
+              const res = await fetch(absURL(path), { credentials: "same-origin" });
+              const txt = await res.text();
+              $("#htmlInput").value = txt;
+              analizar(); // correcciones + checklist
+            } catch(err){
+              showError("Error al cargar "+path+" → "+err.message);
+            }
+          });
+          li.append(a);
+          $("#fileList").append(li);
+        });
+      } catch(err){
+        showError("Fallo al listar vía servidor: "+err.message+"\nSugerencia: usa “Seleccionar carpeta del blog”.");
+      }
+    });
+
+    // ---------- Listar vía Sistema de Archivos (carpeta local) ----------
+    $("#btnElegirCarpeta").addEventListener("click", async ()=>{
+      showError("");
+      if(!window.showDirectoryPicker){
+        showError("Tu navegador no soporta showDirectoryPicker(). Probá con Chrome/Edge en http://localhost.");
+        return;
+      }
+      try {
+        const dirHandle = await window.showDirectoryPicker({ id: "carpeta-blog", mode: "read" });
+        archivos = [];
+        handles = [];
+        $("#fileList").innerHTML = "";
+
+        // Recorrer la carpeta (no recursivo para simplificar; podés volverlo recursivo)
+        for await (const [name, handle] of dirHandle.entries()){
+          if(handle.kind === "file" && name.toLowerCase().endsWith(".html")){
+            archivos.push(name);
+            handles.push(handle);
+          }
+        }
+
+        if(archivos.length === 0){
+          $("#fileList").append(el("li",{textContent:"No se encontraron .html en la carpeta seleccionada."}));
+        } else {
+          archivos.forEach((name,idx)=>{
+            const li = el("li");
+            const a = el("a",{href:"#", textContent:name});
+            a.addEventListener("click", async (ev)=>{
+              ev.preventDefault();
+              try {
+                const file = await handles[idx].getFile();
+                const txt = await file.text();
+                $("#htmlInput").value = txt;
+                analizar();
+              } catch(err){
+                showError("Error al leer "+name+" → "+err.message);
+              }
+            });
+            li.append(a);
+            $("#fileList").append(li);
+          });
+        }
+        setOrigen("carpeta");
+      } catch(err){
+        if(err.name !== "AbortError"){
+          showError("No se pudo acceder a la carpeta: "+err.message);
+        }
+      }
+    });
+
+    // ---------- Checklist helper ----------
+    function addChecklist(msg, type="ok"){
+      const li = el("li",{textContent: (type==="ok"?"✅ ":"⚠️ ")+msg});
+      li.className = type;
+      $("#checklist").append(li);
+    }
+
+    // ---------- Revisión “solo lectura” para el informe ----------
+    function revisarHTMLSolo(texto){
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(texto, "text/html");
+      const report = { title:false, description:false, og:[], twitter:[], lang:false, imgs:0, imgsSinAlt:0 };
+
+      const titleTag = doc.querySelector("title");
+      report.title = !!(titleTag && titleTag.textContent.trim());
+
+      const desc = doc.querySelector("meta[name='description']");
+      report.description = !!(desc && (desc.getAttribute("content")||"").trim());
+
+      ["og:title","og:description","og:image"].forEach(p=>{
+        report.og.push(!!doc.querySelector(`meta[property='${p}']`));
+      });
+
+      ["twitter:card","twitter:title","twitter:description","twitter:image"].forEach(n=>{
+        report.twitter.push(!!doc.querySelector(`meta[name='${n}']`));
+      });
+
+      report.lang = !!doc.documentElement.getAttribute("lang");
+
+      const imgs = doc.querySelectorAll("img");
+      report.imgs = imgs.length;
+      imgs.forEach(img=>{
+        const alt = img.getAttribute("alt");
+        if(!alt || !alt.trim()) report.imgsSinAlt++;
+      });
+
+      return report;
+    }
+
+    // ---------- Analizar y corregir (textarea) ----------
+    $("#btnAnalizar").addEventListener("click", analizar);
+    function analizar(){
+      showError("");
+      const input = $("#htmlInput").value || "";
+      if(!input.trim()){ showError("Pegá o cargá un HTML primero."); return; }
+
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(input, "text/html");
+      $("#checklist").innerHTML = "";
+
+      // charset y viewport mínimos
+      if(!doc.querySelector('meta[charset]')){
+        const m = doc.createElement("meta");
+        m.setAttribute("charset","utf-8");
+        doc.head.prepend(m);
+        addChecklist("Se agregó <meta charset='utf-8'>","warn");
+      } else { addChecklist("meta charset presente","ok"); }
+
+      if(!doc.querySelector('meta[name="viewport"]')){
+        const m = doc.createElement("meta");
+        m.setAttribute("name","viewport");
+        m.setAttribute("content","width=device-width, initial-scale=1");
+        doc.head.appendChild(m);
+        addChecklist("Se agregó meta viewport","warn");
+      } else { addChecklist("meta viewport presente","ok"); }
+
+      // TITLE
+      let titleTag = doc.querySelector("title");
+      if(!titleTag){
+        titleTag = doc.createElement("title");
+        titleTag.textContent = "Título sugerido";
+        doc.head.appendChild(titleTag);
+        addChecklist("Se agregó <title>","warn");
+      } else { addChecklist("<title> presente","ok"); }
+
+      // DESCRIPTION
+      let desc = doc.querySelector('meta[name="description"]');
+      if(!desc){
+        desc = doc.createElement("meta");
+        desc.setAttribute("name","description");
+        desc.setAttribute("content","Descripción sugerida de la página.");
+        doc.head.appendChild(desc);
+        addChecklist("Se agregó meta description","warn");
+      } else { addChecklist("meta description presente","ok"); }
+
+      // OG
+      const ogDefaults = {
+        "og:title": titleTag.textContent || "Título OG sugerido",
+        "og:description": desc.getAttribute("content") || "Descripción OG sugerida",
+        "og:image": pickImageURL(doc) || (new URL("/img/og-default.jpg", location.origin)).toString()
+      };
+      for(const p of ["og:title","og:description","og:image"]){
+        let tag = doc.querySelector(`meta[property="${p}"]`);
+        if(!tag){
+          tag = doc.createElement("meta");
+          tag.setAttribute("property", p);
+          tag.setAttribute("content", ogDefaults[p]);
+          doc.head.appendChild(tag);
+          addChecklist(`Faltaba ${p} → agregado`,"warn");
+        } else { addChecklist(`${p} presente`,"ok"); }
+      }
+
+      // Twitter
+      const twDefaults = {
+        "twitter:card": "summary_large_image",
+        "twitter:title": titleTag.textContent || "Título Twitter sugerido",
+        "twitter:description": desc.getAttribute("content") || "Descripción Twitter sugerida",
+        "twitter:image": doc.querySelector('meta[property="og:image"]')?.getAttribute("content") || ogDefaults["og:image"]
+      };
+      for(const n of ["twitter:card","twitter:title","twitter:description","twitter:image"]){
+        let tag = doc.querySelector(`meta[name="${n}"]`);
+        if(!tag){
+          tag = doc.createElement("meta");
+          tag.setAttribute("name", n);
+          tag.setAttribute("content", twDefaults[n]);
+          doc.head.appendChild(tag);
+          addChecklist(`Faltaba ${n} → agregado`,"warn");
+        } else { addChecklist(`${n} presente`,"ok"); }
+      }
+
+      // lang
+      if(!doc.documentElement.getAttribute("lang")){
+        doc.documentElement.setAttribute("lang","es");
+        addChecklist("Atributo lang agregado (es)","warn");
+      } else { addChecklist("lang presente","ok"); }
+
+      // imágenes alt
+      const imgs = doc.querySelectorAll("img");
+      let sinAlt = 0;
+      imgs.forEach((img, i)=>{
+        const alt = img.getAttribute("alt");
+        if(!alt || !alt.trim()){
+          img.setAttribute("alt","Descripción de la imagen");
+          sinAlt++;
+        }
+      });
+      if(imgs.length === 0) addChecklist("No hay imágenes","ok");
+      else if(sinAlt>0) addChecklist(`${sinAlt} imagen(es) sin alt → corregidas`,"warn");
+      else addChecklist("Todas las imágenes con alt","ok");
+
+      // Salida
+      htmlCorregido = "<!DOCTYPE html>\n" + doc.documentElement.outerHTML;
+      $("#output").textContent = htmlCorregido;
+    }
+
+    // ---------- Descargar HTML corregido ----------
+    $("#btnDescargar").addEventListener("click", ()=>{
+      if(!htmlCorregido){ showError("Primero analizá el HTML."); return; }
+      const blob = new Blob([htmlCorregido], {type:"text/html"});
+      const a = el("a",{href:URL.createObjectURL(blob), download:"html-corregido.html"});
+      document.body.appendChild(a); a.click(); a.remove();
+    });
+
+    // ---------- Analizar lote ----------
+    $("#btnAnalizarLote").addEventListener("click", async ()=>{
+      showError("");
+      if(archivos.length===0){
+        showError("No hay archivos listados. Usá “Listar (vía servidor)” o “Seleccionar carpeta del blog”.");
+        return;
+      }
+      let rows = [];
+      if(origenArchivos === "servidor"){
+        for(const path of archivos){
+          try{
+            const res = await fetch(absURL(path), { credentials: "same-origin" });
+            const txt = await res.text();
+            const rep = revisarHTMLSolo(txt);
+            rows.push({file:path, rep});
+          }catch(e){
+            rows.push({file:path, error:e.message});
+          }
+        }
+      } else if(origenArchivos === "carpeta"){
+        for(let i=0;i<handles.length;i++){
+          const h = handles[i];
+          try{
+            const f = await h.getFile();
+            const txt = await f.text();
+            const rep = revisarHTMLSolo(txt);
+            rows.push({file:h.name, rep});
+          }catch(e){
+            rows.push({file:h.name, error:e.message});
+          }
+        }
+      } else {
+        showError("Origen de archivos desconocido.");
+        return;
+      }
+
+      // Render tabla
+      let html = `<table>
+        <tr>
+          <th>Archivo</th><th>Title</th><th>Description</th><th>OG</th><th>Twitter</th><th>Lang</th><th>Imágenes ALT</th>
+        </tr>`;
+      for(const r of rows){
+        if(r.error){
+          html += `<tr><td>${r.file}</td><td colspan="6" class="error">❌ ${r.error}</td></tr>`;
+          continue;
+        }
+        const rep = r.rep;
+        const allOG = rep.og.every(Boolean);
+        const allTW = rep.twitter.every(Boolean);
+        const altOK = (rep.imgs === 0) || (rep.imgsSinAlt === 0);
+        html += `<tr>
+          <td style="text-align:left">${r.file}</td>
+          <td class="${rep.title?'ok':'warn'}">${rep.title?'✅':'⚠️'}</td>
+          <td class="${rep.description?'ok':'warn'}">${rep.description?'✅':'⚠️'}</td>
+          <td class="${allOG?'ok':'warn'}">${allOG?'✅':'⚠️'}</td>
+          <td class="${allTW?'ok':'warn'}">${allTW?'✅':'⚠️'}</td>
+          <td class="${rep.lang?'ok':'warn'}">${rep.lang?'✅':'⚠️'}</td>
+          <td class="${altOK?'ok':'warn'}">${rep.imgs===0?'—':(rep.imgsSinAlt===0?'✅':'⚠️ '+rep.imgsSinAlt)}</td>
+        </tr>`;
+      }
+      html += `</table>`;
+      $("#blogReport").innerHTML = html;
+    });
+
+    // ---------- Inicio ----------
+    setOrigen(""); // sin origen aún
+  </script>
+</body>
+</html>

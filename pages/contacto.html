@@ -21,16 +21,23 @@
         <meta property="og:type" content="website" />
 
         <!-- Twitter Card -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Contacto - RESONANCIAS">
-        <meta name="twitter:description" content="Ponte en contacto con Gabriel Ferré para consultas y colaboraciones">
-        <meta name="twitter:image" content="https://gf-amd.pages.dev/img/ero-2.jpg">
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contacto - RESONANCIAS" />
+        <meta
+            name="twitter:description"
+            content="Ponte en contacto con Gabriel Ferré para consultas y colaboraciones" />
+        <meta name="twitter:image" content="https://gf-amd.pages.dev/img/ero-2.jpg" />
 
         <!-- Favicon -->
         <link rel="icon" href="../img/favicon.png" type="image/png" />
 
         <!-- Estilos -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="../scr/styles/main.css" />
         <link rel="stylesheet" href="../scr/styles/voice.css" />
 
@@ -522,7 +529,8 @@
                                             transition: all var(--transition-fast);
                                         ">
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M12.008 7.26c1.26-1.694 3.065-3.684 5.168-4.93C19.342.822 21.744.822 21.744 3.358c0 .455-.092.91-.183 1.365-.909 4.549-2.268 8.645-4.537 10.794-2.176 2.057-4.445 1.148-4.537.546-.092-.455-.092-.91.183-1.364 1.177-1.819 2.36-4.322 2.269-6.287.091-1.148-.183-2.3-.5-3.315z M11.992 7.26c-1.26-1.694-3.065-3.684-5.168-4.93C4.658.822 2.256.822 2.256 3.358c0 .455.092.91.183 1.365.909 4.549 2.268 8.645 4.537 10.794 2.176 2.057 4.445 1.148 4.537.546.092-.455.092-.91-.183-1.364-1.177-1.819-2.36-4.322-2.269-6.287-.091-1.148.183-2.3.5-3.315z"/>
+                                            <path
+                                                d="M12.008 7.26c1.26-1.694 3.065-3.684 5.168-4.93C19.342.822 21.744.822 21.744 3.358c0 .455-.092.91-.183 1.365-.909 4.549-2.268 8.645-4.537 10.794-2.176 2.057-4.445 1.148-4.537.546-.092-.455-.092-.91.183-1.364 1.177-1.819 2.36-4.322 2.269-6.287.091-1.148-.183-2.3-.5-3.315z M11.992 7.26c-1.26-1.694-3.065-3.684-5.168-4.93C4.658.822 2.256.822 2.256 3.358c0 .455.092.91.183 1.365.909 4.549 2.268 8.645 4.537 10.794 2.176 2.057 4.445 1.148 4.537.546.092-.455.092-.91-.183-1.364-1.177-1.819-2.36-4.322-2.269-6.287-.091-1.148.183-2.3.5-3.315z" />
                                         </svg>
                                         Bluesky
                                     </a>
@@ -634,7 +642,7 @@
         <footer class="footer" role="contentinfo">
             <div class="footer-content">
                 <!-- Botones de compartir integrados en el footer -->
-                                <nav class="share-footer" aria-label="Compartir página">
+                <nav class="share-footer" aria-label="Compartir página">
                     <span class="share-title">Compartir</span>
                     <a
                         href="https://www.facebook.com/sharer/sharer.php?u=https://resonancias.netlify.app/pages/contacto.html"
@@ -654,8 +662,8 @@
                         aria-label="Compartir en X">
                         <i class="fa-brands fa-x-twitter"></i>
                     </a>
-                    
-                                        <a
+
+                    <a
                         href="https://api.whatsapp.com/send?text=Contacto%20-%20RESONANCIAS%20https://resonancias.netlify.app/pages/contacto.html"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -740,16 +748,16 @@
                 // Envío del formulario
                 form.addEventListener("submit", function (e) {
                     // Solo validar campos, no prevenir el envío
-                    const requiredFields = form.querySelectorAll('[required]');
+                    const requiredFields = form.querySelectorAll("[required]");
                     let allValid = true;
-                    
-                    requiredFields.forEach(field => {
+
+                    requiredFields.forEach((field) => {
                         if (!field.checkValidity()) {
                             allValid = false;
-                            field.style.borderColor = '#ff6b6b';
+                            field.style.borderColor = "#ff6b6b";
                         }
                     });
-                    
+
                     // Solo prevenir envío si hay errores de validación
                     if (!allValid) {
                         e.preventDefault();
@@ -761,7 +769,7 @@
                     button.innerHTML =
                         '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;"><circle cx="12" cy="12" r="10"></circle></svg> Enviando...';
                     button.disabled = true;
-                    
+
                     // Permitir que el formulario se envíe normalmente a Formspree
                     return true;
                 });
@@ -782,48 +790,5 @@
                 });
             });
         </script>
-
-        <!-- Controles de accesibilidad flotantes -->
-        <div
-            id="accessibility-controls"
-            class="accessibility-floating"
-            role="toolbar"
-            aria-label="Controles de accesibilidad">
-            <button
-                id="increase-font"
-                class="accessibility-btn"
-                aria-label="Aumentar tamaño de fuente"
-                title="Aumentar texto">
-                A+
-            </button>
-            <button
-                id="decrease-font"
-                class="accessibility-btn"
-                aria-label="Disminuir tamaño de fuente"
-                title="Disminuir texto">
-                A-
-            </button>
-            <button
-                id="high-contrast"
-                class="accessibility-btn"
-                aria-label="Activar alto contraste"
-                title="Alto contraste (Alt + C)">
-                ◐
-            </button>
-            <button
-                id="reset-settings"
-                class="accessibility-btn"
-                aria-label="Restablecer configuración"
-                title="Restablecer (Alt + R)">
-                ↺
-            </button>
-            <button
-                id="tts-pause"
-                class="accessibility-btn"
-                aria-label="Pausar/reanudar lectura por voz"
-                title="Pausa suave (Alt + P)">
-                ⏸️
-            </button>
-        </div>
     </body>
 </html>

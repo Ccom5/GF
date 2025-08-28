@@ -2898,4 +2898,22 @@
         </div>
     
 
+                <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Add data-tts-chapter to chapter links
+    document.querySelectorAll('.book-sidebar a[href^="#"], .chapter-index a[href^="#"]').forEach(element => {
+        element.setAttribute('data-tts-chapter', '');
+    });
+
+    // Add data-tts-paragraph to paragraphs
+    const bookContent = document.querySelector('.book-content');
+    if (bookContent) {
+        const paragraphs = bookContent.querySelectorAll('p');
+        paragraphs.forEach((p) => {
+            p.setAttribute('data-tts-paragraph', '');
+        });
+    }
+});
+</script>
+        <script src="../../scr/js/voice/textToSpeech.js" defer></script>
 </body></html>

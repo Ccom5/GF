@@ -754,26 +754,18 @@ class AccessibilityManager {
      * Alternar pausa del sistema TTS
      */
     toggleTTSPause() {
-        // Verificar si existe el sistema TTS global
         if (window.ttsSystem) {
             if (window.ttsSystem.isPlaying) {
-                window.ttsSystem.pauseReading();
-                if (this.isVoiceEnabled) {
-                    this.speak("Lectura pausada");
-                }
-            } else {
-                // Si no está reproduciendo, detener completamente
-                window.ttsSystem.stopReading();
-                if (this.isVoiceEnabled) {
-                    this.speak("Lectura detenida");
-                }
-            }
-        } else {
-            // Fallback al sistema de accesibilidad
-            if (this.currentUtterance && this.speechSynthesis.speaking) {
-                this.stopSpeaking();
-                if (this.isVoiceEnabled) {
-                    this.speak("Lectura detenida");
+                if (window.ttsSystem.isPaused) {
+                    window.ttsSystem.resumeReading();
+                    if (this.isVoiceEnabled) {
+                        this.speak("Reanudando lectura");
+                    }
+                } else {
+                    window.ttsSystem.pauseReading();
+                    if (this.isVoiceEnabled) {
+                        this.speak("Lectura pausada");
+                    }
                 }
             }
         }
