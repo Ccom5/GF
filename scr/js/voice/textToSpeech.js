@@ -266,7 +266,7 @@ class TextToSpeechSystem {
         
         // Incluir el título del capítulo
         if (currentElement.tagName === 'H2') {
-            text += currentElement.textContent + '. ';
+            text += '@@PAUSE@@' + currentElement.textContent.trim() + '. ';
             currentElement = currentElement.nextElementSibling;
         }
 
@@ -282,8 +282,8 @@ class TextToSpeechSystem {
                 const tagName = currentElement.tagName.toLowerCase();
                 let elementText = currentElement.textContent.trim();
                 
-                if (tagName === 'h3' || tagName === 'h4') {
-                    text += elementText + '. ';
+                if (['h1', 'h3', 'h4', 'h5', 'h6'].includes(tagName)) {
+                    text += '@@PAUSE@@' + elementText + '. ';
                 } else if (tagName === 'p' || tagName === 'blockquote') {
                     text += elementText + ' ';
                 } else if (tagName === 'li') {
@@ -393,7 +393,13 @@ class TextToSpeechSystem {
             return;
         }
         
-        const sentence = this.sentences[this.currentSentenceIndex];
+        let sentence = this.sentences[this.currentSentenceIndex];
+        const isHeading = sentence.startsWith('@@PAUSE@@');
+
+        if (isHeading) {
+            sentence = sentence.replace('@@PAUSE@@', '').trim();
+        }
+
         this.utterance = new SpeechSynthesisUtterance(sentence);
         
         // Configurar voz
@@ -423,11 +429,12 @@ class TextToSpeechSystem {
         this.utterance.onend = () => {
             this.currentSentenceIndex++;
             // Pausa breve entre oraciones (más larga para mejor comprensión)
+            const pauseDuration = isHeading ? 1200 : 500;
             setTimeout(() => {
                 if (this.isPlaying) {
                     this.readNextSentence();
                 }
-            }, 500);
+            }, pauseDuration);
         };
         
         this.utterance.onerror = (event) => {
