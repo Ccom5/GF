@@ -45,6 +45,95 @@
         <script src="../scr/js/accessibility.js" defer></script>
         <script src="../scr/js/main.js" defer></script>
         <script src="../scr/js/voice/textToSpeech.js" defer></script>
+
+        <!-- Estilos para el formulario de contacto -->
+        <style>
+            /* 
+            NOTA: Estos estilos se han añadido directamente aquí para una rápida implementación.
+            Para una mejor organización, se recomienda moverlos a un archivo CSS dedicado, 
+            como 'forms.css' o integrarlos en 'main.css'.
+            */
+
+            .contact-form .form-group {
+                display: flex;
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+
+            .contact-form label {
+                font-weight: 600;
+                color: var(--color-dark);
+            }
+
+            .contact-form input[type="text"],
+            .contact-form input[type="email"],
+            .contact-form select,
+            .contact-form textarea {
+                width: 100%;
+                padding: var(--spacing-md);
+                border: 1px solid var(--color-mid);
+                border-radius: 8px;
+                font-size: var(--font-size-base);
+                background-color: #fdfdfd;
+                transition: all var(--transition-fast);
+            }
+
+            .contact-form input[type="text"]:focus,
+            .contact-form input[type="email"]:focus,
+            .contact-form select:focus,
+            .contact-form textarea:focus {
+                outline: none;
+                border-color: var(--color-secondary);
+                box-shadow: 0 0 0 3px rgba(176, 105, 0, 0.2);
+            }
+
+            /* Estilo específico para el grupo del checkbox */
+            .form-group-checkbox {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: var(--spacing-md);
+            }
+            
+            .form-group-checkbox label {
+                font-weight: 400; /* Peso normal para el label del checkbox */
+                color: var(--color-warm);
+            }
+
+            .contact-form input[type="checkbox"] {
+                width: 1.25em;
+                height: 1.25em;
+                accent-color: var(--color-secondary);
+            }
+
+            .contact-form button[type="submit"] {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: var(--spacing-md);
+                background: var(--color-secondary);
+                color: var(--color-light);
+                padding: var(--spacing-md) var(--spacing-xl);
+                border-radius: 8px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: var(--font-size-lg);
+                box-shadow: var(--shadow-md);
+                border: none;
+                cursor: pointer;
+            }
+
+            .contact-form button[type="submit"]:hover {
+                background: var(--color-warm);
+                transform: translateY(-2px);
+                box-shadow: var(--shadow-lg);
+            }
+            
+            .contact-form .required-notice {
+                font-size: var(--font-size-sm);
+                color: var(--color-neutral);
+            }
+        </style>
     </head>
     <body>
         <!-- Skip to main content -->
@@ -365,7 +454,7 @@
                                         placeholder="Escribe tu mensaje aquí..."></textarea>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group form-group-checkbox">
                                     <input type="checkbox" id="newsletter" name="newsletter" />
                                     <label for="newsletter"
                                         >Me gustaría recibir notificaciones ocasionales sobre nuevas publicaciones
@@ -387,7 +476,7 @@
                                     Enviar mensaje
                                 </button>
 
-                                <p>* Campos obligatorios. Responderé a la brevedad posible.</p>
+                                <p class="required-notice">* Campos obligatorios. Responderé a la brevedad posible.</p>
                             </form>
                         </div>
 
