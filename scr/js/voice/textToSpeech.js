@@ -74,18 +74,40 @@ class TextToSpeechSystem {
     }
 
     setupCardReaders() {
-        const cards = document.querySelectorAll('.work-card, .guide-card, .blog-card, .work-detail, .blog-entry-card');
-        cards.forEach(card => {
-            const textElement = card.querySelector('h2, h3, h4, p');
-            if (textElement) {
-                const text = textElement.textContent;
-                const readButton = card.querySelector('.tts-icon-placeholder');
-                if (readButton) {
-                    readButton.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        e.preventDefault();
-                        this.readText(text);
-                    });
+        // Configurar lectura para tarjetas de obras con data-tts-card
+        const workCards = document.querySelectorAll('[data-tts-card]');
+        workCards.forEach(card => {
+            card.style.cursor = 'pointer';
+            card.setAttribute('title', 'Hacer clic para escuchar descripción completa');
+            
+            card.addEventListener('click', (e) => {
+                // Solo activar si no se hizo clic en un enlace o botón
+                if (e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON' && !e.target.closest('a, button')) {
+                    e.stopPropagation();
+                    const fullText = card.getAttribute('data-tts-card');
+                    if (fullText) {
+                        this.readText(fullText);
+                    }
+                }
+            });
+        });
+        
+        // Mantener funcionalidad existente para otras tarjetas
+        const otherCards = document.querySelectorAll('.work-card, .guide-card, .blog-card, .blog-entry-card');
+        otherCards.forEach(card => {
+            // Solo procesar si no tiene data-tts-card
+            if (!card.hasAttribute('data-tts-card')) {
+                const textElement = card.querySelector('h2, h3, h4, p');
+                if (textElement) {
+                    const text = textElement.textContent;
+                    const readButton = card.querySelector('.tts-icon-placeholder');
+                    if (readButton) {
+                        readButton.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            e.preventDefault();
+                            this.readText(text);
+                        });
+                    }
                 }
             }
         });
@@ -160,19 +182,28 @@ class TextToSpeechSystem {
     }
 
     startReading(text) {
+        console.log('Iniciando lectura completa. Texto:', text.substring(0, 100) + '...');
+        console.log('Longitud total del texto:', text.length);
+        
         this.currentText = text;
         this.sentences = this.splitTextIntoSentences(text);
+        
+        console.log('Número de segmentos a leer:', this.sentences.length);
+        
         this.currentSentenceIndex = 0;
         this.readNextSentence();
     }
     
     readNextSentence() {
         if (this.currentSentenceIndex >= this.sentences.length) {
+            console.log('Lectura completada. Total de segmentos leídos:', this.currentSentenceIndex);
             this.finishReading();
             return;
         }
         
         let sentence = this.sentences[this.currentSentenceIndex];
+        console.log(`Leyendo segmento ${this.currentSentenceIndex + 1}/${this.sentences.length}:`, sentence.substring(0, 50) + '...');
+        
         this.utterance = new SpeechSynthesisUtterance(sentence);
         
         if (this.preferredVoice) {
@@ -191,6 +222,7 @@ class TextToSpeechSystem {
         };
         
         this.utterance.onend = () => {
+            console.log(`Segmento ${this.currentSentenceIndex + 1} completado`);
             this.currentSentenceIndex++;
             if (this.isPlaying) {
                 this.readNextSentence();
@@ -198,6 +230,7 @@ class TextToSpeechSystem {
         };
         
         this.utterance.onerror = (event) => {
+            console.error('Error en lectura:', event.error);
             this.finishReading(true);
         };
         
@@ -237,6 +270,8 @@ class TextToSpeechSystem {
         if (this.isPlaying) {
             this.stopReading();
         }
+        
+        console.log('Iniciando lectura de texto completo:', text.substring(0, 100) + '...');
         this.startReading(this.cleanText(text));
     }
     
@@ -277,7 +312,32 @@ class TextToSpeechSystem {
     }
 
     splitTextIntoSentences(text) {
-        return text.match(/[^.!?]+[.!?]+/g) || [text];
+        // Dividir por oraciones, manteniendo puntuación
+        const sentences = text.match(/[^.!?]+[.!?]+/g) || [];
+        
+        // Si no hay oraciones reconocidas, dividir por longitud
+        if (sentences.length === 0) {
+            const words = text.split(' ');
+            const chunks = [];
+            let currentChunk = '';
+            
+            words.forEach(word => {
+                if ((currentChunk + word).length > 100) {
+                    if (currentChunk) chunks.push(currentChunk.trim());
+                    currentChunk = word + ' ';
+                } else {
+                    currentChunk += word + ' ';
+                }
+            });
+            
+            if (currentChunk.trim()) {
+                chunks.push(currentChunk.trim());
+            }
+            
+            return chunks.length > 0 ? chunks : [text];
+        }
+        
+        return sentences.map(s => s.trim()).filter(s => s.length > 0);
     }
 }
 

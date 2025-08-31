@@ -41,7 +41,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="../scr/styles/main.css" />
-        <link rel="stylesheet" href="../scr/styles/voice.css" />
+
         <style>
             @media (max-width: 768px) {
                 .work-detail {
@@ -60,120 +60,8 @@
             }
         </style>
         <!-- Scripts de accesibilidad -->
-        <script src="../scr/js/accessibility.js" defer></script>
-        <script src="../scr/js/main.js" defer></script>
-        <script src="../scr/js/voice/textToSpeech.js" defer></script>
-        <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@graph": [
-                    {
-                        "@type": "Person",
-                        "@id": "https://gf-amd.pages.dev/#author",
-                        "name": "Gabriel Ferré",
-                        "url": "https://gf-amd.pages.dev/pages/obras",
-                        "image": "https://gf-amd.pages.dev/img/ero-2-obras.jpg",
-                        "sameAs": [
-                            "https://twitter.com/@Miguel_CCom5",
-                            "https://www.facebook.com/profile.php?id=100088341563677",
-                            "https://bsky.app/@gabrielferre.bsky.social"
-                        ]
-                    },
-                    {
-                        "@type": "Organization",
-                        "@id": "https://gf-amd.pages.dev/#org",
-                        "name": "Resonancias",
-                        "url": "https://gf-amd.pages.dev/",
-                        "logo": "https://gf-amd.pages.dev/img/favicon.png"
-                    },
-                    {
-                        "@type": "Book",
-                        "@id": "https://gf-amd.pages.dev/pages/libros/cronicas#book",
-                        "name": "Crónicas de la Expiación",
-                        "author": { "@id": "https://gf-amd.pages.dev/#author" },
-                        "publisher": { "@id": "https://gf-amd.pages.dev/#org" },
-                        "description": "Ensayo literario y reflexivo sobre la imaginación y la palabra.",
-                        "inLanguage": "es",
-                        "isAccessibleForFree": true,
-                        "url": "https://gf-amd.pages.dev/pages/libros/cronicas",
-                        "mainEntityOfPage": "https://gf-amd.pages.dev/pages/libros/cronicas",
-                        "encoding": [
-                            {
-                                "@type": "MediaObject",
-                                "encodingFormat": "text/html",
-                                "contentUrl": "https://gf-amd.pages.dev/pages/libros/cronicas"
-                            },
-                            {
-                                "@type": "MediaObject",
-                                "encodingFormat": "application/pdf",
-                                "contentUrl": "https://drive.google.com/file/d/1WHYULSARp77vleV4d6CHk4Z0huVafBQK/view?usp=sharing"
-                            }
-                        ]
-                    },
-                    {
-                        "@type": "Book",
-                        "@id": "https://gf-amd.pages.dev/pages/libros/saber#book",
-                        "name": "El Saber No Percibido",
-                        "author": { "@id": "https://gf-amd.pages.dev/#author" },
-                        "publisher": { "@id": "https://gf-amd.pages.dev/#org" },
-                        "description": "Ensayo de libre difusión sobre la percepción y la reflexión cultural.",
-                        "inLanguage": "es",
-                        "isAccessibleForFree": true,
-                        "url": "https://gf-amd.pages.dev/pages/libros/saber.html",
-                        "mainEntityOfPage": "https://gf-amd.pages.dev/pages/libros/saber.html",
-                        "encoding": [
-                            {
-                                "@type": "MediaObject",
-                                "encodingFormat": "text/html",
-                                "contentUrl": "https://gf-amd.pages.dev/pages/libros/saber.html"
-                            },
-                            {
-                                "@type": "MediaObject",
-                                "encodingFormat": "application/pdf",
-                                "contentUrl": "https://drive.google.com/file/d/1z3YoKek4BohBwi1amvTqCt6ylDWZktmq/view?usp=sharing"
-                            }
-                        ]
-                    },
-                    {
-                        "@type": "Book",
-                        "@id": "https://gf-amd.pages.dev/pages/libros/incomodo#book",
-                        "name": "El Derecho a Ser Incómodo",
-                        "author": { "@id": "https://gf-amd.pages.dev/#author" },
-                        "publisher": { "@id": "https://gf-amd.pages.dev/#org" },
-                        "description": "Ensayo de libre difusión sobre la crítica social y cultural.",
-                        "inLanguage": "es",
-                        "isAccessibleForFree": true,
-                        "url": "https://drive.google.com/file/d/1Fk0bF2vY7jDSQt98HWAmNs-4iiX9PvPm/view?pli=1",
-                        "mainEntityOfPage": "https://gf-amd.pages.dev/pages/obras",
-                        "encoding": [
-                            {
-                                "@type": "MediaObject",
-                                "encodingFormat": "application/pdf",
-                                "contentUrl": "https://drive.google.com/file/d/1Fk0bF2vY7jDSQt98HWAmNs-4iiX9PvPm/view?pli=1"
-                            }
-                        ]
-                    },
-                    {
-                        "@type": "BreadcrumbList",
-                        "@id": "https://gf-amd.pages.dev/pages/obras#breadcrumb",
-                        "itemListElement": [
-                            {
-                                "@type": "ListItem",
-                                "position": 1,
-                                "name": "Inicio",
-                                "item": "https://gf-amd.pages.dev/"
-                            },
-                            {
-                                "@type": "ListItem",
-                                "position": 2,
-                                "name": "Obras",
-                                "item": "https://gf-amd.pages.dev/pages/obras"
-                            }
-                        ]
-                    }
-                ]
-            }
-        </script>
+
+        <!-- Estilos del panel de accesibilidad minimalista -->
     </head>
     <body>
         <!-- Skip to main content -->
@@ -369,6 +257,7 @@
                     <article
                         id="book-cronicas"
                         class="work-detail"
+                        data-tts-card="Crónicas de la Expiación. En un mundo donde los sentimientos son mercancía y el dolor se transa como activo financiero, Crónicas de la Expiación nos sumerge en una alegoría inquietante sobre la ética, la memoria y la resistencia. A través de una prosa poética y penetrante, se construye la historia de Alba, una joven que desafía el sistema de tasación emocional instaurado por el enigmático Corredor de Almas. Esta obra no es solo una fantasía filosófica: Es una exploración crítica del modo en que la sociedad etiqueta, archiva y monetiza nuestras emociones más humanas. Entre espejos rotos, bolsas de pecado y flores que no cotizan, la novela propone una pregunta radical: ¿queda algo en nosotros que aún no tenga precio?"
                         style="
                             display: grid;
                             grid-template-columns: 300px 1fr;
@@ -491,6 +380,7 @@
                     <article
                         id="book-incomodo"
                         class="work-detail"
+                        data-tts-card="El Derecho a Ser Incómodo. En tiempos donde el disenso se malinterpreta como violencia y la cortesía se vuelve anestesia, El Derecho a Ser Incómodo emerge como un manifiesto valiente a favor del pensamiento libre. Con una prosa que combina poesía y lucidez, Ferré invita a recuperar la fricción como forma profunda de respeto, y la incomodidad como señal vital de conciencia activa. Este libro no busca agradar, sino despertar. No pretende imponer verdades, sino habilitar preguntas que arden. Es un texto para quienes aún creen que pensar —sin pedir disculpas— es un acto de dignidad. Un llamado íntimo y colectivo a no ceder ante la suavidad decorativa que a menudo encubre la rendición interior."
                         style="
                             display: grid;
                             grid-template-columns: 300px 1fr;
@@ -599,6 +489,7 @@
                     <article
                         id="book-saber"
                         class="work-detail"
+                        data-tts-card="El Saber No Percibido. Un viaje introspectivo que explora cómo nuestras propias creencias, miedos y silencios construyen límites internos. Con un estilo poético y meditativo, el autor nos invita a reconocer la vulnerabilidad, aceptar la sombra y encontrar sabiduría en lo simple. Más que respuestas, este libro ofrece una mirada honesta hacia uno mismo y propone un camino de conciencia, paso a paso, sin adornos, pero lleno de sentido."
                         style="
                             display: grid;
                             grid-template-columns: 300px 1fr;
@@ -830,6 +721,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Script para efectos de hover en las portadas -->
         <script>
             document.addEventListener("DOMContentLoaded", function () {

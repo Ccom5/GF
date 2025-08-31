@@ -1,8 +1,0 @@
-
-"SEO.bat" que carge server con: 
-" python -m http.server 8000"
-
-kuego que abra:
-" http://localhost:8000/tools/seo-helper.html " especificamente con microsoft edge
-
-el path  C:\Users\MAE\Downloads\claude\tools

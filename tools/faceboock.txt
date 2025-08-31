@@ -1,4 +1,0 @@
-ID de aplicación predeterminado
-
-
-fb:app_id 966242223397117

@@ -487,7 +487,7 @@ class AccessibilityManager {
     removeAutoReaderListeners() {
         document.removeEventListener("mouseover", this.handleHover);
         document.removeEventListener("mouseout", this.clearHoverTimeout);
-        // document.removeEventListener("click", this.handleClick); // Comentado para evitar conflictos con TTS de tarjetas
+        document.removeEventListener("click", this.handleClick);
         document.removeEventListener("focusin", this.handleFocus);
     }
 
@@ -521,6 +521,14 @@ class AccessibilityManager {
      */
     handleClick(e) {
         if (!this.isVoiceEnabled) return;
+        
+        // Si es una tarjeta con data-tts-card, no procesar aquí
+        const ttsCard = e.target.closest('[data-tts-card]');
+        if (ttsCard) {
+            // Dejar que el sistema TTS maneje las tarjetas
+            return;
+        }
+        
         const target = e.target;
         const text = this.getElementText(target);
 
