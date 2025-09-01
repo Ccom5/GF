@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Literatura sin filtro - Blog - RESONANCIAS</title>
+        <meta
+            name="description"
+            content="Reflexión sobre la literatura en tiempos de algoritmos y comercialización del arte." />
+
+        <!-- SEO y Accesibilidad -->
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Gabriel Ferré" />
+        <meta name="keywords" content="literatura, algoritmos, comercialización, arte, reflexión" />
+
+        <!-- Favicon -->
+        <link rel="icon" href="../img/favicon.png" type="image/png" />
+
+        <!-- Estilos -->
+        <link rel="stylesheet" href="../scr/styles/main.css" />
+        <link rel="stylesheet" href="../scr/styles/voice.css" />
+
+        <!-- Scripts -->
+        <script src="../scr/js/accessibility.js" defer></script>
+        <script src="../scr/js/main.js" defer></script>
+        <script src="../scr/js/voice/textToSpeech.js" defer></script>
+
+        <!-- Estilos responsivos para el layout del artículo -->
+        <style>
+            @media (max-width: 768px) {
+                .article-layout {
+                    flex-direction: column !important;
+                    gap: var(--spacing-lg) !important;
+                }
+                .image-card {
+                    position: relative !important;
+                    top: auto !important;
+                    width: 100% !important;
+                    min-width: auto !important;
+                    margin-bottom: var(--spacing-lg) !important;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Skip to main content -->
+        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="nav-container">
+                <a href="../index.html" class="logo" aria-label="RESONANCIAS - Inicio">
+                    <img src="../img/logo.png" alt="Logo RESONANCIAS" width="40" height="40" />
+                </a>
+
+                <!-- Navegación principal -->
+                <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+                    <a href="../index.html">Inicio</a>
+                    <a href="obras.html">Libros</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="quien-soy.html">Quién soy</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+
+                <!-- Redes sociales y búsqueda -->
+                <div class="social-nav">
+                    <div class="search-container">
+                        <button id="searchToggle" class="search-toggle" aria-label="Buscar" aria-expanded="false">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="M21 21L16.65 16.65"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="social-links">
+                        <a
+                            href="https://www.facebook.com/profile.php?id=100088341563677"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a
+                            href="https://x.com/Miguel_CCom5"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="X (Twitter)">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <a
+                            href="https://www.youtube.com/@Gabriel-Ferre-v3l"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Botón menú móvil -->
+                <button
+                    class="hamburger-btn"
+                    aria-label="Menú de navegación"
+                    aria-expanded="false"
+                    aria-controls="sideMenu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Menú lateral móvil -->
+        <aside class="side-menu" id="sideMenu" role="navigation" aria-label="Menú de navegación lateral">
+            <div class="menu-header">
+                <h2 class="menu-title">Navegación</h2>
+                <button class="close-btn" aria-label="Cerrar menú">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Menú tipo acordeón -->
+            <div class="accordion-menu">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="../index.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                            </svg>
+                            Inicio
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="obras.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                            Libros
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="blog.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14,2 14,8 20,8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                            </svg>
+                            Blog
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Overlay para menú -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+        <section
+            class="works-hero"
+            style="
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                    url(&quot;../img/ero-2-entrada-1.jpg&quot;);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                color: var(--color-light);
+                padding: var(--spacing-3xl) 0;
+                text-align: center;
+                min-height: 400px;
+                display: flex;
+                align-items: center;
+            ">
+            <div class="container">
+                <h1
+                    style="
+                        font-size: var(--font-size-4xl);
+                        margin-bottom: var(--spacing-lg);
+                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                    ">
+                    Fantasía Filosófica
+                </h1>
+                <p
+                    style="
+                        font-size: var(--font-size-xl);
+                        max-width: 600px;
+                        margin: 0 auto;
+                        line-height: 1.6;
+                        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+                    ">
+                    Obras del Autor
+                </p>
+            </div>
+        </section>
+
+        <!-- Contenido principal -->
+
+        <main id="main-content" role="main">
+            <!-- Artículo principal -->
+            <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+                <div class="container" style="max-width: 800px; margin: 0 auto">
+                    <!-- Header del artículo -->
+                    <header class="post-header" style="text-align: center; margin-bottom: var(--spacing-2xl)">
+                        <h1
+                            style="
+                                font-size: var(--font-size-3xl);
+                                color: var(--color-dark);
+                                margin-bottom: var(--spacing-lg);
+                            ">
+                            Titulo de la nota
+                        </h1>
+                        <div
+                            class="post-meta"
+                            style="
+                                display: flex;
+                                justify-content: center;
+                                gap: var(--spacing-lg);
+                                color: var(--color-neutral);
+                                font-size: var(--font-size-sm);
+                                flex-wrap: wrap;
+                            ">
+                            <time datetime="[FECHA-ISO]">Agosto 2025</time>
+                            <span>· Gabriel Ferré</span>
+                            <span>· 3 min de lectura</span>
+                        </div>
+                    </header>
+
+                    <!-- Contenido del artículo -->
+                    <div class="article-layout" style="display: flex; gap: var(--spacing-xl); align-items: flex-start">
+                        <!-- Contenido de texto -->
+                        <div class="article-content" style="flex: 1; line-height: 1.5; color: var(--color-dark)">
+                            <p
+                                id="intro-paragraph"
+                                style="
+                                    font-size: var(--font-size-lg);
+                                    margin-bottom: var(--spacing-2xl);
+                                    color: var(--color-warm);
+                                    font-style: italic;
+                                    position: relative;
+                                ">
+                                Introduccion . . .
+                            </p>
+                            <div id="section-1" style="margin-bottom: var(--spacing-xl); position: relative">
+                                <h2 style="color: var(--color-dark); margin-bottom: var(--spacing-md)">
+                                    1 parrafo titulo
+                                </h2>
+                                <p style="margin-bottom: var(--spacing-md)">contenido------</p>
+
+                                <p>Pero hay grietas. Y a veces, en esas grietas, crecen flores negras.</p>
+                                <p style="margin-bottom: var(--spacing-md)"></p>
+                                El libro digital —ese formato tan cuestionado por los puristas del papel— se ha
+                                convertido en un refugio inesperado para las voces que no buscan complacer, sino
+                                incomodar. Para quienes no escriben para entretener, sino para
+                                <strong>resistir</strong>.
+                                <p></p>
+                            </div>
+                            <div id="section-2" style="margin-bottom: var(--spacing-lg); position: relative">
+                                <h2 style="color: var(--color-dark); margin-bottom: var(--spacing-lg)">
+                                    El espacio sin filtro
+                                </h2>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    Las plataformas digitales permiten que escritores sin acceso a editoriales
+                                    tradicionales publiquen directamente. Sin curaduría, sin pulido excesivo, sin
+                                    marketing que esterilice el mensaje. Solo el texto, desnudo, imperfecto, vivo. Eso
+                                    es peligroso para el sistema. Y por eso, también, es valioso.
+                                </p>
+                                <img
+                                    src="../img/infografia-cronica.jpg"
+                                    alt="info-l"
+                                    style="
+                                        width: 100%;
+                                        height: auto;
+                                        max-height: 600px;
+                                        object-fit: contain;
+                                        border-radius: 8px;
+                                        margin-bottom: var(--spacing-md);
+                                    " />
+                                <p style="margin-bottom: var(--spacing-md)"></p>
+                                <h2><strong>La literatura fuera del algoritmo</strong></h2>
+                                <p>
+                                    Los libros digitales no necesitan llenar estanterías. No tienen que justificar
+                                    tiradas mínimas. No requieren adaptaciones para “funcionar en mercado”. Por eso
+                                    pueden hablar de lo que otros prefieren callar: de la ética del lenguaje, de las
+                                    emociones como moneda, del alma como deuda heredada. De lo que pasa cuando todo
+                                    tiene un precio, incluso el dolor.
+                                </p>
+                            </div>
+                            <div id="section-3" style="margin-bottom: var(--spacing-xl); position: relative">
+                                <h2 style="color: var(--color-dark); margin-bottom: var(--spacing-lg)">
+                                    Una nueva forma de comunidad
+                                </h2>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    Lo digital no es solo difusión: es conexión. Lectores y autores pueden encontrarse
+                                    sin intermediarios, compartir miradas, cuestionar juntos. Se forma así una comunidad
+                                    en torno a textos que no buscan masividad, sino resonancia. No volumen, sino
+                                    profundidad.
+                                </p>
+                            </div>
+                            <div id="section-4" style="margin-bottom: var(--spacing-xl); position: relative">
+                                <h2 style="color: var(--color-dark); margin-bottom: var(--spacing-lg)">
+                                    El formato que resiste al olvido
+                                </h2>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    En un mundo donde el archivo es poder y el olvido, una herramienta política, el
+                                    libro digital tiene algo de subversivo: puede multiplicarse sin desaparecer. Puede
+                                    sobrevivir fuera de los catálogos. Puede ser leído cuando ya nadie recuerda quién lo
+                                    escribió. Como un susurro que regresa en el momento justo.
+                                </p>
+                                <h3><strong>Algunas historias no quieren ser vendidas</strong></h3>
+                                <p>
+                                    Y, a veces, eso es todo lo que hace falta. Una historia que no esté hecha para
+                                    gustar. Que no tenga moraleja clara. Que se niegue a convertirse en mercancía. Que
+                                    exista solo para dejar una grieta en quien la lea.
+                                </p>
+                            </div>
+
+                            <div id="conclusion" style="margin-bottom: var(--spacing-xl); position: relative">
+                                <blockquote
+                                    style="
+                                        border-left: 4px solid var(--color-secondary);
+                                        padding-left: var(--spacing-lg);
+                                        margin: var(--spacing-xl) 0;
+                                        font-style: italic;
+                                        color: var(--color-warm);
+                                    ">
+                                    Eso intento yo con mis escritos. Crear pequeñas grietas. Lugares donde tal vez,
+                                    alguna flor —negra, sin sombra— pueda crecer.
+                                </blockquote>
+                                <p style="margin-bottom: var(--spacing-md)">
+                                    <strong>¿Te interesa esta clase de literatura?</strong><br />
+                                    Podés leer el primer relato de
+                                    <a
+                                        href="/pages/libros/cronicas.html"
+                                        style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                                        - Crónicas de la Expiación
+                                    </a>
+                                    <br />
+                                    O quedarte por acá. A veces las grietas también se contagian.
+                                    <b> </b>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <section
+                        class="blog-subscription"
+                        style="
+                            margin-top: var(--spacing-3xl);
+                            background: var(--color-mid);
+                            padding: var(--spacing-2xl);
+                            border-radius: 12px;
+                            text-align: center;
+                        ">
+                        <h3
+                            style="
+                                color: var(--color-dark);
+                                margin-bottom: var(--spacing-md);
+                                font-size: var(--font-size-2xl);
+                            ">
+                            📭 Mantente al día
+                        </h3>
+                        <p
+                            style="
+                                color: var(--color-warm);
+                                margin-bottom: var(--spacing-xl);
+                                max-width: 500px;
+                                margin-left: auto;
+                                margin-right: auto;
+                                line-height: 1.6;
+                            ">
+                            Recibe notificaciones cuando publique nuevos ensayos y reflexiones. Sin spam, solo contenido
+                            de calidad.
+                        </p>
+                        <div
+                            style="
+                                display: flex;
+                                gap: var(--spacing-md);
+                                max-width: 400px;
+                                margin: 0 auto;
+                                flex-wrap: wrap;
+                            ">
+                            <input
+                                type="email"
+                                placeholder="Tu email..."
+                                style="
+                                    flex: 1;
+                                    min-width: 200px;
+                                    padding: var(--spacing-md);
+                                    border: 2px solid var(--color-secondary);
+                                    border-radius: 8px;
+                                    font-size: var(--font-size-base);
+                                " />
+                            <button
+                                style="
+                                    background: var(--color-secondary);
+                                    color: var(--color-light);
+                                    border: none;
+                                    padding: var(--spacing-md) var(--spacing-xl);
+                                    border-radius: 8px;
+                                    font-weight: 600;
+                                    cursor: pointer;
+                                    transition: all var(--transition-fast);
+                                ">
+                                Suscribirse
+                            </button>
+                        </div>
+                        <p
+                            style="
+                                font-size: var(--font-size-sm);
+                                color: var(--color-neutral);
+                                margin-top: var(--spacing-md);
+                            ">
+                            * Puedes darte de baja en cualquier momento
+                        </p>
+                    </section>
+                    <!-- Footer del artículo -->
+                    <footer
+                        style="
+                            margin-top: var(--spacing-2xl);
+                            padding-top: var(--spacing-xl);
+                            border-top: 1px solid var(--color-mid);
+                        ">
+                        <div
+                            style="
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                flex-wrap: wrap;
+                                gap: var(--spacing-md);
+                            ">
+                            <div>
+                                <p style="color: var(--color-neutral); font-size: var(--font-size-sm); margin: 0">
+                                    Publicado el <time datetime="2025-01">Enero 2025</time>
+                                </p>
+                            </div>
+                            <div style="display: flex; gap: var(--spacing-sm)">
+                                <a
+                                    href="blog.html"
+                                    style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                                    ← Volver al blog
+                                </a>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </article>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content">
+                <p>
+                    <a href="../index.html" class="footer-logo-link">
+                        <img
+                            src="https://ext.same-assets.com/2703746364/2460079663.png"
+                            alt="Logo RESONANCIAS"
+                            width="90"
+                            height="40" />
+                    </a>
+                    © 2025 RESONANCIAS · Todos los derechos reservados
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
