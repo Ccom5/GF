@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Biblioteca - RESONANCIAS</title>
+        <link rel="icon" href="../../img/favicon.png" type="image/png" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../../scr/styles/main.css" />
+        <style>
+            .card-container {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                gap: 2rem;
+                padding: 2rem;
+            }
+            .card {
+                background: var(--color-light);
+                border-radius: 12px;
+                box-shadow: var(--shadow-md);
+                overflow: hidden;
+                width: 300px;
+                transition: transform 0.3s;
+            }
+            .card:hover {
+                transform: translateY(-10px);
+            }
+            .card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+            .card-content {
+                padding: 1.5rem;
+            }
+            .card-content h3 {
+                font-size: var(--font-size-lg);
+                margin-bottom: 1rem;
+                color: var(--color-dark);
+            }
+            .card-content p {
+                font-size: var(--font-size-md);
+                line-height: 1.6;
+                color: var(--color-dark);
+            }
+            
+            /* Layout simple para mantener el footer abajo */
+            main {
+                min-height: calc(100vh - 160px); /* altura de ventana menos header y footer aproximado */
+            }
+            
+            /* Responsive para móviles */
+            @media (max-width: 768px) {
+                main {
+                    min-height: calc(100vh - 140px);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="nav-container">
+                <a href="../../index.html" class="logo" aria-label="RESONANCIAS - Inicio">
+                    <img src="../../img/logo.png" alt="Logo RESONANCIAS" width="40" height="40" />
+                </a>
+                <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+                    <a href="../../index.html">Inicio</a>
+                    <a href="../obras.html" aria-current="page">Libros</a>
+                    <a href="../blog.html">Blog</a>
+                    <a href="../quien-soy.html">Quién soy</a>
+                    <a href="../contacto.html">Contacto</a>
+                </nav>
+                <div class="social-nav">
+                    <div class="social-links">
+                        <a
+                            href="https://www.facebook.com/profile.php?id=100088341563677"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Facebook"
+                            ><i class="fa-brands fa-facebook"></i
+                        ></a>
+                        <a
+                            href="https://x.com/Miguel_CCom5"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="X (Twitter)"
+                            ><i class="fa-brands fa-x-twitter"></i
+                        ></a>
+                        <a
+                            href="https://www.youtube.com/@Gabriel-Ferre-v3l"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube"
+                            ><i class="fa-brands fa-youtube"></i
+                        ></a>
+                        <a
+                            href="https://bsky.app/profile/gabrielferre.bsky.social"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Bluesky"
+                            ><i class="fa-brands fa-bluesky"></i
+                        ></a>
+                    </div>
+                </div>
+                <button
+                    class="hamburger-btn"
+                    aria-label="Menú de navegación"
+                    aria-expanded="false"
+                    aria-controls="sideMenu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <main id="main-content" role="main">
+            <section class="container" style="padding: 120px 0 60px 0; text-align: center">
+                <h1 style="font-size: var(--font-size-3xl); margin-bottom: 2rem">Biblioteca</h1>
+                <div class="card-container">
+                    <!-- Card 1 - Nueva -->
+                    <div class="card">
+                        <img src="../../img/libro-regalo.jpg" alt="Imagen de muestra 4" />
+                        <div class="card-content">
+                            <h3>Título Pendiente</h3>
+                            <p>
+                                Espacio reservado para una nueva obra. Contenido por definir en futuras actualizaciones.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Card 2 - Nueva -->
+                    <div class="card">
+                        <img src="../../img/vestido-letras.jpg" alt="Imagen de muestra 5" />
+                        <div class="card-content">
+                            <h3>Obra en Desarrollo</h3>
+                            <p>Proyecto literario en proceso de creación. Pronto más detalles sobre esta nueva propuesta.</p>
+                        </div>
+                    </div>
+                    <!-- Card 3 - Nueva -->
+                    <div class="card">
+                        <img src="../../img/programacion.jpg" alt="Imagen de muestra 6" />
+                        <div class="card-content">
+                            <h3>Futuro Proyecto</h3>
+                            <p>Espacio destinado para contenido futuro. Una nueva exploración literaria por venir.</p>
+                        </div>
+                    </div>
+                    <!-- Card 1 - Original -->
+                    <div class="card">
+                        <img src="../../img/libro-Cronicas.jpg" alt="Imagen de muestra 1" />
+                        <div class="card-content">
+                            <h3>Crónicas de la Expiación</h3>
+                            <p>
+                                Una alegoría inquietante sobre la ética, la memoria y la resistencia en un mundo donde
+                                los sentimientos son mercancía.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Card 2 - Original -->
+                    <div class="card">
+                        <img src="../../img/libro-saber.jpg" alt="Imagen de muestra 2" />
+                        <div class="card-content">
+                            <h3>El Saber no Percibido</h3>
+                            <p>Reflexiones sobre la cárcel de la mente, la materia herida y el saber que permanece.</p>
+                        </div>
+                    </div>
+                    <!-- Card 3 - Original -->
+                    <div class="card">
+                        <img src="../../img/libros.jpg" alt="Imagen de muestra 3" />
+                        <div class="card-content">
+                            <h3>Próximamente</h3>
+                            <p>Nuevas obras y exploraciones literarias en camino. El viaje continúa.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script src="../../scr/js/main.js" defer></script>
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content">
+                <p>© 2025 RESONANCIAS · Todos los derechos reservados</p>
+            </div>
+        </footer>
+    </body>
+</html>
