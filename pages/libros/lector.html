@@ -238,6 +238,7 @@
             "El horror segun Lovecraft - Vol-2": { name: "El horror segun Lovecraft - Vol-2", path: "El horror segun Lovecraft - Vol-2/" },
             "El horror segun Lovecraft -vol-1": { name: "El horror segun Lovecraft -vol-1", path: "El horror segun Lovecraft -vol-1/" },
             "Ficciones - Jorge Luis Borges": { name: "Ficciones - Jorge Luis Borges", path: "Ficciones - Jorge Luis Borges/" },
+            "La rebelión de las masas": { name: "La rebelión de las masas", path: "La rebelión de las masas/" },
             "Las venas abiertas de America L - Eduardo Galeano": { name: "Las venas abiertas de America L - Eduardo Galeano", path: "Las venas abiertas de America L - Eduardo Galeano/" },
             "Saber no Percibido": { name: "Saber no Percibido", path: "Saber no Percibido/" }
         };
@@ -303,28 +304,24 @@
 
         async function showCover(bookId) {
             const book = books[bookId];
-            const coverPaths = [`${book.path}Images/cover.jpeg`, `${book.path}Images/cover.jpg`, `${book.path}images/cover.jpeg`, `${book.path}images/cover.jpg`, `${book.path}img/cover.jpeg`, `${book.path}img/cover.jpg`];
-            let coverFound = false;
+            const coverPath = `${book.path}images/cover.jpg`; // Ruta estandarizada
 
-            for (const relativePath of coverPaths) {
-                try {
-                    const fullUrl = new URL(relativePath, window.location.href);
-                    const response = await fetch(fullUrl.href);
-                    
-                    const contentType = response.headers.get("content-type");
-                    if (response.ok && contentType && contentType.startsWith("image/")) {
-                        readerContent.innerHTML = `
-                            <div class="cover-display">
-                                <img src="${fullUrl.href}" alt="Portada de ${book.name}">
-                                <button class="control-btn" onclick="startReading()">Iniciar Lectura</button>
-                            </div>`;
-                        coverFound = true;
-                        break;
-                    }
-                } catch (error) { /* Ignore failed fetch */ }
-            }
-
-            if (!coverFound) {
+            try {
+                const fullUrl = new URL(coverPath, window.location.href);
+                const response = await fetch(fullUrl.href);
+                
+                const contentType = response.headers.get("content-type");
+                if (response.ok && contentType && contentType.startsWith("image/")) {
+                    readerContent.innerHTML = `
+                        <div class="cover-display">
+                            <img src="${fullUrl.href}" alt="Portada de ${book.name}">
+                            <button class="control-btn" onclick="startReading()">Iniciar Lectura</button>
+                        </div>`;
+                } else {
+                    startReading();
+                }
+            } catch (error) {
+                console.warn('No se pudo cargar la portada:', error);
                 startReading();
             }
         }
@@ -344,13 +341,17 @@
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(indexHtml, 'text/html');
                 
-                // Extraer solo los enlaces que apuntan a archivos de capítulos (no enlaces internos con #)
+                // Extraer solo los enlaces que apuntan a archivos de capítulos (archivos .html en carpeta text/)
                 const chapterLinks = Array.from(doc.querySelectorAll('a[href]'))
                     .map(a => a.getAttribute('href'))
-                    .filter(href => href && !href.startsWith('#') && href.includes('.xhtml'))
+                    .filter(href => href && !href.startsWith('#') && href.includes('.html') && href.toLowerCase().includes('text/'))
                     .map(href => href.split('#')[0]); // Remover anclas internas
                 
                 const uniqueChapterFiles = [...new Set(chapterLinks)];
+
+                if (uniqueChapterFiles.length === 0) {
+                    throw new Error('No se encontraron capítulos en el libro.');
+                }
 
                 const chapterPromises = uniqueChapterFiles.map(async file => {
                     try {
@@ -398,12 +399,17 @@
                 readerContent.appendChild(pageDiv);
             });
 
-            // Fix image paths
+            // Fix image paths (ahora apunta a carpeta images/ estandarizada)
             const images = readerContent.getElementsByTagName('img');
             for(let img of images) {
                 let originalSrc = img.getAttribute('src');
                 if (originalSrc && !originalSrc.startsWith('http')) {
-                    const imageUrl = new URL(originalSrc, new URL(books[currentBookId].path, window.location.href));
+                    // Ajustar rutas de imágenes para que apunten a la carpeta images/ estandarizada
+                    let adjustedSrc = originalSrc;
+                    if (originalSrc.includes('../images/') || originalSrc.includes('../Images/')) {
+                        adjustedSrc = originalSrc.replace(/(\.\.\/)+(images|Images)\//gi, '../images/');
+                    }
+                    const imageUrl = new URL(adjustedSrc, new URL(books[currentBookId].path, window.location.href));
                     img.src = imageUrl.href;
                 }
             }
