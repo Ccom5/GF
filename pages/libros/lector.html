@@ -175,7 +175,7 @@
             const book = books[currentBookId];
             console.log(`[DEBUG] Iniciando la carga para el libro: ${currentBookId}`);
             try {
-                const indexUrl = new URL(`${book.path}indice.html`, window.location.href);
+                const indexUrl = new URL(`${book.path}index.html`, window.location.href);
                 console.log(`[DEBUG] Intentando cargar el índice desde: ${indexUrl.href}`);
                 
                 const indexResponse = await fetch(indexUrl.href);
@@ -230,18 +230,7 @@
                 
                 const chaptersHtml = await Promise.all(chapterPromises);
                 
-                chapters = chaptersHtml
-                    .filter(html => html !== null)
-                    .map((html, index) => {
-                        if (!html) return null;
-                        const bodyMatch = html.match(/<body[^>]*>([\s\S]*)<\/body>/i);
-                        if (bodyMatch) {
-                            return bodyMatch[1];
-                        }
-                        console.warn(`Capítulo ${index + 1} no tiene etiqueta <body>, usando contenido completo`);
-                        return html;
-                    })
-                    .filter(chapter => chapter !== null);
+                chapters = chaptersHtml.filter(html => html !== null);
 
                 if (chapters.length === 0) {
                     throw new Error('No se pudieron cargar los capítulos del libro.');
@@ -260,10 +249,18 @@
             readerContent.innerHTML = ''; // Clear content
             
             chapters.forEach(chapterHtml => {
-                const pageDiv = document.createElement('div');
-                pageDiv.className = 'reader-page';
-                pageDiv.innerHTML = chapterHtml;
-                readerContent.appendChild(pageDiv);
+                const pageWrapper = document.createElement('div');
+                pageWrapper.className = 'reader-page'; // Use the same class for sizing and layout
+
+                const iframe = document.createElement('iframe');
+                iframe.srcdoc = chapterHtml;
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.style.border = 'none';
+                iframe.sandbox = 'allow-scripts'; // Allow scripts if books need them, but no other permissions
+
+                pageWrapper.appendChild(iframe);
+                readerContent.appendChild(pageWrapper);
             });
 
             
