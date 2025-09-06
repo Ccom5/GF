@@ -173,30 +173,38 @@
 
         async function loadFullBook() {
             const book = books[currentBookId];
+            console.log(`[DEBUG] Iniciando la carga para el libro: ${currentBookId}`);
             try {
                 const indexUrl = new URL(`${book.path}indice.html`, window.location.href);
+                console.log(`[DEBUG] Intentando cargar el índice desde: ${indexUrl.href}`);
+                
                 const indexResponse = await fetch(indexUrl.href);
-                if (!indexResponse.ok) throw new Error('No se pudo cargar el índice del libro.');
+                console.log(`[DEBUG] Respuesta del servidor para el índice: Status ${indexResponse.status}`);
+
+                if (!indexResponse.ok) {
+                    console.error(`[DEBUG] La respuesta del servidor no fue OK. Status: ${indexResponse.status}`);
+                    throw new Error('No se pudo cargar el índice del libro.');
+                }
 
                 const indexHtml = await indexResponse.text();
+                console.log('[DEBUG] Primeros 500 caracteres del índice recibido:', indexHtml.substring(0, 500));
+
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(indexHtml, 'text/html');
                 
-                // Extraer enlaces que apunten a archivos de capítulos (.html o .xhtml)
-                // Acepta archivos en cualquier estructura
                 const chapterLinks = Array.from(doc.querySelectorAll('a[href]'))
                     .map(a => a.getAttribute('href'))
                     .filter(href => {
                         if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto:')) return false;
-                        // Solo acepta archivos .html dentro de la carpeta 'text/'
                         return href.toLowerCase().startsWith('text/') && href.endsWith('.html');
                     })
-                    .map(href => href.split('#')[0]) // Remover anclas internas
-                    .filter((href, index, array) => array.indexOf(href) === index); // Remover duplicados
+                    .map(href => href.split('#')[0])
+                    .filter((href, index, array) => array.indexOf(href) === index);
                 
+                console.log('[DEBUG] Enlaces a capítulos encontrados:', chapterLinks);
+
                 if (chapterLinks.length === 0) {
-                    console.error('No se encontraron enlaces a capítulos en el índice');
-                    console.log('Contenido del índice HTML:', indexHtml.substring(0, 500));
+                    console.error('[DEBUG] No se encontraron enlaces a capítulos que coincidan con el patrón.');
                     throw new Error('No se encontraron capítulos en el libro.');
                 }
 
@@ -205,6 +213,7 @@
                 const chapterPromises = chapterLinks.map(async (file, index) => {
                     try {
                         const chapterUrl = new URL(book.path + file, window.location.href);
+                        console.log(`[DEBUG] Cargando capítulo ${index + 1} desde: ${chapterUrl.href}`);
                         const response = await fetch(chapterUrl.href);
                         if (!response.ok) {
                             console.warn(`No se pudo cargar el capítulo ${index + 1}: ${file} (HTTP ${response.status})`);
@@ -221,19 +230,14 @@
                 
                 const chaptersHtml = await Promise.all(chapterPromises);
                 
-                // Filtrar capítulos nulos y extraer contenido del body
                 chapters = chaptersHtml
                     .filter(html => html !== null)
                     .map((html, index) => {
                         if (!html) return null;
-                        
-                        // Intentar extraer el contenido del body
                         const bodyMatch = html.match(/<body[^>]*>([\s\S]*)<\/body>/i);
                         if (bodyMatch) {
                             return bodyMatch[1];
                         }
-                        
-                        // Si no hay etiqueta body, usar todo el contenido HTML
                         console.warn(`Capítulo ${index + 1} no tiene etiqueta <body>, usando contenido completo`);
                         return html;
                     })
