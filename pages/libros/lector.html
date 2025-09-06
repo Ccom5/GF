@@ -341,10 +341,14 @@
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(indexHtml, 'text/html');
                 
-                // Extraer solo los enlaces que apuntan a archivos de capítulos (archivos .html en carpeta text/)
+                // Extraer solo los enlaces que apuntan a archivos de capítulos (.html)
+                // Acepta archivos tanto en la raíz como en carpeta text/
                 const chapterLinks = Array.from(doc.querySelectorAll('a[href]'))
                     .map(a => a.getAttribute('href'))
-                    .filter(href => href && !href.startsWith('#') && href.includes('.html') && href.toLowerCase().includes('text/'))
+                    .filter(href => {
+                        if (!href || href.startsWith('#') || href.startsWith('http')) return false;
+                        return href.includes('.html');
+                    })
                     .map(href => href.split('#')[0]); // Remover anclas internas
                 
                 const uniqueChapterFiles = [...new Set(chapterLinks)];
@@ -352,6 +356,8 @@
                 if (uniqueChapterFiles.length === 0) {
                     throw new Error('No se encontraron capítulos en el libro.');
                 }
+
+                console.log(`Cargando ${uniqueChapterFiles.length} capítulos para "${book.name}":`, uniqueChapterFiles);
 
                 const chapterPromises = uniqueChapterFiles.map(async file => {
                     try {
@@ -381,6 +387,7 @@
                     throw new Error('No se pudieron cargar los capítulos del libro.');
                 }
 
+                console.log(`Se cargaron exitosamente ${chapters.length} capítulos`);
                 displayBook();
 
             } catch (error) {
