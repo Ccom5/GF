@@ -345,16 +345,41 @@
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(indexHtml, 'text/html');
                 
-                const chapterLinks = Array.from(doc.querySelectorAll('a')).map(a => a.getAttribute('href'));
-                const uniqueChapterFiles = [...new Set(chapterLinks.map(href => href.split('#')[0]))];
+                // Extraer solo los enlaces que apuntan a archivos de capítulos (no enlaces internos con #)
+                const chapterLinks = Array.from(doc.querySelectorAll('a[href]'))
+                    .map(a => a.getAttribute('href'))
+                    .filter(href => href && !href.startsWith('#') && href.includes('.xhtml'))
+                    .map(href => href.split('#')[0]); // Remover anclas internas
+                
+                const uniqueChapterFiles = [...new Set(chapterLinks)];
 
-                const chapterPromises = uniqueChapterFiles.map(file => fetch(book.path + file).then(res => res.text()));
-                const chaptersHtml = await Promise.all(chapterPromises);
-
-                chapters = chaptersHtml.map(html => {
-                    const bodyMatch = html.match(/<body[^>]*>([\s\S]*)<\/body>/i);
-                    return bodyMatch ? bodyMatch[1] : html;
+                const chapterPromises = uniqueChapterFiles.map(async file => {
+                    try {
+                        const response = await fetch(book.path + file);
+                        if (!response.ok) {
+                            console.warn(`No se pudo cargar el capítulo: ${file}`);
+                            return null;
+                        }
+                        return await response.text();
+                    } catch (error) {
+                        console.warn(`Error al cargar el capítulo ${file}:`, error);
+                        return null;
+                    }
                 });
+                
+                const chaptersHtml = await Promise.all(chapterPromises);
+                
+                // Filtrar capítulos nulos y extraer contenido del body
+                chapters = chaptersHtml
+                    .filter(html => html !== null)
+                    .map(html => {
+                        const bodyMatch = html.match(/<body[^>]*>([\s\S]*)<\/body>/i);
+                        return bodyMatch ? bodyMatch[1] : html;
+                    });
+
+                if (chapters.length === 0) {
+                    throw new Error('No se pudieron cargar los capítulos del libro.');
+                }
 
                 displayBook();
 
