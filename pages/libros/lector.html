@@ -1,17 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lector de Libros - RESONANCIAS</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="../../scr/styles/estilos.css">
-    
-    </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="../../scr/styles/estilos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <style>
+        /* Fix for PDF canvas rendering */
+        .reader-content canvas {
+            max-width: none !important;
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+</head>
+
 <body>
     <nav class="navbar">
         <div class="navbar-content">
-            <img src="../../img/logo.png" alt="Logo RESONANCIAS" width="40" height="40">
+            <img src="../../img/logo.png" alt="Logo RESONANCIAS" width="40" height="40" />
             <div class="navbar-nav">
                 <a href="../../index.html" class="nav-btn"><i class="fas fa-home"></i> Inicio</a>
                 <a href="../obras.html" class="nav-btn"><i class="fas fa-book-open"></i> Obras</a>
@@ -26,7 +36,7 @@
     <div class="main-container">
         <aside class="book-selector" id="bookSelector">
             <h2>Biblioteca</h2>
-            <input type="text" id="bookSearch" class="search-input" placeholder="Buscar libro...">
+            <input type="text" id="bookSearch" class="search-input" placeholder="Buscar libro..." />
             <ul class="book-list" id="bookList"></ul>
         </aside>
         <main class="reader-panel">
@@ -40,14 +50,22 @@
                 <div class="control-title">Navegación</div>
                 <button class="control-btn" id="prevPage">← Anterior</button>
                 <button class="control-btn" id="nextPage">Siguiente →</button>
-                <p id="pageIndicator" style="text-align:center; margin-top: 0.5rem;"></p>
+                <p id="pageIndicator" style="text-align: center; margin-top: 0.5rem"></p>
             </div>
-            <div class="control-section">
+            <div class="control-section" id="font-controls">
                 <div class="control-title">Tamaño de fuente</div>
                 <div class="font-controls">
                     <button class="font-btn" onclick="changeFontSize(-10)">A-</button>
                     <span id="fontSizeDisplay">100%</span>
                     <button class="font-btn" onclick="changeFontSize(10)">A+</button>
+                </div>
+            </div>
+            <div class="control-section" id="pdf-controls" style="display: none;">
+                <div class="control-title">Zoom (PDF)</div>
+                <div class="font-controls">
+                    <button class="font-btn" onclick="changeZoom(-0.2)">-</button>
+                    <span id="zoomDisplay">100%</span>
+                    <button class="font-btn" onclick="changeZoom(0.2)">+</button>
                 </div>
             </div>
             <div class="control-section">
@@ -61,80 +79,83 @@
     <script>
         // --- STATE MANAGEMENT ---
         let currentBookId = null;
-        let chapters = []; // Will hold the HTML content of each chapter
+        let chapters = [];
         let currentPage = 0;
         let totalPages = 0;
         let fontSize = 100;
         let activeMenu = null;
+        let pdfDoc = null;
+        let pdfPageNum = 1;
+        let pdfZoom = 1.0;
 
         const books = {
-            "1984 - George Orwell": { name: "1984 - George Orwell", path: "1984 - George Orwell/" },
-            "Crónicas de la Expiación": { name: "Crónicas de la Expiación", path: "Crónicas de la Expiación/" },
-            "El Aleph-J.L. Borges": { name: "El Aleph-J.L. Borges", path: "El Aleph-J.L. Borges/" },
-            "El cuervo - Edgar Allan Poe": { name: "El cuervo - Edgar Allan Poe", path: "El cuervo - Edgar Allan Poe/" },
-            "El Eternauta": { name: "El Eternauta", path: "El Eternauta/" },
-            "El horror segun Lovecraft - Vol-2": { name: "El horror segun Lovecraft - Vol-2", path: "El horror segun Lovecraft - Vol-2/" },
-            "El horror segun Lovecraft -vol-1": { name: "El horror segun Lovecraft -vol-1", path: "El horror segun Lovecraft -vol-1/" },
-            "Ficciones - Jorge Luis Borges": { name: "Ficciones - Jorge Luis Borges", path: "Ficciones - Jorge Luis Borges/" },
-            "La rebelión de las masas": { name: "La rebelión de las masas", path: "La rebelión de las masas/" },
-            "Las venas abiertas de America L - Eduardo Galeano": { name: "Las venas abiertas de America L - Eduardo Galeano", path: "Las venas abiertas de America L - Eduardo Galeano/" },
-            "Saber no Percibido": { name: "Saber no Percibido", path: "Saber no Percibido/" }
+            "1984 - George Orwell": { name: "1984 - George Orwell", path: "1984 - George Orwell/", type: "html" },
+            "Crónicas de la Expiación": { name: "Crónicas de la Expiación", path: "Crónicas de la Expiación/", type: "html" },
+            "El Aleph-J.L. Borges": { name: "El Aleph-J.L. Borges", path: "El Aleph-J.L. Borges/", type: "html" },
+            "El cuervo - Edgar Allan Poe": { name: "El cuervo - Edgar Allan Poe", path: "El cuervo - Edgar Allan Poe/", type: "html" },
+            "El Eternauta": { name: "El Eternauta", path: "El Eternauta/El Eternauta.pdf", type: "pdf" },
+            "El horror segun Lovecraft - Vol-2": { name: "El horror segun Lovecraft - Vol-2", path: "El horror segun Lovecraft - Vol-2/", type: "html" },
+            "El horror segun Lovecraft -vol-1": { name: "El horror segun Lovecraft -vol-1", path: "El horror segun Lovecraft -vol-1/", type: "html" },
+            "La rebelión de las masas": { name: "La rebelión de las masas", path: "La rebelión de las masas/", type: "html" },
+            "Las venas abiertas de America L - Eduardo Galeano": { name: "Las venas abiertas de America L - Eduardo Galeano", path: "Las venas abiertas de America L - Eduardo Galeano/", type: "html" },
+            "Saber no Percibido": { name: "Saber no Percibido", path: "Saber no Percibido/", type: "html" }
         };
 
         // --- DOM ELEMENTS ---
-        const readerContent = document.getElementById('readerContent');
-        const prevBtn = document.getElementById('prevPage');
-        const nextBtn = document.getElementById('nextPage');
-        const pageIndicator = document.getElementById('pageIndicator');
+        const readerContent = document.getElementById("readerContent");
+        const prevBtn = document.getElementById("prevPage");
+        const nextBtn = document.getElementById("nextPage");
+        const pageIndicator = document.getElementById("pageIndicator");
+        const fontControls = document.getElementById("font-controls");
+        const pdfControls = document.getElementById("pdf-controls");
+        const zoomDisplay = document.getElementById("zoomDisplay");
 
         // --- INITIALIZATION ---
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('menuToggle').addEventListener('click', () => toggleMobileMenu('books'));
-            document.getElementById('controlsToggle').addEventListener('click', () => toggleMobileMenu('controls'));
-            document.getElementById('menuOverlay').addEventListener('click', () => closeMobileMenu());
-            prevBtn.addEventListener('click', () => navigatePage(-1));
-            nextBtn.addEventListener('click', () => navigatePage(1));
-            document.getElementById('readerPrev').addEventListener('click', () => navigatePage(-1));
-            document.getElementById('readerNext').addEventListener('click', () => navigatePage(1));
-            document.getElementById('bookSearch').addEventListener('keyup', filterBooks);
-            
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("menuToggle").addEventListener("click", () => toggleMobileMenu("books"));
+            document.getElementById("controlsToggle").addEventListener("click", () => toggleMobileMenu("controls"));
+            document.getElementById("menuOverlay").addEventListener("click", () => closeMobileMenu());
+            prevBtn.addEventListener("click", () => navigatePage(-1));
+            nextBtn.addEventListener("click", () => navigatePage(1));
+            document.getElementById("readerPrev").addEventListener("click", () => navigatePage(-1));
+            document.getElementById("readerNext").addEventListener("click", () => navigatePage(1));
+            document.getElementById("bookSearch").addEventListener("keyup", filterBooks);
+
             populateBookList();
             resetReaderView();
 
             const urlParams = new URLSearchParams(window.location.search);
-            const bookToLoad = urlParams.get('book');
+            const bookToLoad = urlParams.get("book");
             if (bookToLoad && books[bookToLoad]) {
                 selectBook(bookToLoad);
             }
         });
 
         // --- BOOK SELECTION & LOADING ---
-        function populateBookList(filter = '') {
-            const bookList = document.getElementById('bookList');
-            bookList.innerHTML = '';
-            const lowerCaseFilter = filter.toLowerCase();
-
-            Object.keys(books).sort((a, b) => a.localeCompare(b)).forEach(bookId => {
+        function populateBookList(filter = "") {
+            const bookList = document.getElementById("bookList");
+            bookList.innerHTML = "";
+            Object.keys(books).sort().forEach(bookId => {
                 const book = books[bookId];
-                if (book.name.toLowerCase().includes(lowerCaseFilter)) {
-                    const listItem = document.createElement('li');
-                    listItem.className = 'book-item';
-                    listItem.textContent = book.name;
-                    listItem.addEventListener('click', () => selectBook(bookId));
-                    bookList.appendChild(listItem);
+                if (book.name.toLowerCase().includes(filter.toLowerCase())) {
+                    const li = document.createElement("li");
+                    li.className = "book-item";
+                    li.textContent = book.name;
+                    li.onclick = () => selectBook(bookId);
+                    bookList.appendChild(li);
                 }
             });
         }
 
         function filterBooks() {
-            populateBookList(document.getElementById('bookSearch').value);
+            populateBookList(document.getElementById("bookSearch").value);
         }
 
         function selectBook(bookId) {
             currentBookId = bookId;
-            document.querySelectorAll('.book-item').forEach(item => item.classList.remove('active'));
-            document.querySelectorAll('.book-item').forEach(item => {
-                if (item.textContent === books[bookId].name) item.classList.add('active');
+            document.querySelectorAll(".book-item").forEach(item => item.classList.remove("active"));
+            document.querySelectorAll(".book-item").forEach(item => {
+                if (item.textContent === books[bookId].name) item.classList.add("active");
             });
             if (window.innerWidth <= 1024) closeMobileMenu();
             showCover(bookId);
@@ -142,30 +163,14 @@
 
         async function showCover(bookId) {
             const book = books[bookId];
-            const coverPath = `${book.path}images/cover.jpg`; // Estructura estandarizada
-
-            try {
-                const fullUrl = new URL(coverPath, window.location.href);
-                const response = await fetch(fullUrl.href);
-                
-                const contentType = response.headers.get("content-type");
-                if (response.ok && contentType && contentType.startsWith("image/")) {
-                    readerContent.innerHTML = `
-                        <div class="cover-display">
-                            <img src="${fullUrl.href}" alt="Portada de ${book.name}">
-                            <button class="control-btn" onclick="startReading()">Iniciar Lectura</button>
-                        </div>`;
-                    console.log(`Portada encontrada en: ${coverPath}`);
-                } else {
-                    console.warn('No se encontró portada o no es una imagen válida para:', book.name);
-                    startReading();
-                }
-            } catch (error) {
-                console.warn('Error al cargar la portada para:', book.name, error);
-                startReading();
-            }
+            const coverPath = book.type === 'pdf' ? book.path.replace('.pdf', '.jpg') : `${book.path}images/cover.jpg`;
+            readerContent.innerHTML = `
+                <div class="cover-display">
+                    <img src="${coverPath}" alt="Portada de ${book.name}" onerror="this.style.display='none'">
+                    <button class="control-btn" onclick="startReading()">Iniciar Lectura</button>
+                </div>`;
         }
-        
+
         async function startReading() {
             readerContent.innerHTML = `<div class="empty-state"><h3>Cargando libro...</h3></div>`;
             await loadFullBook();
@@ -173,98 +178,118 @@
 
         async function loadFullBook() {
             const book = books[currentBookId];
-            console.log(`[DEBUG] Iniciando la carga para el libro: ${currentBookId}`);
+            if (book.type === 'pdf') {
+                toggleBookControls('pdf');
+                await loadPdfBook(book.path);
+            } else {
+                toggleBookControls('html');
+                await loadHtmlBook();
+            }
+        }
+
+        function toggleBookControls(type) {
+            if (type === 'pdf') {
+                fontControls.style.display = 'none';
+                pdfControls.style.display = 'block';
+            } else {
+                fontControls.style.display = 'block';
+                pdfControls.style.display = 'none';
+            }
+        }
+
+        async function loadPdfBook(pdfPath) {
+            readerContent.innerHTML = '<canvas id="pdf-render"></canvas>';
+            try {
+                pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js';
+                const loadingTask = pdfjsLib.getDocument(pdfPath);
+                pdfDoc = await loadingTask.promise;
+                totalPages = pdfDoc.numPages;
+                pdfPageNum = 1;
+                pdfZoom = 1.0;
+                renderPdfPage(pdfPageNum);
+            } catch (error) {
+                console.error("Error loading PDF:", error);
+                readerContent.innerHTML = `<div class="empty-state"><h3>Error al cargar el PDF</h3><p>${error.message}</p></div>`;
+            }
+        }
+
+        function renderPdfPage(num) {
+            pdfDoc.getPage(num).then(page => {
+                const canvas = document.getElementById('pdf-render');
+                if (!canvas) return;
+                const ctx = canvas.getContext('2d');
+                const dpr = window.devicePixelRatio || 1;
+                const containerWidth = readerContent.clientWidth;
+                
+                const viewport = page.getViewport({ scale: 1.0 });
+                const baseScale = containerWidth / viewport.width;
+                const scale = baseScale * pdfZoom;
+                
+                const scaledViewport = page.getViewport({ scale: scale * dpr });
+
+                canvas.width = scaledViewport.width;
+                canvas.height = scaledViewport.height;
+
+                canvas.style.width = `${scaledViewport.width / dpr}px`;
+                canvas.style.height = `${scaledViewport.height / dpr}px`;
+
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: scaledViewport
+                };
+                page.render(renderContext);
+            });
+            updatePageUI();
+        }
+
+        async function loadHtmlBook() {
+            const book = books[currentBookId];
             try {
                 const indexUrl = new URL(`${book.path}index.html`, window.location.href);
-                console.log(`[DEBUG] Intentando cargar el índice desde: ${indexUrl.href}`);
-                
                 const indexResponse = await fetch(indexUrl.href);
-                console.log(`[DEBUG] Respuesta del servidor para el índice: Status ${indexResponse.status}`);
-
-                if (!indexResponse.ok) {
-                    console.error(`[DEBUG] La respuesta del servidor no fue OK. Status: ${indexResponse.status}`);
-                    throw new Error('No se pudo cargar el índice del libro.');
-                }
+                if (!indexResponse.ok) throw new Error("No se pudo cargar el índice.");
 
                 const indexHtml = await indexResponse.text();
-                console.log('[DEBUG] Primeros 500 caracteres del índice recibido:', indexHtml.substring(0, 500));
-
                 const parser = new DOMParser();
-                const doc = parser.parseFromString(indexHtml, 'text/html');
-                
-                const chapterLinks = Array.from(doc.querySelectorAll('a[href]'))
-                    .map(a => a.getAttribute('href'))
-                    .filter(href => {
-                        if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto:')) return false;
-                        return href.toLowerCase().startsWith('text/') && href.endsWith('.html');
-                    })
-                    .map(href => href.split('#')[0])
-                    .filter((href, index, array) => array.indexOf(href) === index);
-                
-                console.log('[DEBUG] Enlaces a capítulos encontrados:', chapterLinks);
+                const doc = parser.parseFromString(indexHtml, "text/html");
 
-                if (chapterLinks.length === 0) {
-                    console.error('[DEBUG] No se encontraron enlaces a capítulos que coincidan con el patrón.');
-                    throw new Error('No se encontraron capítulos en el libro.');
-                }
+                const chapterLinks = Array.from(doc.querySelectorAll("a[href]"))
+                    .map(a => a.getAttribute("href"))
+                    .filter(href => href && href.toLowerCase().startsWith("text/") && href.endsWith(".html"))
+                    .filter((href, i, a) => a.indexOf(href) === i);
 
-                console.log(`Cargando ${chapterLinks.length} capítulos para "${book.name}":`, chapterLinks);
+                if (chapterLinks.length === 0) throw new Error("No se encontraron capítulos.");
 
-                const chapterPromises = chapterLinks.map(async (file, index) => {
+                const chaptersHtml = await Promise.all(chapterLinks.map(async file => {
                     try {
-                        const chapterUrl = new URL(book.path + file, window.location.href);
-                        console.log(`[DEBUG] Cargando capítulo ${index + 1} desde: ${chapterUrl.href}`);
-                        const response = await fetch(chapterUrl.href);
-                        if (!response.ok) {
-                            console.warn(`No se pudo cargar el capítulo ${index + 1}: ${file} (HTTP ${response.status})`);
-                            return null;
-                        }
-                        const content = await response.text();
-                        console.log(`Capítulo ${index + 1} cargado: ${file}`);
-                        return content;
-                    } catch (error) {
-                        console.warn(`Error al cargar el capítulo ${index + 1} (${file}):`, error);
-                        return null;
-                    }
-                });
-                
-                const chaptersHtml = await Promise.all(chapterPromises);
-                
+                        const response = await fetch(new URL(book.path + file, window.location.href));
+                        return response.ok ? await response.text() : null;
+                    } catch { return null; }
+                }));
+
                 chapters = chaptersHtml.filter(html => html !== null);
-
-                if (chapters.length === 0) {
-                    throw new Error('No se pudieron cargar los capítulos del libro.');
-                }
-
-                console.log(`Se cargaron exitosamente ${chapters.length} de ${chapterLinks.length} capítulos`);
+                if (chapters.length === 0) throw new Error("No se pudieron cargar los capítulos.");
                 displayBook();
-
             } catch (error) {
-                console.error('Error al cargar el libro:', error);
-                readerContent.innerHTML = `<div class="empty-state"><h3>Error al cargar el libro</h3><p>${error.message}</p><p>Revisa la consola para más detalles.</p></div>`;
+                readerContent.innerHTML = `<div class="empty-state"><h3>Error al cargar el libro</h3><p>${error.message}</p></div>`;
             }
         }
 
         function displayBook() {
-            readerContent.innerHTML = ''; // Clear content
-            
+            readerContent.innerHTML = "";
             chapters.forEach(chapterHtml => {
-                const pageWrapper = document.createElement('div');
-                pageWrapper.className = 'reader-page'; // Use the same class for sizing and layout
-
-                const iframe = document.createElement('iframe');
-                iframe.srcdoc = chapterHtml;
-                iframe.style.width = '100%';
-                iframe.style.height = '100%';
-                iframe.style.border = 'none';
-                iframe.sandbox = 'allow-scripts'; // Allow scripts if books need them, but no other permissions
-
-                pageWrapper.appendChild(iframe);
-                readerContent.appendChild(pageWrapper);
+                const doc = new DOMParser().parseFromString(chapterHtml, "text/html");
+                doc.querySelectorAll("img").forEach(img => {
+                    const src = img.getAttribute("src");
+                    if (src && !src.startsWith('http')) {
+                        img.src = new URL(books[currentBookId].path + src.replace("./", ""), window.location.href).href;
+                    }
+                });
+                const page = document.createElement("div");
+                page.className = "reader-page";
+                page.innerHTML = doc.body.innerHTML;
+                readerContent.appendChild(page);
             });
-
-            
-            
             totalPages = chapters.length;
             currentPage = 1;
             navigatePage(0, true);
@@ -272,87 +297,104 @@
 
         // --- PAGINATION & NAVIGATION ---
         function navigatePage(direction, absolute = false) {
-            const newPage = absolute ? 1 : currentPage + direction;
-
-            if (newPage >= 1 && newPage <= totalPages) {
-                currentPage = newPage;
-                const scrollAmount = (currentPage - 1) * readerContent.clientWidth;
-                readerContent.scrollTo({
-                    left: scrollAmount,
-                    behavior: 'smooth'
-                });
-                updatePageUI();
+            const book = books[currentBookId];
+            if (book.type === 'pdf') {
+                const newPage = pdfPageNum + direction;
+                if (newPage >= 1 && newPage <= totalPages) {
+                    pdfPageNum = newPage;
+                    renderPdfPage(pdfPageNum);
+                }
+            } else {
+                const newPage = absolute ? 1 : currentPage + direction;
+                if (newPage >= 1 && newPage <= totalPages) {
+                    currentPage = newPage;
+                    readerContent.scrollTo({ left: (currentPage - 1) * readerContent.clientWidth, behavior: "smooth" });
+                    updatePageUI();
+                }
             }
         }
 
         function updatePageUI() {
-            if (totalPages > 0) {
-                pageIndicator.textContent = `Página ${currentPage} de ${totalPages}`;
-            } else {
-                pageIndicator.textContent = '';
+            const book = books[currentBookId];
+            if (!book || totalPages === 0) {
+                pageIndicator.textContent = "";
+                prevBtn.disabled = true;
+                nextBtn.disabled = true;
+                return;
             }
-            prevBtn.disabled = currentPage <= 1;
-            nextBtn.disabled = currentPage >= totalPages;
-            document.getElementById('readerPrev').style.pointerEvents = currentPage <= 1 ? 'none' : 'auto';
-            document.getElementById('readerNext').style.pointerEvents = currentPage >= totalPages ? 'none' : 'auto';
+
+            const page = book.type === 'pdf' ? pdfPageNum : currentPage;
+            pageIndicator.textContent = `Página ${page} de ${totalPages}`;
+            zoomDisplay.textContent = `${Math.round(pdfZoom * 100)}%`;
+
+            const isFirst = page <= 1;
+            const isLast = page >= totalPages;
+            prevBtn.disabled = isFirst;
+            nextBtn.disabled = isLast;
+            document.getElementById("readerPrev").style.pointerEvents = isFirst ? "none" : "auto";
+            document.getElementById("readerNext").style.pointerEvents = isLast ? "none" : "auto";
         }
-        
+
         function resetReaderView() {
-            readerContent.innerHTML = `<div class="empty-state">
-                <h3>Selecciona un libro para comenzar</h3>
-                <p>Elige un título de la lista para iniciar la lectura</p>
-            </div>`;
+            readerContent.innerHTML = `<div class="empty-state"><h3>Selecciona un libro para comenzar</h3><p>Elige un título de la lista para iniciar la lectura</p></div>`;
             chapters = [];
             currentPage = 0;
             totalPages = 0;
+            pdfDoc = null;
+            pdfPageNum = 1;
+            pdfZoom = 1.0;
+            toggleBookControls('html');
             updatePageUI();
         }
 
         // --- UI CONTROLS ---
-        function changeFontSize(change) {
-            const newSize = fontSize + change;
-            fontSize = Math.max(70, Math.min(150, newSize));
-            document.getElementById('fontSizeDisplay').textContent = fontSize + '%';
-            readerContent.style.fontSize = fontSize + '%';
+        function changeZoom(amount) {
+            if (!pdfDoc) return;
+            pdfZoom = Math.max(0.2, pdfZoom + amount);
+            renderPdfPage(pdfPageNum);
         }
 
-        function toggleTheme() { document.body.classList.toggle('dark-mode'); }
+        function changeFontSize(change) {
+            fontSize = Math.max(70, Math.min(150, fontSize + change));
+            document.getElementById("fontSizeDisplay").textContent = `${fontSize}%`;
+            readerContent.style.fontSize = `${fontSize}%`;
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle("dark-mode");
+        }
+
         function toggleFullscreen() {
             if (!document.fullscreenElement) document.documentElement.requestFullscreen();
             else document.exitFullscreen();
         }
 
         function toggleMobileMenu(menuType) {
-            const bookSelector = document.getElementById('bookSelector');
-            const controlsPanel = document.getElementById('controlsPanel');
-            const menuToggle = document.getElementById('menuToggle');
-            const controlsToggle = document.getElementById('controlsToggle');
-            const menuOverlay = document.getElementById('menuOverlay');
-
             if (activeMenu === menuType) {
                 closeMobileMenu();
             } else {
                 closeMobileMenu();
                 activeMenu = menuType;
-                document.getElementById('menuOverlay').classList.add('active');
-                if (menuType === 'books') {
-                    document.getElementById('bookSelector').classList.add('mobile-visible');
-                    document.getElementById('menuToggle').innerHTML = '<i class="fas fa-times"></i>';
-                } else if (menuType === 'controls') {
-                    document.getElementById('controlsPanel').classList.add('mobile-visible');
-                    document.getElementById('controlsToggle').innerHTML = '<i class="fas fa-times"></i>';
+                document.getElementById("menuOverlay").classList.add("active");
+                if (menuType === "books") {
+                    document.getElementById("bookSelector").classList.add("mobile-visible");
+                    document.getElementById("menuToggle").innerHTML = '<i class="fas fa-times"></i>';
+                } else if (menuType === "controls") {
+                    document.getElementById("controlsPanel").classList.add("mobile-visible");
+                    document.getElementById("controlsToggle").innerHTML = '<i class="fas fa-times"></i>';
                 }
             }
         }
 
         function closeMobileMenu() {
             activeMenu = null;
-            document.getElementById('menuOverlay').classList.remove('active');
-            document.getElementById('bookSelector').classList.remove('mobile-visible');
-            document.getElementById('controlsPanel').classList.remove('mobile-visible');
-            document.getElementById('menuToggle').innerHTML = '<i class="fas fa-book"></i>';
-            document.getElementById('controlsToggle').innerHTML = '<i class="fas fa-cogs"></i>';
+            document.getElementById("menuOverlay").classList.remove("active");
+            document.getElementById("bookSelector").classList.remove("mobile-visible");
+            document.getElementById("controlsPanel").classList.remove("mobile-visible");
+            document.getElementById("menuToggle").innerHTML = '<i class="fas fa-book"></i>';
+            document.getElementById("controlsToggle").innerHTML = '<i class="fas fa-cogs"></i>';
         }
     </script>
 </body>
+
 </html>
