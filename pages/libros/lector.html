@@ -174,7 +174,7 @@
         async function loadFullBook() {
             const book = books[currentBookId];
             try {
-                const indexUrl = new URL(`${book.path}index.html`, window.location.href);
+                const indexUrl = new URL(`${book.path}indice.html`, window.location.href);
                 const indexResponse = await fetch(indexUrl.href);
                 if (!indexResponse.ok) throw new Error('No se pudo cargar el índice del libro.');
 
