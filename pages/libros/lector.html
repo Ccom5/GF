@@ -174,7 +174,8 @@
         async function loadFullBook() {
             const book = books[currentBookId];
             try {
-                const indexResponse = await fetch(`${book.path}index.html`);
+                const indexUrl = new URL(`${book.path}index.html`, window.location.href);
+                const indexResponse = await fetch(indexUrl.href);
                 if (!indexResponse.ok) throw new Error('No se pudo cargar el índice del libro.');
 
                 const indexHtml = await indexResponse.text();
@@ -203,7 +204,8 @@
 
                 const chapterPromises = chapterLinks.map(async (file, index) => {
                     try {
-                        const response = await fetch(book.path + file);
+                        const chapterUrl = new URL(book.path + file, window.location.href);
+                        const response = await fetch(chapterUrl.href);
                         if (!response.ok) {
                             console.warn(`No se pudo cargar el capítulo ${index + 1}: ${file} (HTTP ${response.status})`);
                             return null;
