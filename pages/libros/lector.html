@@ -106,7 +106,19 @@
             "El horror segun Lovecraft - Vol-2": { name: "El horror segun Lovecraft - Vol-2", path: "El horror segun Lovecraft - Vol-2/", type: "html" },
             "El horror segun Lovecraft -vol-1": { name: "El horror segun Lovecraft -vol-1", path: "El horror segun Lovecraft -vol-1/", type: "html" },
             "La rebelión de las masas": { name: "La rebelión de las masas", path: "La rebelión de las masas/", type: "html" },
-            "Las venas abiertas de America L - Eduardo Galeano": { name: "Las venas abiertas de America L - Eduardo Galeano", path: "Las venas abiertas de America L - Eduardo Galeano/", type: "html" },
+            "Las venas abiertas de America L - Eduardo Galeano": {
+                name: "Las venas abiertas de America L - Eduardo Galeano",
+                path: "Las venas abiertas de America L - Eduardo Galeano/",
+                type: "html",
+                chapters: [
+                    "text/Section0001.html",
+                    "text/Section0002.html",
+                    "text/Section0003.html",
+                    "text/Section0004.html",
+                    "text/Section0005.html",
+                    "text/notes.html"
+                ]
+            },
             "Saber no Percibido": { name: "Saber no Percibido", path: "Saber no Percibido/", type: "html" }
         };
 
@@ -264,18 +276,24 @@
         async function loadHtmlBook() {
             const book = books[currentBookId];
             try {
-                const indexUrl = new URL(`${book.path}index.html`, window.location.href);
-                const indexResponse = await fetch(indexUrl.href);
-                if (!indexResponse.ok) throw new Error("No se pudo cargar el índice.");
+                let chapterLinks = [];
 
-                const indexHtml = await indexResponse.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(indexHtml, "text/html");
+                if (book.chapters && book.chapters.length > 0) {
+                    chapterLinks = book.chapters;
+                } else {
+                    const indexUrl = new URL(`${book.path}index.html`, window.location.href);
+                    const indexResponse = await fetch(indexUrl.href);
+                    if (!indexResponse.ok) throw new Error("No se pudo cargar el índice.");
 
-                const chapterLinks = Array.from(doc.querySelectorAll("a[href]"))
-                    .map(a => a.getAttribute("href"))
-                    .filter(href => href && href.toLowerCase().startsWith("text/") && href.endsWith(".html"))
-                    .filter((href, i, a) => a.indexOf(href) === i);
+                    const indexHtml = await indexResponse.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(indexHtml, "text/html");
+
+                    chapterLinks = Array.from(doc.querySelectorAll("a[href]"))
+                        .map(a => a.getAttribute("href"))
+                        .filter(href => href && href.toLowerCase().startsWith("text/") && href.endsWith(".html"))
+                        .filter((href, i, a) => a.indexOf(href) === i);
+                }
 
                 if (chapterLinks.length === 0) throw new Error("No se encontraron capítulos.");
 
