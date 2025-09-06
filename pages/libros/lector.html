@@ -136,7 +136,11 @@
             resetReaderView();
 
             const urlParams = new URLSearchParams(window.location.search);
-            const bookToLoad = urlParams.get("book");
+            let bookToLoad = urlParams.get("book");
+            if (bookToLoad) {
+                // Normalize the book name from the URL parameter to handle different path formats
+                bookToLoad = bookToLoad.replace(/\\/g, '/').split('/').filter(Boolean).pop();
+            }
             if (bookToLoad && books[bookToLoad]) {
                 selectBook(bookToLoad);
             }
