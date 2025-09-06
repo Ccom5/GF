@@ -1822,7 +1822,7 @@ input[type="range"]::-moz-range-thumb {
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: var(--font-body); background: var(--color-primary); color: var(--color-dark);
-            line-height: 1.6; overflow: hidden;
+            line-height: 1.6; overflow: auto;
         }
         .navbar {
             background: var(--color-dark); color: var(--color-light); padding: var(--spacing-sm) var(--spacing-md);
