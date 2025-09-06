@@ -304,7 +304,7 @@
 
         async function showCover(bookId) {
             const book = books[bookId];
-            const coverPaths = [`${book.path}images/cover.jpg`, `${book.path}img/cover.jpg`];
+            const coverPaths = [`${book.path}images/cover.jpeg`, `${book.path}images/cover.jpg`, `${book.path}img/cover.jpeg`, `${book.path}img/cover.jpg`];
             let coverFound = false;
 
             for (const relativePath of coverPaths) {
@@ -442,6 +442,12 @@
         }
 
         function toggleMobileMenu(menuType) {
+            const bookSelector = document.getElementById('bookSelector');
+            const controlsPanel = document.getElementById('controlsPanel');
+            const menuToggle = document.getElementById('menuToggle');
+            const controlsToggle = document.getElementById('controlsToggle');
+            const menuOverlay = document.getElementById('menuOverlay');
+
             if (activeMenu === menuType) {
                 closeMobileMenu();
             } else {
