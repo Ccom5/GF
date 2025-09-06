@@ -307,13 +307,15 @@
             const coverPaths = [`${book.path}images/cover.jpg`, `${book.path}img/cover.jpg`];
             let coverFound = false;
 
-            for (const path of coverPaths) {
+            for (const relativePath of coverPaths) {
                 try {
-                    const response = await fetch(path);
+                    const fullUrl = new URL(relativePath, window.location.href);
+                    const response = await fetch(fullUrl.href);
+                    
                     if (response.ok) {
                         readerContent.innerHTML = `
                             <div class="cover-display">
-                                <img src="${path}" alt="Portada de ${book.name}">
+                                <img src="${fullUrl.href}" alt="Portada de ${book.name}">
                                 <button class="control-btn" onclick="startReading()">Iniciar Lectura</button>
                             </div>`;
                         coverFound = true;
