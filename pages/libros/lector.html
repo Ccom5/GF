@@ -312,7 +312,8 @@
                     const fullUrl = new URL(relativePath, window.location.href);
                     const response = await fetch(fullUrl.href);
                     
-                    if (response.ok) {
+                    const contentType = response.headers.get("content-type");
+                    if (response.ok && contentType && contentType.startsWith("image/")) {
                         readerContent.innerHTML = `
                             <div class="cover-display">
                                 <img src="${fullUrl.href}" alt="Portada de ${book.name}">
