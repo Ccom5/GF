@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lector de Libros - RESONANCIAS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        :root {
+            --color-light: #ffffffd4; --color-dark: #100f0f; --color-mid: #c4bcb5;
+            --color-accent: #b06900; --color-primary: #d6cdc3; --color-secondary: #d07f2c;
+            --color-warm: #2b2d2e; --color-neutral: #646363; --color-soft: #bd8956;
+            --color-muted: #bfb9b4; --font-heading: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+            --font-body: "Lato", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+            --spacing-sm: 0.5rem; --spacing-md: 1rem; --spacing-lg: 1.5rem; --spacing-xl: 2rem;
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        body.dark-mode {
+            --color-light: #1a1a1a; --color-dark: #e0e0e0; --color-mid: #4a4845;
+            --color-accent: #ff8c00; --color-primary: #2a2a2a; --color-secondary: #ff8c00;
+            --color-warm: #e0e0e0; --color-neutral: #b0b0b0; --color-soft: #ff8c00;
+            --color-muted: #666666; --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font-body); background: var(--color-primary); color: var(--color-dark);
+            line-height: 1.6; overflow: hidden;
+        }
+        .navbar {
+            background: var(--color-dark); color: var(--color-light); padding: var(--spacing-sm) var(--spacing-md);
+            box-shadow: var(--shadow-md); display: flex; justify-content: center; align-items: center;
+            height: 50px; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; gap: var(--spacing-md);
+        }
+        .navbar-content {
+            display: flex; align-items: center; gap: var(--spacing-md); max-width: 600px;
+            width: 100%; justify-content: space-between;
+        }
+        .navbar-nav { display: flex; gap: var(--spacing-sm); }
+        .nav-btn {
+            background: var(--color-secondary); color: var(--color-light); padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 500;
+            transition: all 0.3s ease; display: flex; align-items: center; gap: 0.3rem;
+        }
+        .nav-btn:hover { background: var(--color-accent); transform: translateY(-1px); }
+        .nav-btn i { font-size: 0.8rem; }
+        .navbar-toggles { display: flex; gap: 1rem; }
+        .menu-toggle {
+            background: none; border: none; color: var(--color-light); font-size: 1.2rem;
+            cursor: pointer; padding: var(--spacing-sm); border-radius: 4px;
+        }
+        .menu-toggle:hover { background: var(--color-secondary); }
+        .menu-overlay {
+            position: fixed; top: 50px; left: 0; width: 100%; height: calc(100vh - 50px);
+            background: rgba(0, 0, 0, 0.5); z-index: 500; display: none; opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .menu-overlay.active { display: block; opacity: 1; }
+        .main-container {
+            margin-top: 50px; display: grid; grid-template-columns: 250px 1fr 250px;
+            gap: var(--spacing-lg); max-width: 1400px; margin-left: auto; margin-right: auto;
+            padding: var(--spacing-lg) var(--spacing-md); height: calc(100vh - 50px);
+        }
+        .book-selector {
+            background: var(--color-light); border-radius: 12px; padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md); overflow-y: auto; max-height: calc(100vh - 50px - 2 * var(--spacing-lg));
+        }
+        .book-selector h2 {
+            font-family: var(--font-heading); color: var(--color-secondary); margin-bottom: var(--spacing-lg);
+            font-size: 1.1rem; text-align: center;
+        }
+        .book-list { list-style: none; margin-top: var(--spacing-md); }
+        .book-item {
+            padding: var(--spacing-md); margin-bottom: var(--spacing-sm); background: var(--color-primary);
+            border-radius: 8px; cursor: pointer; transition: all 0.3s ease; font-size: 0.9rem;
+        }
+        .book-item:hover { background: var(--color-secondary); color: var(--color-light); transform: translateY(-2px); }
+        .book-item.active { background: var(--color-accent); color: var(--color-light); }
+        .reader-panel {
+            background: var(--color-light); border-radius: 12px; box-shadow: var(--shadow-md);
+            padding: var(--spacing-xl); display: flex; flex-direction: column; min-height: 0;
+            position: relative; overflow: hidden;
+        }
+        .reader-content {
+            flex: 1;
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .reader-content::-webkit-scrollbar {
+            display: none; /* Chrome, Safari and Opera */
+        }
+        .reader-page {
+            flex: 0 0 100%;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            padding: 1rem 2rem;
+            text-align: justify;
+            scroll-snap-align: start;
+        }
+        .reader-content img { max-width: 100%; height: auto; display: block; margin: 1rem auto; }
+        .chapter-content { break-inside: avoid-column; padding: 0 1rem; }
+        .empty-state, .cover-display {
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            height: 100%; text-align: center; 
+            /* Reset column styles for these states */
+            column-width: auto;
+        }
+        .cover-display img {
+            max-height: 70%; max-width: 80%; object-fit: contain;
+            border-radius: 8px; box-shadow: var(--shadow-md); margin-bottom: var(--spacing-lg);
+        }
+        .reader-nav-arrow {
+            position: absolute; top: 0; bottom: 0; width: 5%; z-index: 20; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .reader-panel:hover .reader-nav-arrow { opacity: 0.6; }
+        .reader-nav-arrow:hover { background: rgba(0,0,0,0.1); }
+        .reader-nav-arrow i { color: rgba(0, 0, 0, 0.5); font-size: 2.5rem; }
+        .reader-nav-arrow.left { left: 0; }
+        .reader-nav-arrow.right { right: 0; }
+        .controls-panel {
+            background: var(--color-light); border-radius: 12px; padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md); overflow-y: auto; max-height: calc(100vh - 50px - 2 * var(--spacing-lg));
+        }
+        .controls-panel h2 {
+            font-family: var(--font-heading); color: var(--color-secondary); margin-bottom: var(--spacing-lg);
+            font-size: 1.1rem; text-align: center;
+        }
+        .control-section {
+            margin-bottom: var(--spacing-lg); padding-bottom: var(--spacing-lg);
+            border-bottom: 1px solid var(--color-mid);
+        }
+        .control-section:last-child { border-bottom: none; margin-bottom: 0; }
+        .control-title {
+            font-family: var(--font-heading); font-size: 0.9rem; font-weight: 600;
+            color: var(--color-warm); margin-bottom: var(--spacing-md);
+        }
+        .control-btn {
+            width: 100%; background: var(--color-secondary); color: var(--color-light); border: none;
+            padding: var(--spacing-md); border-radius: 8px; cursor: pointer; font-size: 0.9rem;
+            margin-bottom: var(--spacing-sm); transition: all 0.3s ease;
+        }
+        .control-btn:hover { background: var(--color-accent); transform: translateY(-1px); }
+        .control-btn:disabled { background: var(--color-muted); cursor: not-allowed; }
+        .font-controls { display: flex; justify-content: space-between; align-items: center; }
+        .font-btn {
+            background: var(--color-secondary); color: var(--color-light); border: none;
+            padding: var(--spacing-sm); border-radius: 6px; cursor: pointer; width: 35px; height: 35px;
+        }
+        .font-btn:hover { background: var(--color-accent); }
+        .search-input {
+            width: 100%; padding: var(--spacing-md); border: 2px solid var(--color-mid);
+            border-radius: 8px; font-size: 0.9rem;
+        }
+        .search-input:focus { outline: none; border-color: var(--color-secondary); }
+        @media (max-width: 1024px) {
+            .main-container { grid-template-columns: 1fr; padding: var(--spacing-md); gap: var(--spacing-md); }
+            .book-selector, .controls-panel {
+                position: fixed; top: 50px; height: calc(100vh - 50px); z-index: 800;
+                width: 280px; border-radius: 0; overflow-y: auto; max-height: none;
+            }
+            .book-selector { left: -100%; transition: left 0.3s ease; }
+            .book-selector.mobile-visible { left: 0; }
+            .controls-panel { right: -100%; transition: right 0.3s ease; }
+            .controls-panel.mobile-visible { right: 0; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <img src="../../img/logo.png" alt="Logo RESONANCIAS" width="40" height="40">
+            <div class="navbar-nav">
+                <a href="../../index.html" class="nav-btn"><i class="fas fa-home"></i> Inicio</a>
+                <a href="../obras.html" class="nav-btn"><i class="fas fa-book-open"></i> Obras</a>
+            </div>
+            <div class="navbar-toggles">
+                <button class="menu-toggle" id="menuToggle"><i class="fas fa-book"></i></button>
+                <button class="menu-toggle" id="controlsToggle"><i class="fas fa-cogs"></i></button>
+            </div>
+        </div>
+    </nav>
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="main-container">
+        <aside class="book-selector" id="bookSelector">
+            <h2>Biblioteca</h2>
+            <input type="text" id="bookSearch" class="search-input" placeholder="Buscar libro...">
+            <ul class="book-list" id="bookList"></ul>
+        </aside>
+        <main class="reader-panel">
+            <div class="reader-nav-arrow left" id="readerPrev"><i class="fas fa-chevron-left"></i></div>
+            <div class="reader-content" id="readerContent"></div>
+            <div class="reader-nav-arrow right" id="readerNext"><i class="fas fa-chevron-right"></i></div>
+        </main>
+        <aside class="controls-panel" id="controlsPanel">
+            <h2>🔧 Controles</h2>
+            <div class="control-section">
+                <div class="control-title">Navegación</div>
+                <button class="control-btn" id="prevPage">← Anterior</button>
+                <button class="control-btn" id="nextPage">Siguiente →</button>
+                <p id="pageIndicator" style="text-align:center; margin-top: 0.5rem;"></p>
+            </div>
+            <div class="control-section">
+                <div class="control-title">Tamaño de fuente</div>
+                <div class="font-controls">
+                    <button class="font-btn" onclick="changeFontSize(-10)">A-</button>
+                    <span id="fontSizeDisplay">100%</span>
+                    <button class="font-btn" onclick="changeFontSize(10)">A+</button>
+                </div>
+            </div>
+            <div class="control-section">
+                <div class="control-title">Modo lectura</div>
+                <button class="control-btn" onclick="toggleTheme()">🌙 Modo nocturno</button>
+                <button class="control-btn" onclick="toggleFullscreen()">⛶ Pantalla completa</button>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        // --- STATE MANAGEMENT ---
+        let currentBookId = null;
+        let chapters = []; // Will hold the HTML content of each chapter
+        let currentPage = 0;
+        let totalPages = 0;
+        let fontSize = 100;
+        let activeMenu = null;
+
+        const books = {
+            "1984 - George Orwell": { name: "1984 - George Orwell", path: "1984 - George Orwell/" },
+            "Crónicas de la Expiación": { name: "Crónicas de la Expiación", path: "Crónicas de la Expiación/" },
+            "El Aleph-J.L. Borges": { name: "El Aleph-J.L. Borges", path: "El Aleph-J.L. Borges/" },
+            "El cuervo - Edgar Allan Poe": { name: "El cuervo - Edgar Allan Poe", path: "El cuervo - Edgar Allan Poe/" },
+            "El Eternauta": { name: "El Eternauta", path: "El Eternauta/" },
+            "El horror segun Lovecraft - Vol-2": { name: "El horror segun Lovecraft - Vol-2", path: "El horror segun Lovecraft - Vol-2/" },
+            "El horror segun Lovecraft -vol-1": { name: "El horror segun Lovecraft -vol-1", path: "El horror segun Lovecraft -vol-1/" },
+            "Ficciones - Jorge Luis Borges": { name: "Ficciones - Jorge Luis Borges", path: "Ficciones - Jorge Luis Borges/" },
+            "La rebelion de las masas": { name: "La rebelion de las masas", path: "La rebelion de las masas/" },
+            "Las venas abiertas de America L - Eduardo Galeano": { name: "Las venas abiertas de America L - Eduardo Galeano", path: "Las venas abiertas de America L - Eduardo Galeano/" },
+            "Saber no Percibido": { name: "Saber no Percibido", path: "Saber no Percibido/" }
+        };
+
+        // --- DOM ELEMENTS ---
+        const readerContent = document.getElementById('readerContent');
+        const prevBtn = document.getElementById('prevPage');
+        const nextBtn = document.getElementById('nextPage');
+        const pageIndicator = document.getElementById('pageIndicator');
+
+        // --- INITIALIZATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('menuToggle').addEventListener('click', () => toggleMobileMenu('books'));
+            document.getElementById('controlsToggle').addEventListener('click', () => toggleMobileMenu('controls'));
+            document.getElementById('menuOverlay').addEventListener('click', () => closeMobileMenu());
+            prevBtn.addEventListener('click', () => navigatePage(-1));
+            nextBtn.addEventListener('click', () => navigatePage(1));
+            document.getElementById('readerPrev').addEventListener('click', () => navigatePage(-1));
+            document.getElementById('readerNext').addEventListener('click', () => navigatePage(1));
+            document.getElementById('bookSearch').addEventListener('keyup', filterBooks);
+            
+            populateBookList();
+            resetReaderView();
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const bookToLoad = urlParams.get('book');
+            if (bookToLoad && books[bookToLoad]) {
+                selectBook(bookToLoad);
+            }
+        });
+
+        // --- BOOK SELECTION & LOADING ---
+        function populateBookList(filter = '') {
+            const bookList = document.getElementById('bookList');
+            bookList.innerHTML = '';
+            const lowerCaseFilter = filter.toLowerCase();
+
+            Object.keys(books).sort((a, b) => a.localeCompare(b)).forEach(bookId => {
+                const book = books[bookId];
+                if (book.name.toLowerCase().includes(lowerCaseFilter)) {
+                    const listItem = document.createElement('li');
+                    listItem.className = 'book-item';
+                    listItem.textContent = book.name;
+                    listItem.addEventListener('click', () => selectBook(bookId));
+                    bookList.appendChild(listItem);
+                }
+            });
+        }
+
+        function filterBooks() {
+            populateBookList(document.getElementById('bookSearch').value);
+        }
+
+        function selectBook(bookId) {
+            currentBookId = bookId;
+            document.querySelectorAll('.book-item').forEach(item => item.classList.remove('active'));
+            document.querySelectorAll('.book-item').forEach(item => {
+                if (item.textContent === books[bookId].name) item.classList.add('active');
+            });
+            if (window.innerWidth <= 1024) closeMobileMenu();
+            showCover(bookId);
+        }
+
+        async function showCover(bookId) {
+            const book = books[bookId];
+            const coverPaths = [`${book.path}images/cover.jpg`, `${book.path}img/cover.jpg`];
+            let coverFound = false;
+
+            for (const path of coverPaths) {
+                try {
+                    const response = await fetch(path);
+                    if (response.ok) {
+                        readerContent.innerHTML = `
+                            <div class="cover-display">
+                                <img src="${path}" alt="Portada de ${book.name}">
+                                <button class="control-btn" onclick="startReading()">Iniciar Lectura</button>
+                            </div>`;
+                        coverFound = true;
+                        break;
+                    }
+                } catch (error) { /* Ignore failed fetch */ }
+            }
+
+            if (!coverFound) {
+                startReading();
+            }
+        }
+        
+        async function startReading() {
+            readerContent.innerHTML = `<div class="empty-state"><h3>Cargando libro...</h3></div>`;
+            await loadFullBook();
+        }
+
+        async function loadFullBook() {
+            const book = books[currentBookId];
+            try {
+                const indexResponse = await fetch(`${book.path}index.html`);
+                if (!indexResponse.ok) throw new Error('No se pudo cargar el índice del libro.');
+
+                const indexHtml = await indexResponse.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(indexHtml, 'text/html');
+                
+                const chapterLinks = Array.from(doc.querySelectorAll('a')).map(a => a.getAttribute('href'));
+                const uniqueChapterFiles = [...new Set(chapterLinks.map(href => href.split('#')[0]))];
+
+                const chapterPromises = uniqueChapterFiles.map(file => fetch(book.path + file).then(res => res.text()));
+                const chaptersHtml = await Promise.all(chapterPromises);
+
+                chapters = chaptersHtml.map(html => {
+                    const bodyMatch = html.match(/<body[^>]*>([\s\S]*)<\/body>/i);
+                    return bodyMatch ? bodyMatch[1] : html;
+                });
+
+                displayBook();
+
+            } catch (error) {
+                console.error('Error al cargar el libro:', error);
+                readerContent.innerHTML = `<div class="empty-state"><h3>Error al cargar el libro</h3><p>${error.message}</p></div>`;
+            }
+        }
+
+        function displayBook() {
+            readerContent.innerHTML = ''; // Clear content
+            
+            chapters.forEach(chapterHtml => {
+                const pageDiv = document.createElement('div');
+                pageDiv.className = 'reader-page';
+                pageDiv.innerHTML = chapterHtml;
+                readerContent.appendChild(pageDiv);
+            });
+
+            // Fix image paths
+            const images = readerContent.getElementsByTagName('img');
+            for(let img of images) {
+                let originalSrc = img.getAttribute('src');
+                if (originalSrc && !originalSrc.startsWith('http')) {
+                    const imageUrl = new URL(originalSrc, new URL(books[currentBookId].path, window.location.href));
+                    img.src = imageUrl.href;
+                }
+            }
+            
+            totalPages = chapters.length;
+            currentPage = 1;
+            navigatePage(0, true);
+        }
+
+        // --- PAGINATION & NAVIGATION ---
+        function navigatePage(direction, absolute = false) {
+            const newPage = absolute ? 1 : currentPage + direction;
+
+            if (newPage >= 1 && newPage <= totalPages) {
+                currentPage = newPage;
+                const scrollAmount = (currentPage - 1) * readerContent.clientWidth;
+                readerContent.scrollTo({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+                updatePageUI();
+            }
+        }
+
+        function updatePageUI() {
+            if (totalPages > 0) {
+                pageIndicator.textContent = `Página ${currentPage} de ${totalPages}`;
+            } else {
+                pageIndicator.textContent = '';
+            }
+            prevBtn.disabled = currentPage <= 1;
+            nextBtn.disabled = currentPage >= totalPages;
+            document.getElementById('readerPrev').style.pointerEvents = currentPage <= 1 ? 'none' : 'auto';
+            document.getElementById('readerNext').style.pointerEvents = currentPage >= totalPages ? 'none' : 'auto';
+        }
+        
+        function resetReaderView() {
+            readerContent.innerHTML = `<div class="empty-state">
+                <h3>Selecciona un libro para comenzar</h3>
+                <p>Elige un título de la lista para iniciar la lectura</p>
+            </div>`;
+            chapters = [];
+            currentPage = 0;
+            totalPages = 0;
+            updatePageUI();
+        }
+
+        // --- UI CONTROLS ---
+        function changeFontSize(change) {
+            const newSize = fontSize + change;
+            fontSize = Math.max(70, Math.min(150, newSize));
+            document.getElementById('fontSizeDisplay').textContent = fontSize + '%';
+            readerContent.style.fontSize = fontSize + '%';
+        }
+
+        function toggleTheme() { document.body.classList.toggle('dark-mode'); }
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+            else document.exitFullscreen();
+        }
+
+        function toggleMobileMenu(menuType) {
+            if (activeMenu === menuType) {
+                closeMobileMenu();
+            } else {
+                closeMobileMenu();
+                activeMenu = menuType;
+                document.getElementById('menuOverlay').classList.add('active');
+                if (menuType === 'books') {
+                    document.getElementById('bookSelector').classList.add('mobile-visible');
+                    document.getElementById('menuToggle').innerHTML = '<i class="fas fa-times"></i>';
+                } else if (menuType === 'controls') {
+                    document.getElementById('controlsPanel').classList.add('mobile-visible');
+                    document.getElementById('controlsToggle').innerHTML = '<i class="fas fa-times"></i>';
+                }
+            }
+        }
+
+        function closeMobileMenu() {
+            activeMenu = null;
+            document.getElementById('menuOverlay').classList.remove('active');
+            document.getElementById('bookSelector').classList.remove('mobile-visible');
+            document.getElementById('controlsPanel').classList.remove('mobile-visible');
+            document.getElementById('menuToggle').innerHTML = '<i class="fas fa-book"></i>';
+            document.getElementById('controlsToggle').innerHTML = '<i class="fas fa-cogs"></i>';
+        }
+    </script>
+</body>
+</html>

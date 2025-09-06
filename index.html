@@ -40,7 +40,7 @@
             integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
             crossorigin="anonymous"
             referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="scr/styles/main.css" />
+        <link rel="stylesheet" href="scr/styles/estilos.css" />
 
         <!-- Scripts de accesibilidad -->
     </head>
@@ -59,6 +59,7 @@
                 <nav class="main-nav" role="navigation" aria-label="Navegación principal">
                     <a href="index.html" aria-current="page">Inicio</a>
                     <a href="pages/obras.html">Libros</a>
+                    <a href="pages/libros/lector.html">Biblioteca</a>
                     <a href="pages/blog.html">Blog</a>
                     <a href="pages/quien-soy.html">Quién soy</a>
                     <a href="pages/contacto.html">Contacto</a>
@@ -72,14 +73,6 @@
                         </button>
                     </div>
                     <div class="social-links">
-                        <a
-                            href="https://www.facebook.com/profile.php?id=100088341563677"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Facebook">
-                            <i class="fa-brands fa-facebook"></i>
-                        </a>
-                        
                         <a
                             href="https://www.youtube.com/@Gabriel-Ferre-v3l"
                             target="_blank"
@@ -125,6 +118,11 @@
                 <div class="accordion-item">
                     <div class="accordion-header">
                         <a href="pages/obras.html" class="accordion-link">Libros</a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="pages/libros/lector.html" class="accordion-link">Biblioteca</a>
                     </div>
                 </div>
                 <div class="accordion-item">
@@ -360,5 +358,42 @@
                 </div>
             </div>
         </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const hamburgerBtn = document.querySelector('.hamburger-btn');
+        const sideMenu = document.querySelector('.side-menu');
+        const closeBtn = document.querySelector('.close-btn');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        const accordionToggles = document.querySelectorAll('.accordion-toggle');
+
+        const toggleMenu = (show) => {
+            sideMenu.classList.toggle('active', show);
+            menuOverlay.classList.toggle('active', show);
+            hamburgerBtn.setAttribute('aria-expanded', show);
+            sideMenu.setAttribute('aria-hidden', !show);
+        };
+
+        if (hamburgerBtn && sideMenu && closeBtn && menuOverlay) {
+            hamburgerBtn.addEventListener('click', () => toggleMenu(true));
+            closeBtn.addEventListener('click', () => toggleMenu(false));
+            menuOverlay.addEventListener('click', () => toggleMenu(false));
+        }
+
+        accordionToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+
+                toggle.setAttribute('aria-expanded', !isExpanded);
+                
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+            });
+        });
+    });
+</script>
     </body>
 </html>

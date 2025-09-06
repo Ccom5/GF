@@ -1,0 +1,2755 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>notes</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h3 id="heading_id_2">N<span class="versalita">OTAS</span></h3>
+<p><span id="a479"></span><a href="../Text/Section0003.xhtml#a0"><span
+class="notapie">[1]</span></a> J. H. Elliott, <em>La España
+imperial</em>, Barcelona, 1965.</p>
+<p><span id="a482"></span><a href="../Text/Section0003.xhtml#a1"><span
+class="notapie">[2]</span></a> L. Capitán y Henri Lorin, El <em>trabajo
+en América, antes y después de Colón</em>, Buenos Aires, 1948.</p>
+<p><span id="a484"></span><a href="../Text/Section0003.xhtml#a2"><span
+class="notapie">[3]</span></a> Daniel Vidart, Ideología y realidad de
+América, Montevideo, 1968.</p>
+<p><span id="a486"></span><a href="../Text/Section0003.xhtml#a3"><span
+class="notapie">[4]</span></a> Luis Nicolau D'Olwer, Cronistas de las
+culturas precolombinas, México, 1963. El abogado Antonio de León Pinelo
+dedicó dos tomos enteros a demostrar que el Edén estaba en América. En
+El Paraíso en el Nuevo Mundo (Madrid, 1656), incluyó un mapa de América
+del Sur en el que puede verse, al centro, el jardín del Edén regado por
+el Amazonas, el Río de la Plata, el Orinoco y el Magdalena. El fruto
+prohibido era el plátano. El mapa indícaba el lugar exacto de donde
+había partido el Arca de Noé, cuando el Diluvio Universal.</p>
+<p><span id="a488"></span><a href="../Text/Section0003.xhtml#a4"><span
+class="notapie">[5]</span></a> J. M. Ots Capdequí, El Estado español en
+las Indias, México, 1941.</p>
+<p><span id="a490"></span><a href="../Text/Section0003.xhtml#a5"><span
+class="notapie">[6]</span></a> Earl J. Hamilton, American Treasure and
+the Price Revolution in Spain (1501-1650), Massachusetts, 1934.</p>
+<p><span id="a492"></span><a href="../Text/Section0003.xhtml#a6"><span
+class="notapie">[7]</span></a> Gonzalo Fernández de Oviedo, Historia
+general y natural de las Indias, Madrid, 1959. La interpretación hizo
+escuela. Me asombra leer, en el último libro del técnico francés René
+Dumon, Cuba, est-il socialiste?, París, 1970: «Los indios no fueron
+totalmente exterminados. Sus genes subsisten en los cromosomas cubanos.
+Ellos sentían una tal aversión por la tensión que exige el trabajo
+continuo, que algunos se suicidaron antes que aceptar el trabajo
+forzado.</p>
+<p><span id="a494"></span><a href="../Text/Section0003.xhtml#a7"><span
+class="notapie">[8]</span></a> Guillermo Vázquez Franco, <em>La
+conquista justificada</em>, Montevideo, 1968, y J. H. Elliott, Op.
+cit.</p>
+<p><span id="a496"></span><a href="../Text/Section0003.xhtml#a8"><span
+class="notapie">[9]</span></a> Según los informantes indígenas de fray
+Bernardino de Sahagún, en el Códice Florentino. Miguel León-Portilla,
+<em>Visión de los vencidos</em>, México, 1967.</p>
+<p><span id="a498"></span><a href="../Text/Section0003.xhtml#a9"><span
+class="notapie">[10]</span></a> Estas asombrosas coincidencias han
+estimulado la hipótesis de que los dioses de las religiones indígenas
+habían sido en realidad europeos llegados a estas tierras mucho antes
+que Colón. Rafael Pineda Yáñez, <em>La isla y Colón</em>, Buenos Aires,
+1955.</p>
+<p><span id="a500"></span><a href="../Text/Section0003.xhtml#a10"><span
+class="notapie">[11]</span></a> Tacquetta Hawkes, <em>Prehistoria</em>,
+en <em>la Historia de la Humanidad</em>, de la UNESCO, Buenos Aires,
+1966.</p>
+<p><span id="a502"></span><a href="../Text/Section0003.xhtml#a11"><span
+class="notapie">[12]</span></a> Miguel León-Portilla, El reverso de la
+conquista. Relaciones aztecas, mayas e incas, México, 1964.</p>
+<p><span id="a504"></span><a href="../Text/Section0003.xhtml#a12"><span
+class="notapie">[13]</span></a> Miguel León-Portilla, Op. cit.</p>
+<p><span id="a506"></span><a href="../Text/Section0003.xhtml#a13"><span
+class="notapie">[14]</span></a> Gustavo Adolfo Otero, Vida social en el
+coloniaje, La Paz, 1958.</p>
+<p><span id="a508"></span><a href="../Text/Section0003.xhtml#a14"><span
+class="notapie">[15]</span></a> Autores anónimos de Tisteloico e
+informantes de Saha gún, en Miguel León-Portilla, op. cit.</p>
+<p><span id="a510"></span><a href="../Text/Section0003.xhtml#a15"><span
+class="notapie">[16]</span></a> Dercy Ribeiro, las Américas y la
+civilización, tomo r: La civilización occidentai y nosotros. Los pueblos
+testimonio, Buenos Aires, 1969.</p>
+<p><span id="a512"></span><a href="../Text/Section0003.xhtml#a16"><span
+class="notapie">[17]</span></a> Miguel León-Portilla, op. cit. Ibid.</p>
+<p><span id="a514"></span><a href="../Text/Section0003.xhtml#a17"><span
+class="notapie">[18]</span></a> Ibid.</p>
+<p><span id="a516"></span><a href="../Text/Section0003.xhtml#a18"><span
+class="notapie">[19]</span></a> Para la reconstrucción del apogeo de
+<em>Potosí, el</em> autor ha consultado los siguientes testimonios del
+pasado: Pedro <em>Vi</em>cente Cañete y Domínguez, <em>Potosí colonial,
+guía bisrórica, geográfica, política, civil y legal del gobierno e
+intendencia de la provincia de Potosí</em>, La Paz, 1939<em>; Luis</em>
+Capoche, <em>Relación general de la Villa Imperial de Potosí</em>,
+Madrid, 1959<em>; y Nicolás</em> de Martínez Arzanz y Vela, <em>Historia
+de la Villa Imperial de Potosí</em>, Buenos Aires, 1943 <em>Además</em>,
+las <em>Crónicas potosinas</em>, de Vicente G. Quesada, <em>París</em>,
+1890<em>, y La ciudad única</em>, de Jaime <em>Molins</em>. Potosí,
+1961.</p>
+<p><span id="a518"></span><a href="../Text/Section0003.xhtml#a19"><span
+class="notapie">[20]</span></a> Earl J. Hamilton, op. cit.</p>
+<p><span id="a520"></span><a href="../Text/Section0003.xhtml#a20"><span
+class="notapie">[21]</span></a> Citado por Gustavo Adolfo Otero, op.
+cit.</p>
+<p><span id="a522"></span><a href="../Text/Section0003.xhtml#a21"><span
+class="notapie">[22]</span></a> J. H. Elliott, op. cit., y Earl J.
+Hamilton, op. cit.</p>
+<p><span id="a524"></span><a href="../Text/Section0003.xhtml#a22"><span
+class="notapie">[23]</span></a> Roland Mousnier, Los siglos XVI y XVII,
+volumen IV de la Historia general de las civilizaciones, de Maurice
+Crouzet. Barcelona. 1967.</p>
+<p><span id="a526"></span><a href="../Text/Section0003.xhtml#a23"><span
+class="notapie">[24]</span></a> J. Vicens Vives, director, <em>Historia
+social y económica de España y América</em>, Barcelona, 1957.</p>
+<p><span id="a528"></span><a href="../Text/Section0003.xhtml#a24"><span
+class="notapie">[25]</span></a> Jorge Abelardo Ramos, Historia de la
+nación latinoamericana, Buenos Aires, 1968.</p>
+<p><span id="a530"></span><a href="../Text/Section0003.xhtml#a25"><span
+class="notapie">[26]</span></a> J. H. Elliott, op. cit.</p>
+<p><span id="a532"></span><a href="../Text/Section0003.xhtml#a26"><span
+class="notapie">[27]</span></a> La especie no se ha extinguido. Abro una
+revista de Madrid de fines de 1969, leo: ha muerto doña Teresa Bertrán
+de Lis y Pidal Gorouski y Chico de Guzmán, duquesa de Albuquerque y
+marquesa de los Alcañices y de los Balbases, y la llora el viudo duque
+de Albuquerque, don Beltrán Alonso Osorio y Díez de Rivera Martos y
+Figueroa, marqués de Alcañices, de los Balbases, de Cadreita, de
+Cuéllar, de Cullera, de Montaos, conde de Fuensaldaña, de Grajal, De
+Huelma, de Ledesma, de la Torre, de Villanueva de Cañedo, de
+Villahumbrosa, tres veces Grande de España.</p>
+<p><span id="a534"></span><a href="../Text/Section0003.xhtml#a27"><span
+class="notapie">[28]</span></a> John Lynch, Administración colonial
+española, Buenos Aires, 1962.</p>
+<p><span id="a536"></span><a href="../Text/Section0003.xhtml#a28"><span
+class="notapie">[29]</span></a> Ernest Mandel, <em>Tratado de economía
+marxista</em>, México, 1969.</p>
+<p><span id="a538"></span><a href="../Text/Section0003.xhtml#a29"><span
+class="notapie">[30]</span></a> Ernest Mandel, <em>La teoría marxista de
+la acumulación primitiva y la industrialización del Tercer Mundo</em>,
+revista Amaru, núm. 6, Lima, abril-junio de 1968.</p>
+<p><span id="a540"></span><a href="../Text/Section0003.xhtml#a30"><span
+class="notapie">[31]</span></a> Paul Batan, <em>Economía política del
+crecimiento</em>, México, 1959.</p>
+<p><span id="a542"></span><a href="../Text/Section0003.xhtml#a31"><span
+class="notapie">[32]</span></a> Celso Furtado, <em>La economía
+latinoamericana desde la conquista ibérica hasta la revolución
+cubana</em>, Santiago de Chile, 1969, y México, 1969.</p>
+<p><span id="a544"></span><a href="../Text/Section0003.xhtml#a32"><span
+class="notapie">[33]</span></a> J. Besuiesu-Garnier, <em>L'économie de
+1'Améreque Latine</em>, París, 1949.</p>
+<p><span id="a546"></span><a href="../Text/Section0003.xhtml#a33"><span
+class="notapie">[34]</span></a> Sergio Bagú, <em>Economía de la sociedad
+colonial</em>. Ensayo de historia comparada de América Latina, Buenos
+Aires, 1949.</p>
+<p><span id="a548"></span><a href="../Text/Section0003.xhtml#a34"><span
+class="notapie">[35]</span></a> Alexander von Humboldt, <em>Ensayo sobre
+el Reino de la Nueva España</em>, México, 1944.</p>
+<p><span id="a550"></span><a href="../Text/Section0003.xhtml#a35"><span
+class="notapie">[36]</span></a> Sergio Bagú, op. cit.</p>
+<p><span id="a552"></span><a href="../Text/Section0003.xhtml#a36"><span
+class="notapie">[37]</span></a> André Gunder Frank, <em>Capitalism and
+Underdevelopment in Latin America</em>, Nueva York, 1967.</p>
+<p><span id="a554"></span><a href="../Text/Section0003.xhtml#a37"><span
+class="notapie">[38]</span></a> Álvaro Alonso-Barba, <em>Arte de los
+metales</em>, Potosí, 1967.</p>
+<p><span id="a556"></span><a href="../Text/Section0003.xhtml#a38"><span
+class="notapie">[39]</span></a> Gustavo Adolfo Otero, op. cit.</p>
+<p><span id="a558"></span><a href="../Text/Section0003.xhtml#a39"><span
+class="notapie">[40]</span></a> Fernando Carmona, prólogo a Diego López
+Rosado, <em>Historia y pensamiento económico de</em> México, México,
+1968.</p>
+<p><span id="a560"></span><a href="../Text/Section0003.xhtml#a40"><span
+class="notapie">[41]</span></a> D. Joseph Ribera Bernárdez, Conde
+Santiago de la Laguna, <em>Descripción breve de la muy noble y leal
+ciudad de Zacatecas</em>, en Gabriel Salinas de la Torre,
+<em>Testimonios de Zacatecas</em>, México, 1946. Además de esta obra y
+del ensayo de Humboldt, el autor ha consultado: Luis Chávez Orozco,
+<em>Revolución industrial - Revolución política</em>, Biblioteca del
+Obrero y Campesino, México, s. f.; Lucio Marmolejo, <em>Efemérides
+guanajuatenses, o datos para formar la bistoria de la ciudad de
+Guanaiuato</em>, Guanajuato, 1883; losé María Luis Mora, México y sus
+<em>revoluciones</em>, México, 1965; y para los datos de la actualidad,
+<em>La economía dei Estado de Zacatecas y La</em> <em>economía del
+Estado de Guanajuato</em>, de la serie de investigaciones del Sistema
+Bancos de Comercio, México, 1968.</p>
+<p><span id="a562"></span><a href="../Text/Section0003.xhtml#a41"><span
+class="notapie">[42]</span></a> John Collier, <em>The Indians of
+America</em>, Nueva York, 1947.</p>
+<p><span id="a564"></span><a href="../Text/Section0003.xhtml#a42"><span
+class="notapie">[43]</span></a> Según Darcy Ribeiro, op. cit., con datos
+de Henry F. Dobyns, Paul Thompson y otros.</p>
+<p><span id="a566"></span><a href="../Text/Section0003.xhtml#a43"><span
+class="notapie">[44]</span></a> Emilio Romero, <em>Historia económica
+del Perú</em>, Buenos Aires, 1949.</p>
+<p><span id="a568"></span><a href="../Text/Section0003.xhtml#a44"><span
+class="notapie">[45]</span></a> Enrique Finot, <em>Nueva historia de
+Bolivia</em>, Buenos Aires, 1946.</p>
+<p><span id="a570"></span><a href="../Text/Section0003.xhtml#a45"><span
+class="notapie">[46]</span></a> Obras citadas.</p>
+<p><span id="a572"></span><a href="../Text/Section0003.xhtml#a46"><span
+class="notapie">[47]</span></a> Antonello Gerbi, Una disputa del Nuevo
+Mundo, México, 1960, y Daniel Vídart, op. cit.</p>
+<p><span id="a574"></span><a href="../Text/Section0003.xhtml#a47"><span
+class="notapie">[48]</span></a> Lewis Hanke, <em>Estudios sobre fray
+Bartolomé de Las Casas y sobre la lucha por la justicia en la conquista
+española de América</em>, Caracas, 1968.</p>
+<p><span id="a576"></span><a href="../Text/Section0003.xhtml#a48"><span
+class="notapie">[49]</span></a> J. M. Ot Capdequí, op. cit.</p>
+<p><span id="a578"></span><a href="../Text/Section0003.xhtml#a49"><span
+class="notapie">[50]</span></a> Un miembro del Servicio Norteamericano
+de Conservación de Suelos, según John Collier, op. cit.</p>
+<p><span id="a580"></span><a href="../Text/Section0003.xhtml#a50"><span
+class="notapie">[51]</span></a> Daniel Valcárcel, <em>La rebelión de
+Túpac Amaru</em>, México, 1947.</p>
+<p><span id="a582"></span><a href="../Text/Section0003.xhtml#a51"><span
+class="notapie">[52]</span></a> Alexander von Humboldt, <em>Ansicbten
+des Natur, tomo tr. Citado</em> en Adolf Meyer-Abich y otros, Alejandro
+de Humboldt (1769-1969), Bad Godesberg, 1969.</p>
+<p><span id="a584"></span><a href="../Text/Section0003.xhtml#a52"><span
+class="notapie">[53]</span></a> Tulio Halperin Donghi, <em>Historia
+contemporánea de América Latina</em>, Madrid, 1969.</p>
+<p><span id="a586"></span><a href="../Text/Section0003.xhtml#a53"><span
+class="notapie">[54]</span></a> Ernest Gruening, <em>Mexico and its
+Heritage</em>, Nueva York, 1928.</p>
+<p><span id="a588"></span><a href="../Text/Section0003.xhtml#a54"><span
+class="notapie">[55]</span></a> Alonso Aguilar Monteverde,
+<em>Dialéctica de la economía mexicana</em>, México, 1968.</p>
+<p><span id="a590"></span><a href="../Text/Section0003.xhtml#a55"><span
+class="notapie">[56]</span></a> Los últimos charrúas, que hacia 1832
+sobrevivían saqueando novillos en las campiñas salvajes del norte del
+Uruguay, sufrieron la traición del presidente Fructuoso Rivera. Alejados
+de la espesura que les daba protección; desmoniados y desarmados por las
+falsas promesas de amistad, fueron abatidos en un paraje llamado la Boca
+del Tigre: <em>«Los</em> clarines tocaron a degüello —cuenta el escritor
+Eduardo Acevedo Díaz (diario <em>La Epoca</em>, 19 de agosto de
+1890)</p>
+<p><span id="a592"></span><a href="../Text/Section0003.xhtml#a56"><span
+class="notapie">[57]</span></a> John Kenneth Turner, <em>México
+bárbaro</em>, México, 1967. Arturo Bonilla Sánchez, Un problema que se
+agrava: la subocupación rural, en Neolatifundismo y explotación, De
+Emiliano Zapata a Anderson Clayton &amp; Co., varios autores, México,
+1968.</p>
+<p><span id="a594"></span><a href="../Text/Section0003.xhtml#a57"><span
+class="notapie">[58]</span></a> René Dumont, <em>Tierras vivas.
+Problemas de la reforma agraria en el mundo</em>, México, 1963.</p>
+<p><span id="a596"></span><a href="../Text/Section0003.xhtml#a58"><span
+class="notapie">[59]</span></a> Eduardo Galeano, <em>Guatemala, país
+ocupado</em>, México, 1967.</p>
+<p><span id="a598"></span><a href="../Text/Section0003.xhtml#a59"><span
+class="notapie">[60]</span></a> Los mayas quichés creían en un solo
+dios, practicaban el ayuno, la penitencia, la abstinencia y la
+confesión; creían en el diluvio y en el fin del mundo: el cristianismo
+no les aportó grandes novedades. La descomposición religiosa comenzó con
+la colonia. La religión católica sólo asimiló algunos aspectos mágicos y
+totémicos de la religión maya, en la tentativa vana de someter la fe
+indígena a la ideología de los conquistadores. El aplastamiento de la
+cultura original abrió paso al sincretismo, y así se, recogen, por
+ejemplo, en la actualidad, testimonios de la involución con respecto a
+aquella evolución alcanzada: «Don Volcán necesita carne humana bien
+tostadita». Carlos Guzmán Bõckler y Jean-Loup Herbert, <em>Guatemala:
+una interpretación histórico-social</em>, México, 1970.</p>
+<p><span id="a600"></span><a href="../Text/Section0003.xhtml#a60"><span
+class="notapie">[61]</span></a> Las <em>bandeiras</em> paulistas eran
+bandas errantes de organización paramilitar y de fuerza variable. Sus
+expediciones selva adentro desempeñaron un papel importante en la
+colonización interior de Brasil.</p>
+<p><span id="a602"></span><a href="../Text/Section0003.xhtml#a61"><span
+class="notapie">[62]</span></a> Celso Furtado, op. cit.</p>
+<p><span id="a604"></span><a href="../Text/Section0003.xhtml#a62"><span
+class="notapie">[63]</span></a> Celso Furtado, Formación económica del
+Brasil, México, 1959.</p>
+<p><span id="a606"></span><a href="../Text/Section0003.xhtml#a63"><span
+class="notapie">[64]</span></a> C. R. Boxer, The Golden Age of Brazil
+(1695-1750), California, 1969.</p>
+<p><span id="a608"></span><a href="../Text/Section0003.xhtml#a64"><span
+class="notapie">[65]</span></a> Augusto de Lima Júnior, <em>Vila Rica de
+Ouro Preto. Sintese histórica e descritiva</em>, Belo Horizonte,
+1957.</p>
+<p><span id="a610"></span><a href="../Text/Section0003.xhtml#a65"><span
+class="notapie">[66]</span></a> C. R. Boxer, op. cit.</p>
+<p><span id="a612"></span><a href="../Text/Section0003.xhtml#a66"><span
+class="notapie">[67]</span></a> C. R. Boxer, op. cit. En Cuba se
+atribuían propiedades medicinales a las esclavas. Según el testimonio de
+Esteban Montejo, «había un tipo de enfermedad que recogían los blancos.
+Era una enfermedad en las venas y en las partes masculinas. Se quitaba
+con las negras. El que la cogía se acostaba con una negra y se la
+pasaba. Así se curaban en seguida». Miguel Barnet, <em>Biografía de un
+cimarrón</em>, Buenos Aires, 1968.</p>
+<p><span id="a614"></span><a href="../Text/Section0003.xhtml#a67"><span
+class="notapie">[68]</span></a> Joaquim Felício dos Santos, <em>Memórias
+do Distrito Diamantino</em>, Río de Janeiro; 1956.</p>
+<p><span id="a616"></span><a href="../Text/Section0003.xhtml#a68"><span
+class="notapie">[69]</span></a> Augusto de Lima Júnior, op. cit.</p>
+<p><span id="a618"></span><a href="../Text/Section0003.xhtml#a69"><span
+class="notapie">[70]</span></a> Allan K. Manchester, British Preeminence
+in Brazil: it: Rice and Fall, Chapel Hill, Carolina del Norte, 1933.</p>
+<p><span id="a620"></span><a href="../Text/Section0003.xhtml#a70"><span
+class="notapie">[71]</span></a> Celso Furtado, op. cit.</p>
+<p><span id="a622"></span><a href="../Text/Section0003.xhtml#a71"><span
+class="notapie">[72]</span></a> Augusto de Lima júnior, op. cit. El
+autor siente una gran alegría por «la expansión del imperialismo
+colonizador, que los ignorantes de hoy, movidos por sus maestros
+moscovitas, califican de crimen».</p>
+<p><span id="a624"></span><a href="../Text/Section0003.xhtml#a72"><span
+class="notapie">[73]</span></a> Roberto C. Simonsen, <em>História
+económica do Brasil</em> (1500<em>-</em>1820), São Paulo, 1962.</p>
+<p><span id="a626"></span><a href="../Text/Section0003.xhtml#a73"><span
+class="notapie">[74]</span></a> Eponina Ruas, <em>Ouro Preto. Sua
+história, seus templos, monumentos</em>, Río de Janeiro, 1950.</p>
+<p><span id="a628"></span><a href="../Text/Section0004.xhtml#a74"><span
+class="notapie">[75]</span></a> Fernando Ortiz, <em>Contrapunteo cubano
+del tabaco y el azúcar</em>, La Habana, 1963.</p>
+<p><span id="a630"></span><a href="../Text/Section0004.xhtml#a75"><span
+class="notapie">[76]</span></a> Caio Prado Júnior, <em>Historia
+económica del Brasil, Bue</em>nos Aires, 1960.</p>
+<p><span id="a632"></span><a href="../Text/Section0004.xhtml#a76"><span
+class="notapie">[77]</span></a> Sergio Begú, <em>Economía de la sociedad
+colonial</em>. Ensayo de historia comparada de América Latina, Buenos
+Aires, 1949.</p>
+<p><span id="a634"></span><a href="../Text/Section0004.xhtml#a77"><span
+class="notapie">[78]</span></a> Celso Furtado, <em>Formación económica
+del Brasil</em>, México - Buenos Aires, 1959.</p>
+<p><span id="a636"></span><a href="../Text/Section0004.xhtml#a78"><span
+class="notapie">[79]</span></a> Josué Castro, <em>Geografía da
+forre</em>, São Paulo, 1963.</p>
+<p><span id="a638"></span><a href="../Text/Section0004.xhtml#a79"><span
+class="notapie">[80]</span></a> Ibid.</p>
+<p><span id="a640"></span><a href="../Text/Section0004.xhtml#a80"><span
+class="notapie">[81]</span></a> Ibid. Un viajero inglés, Henry Koster,
+atribuía la costumbre de comer tierra al contacto de los niños blancos
+con los negritos, “que contagian este vicio africano”.</p>
+<p><span id="a642"></span><a href="../Text/Section0004.xhtml#a81"><span
+class="notapie">[82]</span></a> El nordeste padece, por varias vías, una
+suerte de colonialismo interno en beneficio del sur industrializado.
+Dentro del nordeste, a la vez, la región del sertáo está subordinada a
+la zona azucarera a la cual abastece, y los latifundios azucareros
+dependen de las plantas industrializadoras del producto. La vieja
+institución del <em>senhor de engenho</em> está en crisis; los molinos
+centrales han devorado a las plantaciones.</p>
+<p><span id="a644"></span><a href="../Text/Section0004.xhtml#a82"><span
+class="notapie">[83]</span></a> Según las investigaciones del Instituto
+Joaquím Nabuco de Pesquisas Sociais, de Pernambuco, citadas por Kit Sim
+Taylor en <em>El</em> <em>nordeste brasileño: azúcar y plusvalía</em>,
+Monthly Review, núm. 63, Santiago de Chile, junio de 1969.</p>
+<p><span id="a646"></span><a href="../Text/Section0004.xhtml#a83"><span
+class="notapie">[84]</span></a> Franklin de Oliveira, <em>Revolución y
+contrarrevolución en Brasil</em>, Buenos Aires, 1965.</p>
+<p><span id="a648"></span><a href="../Text/Section0004.xhtml#a84"><span
+class="notapie">[85]</span></a> René Dumont, <em>Tierras vivas</em>.
+<em>Problemas de la reforma agraria en el mundo</em>, México, 1963.</p>
+<p><span id="a650"></span><a href="../Text/Section0004.xhtml#a85"><span
+class="notapie">[86]</span></a> Josué de Castro, op. cit.</p>
+<p><span id="a652"></span><a href="../Text/Section0004.xhtml#a86"><span
+class="notapie">[87]</span></a> Celso Furtado, <em>Dialética do
+desenvolvimento</em>, Río de Janeiro, 1964.</p>
+<p><span id="a654"></span><a href="../Text/Section0004.xhtml#a87"><span
+class="notapie">[88]</span></a> Karl Marx, Discurso sobre el libre
+cambio, en <em>Miseria de la filosofía</em>, Moscú, s. f.</p>
+<p><span id="a656"></span><a href="../Text/Section0004.xhtml#a88"><span
+class="notapie">[89]</span></a> Vincent T. Harlow, <em>A</em>
+<em>History of</em> <em>Barbados</em>, Oxford, 1926.</p>
+<p><span id="a658"></span><a href="../Text/Section0004.xhtml#a89"><span
+class="notapie">[90]</span></a> Tadeusz Lèpkowski, Haití, tomo I, La
+Habana, 1968.</p>
+<p><span id="a660"></span><a href="../Text/Section0004.xhtml#a90"><span
+class="notapie">[91]</span></a> Ibid.</p>
+<p><span id="a662"></span><a href="../Text/Section0004.xhtml#a91"><span
+class="notapie">[92]</span></a> Hay una novela espléndida de Alejo
+Carpentier, <em>El reino de este mundo</em> (Montevideo, 1966), sobre
+este alucinante período de la vida de Hair. Contiene una recreación
+perfecta de las andanzas de Paulina y su marido por el Caribe.</p>
+<p><span id="a664"></span><a href="../Text/Section0004.xhtml#a92"><span
+class="notapie">[93]</span></a> Citado por Manuel Moreno Fraginals,
+<em>El ingenio</em>, La Flabana, 1964.</p>
+<p><span id="a666"></span><a href="../Text/Section0004.xhtml#a93"><span
+class="notapie">[94]</span></a> Ya habían irrumpido los saladeros en el
+Río de la Plata. Argentina y Uruguay, que por entonces no existían por
+separado ni se llamaban así, habían adaptado sus economías a la
+exportación en gran escala de carne seca y salada, cueros, grasas y
+sebos. Brasil y Cuba, los dos grandes centros esclavistas del siglo XIX,
+fueron excelentes mercados para el tasajo, un alimento muy barato, de
+fácil transporte y no menos fácil almacenamiento, que no se descomponía
+al calor del trópico. Los cubanos llaman todavía «Montevideo» al tasajo,
+pero Uruguay dejó de venderlo en 1965, sumándose así al bloqueo
+dispuesto por la OEA contra Cuba. De esta manera Uruguay perdió,
+estúpidamente, el último mercado que le restaba para este producto.
+Había sido Cuba, a fines del siglo XVIII, el prímer mercado que se abrió
+a la carne uruguaya, embarcada en delgadas lonjas secas. José Pedro
+Barrán y Benjamín Nahum, <em>Historia rural del Uruguay moderno
+(1851-1885)</em>, Montevideo, 1967.</p>
+<p><span id="a668"></span><a href="../Text/Section0004.xhtml#a94"><span
+class="notapie">[95]</span></a> Manuel Moreno Fraginals, op. cit. Hasta
+hace poco tiempo, navegaban por el río Sagua los <em>palanqueros</em>.
+«Llevan una larga vara con una punta de hierro. Con ella van hiriendo el
+lecho del río hasta que clavan un madero... Así, día a día, extraen del
+fondo del río los restos de los árboles que el azúcar talara. Viven de
+los cadáveres del bosque».</p>
+<p><span id="a670"></span><a href="../Text/Section0004.xhtml#a95"><span
+class="notapie">[96]</span></a> Celso Furtado, <em>La economía
+latinoamericana desde la Conquista ibérica hasta la Revolución
+Cubana</em>, Santiago de Chile, 1969, México, 1969.</p>
+<p><span id="a672"></span><a href="../Text/Section0004.xhtml#a96"><span
+class="notapie">[97]</span></a> Moreno Fraginals ha observado,
+agudamente, que los nombres de los ingenios nacidos en el siglo XIX
+reflejaban las alzas y las bajas de la curva azucarera: <em>Esperanza,
+Nueva Esperanza, Atrevido, Casualidad; Aspirante, Conquista,Confianza,
+El Buen Suceso; Apuro, Angustia, Desengaño</em>. Había cuatro ingenios
+llamados, premonitoriamente, <em>Desengaño</em>.</p>
+<p><span id="a674"></span><a href="../Text/Section0004.xhtml#a97"><span
+class="notapie">[98]</span></a> René Dumont, <em>Cuba (intento de
+crítica constructiva)</em>, Barcelona, 1965.</p>
+<p><span id="a676"></span><a href="../Text/Section0004.xhtml#a98"><span
+class="notapie">[99]</span></a> Celso Furtado, <em>La economía
+lationamericana</em>, op. cit.</p>
+<p><span id="a678"></span><a href="../Text/Section0004.xhtml#a99"><span
+class="notapie">[100]</span></a> El director del programa de azúcar en
+el Ministerio de Agricultura de los Estados Unidos declaró tiempo
+después de la Revolución: «Desde que Cuba ha dejado la escena, nosotros
+no contamos con la protección de este país, el más grande exportador
+mundíal, ya que disponía siempre de reservas para atender, cuando era
+preciso, a nuestro mercado.» Enrique Ruiz García, <em>América Latina
+anatomia de una revolución</em>, Madrid, 1966.</p>
+<p><span id="a680"></span><a href="../Text/Section0004.xhtml#a100"><span
+class="notapie">[101]</span></a> Leland H. Jenks, <em>Nuestra colonia de
+Cuba</em>, Buenos Aires; 1960.</p>
+<p><span id="a682"></span><a href="../Text/Section0004.xhtml#a101"><span
+class="notapie">[102]</span></a> Puerto Rico, otra factoría azucarera,
+quedó prisionero. Desde el punto de vista norteamericano, los
+puertorriqueños no son suficientemente buenos para vivir en una patria
+propia, pero en cambio sí lo son para morir en el frente de Vietnam en
+nombre de una patria que no es la suya. En un cálculo proporcional a la
+población, el «estado libre asociado» de Puerto Rico tiene más soldados
+peleando en el sudeste asiático que cualquier otro estado de los Estados
+Unidos. A los puertorriqueños que resisten el servicio militar
+obligatorio en Vietnam se les envía por cinco años a las cárceles de
+Atlanta. Al servicio militar en filas norteamericanas se agregan otras
+humillaciones heredadas tras la invasión de 1898 y benditas por ley (por
+ley del Congreso de los Estados Unidos). Puerto Rico cuenta con una
+representación simbólica en el Congreso norteamericano, sin voto y
+prácticamente sin voz. A cambio de este derecho, un estatuto colonial:
+Puerto Rico tenía, hasta la ocupación norteamericana, una moneda propia
+y mantenía un próspero comercio con los principales mercados. Hoy la
+moneda es el dólar y los aranceles de sus aduanas se fijan en
+Washington, donde se decide todo lo que tiene que ver con el comercio
+exterior e interior de la isla. Lo mismo ocurre con las relaciones
+exteriores, el transporte, las comunicaciones, los salarios y las
+condiciones de trabajo. Es la Corte Federal de los Estados Unidos la que
+juzga a los puertorriqueños; el ejército local integra el ejército del
+norte. La industria y el comercio están en manos de los intereses
+norteamericanos privados. La desnacionalización quiso hacerse absoluta
+por la vía de la emigración: la miseria empujó a más de un millón de
+puertorriqueños a buscar mejor suerte en Nueva York, al precio de la
+fractura de su identidad nacional. Allí, forman un subproletariado que
+se aglomera en los barrios más sórdidos.</p>
+<p><span id="a684"></span><a href="../Text/Section0004.xhtml#a102"><span
+class="notapie">[103]</span></a> Fidel Castro, <em>La Revolución cubana
+(discursos)</em>, Buenos Aires, 1959.</p>
+<p><span id="a686"></span><a href="../Text/Section0004.xhtml#a103"><span
+class="notapie">[104]</span></a> A. Núñez Jiménez, <em>Geografía de
+Cuba</em>, La Habana, 1959.</p>
+<p><span id="a688"></span><a href="../Text/Section0004.xhtml#a104"><span
+class="notapie">[105]</span></a> René Dumont, op. cit.</p>
+<p><span id="a690"></span><a href="../Text/Section0004.xhtml#a105"><span
+class="notapie">[106]</span></a> Dudley Seers, Andrés Bianchi, Richard
+Jolly y Max Nolff, <em>Cuba, the Economic and Social Revolution</em>,
+Chapel Hill, Carolina del Norte, 1964.</p>
+<p><span id="a692"></span><a href="../Text/Section0004.xhtml#a106"><span
+class="notapie">[107]</span></a> K. S. Karol, <em>Les guérrilleros au
+pouvoir. L’tinéraire politique de la révolution cubaine</em>, París,
+1970.</p>
+<p><span id="a694"></span><a href="../Text/Section0004.xhtml#a107"><span
+class="notapie">[108]</span></a> El precio estable del azúcar,
+garantizado por los países socialistas, ha desempeñado un papel decisivo
+en este sentido. También la ruptura del bloqueo dispuesto por los
+Estados Unidos, que se hizo añicos a través del tráfico comercial
+intenso con España y otros países de Europa occidental. Un tercio de las
+exportaciones cubanas proporciona dólares, es decir, divisas
+convertibles, al país; el resto se aplica el trueque con la Unión
+Soviética y la zona del rublo. Este sistema de comercio implica también
+ciertas dificultades: las turbinas soviéticas para las centrales
+termoeléctricas son de excelente calidad, como todos los equipos pesados
+que la URSS produce, pero no ocurre lo mismo con los artículos de
+consumo de la industria ligera o mediana.</p>
+<p><span id="a696"></span><a href="../Text/Section0004.xhtml#a108"><span
+class="notapie">[109]</span></a> Informe de Cuba a la XI Conferencia
+Regional de la RAO Versión de Prensa Latina, 13 de octubre de 1970.</p>
+<p><span id="a698"></span><a href="../Text/Section0004.xhtml#a109"><span
+class="notapie">[110]</span></a> Ellsworth Bunker, presidente de la
+National Sugar Refining Co., fue el enviado especial de Lyndon Johnson a
+la Dominicana después de la intervención militar. Los intereses de la
+National Sugar en este pequeño país fueron salvaguardados bajo la atenta
+mirada de Bunker: las tropas de ocupación se retiraron para dejar en el
+poder, al cabo de muy democráticas elecciones, a Joaquín Balaguer, que
+había sido el brazo derecho de Trujillo todo a lo largo de su feroz
+dictadura. La población de Santo Domingo había peleado en las calles y
+en las azoteas, con palos, machetes y fusiles, contra los tanques, las
+bazukas y los helicópteros de las fuerzas extranjeras, reivindicando el
+retorno al poder del presidente constitucionalmente electo, Juan Bosch,
+que había sido derribado por un golpe militar. La historia, burlona,
+juega con las profecías. El día que Juan Bosch inauguró su breve
+presidencia, al cabo de treinta años de tiranía de Trujillo, Lyndon
+Johnson, que era por entonces vicepresidente de los Estados Unidos,
+llevó a Santo Domingo el obsequio oficial de su gobiemo: era una
+ambulancia.</p>
+<p><span id="a700"></span><a href="../Text/Section0004.xhtml#a110"><span
+class="notapie">[111]</span></a> L. Capitan y Henri Lorin, <em>El
+trabajo en América, antes y después de Colón</em>, Buenos Aires,
+1948.</p>
+<p><span id="a702"></span><a href="../Text/Section0004.xhtml#a111"><span
+class="notapie">[112]</span></a> Sergio Bagú, op. cit.</p>
+<p><span id="a704"></span><a href="../Text/Section0004.xhtml#a112"><span
+class="notapie">[113]</span></a> Daniel P. Mannix y M. Cowley.
+<em>Historia de la trata de negros</em>, Madrid, 1962.</p>
+<p><span id="a706"></span><a href="../Text/Section0004.xhtml#a113"><span
+class="notapie">[114]</span></a> Eric Williams, <em>Capitalism and
+Slavery</em>, Chapel Hill, Carolina del Norte, 1944.</p>
+<p><span id="a708"></span><a href="../Text/Section0004.xhtml#a114"><span
+class="notapie">[115]</span></a> Daniel P. Mannix y M. Cowley, op.
+cit.</p>
+<p><span id="a710"></span><a href="../Text/Section0004.xhtml#a115"><span
+class="notapie">[116]</span></a> La primera ley que expresamente
+prohibió la esclavitud en Brasil no fue brasileña. Fue, y no por
+casualidad, inglesa. El Parlamento británico la votó el 8 de agosto de
+1845. Osny Duarte Pereira, <em>Quem faz as leis no Brasil?</em>, Río de
+Janeiro, 1963.</p>
+<p><span id="a712"></span><a href="../Text/Section0004.xhtml#a116"><span
+class="notapie">[117]</span></a> Daniel P. Munnix y M. Cowley, op.
+cit.</p>
+<p><span id="a714"></span><a href="../Text/Section0004.xhtml#a117"><span
+class="notapie">[118]</span></a> Fernando Ortiz, op. cit.</p>
+<p><span id="a716"></span><a href="../Text/Section0004.xhtml#a118"><span
+class="notapie">[119]</span></a> Philip Reno, <em>El drama de la Guayana
+británica</em>. Un pueblo desde la esclavitud a la lucha por el
+socialismo, Monthly Review, núm. 17/18, Buenos Aires, enero-febrero de
+1965.</p>
+<p><span id="a718"></span><a href="../Text/Section0004.xhtml#a119"><span
+class="notapie">[120]</span></a> Edison Carneiro, <em>O quilombo dos
+Palrnares, Río de</em> Janeiro, 1966.</p>
+<p><span id="a720"></span><a href="../Text/Section0004.xhtml#a120"><span
+class="notapie">[121]</span></a> Nina Rodrigues, <em>Os africanos no
+Brasil</em>, Río de Janeiro, 1932.</p>
+<p><span id="a722"></span><a href="../Text/Section0004.xhtml#a121"><span
+class="notapie">[122]</span></a> Décio de Freitas A <em>guerra dos
+escravos</em>, inédito.</p>
+<p><span id="a724"></span><a href="../Text/Section0004.xhtml#a122"><span
+class="notapie">[123]</span></a> Esteban Montejo tenía más de un siglo
+de edad cuando contó su historia a Miguel Barnet <em>Biografía de un
+cimarrón</em>, Buenos Aires, 1968.</p>
+<p><span id="a726"></span><a href="../Text/Section0004.xhtml#a123"><span
+class="notapie">[124]</span></a> Roberto C. Simonsen, <em>História
+económica do Brasil (1500-1820)</em>, São Paulo, 1962.</p>
+<p><span id="a728"></span><a href="../Text/Section0004.xhtml#a124"><span
+class="notapie">[125]</span></a> Manuel Moreno Fraginals, op. cit. Un
+jueves santo, el conde de Casa Bayona decidió humillarse ante sus
+esclavos. Inflamado de fervor cristiano, lavó los pies a doce negros y
+los sentó a comer, con él, a su mesa. Fue la última cena propiamente
+dicha. Al día siguiente, los esclavos se sublevaron, y prendieron fuego
+al ingenio. Sus cabezas fueron clavadas sobre doce lanzas, en el centro
+del batey.</p>
+<p><span id="a730"></span><a href="../Text/Section0004.xhtml#a125"><span
+class="notapie">[126]</span></a> Eduardo Galeano, <em>Los dioses y los
+diablos en las favelas de Río</em>, en Amaru, núm. 10, Lima, junio de
+1969.</p>
+<p><span id="a732"></span><a href="../Text/Section0004.xhtml#a126"><span
+class="notapie">[127]</span></a> Rodolfo Teófilo, <em>Historia de Séca
+do Ceará (1877-1880)</em>, Río de Janeiro, 1922.</p>
+<p><span id="a734"></span><a href="../Text/Section0004.xhtml#a127"><span
+class="notapie">[128]</span></a> <em>France Presse</em>, 21 de abril de
+1970. En 1938, la peregrinación de un vaquero por los calcinados caminos
+del <em>sertão</em> había dado origen a una de las mejores novelas de la
+historia literaria de Brasil. El azote de la sequía sobre los
+latifundios ganaderos del interior, subordinados a los ingenios de
+azúcar del litoral, no ha cesado, y tampoco han variado sus
+consecuencias. El mundo de <em>Vidas secas</em> continúa intacto: el
+papagayo imitaba el ladrido del perro, porque sus dueños ya casi no
+hacían uso de la voz humana. Graciliano Ramos, <em>Vidas secas</em>, La
+Habana, 1964.</p>
+<p><span id="a736"></span><a href="../Text/Section0004.xhtml#a128"><span
+class="notapie">[129]</span></a> Paulo Schilling, <em>Un nuevo
+genocidio</em>, en <em>Marcha, número 1.501</em>, Montevideo, julio 10
+de 1970. En octubre de 1970, los obispos de Pará denunciaron ante el
+presidente de Brasil la explotación brutal de los trabajadores
+nordestinos por parte de las empresas que están construyendo la
+carretera transamazónica. El gobierno la llama «la obra del siglo».</p>
+<p><span id="a738"></span><a href="../Text/Section0004.xhtml#a129"><span
+class="notapie">[130]</span></a> Aurélio Pinheiro, <em>A margem do
+Amazonas</em>, São Paulo. 1937.</p>
+<p><span id="a740"></span><a href="../Text/Section0004.xhtml#a130"><span
+class="notapie">[131]</span></a> Rodolfo Teófilo, op. cit.</p>
+<p><span id="a742"></span><a href="../Text/Section0004.xhtml#a131"><span
+class="notapie">[132]</span></a> Bolivia fue mutilada en casi doscientos
+mil kilómetros cuadrados. En 1902 recibió una indemnización de dos
+millones de libras esterlinas y una línea férrea que le abriría el
+acceso a los ríos Madeira y Amazonas.</p>
+<p><span id="a744"></span><a href="../Text/Section0004.xhtml#a132"><span
+class="notapie">[133]</span></a> A principios de siglo, las montañas con
+bosques de caucho también habían ofrecido a Perú las promesas de un
+nuevo Eldorado. Francisco García Calderón escribía en <em>El Perú
+contemporáneo</em>, hacia 1908, que el caucho era la gran riqueza del
+porvenir. En su novela <em>La casa verde</em> (Barcelona, 1966), Mario
+Vargas Llosa reconstruye la atmósfera febril en Iquitos y en la selva,
+donde los aventureros despojaban a los indios y se despojaban entre sí.
+La naturaleza se vengaba; dïsponía de la lepra y otras armas.</p>
+<p><span id="a746"></span><a href="../Text/Section0004.xhtml#a133"><span
+class="notapie">[134]</span></a> Domingo Alberto Rangel, <em>El proceso
+del capitalismo contemporáneo en Venezuela</em>, Caracas, 1968.</p>
+<p><span id="a748"></span><a href="../Text/Section0004.xhtml#a134"><span
+class="notapie">[135]</span></a> Domingo Alberto Rangel, <em>Capital y
+desarrollo</em>, tomo I, <em>La Venezuela agraria</em>, Caracas,
+1969.</p>
+<p><span id="a750"></span><a href="../Text/Section0004.xhtml#a135"><span
+class="notapie">[136]</span></a> El título de «coronel» se otorga en
+Brasil, con facilidad, a los latifundistas tradicionales y, por
+extensión, a todas las personas importantes. El párrafo proviene de la
+novela de Jorge Amado, <em>São Jorge dos Ilhéus</em> (Montevideo, 1946).
+Mientras tanto, «ni los chicos tocaban los frutos de cacao. Sentían
+miedo de aquellos cocos amarillos, de carozos dulces, que los tenían
+presos a esa vida de frutos de jaca y carne seca». Porque, en el fondo,
+«el cacao era el gran señor a quien hasta el <em>coronel</em> temía»
+(Jorge Amado, Cacao, Buenos Aires, 1935). En otra novela, <em>Gabriela,
+clavo y canela</em>, Buenos Aires, 1969, un personaje habla de Ilhéus en
+1925, alzando un dedo categórico: «No existe en la actualidad, en el
+norte del país, una ciudad de progreso más rápido». Actualmente, Ilhéus
+no es ni la sombra.</p>
+<p><span id="a752"></span><a href="../Text/Section0004.xhtml#a136"><span
+class="notapie">[137]</span></a> Refiriéndose a los aumentos de precios
+del cacao y del café, la Comisión Económica para América Latina (CEPAL)
+de las Naciones Unidas dice que «tienen un carácter relativamente
+transitorio» y que obedecen «en gran parte a contratiempos ocasionales
+en las cosechas». CEPAL, <em>Estudio económico de América Latina,
+1969</em>, tomo II: <em>La economía de América Latina en 1969</em>,
+Santiago de Chile, 1970.</p>
+<p><span id="a754"></span><a href="../Text/Section0004.xhtml#a137"><span
+class="notapie">[138]</span></a> Roberto C. Simonsen, op. cit.</p>
+<p><span id="a756"></span><a href="../Text/Section0004.xhtml#a138"><span
+class="notapie">[139]</span></a> Caio Prado Júnior, Formação do Brasil
+contemporáneo, São Paulo, 1942.</p>
+<p><span id="a758"></span><a href="../Text/Section0004.xhtml#a139"><span
+class="notapie">[140]</span></a> Comité Interamericano de Desarrollo
+Agrícola, Guatemala. <em>Tenencia de la tierra y desarrollo
+socioeconómico del sector agrícola</em>, Washington, 1965.</p>
+<p><span id="a760"></span><a href="../Text/Section0004.xhtml#a140"><span
+class="notapie">[141]</span></a> José Carlos Mariátegui, <em>Siete
+ensayos de interpretación de la realidad peruana</em>, Montevideo,
+1970.</p>
+<p><span id="a762"></span><a href="../Text/Section0004.xhtml#a141"><span
+class="notapie">[142]</span></a> Comité Interamericano de Desarrollo
+Agrícola, Perú. <em>Tenencia de la tierra y desarrollo socioeconómico
+del sector agrícola</em>, Washington, 1966.</p>
+<p><span id="a764"></span><a href="../Text/Section0004.xhtml#a142"><span
+class="notapie">[143]</span></a> Alonso Aguilar M. y Fernando Carmona,
+<em>México riqueza y miseria</em>, México, 1968.</p>
+<p><span id="a766"></span><a href="../Text/Section0004.xhtml#a143"><span
+class="notapie">[144]</span></a> Mario Arrubia, Estudios sobre el
+subdesarrollo colombiano, Medellín, 1959. El precio se descompone así:
+40 por 100 para los intermediarios, exportadores e importadores; 10 por
+100 para les impuestos de ambos gobiernos; 10 por 100 para los
+transportadores; 5 por 100 para la propaganda de la Oficina Panamericana
+del Café, en Washington; 30 por 100 para los dueños de las plantaciones,
+y 5 por 100 para los salarios obreros.</p>
+<p><span id="a768"></span><a href="../Text/Section0004.xhtml#a144"><span
+class="notapie">[145]</span></a> Banco Cafetero, La industria cafetera
+en Colombia, Bogotá, 1962.</p>
+<p><span id="a770"></span><a href="../Text/Section0004.xhtml#a145"><span
+class="notapie">[146]</span></a> Panorama económico Latinoamericano,
+núm. 87, La Habana, septiembre de 1963.</p>
+<p><span id="a772"></span><a href="../Text/Section0004.xhtml#a146"><span
+class="notapie">[147]</span></a> Pierre Monbeig, <em>Pionniers et
+planteurs de São Paulo</em>, París, 1952.</p>
+<p><span id="a774"></span><a href="../Text/Section0004.xhtml#a147"><span
+class="notapie">[148]</span></a> Datos del Banco Central, Instituto
+Brasileiro do Café y FAO, Revista Fator, núm. 2, Río de Janeiro,
+noviembre-diciembre de 1968.</p>
+<p><span id="a776"></span><a href="../Text/Section0004.xhtml#a148"><span
+class="notapie">[149]</span></a> Según la investigación realizada por la
+Fedetal Trade Commission. Cid Silveira, <em>Café: um drama na economía
+nacional</em>. Río de Janeiro, 1962.</p>
+<p><span id="a778"></span><a href="../Text/Section0004.xhtml#a149"><span
+class="notapie">[150]</span></a> CEPAL, <em>El comercio internacional y
+el desarrollo de América Latina</em>, México-Buenos Aires, 1964.</p>
+<p><span id="a780"></span><a href="../Text/Section0004.xhtml#a150"><span
+class="notapie">[151]</span></a> Roberto C. Simonsen, op. cit.</p>
+<p><span id="a782"></span><a href="../Text/Section0004.xhtml#a151"><span
+class="notapie">[152]</span></a> Mario Arrubla, op. cit.</p>
+<p><span id="a784"></span><a href="../Text/Section0004.xhtml#a152"><span
+class="notapie">[153]</span></a> Luis Eduardo Nieto Arteta, <em>Ensayos
+sobre economía colambiana</em>, Medellín, 1969.</p>
+<p><span id="a786"></span><a href="../Text/Section0004.xhtml#a153"><span
+class="notapie">[154]</span></a> Germán Guzmán Campos, Orlando Fals
+Borda y Eduardo Umaña Luna, <em>La violencia en Colombia. Estudio de un
+proceso social</em>, Bogotá, 1963-64.</p>
+<p><span id="a788"></span><a href="../Text/Section0004.xhtml#a154"><span
+class="notapie">[155]</span></a> Germán Guzmán, <em>La violencia en
+Colombia</em> (parte descriptiva), Bogotá, 1968.</p>
+<p><span id="a790"></span><a href="../Text/Section0004.xhtml#a155"><span
+class="notapie">[156]</span></a> Naciones Unidas, Crisis y proyecciones
+del desarrollo económico, en <em>El desarrollo económico de
+Colombia</em>, Nueva York, 1957.</p>
+<p><span id="a792"></span><a href="../Text/Section0004.xhtml#a156"><span
+class="notapie">[157]</span></a> El profesor Germán Rama encontró que
+algunas de estas venerables casas acadérnicas tienen en sus bibliotecas,
+como acervo más importante, la colección encuadernada de <em>Selecciones
+del Reader's Digest</em>. Germán W. Rama, <em>Educación y movilidad
+social en Colombia</em>, Revista «Eco», núm. 116, Bogotá, diciembre de
+1969.</p>
+<p><span id="a794"></span><a href="../Text/Section0004.xhtml#a157"><span
+class="notapie">[158]</span></a> Edelberto Torres-Rivas, <em>Procesos y
+estructuras de una sociedad dependiente</em> (Centroamérica), Santiago
+de Chile, 1959.</p>
+<p><span id="a796"></span><a href="../Text/Section0004.xhtml#a158"><span
+class="notapie">[159]</span></a> Carlos Guzmán Bóckler y Jean-Loup
+Herbert, <em>Guatemala: una interpretación histórico-social</em>,
+México, 1971.</p>
+<p><span id="a798"></span><a href="../Text/Section0004.xhtml#a159"><span
+class="notapie">[160]</span></a> Darcy Ribeiro, <em>Las Américas y la
+civilización</em>, tomo III: Los pueblos trasplantados. Civilización y
+desarrollo, Buenos Aires, 1970.</p>
+<p><span id="a800"></span><a href="../Text/Section0004.xhtml#a160"><span
+class="notapie">[161]</span></a> Gregorio Selser, <em>Diplomacia,
+garrote y dólares en América Latina</em>, Buenos Aires, 1962.</p>
+<p><span id="a802"></span><a href="../Text/Section0004.xhtml#a161"><span
+class="notapie">[162]</span></a> Claude fulien, L'Empire American.
+Paris, 1968.</p>
+<p><span id="a804"></span><a href="../Text/Section0004.xhtml#a162"><span
+class="notapie">[163]</span></a> Publicado en <em>Common Sense</em>,
+noviembre de 1935. Leo Huberman, <em>Man's Wordly Goods. The Story of
+the Weaith of Nations</em>, Nueva York, 1936.</p>
+<p><span id="a806"></span><a href="../Text/Section0004.xhtml#a163"><span
+class="notapie">[164]</span></a> William Krehm, <em>Democracia y
+tiranías en el Caribe</em>, Buenos Aires, 1959.</p>
+<p><span id="a808"></span><a href="../Text/Section0004.xhtml#a164"><span
+class="notapie">[165]</span></a> Este es el tema de la novela de Alvaro
+Cepeda Samudio, <em>La casa grande</em> (Buenos Aires, 1967<em>), y</em>
+también integra uno de los capítulos de <em>Cien años de soledad</em>
+(Buenos Aires, 1967) de Gabriel García Márquez: «Seguro que fue un
+sueño», insistían los oficiales.</p>
+<p><span id="a810"></span><a href="../Text/Section0004.xhtml#a165"><span
+class="notapie">[166]</span></a> El ciclo comprende las novelas
+<em>Viento fuerte, El papa verde</em> y <em>Los ojos de los
+enterrados</em>, trilogía publicada en Buenos Aires en la década del
+<em>50</em>. En <em>Viento fuerte</em>, uno de los personajes, Mr. Pyle,
+dice proféticamente: «Si en lugar de efectuar nuevas plantaciones,
+nosotros compramos a los productores particulares su fruta, se ganará
+mucho hacia el futuro». Esto es lo que actualmente ocurre en Guatemala:
+la United Fruit —ahora United Brands— ejerce su monopolio bananero a
+través de los mecanismos de comercialización, más eficaces y menos
+riesgosos que la producción directa. Cabe anotar que la producción de
+bananas cayó verticalmente en la década del sesenta, a partir del
+momento en que la United Fruit decidió vender y/o arrendar sus
+plantaciones de Guatemala, amenazadas por los hervores de la agitación
+social.</p>
+<p><span id="a812"></span><a href="../Text/Section0004.xhtml#a166"><span
+class="notapie">[167]</span></a> Edelberto Torres-Rivas, op. cit.</p>
+<p><span id="a814"></span><a href="../Text/Section0004.xhtml#a167"><span
+class="notapie">[168]</span></a> Gregorio Selser, <em>Sandino, general
+de hombres libres</em>, Buenos Aires, 1959.</p>
+<p><span id="a816"></span><a href="../Text/Section0004.xhtml#a168"><span
+class="notapie">[169]</span></a> Carleton Beals, <em>América ante
+América</em>, Santiago de Chile, 1940.</p>
+<p><span id="a818"></span><a href="../Text/Section0004.xhtml#a169"><span
+class="notapie">[170]</span></a> William Krehm, Op. Cit. Krehm vivió
+largos años en Centroamérica como corresponsal de la revista
+norteamericana <em>Time</em>.</p>
+<p><span id="a820"></span><a href="../Text/Section0004.xhtml#a170"><span
+class="notapie">[171]</span></a> Eduardo Galeano, <em>Guatemala, país
+ocupado</em>, México, 1967.</p>
+<p><span id="a822"></span><a href="../Text/Section0004.xhtml#a171"><span
+class="notapie">[172]</span></a> Discurso en la American Booksellers
+Association, Washington, 10 de junio de 1963. Citado por David Wise y
+Thomas Ross, <em>El gobierno invisible</em>, Buenos Aires, 1966.</p>
+<p><span id="a824"></span><a href="../Text/Section0004.xhtml#a172"><span
+class="notapie">[173]</span></a> J.P. y G.P. Robertson, <em>La Argentina
+en la época de la Revolución</em>. Cartas sobre el Paraguay, Buenos
+Aires, 1920.</p>
+<p><span id="a826"></span><a href="../Text/Section0004.xhtml#a173"><span
+class="notapie">[174]</span></a> Washington Reyes Abadie, Oscar H.
+Bruschera y Tabaré Melogno, <em>El ciclo artiguista</em>, tomo IV,
+Montevideo, 1968.</p>
+<p><span id="a828"></span><a href="../Text/Section0004.xhtml#a174"><span
+class="notapie">[175]</span></a> Nelson de la Torre, Julio C. Rodríguez
+y Lucía Sala de Touron, <em>Artigas: tierra y revolución</em>,
+Montevideo, 1967.</p>
+<p><span id="a830"></span><a href="../Text/Section0004.xhtml#a175"><span
+class="notapie">[176]</span></a> Nelson de la Torre, Julio C. Rodríguez
+y Lucía Sala de Touron, op. cit. De los mismos autores, <em>Evolución
+económica de la Banda Oriental</em>, Montevideo, 1967, y <em>Estructura
+económico-social de la Colonia</em>, Montevideo, 1968.</p>
+<p><span id="a832"></span><a href="../Text/Section0004.xhtml#a176"><span
+class="notapie">[177]</span></a> Vivian Trías, <em>Reforma agraria en el
+Uruguay</em>, Montevideo, 1962. Este libro constituye todo un
+prontuario, familia por familia, de la oligarquía uruguaya.</p>
+<p><span id="a834"></span><a href="../Text/Section0004.xhtml#a177"><span
+class="notapie">[178]</span></a> Eduardo Galeano, <em>Uruguay: Promise
+and Betrayal</em>, en <em>Latin America: Reform or Revolution?</em>, ed.
+por J. Petras y M. Zeitlin, Nueva York, 1968.</p>
+<p><span id="a836"></span><a href="../Text/Section0004.xhtml#a178"><span
+class="notapie">[179]</span></a> Instituto de Economía, <em>El proceso
+económico del Uruguay, Contribución al estudio de su evolución y
+perspectivas</em>, Montevideo, 1969. En las épocas del auge de la
+industria nacional, fuertemente subsidiada y protegida por el Estado,
+buena parte de las ganancias del campo derivó hacia las fábricas
+nacientes. Cuando la industria entró en su agónico ciclo de crisis, los
+excedentes de capital de la ganadería se volcaron en otras direcciones.
+Las más inútiles y lujosas mansiones de Punta del Este <em>brotaron de
+la desgracia nacional, la</em> especulación financiera desató, después
+la fiebre de los pescadores en el río revuelto de la inflación. Pero,
+sobre todo, los capitales huyeron: los capitales y las ganancias que,
+año tras año, el país produce. Entre 1962 y 1966, según los datos
+oficiales, 250 millones de dólares volarán del Uruguay rumbo a los
+seguros bancos de Suiza y Estados Unidos. También los hombres, los
+hombres jóvenes, bajaron del camino a la ciudad, hace veinte años, a
+ofrecer sus brazos a la industria en desarrollo, y hoy se marchan, por
+tierra o por mar, rumbo al extranjero. Claro está, su suerte es
+distinta. Los capitales son recibidos con los brazos abiertos; a los
+peregrinos les aguarda un destino difícil, el desarraigo y la
+intemperie, la aventura incierta. El Uruguay de 1970, estremecido por
+una crisis feroz, no es ya el mitológico oasis de paz y progreso que se
+prometía a los inmigrantes europeos sino un país turbulento que condena
+al éxodo a sus propios habitantes. Produce violencia y exporta hombres,
+tan naturalmente como produce y exporta carne y lana.</p>
+<p><span id="a838"></span><a href="../Text/Section0004.xhtml#a179"><span
+class="notapie">[180]</span></a> German Wettstein y Juan Ruduir, <em>La
+sociedad rural</em>, en la colección <em>Nuestra Tierra</em>, núm. 16.
+Montevideo, 1969.</p>
+<p><span id="a840"></span><a href="../Text/Section0004.xhtml#a180"><span
+class="notapie">[181]</span></a> Jesús Silva Herzog, <em>Breve historia
+de la Revolución mexicana</em>, México-Bueno, Aires, 1960.</p>
+<p><span id="a842"></span><a href="../Text/Section0004.xhtml#a181"><span
+class="notapie">[182]</span></a> John Kenneth Turner, <em>México
+bárbaro</em>, publicado en Estados Unidos en 1911, México, 1967.</p>
+<p><span id="a844"></span><a href="../Text/Section0004.xhtml#a182"><span
+class="notapie">[183]</span></a> John Kenneth Turner, op. cit. México
+era el país preferido por las inversiones norteamericanas: reunía a
+fines de siglo poco menos de la tercera parte de los capitales de
+Estados Unidos invertidos en el extranjero. En el estado de Chihuahua y
+otras regiones del norte, William Randolph Hearst, el célebre
+<em>Citizen Kane</em> del film de Welles, poseía más de tres millones de
+hectáreas. Fernando Carmona, <em>El drama de América Latina. El caso de
+México</em>, México, 1964.</p>
+<p><span id="a846"></span><a href="../Text/Section0004.xhtml#a183"><span
+class="notapie">[184]</span></a> John Womack Jr., <em>Zapata y la
+Revolución mexicana</em>, México, 1969.</p>
+<p><span id="a848"></span><a href="../Text/Section0004.xhtml#a184"><span
+class="notapie">[185]</span></a> John Womack Jr., op Cit.</p>
+<p><span id="a850"></span><a href="../Text/Section0004.xhtml#a185"><span
+class="notapie">[186]</span></a> Fernando Carmona, Op. cit.</p>
+<p><span id="a852"></span><a href="../Text/Section0004.xhtml#a186"><span
+class="notapie">[187]</span></a> Edmundo Flores, <em>¿Adónde va la
+economía de México?</em>, en Comercio exterior, vol. XX, núm. l, México,
+enero de 1970.</p>
+<p><span id="a854"></span><a href="../Text/Section0004.xhtml#a187"><span
+class="notapie">[188]</span></a> Ana María Flores, <em>La magnitud del
+hambre en Méxi</em>co, México, 1961.</p>
+<p><span id="a856"></span><a href="../Text/Section0004.xhtml#a188"><span
+class="notapie">[189]</span></a> Alonso Aguilar M. y Fernando Carmona,
+Op. Cit. Véase también, de los mismos autores y Guillermo Montaño y
+Jorge Carrión, <em>El milagro mexicano</em>, México, 1970.</p>
+<p><span id="a858"></span><a href="../Text/Section0004.xhtml#a189"><span
+class="notapie">[190]</span></a> Rodolfo Stavenhagen, Fernando Paz
+Sánchez, Cuauhtémoc Cárdenas y Arturo Bonilla, <em>Neolatifundismo y
+explotación. De Emiliano Zapata a Anderson Clayton &amp; Co.</em>,
+México, 1968.</p>
+<p><span id="a860"></span><a href="../Text/Section0004.xhtml#a190"><span
+class="notapie">[191]</span></a> Carlos Fuentes, <em>La muerte de
+Artemio Cruz</em>, México 1962.</p>
+<p><span id="a862"></span><a href="../Text/Section0004.xhtml#a191"><span
+class="notapie">[192]</span></a> FAO, Anuario de la producción, vol 19,
+1965.</p>
+<p><span id="a864"></span><a href="../Text/Section0004.xhtml#a192"><span
+class="notapie">[193]</span></a> Alberto Baltra Cortés, Problemas del
+subdesarrollo ecolatinoamericano, Buenos Aires, 1966.</p>
+<p><span id="a866"></span><a href="../Text/Section0004.xhtml#a193"><span
+class="notapie">[194]</span></a> D. F. Maza Zavala, <em>Explosión
+demográfica y crecimiento económico</em>, Caracas, 1970.</p>
+<p><span id="a868"></span><a href="../Text/Section0004.xhtml#a194"><span
+class="notapie">[195]</span></a> Paul Bairoch, <em>Diagnostic de
+1'évotution économique du Tiers Monde</em>. 1900-1966, París, 1967.</p>
+<p><span id="a870"></span><a href="../Text/Section0004.xhtml#a195"><span
+class="notapie">[196]</span></a> Rui Facó, <em>Cangaceiros e
+fanáticos</em>, Río de Janeiro, 1965.</p>
+<p><span id="a872"></span><a href="../Text/Section0004.xhtml#a196"><span
+class="notapie">[197]</span></a> La pradera artificial representa, desde
+el punto de vista del capitalista ganadero, un traslado de capital hacia
+una inversión más cuantiosa, más riesgosa y simultáneamente menos
+rentable que la inversión tradicional en ganadería extensiva. Así, el
+interés privado del productor entra en contradicción con el interés de
+la sociedad en su conjunto: la calidad del ganado y sus rendimientos
+sólo pueden incrementarse, a partir de cierto punto, a través del
+aumento del poder nutritivo del suelo. El país necesita que las vacas
+produzcan más carne y las ovejas más lana, pero los dueños de la tierra
+ganan más que suficiente al nivel de los rendimientos actuales. Las
+conclusiones del instituto de Economía de la Universidad del Uruguay
+(Op. Cit.) son, en cierto sentido, también aplicables a la
+Argentina.</p>
+<p><span id="a874"></span><a href="../Text/Section0004.xhtml#a197"><span
+class="notapie">[198]</span></a> Dardo Cúneo, <em>Comportamiento y
+crisis de la clase empresaria</em>, Buenos Aires, 1967.</p>
+<p><span id="a876"></span><a href="../Text/Section0004.xhtml#a198"><span
+class="notapie">[199]</span></a> CEPAL, Estudio económico de América
+Latina, Santiago de Chile, 1964 y 1966, y El uso de fertilizantes en
+América Latina, Santiago de Chile, 1966.</p>
+<p><span id="a878"></span><a href="../Text/Section0004.xhtml#a199"><span
+class="notapie">[200]</span></a> M. Darcy Ribeiro, <em>Las Américas y la
+civilización</em>, tomo I, Los pueblos nuevos, Buenos Aires, 1969.</p>
+<p><span id="a880"></span><a href="../Text/Section0004.xhtml#a200"><span
+class="notapie">[201]</span></a> Edward C. Kirkland, <em>Historia
+económica de Estados Unidos</em>, México, 1941.</p>
+<p><span id="a882"></span><a href="../Text/Section0004.xhtml#a201"><span
+class="notapie">[202]</span></a> Celso Furtado, <em>Um projeto para o
+Brasil</em>, Río de Janeiro, 1969.</p>
+<p><span id="a884"></span><a href="../Text/Section0004.xhtml#a202"><span
+class="notapie">[203]</span></a> Lewis Hanke y otros autores de <em>Do
+the Américas Have a Common History?</em> Nueva York, 1964.</p>
+<p><span id="a886"></span><a href="../Text/Section0004.xhtml#a203"><span
+class="notapie">[204]</span></a> Sergio Bagú, op. cit.</p>
+<p><span id="a888"></span><a href="../Text/Section0005.xhtml#a204"><span
+class="notapie">[205]</span></a> Edwin y Lieuwen, The United States and
+the Challenge to Segurity in Latin America, Ohio, 1966.</p>
+<p><span id="a890"></span><a href="../Text/Section0005.xhtml#a205"><span
+class="notapie">[206]</span></a> Philip Courtney, en un trabajo
+presentado ante el II Congreso Internacional de Ahorro e Inversion,
+Bruselas, 1959.</p>
+<p><span id="a892"></span><a href="../Text/Section0005.xhtml#a206"><span
+class="notapie">[207]</span></a> Harry Magdoff, <em>La era del
+imperialismo</em>, en <em>Monthly Review</em>, selecciones en
+castellano, Santiago de Chile, enero-febrero de 1969 y Claude Julien,
+<em>L'Empire Américan</em>, Paris, 1969.</p>
+<p><span id="a894"></span><a href="../Text/Section0005.xhtml#a207"><span
+class="notapie">[208]</span></a> El gobierno de México advirtió a
+tiempo, en cambio, que el país, uno de los principales exportadores
+mundiales de azufre, se estaba vaciando. La Texas Gulf Sulphur Co. y la
+Pan American Sulfur habian asegurado que las reservas con que todavía
+contaban sus concesiones eran seis veces más abundantes de lo que eran
+en realidad, y el gobierno resolvió, en 1965, limitar las ventas al
+exterior.</p>
+<p><span id="a896"></span><a href="../Text/Section0005.xhtml#a208"><span
+class="notapie">[209]</span></a> Sergio Allmaraz Paz, <em>Réquiem para
+una república</em>, La Paz, 1969.</p>
+<p><span id="a898"></span><a href="../Text/Section0005.xhtml#a209"><span
+class="notapie">[210]</span></a> Claude Julien, op. cit.</p>
+<p><span id="a900"></span><a href="../Text/Section0005.xhtml#a210"><span
+class="notapie">[211]</span></a> Arthur Davis, presidente de la
+Aluminium Co. durante largo tiempo, murió en 1962 y dejó trescientos
+millones de dólares en herencia a las fundaciones de caridad, con la
+expresa condición de que no gastaran los fondos fuera del territorio de
+los Estados Unidos. Ni siquiera por esta vía pudo Guyana rescatar aunque
+fuera una parte de la riqueza que la empresa le ha arrebatado. Philip
+Reno, <em>Aluminium Profits and Caribbean People</em>, en <em>Monthly
+Review</em>, Nueva York, octubre de 1963<em>, y</em> del mismo autor,
+<em>El drama de la Guayana Británica. Un pueblo desde la esclavitud a la
+lucha por el socialismo</em>, en <em>Monthly Review</em>, selecciones en
+castellano, Buenos Aires, enero-febrero de 1965.</p>
+<p><span id="a902"></span><a href="../Text/Section0005.xhtml#a211"><span
+class="notapie">[212]</span></a> Harry Magdoff, op. cit.</p>
+<p><span id="a904"></span><a href="../Text/Section0005.xhtml#a212"><span
+class="notapie">[213]</span></a> Hermano Alves,
+<em>Aerolotogrametria</em>, en Correio de Manhã. Río de Janeiro, 8 de
+junio de 1967.</p>
+<p><span id="a906"></span><a href="../Text/Section0005.xhtml#a213"><span
+class="notapie">[214]</span></a> Informe de la Comisión Parlamentaria de
+Investigaciones sobre la venta de tierras brasileñas a personas físicas
+o jurídicas extranjeras, Brasilia, 3 de junio de 1968.</p>
+<p><span id="a908"></span><a href="../Text/Section0005.xhtml#a214"><span
+class="notapie">[215]</span></a> Correio da Manhã, Río de Janeiro, 30 de
+junio de 1968.</p>
+<p><span id="a910"></span><a href="../Text/Section0005.xhtml#a215"><span
+class="notapie">[216]</span></a> Paulo R. Schilling, <em>Brasil para
+extranjeros</em>, Montevideo; 1966.</p>
+<p><span id="a912"></span><a href="../Text/Section0005.xhtml#a216"><span
+class="notapie">[217]</span></a> Ernst Samhaber, <em>Sudamérica,
+biografía de un continente</em>, Buenos Aires, 1946. Las aves guaneras
+son las más valiosas del mundo, escribía Robert Cushman Murphy mucho
+después del auge, «por su rendimiento en dólares por cada digestión».
+Están por encima, decía, del ruiseñor de Shakespeare que cantaba en el
+balcón de Julieta, por encima de la paloma que voló sobre el Arca de Noé
+y, desde luego, de las tristes golondrinas de Bécquer. Emilio Romero,
+<em>Historia económica del Perú</em>, Buenos Aires, 1949.</p>
+<p><span id="a914"></span><a href="../Text/Section0005.xhtml#a217"><span
+class="notapie">[218]</span></a> Óscar Bermúdez, <em>Historia del
+salitre desde sus orígenes basta la Guerra del Pacífico</em>, Santiago
+de Chile, 1963.</p>
+<p><span id="a916"></span><a href="../Text/Section0005.xhtml#a218"><span
+class="notapie">[219]</span></a> José Carlos Mariátegui, <em>Siete
+ensayos de interpretación de la realidad peruana</em>, Montevideo,
+1970.</p>
+<p><span id="a918"></span><a href="../Text/Section0005.xhtml#a219"><span
+class="notapie">[220]</span></a> Perú perdió la provincia salitrera de
+Tarapacá y algunas importantes islas guaneras, pero conservó los
+yacimientos de guano de la costa norte. El guano seguía siendo el
+fertilizante principal de la agricultura peruana, hasta que a partir de
+1960 el auge de la harina de pescado aniquiló a los alcatraces y a las
+gaviotas. Las empresas pesqueras, en su mayoría norteamericanas,
+arrasaron rápidamente los bancos de anchoítas cercanos a la cesta, para
+alimentar con harina peruana a los cerdos y las aves de Estados Unidos y
+Europa, y los pájaros guaneros salían a perseguir a los pescadores, cada
+vez más lejos, mar afuera. Sin resistencia para el regreso, caían al
+mar. Otros no se iban, y así podían verse, en 1962 y en 1963, las
+bandadas de alcatraces persiguiendo comida por la avenida principal de
+Lima: cuando ya no podían levantar vuelo; los alcatraces quedaban
+muertos en las calles.</p>
+<p><span id="a920"></span><a href="../Text/Section0005.xhtml#a220"><span
+class="notapie">[221]</span></a> Hernán Ramírez Necochea, <em>Historia
+del imperialismo en Chile</em>, Santiago de Chále, 1960.</p>
+<p><span id="a922"></span><a href="../Text/Section0005.xhtml#a221"><span
+class="notapie">[222]</span></a> Hernán Ramírez Necochea, <em>Balmaceda
+y la contrarrevolución de</em> 1891, Santiago de Chile, 1969.</p>
+<p><span id="a924"></span><a href="../Text/Section0005.xhtml#a222"><span
+class="notapie">[223]</span></a> Hernán Ramírez Necochea, op. cit.</p>
+<p><span id="a926"></span><a href="../Text/Section0005.xhtml#a223"><span
+class="notapie">[224]</span></a> Las mismas empresas industrializaban el
+mineral chileao en sus fábricas lejanas. Anaconda Americ an Brass,
+Anaconda Wire and Cable y Kennecott Wire and Cable figuran entre las
+principalès fábricas de bronce y alambre del mundo entero. José
+Cademartori, La economía chilena, Santiago de Chile, 1968.</p>
+<p><span id="a928"></span><a href="../Text/Section0005.xhtml#a224"><span
+class="notapie">[225]</span></a> R. J. Grant-Suttie, <em>Sucedáneos del
+cobre</em>, en Finanzas <em>y Desarrollo</em>, revista del <em>FMI</em>
+y el <em>BIRF</em>, Washington, junio de 1969.</p>
+<p><span id="a930"></span><a href="../Text/Section0005.xhtml#a225"><span
+class="notapie">[226]</span></a> Mario Vera y Elmo Catalán, <em>La
+encrucijada del cobre</em>. Santiago de Chile, 1965.</p>
+<p><span id="a932"></span><a href="../Text/Section0005.xhtml#a226"><span
+class="notapie">[227]</span></a> El <em>New York Times</em> del 13 de
+agosto de 1969 lo definía en esos términos, al describir en éxtasis las
+vacaciones del duque y la duquesa de Windsor en el castillo del siglo
+XVI que Patino posee en los alrededores de Lisboa. «Nos gusta dar a los
+sirvientes algo de calma y de paz», confesaba la señora, mientras
+explicaba a Charlotte Curtis su programa del día. Después, es el tiempo
+de las vacaciones de montaña en Suiza; los fotógrafos y los periodistas
+se abalanzaban sobre los condes y los artistas de moda en Saint Moritz.
+Una millonaria de cincuenta años acaba de perder a su segundo marido,
+vicepresidente de la Ford, y sonríe ante los <em>flashes</em>: anuncia
+su próximo matrimonio con un jovencito que la toma del brazo y mira con
+ojos asustados. Al lado, otra pareja del gran mundo. Él es un hombre de
+baja estatura y rasgos de indio; cejas espesas, ojos duros, nariz
+aplastada, pómulos salientes. Antenor Patiño continúa pareciendo
+boliviano. En una revista, Antenor aparece disfrazado de príncipe
+oriental, con turbante y todo, entre varios príncipes auténticos que se
+han reunido en el palacio del barón Alexis de Rédé: la princesa
+Margarita de Dinamarca, el príncipe Enrique, María Pía de Saboya y su
+primo el príncipe Miguel de Borbón Partna, el príncipe Lobckowitz y
+otros trabajadores.</p>
+<p><span id="a934"></span><a href="../Text/Section0005.xhtml#a227"><span
+class="notapie">[228]</span></a> Cuando el general Alfredo Ovando
+anunció, en julio de 1966, que se había llegado a un acuerdo con la
+empresa alemana Klochner para instalar los hornos estatales, dijo que
+tendrían un nuevo destino «esas pobres minas que solamente han servido,
+hasta ahora, para abrir socavones en los pulmones de nuestros hermanos
+mineros». Esos hombres que dan su vida por el mineral, escribía Sergio
+Àlmaraz (<em>El</em> po<em>der y la caída: El estaño en la historia de
+Bolivia</em>, La Paz, Cochabamba, 1967), «no lo poseen. Nunca lo
+poseyeron; ni antes ni después de 1952. Porque lo que sucede es que el
+estaño nada vale en cuanto a aprovechamiento inmediato si no es bajo el
+brillante aspecto de un lingote. El mineral, polvo pesado de terroso
+aspecto, ciertamente no sirve para nada que no sea para volcarlo en la
+boca de un horno».</p>
+<p>Almaraz contó la historia de un industrial, Mariano Peró, que libró
+una guerra solitaria, a lo largo de más de treinta años, para que el
+estaño boliviano se refinara en Oruro y no en Liverpool. En 1946, pocos
+días después de la caída del presidente nacionalista Gualberto
+Villarroel, Peró entró en el Palacio Quemado. Iba a recoger dos lingotes
+de estaño. Eran los primeros lingotes producidos en su fundición de
+Oruro, y ya no tenía sentido que aquel par de símbolos; que encarnaban a
+la nación, continuaran adornando el escritorio del presidente de la
+república. Villarroel había sido ahorcado en un farol de la Plaza
+Murillo y el poder de la rosca oligárquica era restaurado a partir de su
+caída. Maríano Peró recogió los lingotes y se fue con ellos. Estaban
+manchados de sangre seca.</p>
+<p><span id="a936"></span><a href="../Text/Section0005.xhtml#a228"><span
+class="notapie">[229]</span></a> «Cuando me siento, borracho estoy.
+Tres, cuatro, veo a la gente No puedo comer solo. Una huahua soy, pues.
+Un niño» Saturnino Condori, viejo albañil del campamento minero de Siglo
+XX, está tendido desde hace más de tres años en una cama del hospital de
+Catavi. Es una de las víctimas de la matanza de la noche de San Juan, en
+1967. Ni siquiera había festejado nada. Por trabajar el sábado 24, le
+habían ofrecido pagarle triple, así que decidió no sumergirse, a
+diferencia de todos los demás, en el delirio de la chicha y la farra. Se
+acostó temprano. Esa noche soñó con que un caballero le arrojaba espinas
+al cuerpo: «Espinas grandes me ha empujado». Se despertó varias veces,
+porque la lluvia de balas se desencadenó sobre el campamento desde las
+cinco de la mañana. «Mi cuerpo se ha deshecho, se ha descomponido, medio
+templación me ha agarrado, y yo asustado, y yo asustado, así, he estado.
+Mi señora me ha dicho: anda, escápate. Pero yo ¿qué había hecho? A
+ninguna parte no he salido. Andate, andate, me ha dicho. Tiroteos había
+de noche, qué será eso, qué será, pap-pap-pap-pap-pap. Y yo mismo
+despertando y durmiendo así de a ratos, y ni asimismo me he escapado, mi
+señora me ha dicho: pues andate, pues andate, escapa. Qué me van a
+hacer, le digo, yo soy un albañil particular, qué me van a hacer.» Se
+despertó a eso de las ocho de la mañana. Se irguió sobre la cama. La
+bala atravesó el techo, atravesó el sombrero de su mujer y se le metió
+en el cuerpo y le reventó la columna vertebral.</p>
+<p><span id="a938"></span><a href="../Text/Section0005.xhtml#a229"><span
+class="notapie">[230]</span></a> Sergio Almaraz Paz, op. cit.</p>
+<p><span id="a940"></span><a href="../Text/Section0005.xhtml#a230"><span
+class="notapie">[231]</span></a> Salvador de la Plaza, en el volumen
+colectivo <em>Perfiles de la economía venezolana</em>, Caracas,
+1964.</p>
+<p><span id="a942"></span><a href="../Text/Section0005.xhtml#a231"><span
+class="notapie">[232]</span></a> Osny Duarte Pereira, <em>Ferro' e
+Independencia</em>. <em>Um desafio a dignidade nacional</em>, Río de
+Janeiro, 1967.</p>
+<p><span id="a944"></span><a href="../Text/Section0005.xhtml#a232"><span
+class="notapie">[233]</span></a> <em>Inmovable Mountains</em>, en
+Fortune, abril de 1965.</p>
+<p><span id="a946"></span><a href="../Text/Section0005.xhtml#a233"><span
+class="notapie">[234]</span></a> Citado por Mário Pedrosa, <em>A opção
+brasileira</em>, Río de Janeiro, 1966.</p>
+<p><span id="a948"></span><a href="../Text/Section0005.xhtml#a234"><span
+class="notapie">[235]</span></a> De Lyndon Johnson a Raínieri Mazzili, 2
+de abril de 1964, versión de Associated press.</p>
+<p><span id="a950"></span><a href="../Text/Section0005.xhtml#a235"><span
+class="notapie">[236]</span></a> Según informó el diario <em>O Estado de
+São Paulo</em>, 4 de mayo de 1964.</p>
+<p><span id="a952"></span><a href="../Text/Section0005.xhtml#a236"><span
+class="notapie">[237]</span></a> José Stacchini, <em>Mobilizaçio de
+audácia</em>, São Paulo, 1965.</p>
+<p><span id="a954"></span><a href="../Text/Section0005.xhtml#a237"><span
+class="notapie">[238]</span></a> Philip Siekman, «When Executives turned
+Revolutionaires», en <em>Fortune</em>, julio de 1964.</p>
+<p><span id="a956"></span><a href="../Text/Section0005.xhtml#a238"><span
+class="notapie">[239]</span></a> Véanse las declaraciones ante el Comité
+de Asuntos Exteriores de la Cámara de Representantes de los Estados
+Unidos, citadas por Harry Magdoff, op. cit.<em>, y</em> el revelador
+artículo de Eugene Methvin en <em>Selecciones de Reader's Di</em>gest en
+español, de diciembre de 1966: según Methvin, gracias a los buenos
+servicios del Instituto Americano para el Desarrollo del Sindicalismo
+Libre, con sede en Washington, los golpistas brasileños pudieron
+coordinar por cable sus movimientos de tropas, y el nuevo régimen
+militar recompensó al <em>IADSL</em> designando a cuatro de sus
+graduados «para que hicieran una limpieza en los sindicatos dominados
+por los rojos».</p>
+<p><span id="a958"></span><a href="../Text/Section0005.xhtml#a239"><span
+class="notapie">[240]</span></a> Osny Duarte Pereira, op. cit.</p>
+<p><span id="a960"></span><a href="../Text/Section0005.xhtml#a240"><span
+class="notapie">[241]</span></a> Según los datos publicados por la
+Organización de Países Exportadores de Petróleo. Francisco Mieres,
+<em>El petróleo y la problemática estructural venezolana</em>, Caracas,
+1969.</p>
+<p><span id="a962"></span><a href="../Text/Section0005.xhtml#a241"><span
+class="notapie">[242]</span></a> Informe del Senado de Estados Unidos;
+<em>Actas secretas del cártel petrolero</em>, Buenos Aires, 1961, y
+Harvey O'Connor, <em>El Imperio del petróleo</em>, La Habana, 1961.</p>
+<p><span id="a964"></span><a href="../Text/Section0005.xhtml#a242"><span
+class="notapie">[243]</span></a> Paul A. Baran y Paul M. Sweezy, <em>El
+capital monopolista</em>, México, 1970.</p>
+<p><span id="a966"></span><a href="../Text/Section0005.xhtml#a243"><span
+class="notapie">[244]</span></a> Francisco Mieres, op. cit.</p>
+<p><span id="a967"></span><a href="../Text/Section0005.xhtml#a244"><span
+class="notapie">[245]</span></a> Michael Tanzer, <em>The Political
+Economy of International Oil and the Underdeveloped Countries</em>,
+Boston, 1969.</p>
+<p><span id="a970"></span><a href="../Text/Section0005.xhtml#a245"><span
+class="notapie">[246]</span></a> Harvey O'Connor, <em>La crisis mundial
+del petróleo</em>, Buenos Aires, 1963. Este fenómeno sigue siendo usual
+en varios países. En Colombia, por ejemplo, donde el petróleo se exporta
+libremente y sin pagar impuestos, la refinería estatal compra a las
+compañías extranjeras el petróleo colombiano con un recargo del 37 por
+100 sobre el precio internacional, y lo tiene que pagar en dólares. Raúl
+Alameda Ospina en la revista Esquina, Bogotá, enero de 1968.</p>
+<p><span id="a971"></span><a href="../Text/Section0005.xhtml#a246"><span
+class="notapie">[247]</span></a> Jesús Silva Herzog, <em>Historia de la
+expropiación de las empresas petroleras</em>, México. 1964.</p>
+<p><span id="a973"></span><a href="../Text/Section0005.xhtml#a247"><span
+class="notapie">[248]</span></a> Vivian Trías, <em>Imperialismo y
+petróleo en el Uruguay</em>, Montevideo, 1963. Véase también el discurso
+del diputado Enrique Erro en el diario de sesiones de la Cámara de
+Representantes, núm. 1211, tomo 577, Montevideo, 8 de septiembre de
+1966.</p>
+<p><span id="a976"></span><a href="../Text/Section0005.xhtml#a248"><span
+class="notapie">[249]</span></a> Petrobrás figura en el primer lugar en
+la lista de las quinientas mayores empresas, publicada por
+<em>Conjuntura económica</em>, vol. 24, núm. 9, Río de Janeiro,
+1970.</p>
+<p><span id="a977"></span><a href="../Text/Section0005.xhtml#a249"><span
+class="notapie">[250]</span></a> Declaraciones del ingeniero Márcio
+Leite Cesarino, en <em>Correio da Manha, Río</em> de Janeiro, 28 de
+enero de 1967.</p>
+<p><span id="a979"></span><a href="../Text/Section0005.xhtml#a250"><span
+class="notapie">[251]</span></a> <em>Correio da Manhá</em> publicó un
+amplio extracto del documento en su edición del 19 de febrero de
+1967.</p>
+<p><span id="a981"></span><a href="../Text/Section0005.xhtml#a251"><span
+class="notapie">[252]</span></a> René Zavaleta Mercado, <em>Bolivia. El
+desarrollo de la conciencia nacional</em>, Montevideo, 1967.</p>
+<p><span id="a983"></span><a href="../Text/Section0005.xhtml#a252"><span
+class="notapie">[253]</span></a> El senador Long no ahorró ningún
+adjetivo a la Standard Oil: la llamó criminal, malhechora, facinerosa,
+asesina doméstica, asesina extranjera, conspiradora internacional, hato
+de salteadores y ladrones rapaces, conjunto de vándalos y ladrones.
+Reproducido en la Revista Guarania, Buenos Aires, noviembre de 1934.</p>
+<p><span id="a985"></span><a href="../Text/Section0005.xhtml#a253"><span
+class="notapie">[254]</span></a> Los ejemplos abundan en la historia,
+reciente o lejana. Irving Florman, embajador de los Estados Unidos en
+Bolivia, informaba a Donald Dawson, de la Casa Blanca, el 28 de
+diciembre de 1950: «Desde que he llegado aquí, he trabajado
+diligentemente en el proyecto de abrir ampliamente la industria
+petrolera de Bolivia a la penetración de la empresa privada
+norteamericana, y ayudar a nuestro programa de defensa nacional en vasta
+escala». Y también: «Sabía que a usted le interesaría escuchar que la
+industria petrolera de Bolivia y esta tierra entera están ahora bien
+abiertas a la libre iniciativa norteamericana. Bolivia es, por lo tanto,
+el primer país del mundo que ha hecho una desnacionalización, o una
+nacionalización a la inversa, y yo me siento orgulloso de haber sido
+capaz de cumplir esta tarea para mi país y la administración». La copia
+fotostática de esta carta, extraída de la biblioteca de Harry Truman,
+fue reproducida por <em>NACLA Newsletter</em>, Nueva York, febrero de
+1969.</p>
+<p><span id="a987"></span><a href="../Text/Section0005.xhtml#a254"><span
+class="notapie">[255]</span></a> Marcelo Quiroga Santa Cruz,
+interpelación del 11 y 12 de octubre de 1966 en la Cámara de Diputados,
+en la <em>Revista jurídica</em>, edición extraordinaria, Cochabamba,
+1967.</p>
+<p><span id="a989"></span><a href="../Text/Section0005.xhtml#a255"><span
+class="notapie">[256]</span></a> Cuando el escándalo estalló, la
+embajada de los Estados Unidos no guardó un prudente silencio. Uno de
+sus funcionarios llegó a afirmar que no existía ningún original del
+contrato de Talara. (Richard N. Goodwin, «El conflicto con la IPC: Carta
+de Perú». reproducido de <em>The New Yorker</em> por <em>Comercio
+exterior</em>, México, julio de 1969.</p>
+<p><span id="a991"></span><a href="../Text/Section0005.xhtml#a256"><span
+class="notapie">[257]</span></a> Georgie Anne Geyer, Seized U.S. Oil
+Firm Made Napalm, en el New York Post, 7 de abril de 1969.</p>
+<p><span id="a993"></span><a href="../Text/Section0005.xhtml#a257"><span
+class="notapie">[258]</span></a> Para la redacción de este capítulo, el
+autor ha utilizado, además de las obras ya citadas de Harvey O'Connor y
+Francisco Mieres, los libros siguientes: Orlando Araújo, <em>Operación
+Puerto Rico sobre Venezuela</em>, Caracas, 1967; Federico Brito,
+<em>Venezuela siglo XX</em>, La Habana, 1967; M. A. Falcon Urbano,
+<em>Desarrollo e industrialización de Venezuela</em>, Caracas, 1969;
+Elena Hochman, Héctor Mujica y otros, <em>Venezuela 1.°</em>, Caracas,
+1963; William Krehm, <em>Democracia y tiranías en el Caribe</em>, Buenos
+Aires, 1959; los ensayos de D. F. Maza Zavala, Salvador de la Plaza,
+Pedro Esteban Mejía y Leonardo Montiel Ortega en el volumen citado en la
+nota <em>27</em>; Rodolfo Quintero, <em>La cultura del petróleo</em>,
+Caracas, 1968; Domingo Alberto Rangel, <em>El proceso del capitalismo
+contemporáneo en Venezuela</em>, Caracas, 1968; Arturo Uslar Pietri,
+<em>¿Tiene un porvenir la juventud venezolana?</em>, en <em>Cuadernos
+Americanos</em>, México, marzo-abril de 1968; y Naciones Unidas-CEPAL,
+<em>Estudio económico de América Latina</em>, 1969, Nueva York-Santiago
+de Chile, 1970.</p>
+<p><span id="a996"></span><a href="../Text/Section0005.xhtml#a258"><span
+class="notapie">[259]</span></a> <em>Time</em>, edición para América
+Latina, 11 de septiembre de 1953.</p>
+<p><span id="a997"></span><a href="../Text/Section0007.xhtml#a259"><span
+class="notapie">[260]</span></a> Williar. W. Kaufmann, <em>La política
+británica y la independencia de la América Latina (1804-1828)</em>,
+Caracas, 1963.</p>
+<p><span id="a999"></span><a href="../Text/Section0007.xhtml#a260"><span
+class="notapie">[261]</span></a> Manfred Kossok, <em>El virreinato del
+Río de la Plata</em>. <em>Su estructura económico-social</em>, Buenos
+Aires, 1959.</p>
+<p><span id="a1002"></span><a
+href="../Text/Section0007.xhtml#a261"><span
+class="notapie">[262]</span></a> H. S. Ferns, <em>Gran Bretaña y
+Argentina en el siglo XIX</em>, Buenos Aires, 1966.</p>
+<p><span id="a1003"></span><a
+href="../Text/Section0007.xhtml#a262"><span
+class="notapie">[263]</span></a> Ibid.</p>
+<p><span id="a1005"></span><a
+href="../Text/Section0007.xhtml#a263"><span
+class="notapie">[264]</span></a> Alexander von Humboldt, <em>Ensayo
+sobre el reino de la Nueva España</em>, México, 1944.</p>
+<p><span id="a1007"></span><a
+href="../Text/Section0007.xhtml#a264"><span
+class="notapie">[265]</span></a> Emilio Romero, <em>Historia económica
+del Perú</em>, Buenos Aires, 1949.</p>
+<p><span id="a1009"></span><a
+href="../Text/Section0007.xhtml#a265"><span
+class="notapie">[266]</span></a> Ibid.</p>
+<p><span id="a1011"></span><a
+href="../Text/Section0007.xhtml#a266"><span
+class="notapie">[267]</span></a> Hernán Ramírez Necochea,
+<em>Antecedentes económicos de ia independencia de Chile</em>, Santiago
+de Chile, 1959.</p>
+<p><span id="a1014"></span><a
+href="../Text/Section0007.xhtml#a267"><span
+class="notapie">[268]</span></a> Caio Prado Júnior, <em>Historia
+económica del Brasil</em>, Buenos Aires, 1960.</p>
+<p><span id="a1015"></span><a
+href="../Text/Section0007.xhtml#a268"><span
+class="notapie">[269]</span></a> The University Society, <em>Bolivia en
+el primer centenario de su independencia</em>, La Paz, 1925.</p>
+<p><span id="a1017"></span><a
+href="../Text/Section0007.xhtml#a269"><span
+class="notapie">[270]</span></a> Luis C. Alen Lascano, <em>Imperialismo
+y comercio libre</em>, Buenos Aires, 1963.</p>
+<p><span id="a1019"></span><a
+href="../Text/Section0007.xhtml#a270"><span
+class="notapie">[271]</span></a> Pedro Santos hlartirez, <em>Las
+industrias durante el virreinato (1776-18101)</em>, Buenos Aires,
+1969.</p>
+<p><span id="a1021"></span><a
+href="../Text/Section0007.xhtml#a271"><span
+class="notapie">[272]</span></a> Ricardo Levene, introducción a
+Documentos para la historia argentina, 1915, en <em>Obras
+completas</em>, Buenos Aires, 1962.</p>
+<p><span id="a1024"></span><a
+href="../Text/Section0007.xhtml#a272"><span
+class="notapie">[273]</span></a> Woodbine Parish, <em>Buenos Aires y las
+Provincias del Rio de la Plata</em>. Buenos Aires, 1958.</p>
+<p><span id="a1025"></span><a
+href="../Text/Section0007.xhtml#a273"><span
+class="notapie">[274]</span></a> Paulo Schilling, <em>Brasil para
+extranjeros</em>, Montevideo, 1966.</p>
+<p><span id="a1027"></span><a
+href="../Text/Section0007.xhtml#a274"><span
+class="notapie">[275]</span></a> Alan K. Manchester, <em>British
+Preeminente in Brazil: its Rise and Decline</em>, Chapel Hill, Carolina
+del Norte, 1933.</p>
+<p><span id="a1029"></span><a
+href="../Text/Section0007.xhtml#a275"><span
+class="notapie">[276]</span></a> Celso Furtado, <em>Formación económica
+del Brasil</em>, México Buenos Aires, 1959.</p>
+<p><span id="a1031"></span><a
+href="../Text/Section0007.xhtml#a276"><span
+class="notapie">[277]</span></a> J. F Normano, <em>Evolucão económica do
+Brasil</em>, São Paulo, 1934.</p>
+<p><span id="a1033"></span><a
+href="../Text/Section0007.xhtml#a277"><span
+class="notapie">[278]</span></a> Gustavo Beyhaut, <em>Raíces
+contemporáneas de América Latina</em>, Buenos Aires, 1964.</p>
+<p><span id="a1036"></span><a
+href="../Text/Section0007.xhtml#a278"><span
+class="notapie">[279]</span></a> Hernán Ramírez Necochea, <em>Historia
+del imperialismo en Chile</em>, Santiago de Chile, 1960.</p>
+<p><span id="a1037"></span><a
+href="../Text/Section0007.xhtml#a279"><span
+class="notapie">[280]</span></a> Este economista alemán, nacido en 1789,
+propagó en los Estados Unidos y en su propia patria la doctrina del
+proteccionismo aduanero y el fomento industrial. Se suicidó en 1846,
+pero sus ideas se impusieron en ambos países.</p>
+<p><span id="a1039"></span><a
+href="../Text/Section0007.xhtml#a280"><span
+class="notapie">[281]</span></a> Claudio Véliz, La mesa de tres patas,
+en <em>Desarrollo económico</em>, vol. 3, núms. 1 y 2, Santiago de
+Chile, septiembre de 1963.</p>
+<p><span id="a1042"></span><a
+href="../Text/Section0007.xhtml#a281"><span
+class="notapie">[282]</span></a> «Nada de extraño tiene que los
+librecambistas sean incapaces de comprender cómo un país puede
+enriquecerse a costa de otro, pues estos mismos señores tampoco quieren
+comprender cómo en el interior de un país una clase puede enriquecerse a
+costa de otra.» Karl Marx, <em>Discurso sobre el libre cambio</em>, en
+<em>Miseria de la filosofia</em>, Moscú, s. f.</p>
+<p><span id="a1043"></span><a
+href="../Text/Section0007.xhtml#a282"><span
+class="notapie">[283]</span></a> Luis Chávez Orozco, <em>La industria de
+transformación mexicana (1821-1867)</em>, en Banco Nacíonal de Comercio
+Exterior, Colección de documentos para la historia del comercio exterior
+de México, tomo VII, México, 1962.</p>
+<p><span id="a1045"></span><a
+href="../Text/Section0007.xhtml#a283"><span
+class="notapie">[284]</span></a> Alonso Aguilar Monteverde,
+<em>Dialéctica de la economía mexicana</em>, México, 1968.</p>
+<p><span id="a1047"></span><a
+href="../Text/Section0007.xhtml#a284"><span
+class="notapie">[285]</span></a> Jan Bazant, <em>Estudio sobre la
+productividad de la industria algodonera mexicana en 1843-1845</em>
+(Lucas Alamán y la Revolución industrial en México), en Banco Nacional
+de Comercio Exterior, op. cit.</p>
+<p><span id="a1049"></span><a
+href="../Text/Section0007.xhtml#a285"><span
+class="notapie">[286]</span></a> Luis Chávez Orozco, op. cit.</p>
+<p><span id="a1051"></span><a
+href="../Text/Section0007.xhtml#a286"><span
+class="notapie">[287]</span></a> En el tomo III de la citada colección
+de documentos del Banco Nacional de Comercio Exterior se transcriben
+varios alegatos proteccionistas publicados en El Siglo XIX a fines de
+1850: «Pasada ya la conquista de la civilización española con sus tres
+siglos de dominación militar, entró México en una nueva era, que también
+puede llamarse de conquista, pero científica y mercantil... Su potencia
+son los buques mercantes; su predicación es la absoluta libertad
+económica; su norma poderosísima con los pueblos menos adelantados es la
+ley de la reciprocidad... "Llevad a Europa —se nos dijo— cuantas
+manufacturas podáis (excepto, sin embargo, las que nosotros prohibimos),
+y en recompensa permitid que traigamos cuantas manufacturas podamos,
+aunque sea arruinando vuestras artes...” Adoptemos las doctrinas que
+ellos (nuestros señores del otro lado del océano y del río Bravo) dan y
+no toman y nuestro erario crecerá un poco, si se quiere..., pero no será
+fomentando el trabajo del pueblo mexicano, sino el de los pueblos inglés
+y francés, suizo y de Norteamérica.</p>
+<p><span id="a1054"></span><a
+href="../Text/Section0007.xhtml#a287"><span
+class="notapie">[288]</span></a> Miron Burgin, <em>Aspectos económicos
+del federalismo argentino</em>, Buenos Aires, 1960.</p>
+<p><span id="a1056"></span><a
+href="../Text/Section0007.xhtml#a288"><span
+class="notapie">[289]</span></a> Juan Alvarez, <em>Las guerras civiles
+argentinas</em>, Buenos Aires, 1912.</p>
+<p><span id="a1057"></span><a
+href="../Text/Section0007.xhtml#a289"><span
+class="notapie">[290]</span></a> La montonera «nace en escampado como
+los remolinos. Arremete, brama y troza como los remolinos, y se detiene,
+repentina, y muere como <em>ellos»</em> Dardo de la Vega Díaz, <em>La
+Rioja beroica</em>, Mendoza, 1955.</p>
+<p>José Hernández, que fue soldado de la causa federal, cantó en el
+<em>Martín Fierro</em>, el más popular de los libros argentinos, las
+desdichas del gaucho desterrado de <em>su</em> querencia y perseguido
+por la autoridad:</p>
+<p><em>Vive el águila en su nido, / el tigre vive en la selva</em>,</p>
+<p><em>el zorro en la cueva agena, / y es su destino
+incostante</em>,</p>
+<p><em>sólo el gaucho vive errante / donde la suerte lo lleva</em>.</p>
+<p>Porque:</p>
+<p><em>Para él son los calabozos, / para él las duras
+prisiones</em>,</p>
+<p><em>en su boca no hay razones / aunque la razón le sobre</em>,</p>
+<p><em>que son campanas de palo / las razones de los pobres</em>.</p>
+<p>Jorge Abelardo Ramos observa <em>(Revolución y contrarrevolución en
+la Argentina, Buenos Aires, 1965)</em> que los dos apellidos verdaderos
+que aparecen en el <em>Martín Fierro</em> son los de Anchorena y Gaínza,
+nombres representativos de la oligarquía que exterminó al criollaje en
+armas, y en nuestros días ambos se han fundido en la familia propietaria
+del diario <em>La Prensa</em>.</p>
+<p>Ricardo Güiraldes mostro en <em>Don Segundo Sombra</em> (Buenos
+Aires, 1939) la contracara del <em>Martín Fierro</em>: el gaucho
+domesticado, atado <em>al</em> jornal, adulón del amo, de buen
+<em>uso</em> para el folklore nostalgioso o la lástima.</p>
+<p><span id="a1059"></span><a
+href="../Text/Section0007.xhtml#a290"><span
+class="notapie">[291]</span></a> Rodolfo Ortega Peña y Eduardo Luis
+Duhalde, Felipe Varela contra el Imperio Británico, Buenos Aires, 1966.
+En 1870, también caía bañado en sangre por la invasión extranjera
+Paraguay, único Estado latinoamericano que no había entrado en la
+prisión imperialista.</p>
+<p><span id="a1062"></span><a
+href="../Text/Section0007.xhtml#a291"><span
+class="notapie">[292]</span></a> Miron Burgin, op. cit.</p>
+<p><span id="a1063"></span><a
+href="../Text/Section0007.xhtml#a292"><span
+class="notapie">[293]</span></a> Juan Alvarez; op. cit.</p>
+<p><span id="a1065"></span><a
+href="../Text/Section0007.xhtml#a293"><span
+class="notapie">[294]</span></a> Jorge Abelardo Ramos, op. cit.</p>
+<p><span id="a1067"></span><a
+href="../Text/Section0007.xhtml#a294"><span
+class="notapie">[295]</span></a> José Luis Busaniche, <em>Rosas visto
+por sus contemporá</em>neos, Buenos Aires, 1955.</p>
+<p><span id="a1069"></span><a
+href="../Text/Section0007.xhtml#a295"><span
+class="notapie">[296]</span></a> José Rivera Indarte realizó, en sus
+célebres <em>Tablas de sangre</em>, un inventario de los crímenes de
+Rosas, para estremecer la sensibilidad europea. Según el <em>Atlas</em>
+de Londres, la casa bancaria inglesa de Samuel Lafone pagó al escritor
+un penique por muerto. Rosas había prohibido la exportación de oro y
+plata, duro golpe al Imperio, y había disuelto el Banco Nacional, que
+era un instrumento del comercio británico. John F. Cady, <em>La
+intervención extranjera en el Río de la Plata</em>, Buenos Aires,
+1943.</p>
+<p><span id="a1071"></span><a
+href="../Text/Section0007.xhtml#a296"><span
+class="notapie">[297]</span></a> Vívian Trías, <em>Juan Manuel de
+Rosas</em>. Montevideo, 1970.</p>
+<p><span id="a1073"></span><a
+href="../Text/Section0007.xhtml#a297"><span
+class="notapie">[298]</span></a> Discurso de Gervasio A. de Posadas.
+Citado por Dardo Cúneo, <em>Comportamiento y crisis de la clase
+empresaria</em>, Buenos Aires, 1967. En 1876, el ministro de Hacienda
+dijo en el Congreso: «...No debemos poner un derecho exagerado que haga
+imposible la introducción del calzado, de una manera que mientras cuatro
+remendones aquí florecen, mil fabricantes de calzado extranjero no
+pueden vender un solo par de zapatos».</p>
+<p><span id="a1075"></span><a
+href="../Text/Section0007.xhtml#a298"><span
+class="notapie">[299]</span></a> Armando Raúl Bazán, <em>Las bases
+sociales de la montonera</em>, en Revista de historia americana y
+Argentina, núms. 7 y 8, Mendoza, 1962-63.</p>
+<p><span id="a1078"></span><a
+href="../Text/Section0007.xhtml#a299"><span
+class="notapie">[300]</span></a> Domingo Faustino Sarmiento,
+<em>Facundo</em>, Buenos Aires 1952.</p>
+<p><span id="a1080"></span><a
+href="../Text/Section0007.xhtml#a300"><span
+class="notapie">[301]</span></a> Mario Margulis, <em>Migración y
+marginalidad en la sociedad argentina</em>, Buenos Aires, 1968.</p>
+<p><span id="a1082"></span><a
+href="../Text/Section0007.xhtml#a301"><span
+class="notapie">[302]</span></a> Para escribir este capítulo, el autor
+consultó las siguientes obras: Tuan Bautista Alberdi, <em>Historia de la
+guerra del Paraguay</em>, Buenos Aires, 1962; Pelham Horton Box, <em>Los
+orígenes de la Guerra de la Triple Alianza</em>, Buenos Aires -
+Asunción, 1958; Efraím Cardozo, <em>El imperio del Brasil y el Rio de la
+Plata</em>, Buenos Aires, 1961; Julio César Chaves, <em>El presidente
+López</em>, Buenos Aires, 1955; Carlos Pereyra, <em>Francisco Solano
+López y la guerra del Paraguay</em>, Buenos Aires, 1945; Juan F. Pérez
+Acosta, <em>Carlos Antonio López, obrero máximo. Labor administrativa y
+constructiva</em>, Asunción, 1948; José María Rosa, <em>La guerra del
+Paraguay y las montoneras argentinas</em>, Buenos Aires, 1965; Bartolomé
+Mitre y Juan Carlos Gómez, <em>Cartas polémicas sobre la guerra del
+Para</em>guay, con prólogo de J. Natalicio González, Buenos Aires, 1940.
+Tambíen un trabajo inédito de Vivian Trías sobre el tema.</p>
+<p><span id="a1083"></span><a
+href="../Text/Section0007.xhtml#a302"><span
+class="notapie">[303]</span></a> Francia integra, como uno de los
+ejemplares más horrorosos, el bestiario de la historia oficial. Las
+deformaciones ópticas impuestas por el liberalismo no son un privilegio
+de las clases dominantes en América Latina; muchos intelectuales de
+izquierda, que suelen asomarse con lentes ajenos a la historia de
+nuestros países, también comparten ciertos mitos de la derecha, sus
+canonizaciones y sus excomuniones. El <em>Canto general</em>, de Pablo
+Neruda, Buenos Aires, 1955, espléndido homenaje poético a los pueblos
+latinoamericanos, exhibe claramente esta desubicación. Neruda ignora a
+Artigas y a Carlos Antonio y Francisco Solano López; en cambio, se
+identifica con Sarmiento. A Francia lo califica de «rey leproso, rodeado
+/ por la extensión de los yerbales», que «cerró el Paraguay como un nido
+/ de su majestad» y «amarró / tortura y barro a las fronteras». Con
+Rosas no es más amable: clama contra los «puñales, carcajadas de mazorca
+/ sobre el martirio» de una «Argentina robada a culatazos / en el vapor
+del alba, castigada / hasta sangrar y enloquecer, vacía, / cabalgada por
+agrios capataces».</p>
+<p><span id="a1085"></span><a
+href="../Text/Section0007.xhtml#a303"><span
+class="notapie">[304]</span></a> Los fanáticos monjes de la Compañía de
+Jesús, «guardia negra del Papa», habían asumido la defensa del orden
+medieval ante las nuevas fuerzas que irrumpían en el escenario histórico
+europeo. Pero en la América hispánica las misiones de los jesuitas se
+desarrollaron bajo un signo progresista. Venían para purificar, mediante
+el ejemplo de la abnegación y el ascetismo, a una Iglesia católica
+entregada al ocio y al goce desenfrenado de los bienes que la conquista
+había puesto a disposición del clero. Fueron las misiones del Paraguay
+las que alcanzaron el mayor nivel; en poco más de un siglo y medio
+(1603-1768) definieron la capacidad y los fines de sus creadores. Los
+jesuitas atrajeron, mediante el lenguaje de la música, a los indios
+guaraníes que habían buscado amparo en la selva o que en ella habían
+permanecido sin incorporarse al proceso civilizatorio de los
+encomenderos y los terratenientes. Ciento cincuenta mil indios guaraníes
+pudieron, así, reencontrarse con su organización comunitaria primitiva y
+resucitar sus propias técnicas en los oficios y las artes. En las
+misiones no existía el latifundio; la tierra se cultivaba en parte para
+la satisfacción de las necesidades individuales y en parte para
+desarrollar obras de interés general y adquirir los instrumentos de
+trabajo necesarios, que eran de propiedad colectiva. La vida de los
+indios estaba sabiamente organizada; en los talleres y en las escuelas
+se hacían músicos y artesanos, agricultores, tejedores, actores,
+pintores, constructores. No se conocía el dinero; estaba prohibida la
+entrada a los comerciantes, que debían negociar desde hoteles instalados
+a cierta distancia.</p>
+<p>La Corona sucumbió finalmente a las presiones de los encomenderos
+criollos, y los jesuitas fueron expulsados de América. Los
+terratenientes y los esclavistas se lanzaron a la caza de los indios.
+Los cadáveres colgaban de los árboles en las misiones; pueblos enteros
+fueron vendidos en los mercados de esclavos de Brasil. Muchos indios
+volvieron a encontrar refugio en la selva. Las bibliotecas de los
+jesuitas fueron a parar a los hornos, como combustible, o se utilizaron
+para hacer cartuchos de pólvora. Jorge Abelardo Ramos, <em>Historia de
+la nación latinoamericana</em>, Buenos Aires, 1968.</p>
+<p><span id="a1087"></span><a
+href="../Text/Section0007.xhtml#a304"><span
+class="notapie">[305]</span></a> Solano López arde todavía en la
+memoria. Cuando el Museo Histórico Nacional de Río de Janeiro anunció,
+en setiembre de 1969, que inauguraría una vitrina dedicada al presidente
+paraguayo, los militares reaccionaron furiosamente. El general Mourão
+Filho, que había desencadenado el golpe de Estado de 1964, declaró a la
+prensa. «Un viento de locura barre al país... Solano López es una figura
+que debe ser borrada para siempre de nuestra historia, como paradigma
+del dictador uniformado sudamericano. Fue un sanguinario que destruyó al
+Paraguay, llevándolo a una guerra imposible».</p>
+<p><span id="a1089"></span><a
+href="../Text/Section0007.xhtml#a305"><span
+class="notapie">[306]</span></a> Poco antes de las elecciones de
+principios de 1968, el general Stroessner visitó los Estados Unidos.
+«Cuando me entrevisté con el presidente Johnson —declaró a <em>France
+Presse</em>—, le manifesté que ya hace doce años que desempeño funciones
+de primer magistrado por mandato de las urnas. Johnson me contestó que
+eso constituía una razón más para continuar ejerciéndola el período
+venidero».</p>
+<p><span id="a1091"></span><a
+href="../Text/Section0007.xhtml#a306"><span
+class="notapie">[307]</span></a> Presidencia de la Nación, Secretaría
+Técnica de Planificación, <em>Plan nacional de desarrollo económico y
+social</em>, Asunción, 1966.</p>
+<p><span id="a1093"></span><a
+href="../Text/Section0007.xhtml#a307"><span
+class="notapie">[308]</span></a> Muchos de los campesinos han optado
+finalmente por volverse a la región minifundista del centro del país o
+han ido camino del nuevo éxodo hacia Brasil, donde sus brazos baratos se
+ofrecen a los yerbales de Curitiba y Mato Grosso o a las plantaciones
+cafetaleras de Paraná. Es desesperada la situación de los pioneros que
+se encuentran de cara a la selva, sin la menor orientación técnica y sin
+ninguna asistencia crediticia, con tierras <em>concedidas</em> por el
+gobierno, a las que tendrán que arrancar frutos suficientes para
+alimentarse y poder <em>pagarlas</em> —porque si el campesino no paga el
+precio estipulado, no recibe el título de propiedad.</p>
+<p><span id="a1095"></span><a
+href="../Text/Section0007.xhtml#a308"><span
+class="notapie">[309]</span></a> R. Scalabrini Ortiz, <em>Política
+británica en el Río de la Plata</em>, Buenos Aires, 1940.</p>
+<p><span id="a1097"></span><a
+href="../Text/Section0007.xhtml#a309"><span
+class="notapie">[310]</span></a> J. Fred Rippy, <em>British
+Investments</em> <em>in Latin</em> <em>America</em> (1822-1949),
+Minneapolis, 1959.</p>
+<p><span id="a1099"></span><a
+href="../Text/Section0007.xhtml#a310"><span
+class="notapie">[311]</span></a> Celso Furtado, op. cit.</p>
+<p><span id="a1101"></span><a
+href="../Text/Section0007.xhtml#a311"><span
+class="notapie">[312]</span></a> Robert Schnerb, Le XIX siécle.
+<em>L'apogée de 1'expansion européenne (1815-1914)</em>, tomo VI de la
+Historia general de las civilizaciones dirigida por Maurice Crouzet,
+París, 1968.</p>
+<p><span id="a1103"></span><a
+href="../Text/Section0007.xhtml#a312"><span
+class="notapie">[313]</span></a> R. Scalabrini Ortiz, op. cit.</p>
+<p><span id="a1105"></span><a
+href="../Text/Section0007.xhtml#a313"><span
+class="notapie">[314]</span></a> J. Eduardo Retondo, <em>El bosque y la
+industria forestal en Santiago del Estero</em>, Santiago del Estero,
+1962.</p>
+<p><span id="a1107"></span><a
+href="../Text/Section0007.xhtml#a314"><span
+class="notapie">[315]</span></a> Citado por André Gunder Frank,
+<em>Capitalism and Underdevelopment in</em> <em>Latin America</em>,
+Nueva York, 1967.</p>
+<p><span id="a1109"></span><a
+href="../Text/Section0007.xhtml#a315"><span
+class="notapie">[316]</span></a> Edward C. Kirkland, <em>Historia
+económica de Estados Unidos</em>, México, 1441.</p>
+<p><span id="a1111"></span><a
+href="../Text/Section0007.xhtml#a316"><span
+class="notapie">[317]</span></a> Celso Furtado, op. cit.</p>
+<p><span id="a1113"></span><a
+href="../Text/Section0007.xhtml#a317"><span
+class="notapie">[318]</span></a> Claude Folilen, <em>L'Amérique
+anglo-saxonne de 1815 à nos jours</em>, París, 1965.</p>
+<p><span id="a1115"></span><a
+href="../Text/Section0007.xhtml#a318"><span
+class="notapie">[319]</span></a> Robert Schnerb, op. cit.</p>
+<p><span id="a1117"></span><a
+href="../Text/Section0007.xhtml#a319"><span
+class="notapie">[320]</span></a> «El capital del Estado asume el riesgo
+inicial... La ayuda oficial a los ferrocarriles no solamente facilita la
+reunión de capitales, sino que además reduce los costos de construcción.
+En algunos casos, entre otros para las líneas marginales, los fondos
+públicos hicieron posible la construcción de ferrocarriles que no
+hubieran podido nacer de otra manera. En otro número de casos aún más
+importante, aceleraron la realización de proyectos que la utilización de
+capitales privados hubiera ciertamente demorado.» Harry H. Pierce,
+<em>Radroads</em> <em>of New York, A Study of Government Aid,
+1826-1875</em>, Cambridge, Massachusetts, 1953.</p>
+<p><span id="a1119"></span><a
+href="../Text/Section0007.xhtml#a320"><span
+class="notapie">[321]</span></a> Claude Fohlen, op. cit.</p>
+<p><span id="a1121"></span><a
+href="../Text/Section0007.xhtml#a321"><span
+class="notapie">[322]</span></a> El sur se convirtió en una colonia
+interna de los capitalistas del norte. Después de la guerra, la
+propaganda por la construcción de hilanderías en las dos Carolinas,
+Georgia y Alabama, cobró el carácter de una cruzada. Pero éste no era el
+triunfo de una causa moral, las nuevas industrias no nacían por puro
+humanitarismo: el sur ofrecía mano de obra menos cara, energía más
+barata y beneficios altísimos, que a veces llegaban al 75 por 100. Los
+capitales venían del norte para atar al sur al centro de gravedad del
+sistema. La industria del tabaco, concentrada en Carolina del Norte,
+estaba bajo la dependencia directa del trust Duke, mudado a Nueva jersey
+para aprovechar una legislación más favorable; la Tennessee Coal and
+Iron Co., que explotaba el hierro y el carbón de Alabama, pasó en 1907
+al control de la U. S. Steel, que desde entonces dispuso de los precios
+y eliminó así la competencia molesta. A principios de siglo, el ingreso
+<em>per capita</em> del sur se había reducido a la mitad en relación con
+el nivel anterior a la guerra. C. Vann Woodward, Origins of the New
+South, 1879-1913, en <em>A History of the South</em>, varios autores,
+Baton Rouge, 1948.)</p>
+<p><span id="a1124"></span><a
+href="../Text/Section0008.xhtml#a322"><span
+class="notapie">[323]</span></a> Hace cuarenta años, la inversión
+norteamericana en industrias de transformación sólo representaba el 6
+por 100 del valor total de los capitales de Estados Unidos en América
+Latina. En 1960, la proporción rozaba ya el 20 por 100, y luego continuó
+ascendiendo hasta cerca de la tercera parte del total. Naciones Unidas,
+CEPAL, <em>El financiamiento externo de América Latina</em>, Nueva
+York-Santiago de Chile, 1964<em>, y Estudio económico de América Latina
+de 1967, 1968 y 1969</em>.</p>
+<p><span id="a1126"></span><a
+href="../Text/Section0008.xhtml#a323"><span
+class="notapie">[324]</span></a> Secretaría General de la Organización
+de Estados Americanos, <em>El financiamiento externo para el desarrollo
+de la América Latina</em>, Washington, 1969. Documento de distribución
+limitada; sextas reuniones anuales del CIES.</p>
+<p><span id="a1128"></span><a
+href="../Text/Section0008.xhtml#a324"><span
+class="notapie">[325]</span></a> Datos del Departamento de Comercio de
+los Estados Unidos y del Comité Interamericano de la Alianza para el
+Progreso. Secretaría General de la OEA, op. cit.</p>
+<p><span id="a1130"></span><a
+href="../Text/Section0008.xhtml#a325"><span
+class="notapie">[326]</span></a> Paul A. Baran y Paul M. Sweezy, <em>El
+capital monopolista</em>, México, 1971.</p>
+<p><span id="a1132"></span><a
+href="../Text/Section0008.xhtml#a326"><span
+class="notapie">[327]</span></a> J. J. Servan-Schreiber, <em>El desafío
+americano</em>, Santiago de Chile, 1968.</p>
+<p><span id="a1134"></span><a
+href="../Text/Section0008.xhtml#a327"><span
+class="notapie">[328]</span></a> Citado por Alfredo Parera Dtnnis,
+Naturaleza de las relaciones entre las clases dominantes argentinas y
+las metrópolis, en Fichas de investigación económica y social, Buenos
+Aires, diciembre de 1964.</p>
+<p><span id="a1136"></span><a
+href="../Text/Section0008.xhtml#a328"><span
+class="notapie">[329]</span></a> Ministério do Planejamento e
+Coordenarão Geral, A industrialização brasileira: diagnóstico e
+perspectivas, Río de Janeiro, 1959.</p>
+<p><span id="a1138"></span><a
+href="../Text/Section0008.xhtml#a329"><span
+class="notapie">[330]</span></a> Dardo Cúneo, <em>Comportamiento y
+crisis de la clase empresaria</em>. Buenos Aires, 1967.</p>
+<p><span id="a1140"></span><a
+href="../Text/Section0008.xhtml#a330"><span
+class="notapie">[331]</span></a> Chile, Colombia y Uruguay vivieron
+también procesos de industrialización sustitutiva de importaciones, en
+los períodos que aquí se describen. El presidente uruguayo José Batlle y
+Ordóñez (1903-7 y 1911-15) había sido, tiempo antes, un profeta de la
+revolución burguesa en América Latina. La jornada laboral de ocho horas
+se consagró por ley en Uruguay antes que en los Estados Unidos. La
+experiencia de <em>welfare state</em> de Batlle no se limitó a poner en
+práctica la legislación social más avanzada de su tiempo, sino que
+además impulsó con fuerza el desarrollo cultural y la educación de masas
+y nacionalizó los servicios públicos y varias actividades productivas de
+considerable importancia económica. Pero no tocó el poder de los dueños
+de la tierra, ni nacionalizó la banca ni el comercio exterior.
+Actualmente, Uruguay padece las consecuencias de estas omisiones, quizá
+inevitables, del proícía, y de las traiciones de sus herederos.</p>
+<p><span id="a1142"></span><a
+href="../Text/Section0008.xhtml#a331"><span
+class="notapie">[332]</span></a> El pasaje a la producción interna de un
+determinado bien apenas "sustituye" parte del valor agregado que antes
+se generaba fuera de la economía... En la medida en que el consumo de
+ese bien "sustituido" se expande rápidamente, la demanda derivada por
+importaciones puede ultrapasar en breve plano la economía de divisas...»
+María de Gonceiçao Tavares, <em>O processo de substitução de importações
+como modelo de desenvolvimento recente na América Latina</em>,
+CEPAL-ILPES, Río de Janeiro, s. f.</p>
+<p><span id="a1144"></span><a
+href="../Text/Section0008.xhtml#a332"><span
+class="notapie">[333]</span></a> Ismael Viñas y Eugenio Gastiazoro,
+<em>Economía y dependencia (1900-1968)</em>, Buenos Aires, 1968.</p>
+<p><span id="a1146"></span><a
+href="../Text/Section0008.xhtml#a333"><span
+class="notapie">[334]</span></a> El Ministro de Asuntos Económicos
+contestaba así a la pregunta del periodista de la revista Visión (27 de
+noviembre, 1953): «—Además de la industria del petróleo, ¿qué otras
+industrias desea desarrollar Argentina con la cooperación del capital
+extranjero?—» «—Para ser más preciso, en orden de prioridad citaremos el
+petróleo... En segundo término, la industria siderúrgica... La química
+pesada... La fabricación de elementos para transporte... La fabricación
+de llantas y ejes... Y la construcción en el país de motores diesel».
+(Citado por Alfredo Parera Dennis, op, Cit.).</p>
+<p><span id="a1148"></span><a
+href="../Text/Section0008.xhtml#a334"><span
+class="notapie">[335]</span></a> Octavio Ianni, <em>O colapso do
+populismo no Brasil</em>, Río de Janeiro, 1968.</p>
+<p><span id="a1150"></span><a
+href="../Text/Section0008.xhtml#a335"><span
+class="notapie">[336]</span></a> Luciano Martins, <em>Industrialização,
+burguesia nacional e desenvolvimento</em>, Río de Janeiro, 1968.</p>
+<p><span id="a1152"></span><a
+href="../Text/Section0008.xhtml#a336"><span
+class="notapie">[337]</span></a> Fernando Henrique Cardoso,
+<em>Ideologías de la burguesía industrial en sociedades dependientes
+(Argentina y Brasil)</em>, México, 1970.</p>
+<p><span id="a1154"></span><a
+href="../Text/Section0008.xhtml#a337"><span
+class="notapie">[338]</span></a> François Bourricaud, Jorge Bravo
+Bresani, Henrí Favre, Jean Piel, <em>La oligarquía en el Perú</em>,
+Lima, 1969. El dato proviene del trabajo de Favre.</p>
+<p><span id="a1156"></span><a
+href="../Text/Section0008.xhtml#a338"><span
+class="notapie">[339]</span></a> Ricardo Lagos Escobar, <em>La
+concentración del poder económico. Su teoría. Realidad chilena</em>
+(Santiago de Chile, 1961) y Vivian Trías, <em>Reforma agraria en el
+Uruguay</em>, Montevideo, 1962, brindan ejemplos irrefutables: unos
+centenares de familias son dueños de las fábricas y las tierras, los
+grandes comercios y los bancos.</p>
+<p><span id="a1158"></span><a
+href="../Text/Section0008.xhtml#a339"><span
+class="notapie">[340]</span></a> «Los capitalistas mexicanos son cada
+vez más versátiles y ambiciosos. Con independencia del negocio que les
+haya servido de punto de partida para hacer fortuna, disponen de una
+fluida red de canales que a todos, o al menos a los más prominentes,
+brinda siempre la posibilidad de multiplicar y entrelazar sus intereses
+a través de la amistad, la asociación en los negocios, el matrimonio, el
+compadrazgo, el otorgamiento de favores mutuos, la pertenencia a ciertos
+clubes o agrupaciones, las frecuentes reuniones sociales y, desde luego,
+la afinidad en sus posiciones políticas.» Alonso Aguilar Monteverde, en
+<em>El milagro mexicano</em>, de varios autores, México, 1970.</p>
+<p><span id="a1160"></span><a
+href="../Text/Section0008.xhtml#a340"><span
+class="notapie">[341]</span></a> Era Carlos Pellegrini. Cuando el jockey
+Club le rindió homenaje editando sus discursos, suprimió los que
+sostenían las tesis industrialistas. Dardo Cúneo, op. cit.</p>
+<p><span id="a1162"></span><a
+href="../Text/Section0008.xhtml#a341"><span
+class="notapie">[342]</span></a> Discurso del ministro Hélio Beltrão, en
+el almuerzo de la Asociación Comercial de Río de Janeiro, Correio do
+Povo. 24 de mayo de 1969.</p>
+<p><span id="a1164"></span><a
+href="../Text/Section0008.xhtml#a342"><span
+class="notapie">[343]</span></a> CEPAL-BNDE, <em>Quince años de política
+económica en el Brasil</em>, Santiago de Chile, 1965.</p>
+<p><span id="a1165"></span><a
+href="../Text/Section0008.xhtml#a343"><span
+class="notapie">[344]</span></a> Un economista muy favorable a la
+inversión extranjera, Eugênio Gudin, calcula que sólo por este último
+concepto Brasil donó a las empresas norteamericanas y europeas nada
+menos que mil millones de dólares; Moacir Paixão ha estimado que los
+privilegios otorgados a la industria automovilística en el período de su
+implantación equivalieron a una suma igual a la del presupuesto
+nacional. Paulo Schilling señala (Brasil para extranjeros, Montevideo,
+1961) que mientras el Estado brasileño cedía a las grandes corporaciones
+internacionales un aluvión de beneficios, y les permitía el máximo de
+ganancias con el mínimo de inversiones, al mismo tiempo negaba apoyo a
+la Fábrica Nacional de Motores, creada en la época de Vargas.
+Posteriormente, durante el gobierno de Castelo Branco, esta empresa del
+Estado fue vendida a la Alfa Romeo.</p>
+<p><span id="a1168"></span><a
+href="../Text/Section0008.xhtml#a344"><span
+class="notapie">[345]</span></a> Mauricio Vinhas de Queiroz, <em>Os
+grupos multibilionarios</em>, en Revista do Instituto de Ciéncias
+Sociais, Universidade Federal de Río de Janeiro, enero-diciembre de
+1965.</p>
+<p><span id="a1169"></span><a
+href="../Text/Section0008.xhtml#a345"><span
+class="notapie">[346]</span></a> La comisión llegó a la conclusión de
+que el capital extranjero controlaba, en 1968, el 40 por 100 del mercado
+de capitales de Brasil, el 62 por 100 de su comercio exterior, el 82 por
+100 del transporte marítimo, el 67 por 100 de los transportes aéreos
+externos, el 100 por 100 de la producción de vehículos a motor, el 100
+por 100 de los neumáticos, más del 80 por 100 de la industria
+farmacéutica, cerca del 50 por 100 de la química, el 59 por 100 de la
+producción de máquinas y el 62 por 100 de las fábricas de autopiezas, el
+48 por 100 del aluminio y el 90 por 100 del cemento. La mitad del
+capital extranjero correspondía a las empresa de los Estados Unidos,
+seguida en orden de importancia por las firmas alemanas. Interesa
+advertir, de paso, el peso creciente de la inversiones de Alemania
+Federal en América Latina. De cada dos automóviles que se fabrican en
+Brasil, uno proviene de la planta de la Volkswagen, que es la más
+importante de toda la región. La primera fábrica de automóviles en
+América del Sur fue una empresa alemana, la Mercedes-Benz Argentina,
+fundada en 1951. Boyer, Hoechat, BASP y Schering dominan buena parte de
+la industria química en los países latinoamericanos.</p>
+<p><span id="a1172"></span><a
+href="../Text/Section0008.xhtml#a346"><span
+class="notapie">[347]</span></a> Suplemento especial del New York Times,
+19 de enero de 1969.</p>
+<p><span id="a1174"></span><a
+href="../Text/Section0008.xhtml#a347"><span
+class="notapie">[348]</span></a> Sergio Nicolau, <em>La inversión
+extranjera directa en los países de la ALALC</em>, México, 1968.</p>
+<p><span id="a1175"></span><a
+href="../Text/Section0008.xhtml#a348"><span
+class="notapie">[349]</span></a> Rogelio García Lupo, <em>Contra la
+ocupación extranjera</em>, Buenos Aires, 1968.</p>
+<p><span id="a1178"></span><a
+href="../Text/Section0008.xhtml#a349"><span
+class="notapie">[350]</span></a> Citado por Naciones Unidas, CEPAL,
+Estudio económico de América Latina, 1968, Nueva York-Santiago de Chile;
+1969.</p>
+<p><span id="a1180"></span><a
+href="../Text/Section0008.xhtml#a350"><span
+class="notapie">[351]</span></a> Reportaje de la revista Visión, 3 de
+febrero de 1967.</p>
+<p><span id="a1181"></span><a
+href="../Text/Section0008.xhtml#a351"><span
+class="notapie">[352]</span></a> José Luis Ceceña, <em>Los monopolios en
+México</em>, México, 1962.</p>
+<p><span id="a1184"></span><a
+href="../Text/Section0008.xhtml#a352"><span
+class="notapie">[353]</span></a> José Luis Ceceña, <em>México en la
+órbita imperial</em>, México, 1970, y Alonso Aguilar y Fernando Carmona,
+<em>México, riqueza y miseria</em>, México, 1968.</p>
+<p><span id="a1185"></span><a
+href="../Text/Section0008.xhtml#a353"><span
+class="notapie">[354]</span></a> Testimonio del ministro Roberto Campos,
+en el informe de la Comisión Parlamentaria de Investigaciones sobre las
+transacciones efectuadas entre empresas nacionales y extranjeras.
+Versión dactilográfica. Cámara de Diputados, Brasilia, 6 de septiembre
+de 1968. Poco tiempo después, Campos publicó una curiosa interpretación
+de las actitudes nacionalistas del gobierno de Perú. Según él, la
+expropiación de la Standard Oil por parte del gobiemo del general
+Velasco Aivarado no era más que una «exhibición de masculinidad». El
+nacionalismo, escribió, no tiene otro objeto que satisfacer la primitiva
+necesidad de odio del ser humano. Pero, agregó, «el orgullo no genera
+inversiones, no aumenta el caudal de capitales...» (En el diario O
+Globo, 25 de febrero de 1969)</p>
+<p><span id="a1188"></span><a
+href="../Text/Section0008.xhtml#a354"><span
+class="notapie">[355]</span></a> Samuel Lichtensztejn y Alberto Couriel,
+<em>El FMI y la crisis económica nacional</em>, Montevideo, 1967; y
+Vivian Trías, <em>La crisis del know-how</em>, Montevideo, 1970.</p>
+<p><span id="a1190"></span><a
+href="../Text/Section0008.xhtml#a355"><span
+class="notapie">[356]</span></a> Fernando Gasparian, en <em>Correio da
+Manhã</em>, 1ero. de mayo de 1968.</p>
+<p><span id="a1191"></span><a
+href="../Text/Section0008.xhtml#a356"><span
+class="notapie">[357]</span></a> Secretaría General de la OEA, op.
+cit.</p>
+<p><span id="a1193"></span><a
+href="../Text/Section0008.xhtml#a357"><span
+class="notapie">[358]</span></a> International Banicing Survey, journal
+of Commerce, Nueva York. 25 de febrero de 1968.</p>
+<p><span id="a1195"></span><a
+href="../Text/Section0008.xhtml#a358"><span
+class="notapie">[359]</span></a> Robert A. Bennett y Karen Almonti,
+<em>International Activities of United States Banks</em> <em>en</em>
+<em>The American Banker</em>, Nueva York, 1969.</p>
+<p><span id="a1197"></span><a
+href="../Text/Section0008.xhtml#a359"><span
+class="notapie">[360]</span></a> Ministério do Planeiamento e
+Coordenaçiao Económica, <em>Programa de Açao Económica do Govérno</em>,
+Río de Janeiro, noviembre de 1964. Dos años después, hablando en la
+Universidad Mackenzie, de São Paulo, Campos insistía: «Ya que las
+economías en proceso de organización no disponen de recursos para
+dinamizarse, por el simple hecho de que si los tuviesen no estarían en
+atraso, es licito aceptar el concurso de todos cuantos quieran correr
+con nosotros los riesgos de la aventura maravillosa que es el progreso,
+para recibir de él una parte de los frutos» (22 de diciembre de
+1966).</p>
+<p><span id="a1199"></span><a
+href="../Text/Section0008.xhtml#a360"><span
+class="notapie">[361]</span></a> «Las remesas desde Brasil muestran un
+alza desde la legislación de 1965», celebraba el órgano del Departamento
+de Comercio de los Estados Unidos. «Aumenta el flujo de intereses,
+beneficios, dividendos y regalías; los términos y las condiciones de los
+préstamos están sujetos al compromiso con el Fondo Monetario
+Internacional.» <em>International Commerce</em>, 24 de abril de
+1967.</p>
+<p><span id="a1201"></span><a
+href="../Text/Section0008.xhtml#a361"><span
+class="notapie">[362]</span></a> Secretaría General de la OEA, op. cit.
+Ya el presidente Kennedy había reconocido que en 1960, «del mundo
+subdesarrollado, que tiene necesidad de capitales, hemos retirado 1300
+millones de dólares mientras sólo le exportábamos doscientos millones en
+capitales de inversión» (discurso ante el congreso de la
+<em>AFL-CIO</em>; en Miami, el 8 de diciembre de 1961)</p>
+<p><span id="a1204"></span><a
+href="../Text/Section0008.xhtml#a362"><span
+class="notapie">[363]</span></a> Los misteriosos <em>errores y
+omisiones</em> sumaron, por ejemplo, entre 1955 y 1966, más de mil
+millones de dólares en Venezuela, 743 millones en Argentina, 71.4 en
+Brasil, 310 en Uruguay. Naciones Unidas, CEPAL, op. cit.</p>
+<p><span id="a1206"></span><a
+href="../Text/Section0008.xhtml#a363"><span
+class="notapie">[364]</span></a> Fichas de investigación económica y
+social, Buenos Aires, junio de 1965.</p>
+<p><span id="a1207"></span><a
+href="../Text/Section0008.xhtml#a364"><span
+class="notapie">[365]</span></a> V. A. Cheprakov, <em>El capitalismo
+monopolista de Estado</em>, Moscú, s. f.; Paul A. Baran y Paul M.
+Sweezy, op. cit., y Vivian Trías, op. cit.</p>
+<p><span id="a1210"></span><a
+href="../Text/Section0008.xhtml#a365"><span
+class="notapie">[366]</span></a> <em>O Estado de São Paulo</em>. 24 de
+enero de 1963.</p>
+<p><span id="a1211"></span><a
+href="../Text/Section0008.xhtml#a366"><span
+class="notapie">[367]</span></a> International Commerce, 4 de febrero de
+1963.</p>
+<p><span id="a1214"></span><a
+href="../Text/Section0008.xhtml#a367"><span
+class="notapie">[368]</span></a> Wall Street Journal, 31 de enero de
+1968.</p>
+<p><span id="a1215"></span><a
+href="../Text/Section0008.xhtml#a368"><span
+class="notapie">[369]</span></a> International Commerce, 17 de julio de
+1967.</p>
+<p><span id="a1218"></span><a
+href="../Text/Section0008.xhtml#a369"><span
+class="notapie">[370]</span></a> Secretaría General de la OEA, op.
+cit.</p>
+<p><span id="a1219"></span><a
+href="../Text/Section0008.xhtml#a370"><span
+class="notapie">[371]</span></a> Por ejemplo, en Uruguay, el texto del
+contrato firmado el 21 de mayo de 1963 entre el BID y el gobierno
+departamental de Montevideo, para la ampliación del alcantarillado.</p>
+<p><span id="a1222"></span><a
+href="../Text/Section0008.xhtml#a371"><span
+class="notapie">[372]</span></a> Por ejemplo, en Bolivia, el texto del
+contrato firmado el 1 de abril de 1966 entre el BID y la Universidad
+Mayor de San Simón, en Cochabamba, para mejorar la enseñanza de las
+ciencias agrícolas.</p>
+<p><span id="a1223"></span><a
+href="../Text/Section0008.xhtml#a372"><span
+class="notapie">[373]</span></a> Documento publicado por el diario
+<em>Ya</em>, Montevideo, 28 de mayo de 1970.</p>
+<p><span id="a1225"></span><a
+href="../Text/Section0008.xhtml#a373"><span
+class="notapie">[374]</span></a> <em>Panorama</em>, Centro de Estudios y
+Documentación Sociales, México, noviembre-diciembre de 1965.</p>
+<p><span id="a1228"></span><a
+href="../Text/Section0008.xhtml#a374"><span
+class="notapie">[375]</span></a> También se prometió a la dictadura de
+Duvalier, en señal de gratitud, una carretera en dirección al
+aeropuerto, Irving Pflaum <em>(Arena of Decision. Latin American Crisis,
+Nueva York, 1964)</em> y John Gerassi <em>(The Great Fear in Latin
+América</em>, Nueva York, 1965<em>)</em> coinciden en que éste fue un
+caso de soborno. Pero los Estados Unidos no cumplieron con sus promesas
+a Haití. Duvalier, «Papa-Doc», guardián de la muerte en la mitología
+<em>vudú</em>, se sintió estafado. Según dicen, el viejo brujo invocó la
+ayuda del Diablo para vengarse de Kennedy, y sonrió complacido cuando
+los balazos de Dallas pusieron fin a la vida del presidente
+norteamericano.</p>
+<p><span id="a1229"></span><a
+href="../Text/Section0008.xhtml#a375"><span
+class="notapie">[376]</span></a> Reportaje por Georgie Anne Geyer,
+<em>The Miami Herald</em>, 24 de diciembre de 1966.</p>
+<p><span id="a1231"></span><a
+href="../Text/Section0008.xhtml#a376"><span
+class="notapie">[377]</span></a> Declaración ante la subcomisión de la
+Cámara de Representantes. Citado por Nelson Werneck Sodré, <em>História
+militar do Brasil</em>, Río de Janeiro, 1965.</p>
+<p><span id="a1234"></span><a
+href="../Text/Section0008.xhtml#a377"><span
+class="notapie">[378]</span></a> Frederick B. Pike, <em>The Modern
+History of Peru</em>. Nueva York, 1968.</p>
+<p><span id="a1235"></span><a
+href="../Text/Section0008.xhtml#a378"><span
+class="notapie">[379]</span></a> Amado Canelas, <em>Radiografia de la
+Alianza para el Atra</em>so, La Paz, 1963; Mariano Baptista Gumucio y
+otros, <em>Guerrilleros y generales sobre Bolivia</em>, Buenos Aires,
+1968; y John Gunther, <em>Inside South America</em>, Nueva York,
+1967.</p>
+<p><span id="a1237"></span><a
+href="../Text/Section0008.xhtml#a379"><span
+class="notapie">[380]</span></a> La hija de David, Peggy Rockefeller,
+decidió poco después irse a vivir a una <em>favela</em> de Río de
+Janeiro llamada Jacarezinho. Su padre, uno de los hombres más ricos del
+mundo, viajó a Brasil para atender sus negocios y fue personalmente a la
+humilde casa de familia que Peggy había elegido, probó la humilde
+comida, comprobó con espanto que la casa se llovía y las ratas entraban
+por debajo de la puerta. Al irse, dejó sobre la mesa un cheque con
+varios ceros. Peggy vivió allí durante algunos meses, colaborando con
+los Cuerpos de Paz. Los cheques continuaron llegando. Cada uno de ellos
+equivalía a lo que el dueño de casa podía ganar en díez años de trabajo.
+Cuando Peggy finalmente se fue, la casa y la familia de Jacarezinho se
+habían transformado. Nunca la <em>favela</em> había conocido tanta
+opulencia. Peggy había venido del cielo en línea recta. Era como haber
+ganado todas las loterías juntas. Entonces, el dueño de la casa donde
+Peggy había vivido pasó a ser la mascota del régimen. Reportajes en la
+televisión y en la radio, artículos en diarios y revistas, la publicidad
+desatada: él era un ejemplo que todos los brasileños debían imitar.
+Había salido de la miseria gracias a su inquebrantable voluntad de
+trabajo y a su capacidad de ahorro: vean, vean, él no gasta en
+aguardiente lo que gana, ahora tiene televisión, refrigerador, muebles
+nuevos, los chicos calzan zapatos. La propaganda olvidaba un pequeño
+detalle: la visita del hada Peggy. Porque Brasil tenía noventa millones
+de habitantes y el milagro se había producido para uno solo.</p>
+<p><span id="a1239"></span><a
+href="../Text/Section0008.xhtml#a380"><span
+class="notapie">[381]</span></a> Hickenlooper Amendment, Section 620,
+<em>Foreign Assistance Act</em>. No es casual que este texto legal se
+refiera explícitamente a las medidas adoptadas contra los intereses
+norteamericanos «al primero de enero de 1962 o en fecha posterior». El
+16 de febrero de 1962, el gobernador Leonel Brizola había expropiado la
+compañía de teléfonos del estado brasileño de Río Grande do Sul,
+subsidiaria de la International Telephone and Telegreph Corporation, y
+esta decisión había endurecido las relaciones entre Washington y
+Brasilia. La empresa no aceptaba la indemnización propuesta por el
+gobierno.</p>
+<p><span id="a1242"></span><a
+href="../Text/Section0008.xhtml#a381"><span
+class="notapie">[382]</span></a> International Commerce, abril 10 de
+1967.</p>
+<p><span id="a1244"></span><a
+href="../Text/Section0008.xhtml#a382"><span
+class="notapie">[383]</span></a> Citado por NACLA <em>Newsletter</em>,
+mayo-junio de 1970.</p>
+<p><span id="a1245"></span><a
+href="../Text/Section0008.xhtml#a383"><span
+class="notapie">[384]</span></a> ADELA Annual Report, 1968. Citado por
+NACIA, op. cit.</p>
+<p><span id="a1247"></span><a
+href="../Text/Section0008.xhtml#a384"><span
+class="notapie">[385]</span></a> Banco Interamericano de Desarrollo,
+<em>Décimo informe anual</em>, 1969, Washington, 1970.</p>
+<p><span id="a1250"></span><a
+href="../Text/Section0008.xhtml#a385"><span
+class="notapie">[386]</span></a> Harry Magdoff, <em>La era del
+imperialismo, Monthly Review</em>, selecciones en castellano,
+enero-febrero de 1969.</p>
+<p><span id="a1252"></span><a
+href="../Text/Section0008.xhtml#a386"><span
+class="notapie">[387]</span></a> The World Bank, IFC and IDA, Policies
+and Operations, Washington, 1962.</p>
+<p><span id="a1253"></span><a
+href="../Text/Section0008.xhtml#a387"><span
+class="notapie">[388]</span></a> The World Bank, <em>IFC and IDA</em>,
+op. cit.</p>
+<p><span id="a1256"></span><a
+href="../Text/Section0008.xhtml#a388"><span
+class="notapie">[389]</span></a> «Nuestros programas de ayuda al
+extranjero... estimulan el desarrollo de nuevos mercados para las
+sociedades americanas... y orientan la economía de los beneficiarios
+hacia un sistema de libre empresa en el que las firmas americanas puedan
+prosperar.» Eugene R. Black en Columbia Journal of Worid Business, vol.
+I, 1965.</p>
+<p><span id="a1258"></span><a
+href="../Text/Section0008.xhtml#a389"><span
+class="notapie">[390]</span></a> Naciones Unidas, CEPAL, op. cit., y
+<em>Estudio económico de América Latina, 1969</em>, Nueva York-Santiago
+de Chile, 1970.</p>
+<p><span id="a1259"></span><a
+href="../Text/Section0008.xhtml#a390"><span
+class="notapie">[391]</span></a> Según previsiones del Instituto
+Latinoamericano de Planificación Económica y Social, <em>La brecha
+comercial y la integración latinoamericana</em>, México-Santiago de
+Chile, 1967.</p>
+<p><span id="a1262"></span><a
+href="../Text/Section0008.xhtml#a391"><span
+class="notapie">[392]</span></a> Pierre Jalée, <em>Le pillage du Tiers
+Monde</em>, París, 1966.</p>
+<p><span id="a1263"></span><a
+href="../Text/Section0008.xhtml#a392"><span
+class="notapie">[393]</span></a> En el trienio 1966-68, el café
+proporcionó a Colombia el 64 por 100 de sus ingresos totales por
+exportaciones; a Brasil, el 43 por 100; a El Salvador, el 48 por 100; a
+Guatemala, el 42 por 100, y a Costa Rica, el 36 por 100. El banano
+abarcó el 61 por 100 de las divisas de Ecuador, el 54 por 100 de las de
+Panamá y el 47 por 100 de las de Honduras. Nicaragua dependió del
+algodón en un 42 por 100. La República Dominicana del azúcar, en un 56
+por 100. Carnes, cueros y lanas proporcionaron a Uruguay un 83 por 100
+de sus divisas y a la Argentina un 38 por 100. El cobre sumó un 74 por
+100 de los ingresos comerciales de Chile, y el 26 por 100 de los de
+Perú; el estaño representó el 54 por 100 del valor de las exportaciones
+de Bolivia. Venezuela obtuvo del petróleo el 93 por 100 de sus divisas.
+Naciones Unidas, CEPAL, op. cit. En cuanto a México, «depende en más de
+un 30 por 100 de tres productos, en más de un 40 por 100 de cinco
+productos y en más de un 50 por 100 de diez productos, en su gran
+mayoría no manufacturados, que tienen como principal salida el mercado
+norteamericano». Pablo González Casanova, <em>La democracia en
+México</em>. México, 1965.</p>
+<p><span id="a1266"></span><a
+href="../Text/Section0008.xhtml#a393"><span
+class="notapie">[394]</span></a> Marco D. Pollner en el volumen
+colectivo de INTAL-BID, <em>Los empresarios y la integración de América
+Latina</em>, Buenos Aires, 1967.</p>
+<p><span id="a1268"></span><a
+href="../Text/Section0008.xhtml#a394"><span
+class="notapie">[395]</span></a> Central Unica de Trabajadores de Chile,
+<em>América Latina, un mundo que ganar</em>, Santiago de Chile,
+1968.</p>
+<p><span id="a1270"></span><a
+href="../Text/Section0008.xhtml#a395"><span
+class="notapie">[396]</span></a> Instituto Latinoamericano de
+Planificación Económica y Social, op. cit.</p>
+<p><span id="a1271"></span><a
+href="../Text/Section0008.xhtml#a396"><span
+class="notapie">[397]</span></a> A. Emmanuel, <em>El cambio
+desigual</em>, México.</p>
+<p><span id="a1274"></span><a
+href="../Text/Section0008.xhtml#a397"><span
+class="notapie">[398]</span></a> Citado por André Gunder Frank,
+<em>Totuard a Theory of Capitalist Underdevelopment</em>, introducción a
+la antología Underdevelopment.</p>
+<p><span id="a1275"></span><a
+href="../Text/Section0008.xhtml#a398"><span
+class="notapie">[399]</span></a> L. Delwart (<em>The Future of Latin
+American Exports to the United States: 1965 and 1970</em>, Nueva York,
+1970) publica una lista muy elocuente de las restricciones en vigencia a
+la importación de productos latinoamericanos.</p>
+<p><span id="a1277"></span><a
+href="../Text/Section0008.xhtml#a399"><span
+class="notapie">[400]</span></a> Harry Magdolf, op. cit.</p>
+<p><span id="a1280"></span><a
+href="../Text/Section0008.xhtml#a400"><span
+class="notapie">[401]</span></a> Revista <em>Fator</em>, Río de Janeiro,
+noviembre-diciembre de 1968.</p>
+<p><span id="a1282"></span><a
+href="../Text/Section0008.xhtml#a401"><span
+class="notapie">[402]</span></a> Carlos Quijano, <em>Las víctimas del
+sistema en marcha</em>, Montevideo, 23 de octubre de 1970.</p>
+<p><span id="a1283"></span><a
+href="../Text/Section0008.xhtml#a402"><span
+class="notapie">[403]</span></a> New York Times, 3 de abril de 1968.</p>
+<p><span id="a1285"></span><a
+href="../Text/Section0008.xhtml#a403"><span
+class="notapie">[404]</span></a> Secretaría General de la OEA, op. cit.
+Una amplia encuesta a las subsidiarias norteamericanas en México,
+realizada en 1969 por encargo de la National Chamber Foundation, reveló
+que las casas matrices de los Estados Unidos prohibían vender sus
+productos en el exterior a la mitad de las empresas que contestaron el
+cuestionario. Las filiales no habían sido instaladas para eso. Miguel S.
+Wionczek, <em>La inversión extranjera privada en México: problemas y
+perspectivas, en Comercio exterior</em>, México, octubre de 1970. La
+relación entre las exportaciones de manufacturas y el producto bruto
+industrial no superó el 2 por 100, en 1963, en Argentina, Brasil, Perú,
+Colombia y Ecuador; fue de un 3,1 por 100 en México y de un 3,2 por 100
+en Chile (Aldo Ferrer en el ya citado volumen colectivo de
+INTAL-BID)</p>
+<p><span id="a1287"></span><a
+href="../Text/Section0008.xhtml#a404"><span
+class="notapie">[405]</span></a> Naciones Unidas, CEPAL, op. cit.</p>
+<p><span id="a1289"></span><a
+href="../Text/Section0008.xhtml#a405"><span
+class="notapie">[406]</span></a> <em>Jornal do Comercio</em>, Río de
+Janeiro 23 de marzo de 1950.</p>
+<p><span id="a1291"></span><a
+href="../Text/Section0008.xhtml#a406"><span
+class="notapie">[407]</span></a> Celso Furtado, <em>Um projeto para o
+Brasil</em>, Río de Janeiro, 1968.</p>
+<p><span id="a1293"></span><a
+href="../Text/Section0008.xhtml#a407"><span
+class="notapie">[408]</span></a> International Commerce, 24 de abril de
+1967.</p>
+<p><span id="a1296"></span><a
+href="../Text/Section0008.xhtml#a408"><span
+class="notapie">[409]</span></a> Ismael Viñas y Eugenio Gastiazoro, op.
+cit.</p>
+<p><span id="a1297"></span><a
+href="../Text/Section0008.xhtml#a409"><span
+class="notapie">[410]</span></a> Antonio García, <em>Las constelaciones
+del poder y el desarrollo latinoamericano</em>, en Comercio exterior,
+México, noviembre de 1969.</p>
+<p><span id="a1299"></span><a
+href="../Text/Section0008.xhtml#a410"><span
+class="notapie">[411]</span></a> Por cierto que el mecanismo no es
+nuevo. El frigorífico Anglo ha dado siempre pérdidas en el Uruguay, para
+cobrar los subsidios del Estado y para que rindieran millonarias
+utilidades sus seis mil carnicerías de Londres, donde cada kilo de carne
+uruguaya se vende a un precio cuatro veces mayor que el que recibe el
+Uruguay por la exportación. Guillermo Bernhard, <em>Los monopolios y la
+industria frigorífica</em>, Montevideo, 1970.</p>
+<p><span id="a1301"></span><a
+href="../Text/Section0008.xhtml#a411"><span
+class="notapie">[412]</span></a> Declaraciones del presidente Salvador
+Allende, según cable de AFP del 12 de diciembre de 1970.</p>
+<p><span id="a1303"></span><a
+href="../Text/Section0008.xhtml#a412"><span
+class="notapie">[413]</span></a> Dato publicado en el diario <em>La
+Razón</em>, Buenos Aires, 2 de marzo de 1970.</p>
+<p><span id="a1305"></span><a
+href="../Text/Section0008.xhtml#a413"><span
+class="notapie">[414]</span></a> <em>Resultados da indústria
+automobilística</em>, estudio especial de Conjuntura económica, febrero
+de 1969.</p>
+<p><span id="a1307"></span><a
+href="../Text/Section0008.xhtml#a414"><span
+class="notapie">[415]</span></a> NACLA Newsletter, abril-mayo de
+1969.</p>
+<p><span id="a1309"></span><a
+href="../Text/Section0008.xhtml#a415"><span
+class="notapie">[416]</span></a> Miguel S. Wionczek, <em>La trasmisión
+de la tecnología a los países en desarrollo: proyecto de un estudio
+sobre México</em>, en Comercio exterior, México, mayo de 1968.</p>
+<p><span id="a1311"></span><a
+href="../Text/Section0008.xhtml#a416"><span
+class="notapie">[417]</span></a> Víctor L. Urquidi en <em>Obstacles to
+Change in Latin America</em>, de Claudio Véliz y otros, Londres,
+1967.</p>
+<p><span id="a1313"></span><a
+href="../Text/Section0008.xhtml#a417"><span
+class="notapie">[418]</span></a> Manuel Sadosky, <em>América Latina y la
+computación</em>, en Gaceta de la Universidad, Montevideo, mayo de 1970.
+Sadosky cita para ilustrar la ilusión desarrollista el testimonio de un
+especialista de la OEA: «Los países subdesarrollados —sostiene George
+Landau— tienen algunas ventajas en relación con los países
+desarrollados, porque cuando incorporan algún nuevo dispositivo o
+proceso tecnológico eligen, generalmente, el más avanzado dentro de su
+tipo y así recogen el beneficio de años de investigación y el fruto de
+inversiones considerables que debieron hacer los países más
+industrializados para alcanzar esos resultados».</p>
+<p><span id="a1315"></span><a
+href="../Text/Section0008.xhtml#a418"><span
+class="notapie">[419]</span></a> Oscar J. Maggiolo en el volumen
+colectivo <em>Hacia una política cultural autónoma para América
+Latina</em>, Montevideo, 1969.</p>
+<p><span id="a1317"></span><a
+href="../Text/Section0008.xhtml#a419"><span
+class="notapie">[420]</span></a> Gustavo Lagos y otros, <em>Las
+inversiones multinacionales en el desarrollo y la integración de América
+Latina</em>, Bogotá, 1968.</p>
+<p><span id="a1320"></span><a
+href="../Text/Section0008.xhtml#a420"><span
+class="notapie">[421]</span></a> Raúl Prebisch, <em>La cooperación
+internacional en el desarrollo latinoamericano</em>, en Desarrollo,
+Bogotá, enero de 1970.</p>
+<p><span id="a1321"></span><a
+href="../Text/Section0008.xhtml#a421"><span
+class="notapie">[422]</span></a> Leo Fenster, en julio de 1969. Citado
+por André Gunder Frank, <em>Lumpenburguesía: lumpendesarrollo</em>,
+Montevideo, 1970. Las filiales extranjeras resultan de todos modos
+infinitamente más modernas que las empresas nacionales. En la industria
+textil, por ejemplo, uno de los últimos reductos del capital nacional,
+es bajísimo el grado de automatización. Según la CEPAL, en 1962 y 1963
+cuatro países de Europa invirtieron en nuevos equipos para su industria
+textil una suma seis veces mayor que la que invirtió con el mismo fin en
+1964, toda América Latina.</p>
+<p><span id="a1323"></span><a
+href="../Text/Section0008.xhtml#a422"><span
+class="notapie">[423]</span></a> Las filiales norteamericanas ocupaban
+en la industria europea, en 1957 —no existen datos más recientes—, una
+proporción de mano de obra, en relación con el capital invertido, más
+alta que en América Latina. Secretaría General de la OEA, op. cit.</p>
+<p><span id="a1325"></span><a
+href="../Text/Section0008.xhtml#a423"><span
+class="notapie">[424]</span></a> Naciones Unidas, CEPAL, op. cit.</p>
+<p><span id="a1327"></span><a
+href="../Text/Section0008.xhtml#a424"><span
+class="notapie">[425]</span></a> F. S. O'Brien, <em>The Brazilian
+Population and Labor Force in 1968</em>, documento para discusión
+interna, Ministério do Planejamento e Coordenação Geral, Rio de Janeiro,
+1969.</p>
+<p><span id="a1329"></span><a
+href="../Text/Section0008.xhtml#a425"><span
+class="notapie">[426]</span></a> Naciones Unidas, CEPAL, Estudio
+económico de América Latina, 1967, Nueva York-Santiago de Chile,
+1968.</p>
+<p><span id="a1332"></span><a
+href="../Text/Section0008.xhtml#a426"><span
+class="notapie">[427]</span></a> Naciones Unidas, CEPAL, op. cit.</p>
+<p><span id="a1334"></span><a
+href="../Text/Section0008.xhtml#a427"><span
+class="notapie">[428]</span></a> Raimundo Ongaro, carta desde la
+prisión, De Frente, Buenos Aires, 25 de septiembre de 1969.</p>
+<p><span id="a1336"></span><a
+href="../Text/Section0008.xhtml#a428"><span
+class="notapie">[429]</span></a> André Gunder Frank, <em>Capitalism and
+Underdevelopment in Latin America</em>, Nueva York, 1967.</p>
+<p><span id="a1337"></span><a
+href="../Text/Section0008.xhtml#a429"><span
+class="notapie">[430]</span></a> Ministério do Planejamento e
+Coordenação Económica, op. cit.</p>
+<p><span id="a1340"></span><a
+href="../Text/Section0008.xhtml#a430"><span
+class="notapie">[431]</span></a> Z. Romarova, <em>La expansión económica
+de Estados Unidos en América Latina</em>, Moscú, s. f.</p>
+<p><span id="a1341"></span><a
+href="../Text/Section0008.xhtml#a431"><span
+class="notapie">[432]</span></a> Datos de Serge Bim, técnico
+norteamericano en organización del trabajo, según <em>Jornal do
+Brasil</em>, Río de Janeiro, 5 de enero de 1969.</p>
+<p><span id="a1343"></span><a
+href="../Text/Section0008.xhtml#a432"><span
+class="notapie">[433]</span></a> André Gunder Frank, op. cit.</p>
+<p><span id="a1345"></span><a
+href="../Text/Section0008.xhtml#a433"><span
+class="notapie">[434]</span></a> Naciones Unidas, CEPAL. Estudio sobre
+la distribución del ingreso en América Latina, Nueva York-Santiago de
+Chile, 1967. «En la Argentina tuvo lugar, en los años anteriores a 1953,
+un proceso significativo de redistribución progresiva del ingreso. De
+los tres años para los que se dispone de información más detallada fue
+precisamente ese el año en que fue menor la desigualdad, en tanto que
+fue mucho mayor en 1959... En México, en el período más extenso
+comprendido entre los años 1940 y 1964... hay indicaciones que permiten
+suponer que la pérdida no fue sólo relativa sino también absoluta para
+el 20 por 100 de las familias de ingresos más bajos».</p>
+<p><span id="a1347"></span><a
+href="../Text/Section0008.xhtml#a434"><span
+class="notapie">[435]</span></a> Maurício Vinhas de Queiroz, op.
+cit.</p>
+<p><span id="a1349"></span><a
+href="../Text/Section0008.xhtml#a435"><span
+class="notapie">[436]</span></a> Gustavo Lagos, en el volumen del BID,
+varios autores, <em>Las inversiones multinacionales en el desarrollo y
+la integración de América Latina</em>, Bogotá, 1968. El 64 por ciento de
+las empresas exportaba dentro de la región, haciendo uso de las
+concesiones de la ALALC, productos químicos y petroquímicos, fibras
+artificiales, materiales electrónicos, maquinaria industrial y agrícola,
+equipos de oficina, motores, instrumentos de medición, tubos de acero y
+otros productos.</p>
+<p><span id="a1351"></span><a
+href="../Text/Section0008.xhtml#a436"><span
+class="notapie">[437]</span></a> Business Internacional, LAFTA, Key
+Amenca's 200 Million Consumers, reportaje de investigación, junio de
+1966.</p>
+<p><span id="a1353"></span><a
+href="../Text/Section0008.xhtml#a437"><span
+class="notapie">[438]</span></a> Fortune, <em>A Latin American Common
+Market Makes Common Sense For U. S. Businessmen Too</em>, junio de
+1967.</p>
+<p><span id="a1355"></span><a
+href="../Text/Section0008.xhtml#a438"><span
+class="notapie">[439]</span></a> Raúl Prebisch, Problemas de la
+integración económica, en <em>Actualidades económicas financieras</em>,
+Montevideo, enero de 1962.</p>
+<p><span id="a1357"></span><a
+href="../Text/Section0008.xhtml#a439"><span
+class="notapie">[440]</span></a> Prebisch, Sanz de Santamaría, Mayobre y
+Herrera, <em>Proposiciones para la creación del Mercado Común
+Latinoamericano</em>, documento presentado al presidente Frei, 1966.</p>
+<p><span id="a1360"></span><a
+href="../Text/Section0008.xhtml#a440"><span
+class="notapie">[441]</span></a> Judd Polk (del U.S. Council of the
+International Chamber of Commerce) y C. P. Kindleberger (del
+Massachusetts Institute of Technology) brindan muy jugosos datos y
+opiniones sobre la norteamericanización de la economía capitalista
+mundial, en la publícación del Departamento de Estado, The Multinational
+Corporation, Office of External Research, Washington, 1969.</p>
+<p><span id="a1362"></span><a
+href="../Text/Section0008.xhtml#a441"><span
+class="notapie">[442]</span></a> Business International, op. cit.</p>
+<p><span id="a1363"></span><a
+href="../Text/Section0008.xhtml#a442"><span
+class="notapie">[443]</span></a> E. Lízano F., <em>El problema de las
+inversiones extranjeras en Centro América</em>, en la Revista de Banco
+Central de Costa Rica, septiembre de 1966.</p>
+<p><span id="a1366"></span><a
+href="../Text/Section0008.xhtml#a443"><span
+class="notapie">[444]</span></a> En <em>Columbia Journal of World
+Business</em>. Citado por NACLA Newletter, enero de 1970.</p>
+<p><span id="a1368"></span><a
+href="../Text/Section0008.xhtml#a444"><span
+class="notapie">[445]</span></a> Paul N. Rosenstein-Rodan,
+<em>Reflections on Regional Development</em>. Citado en Bonn, varios
+autores, op. cit.</p>
+<p><span id="a1369"></span><a
+href="../Text/Section0008.xhtml#a445"><span
+class="notapie">[446]</span></a> Sesiones extraordinarias del Comité
+Ejecutivo Permanente de la ALALC, julio y septiembre de 1969.
+Apreciaciones sobre el proceso de integración de la ALALC, Montevideo,
+1969. La integración como un simple proceso de reducción de las barreras
+de comercio, advierte el director de la UNCTAD en Nueva York, mantendrá
+«los enclaves de alto desarrollo dentro de la depresión general del
+continente». Sidney Dell, en el volumen colectivo <em>The Movement
+Toward Latin American Unity</em>, editado por Ronald Hilton, Nueva
+York-Washington-Londres, 1969.</p>
+<p><span id="a1371"></span><a
+href="../Text/Section0008.xhtml#a446"><span
+class="notapie">[447]</span></a> La industria automotriz es ciento por
+ciento extranjera en Brasil y Argentina, y mayoritariamente extranjera
+en México. ALALC, La industria automotriz en la ALALC, Montevideo,
+1969.</p>
+<p><span id="a1373"></span><a
+href="../Text/Section0008.xhtml#a447"><span
+class="notapie">[448]</span></a> Vívian Trías, <em>Imperialismo y
+geopolítica en América Latina</em>, Montevideo, 1967. Uruguay se
+comprometió, por ejemplo, a incrementar sus importaciones de maquinarias
+desde Brasil, a cambio de favores tales como el suministro de energía
+eléctrica brasileña a la zona norte del país. Actualmente, los
+departamentos uruguayos de Artigas y Rivera no pueden aumentar su
+consumo de energía sin permiso de Brasil.</p>
+<p><span id="a1376"></span><a
+href="../Text/Section0008.xhtml#a448"><span
+class="notapie">[449]</span></a> Golbery do Couto e Silva, <em>Aspectos
+geopolíticos do Brasil</em>, Río de Janeiro, 1952.</p>
+<p><span id="a1377"></span><a
+href="../Text/Section0008.xhtml#a449"><span
+class="notapie">[450]</span></a> «Mandó preparar las armas, se
+descubrió, mandó apuntar, corrigió la puntería, dio la voz de fuego y
+cayó; aún levantó la cabeza sangrienta y dijo: estoy vivo; una nueva
+descarga lo hizo expirar.» Gregorio Bustamante Maceo, <em>Historia
+militar de El Salvador</em>, San Salvador, 1951., En la plaza de
+Tegucigalpa, la banda toca música ligera todos los domingos por la noche
+al pie de la estatua de bronce de Morazán. Pero la inscripción está
+equivocada: ésta no es la estampa ecuestre del campeón de la unidad
+centroamericana. Los hondureños que habían viajado a París, tiempo
+después del fusilamiento, para contratar un escultor por encargo del
+gobierno, se gastaron el dinero en parrandas y terminaron comprando una
+estatua del Mariscal Ney en el mercado de la pulgas. La tragedia de
+Centroamérica se convertía rápidamente en farsa.</p>
+<p><span id="a1379"></span><a
+href="../Text/Section0008.xhtml#a450"><span
+class="notapie">[451]</span></a> Naciones Unidas, CEPAL, <em>Los fletes
+marítimos en el comercio exterior de América Latina</em>, Nueva
+York-Santiago de Chile, 1968.</p>
+<p><span id="a1381"></span><a
+href="../Text/Section0008.xhtml#a451"><span
+class="notapie">[452]</span></a> Enrique Angulo H. en el volumen
+colectivo <em>Integración de América Latina, experiencias y
+perspectivas</em>, México, 1964.</p>
+<p><span id="a1383"></span><a
+href="../Text/Section0008.xhtml#a452"><span
+class="notapie">[453]</span></a> Sidney Dell, Experiencias de la
+integración económica en América Latina, México, 1966.</p>
+<p><span id="a1385"></span><a
+href="../Text/Section0009.xhtml#a453"><span
+class="notapie">[454]</span></a> Entrevista de Jean-Pierre Clerc en
+<em>Le Monde</em>, París, 8-9 de mayo de 1977.</p>
+<p><span id="a1388"></span><a
+href="../Text/Section0009.xhtml#a454"><span
+class="notapie">[455]</span></a> <em>The Nation</em>, 28 de agosto.</p>
+<p><span id="a1390"></span><a
+href="../Text/Section0009.xhtml#a455"><span
+class="notapie">[456]</span></a> El crimen ocurrió en Washington, el 21
+de septiembre de 1976. Varios exiliados políticos de Uruguay, Chile y
+Bolivia habían sido asesinados, antes, en la Argentina. Entre ellos, los
+más notorios fueron el general Carlos Prats, figura clave en el esquema
+militar del gobierno de Allende, cuyo automóvil estalló en un garaje de
+Buenos Aires el 27 de septiembre de 1974; el general Juan José Torres,
+que había encabezado un breve gobierno antimperialista en Bolivia, fue
+acribillado a balazos el 15 de junio de 1976; y los legisladores
+uruguayos Zelmar Michelini y Héctor Gutiérrez Ruiz, secuestrados,
+torturados y asesinados, también en Buenos Aires, entre el 18 y el 21 de
+marzo de 1976.</p>
+<p><span id="a1391"></span><a
+href="../Text/Section0009.xhtml#a456"><span
+class="notapie">[457]</span></a> También fue arrasada la reforma agraria
+que había someneado bajo el gobierno de la Democracia Cristiana y fue
+profundizada por la Unidad Popular. Véase Marta Beatriz de Albuquerque
+W., «La agricultura chilena: ¿modernización capitalista o regresión a
+formas tradicionales? Comentarios sobre la contra-reforma agraria en
+Chile, Iberoamericana, vol. 2, 1976, Institute of Latin American
+Studies, Estocolmo.</p>
+<p><span id="a1393"></span><a
+href="../Text/Section0009.xhtml#a457"><span
+class="notapie">[458]</span></a> Tres meses después, hubo elecciones en
+la Universidad. Eran las únicas elecciones que quedaban. Los candidatos
+de la dictadura obtuvieron el 2,5 por 100 de los votos universitarios.
+Por lo tanto, en defensa de la democracia, la dictadura encarceló a
+medio mundo y entregó la Universidad a ese dos y medio por ciento.</p>
+<p><span id="a1396"></span><a
+href="../Text/Section0009.xhtml#a458"><span
+class="notapie">[459]</span></a> <em>Veja</em>, núm 444, San Pablo, 9 de
+marzo de 1977.</p>
+<p><span id="a1397"></span><a
+href="../Text/Section0009.xhtml#a459"><span
+class="notapie">[460]</span></a> U. Túpac. House of Representatives,
+Committee on Appropriations, Foreign Operations Appropriations for 1963,
+Hesrings 87th Congress, 2nd. Session, Part. 1.</p>
+<p><span id="a1399"></span><a
+href="../Text/Section0009.xhtml#a460"><span
+class="notapie">[461]</span></a> Declaración de Lourdes, octubre de
+1976.</p>
+<p><span id="a1401"></span><a
+href="../Text/Section0009.xhtml#a461"><span
+class="notapie">[462]</span></a> <em>Le nouvelliste</em>, Puerto
+Príncipe, Haití, 19-20 de marzo de 1977. Dato citado por Agustín Cueva
+en <em>El desarrollo del capitalismo en América Latina</em>, Siglo XXI,
+México, 1977.</p>
+<p><span id="a1404"></span><a
+href="../Text/Section0009.xhtml#a462"><span
+class="notapie">[463]</span></a> Ida May Mantel, «Sources and uses of
+funds for a sample of majorityowned foreign affiliates of U.S.
+companies, 1966-1972», U.S. Department of Commerce, Survey of Current
+Business, julio de 1975.</p>
+<p><span id="a1405"></span><a
+href="../Text/Section0009.xhtml#a463"><span
+class="notapie">[464]</span></a> Naciones Unidas, Comisión Económica
+para América latina (CEPAL), <em>El desarrollo económico y social y las
+relaciones externas de América Latina</em>, Santo Domingo, República
+Dominicana, febrero de 1977.</p>
+<p><span id="a1407"></span><a
+href="../Text/Section0009.xhtml#a464"><span
+class="notapie">[465]</span></a> El dinero, que tiene alitas, viaja sin
+pasaporte. Buena parte de las ganancias generadas por la explotación de
+nuestros recursos se fuga a Estados Unidos, a Suiza, a Alemania Federal
+o a otros países donde pega un salto de circo para luego volver a
+nuestras comarcas convertida en empréstitos.</p>
+<p><span id="a1410"></span><a
+href="../Text/Section0009.xhtml#a465"><span
+class="notapie">[466]</span></a> Agustin Cueva, op. cit.</p>
+<p><span id="a1411"></span><a
+href="../Text/Section0009.xhtml#a466"><span
+class="notapie">[467]</span></a> Idem.</p>
+<p><span id="a1413"></span><a
+href="../Text/Section0009.xhtml#a467"><span
+class="notapie">[468]</span></a> Naciones Unidas, CEPAL, op. cit.</p>
+<p><span id="a1416"></span><a
+href="../Text/Section0009.xhtml#a468"><span
+class="notapie">[469]</span></a> UNCTAD, The marketing and distribution
+system for bananas. diciembre de 1974.</p>
+<p><span id="a1417"></span><a
+href="../Text/Section0009.xhtml#a469"><span
+class="notapie">[470]</span></a> «Reflexiones sobre la desnutrición en
+México», Comercio exterior, Banco Nacional de Comercio Exterior, S.A.,
+vol. 28, núm. 2, México, febrero de 1978.</p>
+<p><span id="a1420"></span><a
+href="../Text/Section0009.xhtml#a470"><span
+class="notapie">[471]</span></a> Roger Burbach y Patricia Flynn,
+«Agribusiness Targets Latin America», NACLA, volumen XII, núm. 1, Nueva
+York, enero-febrero de 1978.</p>
+<p><span id="a1421"></span><a
+href="../Text/Section0009.xhtml#a471"><span
+class="notapie">[472]</span></a> Idem.</p>
+<p><span id="a1424"></span><a
+href="../Text/Section0009.xhtml#a472"><span
+class="notapie">[473]</span></a> Datos de fuentes sindicales y
+periodísticas, publicados en <em>Uruguay Informations</em>, núms. 21 y
+25, París.</p>
+<p><span id="a1425"></span><a
+href="../Text/Section0009.xhtml#a473"><span
+class="notapie">[474]</span></a> Naciones Unidas, CEPAL, op. cit.</p>
+<p><span id="a1428"></span><a
+href="../Text/Section0009.xhtml#a474"><span
+class="notapie">[475]</span></a> Idem.</p>
+<p><span id="a1429"></span><a
+href="../Text/Section0009.xhtml#a475"><span
+class="notapie">[476]</span></a> OIT, Empleo, crecimiento y necesidades
+esenciales, Ginebra, 1976.</p>
+<p><span id="a1432"></span><a
+href="../Text/Section0009.xhtml#a476"><span
+class="notapie">[477]</span></a> Naciones Unidas, CEPAL, op. cit.</p>
+<p><span id="a1434"></span><a
+href="../Text/Section0009.xhtml#a477"><span
+class="notapie">[478]</span></a> En Uruguay, los inquisidores se han
+modernizado. Curiosa mezcla de barbarie y sentido capitalista del
+negocio. Los militares ya no queman los libros: ahora los venden a las
+empresas papeleras. Las papeleras los pican, los convierten en pulpa de
+papel y los devuelven al mercado de consumo. No es verdad que Marx no
+esté al alcance del público. No está en forma de libros. Está en forma
+de servilletas.</p>
+<p><span id="a1436"></span><a
+href="../Text/Section0009.xhtml#a478"><span
+class="notapie">[479]</span></a> Conferencia de prensa del presidente
+Aparicio Méndez, el 21 de mayo de 1977, en Paysandú. «Estamos evitando
+al país la tragedia de la pasión política», dijo el presidente. «Los
+hombres de bien no hablan de dictaduras, no piensan en dictaduras ni
+reclaman derechos humanos».</p>
+</body>
+</html>
