@@ -5,171 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lector de Libros - RESONANCIAS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <style>
-        :root {
-            --color-light: #ffffffd4; --color-dark: #100f0f; --color-mid: #c4bcb5;
-            --color-accent: #b06900; --color-primary: #d6cdc3; --color-secondary: #d07f2c;
-            --color-warm: #2b2d2e; --color-neutral: #646363; --color-soft: #bd8956;
-            --color-muted: #bfb9b4; --font-heading: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-            --font-body: "Lato", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-            --spacing-sm: 0.5rem; --spacing-md: 1rem; --spacing-lg: 1.5rem; --spacing-xl: 2rem;
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        body.dark-mode {
-            --color-light: #1a1a1a; --color-dark: #e0e0e0; --color-mid: #4a4845;
-            --color-accent: #ff8c00; --color-primary: #2a2a2a; --color-secondary: #ff8c00;
-            --color-warm: #e0e0e0; --color-neutral: #b0b0b0; --color-soft: #ff8c00;
-            --color-muted: #666666; --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: var(--font-body); background: var(--color-primary); color: var(--color-dark);
-            line-height: 1.6; overflow: hidden;
-        }
-        .navbar {
-            background: var(--color-dark); color: var(--color-light); padding: var(--spacing-sm) var(--spacing-md);
-            box-shadow: var(--shadow-md); display: flex; justify-content: center; align-items: center;
-            height: 50px; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; gap: var(--spacing-md);
-        }
-        .navbar-content {
-            display: flex; align-items: center; gap: var(--spacing-md); max-width: 600px;
-            width: 100%; justify-content: space-between;
-        }
-        .navbar-nav { display: flex; gap: var(--spacing-sm); }
-        .nav-btn {
-            background: var(--color-secondary); color: var(--color-light); padding: var(--spacing-sm) var(--spacing-md);
-            border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 500;
-            transition: all 0.3s ease; display: flex; align-items: center; gap: 0.3rem;
-        }
-        .nav-btn:hover { background: var(--color-accent); transform: translateY(-1px); }
-        .nav-btn i { font-size: 0.8rem; }
-        .navbar-toggles { display: flex; gap: 1rem; }
-        .menu-toggle {
-            background: none; border: none; color: var(--color-light); font-size: 1.2rem;
-            cursor: pointer; padding: var(--spacing-sm); border-radius: 4px;
-        }
-        .menu-toggle:hover { background: var(--color-secondary); }
-        .menu-overlay {
-            position: fixed; top: 50px; left: 0; width: 100%; height: calc(100vh - 50px);
-            background: rgba(0, 0, 0, 0.5); z-index: 500; display: none; opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .menu-overlay.active { display: block; opacity: 1; }
-        .main-container {
-            margin-top: 50px; display: grid; grid-template-columns: 250px 1fr 250px;
-            gap: var(--spacing-lg); max-width: 1400px; margin-left: auto; margin-right: auto;
-            padding: var(--spacing-lg) var(--spacing-md); height: calc(100vh - 50px);
-        }
-        .book-selector {
-            background: var(--color-light); border-radius: 12px; padding: var(--spacing-lg);
-            box-shadow: var(--shadow-md); overflow-y: auto; max-height: calc(100vh - 50px - 2 * var(--spacing-lg));
-        }
-        .book-selector h2 {
-            font-family: var(--font-heading); color: var(--color-secondary); margin-bottom: var(--spacing-lg);
-            font-size: 1.1rem; text-align: center;
-        }
-        .book-list { list-style: none; margin-top: var(--spacing-md); }
-        .book-item {
-            padding: var(--spacing-md); margin-bottom: var(--spacing-sm); background: var(--color-primary);
-            border-radius: 8px; cursor: pointer; transition: all 0.3s ease; font-size: 0.9rem;
-        }
-        .book-item:hover { background: var(--color-secondary); color: var(--color-light); transform: translateY(-2px); }
-        .book-item.active { background: var(--color-accent); color: var(--color-light); }
-        .reader-panel {
-            background: var(--color-light); border-radius: 12px; box-shadow: var(--shadow-md);
-            padding: var(--spacing-xl); display: flex; flex-direction: column; min-height: 0;
-            position: relative; overflow: hidden;
-        }
-        .reader-content {
-            flex: 1;
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
-        }
-        .reader-content::-webkit-scrollbar {
-            display: none; /* Chrome, Safari and Opera */
-        }
-        .reader-page {
-            flex: 0 0 100%;
-            width: 100%;
-            height: 100%;
-            overflow-y: auto;
-            padding: 1rem 2rem;
-            text-align: justify;
-            scroll-snap-align: start;
-        }
-        .reader-content img { max-width: 100%; height: auto; display: block; margin: 1rem auto; }
-        .chapter-content { break-inside: avoid-column; padding: 0 1rem; }
-        .empty-state, .cover-display {
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            height: 100%; text-align: center; 
-            /* Reset column styles for these states */
-            column-width: auto;
-        }
-        .cover-display img {
-            max-height: 70%; max-width: 80%; object-fit: contain;
-            border-radius: 8px; box-shadow: var(--shadow-md); margin-bottom: var(--spacing-lg);
-        }
-        .reader-nav-arrow {
-            position: absolute; top: 0; bottom: 0; width: 5%; z-index: 20; cursor: pointer;
-            display: flex; align-items: center; justify-content: center; opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .reader-panel:hover .reader-nav-arrow { opacity: 0.6; }
-        .reader-nav-arrow:hover { background: rgba(0,0,0,0.1); }
-        .reader-nav-arrow i { color: rgba(0, 0, 0, 0.5); font-size: 2.5rem; }
-        .reader-nav-arrow.left { left: 0; }
-        .reader-nav-arrow.right { right: 0; }
-        .controls-panel {
-            background: var(--color-light); border-radius: 12px; padding: var(--spacing-lg);
-            box-shadow: var(--shadow-md); overflow-y: auto; max-height: calc(100vh - 50px - 2 * var(--spacing-lg));
-        }
-        .controls-panel h2 {
-            font-family: var(--font-heading); color: var(--color-secondary); margin-bottom: var(--spacing-lg);
-            font-size: 1.1rem; text-align: center;
-        }
-        .control-section {
-            margin-bottom: var(--spacing-lg); padding-bottom: var(--spacing-lg);
-            border-bottom: 1px solid var(--color-mid);
-        }
-        .control-section:last-child { border-bottom: none; margin-bottom: 0; }
-        .control-title {
-            font-family: var(--font-heading); font-size: 0.9rem; font-weight: 600;
-            color: var(--color-warm); margin-bottom: var(--spacing-md);
-        }
-        .control-btn {
-            width: 100%; background: var(--color-secondary); color: var(--color-light); border: none;
-            padding: var(--spacing-md); border-radius: 8px; cursor: pointer; font-size: 0.9rem;
-            margin-bottom: var(--spacing-sm); transition: all 0.3s ease;
-        }
-        .control-btn:hover { background: var(--color-accent); transform: translateY(-1px); }
-        .control-btn:disabled { background: var(--color-muted); cursor: not-allowed; }
-        .font-controls { display: flex; justify-content: space-between; align-items: center; }
-        .font-btn {
-            background: var(--color-secondary); color: var(--color-light); border: none;
-            padding: var(--spacing-sm); border-radius: 6px; cursor: pointer; width: 35px; height: 35px;
-        }
-        .font-btn:hover { background: var(--color-accent); }
-        .search-input {
-            width: 100%; padding: var(--spacing-md); border: 2px solid var(--color-mid);
-            border-radius: 8px; font-size: 0.9rem;
-        }
-        .search-input:focus { outline: none; border-color: var(--color-secondary); }
-        @media (max-width: 1024px) {
-            .main-container { grid-template-columns: 1fr; padding: var(--spacing-md); gap: var(--spacing-md); }
-            .book-selector, .controls-panel {
-                position: fixed; top: 50px; height: calc(100vh - 50px); z-index: 800;
-                width: 280px; border-radius: 0; overflow-y: auto; max-height: none;
-            }
-            .book-selector { left: -100%; transition: left 0.3s ease; }
-            .book-selector.mobile-visible { left: 0; }
-            .controls-panel { right: -100%; transition: right 0.3s ease; }
-            .controls-panel.mobile-visible { right: 0; }
-        }
-    </style>
-</head>
+    <link rel="stylesheet" href="../../scr/styles/estilos.css">
+    
+    </head>
 <body>
     <nav class="navbar">
         <div class="navbar-content">
@@ -304,7 +142,7 @@
 
         async function showCover(bookId) {
             const book = books[bookId];
-            const coverPath = `${book.path}images/cover.jpg`; // Ruta estandarizada
+            const coverPath = `${book.path}images/cover.jpg`; // Estructura estandarizada
 
             try {
                 const fullUrl = new URL(coverPath, window.location.href);
@@ -317,11 +155,13 @@
                             <img src="${fullUrl.href}" alt="Portada de ${book.name}">
                             <button class="control-btn" onclick="startReading()">Iniciar Lectura</button>
                         </div>`;
+                    console.log(`Portada encontrada en: ${coverPath}`);
                 } else {
+                    console.warn('No se encontró portada o no es una imagen válida para:', book.name);
                     startReading();
                 }
             } catch (error) {
-                console.warn('No se pudo cargar la portada:', error);
+                console.warn('Error al cargar la portada para:', book.name, error);
                 startReading();
             }
         }
@@ -341,34 +181,38 @@
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(indexHtml, 'text/html');
                 
-                // Extraer solo los enlaces que apuntan a archivos de capítulos (.html)
-                // Acepta archivos tanto en la raíz como en carpeta text/
+                // Extraer enlaces que apunten a archivos de capítulos (.html o .xhtml)
+                // Acepta archivos en cualquier estructura
                 const chapterLinks = Array.from(doc.querySelectorAll('a[href]'))
                     .map(a => a.getAttribute('href'))
                     .filter(href => {
-                        if (!href || href.startsWith('#') || href.startsWith('http')) return false;
-                        return href.includes('.html');
+                        if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto:')) return false;
+                        // Solo acepta archivos .html dentro de la carpeta 'text/'
+                        return href.toLowerCase().startsWith('text/') && href.endsWith('.html');
                     })
-                    .map(href => href.split('#')[0]); // Remover anclas internas
+                    .map(href => href.split('#')[0]) // Remover anclas internas
+                    .filter((href, index, array) => array.indexOf(href) === index); // Remover duplicados
                 
-                const uniqueChapterFiles = [...new Set(chapterLinks)];
-
-                if (uniqueChapterFiles.length === 0) {
+                if (chapterLinks.length === 0) {
+                    console.error('No se encontraron enlaces a capítulos en el índice');
+                    console.log('Contenido del índice HTML:', indexHtml.substring(0, 500));
                     throw new Error('No se encontraron capítulos en el libro.');
                 }
 
-                console.log(`Cargando ${uniqueChapterFiles.length} capítulos para "${book.name}":`, uniqueChapterFiles);
+                console.log(`Cargando ${chapterLinks.length} capítulos para "${book.name}":`, chapterLinks);
 
-                const chapterPromises = uniqueChapterFiles.map(async file => {
+                const chapterPromises = chapterLinks.map(async (file, index) => {
                     try {
                         const response = await fetch(book.path + file);
                         if (!response.ok) {
-                            console.warn(`No se pudo cargar el capítulo: ${file}`);
+                            console.warn(`No se pudo cargar el capítulo ${index + 1}: ${file} (HTTP ${response.status})`);
                             return null;
                         }
-                        return await response.text();
+                        const content = await response.text();
+                        console.log(`Capítulo ${index + 1} cargado: ${file}`);
+                        return content;
                     } catch (error) {
-                        console.warn(`Error al cargar el capítulo ${file}:`, error);
+                        console.warn(`Error al cargar el capítulo ${index + 1} (${file}):`, error);
                         return null;
                     }
                 });
@@ -378,21 +222,31 @@
                 // Filtrar capítulos nulos y extraer contenido del body
                 chapters = chaptersHtml
                     .filter(html => html !== null)
-                    .map(html => {
+                    .map((html, index) => {
+                        if (!html) return null;
+                        
+                        // Intentar extraer el contenido del body
                         const bodyMatch = html.match(/<body[^>]*>([\s\S]*)<\/body>/i);
-                        return bodyMatch ? bodyMatch[1] : html;
-                    });
+                        if (bodyMatch) {
+                            return bodyMatch[1];
+                        }
+                        
+                        // Si no hay etiqueta body, usar todo el contenido HTML
+                        console.warn(`Capítulo ${index + 1} no tiene etiqueta <body>, usando contenido completo`);
+                        return html;
+                    })
+                    .filter(chapter => chapter !== null);
 
                 if (chapters.length === 0) {
                     throw new Error('No se pudieron cargar los capítulos del libro.');
                 }
 
-                console.log(`Se cargaron exitosamente ${chapters.length} capítulos`);
+                console.log(`Se cargaron exitosamente ${chapters.length} de ${chapterLinks.length} capítulos`);
                 displayBook();
 
             } catch (error) {
                 console.error('Error al cargar el libro:', error);
-                readerContent.innerHTML = `<div class="empty-state"><h3>Error al cargar el libro</h3><p>${error.message}</p></div>`;
+                readerContent.innerHTML = `<div class="empty-state"><h3>Error al cargar el libro</h3><p>${error.message}</p><p>Revisa la consola para más detalles.</p></div>`;
             }
         }
 
@@ -406,20 +260,7 @@
                 readerContent.appendChild(pageDiv);
             });
 
-            // Fix image paths (ahora apunta a carpeta images/ estandarizada)
-            const images = readerContent.getElementsByTagName('img');
-            for(let img of images) {
-                let originalSrc = img.getAttribute('src');
-                if (originalSrc && !originalSrc.startsWith('http')) {
-                    // Ajustar rutas de imágenes para que apunten a la carpeta images/ estandarizada
-                    let adjustedSrc = originalSrc;
-                    if (originalSrc.includes('../images/') || originalSrc.includes('../Images/')) {
-                        adjustedSrc = originalSrc.replace(/(\.\.\/)+(images|Images)\//gi, '../images/');
-                    }
-                    const imageUrl = new URL(adjustedSrc, new URL(books[currentBookId].path, window.location.href));
-                    img.src = imageUrl.href;
-                }
-            }
+            
             
             totalPages = chapters.length;
             currentPage = 1;
