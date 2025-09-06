@@ -68,6 +68,14 @@
                     <button class="font-btn" onclick="changeZoom(0.2)">+</button>
                 </div>
             </div>
+            <div class="control-section" id="image-zoom-controls" style="display: none;">
+                <div class="control-title">Zoom</div>
+                <div class="font-controls">
+                    <button class="font-btn" onclick="changeImageZoom(-0.1)">-</button>
+                    <span id="imageZoomDisplay">100%</span>
+                    <button class="font-btn" onclick="changeImageZoom(0.1)">+</button>
+                </div>
+            </div>
             <div class="control-section">
                 <div class="control-title">Modo lectura</div>
                 <button class="control-btn" onclick="toggleTheme()">🌙 Modo nocturno</button>
@@ -87,13 +95,14 @@
         let pdfDoc = null;
         let pdfPageNum = 1;
         let pdfZoom = 1.0;
+        let imageZoom = 1.0;
 
         const books = {
             "1984 - George Orwell": { name: "1984 - George Orwell", path: "1984 - George Orwell/", type: "html" },
             "Crónicas de la Expiación": { name: "Crónicas de la Expiación", path: "Crónicas de la Expiación/", type: "html" },
             "El Aleph-J.L. Borges": { name: "El Aleph-J.L. Borges", path: "El Aleph-J.L. Borges/", type: "html" },
             "El cuervo - Edgar Allan Poe": { name: "El cuervo - Edgar Allan Poe", path: "El cuervo - Edgar Allan Poe/", type: "html" },
-            "El Eternauta": { name: "El Eternauta", path: "El Eternauta/El Eternauta.pdf", type: "pdf" },
+            "El Eternauta": { name: "El Eternauta", path: "El Eternauta/", type: "html", isImageBased: true },
             "El horror segun Lovecraft - Vol-2": { name: "El horror segun Lovecraft - Vol-2", path: "El horror segun Lovecraft - Vol-2/", type: "html" },
             "El horror segun Lovecraft -vol-1": { name: "El horror segun Lovecraft -vol-1", path: "El horror segun Lovecraft -vol-1/", type: "html" },
             "La rebelión de las masas": { name: "La rebelión de las masas", path: "La rebelión de las masas/", type: "html" },
@@ -109,6 +118,8 @@
         const fontControls = document.getElementById("font-controls");
         const pdfControls = document.getElementById("pdf-controls");
         const zoomDisplay = document.getElementById("zoomDisplay");
+        const imageZoomControls = document.getElementById("image-zoom-controls");
+        const imageZoomDisplay = document.getElementById("imageZoomDisplay");
 
         // --- INITIALIZATION ---
         document.addEventListener("DOMContentLoaded", () => {
@@ -166,7 +177,7 @@
             const coverPath = book.type === 'pdf' ? book.path.replace('.pdf', '.jpg') : `${book.path}images/cover.jpg`;
             readerContent.innerHTML = `
                 <div class="cover-display">
-                    <img src="${coverPath}" alt="Portada de ${book.name}" onerror="this.style.display='none'">
+                    <img src="${coverPath}" alt="Portada de ${book.name}" onerror="this.style.display=\'none\'">
                     <button class="control-btn" onclick="startReading()">Iniciar Lectura</button>
                 </div>`;
         }
@@ -188,12 +199,19 @@
         }
 
         function toggleBookControls(type) {
+            const book = books[currentBookId];
             if (type === 'pdf') {
                 fontControls.style.display = 'none';
                 pdfControls.style.display = 'block';
+                imageZoomControls.style.display = 'none';
+            } else if (book && book.isImageBased) {
+                fontControls.style.display = 'none';
+                pdfControls.style.display = 'none';
+                imageZoomControls.style.display = 'block';
             } else {
                 fontControls.style.display = 'block';
                 pdfControls.style.display = 'none';
+                imageZoomControls.style.display = 'none';
             }
         }
 
@@ -292,6 +310,9 @@
             });
             totalPages = chapters.length;
             currentPage = 1;
+            if (books[currentBookId].isImageBased) {
+                changeImageZoom(0);
+            }
             navigatePage(0, true);
         }
 
@@ -325,7 +346,11 @@
 
             const page = book.type === 'pdf' ? pdfPageNum : currentPage;
             pageIndicator.textContent = `Página ${page} de ${totalPages}`;
-            zoomDisplay.textContent = `${Math.round(pdfZoom * 100)}%`;
+            if (book.type === 'pdf') {
+                zoomDisplay.textContent = `${Math.round(pdfZoom * 100)}%`;
+            } else if (book.isImageBased) {
+                imageZoomDisplay.textContent = `${Math.round(imageZoom * 100)}%`;
+            }
 
             const isFirst = page <= 1;
             const isLast = page >= totalPages;
@@ -343,6 +368,7 @@
             pdfDoc = null;
             pdfPageNum = 1;
             pdfZoom = 1.0;
+            imageZoom = 1.0;
             toggleBookControls('html');
             updatePageUI();
         }
@@ -352,6 +378,17 @@
             if (!pdfDoc) return;
             pdfZoom = Math.max(0.2, pdfZoom + amount);
             renderPdfPage(pdfPageNum);
+        }
+
+        function changeImageZoom(amount) {
+            if (!books[currentBookId] || !books[currentBookId].isImageBased) return;
+            imageZoom = Math.max(0.2, imageZoom + amount);
+            const images = readerContent.querySelectorAll('.reader-page img');
+            images.forEach(img => {
+                img.style.maxWidth = `${imageZoom * 100}%`;
+                img.style.maxHeight = `${imageZoom * 100}vh`;
+            });
+            imageZoomDisplay.textContent = `${Math.round(imageZoom * 100)}%`;
         }
 
         function changeFontSize(change) {
