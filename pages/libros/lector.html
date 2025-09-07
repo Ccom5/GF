@@ -9,15 +9,6 @@
     <link rel="canonical" href="https://gf-amd.pages.dev/pages/libros/lector.html" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet" href="../../scr/styles/estilos.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
-    <style>
-        /* Fix for PDF canvas rendering */
-        .reader-content canvas {
-            max-width: none !important;
-            margin: 0 auto;
-            display: block;
-        }
-    </style>
 </head>
 
 <body>
@@ -63,14 +54,6 @@
                     <button class="font-btn" onclick="changeFontSize(10)">A+</button>
                 </div>
             </div>
-            <div class="control-section" id="pdf-controls" style="display: none;">
-                <div class="control-title">Zoom (PDF)</div>
-                <div class="font-controls">
-                    <button class="font-btn" onclick="changeZoom(-0.2)">-</button>
-                    <span id="zoomDisplay">100%</span>
-                    <button class="font-btn" onclick="changeZoom(0.2)">+</button>
-                </div>
-            </div>
             <div class="control-section" id="image-zoom-controls" style="display: none;">
                 <div class="control-title">Zoom</div>
                 <div class="font-controls">
@@ -95,9 +78,6 @@
         let totalPages = 0;
         let fontSize = 100;
         let activeMenu = null;
-        let pdfDoc = null;
-        let pdfPageNum = 1;
-        let pdfZoom = 1.0;
         let imageZoom = 1.0;
 
         const books = {
@@ -106,8 +86,8 @@
             "El Aleph-J.L. Borges": { name: "El Aleph-J.L. Borges", path: "El Aleph-J.L. Borges/", type: "html" },
             "El cuervo - Edgar Allan Poe": { name: "El cuervo - Edgar Allan Poe", path: "El cuervo - Edgar Allan Poe/", type: "html" },
             "El Eternauta": { name: "El Eternauta", path: "El Eternauta/", type: "html", isImageBased: true },
-            "El horror segun Lovecraft-Vol-2": { name: "El horror segun Lovecraft - Vol-2", path: "El horror segun Lovecraft - Vol-2/", type: "html" },
-            "El horror segun Lovecraft-Vol-1": { name: "El horror segun Lovecraft -vol-1", path: "El horror segun Lovecraft -vol-1/", type: "html" },
+            "El horror segun Lovecraft - Vol-2": { name: "El horror segun Lovecraft - Vol-2", path: "El horror segun Lovecraft - Vol-2/", type: "html" },
+            "El horror segun Lovecraft -Vol-1": { name: "El horror segun Lovecraft -Vol-1", path: "El horror segun Lovecraft -Vol-1/", type: "html" },
             "La rebelión de las masas": { name: "La rebelión de las masas", path: "La rebelión de las masas/", type: "html" },
             "Saber no Percibido": { name: "Saber no Percibido", path: "Saber no Percibido/", type: "html" },
             "Las Venas Abiertas de América Latina": { name: "Las Venas Abiertas de América Latina", path: "las_venas_abiertas_de_amxrica_latina/", type: "html" },
@@ -119,8 +99,6 @@
         const nextBtn = document.getElementById("nextPage");
         const pageIndicator = document.getElementById("pageIndicator");
         const fontControls = document.getElementById("font-controls");
-        const pdfControls = document.getElementById("pdf-controls");
-        const zoomDisplay = document.getElementById("zoomDisplay");
         const imageZoomControls = document.getElementById("image-zoom-controls");
         const imageZoomDisplay = document.getElementById("imageZoomDisplay");
 
@@ -178,10 +156,10 @@
 
         async function showCover(bookId) {
             const book = books[bookId];
-            const coverPath = book.type === 'pdf' ? book.path.replace('.pdf', '.jpg') : `${book.path}images/cover.jpg`;
+            const coverPath = `${book.path}images/cover.jpg`;
             readerContent.innerHTML = `
                 <div class="cover-display">
-                    <img src="${coverPath}" alt="Portada de ${book.name}" onerror="this.style.display=\'none\'">
+                    <img src="${coverPath}" alt="Portada de ${book.name}" onerror="this.style.display='none'">
                     <button class="control-btn" onclick="startReading()">Iniciar Lectura</button>
                 </div>`;
         }
@@ -192,76 +170,19 @@
         }
 
         async function loadFullBook() {
-            const book = books[currentBookId];
-            if (book.type === 'pdf') {
-                toggleBookControls('pdf');
-                await loadPdfBook(book.path);
-            } else {
-                toggleBookControls('html');
-                await loadHtmlBook();
-            }
+            toggleBookControls();
+            await loadHtmlBook();
         }
 
-        function toggleBookControls(type) {
+        function toggleBookControls() {
             const book = books[currentBookId];
-            if (type === 'pdf') {
+            if (book && book.isImageBased) {
                 fontControls.style.display = 'none';
-                pdfControls.style.display = 'block';
-                imageZoomControls.style.display = 'none';
-            } else if (book && book.isImageBased) {
-                fontControls.style.display = 'none';
-                pdfControls.style.display = 'none';
                 imageZoomControls.style.display = 'block';
             } else {
                 fontControls.style.display = 'block';
-                pdfControls.style.display = 'none';
                 imageZoomControls.style.display = 'none';
             }
-        }
-
-        async function loadPdfBook(pdfPath) {
-            readerContent.innerHTML = '<canvas id="pdf-render"></canvas>';
-            try {
-                pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js';
-                const loadingTask = pdfjsLib.getDocument(pdfPath);
-                pdfDoc = await loadingTask.promise;
-                totalPages = pdfDoc.numPages;
-                pdfPageNum = 1;
-                pdfZoom = 1.0;
-                renderPdfPage(pdfPageNum);
-            } catch (error) {
-                console.error("Error loading PDF:", error);
-                readerContent.innerHTML = `<div class="empty-state"><h3>Error al cargar el PDF</h3><p>${error.message}</p></div>`;
-            }
-        }
-
-        function renderPdfPage(num) {
-            pdfDoc.getPage(num).then(page => {
-                const canvas = document.getElementById('pdf-render');
-                if (!canvas) return;
-                const ctx = canvas.getContext('2d');
-                const dpr = window.devicePixelRatio || 1;
-                const containerWidth = readerContent.clientWidth;
-                
-                const viewport = page.getViewport({ scale: 1.0 });
-                const baseScale = containerWidth / viewport.width;
-                const scale = baseScale * pdfZoom;
-                
-                const scaledViewport = page.getViewport({ scale: scale * dpr });
-
-                canvas.width = scaledViewport.width;
-                canvas.height = scaledViewport.height;
-
-                canvas.style.width = `${scaledViewport.width / dpr}px`;
-                canvas.style.height = `${scaledViewport.height / dpr}px`;
-
-                const renderContext = {
-                    canvasContext: ctx,
-                    viewport: scaledViewport
-                };
-                page.render(renderContext);
-            });
-            updatePageUI();
         }
 
         async function loadHtmlBook() {
@@ -328,20 +249,11 @@
 
         // --- PAGINATION & NAVIGATION ---
         function navigatePage(direction, absolute = false) {
-            const book = books[currentBookId];
-            if (book.type === 'pdf') {
-                const newPage = pdfPageNum + direction;
-                if (newPage >= 1 && newPage <= totalPages) {
-                    pdfPageNum = newPage;
-                    renderPdfPage(pdfPageNum);
-                }
-            } else {
-                const newPage = absolute ? 1 : currentPage + direction;
-                if (newPage >= 1 && newPage <= totalPages) {
-                    currentPage = newPage;
-                    readerContent.scrollTo({ left: (currentPage - 1) * readerContent.clientWidth, behavior: "smooth" });
-                    updatePageUI();
-                }
+            const newPage = absolute ? 1 : currentPage + direction;
+            if (newPage >= 1 && newPage <= totalPages) {
+                currentPage = newPage;
+                readerContent.scrollTo({ left: (currentPage - 1) * readerContent.clientWidth, behavior: "smooth" });
+                updatePageUI();
             }
         }
 
@@ -354,11 +266,9 @@
                 return;
             }
 
-            const page = book.type === 'pdf' ? pdfPageNum : currentPage;
+            const page = currentPage;
             pageIndicator.textContent = `Página ${page} de ${totalPages}`;
-            if (book.type === 'pdf') {
-                zoomDisplay.textContent = `${Math.round(pdfZoom * 100)}%`;
-            } else if (book.isImageBased) {
+            if (book.isImageBased) {
                 imageZoomDisplay.textContent = `${Math.round(imageZoom * 100)}%`;
             }
 
@@ -375,21 +285,12 @@
             chapters = [];
             currentPage = 0;
             totalPages = 0;
-            pdfDoc = null;
-            pdfPageNum = 1;
-            pdfZoom = 1.0;
             imageZoom = 1.0;
-            toggleBookControls('html');
+            toggleBookControls();
             updatePageUI();
         }
 
         // --- UI CONTROLS ---
-        function changeZoom(amount) {
-            if (!pdfDoc) return;
-            pdfZoom = Math.max(0.2, pdfZoom + amount);
-            renderPdfPage(pdfPageNum);
-        }
-
         function changeImageZoom(amount) {
             if (!books[currentBookId] || !books[currentBookId].isImageBased) return;
             imageZoom = Math.max(0.2, imageZoom + amount);
