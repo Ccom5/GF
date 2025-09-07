@@ -623,6 +623,10 @@ main {
   margin: 0;
   padding: 0;
   top: 0;
+  background-image: url('../img/hero-v.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero-video {
