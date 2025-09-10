@@ -1,0 +1,15 @@
+/pages/blog /pages/blog.html 200
+/pages/libros/lector /pages/libros/lector.html 200
+/pages/carousel /pages/carousel.html 200
+/pages/obras /pages/obras.html 200
+/pages/quien-soy /pages/quien-soy.html 200
+/pages/contacto /pages/contacto.html 200
+/pages/libros/biblioteca.html / 301
+/pages/libros/lector?book=saber-no-percibido /pages/libros/lector.html?book=saber-no-percibido 301
+/pages/libros/lector?book=Reconociéndonos-en-el-Universo /pages/libros/lector.html?book=Reconociéndonos-en-el-Universo 301
+/pages/libros/lector?book=cronicas-de-la-expiacion /pages/libros/lector.html?book=cronicas-de-la-expiacion 301
+/pages/blog.-ia /pages/blog.-ia.html 200
+/pages/blog-literatura /pages/blog-literatura.html 200
+/pages/entrada-p /pages/entrada-p.html 200
+/pages/libros/cronicas.html / 301
+/pages/blog-lenguaje /pages/blog-lenguaje.html 200
