@@ -8,17 +8,17 @@
     <meta name="description" content="Lector de libros interactivo para las obras de Gabriel Ferré. Lee online y ajusta la experiencia de lectura a tu gusto." />
     <link rel="canonical" href="https://gf-amd.pages.dev/pages/libros/lector.html" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link rel="stylesheet" href="../../scr/styles/estilos.css" />
+    <link rel="stylesheet" href="/scr/styles/estilos.css" />
 </head>
 
 <body>
     <h1 style="display: none;">Lector de Libros</h1>
     <nav class="navbar">
         <div class="navbar-content">
-            <img src="../../img/logo.png" alt="Logo RESONANCIAS" width="40" height="40" />
+            <img src="/img/logo.png" alt="Logo RESONANCIAS" width="40" height="40" />
             <div class="navbar-nav">
-                <a href="../../index.html" class="nav-btn"><i class="fas fa-home"></i> Inicio</a>
-                <a href="../obras.html" class="nav-btn"><i class="fas fa-book-open"></i> Obras</a>
+                <a href="/" class="nav-btn"><i class="fas fa-home"></i> Inicio</a>
+                <a href="/pages/obras.html" class="nav-btn"><i class="fas fa-book-open"></i> Obras</a>
             </div>
             <div class="navbar-toggles">
                 <button class="menu-toggle" id="menuToggle"><i class="fas fa-book"></i></button>
@@ -81,17 +81,18 @@
         let imageZoom = 1.0;
 
         const books = {
-            "1984 - George Orwell": { name: "1984 - George Orwell", path: "1984 - George Orwell/", type: "html" },
-            "Crónicas de la Expiación": { name: "Crónicas de la Expiación", path: "Crónicas de la Expiación/", type: "html" },
-            "El Aleph-J.L. Borges": { name: "El Aleph-J.L. Borges", path: "El Aleph-J.L. Borges/", type: "html" },
-            "El cuervo - Edgar Allan Poe": { name: "El cuervo - Edgar Allan Poe", path: "El cuervo - Edgar Allan Poe/", type: "html" },
-            "El Eternauta": { name: "El Eternauta", path: "El Eternauta/", type: "html", isImageBased: true },
-            "El horror segun Lovecraft - Vol-2": { name: "El horror segun Lovecraft - Vol-2", path: "El horror segun Lovecraft - Vol-2/", type: "html" },
-            "El horror segun Lovecraft -Vol-1": { name: "El horror segun Lovecraft -Vol-1", path: "El horror segun Lovecraft -Vol-1/", type: "html" },
-            "La rebelión de las masas": { name: "La rebelión de las masas", path: "La rebelión de las masas/", type: "html" },
-            "Ilusiones - Richard Bach": { name: "Ilusiones - Richard Bach", path: "Ilusiones - Richard Bach/", type: "html" },
-            "Saber no Percibido": { name: "Saber no Percibido", path: "Saber no Percibido/", type: "html" },
+            "1984-george-orwell": { name: "1984-george-orwell", path: "1984-george-orwell/", type: "html" },
+            "cronicas-de-la-expiacion": { name: "Crónicas de la Expiación", path: "cronicas-de-la-expiacion/", type: "html" },
+            "el-aleph-jl-borges": { name: "el-aleph-jl-borges", path: "el-aleph-jl-borges/", type: "html" },
+            "el-cuervo-edgar-allan-poe": { name: "el-cuervo-edgar-allan-poe", path: "el-cuervo-edgar-allan-poe/", type: "html" },
+            "el-eternauta": { name: "el-eternauta", path: "el-eternauta/", type: "html", isImageBased: true },
+            "el-horror-segun-lovecraft-vol-2": { name: "el-horror-segun-lovecraft-vol-2", path: "el-horror-segun-lovecraft-vol-2/", type: "html" },
+            "el-horror-segun-lovecraft-vol-1": { name: "el-horror-segun-lovecraft-vol-1", path: "el-horror-segun-lovecraft-vol-1/", type: "html" },
+            "La rebelión de las masas": { name: "La rebelión de las masas", path: "la-rebelion-de-las-masas/", type: "html" },
+            "ilusiones-richard-bach": { name: "ilusiones-richard-bach", path: "ilusiones-richard-bach/", type: "html" },
+            "saber-no-percibido": { name: "saber-no-percibido", path: "saber-no-percibido/", type: "html" },
             "Las Venas Abiertas de América Latina": { name: "Las Venas Abiertas de América Latina", path: "las_venas_abiertas_de_amxrica_latina/", type: "html" },
+            "Reconociéndonos-en-el-Universo": { name: "Reconociéndonos-en-el-Universo", path: "Reconociéndonos-en-el-Universo/", type: "html" },
         };
 
         // --- DOM ELEMENTS ---
@@ -157,12 +158,31 @@
 
         async function showCover(bookId) {
             const book = books[bookId];
-            const coverPath = `${book.path}images/cover.jpg`;
-            readerContent.innerHTML = `
-                <div class="cover-display">
-                    <img src="${coverPath}" alt="Portada de ${book.name}" onerror="this.style.display='none'">
-                    <button class="control-btn" onclick="startReading()">Iniciar Lectura</button>
-                </div>`;
+            readerContent.innerHTML = `<div class="empty-state"><h3>Cargando portada...</h3></div>`;
+            try {
+                const indexUrl = new URL(`${book.path}index.html`, window.location.href);
+                const response = await fetch(indexUrl);
+                if (!response.ok) throw new Error('No se pudo cargar el índice del libro.');
+
+                const indexHtml = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(indexHtml, "text/html");
+                const coverImg = doc.querySelector("img");
+
+                if (coverImg) {
+                    const coverSrc = coverImg.getAttribute('src');
+                    const coverPath = `/pages/libros/${book.path}${coverSrc}`;
+                    readerContent.innerHTML = `
+                        <div class="cover-display">
+                            <img src="${coverPath}" alt="Portada de ${book.name}">
+                            <button class="control-btn" onclick="startReading()">Iniciar Lectura</button>
+                        </div>`;
+                } else {
+                    startReading();
+                }
+            } catch (error) {
+                readerContent.innerHTML = `<div class="empty-state"><h3>Error al cargar la portada</h3><p>${error.message}</p><button class="control-btn" onclick="startReading()">Intentar leer de todas formas</button></div>`;
+            }
         }
 
         async function startReading() {
@@ -174,6 +194,8 @@
             toggleBookControls();
             await loadHtmlBook();
         }
+
+
 
         function toggleBookControls() {
             const book = books[currentBookId];
@@ -210,14 +232,15 @@
 
                 if (chapterLinks.length === 0) throw new Error("No se encontraron capítulos.");
 
-                const chaptersHtml = await Promise.all(chapterLinks.map(async file => {
+                const chaptersData = await Promise.all(chapterLinks.map(async file => {
                     try {
-                        const response = await fetch(new URL(book.path + file, window.location.href));
-                        return response.ok ? await response.text() : null;
+                        const chapterUrl = new URL(book.path + file, window.location.href);
+                        const response = await fetch(chapterUrl);
+                        return response.ok ? { html: await response.text(), url: chapterUrl.href } : null;
                     } catch { return null; }
                 }));
 
-                chapters = chaptersHtml.filter(html => html !== null);
+                chapters = chaptersData.filter(data => data !== null);
                 if (chapters.length === 0) throw new Error("No se pudieron cargar los capítulos.");
                 displayBook();
             } catch (error) {
@@ -227,12 +250,17 @@
 
         function displayBook() {
             readerContent.innerHTML = "";
-            chapters.forEach(chapterHtml => {
-                const doc = new DOMParser().parseFromString(chapterHtml, "text/html");
+            chapters.forEach(chapterData => {
+                const doc = new DOMParser().parseFromString(chapterData.html, "text/html");
                 doc.querySelectorAll("img").forEach(img => {
-                    const src = img.getAttribute("src");
+                    let src = img.getAttribute("src");
                     if (src && !src.startsWith('http')) {
-                        img.src = new URL(books[currentBookId].path + src.replace("./", ""), window.location.href).href;
+                        const bookPath = books[currentBookId].path;
+                        // Apply fix ONLY for el-eternauta
+                        if (currentBookId === 'el-eternauta' && src.startsWith('images/')) {
+                            src = src.substring('images/'.length);
+                        }
+                        img.src = `/pages/libros/${bookPath}images/${src}`;
                     }
                 });
                 const page = document.createElement("div");
