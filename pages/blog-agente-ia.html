@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>IA: El nuevo mapa cultural que transitamos | RESONANCIAS</title>
+        <meta
+            name="description"
+            content="La IA ha dejado de ser un tema de especialistas. Entender los distintos tipos de inteligencias artificiales, desde chatbots hasta generadores de imágenes, es clave en el nuevo mapa cultural que transitamos." />
+
+        <!-- URL Canónica -->
+        <link rel="canonical" href="https://gf-amd.pages.dev/pages/blog-agente-ia.html" />
+
+        <!-- SEO y Accesibilidad -->
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Gabriel Ferré" />
+        <meta
+            name="keywords"
+            content="IA, inteligencia artificial, agentes de IA, mapa cultural, tecnologia, Gabriel Ferré" />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="IA: El nuevo mapa cultural que transitamos | RESONANCIAS" />
+        <meta
+            property="og:description"
+            content="La IA ha dejado de ser un tema de especialistas. Entender los distintos tipos de inteligencias artificiales es clave en el nuevo mapa cultural que transitamos." />
+        <meta property="og:image" content="https://gf-amd.pages.dev/img/agentes-ia.jpg" />
+        <meta property="og:url" content="https://gf-amd.pages.dev/pages/blog-agente-ia.html" />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="RESONANCIAS" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="IA: El nuevo mapa cultural que transitamos | RESONANCIAS" />
+        <meta
+            name="twitter:description"
+            content="La IA ha dejado de ser un tema de especialistas. Entender los distintos tipos de inteligencias artificiales es clave en el nuevo mapa cultural que transitamos." />
+        <meta name="twitter:image" content="/img/agentes-ia.jpg" />
+
+        <!-- Favicon -->
+        <link rel="icon" href="/img/favicon.png" type="image/png" />
+
+        <!-- Estilos -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="/scr/styles/estilos.css" />
+
+        <!-- Scripts -->
+
+        <script src="/scr/js/main.js" defer></script>
+
+        <!-- Estilos responsivos para el layout del artículo -->
+        <style>
+            @media (max-width: 768px) {
+                .article-layout {
+                    flex-direction: column !important;
+                    gap: var(--spacing-lg) !important;
+                }
+                .image-card {
+                    position: relative !important;
+                    top: auto !important;
+                    width: 100% !important;
+                    min-width: auto !important;
+                    margin-bottom: var(--spacing-lg) !important;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Skip to main content -->
+        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="nav-container">
+                <a href="/" class="logo" aria-label="RESONANCIAS - Inicio">
+                    <img src="/img/logo.png" alt="Logo RESONANCIAS" width="40" height="40" />
+                </a>
+
+                <!-- Navegación principal -->
+                <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+                    <a href="/">Inicio</a>
+                    <a href="/pages/obras.html">Libros</a>
+                    <a href="/pages/blog.html">Blog</a>
+                    <a href="/pages/quien-soy.html">Quién soy</a>
+                    <a href="/pages/contacto.html">Contacto</a>
+                </nav>
+
+                <!-- Redes sociales y búsqueda -->
+                <div class="social-nav">
+                    <div class="search-container">
+                        <button id="searchToggle" class="search-toggle" aria-label="Buscar" aria-expanded="false">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    <div class="social-links">
+                        <a
+                            href="https://bsky.app/profile/gabrielferre.bsky.social"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Bluesky">
+                            <i class="fa-brands fa-bluesky"></i>
+                        </a>
+                        <a
+                            href="https://www.youtube.com/@Gabriel-Ferre-v3l"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Botón menú móvil -->
+                <button
+                    class="hamburger-btn"
+                    aria-label="Menú de navegación"
+                    aria-expanded="false"
+                    aria-controls="sideMenu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Menú lateral móvil -->
+        <aside class="side-menu" id="sideMenu" role="navigation" aria-label="Menú de navegación lateral">
+            <div class="menu-header">
+                <h2 class="menu-title">Navegación</h2>
+                <button class="close-btn" aria-label="Cerrar menú">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Menú tipo acordeón -->
+            <div class="accordion-menu">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/" class="accordion-link">
+                            <i class="fa-solid fa-house"></i>
+                            Inicio
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/obras.html" class="accordion-link">
+                            <i class="fa-solid fa-book"></i>
+                            Libros
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/blog.html" class="accordion-link">
+                            <i class="fa-solid fa-blog"></i>
+                            Blog
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/quien-soy.html" class="accordion-link">
+                            <i class="fa-solid fa-user"></i>
+                            Quién soy
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/contacto.html" class="accordion-link">
+                            <i class="fa-solid fa-envelope"></i>
+                            Contacto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Overlay para menú -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+        <section
+            class="works-hero"
+            style="
+                margin-top: 0 !important;
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                    url(&quot;/img/agentes-ia.jpg&quot;);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                color: var(--color-light);
+                padding: var(--spacing-3xl) 0;
+                text-align: center;
+                min-height: 400px;
+                display: flex;
+                align-items: center;
+            ">
+            <div class="container">
+                <h2
+                    style="
+                        font-size: var(--font-size-4xl);
+                        margin-bottom: var(--spacing-lg);
+                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                    ">
+                    Tecnologia
+                </h2>
+                <p
+                    style="
+                        font-size: var(--font-size-xl);
+                        max-width: 600px;
+                        margin: 0 auto;
+                        line-height: 1.6;
+                        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+                    ">
+                    Nuevo camino Cultural
+                </p>
+            </div>
+        </section>
+        <!-- Contenido principal -->
+        <main id="main-content" role="main">
+            <!-- Artículo principal -->
+            <div class="content-card">
+                <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+                    <div class="container" style="max-width: 800px; margin: 0 auto">
+                        <!-- Header del artículo -->
+                        <header class="post-header" style="text-align: center; margin-bottom: var(--spacing-2xl)">
+                            <h1
+                                style="
+                                    font-size: var(--font-size-3xl);
+                                    color: var(--color-dark);
+                                    margin-bottom: var(--spacing-lg);
+                                ">
+                                IA: El nuevo mapa cultural que transitamos
+                            </h1>
+                            <div
+                                class="post-meta"
+                                style="
+                                    display: flex;
+                                    justify-content: center;
+                                    gap: var(--spacing-lg);
+                                    color: var(--color-neutral);
+                                    font-size: var(--font-size-sm);
+                                    flex-wrap: wrap;
+                                ">
+                                <time datetime="2025-08">Agosto 2025</time>
+                                <span>· Gabriel Ferré</span>
+                                <span>· 3 min de lectura</span>
+                            </div>
+                        </header>
+
+                        <!-- Contenido del artículo -->
+                        <div
+                            class="article-layout"
+                            style="display: flex; gap: var(--spacing-xl); align-items: flex-start">
+                            <div class="article-content" style="flex: 1; line-height: 1.5; color: var(--color-dark)">
+                                <p
+                                    id="intro-paragraph"
+                                    style="
+                                        font-size: var(--font-size-lg);
+                                        margin-bottom: var(--spacing-2xl);
+                                        color: var(--color-warm);
+                                        font-style: italic;
+                                        position: relative;
+                                    "></p>
+
+                                <h2 class="title">El nuevo mapa cultural que transitamos</h2>
+                                <br />
+
+                                <p>
+                                    La temática de mis notas, como bien saben, suele girar en torno a lo social, lo
+                                    político y lo actual, siempre desde una mirada general. Busco aportar al
+                                    conocimiento común de manera sencilla, acercando temas que nos atraviesan en el
+                                    presente o que, quizás, puedan afectarnos como ciudadanos en un futuro cercano. En
+                                    esta ocasión me detengo en un asunto técnico que ha dejado de ser exclusivo de
+                                    especialistas: la inteligencia artificial.
+                                </p>
+                                <br />
+                                <p>
+                                    Hasta hace poco, hablar de Inteligencia Artificial sonaba a ciencia ficción. Era un
+                                    tema de ingenieros, laboratorios de Silicon Valley y películas futuristas. Hoy, en
+                                    cambio, basta abrir una página web para conversar con una máquina que redacta un
+                                    ensayo, dibuja un paisaje o imita una voz humana.
+                                </p>
+                                <br />
+                                <img
+                                    src="/img/ia-diferentes.jpg"
+                                    alt="Infografía sobre crónicas de literatura"
+                                    style="
+                                        width: 100%;
+                                        height: auto;
+                                        max-height: 600px;
+                                        object-fit: contain;
+                                        border-radius: 8px;
+                                        margin-bottom: var(--spacing-md);
+                                    " />
+                                <p>
+                                    El salto ha sido tan rápido que, para muchos, el terreno de la IA es todavía un
+                                    enigma: ¿Qué hay exactamente ahí afuera? ¿Son todas iguales? ¿Sirven para todo? La
+                                    respuesta corta es no. Y entenderlo no requiere ser programador: basta con saber que
+                                    existen
+                                    <strong
+                                        >distintos tipos de inteligencias artificiales, cada una con sus
+                                        especialidades</strong
+                                    >.
+                                </p>
+                                <br />
+                                <br />
+                                <h3 id="el-idioma-universal-de-los-chatbots">El idioma universal de los chatbots</h3>
+                                <br />
+                                <p>
+                                    El primer encuentro masivo con la IA llegó con los asistentes de texto. ChatGPT,
+                                    Claude, Gemini o Copilot se convirtieron en “secretarios virtuales” capaces de
+                                    redactar, resumir, corregir o explicar. En China, equivalentes como
+                                    <strong>Ernie Bot</strong> (Baidu) o <strong>Tongyi Qianwen</strong> (Alibaba)
+                                    compiten con fuerza, sobre todo en programación y generación de ideas técnicas.
+                                </p>
+                                <p>
+                                    Lo fascinante no es que escriban perfecto —porque a veces se equivocan—, sino la
+                                    naturalidad con la que conversan. Ya no se trata de máquinas rígidas, sino de un
+                                    diálogo casi humano, útil tanto para responder una duda escolar como para esbozar
+                                    una novela.
+                                </p>
+                                <br />
+                                <br />
+                                <h3 id="las-imágenes-que-nacen-de-palabras">Las imágenes que nacen de palabras</h3>
+                                <br />
+                                <p>
+                                    Otro terreno que explotó fue el de la imagen. Basta escribir “un dragón azul en un
+                                    bosque nevado” y en segundos aparece una ilustración detallada. MidJourney, DALL·E o
+                                    Stable Diffusion en Occidente, y plataformas chinas como <strong>SenseNova</strong>,
+                                    están transformando la forma de crear. No reemplazan al arte, pero ofrecen un atajo
+                                    para imaginar escenas, diseñar portadas o jugar con ideas visuales.
+                                </p>
+                                <br />
+                                <br />
+                                <h3 id="la-voz-que-suena-real">La voz que suena real</h3>
+                                <br />
+                                <p>
+                                    Si en el texto la IA nos habla con palabras, en el audio lo hace con voz.
+                                    Herramientas como ElevenLabs o Murf pueden leer un cuento en una voz que suena casi
+                                    humana. La barrera entre narrador y máquina se desdibuja: ya no hace falta un
+                                    estudio de grabación para tener un audiolibro.
+                                </p>
+                                <br />
+                                <br />
+                                <h3 id="el-desafío-del-video">El desafío del video</h3>
+                                <br />
+                                <p>
+                                    En el mundo audiovisual, el camino es más reciente pero igual de prometedor.
+                                    Programas como Runway o Pika Labs permiten generar escenas o clips a partir de
+                                    simples instrucciones. No reemplazan a un cineasta, pero pueden servir para armar un
+                                    tráiler casero o dar vida a una idea.
+                                </p>
+                                <br /><br />
+                                <h3 id="aprender-con-un-tutor-invisible">Aprender con un tutor invisible</h3>
+                                <br />
+                                <p>
+                                    Finalmente, están las IA educativas. Duolingo Max conversa en varios idiomas,
+                                    Khanmigo acompaña a estudiantes, y Perplexity organiza información como un asistente
+                                    de investigación. No tienen la voz autoritaria de un profesor, pero sí la paciencia
+                                    infinita de un guía digital que explica una y otra vez hasta que se entiende.
+                                </p>
+                                <br /><br />
+
+                                <h3 id="ia-vs.-agente-de-ia-en-qué-se-diferencian">
+                                    IA vs. Agente de IA: ¿en qué se diferencian?
+                                </h3>
+                                <br />
+                                <img
+                                    src="/img/agentes-ia.jpg"
+                                    alt="Infografía sobre crónicas de literatura"
+                                    style="
+                                        width: 100%;
+                                        height: auto;
+                                        max-height: 600px;
+                                        object-fit: contain;
+                                        border-radius: 8px;
+                                        margin-bottom: var(--spacing-md);
+                                    " />
+                                <br />
+                                <p>
+                                    Cuando escuchamos hablar de “IA” solemos imaginar una sola cosa: una máquina
+                                    inteligente que hace de todo. Pero en realidad conviene separar dos niveles:
+                                </p>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            <strong>La IA es como un motor.</strong> Es la capacidad pura: calcular,
+                                            aprender patrones, generar texto o imágenes. Un motor por sí mismo no lleva
+                                            a nadie a ninguna parte; solo gira.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <strong>El agente de IA es como el auto que usa ese motor.</strong> Toma esa
+                                            fuerza y la dirige hacia una tarea concreta: conversar contigo, buscar
+                                            datos, organizar tu agenda, redactar un correo. El agente es la aplicación
+                                            visible, la “cara” práctica de esa inteligencia.
+                                        </p>
+                                    </li>
+                                </ul>
+                                <p>
+                                    Dicho simple:<br />
+                                    👉 <strong>La IA es el cerebro.</strong><br />
+                                    👉 <strong>El agente es el personaje que pone ese cerebro en acción.</strong>
+                                </p>
+                                <p>
+                                    Por eso, cuando hablamos de ChatGPT, Gemini o Ernie Bot, en realidad no hablamos
+                                    solo de la IA en bruto, sino de agentes que se apoyan en esa tecnología para
+                                    acompañarnos en tareas específicas. Sin embargo existen algunas como
+                                    <strong>DeepSeek</strong> China, de código abierto, es decir cualquier programador
+                                    puede ver su programación y mejorarla, que logran hacer muchas cosas con excelentes
+                                    resultados en todas, programar, diseñar video, imagen texto.
+                                </p>
+                                <br /><br />
+                                <h3 id="un-mapa-en-expansión">Un mapa en expansión</h3>
+                                <br />
+                                <p>
+                                    Lo importante es comprender que la IA no es una sola entidad que lo sabe todo. Es
+                                    más bien un <strong>ecosistema diverso</strong>, con herramientas que sobresalen en
+                                    campos distintos:<br />
+                                    - unas hablan (texto),<br />
+                                    - otras dibujan (imágenes),<br />
+                                    - otras narran (voz),<br />
+                                    - algunas filman (video),<br />
+                                    - y otras enseñan (educación).
+                                </p>
+                                <p>
+                                    Algunas nacieron en Occidente, otras en China, y la carrera es global. Lo
+                                    interesante es que <strong>ya no son tecnologías reservadas a expertos</strong>:
+                                    cualquiera puede abrir una aplicación y probarlas.
+                                </p>
+                                <p>
+                                    La verdadera pregunta cultural no es solo qué pueden hacer estas inteligencias, sino
+                                    <strong>qué haremos nosotros con ellas</strong>: ¿serán un simple apoyo para tareas
+                                    cotidianas? ¿un motor creativo? o una voz más en la conversación de la humanidad.
+                                </p>
+                                <br />
+                                <br />
+                            </div>
+                        </div>
+                        <section
+                            class="blog-subscription"
+                            style="
+                                margin-top: var(--spacing-3xl);
+                                background: var(--color-mid);
+                                padding: var(--spacing-2xl);
+                                border-radius: 12px;
+                                text-align: center;
+                            ">
+                            <nav class="share-footer" aria-label="Compartir página">
+                                <a
+                                    href="https://www.facebook.com/sharer/sharer.php?u=https://gf-amd.pages.dev/pages/blog.-ia.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn facebook"
+                                    title="Compartir en Facebook"
+                                    aria-label="Compartir en Facebook">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                                <a
+                                    href="https://twitter.com/intent/tweet?url=https://gf-amd.pages.dev/pages/blog.-ia&text=Necesitamos%20Humanidad%20Antes%20que%20IA:%20Tecnología%20y%20Desigualdad%20|%20RESONANCIAS"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn twitter"
+                                    title="Compartir en X"
+                                    aria-label="Compartir en X">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+
+                                <a
+                                    href="https://api.whatsapp.com/send?text=Necesitamos%20Humanidad%20Antes%20que%20IA:%20Tecnología%20y%20Desigualdad%20|%20RESONANCIAS%20https://gf-amd.pages.dev/pages/blog.-ia.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn whatsapp"
+                                    title="Compartir en WhatsApp"
+                                    aria-label="Compartir en WhatsApp">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                                <a
+                                    href="https://bsky.app/intent/compose?text=Necesitamos%20Humanidad%20Antes%20que%20IA:%20Tecnología%20y%20Desigualdad%20|%20RESONANCIAS%20https://gf-amd.pages.dev/pages/blog.-ia.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn bluesky"
+                                    title="Compartir en Bluesky"
+                                    aria-label="Compartir en Bluesky">
+                                    <i class="fa-brands fa-bluesky"></i>
+                                </a>
+                            </nav>
+                            <h3
+                                style="
+                                    color: var(--color-dark);
+                                    margin-bottom: var(--spacing-md);
+                                    font-size: var(--font-size-2xl);
+                                ">
+                                Comparte en tus redes
+                            </h3>
+                            <h4>Suscribete</h4>
+
+                            <p
+                                style="
+                                    color: var(--color-warm);
+                                    margin-bottom: var(--spacing-xl);
+                                    max-width: 500px;
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                    line-height: 1.6;
+                                ">
+                                Recibe notificaciones cuando publique nuevos ensayos y reflexiones. Sin spam, solo
+                                contenido de calidad.
+                            </p>
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    gap: var(--spacing-md);
+                                    max-width: 400px;
+                                    margin: 0 auto;
+                                    flex-wrap: wrap;
+                                ">
+                                <a
+                                    href="/pages/contacto.html"
+                                    style="
+                                        background: var(--color-secondary);
+                                        color: var(--color-light);
+                                        border: none;
+                                        padding: var(--spacing-md) var(--spacing-xl);
+                                        border-radius: 8px;
+                                        font-weight: 600;
+                                        text-decoration: none;
+                                        cursor: pointer;
+                                        transition: all var(--transition-fast);
+                                        display: inline-flex;
+                                        align-items: center;
+                                        gap: var(--spacing-sm);
+                                    "
+                                    onmouseover="this.style.background='var(--color-warm)'; this.style.transform='translateY(-2px)'"
+                                    onmouseout="this.style.background='var(--color-secondary)'; this.style.transform='translateY(0)'">
+                                    <svg
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                    Contáctame
+                                </a>
+                            </div>
+                            <p
+                                style="
+                                    font-size: var(--font-size-sm);
+                                    color: var(--color-neutral);
+                                    margin-top: var(--spacing-md);
+                                ">
+                                * Puedes darte de baja en cualquier momento
+                            </p>
+                        </section>
+                        <!-- Footer del artículo -->
+
+                        <footer
+                            style="
+                                margin-top: var(--spacing-2xl);
+                                padding-top: var(--spacing-xl);
+                                border-top: 1px solid var(--color-mid);
+                            ">
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    flex-wrap: wrap;
+                                    gap: var(--spacing-md);
+                                ">
+                                <div>
+                                    <p style="color: var(--color-neutral); font-size: var(--font-size-sm); margin: 0">
+                                        Publicado el <time datetime="2025-09">Septiembre 2025</time>
+                                    </p>
+                                </div>
+                                <div style="display: flex; gap: var(--spacing-sm)">
+                                    <a
+                                        href="/pages/blog.html"
+                                        style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                                        ← Volver al blog
+                                    </a>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content">
+                <p>
+                    <a href="/" class="footer-logo-link">
+                        <img src="/img/logo2_footer.png" alt="Logo RESONANCIAS" width="90" height="40" />
+                    </a>
+                    © 2025 RESONANCIAS · Todos los derechos reservados
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
