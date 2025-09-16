@@ -448,7 +448,7 @@ button:hover {
   max-width: 350px;
   height: 100vh;
   background: var(--color-muted);
-  z-index: var(--z-modal);
+  z-index: var(--z-tooltip);
   transition: right var(--transition-normal);
   overflow-y: auto;
   box-shadow: var(--shadow-lg);
