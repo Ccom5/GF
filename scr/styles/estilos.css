@@ -1442,5 +1442,137 @@ main section:first-of-type {
             .book-selector { left: -100%; transition: left 0.3s ease; }
             .book-selector.mobile-visible { left: 0; }
             .controls-panel { right: -100%; transition: right 0.3s ease; }
-            .controls-panel.mobile-visible { right: 0; }
-        }
+                        .controls-panel.mobile-visible { right: 0; }
+                    }
+            
+            /* Nuevos estilos para la grilla de la página de obras */
+            .obras-grid-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+                padding: 1rem;
+            }
+            
+            .obras-grid-container .work-detail {
+                display: flex;
+                flex-direction: column;
+                background: var(--color-light);
+                padding: 1.5rem;
+                border-radius: 12px;
+                box-shadow: var(--shadow-md);
+                gap: 1rem;
+                /* Eliminar estilos en línea que sobreescriben esto */
+                grid-template-columns: 1fr !important;
+            }
+            
+            /* Añadir línea de separación a la derecha de las tarjetas impares */
+            .obras-grid-container .work-detail:nth-child(odd) {
+                border-right: 1px solid var(--color-mid);
+                padding-right: 2rem;
+            }
+            
+            .obras-grid-container .work-cover {
+                max-width: 220px; /* Tamaño reducido para la portada */
+                margin: 0 auto; /* Centrar la portada */
+                width: 100%;
+            }
+            
+            .obras-grid-container .work-cover img {
+                width: 100%;
+                border-radius: 8px;
+                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            }
+            
+            .obras-grid-container .work-info {
+                text-align: center; /* Centrar el texto de la tarjeta */
+            }
+            
+            .obras-grid-container .work-actions {
+                justify-content: center; /* Centrar los botones */
+            }
+            
+            
+            /* Media Query para hacer la grilla responsive */
+            @media (max-width: 992px) {
+                .obras-grid-container {
+                    grid-template-columns: 1fr; /* Una sola columna en pantallas más pequeñas */
+                    gap: 2.5rem;
+                }
+            
+                /* Eliminar la línea de separación en la vista de una columna */
+                .obras-grid-container .work-detail:nth-child(odd) {
+                    border-right: none;
+                    padding-right: 1.5rem;
+                }
+            }
+            .libros-grid-section {
+              text-align: center;
+              padding: var(--spacing-3xl) var(--spacing-lg);
+              background: var(--color-primary);
+            }
+            
+            .libros-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+              gap: var(--spacing-2xl);
+              max-width: 1100px;
+              margin: 0 auto;
+            }
+            
+            .libro {
+              position: relative;
+              overflow: hidden;
+              border-radius: 12px;
+              box-shadow: var(--shadow-md);
+              background: var(--color-light);
+              transition: transform 0.3s ease;
+            }
+            .libro:hover { transform: scale(1.02); }
+            
+            .libro img {
+              width: 100%;
+              height: 400px;
+              object-fit: cover;
+              display: block;
+              transition: transform 0.4s ease;
+            }
+            .libro:hover img { transform: scale(1.08); }
+            
+            .overlay {
+              position: absolute;
+              inset: 0;
+              background: rgba(25, 20, 10, 0.85);
+              color: #fff;
+              opacity: 0;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+              padding: 1rem;
+              transition: opacity 0.3s ease;
+            }
+            .libro:hover .overlay { opacity: 1; }
+            
+            .overlay h3 {
+              font-size: var(--font-size-xl);
+              margin-bottom: var(--spacing-sm);
+              color: var(--color-light);
+            }
+            .overlay p {
+              font-size: var(--font-size-sm);
+              max-width: 90%;
+              margin-bottom: var(--spacing-md);
+            }
+            
+            .btn {
+              background: var(--color-secondary);
+              color: var(--color-light);
+              padding: 0.5rem 1.2rem;
+              border-radius: 6px;
+              text-decoration: none;
+              font-weight: 600;
+              transition: background 0.3s ease;
+            }
+            .btn:hover { background: var(--color-warm); }
+            
