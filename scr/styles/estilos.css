@@ -1576,3 +1576,19 @@ main section:first-of-type {
             }
             .btn:hover { background: var(--color-warm); }
             
+/* Estilos para la tarjeta del nuevo libro */
+.new-book-card {
+    grid-template-columns: 240px 1fr; /* Doble del ancho de la imagen original (120px) */
+}
+
+.new-book-card .work-image-link,
+.new-book-card .work-image {
+    height: 100%; /* Ocupar toda la altura de la tarjeta */
+}
+
+.new-book-card .work-image-link img,
+.new-book-card .work-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
