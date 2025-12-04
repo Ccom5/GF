@@ -1524,14 +1524,14 @@ main section:first-of-type {
               overflow: hidden;
               border-radius: 12px;
               box-shadow: var(--shadow-md);
-              background: var(--color-light);
+              background: transparent;
               transition: transform 0.3s ease;
             }
             .libro:hover { transform: scale(1.02); }
             
             .libro img {
               width: 100%;
-              height: 400px;
+              height: auto;
               object-fit: cover;
               display: block;
               transition: transform 0.4s ease;
