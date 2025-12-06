@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Apatía Ciudadana en Argentina: ¿Por Qué No Hay Protestas? | RESONANCIAS</title>
+        <meta
+            name="description"
+            content="Análisis sobre la aparente apatía ciudadana en Argentina. Exploramos por qué una sociedad históricamente combativa parece menos movilizada ante crisis y recortes, examinando ciclos de protesta, costos económicos y la reconfiguración táctica del descontento." />
+
+        <!-- URL Canónica -->
+        <link rel="canonical" href="https://gf-amd.pages.dev/pages/blog-apatia.html" />
+
+        <!-- SEO y Accesibilidad -->
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Gabriel Ferré" />
+        <meta
+            name="keywords"
+            content="apatía ciudadana, protesta social, crisis Argentina, desmovilización, movimientos sociales, Gabriel Ferré, sociología" />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Apatía Ciudadana en Argentina: ¿Por Qué No Hay Protestas? | RESONANCIAS" />
+        <meta
+            property="og:description"
+            content="Análisis sobre la aparente apatía ciudadana en Argentina. Exploramos por qué una sociedad históricamente combativa parece menos movilizada ante crisis y recortes." />
+        <meta property="og:image" content="https://gf-amd.pages.dev/img/Apatia.jpg" />
+        <meta property="og:url" content="https://gf-amd.pages.dev/pages/blog-apatia.html" />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="RESONANCIAS" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Apatía Ciudadana en Argentina: ¿Por Qué No Hay Protestas? | RESONANCIAS" />
+        <meta
+            name="twitter:description"
+            content="Análisis sobre la aparente apatía ciudadana en Argentina. Exploramos por qué una sociedad históricamente combativa parece menos movilizada ante crisis y recortes." />
+        <meta name="twitter:image" content="https://gf-amd.pages.dev/img/Apatia.jpg" />
+
+        <!-- Favicon -->
+        <link rel="icon" href="/img/favicon.png" type="image/png" />
+
+        <!-- Estilos -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="/scr/styles/estilos.css" />
+
+        <!-- Scripts -->
+        
+        <script src="/scr/js/main.js" defer></script>
+
+        <!-- Estilos responsivos para el layout del artículo -->
+        <style>
+            @media (max-width: 768px) {
+                .article-layout {
+                    flex-direction: column !important;
+                    gap: var(--spacing-lg) !important;
+                }
+                .image-card {
+                    position: relative !important;
+                    top: auto !important;
+                    width: 100% !important;
+                    min-width: auto !important;
+                    margin-bottom: var(--spacing-lg) !important;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Skip to main content -->
+        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="nav-container">
+                <a href="/" class="logo" aria-label="RESONANCIAS - Inicio">
+                    <img src="/img/logo.png" alt="Logo RESONANCIAS" width="40" height="40" />
+                </a>
+
+                <!-- Navegación principal -->
+                <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+                    <a href="/">Inicio</a>
+                    <a href="/pages/obras.html">Libros</a>
+                    <a href="/pages/blog.html">Blog</a>
+                    <a href="/pages/quien-soy.html">Quién soy</a>
+                    <a href="/pages/contacto.html">Contacto</a>
+                </nav>
+
+                <!-- Redes sociales y búsqueda -->
+                <div class="social-nav">
+                    <div class="search-container">
+                        <button id="searchToggle" class="search-toggle" aria-label="Buscar" aria-expanded="false">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    <div class="social-links">
+                        <a
+                            href="https://bsky.app/profile/gabrielferre.bsky.social"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Bluesky">
+                            <i class="fa-brands fa-bluesky"></i>
+                        </a>
+                        <a
+                            href="https://www.youtube.com/@Gabriel-Ferre-v3l"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Botón menú móvil -->
+                <button
+                    class="hamburger-btn"
+                    aria-label="Menú de navegación"
+                    aria-expanded="false"
+                    aria-controls="sideMenu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Menú lateral móvil -->
+        <aside class="side-menu" id="sideMenu" role="navigation" aria-label="Menú de navegación lateral">
+            <div class="menu-header">
+                <h2 class="menu-title">Navegación</h2>
+                <button class="close-btn" aria-label="Cerrar menú">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Menú tipo acordeón -->
+            <div class="accordion-menu">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/" class="accordion-link">
+                            <i class="fa-solid fa-house"></i>
+                            Inicio
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/obras.html" class="accordion-link">
+                            <i class="fa-solid fa-book"></i>
+                            Libros
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/blog.html" class="accordion-link">
+                            <i class="fa-solid fa-blog"></i>
+                            Blog
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/quien-soy.html" class="accordion-link">
+                            <i class="fa-solid fa-user"></i>
+                            Quién soy
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/contacto.html" class="accordion-link">
+                            <i class="fa-solid fa-envelope"></i>
+                            Contacto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Overlay para menú -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+        <section
+            class="works-hero"
+            style="
+                margin-top: 0 !important;
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                    url(&quot;/img/Apatia.jpg&quot;);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                color: var(--color-light);
+                padding: var(--spacing-3xl) 0;
+                text-align: center;
+                min-height: 400px;
+                display: flex;
+                align-items: center;
+            ">
+            <div class="container">
+                <h2
+                    style="
+                        font-size: var(--font-size-4xl);
+                        margin-bottom: var(--spacing-lg);
+                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                    ">
+                    La Sociedad
+                </h2>
+                <p
+                    style="
+                        font-size: var(--font-size-xl);
+                        max-width: 600px;
+                        margin: 0 auto;
+                        line-height: 1.6;
+                        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+                    ">
+                    Sus ciclos
+                </p>
+            </div>
+        </section>
+        <!-- Contenido principal -->
+        <main id="main-content" role="main">
+            <!-- Artículo principal -->
+            <div class="content-card">
+                <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+                    <div class="container" style="max-width: 800px; margin: 0 auto">
+                        <!-- Header del artículo -->
+                        <header class="post-header" style="text-align: center; margin-bottom: var(--spacing-2xl)">
+                            <h1
+                                style="
+                                    font-size: var(--font-size-3xl);
+                                    color: var(--color-dark);
+                                    margin-bottom: var(--spacing-lg);
+                                ">
+                                ¿Una sociedad combativa puede volverse silenciosa?
+                            </h1>
+                            <div
+                                class="post-meta"
+                                style="
+                                    display: flex;
+                                    justify-content: center;
+                                    gap: var(--spacing-lg);
+                                    color: var(--color-neutral);
+                                    font-size: var(--font-size-sm);
+                                    flex-wrap: wrap;
+                                ">
+                                <time datetime="2025-12-06">sábado, 6 de diciembre de 2025</time>
+                                <span>· Gabriel Ferré</span>
+                                <span>· 5 min de lectura</span>
+                            </div>
+                        </header>
+
+                        <div
+                            class="article-layout"
+                            style="display: flex; gap: var(--spacing-xl); align-items: flex-start">
+                            <div class="article-content" style="flex: 1; line-height: 1.5; color: var(--color-dark)">
+                                
+                                <h2>La aparente apatía ciudadana en Argentina</h2>
+                                 <br />
+
+<p>Durante décadas, Argentina ha sido reconocida como una sociedad de alta intensidad cívica: protestas masivas, huelgas, movilizaciones multisectoriales y una tradición de resistencia frente a abusos de poder, corrupción o pérdida de derechos. Sin embargo, en los últimos años, ante recortes profundos, crisis económica, pérdida de ingresos y medidas oficiales que limitan la protesta, una pregunta inquietante comenzó a instalarse: <strong>¿por qué una ciudadanía históricamente combativa parece menos movilizada justo cuando más se vulneran sus condiciones de vida?</strong></p>
+<p>Lejos de ser un fenómeno exclusivamente argentino, la desmovilización temporal de sociedades que suelen protestar es un patrón reconocido por la investigación en ciencias sociales. Y, como veremos, su lógica responde más a ciclos, contextos y costos que a un súbito desinterés político.</p>
+ <br />
+                                 <br />
+                                <h2>La desmovilización no es apatía: es parte del ciclo de la protesta</h2>
+ <br />
+                                <p>Los estudios sobre movimientos sociales muestran que la movilización funciona como una ola: crece, impacta y luego se retrae antes de reorganizarse. Esta fase de “bajada” puede confundirse con despolitización, pero no necesariamente implica apatía.<br>Investigaciones comparativas encuentran que estos ciclos se explican por <strong>agotamiento</strong>, <strong>cambios en el entorno político</strong>, <strong>reconfiguración táctica</strong> o <strong>cooptación</strong>. Es decir, la ciudadanía no deja de tener demandas: cambia <em>cómo</em> y <em>cuándo</em> las expresa.</p>
+ <br />
+        <br />
+                                <img
+                                    src="../img/Apatia.jpg"
+                                    alt="Ilustración de una persona sentada en un sillón, indiferente al caos que la rodea, como símbolo de la apatía."
+                                    style="
+                                        width: 100%;
+                                        height: auto;
+                                        max-height: 600px;
+                                        object-fit: contain;
+                                        border-radius: 8px;
+                                        margin-bottom: var(--spacing-md);
+                                    " />
+                                <h2>Cuando el Estado cierra canales y aumenta los costos, la calle se vacía</h2>
+ <br />
+                                <p>Un factor clave para entender el caso argentino es el <strong>cierre de oportunidades políticas</strong>. Cuando nuevas normas, protocolos o discursos oficiales elevan los riesgos de protestar —ya sea por detenciones, multas o criminalización— los ciudadanos reevaluan el costo de salir a la calle.</p>
+<p>En términos simples: si protestar puede terminar en represión o sanciones, muchos se retraen. La literatura lo deja claro: la represión puede tener efectos mixtos, pero en la mayoría de los casos <strong>reduce la protesta masiva y sostenida</strong>, especialmente cuando se combina con crisis económica.</p>
+ <br />
+                                 <br />
+                                <h2>Crisis económica: protestar cuesta más cuando llega el ajuste</h2>
+
+                                 <br />
+                                <p>A diferencia de momentos anteriores de efervescencia social, hoy un componente central explica la reducción de la protesta visible: <strong>el costo material de movilizarse</strong>.<br>Inflación, caída salarial, aumento del desempleo y pérdida de ingresos hacen que faltar al trabajo, pagar transporte o perder un día de changas se convierta en un lujo. </p>
+<p>Es un patrón que también se observa comparativamente: en contextos de ajuste fuerte, las personas protestan menos no porque estén de acuerdo con las medidas, sino porque <strong>no pueden asumir el costo inmediato de movilizarse</strong>.</p>
+<p>La pandemia, además, reconfiguró hábitos, miedos y formas de organización. En 2020, estudios locales mostraron un desplome de protestas presenciales, aunque las demandas persistieron por otros canales menos visibles.</p>
+ <br />
+                                 <br />
+                                <h2>La protesta no desaparece: cambia de formato</h2>
+ <br />
+                                <p>Una de las conclusiones más importantes de la teoría social contemporánea es que la protesta no siempre se expresa en marchas multitudinarias.<br>Cuando la calle se vuelve riesgosa, aparecen <strong>repertorios alternativos</strong>:</p>
+<ul>
+<li>litigio estratégico,  </li>
+<li>campañas digitales,  </li>
+<li>protestas localizadas o sectoriales,  </li>
+<li>denuncias ante organismos de derechos humanos,  </li>
+<li>acciones sindicales selectivas,  </li>
+<li>boicots y acciones descentralizadas.</li>
+</ul>
+<p>Esto significa que lo que en la superficie parece apatía puede ser, en realidad, una <strong>transformación del conflicto</strong>, no su ausencia.</p>
+ <br />
+                                 <br />
+                                <img
+                                    src="../img/info-apatia.jpg"
+                                    alt="Infografía que ilustra las diferentes causas de la desmovilización social, como el agotamiento, la represión y la crisis económica."
+                                    style="
+                                        width: 100%;
+                                        height: auto;
+                                        max-height: 600px;
+                                        object-fit: contain;
+                                        border-radius: 8px;
+                                        margin-bottom: var(--spacing-md);
+                                    " />
+                              <br />  
+                                <h2>Comparación internacional: Argentina, Chile y España</h2>
+ <br />
+                                <p>Para comprender mejor lo que sucede en Argentina, vale observar otros casos donde sociedades altamente movilizadas atravesaron períodos de silencio aparente.</p>
+ <br />
+                                <h3>Chile: del estallido social a la institucionalización</h3>
+<p>El estallido chileno de 2019 fue uno de los movimientos ciudadanos más potentes de América Latina en lo que va del siglo. Sin embargo, tras lograr la apertura del proceso constituyente, la protesta callejera se redujo notablemente.<br>¿Desinterés? ¿Apatía? Nada de eso.</p>
+<p>Se produjo un <strong>traslado de la movilización hacia canales institucionales</strong>: debates constitucionales, campañas, votaciones y participación en instancias deliberativas. La energía social no desapareció: cambió de terreno.</p>
+ <br />
+                                <h3>España: del 15-M a la política partidaria</h3>
+<p>El movimiento de los Indignados en 2011 generó imágenes icónicas de plazas repletas y asambleas permanentes. Pero pocos años después, esas movilizaciones masivas ya no estaban en las calles.<br>Lo que ocurrió fue una <strong>electoralización del malestar</strong>: surgieron nuevos partidos, nuevas alternativas políticas y mecanismos institucionales para absorber las demandas.</p>
+<p>La protesta callejera se redujo porque <strong>la política partidaria canalizó parte de esa energía</strong>, no porque la sociedad se volviera indiferente.</p>
+ <br />
+                                <h3>Argentina: costo económico + restricción estatal + cambio táctico</h3>
+<p>En Argentina, el cuadro combina varios factores simultáneos:</p>
+<ol>
+<li><strong>Crisis económica severa</strong> que reduce la capacidad material de protestar.  </li>
+<li><strong>Normativas y señales de criminalización</strong> que elevan el riesgo de movilizarse.  </li>
+<li><strong>Cambio en repertorios</strong>: sindicatos más selectivos, litigio, campañas digitales, protestas sectoriales.  </li>
+<li><strong>Fatiga social acumulada</strong> tras años de crisis, pandemia y desencanto con la política.</li>
+</ol>
+<p>El resultado: <strong>una sociedad que sigue teniendo conflictos intensos, pero que hoy los expresa con menor visibilidad pública</strong>.</p>
+ <br />
+                                 <br />
+                                <h2>¿Qué significa realmente esta “apatía”?</h2>
+ <br />
+                                <p>La aparente quietud que muchos perciben no debe confundirse con conformismo.<br>Los datos, estudios comparativos y análisis locales muestran que la sociedad argentina <strong>no perdió su tradición combativa</strong>, sino que enfrenta un momento donde protestar se ha vuelto:</p>
+<ul>
+<li>más caro,  </li>
+<li>más riesgoso,  </li>
+<li>más fragmentado,  </li>
+<li>y más difícil de sostener en el tiempo.</li>
+</ul>
+<p>La pregunta no es si la ciudadanía dejó de resistir, sino <strong>por qué hoy lo hace de formas menos visibles y qué condiciones deberían darse para que la protesta vuelva a emerger como fuerza social organizada</strong>.</p>
+<p>En otras palabras: debajo del silencio aparente, <strong>la conflictividad sigue ahí —latente, reconfigurándose, esperando condiciones menos adversas para volver a expresarse</strong>.</p>
+<hr>
+ <br />
+                                 <br />
+                                <h2>Bibliografía consultada</h2>
+ <br />
+                                <ol>
+<li><p><strong>“The Demobilization of Protest Campaigns” (revisión)</strong> — explica factores múltiples de demobilización y cómo analizarlos. Útil para enmarcar el argumento teórico. <a href="https://scholarworks.indianapolis.iu.edu/server/api/core/bitstreams/710676c7-92e0-4670-8845-a8cde97f3f4a/content?utm_source=chatgpt.com">IU Indianapolis ScholarWorks</a></p>
+</li>
+<li><p><strong>McAdam, Tarrow &amp; Tilly — <em>Dynamics of Contention</em></strong> — marco teórico clásico para ciclos de protestas, repertorios y oportunidades políticas (citar como fundamento teórico). <a href="https://www.cambridge.org/core/books/dynamics-of-contention/300EBD3513759BAA89184D45EF3F824A?utm_source=chatgpt.com">Cambridge University Press &amp; Assessment</a></p>
+</li>
+<li><p><strong>Zeller (QCA) — Patterns of Demobilization</strong> — ejemplo metodológico que muestra configuraciones causales que llevan a demobilización en campañas grandes. Buen respaldo empírico-metodológico. <a href="https://michaelzeller.de/research/articles/zeller2021_moby_qca/zeller2021_moby_qca.pdf?utm_source=chatgpt.com">Dr. Michael C. Zeller</a></p>
+</li>
+<li><p><strong>Earl et al., “The digital repression of social movements…” (2022)</strong> — revisión sobre cómo los estados usan herramientas digitales para inhibir la protesta. Ideal para el bloque sobre represión moderna. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10953837/?utm_source=chatgpt.com">PMC</a></p>
+</li>
+<li><p><strong>FLACSO — Observatorio: “La conflictividad social en Argentina durante 2020”</strong> — informe con datos empíricos sobre la caída de protestas presenciales en la pandemia. Útil para evidencia local. <a href="https://www.flacso.org.ar/wp-content/uploads/2021/06/Informe-20-Observartorio-OPPRE-Conflictividad-social-de-Argentina-en-el-ano-2020_Mayo-2021.pdf?utm_source=chatgpt.com">FLACSO</a></p>
+</li>
+<li><p><strong>Gradín et al., “Demandas, protestas y pandemia en la Argentina”</strong> — análisis académico complementario con casos y patrones locales. <a href="https://revistaeypp.flacso.org.ar/files/revistas/1653102603_209-232.pdf?utm_source=chatgpt.com">Revista Estado y Políticas Públicas</a></p>
+</li>
+<li><p><strong>Latinobarómetro Informe 2024</strong> — indicadores de confianza en instituciones y actitudes cívicas en la región; sirve para contextualizar cambios de confianza y participación. <a href="https://www.inep.org/images/2024/TXT/Latinobarometro-Informe_2024.pdf?utm_source=chatgpt.com">inep.org</a></p>
+</li>
+<li><p><strong>Informes/medios sobre criminalización y protocolos de protesta (HRW; IACHR; Reuters; cobertura reciente)</strong> — referencias para documentar medidas que limitan protestas en Argentina (casos 2024–2025). <a href="https://buenosairesherald.com/human-rights/human-rights-watchdogs-condemn-bullrichs-anti-protest-protocol?utm_source=chatgpt.com">Buenos Aires Herald+2Reuters+2</a></p>
+</li>
+</ol>
+                                 <br />
+                                 <br />
+
+                                
+                            </div>
+                        </div>
+                        <section
+                            class="blog-subscription"
+                            style="
+                                margin-top: var(--spacing-3xl);
+                                background: var(--color-mid);
+                                padding: var(--spacing-2xl);
+                                border-radius: 12px;
+                                text-align: center;
+                            ">
+                            <nav class="share-footer" aria-label="Compartir página">
+                                <a
+                                    href="https://www.facebook.com/sharer/sharer.php?u=https://gf-amd.pages.dev/pages/blog-apatia.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn facebook"
+                                    title="Compartir en Facebook"
+                                    aria-label="Compartir en Facebook">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                                <a
+                                    href="https://twitter.com/intent/tweet?url=https://gf-amd.pages.dev/pages/blog-apatia.html&text=Apatía%20Ciudadana%20en%20Argentina:%20¿Por%20Qué%20No%20Hay%20Protestas?%20|%20RESONANCIAS"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn twitter"
+                                    title="Compartir en X"
+                                    aria-label="Compartir en X">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+
+                                <a
+                                    href="https://api.whatsapp.com/send?text=Apatía%20Ciudadana%20en%20Argentina:%20¿Por%20Qué%20No%20Hay%20Protestas?%20|%20RESONANCIAS%20https://gf-amd.pages.dev/pages/blog-apatia.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn whatsapp"
+                                    title="Compartir en WhatsApp"
+                                    aria-label="Compartir en WhatsApp">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                                <a
+                                    href="https://bsky.app/intent/compose?text=Apatía%20Ciudadana%20en%20Argentina:%20¿Por%20Qué%20No%20Hay%20Protestas?%20|%20RESONANCIAS%20https://gf-amd.pages.dev/pages/blog-apatia.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn bluesky"
+                                    title="Compartir en Bluesky"
+                                    aria-label="Compartir en Bluesky">
+                                    <i class="fa-brands fa-bluesky"></i>
+                                </a>
+                            </nav>
+                            <h3
+                                style="
+                                    color: var(--color-dark);
+                                    margin-bottom: var(--spacing-md);
+                                    font-size: var(--font-size-2xl);
+                                ">
+                                Comparte en tus redes
+                            </h3>
+                            <h4>Suscribete</h4>
+
+                            <p
+                                style="
+                                    color: var(--color-warm);
+                                    margin-bottom: var(--spacing-xl);
+                                    max-width: 500px;
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                    line-height: 1.6;
+                                ">
+                                Recibe notificaciones cuando publique nuevos ensayos y reflexiones. Sin spam, solo
+                                contenido de calidad.
+                            </p>
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    gap: var(--spacing-md);
+                                    max-width: 400px;
+                                    margin: 0 auto;
+                                    flex-wrap: wrap;
+                                ">
+                                <a
+                                    href="/pages/contacto.html"
+                                    style="
+                                        background: var(--color-secondary);
+                                        color: var(--color-light);
+                                        border: none;
+                                        padding: var(--spacing-md) var(--spacing-xl);
+                                        border-radius: 8px;
+                                        font-weight: 600;
+                                        text-decoration: none;
+                                        cursor: pointer;
+                                        transition: all var(--transition-fast);
+                                        display: inline-flex;
+                                        align-items: center;
+                                        gap: var(--spacing-sm);
+                                    "
+                                    onmouseover="this.style.background='var(--color-warm)'; this.style.transform='translateY(-2px)'"
+                                    onmouseout="this.style.background='var(--color-secondary)'; this.style.transform='translateY(0)'">
+                                    <svg
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                    Contáctame
+                                </a>
+                            </div>
+                            <p
+                                style="
+                                    font-size: var(--font-size-sm);
+                                    color: var(--color-neutral);
+                                    margin-top: var(--spacing-md);
+                                ">
+                                * Puedes darte de baja en cualquier momento
+                            </p>
+                        </section>
+                        <!-- Footer del artículo -->
+
+                        <footer
+                            style="
+                                margin-top: var(--spacing-2xl);
+                                padding-top: var(--spacing-xl);
+                                border-top: 1px solid var(--color-mid);
+                            ">
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    flex-wrap: wrap;
+                                    gap: var(--spacing-md);
+                                ">
+                                <div>
+                                    <p style="color: var(--color-neutral); font-size: var(--font-size-sm); margin: 0">
+                                        Publicado el <time datetime="2025-12-06">sábado, 6 de diciembre de 2025</time>
+                                    </p>
+                                </div>
+                                <div style="display: flex; gap: var(--spacing-sm)">
+                                    <a
+                                        href="/pages/blog.html"
+                                        style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                                        ← Volver al blog
+                                    </a>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content">
+                <p>
+                    <a href="/" class="footer-logo-link">
+                        <img src="/img/logo2_footer.png" alt="Logo RESONANCIAS" width="90" height="40" />
+                    </a>
+                    © 2025 RESONANCIAS · Todos los derechos reservados
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
