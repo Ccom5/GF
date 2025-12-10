@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Percibir lo Social: Cambios y límites en la elección colectiva | RESONANCIAS</title>
+        <meta
+            name="description"
+            content="Un análisis sobre los cambios de paradigmas, las regularidades sociales y los marcos invisibles que definen lo que una sociedad considera pensable, aceptable y posible." />
+
+        <!-- URL Canónica -->
+        <link rel="canonical" href="https://gf-amd.pages.dev/pages/blog-sociales.html" />
+
+        <!-- SEO y Accesibilidad -->
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Gabriel Ferré" />
+        <meta
+            name="keywords"
+            content="cambio social, paradigmas, opinión pública, psicología social, sociología, elección colectiva, Gabriel Ferré" />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Percibir lo Social: Cambios y límites en la elección colectiva | RESONANCIAS" />
+        <meta
+            property="og:description"
+            content="Un análisis sobre los cambios de paradigmas, las regularidades sociales y los marcos invisibles que definen lo que una sociedad considera pensable, aceptable y posible." />
+        <meta property="og:image" content="https://gf-amd.pages.dev/img/bandera.jpg" />
+        <meta property="og:url" content="https://gf-amd.pages.dev/pages/blog-sociales.html" />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="RESONANCIAS" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Percibir lo Social: Cambios y límites en la elección colectiva | RESONANCIAS" />
+        <meta
+            name="twitter:description"
+            content="Un análisis sobre los cambios de paradigmas, las regularidades sociales y los marcos invisibles que definen lo que una sociedad considera pensable, aceptable y posible." />
+        <meta name="twitter:image" content="https://gf-amd.pages.dev/img/bandera.jpg" />
+
+        <!-- Favicon -->
+        <link rel="icon" href="/img/favicon.png" type="image/png" />
+
+        <!-- Estilos -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="/scr/styles/estilos.css" />
+
+        <!-- Scripts -->
+        
+        <script src="/scr/js/main.js" defer></script>
+
+        <!-- Estilos responsivos para el layout del artículo -->
+        <style>
+            @media (max-width: 768px) {
+                .article-layout {
+                    flex-direction: column !important;
+                    gap: var(--spacing-lg) !important;
+                }
+                .image-card {
+                    position: relative !important;
+                    top: auto !important;
+                    width: 100% !important;
+                    min-width: auto !important;
+                    margin-bottom: var(--spacing-lg) !important;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Skip to main content -->
+        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="nav-container">
+                <a href="/" class="logo" aria-label="RESONANCIAS - Inicio">
+                    <img src="/img/logo.png" alt="Logo RESONANCIAS" width="40" height="40" />
+                </a>
+
+                <!-- Navegación principal -->
+                <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+                    <a href="/">Inicio</a>
+                    <a href="/pages/obras.html">Libros</a>
+                    <a href="/pages/blog.html">Blog</a>
+                    <a href="/pages/quien-soy.html">Quién soy</a>
+                    <a href="/pages/contacto.html">Contacto</a>
+                </nav>
+
+                <!-- Redes sociales y búsqueda -->
+                <div class="social-nav">
+                    <div class="search-container">
+                        <button id="searchToggle" class="search-toggle" aria-label="Buscar" aria-expanded="false">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    <div class="social-links">
+                        <a
+                            href="https://bsky.app/profile/gabrielferre.bsky.social"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Bluesky">
+                            <i class="fa-brands fa-bluesky"></i>
+                        </a>
+                        <a
+                            href="https://www.youtube.com/@Gabriel-Ferre-v3l"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Botón menú móvil -->
+                <button
+                    class="hamburger-btn"
+                    aria-label="Menú de navegación"
+                    aria-expanded="false"
+                    aria-controls="sideMenu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Menú lateral móvil -->
+        <aside class="side-menu" id="sideMenu" role="navigation" aria-label="Menú de navegación lateral">
+            <div class="menu-header">
+                <h2 class="menu-title">Navegación</h2>
+                <button class="close-btn" aria-label="Cerrar menú">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Menú tipo acordeón -->
+            <div class="accordion-menu">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/" class="accordion-link">
+                            <i class="fa-solid fa-house"></i>
+                            Inicio
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/obras.html" class="accordion-link">
+                            <i class="fa-solid fa-book"></i>
+                            Libros
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/blog.html" class="accordion-link">
+                            <i class="fa-solid fa-blog"></i>
+                            Blog
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/quien-soy.html" class="accordion-link">
+                            <i class="fa-solid fa-user"></i>
+                            Quién soy
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/contacto.html" class="accordion-link">
+                            <i class="fa-solid fa-envelope"></i>
+                            Contacto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Overlay para menú -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+        <section
+            class="works-hero"
+            style="
+                margin-top: 0 !important;
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                    url(&quot;/img/bandera.jpg&quot;);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                color: var(--color-light);
+                padding: var(--spacing-3xl) 0;
+                text-align: center;
+                min-height: 400px;
+                display: flex;
+                align-items: center;
+            ">
+            <div class="container">
+                <h2
+                    style="
+                        font-size: var(--font-size-4xl);
+                        margin-bottom: var(--spacing-lg);
+                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                    ">
+                    Percibir lo Social
+                </h2>
+                <p
+                    style="
+                        font-size: var(--font-size-xl);
+                        max-width: 600px;
+                        margin: 0 auto;
+                        line-height: 1.6;
+                        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+                    ">
+                    Sobre los cambio y los límites invisibles de la elección colectiva
+                </p>
+            </div>
+        </section>
+        <!-- Contenido principal -->
+        <main id="main-content" role="main">
+            <!-- Artículo principal -->
+            <div class="content-card">
+                <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+                    <div class="container" style="max-width: 800px; margin: 0 auto">
+                        <!-- Header del artículo -->
+                        <header class="post-header" style="text-align: center; margin-bottom: var(--spacing-2xl)">
+                            <h1
+                                style="
+                                    font-size: var(--font-size-3xl);
+                                    color: var(--color-dark);
+                                    margin-bottom: var(--spacing-lg);
+                                ">
+                                Lo pensable, lo aceptable y lo posible
+                            </h1>
+                            <div
+                                class="post-meta"
+                                style="
+                                    display: flex;
+                                    justify-content: center;
+                                    gap: var(--spacing-lg);
+                                    color: var(--color-neutral);
+                                    font-size: var(--font-size-sm);
+                                    flex-wrap: wrap;
+                                ">
+                                <time datetime="2025-12-10">miércoles, 10 de diciembre de 2025</time>
+                                <span>· Gabriel Ferré</span>
+                                <span>· 3 min de lectura</span>
+                            </div>
+                        </header>
+
+                        <div
+                            class="article-layout"
+                            style="display: flex; gap: var(--spacing-xl); align-items: flex-start">
+                            <div class="article-content" style="flex: 1; line-height: 1.5; color: var(--color-dark)">
+                                <p
+                                    id="intro-paragraph"
+                                    style="
+                                        font-size: var(--font-size-lg);
+                                        margin-bottom: var(--spacing-2xl);
+                                        color: var(--color-warm);
+                                        font-style: italic;
+                                        position: relative;
+                                    ">
+
+                                    <h1>Los cambios de paradigmas </h1>
+<br>
+   <br>                             
+<h2>Introducción</h2>
+    <br>                            
+<h3>Cuando lo social no responde a leyes rígidas</h3>
+                             <br>   
+<p>A diferencia de las ciencias naturales, el campo social no se rige por leyes universales, rígidas y replicables en condiciones controladas. No existen ecuaciones que permitan predecir con certeza el comportamiento de una sociedad ni principios inmutables que, una vez demostrados, permanezcan válidos hasta su refutación empírica.</p>
+<br><p>Lo social es un terreno de <strong>probabilidades</strong>, <strong>tendencias</strong>, <strong>regularidades estadísticas</strong> y <strong>patrones observados</strong> que se repiten con variaciones según el contexto histórico, cultural y material. La sociología, la psicología social y la ciencia política no producen certezas absolutas, sino <strong>marcos de comprensión</strong>.</p>
+<p>Este punto es crucial. Muchas decepciones colectivas nacen de aplicar a la sociedad expectativas propias de sistemas técnicos: coherencia, linealidad, previsibilidad. Cuando esas expectativas fracasan, el resultado no suele ser mayor comprensión, sino <strong>cinismo</strong>, <strong>resentimiento</strong> o <strong>desprecio por la propia sociedad</strong>.</p>
+<p>Este ensayo parte de una premisa distinta: entender lo social como un proceso complejo, sensible a umbrales, climas emocionales y marcos simbólicos. No busca ofrecer soluciones rápidas ni fórmulas cerradas, sino <strong>ordenar la percepción del problema</strong>, ampliando lo pensable, lo aceptable y, con el tiempo, lo posible.</p>
+<br><br>
+<h2>Marco de referencia</h2><br>
+<h3>Regularidades sociales (sin leyes rígidas)</h3><br>
+<p>Aunque las ciencias sociales no formulen leyes universales como las ciencias físicas, sí han identificado <strong>patrones estadísticos recurrentes</strong> en el comportamiento colectivo. No determinan el futuro, pero <strong>delimitan los márgenes dentro de los cuales suelen moverse las sociedades</strong>.</p>
+<p><strong>Distribución general de preferencias</strong></p>
+<p>En contextos sociales diversos, las preferencias masivas tienden a organizarse de forma relativamente estable:</p>
+<br><ul>
+<li><p><strong>20–25%</strong>: núcleo duro<br>  Posturas firmes, ideológicas, poco permeables al contexto.</p>
+</li>
+<li><p><strong>50–60%</strong>: zona central o ambivalente<br>  Sensible a la experiencia cotidiana, al clima social y a la percepción de riesgo.</p>
+</li>
+<li><p><strong>20–25%</strong>: polo opuesto<br>  También estable, con baja tendencia al desplazamiento sostenido.</p>
+</li>
+</ul><br>
+<p>Este patrón aparece de forma consistente en:</p>
+<br><ul>
+<li><p>ideología política</p>
+</li>
+<li><p>gustos culturales</p>
+</li>
+<li><p>actitudes morales</p>
+</li>
+<li><p>consumos simbólicos</p>
+</li>
+</ul><br>
+<p>Incluso en escenarios de crisis o cambios bruscos, los extremos rara vez superan ciertos umbrales estructurales durante períodos prolongados. Lo que suele desplazarse es <strong>la franja central</strong>.</p>
+<p><strong>La constante del statu quo</strong></p>
+<p>Otro rasgo ampliamente observado es la preferencia por la continuidad:</p>
+<br><ul>
+<li>entre <strong>60% y 75% de las personas</strong> prefieren mantener el estado actual frente a una alternativa percibida como incierta.</li>
+</ul><br>
+<p>Este sesgo no implica conformismo, sino una lógica humana básica:<br>el costo psicológico del cambio suele percibirse como mayor que el del malestar conocido.</p>
+<p><strong>Por qué importa</strong></p>
+<p>Estas regularidades ayudan a entender por qué:</p>
+<br><ul>
+<li><p>convencer a mayorías es poco frecuente</p>
+</li>
+<li><p>los cambios bruscos generan resistencia</p>
+</li>
+<li><p>la continuidad pesa más que la intensidad</p>
+</li>
+<li><p>pequeñas minorías persistentes pueden alterar el marco social</p>
+</li>
+</ul><br>
+<p>Pensar el cambio sin tener en cuenta estos límites estructurales suele conducir a frustración; incorporarlos permite imaginar transformaciones más realistas y duraderas.</p>
+<br><br>
+<h2>Marco conceptual general</h2><br>
+<h3>Pensar antes de actuar</h3><br>
+<p>Las sociedades no cambian solo porque “deciden cambiar”. Cambian cuando se modifica el <strong>marco invisible</strong> dentro del cual las decisiones individuales cobran sentido. Ese marco está compuesto por:</p>
+<br><ul>
+<li><p>percepciones compartidas</p>
+</li>
+<li><p>límites simbólicos</p>
+</li>
+<li><p>narrativas dominantes</p>
+</li>
+<li><p>expectativas sobre el futuro</p>
+</li>
+<li><p>experiencias acumuladas</p>
+</li>
+</ul><br>
+<p>Cuando ese marco se deteriora, las decisiones colectivas tienden a ser defensivas, punitivas o regresivas, incluso si sus consecuencias son negativas. No porque la sociedad sea irracional, sino porque <strong>elige dentro de un horizonte estrechado</strong>.</p>
+<p>Desde este punto de vista, el problema central no es “qué elige la sociedad”, sino <strong>qué siente que puede elegir</strong>.</p>
+<br><br>
+     <img
+                                    src="../img/Blog-sociales.jpg"
+                                    alt="Ilustración de una persona sentada en un sillón, indiferente al caos que la rodea, como símbolo de la apatía."
+                                    style="
+                                        width: 100%;
+                                        height: auto;
+                                        max-height: 600px;
+                                        object-fit: contain;
+                                        border-radius: 8px;
+                                        margin-bottom: var(--spacing-md);
+                                    " />                           
+<h2>1. Convencer no es transformar</h2><br>
+<p>Uno de los errores más persistentes en el análisis social es confundir persuasión con transformación. Convencer supone un esquema simple: alguien posee una verdad, la comunica de manera eficaz, y el otro la adopta. Este modelo puede funcionar en contextos técnicos, educativos o individuales relativamente estables.</p>
+<p>Pero en los grandes procesos sociales rara vez es así.</p>
+<p>La evidencia muestra que las personas no abandonan una forma de pensar simplemente porque otra sea mejor argumentada. Abandonan una forma de pensar cuando <strong>deja de cumplir una función emocional, identitaria o práctica</strong>.</p>
+<p>La transformación social no ocurre cuando alguien demuestra que una idea es falsa, sino cuando esa idea:</p>
+<br><ul>
+<li><p>deja de explicar la experiencia cotidiana</p>
+</li>
+<li><p>deja de ofrecer protección simbólica</p>
+</li>
+<li><p>deja de dar sentido al malestar</p>
+</li>
+</ul><br>
+<p>Por eso, muchos cambios profundos no comienzan con convencimientos explícitos, sino con <strong>dudas silenciosas</strong>. Antes de cambiar de posición, las personas suelen dejar de defender la anterior. Ese desplazamiento previo, invisible, es donde ocurre el verdadero movimiento.</p>
+<p>Transformar no es ganar un debate: es <strong>redefinir el entorno en el que las decisiones se vuelven necesarias</strong>.</p>
+<br><br>
+<h2>2. Los cambios sociales no son lineales</h2><br>
+<p>Otro error frecuente es esperar que los procesos sociales avancen de forma progresiva, acumulativa y coherente. Esta expectativa choca una y otra vez con la realidad.</p>
+<p>Los cambios sociales:</p><br>
+<ul>
+<li><p>avanzan y retroceden</p>
+</li>
+<li><p>conviven con contradicciones</p>
+</li>
+<li><p>generan reacciones regresivas</p>
+</li>
+<li><p>producen aparentes “retrocesos”</p>
+</li>
+</ul>
+<p>Esto no implica fracaso, sino dinámica.</p><br>
+<p>Una persona puede sostener durante años ideas incompatibles entre sí. Puede adoptar prácticas nuevas mientras conserva discursos antiguos. Puede rechazar públicamente un cambio mientras lo incorpora en privado. Nada de esto es anomalía: es el modo normal en que las sociedades procesan transformaciones profundas.</p>
+<p>Exigir coherencia total es exigir algo que lo humano no puede ofrecer. El cambio social no es una marcha recta; es una <strong>deriva con resistencias</strong>.</p>
+<br><br>
+<h2>3. La continuidad como activo político y cultural</h2><br>
+<p>En contextos de alta frustración social, suele privilegiarse la intensidad: el gesto fuerte, el discurso contundente, la ruptura. Sin embargo, la historia muestra que los cambios duraderos se apoyan mas en la  la <strong>continuidad</strong> que en la intensidad-
+La continuidad genera:</p><br>
+<ul>
+<li><p>familiaridad</p>
+</li>
+<li><p>previsibilidad</p>
+</li>
+<li><p>confianza</p>
+</li>
+<li><p>estabilidad emocional</p>
+    <br>
+</ul>
+<p>Una presencia constante, no agresiva y no moralizante, es percibida como menos amenazante. No obliga a elegir inmediatamente, y por eso mismo permite que el cambio ocurra sin humillación ni ruptura personal.</p>
+<p>La continuidad no seduce; <strong>acompaña</strong>. No empuja; <strong>permanece</strong>. Y en sociedades cansadas, donde  la lucha fue extensa entre polaridades diferentes, eso puede ser más transformador que cualquier épica.</p>
+<br>
+                                <br>
+                                
+<h2>4. Refuerzo social: cuando la sociedad se educa a sí misma</h2>
+              <br>                  
+<p>La educación no se limita a instituciones formales. Las sociedades se educan a sí mismas de manera permanente a través de:</p>
+<br><ul>
+<li><p>lo que se premia</p>
+</li>
+<li><p>lo que se tolera</p>
+</li>
+<li><p>lo que se ridiculiza</p>
+</li>
+<li><p>lo que se naturaliza</p>
+</li>
+</ul><br>
+<p>Toda transformación necesita refuerzo. Sin refuerzo social, los cambios simbólicos se diluyen. Este refuerzo puede darse en distintos niveles:</p>
+<br><ul>
+<li><p><strong>Educación básica</strong>, formando percepción del vínculo social</p>
+</li>
+<li><p><strong>Educación superior</strong>, promoviendo pensamiento crítico no dogmático partidario</p>
+</li>
+<li><p><strong>Cultura cotidiana</strong>, en el lenguaje, los ejemplos y las prácticas</p>
+</li>
+</ul><br>
+<p>Cuando el entorno refuerza una nueva forma de ver el mundo, el cambio deja de sentirse como esfuerzo individual y empieza a percibirse como normalidad emergente.</p>
+<br>
+ <br>                               
+<h2>5. El rol de la minoría persistente</h2><br>
+<p>Las investigaciones muestran que no es necesaria una mayoría para redefinir el marco social. Una minoría coherente, persistente y visible —alrededor del 10 al 15%— puede alcanzar un umbral a partir del cual altera la percepción general.</p>
+<p>Su función no es liderar ni imponer, sino:</p><br>
+<ul>
+<li><p>sostener una referencia</p>
+</li>
+<li><p>romper la ilusión de unanimidad</p>
+</li>
+<li><p>volver visible una alternativa</p><br>
+</li>
+</ul>
+<p>Ese grupo no transforma por presión, sino por <strong>existencia continuada</strong>. Al hacerlo, habilita que otros reconsideren en silencio. El cambio no comienza cuando se suma mucha gente, sino cuando deja de parecer imposible sumarse.</p>
+<br>
+                                <br>
+<h2>6. El error del atajo: “ganar rápido” suele salir mal</h2>
+   <br>                             
+<p>La tentación del atajo es permanente: acelerar tiempos, forzar definiciones, polarizar para movilizar. A corto plazo, estas estrategias pueden mostrar resultados. A largo plazo, suelen generar desgaste, rechazo y fragmentación.</p>
+<p>“Ganar rápido” muchas veces implica:</p>
+                               <br> 
+<ul>
+<li><p>aumentar el nivel de confrontación</p>
+</li>
+<li><p>reducir la complejidad</p>
+</li>
+<li><p>reforzar identidades cerradas</p><br>
+</li>
+</ul>
+<p>Esto puede producir adhesión inmediata, pero dificulta la transformación profunda. El poder puede cambiar rápido; la sociedad no. Forzar ese desfasaje suele terminar en frustración o regresión.</p>
+<br>
+                               <br> 
+<h2>7. Cierre: pensar la sociedad antes que ganar</h2><br>
+<p>Pensar la sociedad antes que ganar no es una postura ingenua ni pasiva. Es una posición estratégica basada en la evidencia histórica: los cambios duraderos no nacen de victorias súbitas, sino de <strong>desplazamientos lentos del sentido común</strong>.</p>
+<p>No se trata de convencer a todos, ni de corregir a la sociedad, ni de demostrar superioridad moral. Se trata de <strong>ensanchar el marco</strong> dentro del cual las personas pueden pensarse a sí mismas y al conjunto.</p>
+<p>Las sociedades no cambian cuando se las empuja, sino cuando se las habilita. No cuando se las enfrenta, sino cuando descubren que pueden elegir distinto sin sentirse solas, culpables o humilladas.</p>
+<p>En tiempos de cinismo colectivo, esta no es una vía rápida.<br>Pero es, históricamente, la única que no se agota.</p>
+<br><br>
+                                <hr><br>
+<h2>Recomendadas / Bibliografía para profundizar</h2><br>
+<ul>
+<li><p><strong>La opinión pública no existe</strong> (Pierre Bourdieu). — Ensayo clásico que cuestiona las nociones simplistas de “opinión pública” y analiza cómo funcionan realmente los procesos de formación de gustos, cultura y preferencias en sociedad. <a href="https://www.flacso.org.ar/formacion-academica/tecnicas-estadisticas-y-de-big-data-aplicadas-al-estudio-de-la-opinion-publica-y-comportamiento-electoral/cursada/?utm_source=chatgpt.com">flacso.org.ar+1</a></p>
+</li>
+<li><p><strong>La distinción. Criterio y bases sociales del gusto</strong> (Pierre Bourdieu). — Un referente para entender cómo las preferencias culturales y simbólicas se estructuran socialmente: por capital cultural, clase, educación, y cómo eso define lo que una sociedad considera “normal”, “legítimo” o “valioso”. <a href="https://es.wikipedia.org/wiki/La_distinci%C3%B3n?utm_source=chatgpt.com">Wikipedia</a></p>
+</li>
+<li><p><strong>LA OPINIÓN PÚBLICA, FENÓMENO SOCIAL</strong> — Un artículo en español que analiza la estructura de la opinión pública, su medición a través de encuestas, y la distribución de adhesiones/opiniones en forma de curvas estadísticas (distribución de frecuencias, polarización, etc.). Disponible en pdf. <a href="https://dialnet.unirioja.es/descarga/articulo/2050005.pdf?utm_source=chatgpt.com">Dialnet</a></p>
+</li>
+<li><p><strong>Sondeos de Opinión Pública y Estudios Electoralizantes: Límites y posibilidades</strong> — Trabajo en español que revisa críticamente la metodología de encuestas, su potencial y sus limitaciones, muy útil para entender por qué los resultados cuantitativos deben leerse con cautela. <a href="https://revistas.unlp.edu.ar/dcs/article/download/11289/10316/36990?utm_source=chatgpt.com">Revistas UNLP+1</a></p>
+</li>
+<li><p><strong>Evolution of the political opinion landscape during electoral periods</strong> — Estudio reciente (2021) sobre cómo cambia la opinión política durante períodos electorales, usando datos de redes sociales; útil para entender la dinámica social y la distribución de opiniones en sociedades contemporáneas. <a href="https://epjdatascience.springeropen.com/articles/10.1140/epjds/s13688-021-00285-8?utm_source=chatgpt.com">SpringerLink</a></p>
+</li>
+<li><p><strong>Dynamics of opinion polarization in a population</strong> (2024) — Investigación reciente, con modelo formal, sobre cómo la polarización de la opinión puede persistir o retroceder según ciertos umbrales sociales y contacto entre grupos. Aporta datos y modelos útiles para pensar la estabilidad o cambio social. <a href="https://www.sciencedirect.com/science/article/pii/S0165489624000180?utm_source=chatgpt.com">ScienceDirect</a></p>
+<br><br><br></li>
+</ul>
+
+                                
+                            </div>
+                        </div>
+                        <section
+                            class="blog-subscription"
+                            style="
+                                margin-top: var(--spacing-3xl);
+                                background: var(--color-mid);
+                                padding: var(--spacing-2xl);
+                                border-radius: 12px;
+                                text-align: center;
+                            ">
+                            <nav class="share-footer" aria-label="Compartir página">
+                                <a
+                                    href="https://www.facebook.com/sharer/sharer.php?u=https://gf-amd.pages.dev/pages/blog-sociales.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn facebook"
+                                    title="Compartir en Facebook"
+                                    aria-label="Compartir en Facebook">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                                <a
+                                    href="https://twitter.com/intent/tweet?url=https://gf-amd.pages.dev/pages/blog-sociales.html&text=Percibir%20lo%20Social:%20Cambios%20y%20límites%20en%20la%20elección%20colectiva%20|%20RESONANCIAS"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn twitter"
+                                    title="Compartir en X"
+                                    aria-label="Compartir en X">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+
+                                <a
+                                    href="https://api.whatsapp.com/send?text=Percibir%20lo%20Social:%20Cambios%20y%20límites%20en%20la%20elección%20colectiva%20|%20RESONANCIAS%20https://gf-amd.pages.dev/pages/blog-sociales.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn whatsapp"
+                                    title="Compartir en WhatsApp"
+                                    aria-label="Compartir en WhatsApp">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                                <a
+                                    href="https://bsky.app/intent/compose?text=Percibir%20lo%20Social:%20Cambios%20y%20límites%20en%20la%20elección%20colectiva%20|%20RESONANCIAS%20https://gf-amd.pages.dev/pages/blog-sociales.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn bluesky"
+                                    title="Compartir en Bluesky"
+                                    aria-label="Compartir en Bluesky">
+                                    <i class="fa-brands fa-bluesky"></i>
+                                </a>
+                            </nav>
+                            <h3
+                                style="
+                                    color: var(--color-dark);
+                                    margin-bottom: var(--spacing-md);
+                                    font-size: var(--font-size-2xl);
+                                ">
+                                Comparte en tus redes
+                            </h3>
+                            <h4>Suscribete</h4>
+
+                            <p
+                                style="
+                                    color: var(--color-warm);
+                                    margin-bottom: var(--spacing-xl);
+                                    max-width: 500px;
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                    line-height: 1.6;
+                                ">
+                                Recibe notificaciones cuando publique nuevos ensayos y reflexiones. Sin spam, solo
+                                contenido de calidad.
+                            </p>
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    gap: var(--spacing-md);
+                                    max-width: 400px;
+                                    margin: 0 auto;
+                                    flex-wrap: wrap;
+                                ">
+                                <a
+                                    href="/pages/contacto.html"
+                                    style="
+                                        background: var(--color-secondary);
+                                        color: var(--color-light);
+                                        border: none;
+                                        padding: var(--spacing-md) var(--spacing-xl);
+                                        border-radius: 8px;
+                                        font-weight: 600;
+                                        text-decoration: none;
+                                        cursor: pointer;
+                                        transition: all var(--transition-fast);
+                                        display: inline-flex;
+                                        align-items: center;
+                                        gap: var(--spacing-sm);
+                                    "
+                                    onmouseover="this.style.background='var(--color-warm)'; this.style.transform='translateY(-2px)'"
+                                    onmouseout="this.style.background='var(--color-secondary)'; this.style.transform='translateY(0)'">
+                                    <svg
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                    Contáctame
+                                </a>
+                            </div>
+                            <p
+                                style="
+                                    font-size: var(--font-size-sm);
+                                    color: var(--color-neutral);
+                                    margin-top: var(--spacing-md);
+                                ">
+                                * Puedes darte de baja en cualquier momento
+                            </p>
+                        </section>
+                        <!-- Footer del artículo -->
+
+                        <footer
+                            style="
+                                margin-top: var(--spacing-2xl);
+                                padding-top: var(--spacing-xl);
+                                border-top: 1px solid var(--color-mid);
+                            ">
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    flex-wrap: wrap;
+                                    gap: var(--spacing-md);
+                                ">
+                                <div>
+                                    <p style="color: var(--color-neutral); font-size: var(--font-size-sm); margin: 0">
+                                        Publicado el <time datetime="2025-12-10">miércoles, 10 de diciembre de 2025</time>
+                                    </p>
+                                </div>
+                                <div style="display: flex; gap: var(--spacing-sm)">
+                                    <a
+                                        href="/pages/blog.html"
+                                        style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                                        ← Volver al blog
+                                    </a>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content">
+                <p>
+                    <a href="/" class="footer-logo-link">
+                        <img src="/img/logo2_footer.png" alt="Logo RESONANCIAS" width="90" height="40" />
+                    </a>
+                    © 2025 RESONANCIAS · Todos los derechos reservados
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
