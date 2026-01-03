@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Del orden estructural al dinámico - Cambio de Paradigma | RESONANCIAS</title>
+        <meta name="description" content="Análisis sobre el agotamiento de las formas clásicas de organización social y el cambio de paradigma de un orden estructural a un orden dinámico." />
+
+        <!-- URL Canónica -->
+        <link rel="canonical" href="https://gf-amd.pages.dev/pages/blog-estructural.html" />
+
+        <!-- SEO y Accesibilidad -->
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Gabriel Ferré" />
+        <meta name="keywords" content="orden estructural, orden dinámico, cambio de paradigma, organización social, gobernanza, ensayos, Gabriel Ferré" />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Del orden estructural al dinámico - Cambio de Paradigma | RESONANCIAS" />
+        <meta property="og:description" content="Análisis sobre el agotamiento de las formas clásicas de organización social y el cambio de paradigma de un orden estructural a un orden dinámico." />
+        <meta property="og:image" content="https://gf-amd.pages.dev/img/cambio-paradisgma.jpg" />
+        <meta property="og:url" content="https://gf-amd.pages.dev/pages/blog-estructural.html" />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="RESONANCIAS" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Del orden estructural al dinámico - Cambio de Paradigma | RESONANCIAS" />
+        <meta name="twitter:description" content="Análisis sobre el agotamiento de las formas clásicas de organización social y el cambio de paradigma de un orden estructural a un orden dinámico." />
+        <meta name="twitter:image" content="https://gf-amd.pages.dev/img/cambio-paradisgma.jpg" />
+
+        <!-- Favicon -->
+        <link rel="icon" href="/img/favicon.png" type="image/png" />
+
+        <!-- Estilos -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="/scr/styles/estilos.css" />
+
+        <!-- Scripts -->
+
+        <script src="/scr/js/main.js" defer></script>
+
+        <!-- Estilos responsivos para el layout del artículo -->
+        <style>
+            @media (max-width: 768px) {
+                .article-layout {
+                    flex-direction: column !important;
+                    gap: var(--spacing-lg) !important;
+                }
+                .image-card {
+                    position: relative !important;
+                    top: auto !important;
+                    width: 100% !important;
+                    min-width: auto !important;
+                    margin-bottom: var(--spacing-lg) !important;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Skip to main content -->
+        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="nav-container">
+                <a href="/" class="logo" aria-label="RESONANCIAS - Inicio">
+                    <img src="/img/logo.png" alt="Logo RESONANCIAS" width="40" height="40" />
+                </a>
+
+                <!-- Navegación principal -->
+                <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+                    <a href="/">Inicio</a>
+                    <a href="/pages/obras.html">Libros</a>
+                    <a href="/pages/blog-2026.html">Blog</a>
+                    <a href="/pages/quien-soy.html">Quién soy</a>
+                    <a href="/pages/contacto.html">Contacto</a>
+                </nav>
+
+                <!-- Redes sociales y búsqueda -->
+                <div class="social-nav">
+                    <div class="search-container">
+                        <button id="searchToggle" class="search-toggle" aria-label="Buscar" aria-expanded="false">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    <div class="social-links">
+                        <a
+                            href="https://bsky.app/profile/gabrielferre.bsky.social"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Bluesky">
+                            <i class="fa-brands fa-bluesky"></i>
+                        </a>
+                        <a
+                            href="https://www.youtube.com/@Gabriel-Ferre-v3l"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Botón menú móvil -->
+                <button
+                    class="hamburger-btn"
+                    aria-label="Menú de navegación"
+                    aria-expanded="false"
+                    aria-controls="sideMenu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Menú lateral móvil -->
+        <aside class="side-menu" id="sideMenu" role="navigation" aria-label="Menú de navegación lateral">
+            <div class="menu-header">
+                <h2 class="menu-title">Navegación</h2>
+                <button class="close-btn" aria-label="Cerrar menú">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Menú tipo acordeón -->
+            <div class="accordion-menu">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/" class="accordion-link">
+                            <i class="fa-solid fa-house"></i>
+                            Inicio
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/obras.html" class="accordion-link">
+                            <i class="fa-solid fa-book"></i>
+                            Libros
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/blog-2026.html" class="accordion-link">
+                            <i class="fa-solid fa-blog"></i>
+                            Blog
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/quien-soy.html" class="accordion-link">
+                            <i class="fa-solid fa-user"></i>
+                            Quién soy
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/contacto.html" class="accordion-link">
+                            <i class="fa-solid fa-envelope"></i>
+                            Contacto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Overlay para menú -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+        <section
+            class="works-hero"
+            style="
+                margin-top: 0 !important;
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                    url(&quot;/img/cambio-paradisgma.jpg&quot;);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                color: var(--color-light);
+                padding: var(--spacing-3xl) 0;
+                text-align: center;
+                min-height: 400px;
+                display: flex;
+                align-items: center;
+            ">
+            <div class="container">
+                <h2
+                    style="
+                        font-size: var(--font-size-4xl);
+                        margin-bottom: var(--spacing-lg);
+                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                    ">
+                    Orden Dinámico
+                </h2>
+            </div>
+        </section>
+        <!-- Contenido principal -->
+        <main id="main-content" role="main">
+            <!-- Artículo principal -->
+            <div class="content-card">
+                <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+                    <div class="container" style="max-width: 800px; margin: 0 auto">
+                        <!-- Header del artículo -->
+                        <header class="post-header" style="text-align: center; margin-bottom: var(--spacing-2xl)">
+                            <h1
+                                style="
+                                    font-size: var(--font-size-3xl);
+                                    color: var(--color-dark);
+                                    margin-bottom: var(--spacing-lg);
+                                ">
+                                Cambio de Paradigma
+                            </h1>
+                            <div
+                                class="post-meta"
+                                style="
+                                    display: flex;
+                                    justify-content: center;
+                                    gap: var(--spacing-lg);
+                                    color: var(--color-neutral);
+                                    font-size: var(--font-size-sm);
+                                    flex-wrap: wrap;
+                                ">
+                                <time datetime="2026-01">Enero 2026</time>
+                                <span>· Gabriel Ferré</span>
+                                <span>· 3 min de lectura</span>
+                            </div>
+                        </header>
+
+                        <div
+                            class="article-layout"
+                            style="display: flex; gap: var(--spacing-xl); align-items: flex-start">
+                            <div class="article-content" style="flex: 1; line-height: 1.5; color: var(--color-dark)">
+                                <p
+                                    id="intro-paragraph"
+                                    style="
+                                        font-size: var(--font-size-lg);
+                                        margin-bottom: var(--spacing-2xl);
+                                        color: var(--color-warm);
+                                        font-style: italic;
+                                        position: relative;
+                                    "></p>
+
+                                <h1>1 - Del orden estructural al orden dinámico</h1>
+                                <br />
+                                <h3>¿Por qué las formas clásicas de organización social están fallando hoy?</h3>
+                                <br />
+                                <p>Notas para pensar el agotamiento de las formas clásicas de organización social</p>
+                                <p>
+                                    La humanidad no se organizó siempre de la misma manera, pero sí compartió durante
+                                    siglos una misma intuición: que el orden social necesitaba
+                                    <strong>estructuras estables</strong> para sostenerse. Familia, Estado, ley,
+                                    sistemas políticos y formas de gobierno surgieron como respuestas eficaces a un
+                                    mundo donde el cambio era lento, la información escasa y las identidades
+                                    relativamente previsibles.
+                                </p>
+                                <br />
+                                <p>
+                                    Estas estructuras no fueron arbitrarias. Funcionaron. Y funcionaron bien durante
+                                    largos períodos históricos. Precisamente por eso se consolidaron, se legitimaron y
+                                    se naturalizaron hasta volverse casi invisibles: no parecían una opción entre otras,
+                                    sino la forma misma del orden.
+                                </p>
+                                <p>
+                                    Sin embargo, toda estructura está inscrita en un contexto. Cuando el contexto
+                                    cambia, la estructura no necesariamente colapsa de inmediato, pero comienza a
+                                    <strong>desfasarse</strong>.
+                                </p>
+                                <br /><br />
+                                <h3>El supuesto silencioso de las estructuras clásicas</h3>
+                                <p>
+                                    <br />
+                                    Las grandes formas organizativas modernas descansan sobre algunos supuestos
+                                    implícitos:
+                                </p>
+                                <ul>
+                                    <li><p>que el mundo cambia lentamente</p></li>
+                                    <li><p>que las personas ocupan roles relativamente estables</p></li>
+                                    <li><p>que el consenso puede construirse una vez y mantenerse en el tiempo</p></li>
+                                    <li><p>que la autoridad necesita continuidad para ser efectiva</p></li>
+                                </ul>
+                                <p>Estos supuestos dejaron de ser evidentes.</p>
+                                <p>
+                                    El presente se caracteriza por una aceleración constante, una sobreabundancia de
+                                    información, identidades múltiples y cambiantes, y una capacidad técnica inédita
+                                    para reorganizar vínculos en tiempo real. No se trata simplemente de “crisis
+                                    institucional” o de “fallas de gestión”, sino de una
+                                    <strong>disonancia estructural</strong> entre formas heredadas y condiciones
+                                    actuales.
+                                </p>
+                                <br />
+                                <br />
+                                <h3>Dos modos de orden social</h3>
+                                <p>
+                                    <br />
+                                    Puede pensarse esta tensión como la coexistencia —cada vez más conflictiva— de dos
+                                    lógicas de organización.
+                                </p>
+                                <p>
+                                    <strong>El orden estructural</strong>, propio de la modernidad, se basa en reglas
+                                    estables, jerarquías claras, roles definidos y una legitimidad que se apoya en la
+                                    continuidad histórica. Es un orden que privilegia la estabilidad, incluso al costo
+                                    de la adaptación.
+                                </p>
+                                <p>
+                                    <strong>El orden dinámico</strong>, en cambio, no elimina la organización, pero la
+                                    concibe de otro modo: reglas mínimas, roles temporales, autoridad contextual y
+                                    legitimidad funcional. No se pregunta tanto qué es cada cosa, sino
+                                    <strong>si está funcionando ahora</strong>.
+                                </p>
+                                <p>
+                                    La diferencia no es moral ni ideológica, sino <strong>operativa y temporal</strong>.
+                                </p>
+                                <br /><br />
+                                <h3>Cuando las estructuras dejan de responder</h3>
+                                <p>
+                                    <br />
+                                    Las formas clásicas no fallan por haber sido incorrectas, sino por haber sido
+                                    <strong>exitosas en un contexto que ya no existe</strong>.
+                                </p>
+                                <p>
+                                    La velocidad del cambio supera su capacidad de reforma.<br />La información excede
+                                    sus mecanismos de procesamiento.<br />Las identidades reales desbordan las
+                                    categorías normativas.<br />Las excepciones se acumulan hasta volver inoperable la
+                                    regla.
+                                </p>
+                                <p>
+                                    En lugar de transformarse desde su lógica interna, las estructuras suelen responder
+                                    agregando capas: más normas, más procedimientos, más burocracia. El resultado no es
+                                    mayor control, sino <strong>fragilidad</strong>.
+                                </p>
+                                <br /><br />
+                                <h3>Familia, democracia, Estado: no desaparición, sino mutación</h3>
+                                <p>
+                                    <br />
+                                    La familia no desaparece, pero el modelo único pierde sentido. El cuidado, el
+                                    vínculo y la transmisión persisten; lo que se erosiona es el molde rígido que
+                                    pretendía contener todas las formas posibles de vida afectiva.
+                                </p>
+                                <p>
+                                    La democracia no fracasa como ideal, pero se vuelve insuficiente como mecanismo
+                                    único de decisión colectiva. Diseñada para contextos de baja participación y
+                                    deliberación lenta, hoy enfrenta demandas permanentes sin canales adecuados para
+                                    procesarlas.
+                                </p>
+                                <p>
+                                    El Estado sigue siendo necesario, pero se muestra demasiado lento para problemas
+                                    inmediatos y demasiado homogéneo para realidades locales diversas.
+                                </p>
+                                <p>En todos los casos, la función sobrevive; la forma se agota.</p>
+                                <br /><br />
+                                <h3>¿Es posible organizarse sin estructuras?</h3>
+                                <br />
+                                <p>No.<br />Toda organización humana necesita algún grado de estructura.</p>
+                                <p>
+                                    Pero esto no implica estructuras fijas, sacralizadas o eternas. Lo que comienza a
+                                    emerger —de manera todavía inestable y experimental— es una lógica distinta:
+                                    <strong>estructuras mínimas, provisorias y reconfigurables</strong>.
+                                </p>
+                                <p>
+                                    No cargos permanentes, sino funciones temporales.<br />No autoridad acumulada, sino
+                                    autoridad contextual.<br />No legitimidad histórica, sino legitimidad por desempeño.
+                                </p>
+                                <p>
+                                    La organización deja de definirse por lo que es y pasa a definirse por
+                                    <strong>lo que logra hacer</strong>.
+                                </p>
+                                <br /><br />
+                                <h3>Un desplazamiento de fondo</h3>
+                                <p>
+                                    <br />
+                                    Quizás el cambio de paradigma más profundo no sea institucional, sino conceptual.
+                                    Durante siglos confundimos estabilidad con solidez, y solidez con permanencia. Hoy
+                                    comenzamos a intuir que
+                                    <strong>lo verdaderamente sólido es lo que puede adaptarse</strong>.
+                                </p>
+                                <br />
+                                <p>
+                                    El problema contemporáneo no es la pérdida del orden, sino el apego a formas de
+                                    orden que ya no responden a las condiciones que las hicieron posibles.
+                                </p>
+                                <br />
+                                <p>
+                                    Las estructuras clásicas no deben ser destruidas ni idealizadas. Deben ser
+                                    <strong>desacralizadas</strong>. Reconocidas como soluciones históricas eficaces,
+                                    pero no eternas.
+                                </p>
+                                <br />
+                                <p>
+                                    Persistir en su rigidez no es defensa del orden, sino resistencia al cambio.<br />El
+                                    desafío actual no consiste en elegir entre orden y caos, sino en aprender a
+                                    organizarnos sin confundir estabilidad con inmovilidad.
+                                </p>
+                                <br />
+                                <p>
+                                    Quizás el futuro del orden social no resida en instituciones que prometen durar,
+                                    sino en sistemas capaces de <strong>reconfigurarse sin colapsar</strong>.
+                                </p>
+                                <img
+                                    src="/img/cambio-paradisgma.jpg"
+                                    alt="Infografía sobre crónicas de literatura"
+                                    style="
+                                        width: 100%;
+                                        height: auto;
+                                        max-height: 600px;
+                                        object-fit: contain;
+                                        border-radius: 8px;
+                                        margin-bottom: var(--spacing-md);
+                                    " />
+                                <br /><br />
+                                <h1>2 - La comunidad organizada como concepto post-institucional</h1>
+                                <br />
+                                <h3>Tecnología, redes y nuevas formas de gobernanza</h3>
+                                <p>
+                                    <br />
+                                    La idea de <em>comunidad organizada</em>, leída fuera de su cristalización
+                                    histórica, adquiere una nueva relevancia cuando se la observa a la luz de las
+                                    condiciones técnicas contemporáneas. No porque la tecnología “resuelva” el problema
+                                    del orden social, sino porque
+                                    <strong
+                                        >modifica radicalmente las condiciones bajo las cuales ese orden puede
+                                        emerger</strong
+                                    >.
+                                </p>
+                                <br />
+                                <p>
+                                    Durante gran parte del siglo XX, la organización social necesitó estructuras
+                                    centralizadas por una razón simple: coordinar grandes volúmenes de personas sin
+                                    tecnologías de comunicación inmediata exigía jerarquías estables, intermediación y
+                                    control. La comunidad organizada, en ese contexto, era más una aspiración que una
+                                    posibilidad operativa plena.
+                                </p>
+                                <br />
+                                <p>Hoy, ese límite técnico ya no existe.</p>
+                                <br /><br />
+                                <h2>Tecnología como infraestructura de coordinación</h2>
+                                <p>
+                                    <br />
+                                    Las tecnologías digitales no crean comunidad, pero
+                                    <strong>permiten formas de coordinación que antes eran inviables</strong>.
+                                    Plataformas, redes distribuidas, sistemas de mensajería, repositorios compartidos y
+                                    protocolos de consenso reducen drásticamente el costo de organizar acción colectiva
+                                    sin un centro único.
+                                </p>
+                                <p>Esto habilita un tipo de orden donde:</p>
+                                <br />
+                                <ul>
+                                    <li><p>la información circula horizontalmente</p></li>
+                                    <li><p>la toma de decisiones puede ser situada y distribuida</p></li>
+                                    <li><p>la participación no requiere mediación permanente</p></li>
+                                    <li><p>la coordinación es continua, no episódica</p></li>
+                                </ul>
+                                <br />
+                                <p>
+                                    Desde esta perspectiva, la comunidad organizada deja de ser una metáfora política y
+                                    se convierte en una <strong>posibilidad técnica real</strong>.
+                                </p>
+                                <br /><br />
+                                <h2>Redes: de la representación a la interacción</h2>
+                                <p>
+                                    <br />
+                                    La política moderna se estructuró en torno a la representación: pocos hablan por
+                                    muchos, durante períodos prolongados. Este modelo era funcional a un mundo sin
+                                    conectividad constante.
+                                </p>
+                                <p>Las redes digitales desplazan el eje:</p>
+                                <br />
+                                <ul>
+                                    <li>
+                                        <p>de la representación a la <strong>interacción</strong></p>
+                                    </li>
+                                    <li>
+                                        <p>del mandato fijo al <strong>feedback permanente</strong></p>
+                                    </li>
+                                    <li>
+                                        <p>del consenso general al <strong>acuerdo localizado</strong></p>
+                                    </li>
+                                </ul>
+                                <br />
+                                <p>
+                                    Esto no elimina la necesidad de delegación, pero la vuelve
+                                    <strong>reversible, parcial y contextual</strong>. La autoridad ya no se sostiene
+                                    sólo por el cargo, sino por la capacidad efectiva de articular nodos, resolver
+                                    problemas y mantener confianza.
+                                </p>
+                                <br />
+                                <p>
+                                    Aquí, la comunidad organizada puede pensarse como una <strong>red de redes</strong>,
+                                    donde el orden no desciende desde arriba, sino que emerge de la conectividad
+                                    funcional entre actores diversos.
+                                </p>
+                                <br /><br />
+                                <h2>Gobernabilidad digital: reglas como procesos</h2>
+                                <br />
+                                <p>
+                                    Uno de los desplazamientos más profundos que introduce la tecnología es el paso de
+                                    reglas fijas a <strong>reglas procesuales</strong>. En sistemas digitales, las
+                                    normas no son sólo textos: son procedimientos que pueden actualizarse, versionarse y
+                                    auditarse.
+                                </p>
+                                <p>Esto es clave para una lógica post-institucional:</p>
+                                <br />
+                                <ul>
+                                    <li><p>las reglas no se sacralizan</p></li>
+                                    <li><p>se evalúan por su desempeño</p></li>
+                                    <li><p>se ajustan cuando dejan de funcionar</p></li>
+                                </ul>
+                                <br />
+                                <p>
+                                    Modelos experimentales como plataformas cooperativas, sistemas de reputación,
+                                    protocolos de consenso distribuido o incluso ciertas experiencias de DAOs —con todas
+                                    sus limitaciones— muestran intentos tempranos de
+                                    <strong>gobernanza sin aparato central permanente</strong>.
+                                </p>
+                                <br />
+                                <p>
+                                    No se trata de copiar estos modelos, sino de reconocer la dirección del
+                                    desplazamiento:
+                                    <strong>del gobierno como estructura al gobierno como proceso</strong>.
+                                </p>
+                                <br /><br />
+                                <h2>Comunidad organizada en clave digital</h2>
+                                <br />
+                                <p>Pensada en este marco, la comunidad organizada no es:</p>
+                                <br />
+                                <ul>
+                                    <li><p>una masa homogénea conectada por una plataforma</p></li>
+                                    <li><p>un enjambre despolitizado de usuarios</p></li>
+                                    <li><p>ni una tecnocracia algorítmica</p></li>
+                                </ul>
+                                <br />
+                                <p>Es un <strong>ecosistema socio-técnico</strong>, donde:</p>
+                                <br />
+                                <ul>
+                                    <li><p>la tecnología facilita la coordinación</p></li>
+                                    <li><p>las decisiones se anclan en prácticas reales</p></li>
+                                    <li><p>el conflicto no se elimina, se canaliza</p></li>
+                                    <li><p>el Estado actúa como garante e interfaz, no como centro absoluto</p></li>
+                                </ul>
+                                <br />
+                                <p>
+                                    La comunidad no se disuelve en lo digital: se
+                                    <strong>reorganiza a través de él</strong>.
+                                </p>
+                                <br /><br />
+                                <h2>El rol del Estado en un orden en red</h2>
+                                <br />
+                                <p>
+                                    En un esquema post-institucional, el Estado no desaparece, pero su función se
+                                    transforma. Deja de ser el organizador único y pasa a ser:
+                                </p>
+                                <br />
+                                <ul>
+                                    <li><p>garante de derechos</p></li>
+                                    <li><p>regulador de infraestructuras críticas</p></li>
+                                    <li><p>facilitador de interoperabilidad</p></li>
+                                    <li><p>corrector de asimetrías de poder</p></li>
+                                </ul>
+                                <br />
+                                <p>
+                                    Esto es coherente con una lectura no dogmática de la comunidad organizada: el Estado
+                                    no absorbe a la comunidad ni la sustituye, sino que
+                                    <strong>la sostiene sin inmovilizarla</strong>.
+                                </p>
+                                <br /><br />
+                                <h2>Riesgos reales: no toda red es comunidad</h2>
+                                <br />
+                                <p>La tecnología también puede producir:</p>
+                                <br />
+                                <ul>
+                                    <li><p>hiperfragmentación</p></li>
+                                    <li><p>control algorítmico</p></li>
+                                    <li><p>concentración de poder en plataformas privadas</p></li>
+                                    <li><p>simulacros de participación</p></li>
+                                </ul>
+                                <br />
+                                <p>
+                                    Por eso, una comunidad organizada en clave digital no puede reducirse a
+                                    herramientas. Requiere <strong>criterios políticos claros</strong>, ética pública y
+                                    mecanismos de control colectivo.
+                                </p>
+                                <br />
+                                <p>Sin comunidad activa, la tecnología sólo acelera viejas desigualdades.</p>
+                                <br /><br />
+                                <img
+                                    src="/img/organizada.jpg"
+                                    alt="Infografía sobre crónicas de literatura"
+                                    style="
+                                        width: 100%;
+                                        height: auto;
+                                        max-height: 600px;
+                                        object-fit: contain;
+                                        border-radius: 8px;
+                                        margin-bottom: var(--spacing-md);
+                                    " />
+                                <h2>De la institución al protocolo social</h2>
+                                <br />
+                                <p>
+                                    Quizás el desplazamiento más profundo no sea del Estado a la red, sino de la
+                                    institución al <strong>protocolo</strong>: acuerdos explícitos, revisables y
+                                    compartidos que permiten coordinar acción colectiva sin necesidad de estructuras
+                                    rígidas y permanentes.
+                                </p>
+                                <br />
+                                <p>
+                                    En este sentido, la comunidad organizada puede releerse como una anticipación
+                                    conceptual de un orden donde lo social no se gobierna exclusivamente por
+                                    instituciones, ni se abandona al mercado, sino que
+                                    <strong
+                                        >se articula dinámicamente a través de redes, prácticas y procesos
+                                        compartidos</strong
+                                    >.
+                                </p>
+                                <p>
+                                    No como solución definitiva, sino como marco para pensar una política capaz de
+                                    adaptarse sin perder cohesión.
+                                </p>
+                                <br /><br /><br />
+                            </div>
+                        </div>
+                        <section
+                            class="blog-subscription"
+                            style="
+                                margin-top: var(--spacing-3xl);
+                                background: var(--color-mid);
+                                padding: var(--spacing-2xl);
+                                border-radius: 12px;
+                                text-align: center;
+                            ">
+                            <nav class="share-footer" aria-label="Compartir página">
+                                <a
+                                    href="https://www.facebook.com/sharer/sharer.php?u=https://gf-amd.pages.dev/pages/blog.-ia.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn facebook"
+                                    title="Compartir en Facebook"
+                                    aria-label="Compartir en Facebook">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                                <a
+                                    href="https://twitter.com/intent/tweet?url=https://gf-amd.pages.dev/pages/blog.-ia&text=Necesitamos%20Humanidad%20Antes%20que%20IA:%20Tecnología%20y%20Desigualdad%20|%20RESONANCIAS"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn twitter"
+                                    title="Compartir en X"
+                                    aria-label="Compartir en X">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+
+                                <a
+                                    href="https://api.whatsapp.com/send?text=Necesitamos%20Humanidad%20Antes%20que%20IA:%20Tecnología%20y%20Desigualdad%20|%20RESONANCIAS%20https://gf-amd.pages.dev/pages/blog.-ia.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn whatsapp"
+                                    title="Compartir en WhatsApp"
+                                    aria-label="Compartir en WhatsApp">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                                <a
+                                    href="https://bsky.app/intent/compose?text=Necesitamos%20Humanidad%20Antes%20que%20IA:%20Tecnología%20y%20Desigualdad%20|%20RESONANCIAS%20https://gf-amd.pages.dev/pages/blog.-ia.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn bluesky"
+                                    title="Compartir en Bluesky"
+                                    aria-label="Compartir en Bluesky">
+                                    <i class="fa-brands fa-bluesky"></i>
+                                </a>
+                            </nav>
+                            <h3
+                                style="
+                                    color: var(--color-dark);
+                                    margin-bottom: var(--spacing-md);
+                                    font-size: var(--font-size-2xl);
+                                ">
+                                Comparte en tus redes
+                            </h3>
+                            <h4>Suscribete</h4>
+
+                            <p
+                                style="
+                                    color: var(--color-warm);
+                                    margin-bottom: var(--spacing-xl);
+                                    max-width: 500px;
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                    line-height: 1.6;
+                                ">
+                                Recibe notificaciones cuando publique nuevos ensayos y reflexiones. Sin spam, solo
+                                contenido de calidad.
+                            </p>
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    gap: var(--spacing-md);
+                                    max-width: 400px;
+                                    margin: 0 auto;
+                                    flex-wrap: wrap;
+                                ">
+                                <a
+                                    href="/pages/contacto.html"
+                                    style="
+                                        background: var(--color-secondary);
+                                        color: var(--color-light);
+                                        border: none;
+                                        padding: var(--spacing-md) var(--spacing-xl);
+                                        border-radius: 8px;
+                                        font-weight: 600;
+                                        text-decoration: none;
+                                        cursor: pointer;
+                                        transition: all var(--transition-fast);
+                                        display: inline-flex;
+                                        align-items: center;
+                                        gap: var(--spacing-sm);
+                                    "
+                                    onmouseover="this.style.background='var(--color-warm)'; this.style.transform='translateY(-2px)'"
+                                    onmouseout="this.style.background='var(--color-secondary)'; this.style.transform='translateY(0)'">
+                                    <svg
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                    Contáctame
+                                </a>
+                            </div>
+                            <p
+                                style="
+                                    font-size: var(--font-size-sm);
+                                    color: var(--color-neutral);
+                                    margin-top: var(--spacing-md);
+                                ">
+                                * Puedes darte de baja en cualquier momento
+                            </p>
+                        </section>
+                        <!-- Footer del artículo -->
+
+                        <footer
+                            style="
+                                margin-top: var(--spacing-2xl);
+                                padding-top: var(--spacing-xl);
+                                border-top: 1px solid var(--color-mid);
+                            ">
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    flex-wrap: wrap;
+                                    gap: var(--spacing-md);
+                                ">
+                                <div>
+                                    <p style="color: var(--color-neutral); font-size: var(--font-size-sm); margin: 0">
+                                        Publicado el <time datetime="2026-01">Enero 2026</time>
+                                    </p>
+                                </div>
+                                <div style="display: flex; gap: var(--spacing-sm)">
+                                    <a
+                                        href="/pages/blog-aplicacion.html"
+                                        style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                                        Ir A parte 2 →
+                                    </a>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content">
+                <p>
+                    <a href="/" class="footer-logo-link">
+                        <img src="/img/logo2_footer.png" alt="Logo RESONANCIAS" width="90" height="40" />
+                    </a>
+                    © 2025 RESONANCIAS · Todos los derechos reservados
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
