@@ -49,8 +49,47 @@
         <link rel="stylesheet" href="/scr/styles/estilos.css" />
 
         <!-- Scripts -->
-        
+
         <script src="/scr/js/main.js" defer></script>
+
+        <!-- Estilos para las tablas -->
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: var(--spacing-xl) 0;
+                font-size: var(--font-size-md);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            th,
+            td {
+                padding: var(--spacing-md);
+                text-align: left;
+                border-bottom: 1px solid var(--color-mid);
+            }
+            thead {
+                background-color: var(--color-dark);
+                color: var(--color-light);
+            }
+            th {
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+            tbody tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            tbody tr:hover {
+                background-color: var(--color-mid);
+                color: var(--color-dark);
+            }
+            td:first-child {
+                font-weight: 700;
+                color: var(--color-secondary);
+            }
+        </style>
 
         <!-- Estilos responsivos para el layout del artículo -->
         <style>
@@ -257,196 +296,233 @@
                                         color: var(--color-warm);
                                         font-style: italic;
                                         position: relative;
-                                    ">
+                                    "></p>
 
-                                    <h2>3 - Ejemplo: un municipio con gobernanza distribuida basada en red cívica digital</h2>
-<p><em>(inspirado en experiencias reales como plataformas de participación municipal, pero formulado como modelo conceptual)</em></p>
+                                <h2>
+                                    3 - Ejemplo: un municipio con gobernanza distribuida basada en red cívica digital
+                                </h2>
+                                <p>
+                                    <em
+                                        >(inspirado en experiencias reales como plataformas de participación municipal,
+                                        pero formulado como modelo conceptual)</em
+                                    >
+                                </p>
                                 <br />
-<h3>1. Punto de partida: el límite del municipio clásico</h3><br />
-<br /><p>El municipio moderno funciona bajo una lógica estructural:</p><br />
-<ul>
-<li><p>autoridades electas cada X años</p>
-</li>
-<li><p>decisiones centralizadas</p>
-</li>
-<li><p>participación ciudadana episódica</p>
-</li>
-<li><p>intermediación constante</p><br />
-</li>
-</ul>
-<p>Esto genera un problema conocido:<br>la vida social del territorio es <strong>mucho más activa y compleja</strong> que su sistema formal de gobierno.</p>
-<br /><br /><h2>El giro post-institucional: el municipio como coordinador, no como centro</h2>
-<br /><p>En este modelo, el municipio <strong>no desaparece</strong>, pero deja de ser el único organizador. Su rol se redefine como:</p>
-<br /><ul>
-<li><p>garante legal</p>
-</li>
-<li><p>proveedor de infraestructura (digital y material)</p>
-</li>
-<li><p>articulador entre redes comunitarias</p>
-</li>
-<li><p>corrector de desigualdades</p>
-</li>
-</ul><br />
-<p>La organización efectiva se desplaza hacia la <strong>comunidad organizada en red</strong>.</p>
-<br /><br /><h2>Infraestructura clave: plataforma cívica digital</h2><br />
-<p>El municipio implementa una <strong>plataforma pública y abierta</strong> (software libre, gobernanza transparente) con funciones claras:</p>
-<br /><h3>a) Registro de nodos comunitarios</h3>
-<p>No individuos aislados, sino:</p><br />
-<ul>
-<li><p>cooperativas</p>
-</li>
-<li><p>asociaciones barriales</p>
-</li>
-<li><p>centros culturales</p>
-</li>
-<li><p>grupos de cuidado</p>
-</li>
-<li><p>colectivos productivos</p>
-</li>
-</ul>
-<p>Cada nodo declara:</p>
-<ul>
-<li><p>qué hace</p>
-</li>
-<li><p>qué necesita</p>
-</li>
-<li><p>qué puede ofrecer</p>
-</li>
-</ul>
-<p>La comunidad se vuelve <strong>visible y cartografiable</strong>.</p><br />
-<h3>b) Decisión por ámbitos, no por totalidad</h3>
-<p>No todo se decide entre todos.</p>
-<p>Las decisiones se organizan por:</p><br />
-<ul>
-<li><p>territorio</p>
-</li>
-<li><p>función</p>
-</li>
-<li><p>impacto</p>
-</li>
-</ul>
-<p>Ejemplo:</p>
-<ul>
-<li><p>un grupo barrial decide sobre su espacio público</p>
-</li>
-<li><p>cooperativas deciden sobre circuitos productivos</p>
-</li>
-<li><p>el municipio interviene sólo cuando hay conflicto, derechos vulnerados o impacto general</p>
-</li>
-</ul>
-<p>Esto reduce ruido y aumenta eficacia.</p><br />
-<h3>c) Autoridad funcional y temporal</h3>
-<p>No hay cargos eternos.</p><br />
-<ul>
-<li><p>Coordinadores rotativos</p>
-</li>
-<li><p>Mandatos cortos</p>
-</li>
-<li><p>Revocabilidad sencilla</p>
-</li>
-<li><p>Evaluación por desempeño</p>
-</li>
-</ul>
-<p>La legitimidad no proviene del voto histórico, sino de la <strong>capacidad de cumplir una función concreta</strong>.</p>
-<br /><br />
+                                <h3>1. Punto de partida: el límite del municipio clásico</h3>
+                                <br />
+                                <br />
+                                <p>El municipio moderno funciona bajo una lógica estructural:</p>
+                                <br />
+                                <ul>
+                                    <li><p>autoridades electas cada X años</p></li>
+                                    <li><p>decisiones centralizadas</p></li>
+                                    <li><p>participación ciudadana episódica</p></li>
+                                    <li>
+                                        <p>intermediación constante</p>
+                                        <br />
+                                    </li>
+                                </ul>
+                                <p>
+                                    Esto genera un problema conocido:<br />la vida social del territorio es
+                                    <strong>mucho más activa y compleja</strong> que su sistema formal de gobierno.
+                                </p>
+                                <br /><br />
+                                <h2>El giro post-institucional: el municipio como coordinador, no como centro</h2>
+                                <br />
+                                <p>
+                                    En este modelo, el municipio <strong>no desaparece</strong>, pero deja de ser el
+                                    único organizador. Su rol se redefine como:
+                                </p>
+                                <br />
+                                <ul>
+                                    <li><p>garante legal</p></li>
+                                    <li><p>proveedor de infraestructura (digital y material)</p></li>
+                                    <li><p>articulador entre redes comunitarias</p></li>
+                                    <li><p>corrector de desigualdades</p></li>
+                                </ul>
+                                <br />
+                                <p>
+                                    La organización efectiva se desplaza hacia la
+                                    <strong>comunidad organizada en red</strong>.
+                                </p>
+                                <br /><br />
+                                <h2>Infraestructura clave: plataforma cívica digital</h2>
+                                <br />
+                                <p>
+                                    El municipio implementa una <strong>plataforma pública y abierta</strong> (software
+                                    libre, gobernanza transparente) con funciones claras:
+                                </p>
+                                <br />
+                                <h3>a) Registro de nodos comunitarios</h3>
+                                <br />
+                                <p>No individuos aislados, sino:</p>
+                                <ul>
+                                    <li><p>cooperativas</p></li>
+                                    <li><p>asociaciones barriales</p></li>
+                                    <li><p>centros culturales</p></li>
+                                    <li><p>grupos de cuidado</p></li>
+                                    <li><p>colectivos productivos</p></li>
+                                </ul>
+                                <br />
+                                <p>Cada nodo declara:</p>
+                                <ul>
+                                    <li><p>qué hace</p></li>
+                                    <li><p>qué necesita</p></li>
+                                    <li><p>qué puede ofrecer</p></li>
+                                </ul>
+                                <p>La comunidad se vuelve <strong>visible y cartografiable</strong>.</p>
+                                <br />
+                                <h3>b) Decisión por ámbitos, no por totalidad</h3>
+                                <p>No todo se decide entre todos.</p>
+                                <br />
+                                <p>Las decisiones se organizan por:</p>
+                                <ul>
+                                    <li><p>territorio</p></li>
+                                    <li><p>función</p></li>
+                                    <li><p>impacto</p></li>
+                                </ul>
+                                <br />
+                                <p>Ejemplo:</p>
+                                <ul>
+                                    <li><p>un grupo barrial decide sobre su espacio público</p></li>
+                                    <li><p>cooperativas deciden sobre circuitos productivos</p></li>
+                                    <li>
+                                        <p>
+                                            el municipio interviene sólo cuando hay conflicto, derechos vulnerados o
+                                            impacto general
+                                        </p>
+                                    </li>
+                                </ul>
+                                <p>Esto reduce ruido y aumenta eficacia.</p>
+                                <br />
+                                <h3>c) Autoridad funcional y temporal</h3>
+                                <p>No hay cargos eternos.</p>
+                                <br />
+                                <ul>
+                                    <li><p>Coordinadores rotativos</p></li>
+                                    <li><p>Mandatos cortos</p></li>
+                                    <li><p>Revocabilidad sencilla</p></li>
+                                    <li><p>Evaluación por desempeño</p></li>
+                                </ul>
+                                <br />
+                                <p>
+                                    La legitimidad no proviene del voto histórico, sino de la
+                                    <strong>capacidad de cumplir una función concreta</strong>.
+                                </p>
+                                <br /><br />
                                 <h2>Economía local: capital subordinado a función social</h2>
-<br /><p>Siguiendo la lógica de la <em>tercera posición</em>:</p>
-<ul>
-<li><p>el municipio facilita crédito, infraestructura y compras públicas</p>
-</li>
-<li><p>las cooperativas y redes productivas gestionan</p>
-</li>
-<li><p>el excedente se reinvierte localmente</p>
-</li>
-</ul>
-<p>La plataforma permite:</p>
-<ul>
-<li><p>trazabilidad</p>
-</li>
-<li><p>control comunitario</p>
-</li>
-<li><p>transparencia del uso del capital</p>
-</li>
-</ul>
-<p>El capital deja de ser abstracto: <strong>se territorializa</strong>.</p><br /><br />
-<h2>Qué cambia respecto al modelo clásico</h2><br />
-<table>
-<thead>
-<tr>
-<th>Aspecto</th>
-<th>Municipio clásico</th>
-<th>Municipio en red</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Participación</td>
-<td>Esporádica</td>
-<td>Continua</td>
-</tr>
-<tr>
-<td>Decisión</td>
-<td>Centralizada</td>
-<td>Distribuida</td>
-</tr>
-<tr>
-<td>Autoridad</td>
-<td>Permanente</td>
-<td>Contextual</td>
-</tr>
-<tr>
-<td>Comunidad</td>
-<td>Pasiva</td>
-<td>Organizadora</td>
-</tr>
-<tr>
-<td>Tecnología</td>
-<td>Administrativa</td>
-<td>Coordinadora</td>
-</tr>
-</tbody></table><br /><br />
-<h2>Por qué esto encaja con la comunidad organizada</h2><br />
-<p>Este modelo:</p><br />
-<ul>
-<li><p>no elimina al Estado</p>
-</li>
-<li><p>no deja todo al mercado</p>
-</li>
-<li><p>no confía en la espontaneidad pura</p>
-</li>
-</ul>
-<p>Reconoce que:</p>
-<blockquote>
-<p>el orden social real ya existe en la comunidad,<br>y que gobernar consiste en <strong>articularlo</strong>, no en reemplazarlo.</p>
-</blockquote>
-<p>La comunidad organizada deja de ser un ideal abstracto y se convierte en <strong>arquitectura operativa</strong>.</p>
-<br /><br /><h2>Límites reales (importante)</h2><br />
-<p>Este modelo <strong>no es mágico</strong>:</p><br />
-<ul>
-<li><p>requiere cultura cívica</p>
-</li>
-<li><p>alfabetización digital</p>
-</li>
-<li><p>reglas claras</p>
-</li>
-<li><p>protección contra captura por grupos fuertes</p>
-</li>
-</ul>
-<p>Sin estos elementos, la red se fragmenta o es cooptada.</p><br /><br />
-<h2>Conclusión del ejemplo</h2><br />
-<p>Este municipio no es menos político que el clásico.<br>Es <strong>política en otro formato</strong>.</p>
-<p>No gobierna prometiendo estabilidad eterna,<br>sino habilitando <strong>capacidad colectiva de adaptación</strong>.</p>
-<p>Aquí, la comunidad organizada no es:</p><br />
-<ul>
-<li><p>un eslogan</p>
-</li>
-<li><p>una institución</p>
-</li>
-<li><p>ni una nostalgia</p>
-</li>
-</ul><br />
-<p>Es un <strong>sistema vivo</strong>, apoyado en tecnología, pero sostenido por prácticas sociales reales.</p>
-<br />
-        <img
+                                <br />
+                                <p>Siguiendo la lógica de la <em>tercera posición</em>:</p>
+                                <ul>
+                                    <li><p>el municipio facilita crédito, infraestructura y compras públicas</p></li>
+                                    <li><p>las cooperativas y redes productivas gestionan</p></li>
+                                    <li><p>el excedente se reinvierte localmente</p></li>
+                                </ul>
+                                <br />
+                                <p>La plataforma permite:</p>
+                                <ul>
+                                    <li><p>trazabilidad</p></li>
+                                    <li><p>control comunitario</p></li>
+                                    <li><p>transparencia del uso del capital</p></li>
+                                </ul>
+                                <p>El capital deja de ser abstracto: <strong>se territorializa</strong>.</p>
+                                <br /><br />
+                                <h2>Qué cambia respecto al modelo clásico</h2>
+                                <br />
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Aspecto</th>
+                                            <th>Municipio clásico</th>
+                                            <th>Municipio en red</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Participación</td>
+                                            <td>Esporádica</td>
+                                            <td>Continua</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Decisión</td>
+                                            <td>Centralizada</td>
+                                            <td>Distribuida</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Autoridad</td>
+                                            <td>Permanente</td>
+                                            <td>Contextual</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Comunidad</td>
+                                            <td>Pasiva</td>
+                                            <td>Organizadora</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tecnología</td>
+                                            <td>Administrativa</td>
+                                            <td>Coordinadora</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br /><br />
+                                <h2>Por qué esto encaja con la comunidad organizada</h2>
+                                <br />
+                                <p>Este modelo:</p>
+                                <ul>
+                                    <li><p>no elimina al Estado</p></li>
+                                    <li><p>no deja todo al mercado</p></li>
+                                    <li><p>no confía en la espontaneidad pura</p></li>
+                                </ul>
+                                <br />
+                                <p>Reconoce que:</p>
+                                <blockquote>
+                                    <p>
+                                        el orden social real ya existe en la comunidad,<br />y que gobernar consiste en
+                                        <strong>articularlo</strong>, no en reemplazarlo.
+                                    </p>
+                                </blockquote>
+                                <p>
+                                    La comunidad organizada deja de ser un ideal abstracto y se convierte en
+                                    <strong>arquitectura operativa</strong>.
+                                </p>
+                                <br /><br />
+                                <h2>Límites reales (importante)</h2>
+                                <br />
+                                <p>Este modelo <strong>no es mágico</strong>:</p>
+                                <br />
+                                <ul>
+                                    <li><p>requiere cultura cívica</p></li>
+                                    <li><p>alfabetización digital</p></li>
+                                    <li><p>reglas claras</p></li>
+                                    <li><p>protección contra captura por grupos fuertes</p></li>
+                                </ul>
+                                <p>Sin estos elementos, la red se fragmenta o es cooptada.</p>
+                                <br /><br />
+                                <h2>Conclusión del ejemplo</h2>
+                                <br />
+                                <p>
+                                    Este municipio no es menos político que el clásico.<br />Es
+                                    <strong>política en otro formato</strong>.
+                                </p>
+                                <p>
+                                    No gobierna prometiendo estabilidad eterna,<br />sino habilitando
+                                    <strong>capacidad colectiva de adaptación</strong>.
+                                </p>
+                                <p>Aquí, la comunidad organizada no es:</p>
+                                <br />
+                                <ul>
+                                    <li><p>un eslogan</p></li>
+                                    <li><p>una institución</p></li>
+                                    <li><p>ni una nostalgia</p></li>
+                                </ul>
+                                <br />
+                                <p>
+                                    Es un <strong>sistema vivo</strong>, apoyado en tecnología, pero sostenido por
+                                    prácticas sociales reales.
+                                </p>
+                                <br />
+                                <img
                                     src="/img/Coperacion.jpg"
                                     alt="Infografía sobre crónicas de literatura"
                                     style="
@@ -456,167 +532,200 @@
                                         object-fit: contain;
                                         border-radius: 8px;
                                         margin-bottom: var(--spacing-md);
-                                    " />                        <br />
-<h2>4 - Ejemplo Real: una cooperativa productiva organizada como red dinámica</h2><br />
-<h3>Límite del modelo cooperativo clásico</h3><br />
-<p>Muchas cooperativas reproducen, con otro lenguaje, problemas del modelo institucional:</p><br />
-<ul>
-<li><p>cargos fijos prolongados</p>
-</li>
-<li><p>asambleas poco operativas</p>
-</li>
-<li><p>baja participación real</p>
-</li>
-<li><p>separación entre decisión y ejecución</p>
-</li>
-</ul><br />
-<p>El resultado suele ser desgaste organizativo y pérdida de dinamismo.</p><br /><br />
-<h2>Giro post-institucional: la cooperativa como sistema de funciones</h2><br />
-<p>En el modelo dinámico, la cooperativa <strong>no se organiza por cargos</strong>, sino por <strong>funciones productivas y sociales</strong>, entendidas como módulos activables según necesidad.</p>
-<p>Ejemplos de funciones:</p><br />
-<ul>
-<li><p>producción</p>
-</li>
-<li><p>logística</p>
-</li>
-<li><p>comercialización</p>
-</li>
-<li><p>financiamiento</p>
-</li>
-<li><p>formación</p>
-</li>
-<li><p>cuidado interno</p>
-</li>
-</ul><br />
-<p>Las funciones existen <strong>mientras son necesarias</strong>.</p><br /><br />
-<h2>Núcleo técnico: plataforma cooperativa digital</h2><br />
-<p>La cooperativa utiliza una plataforma interna (simple, no sofisticada) que permite:</p><br />
-<ul>
-<li><p>visibilizar tareas y responsabilidades</p>
-</li>
-<li><p>registrar aportes reales de cada miembro</p>
-</li>
-<li><p>coordinar decisiones por área</p>
-</li>
-<li><p>evaluar desempeño colectivo</p>
-</li>
-</ul><br />
-<p>No reemplaza la asamblea: <strong>la hace operativa</strong>.</p><br /><br />
-<h2>Decisión distribuida y situada</h2><br />
-<p>Las decisiones se toman según impacto:</p><br />
-<ul>
-<li><p>decisiones productivas → área productiva</p>
-</li>
-<li><p>decisiones comerciales → área comercial</p>
-</li>
-<li><p>decisiones estratégicas → asamblea breve y focalizada</p>
-</li>
-</ul>
-<p>Esto reduce:</p>
-<ul>
-<li><p>discusiones abstractas</p>
-</li>
-<li><p>parálisis por consenso total</p>
-</li>
-<li><p>concentración informal de poder</p>
-</li>
-</ul><br />
-<p>La autoridad es <strong>temporal y revocable</strong>, ligada a la función.</p><br /><br />
-<h2>Capital al servicio del trabajo cooperativo</h2><br />
-<p>El capital cumple una función clara:</p><br />
-<ul>
-<li><p>financiar producción</p>
-</li>
-<li><p>sostener infraestructura</p>
-</li>
-<li><p>amortiguar crisis</p>
-</li>
-</ul><br />
-<p>No define la orientación de la cooperativa.</p>
-<p>Herramientas concretas:</p>
-<ul>
-<li><p>fondo común transparente</p>
-</li>
-<li><p>reinversión obligatoria del excedente</p>
-</li>
-<li><p>trazabilidad del uso del capital</p>
-</li>
-</ul><br />
-<p>Aquí se materializa el principio:<br><strong>el capital ordena cuando sirve; se subordina cuando no</strong>.</p>
-<br /><br /> <h2>Comunidad organizada a escala productiva</h2><br />
-<p>La cooperativa no se concibe como unidad cerrada, sino como <strong>nodo dentro de una red mayor</strong>:</p>
-<br /><ul>
-<li><p>otras cooperativas</p>
-</li>
-<li><p>municipio</p>
-</li>
-<li><p>redes de consumo</p>
-</li>
-<li><p>proveedores solidarios</p>
-</li>
-</ul><br />
-<p>La comunidad organizada aparece como:</p><br />
-<ul>
-<li><p>red de cooperación</p>
-</li>
-<li><p>intercambio de capacidades</p>
-</li>
-<li><p>sostenimiento mutuo</p>
-</li>
-</ul><br />
-<p>No como identidad, sino como <strong>articulación funcional</strong>.</p><br /><br />
-<h2>Qué cambia respecto a la cooperativa tradicional</h2><br />
-<table>
-<thead>
-<tr>
-<th>Aspecto</th>
-<th>Cooperativa clásica</th>
-<th>Cooperativa en red</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Organización</td>
-<td>Cargos fijos</td>
-<td>Funciones temporales</td>
-</tr>
-<tr>
-<td>Decisión</td>
-<td>Asamblea total</td>
-<td>Decisión situada</td>
-</tr>
-<tr>
-<td>Autoridad</td>
-<td>Estable</td>
-<td>Contextual</td>
-</tr>
-<tr>
-<td>Capital</td>
-<td>Neutral o dominante</td>
-<td>Subordinado a función social</td>
-</tr>
-<tr>
-<td>Comunidad</td>
-<td>Marco externo</td>
-<td>Parte estructural</td>
-</tr>
-</tbody></table><br /><br />
-<h2>Valor del ejemplo</h2><br />
-<p>Este modelo no promete armonía permanente.<br>Promete <strong>capacidad de adaptación sin ruptura</strong>.</p>
-<p>La cooperativa deja de sostenerse por estatuto y buena voluntad, y comienza a sostenerse por:</p><br />
-<ul>
-<li><p>prácticas visibles</p>
-</li>
-<li><p>responsabilidades claras</p>
-</li>
-<li><p>coordinación real</p>
-</li>
-</ul><br />
-<p>Aquí, la <em>comunidad organizada</em> deja de ser una consigna y se vuelve <strong>ingeniería social mínima</strong>.</p>
-<p>Aplicada a una cooperativa productiva, la lógica post-institucional muestra su potencia real:<br>no elimina la organización, <strong>la aligera</strong>;<br>no disuelve la política interna, <strong>la vuelve funcional</strong>.</p>
-<br /><p>Es una forma concreta de pasar<br>del orden estructural<br>al orden dinámico<br>sin perder cohesión ni sentido colectivo.</p>
-<br />
-  <br />                              
-             <br />                   
+                                    " />
+                                <br />
+                                <h2>4 - Ejemplo Real: una cooperativa productiva organizada como red dinámica</h2>
+                                <br />
+                                <h3>Límite del modelo cooperativo clásico</h3>
+                                <br />
+                                <p>
+                                    Muchas cooperativas reproducen, con otro lenguaje, problemas del modelo
+                                    institucional:
+                                </p>
+                                <br />
+                                <ul>
+                                    <li><p>cargos fijos prolongados</p></li>
+                                    <li><p>asambleas poco operativas</p></li>
+                                    <li><p>baja participación real</p></li>
+                                    <li><p>separación entre decisión y ejecución</p></li>
+                                </ul>
+                                <br />
+                                <p>El resultado suele ser desgaste organizativo y pérdida de dinamismo.</p>
+                                <br /><br />
+                                <h2>Giro post-institucional: la cooperativa como sistema de funciones</h2>
+                                <br />
+                                <p>
+                                    En el modelo dinámico, la cooperativa <strong>no se organiza por cargos</strong>,
+                                    sino por <strong>funciones productivas y sociales</strong>, entendidas como módulos
+                                    activables según necesidad.
+                                </p>
+                                <p>Ejemplos de funciones:</p>
+                                <br />
+                                <ul>
+                                    <li><p>producción</p></li>
+                                    <li><p>logística</p></li>
+                                    <li><p>comercialización</p></li>
+                                    <li><p>financiamiento</p></li>
+                                    <li><p>formación</p></li>
+                                    <li><p>cuidado interno</p></li>
+                                </ul>
+                                <br />
+                                <p>Las funciones existen <strong>mientras son necesarias</strong>.</p>
+                                <br /><br />
+                                <h2>Núcleo técnico: plataforma cooperativa digital</h2>
+                                <br />
+                                <p>
+                                    La cooperativa utiliza una plataforma interna (simple, no sofisticada) que permite:
+                                </p>
+                                <br />
+                                <ul>
+                                    <li><p>visibilizar tareas y responsabilidades</p></li>
+                                    <li><p>registrar aportes reales de cada miembro</p></li>
+                                    <li><p>coordinar decisiones por área</p></li>
+                                    <li><p>evaluar desempeño colectivo</p></li>
+                                </ul>
+                                <br />
+                                <p>No reemplaza la asamblea: <strong>la hace operativa</strong>.</p>
+                                <br /><br />
+                                <h2>Decisión distribuida y situada</h2>
+                                <br />
+                                <p>Las decisiones se toman según impacto:</p>
+                                <br />
+                                <ul>
+                                    <li><p>decisiones productivas → área productiva</p></li>
+                                    <li><p>decisiones comerciales → área comercial</p></li>
+                                    <li><p>decisiones estratégicas → asamblea breve y focalizada</p></li>
+                                </ul>
+                                <br />
+                                <p>Esto reduce:</p>
+                                <ul>
+                                    <li><p>discusiones abstractas</p></li>
+                                    <li><p>parálisis por consenso total</p></li>
+                                    <li><p>concentración informal de poder</p></li>
+                                </ul>
+                                <br />
+                                <p>La autoridad es <strong>temporal y revocable</strong>, ligada a la función.</p>
+                                <br /><br />
+                                <h2>Capital al servicio del trabajo cooperativo</h2>
+                                <br />
+                                <p>El capital cumple una función clara:</p>
+                                <br />
+                                <ul>
+                                    <li><p>financiar producción</p></li>
+                                    <li><p>sostener infraestructura</p></li>
+                                    <li><p>amortiguar crisis</p></li>
+                                </ul>
+                                <p>No define la orientación de la cooperativa.</p>
+                                <br />
+                                <p>Herramientas concretas:</p>
+                                <ul>
+                                    <li><p>fondo común transparente</p></li>
+                                    <li><p>reinversión obligatoria del excedente</p></li>
+                                    <li><p>trazabilidad del uso del capital</p></li>
+                                </ul>
+                                <br />
+                                <p>
+                                    Aquí se materializa el principio:<br /><strong
+                                        >el capital ordena cuando sirve; se subordina cuando no</strong
+                                    >.
+                                </p>
+                                <br /><br />
+                                <h2>Comunidad organizada a escala productiva</h2>
+                                <br />
+                                <p>
+                                    La cooperativa no se concibe como unidad cerrada, sino como
+                                    <strong>nodo dentro de una red mayor</strong>:
+                                </p>
+                                <br />
+                                <ul>
+                                    <li><p>otras cooperativas</p></li>
+                                    <li><p>municipio</p></li>
+                                    <li><p>redes de consumo</p></li>
+                                    <li><p>proveedores solidarios</p></li>
+                                </ul>
+                                <br />
+                                <p>La comunidad organizada aparece como:</p>
+                                <ul>
+                                    <li><p>red de cooperación</p></li>
+                                    <li><p>intercambio de capacidades</p></li>
+                                    <li><p>sostenimiento mutuo</p></li>
+                                </ul>
+                                <br />
+                                <p>No como identidad, sino como <strong>articulación funcional</strong>.</p>
+                                <br /><br />
+                                <h2>Qué cambia respecto a la cooperativa tradicional</h2>
+                                <br />
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Aspecto</th>
+                                            <th>Cooperativa clásica</th>
+                                            <th>Cooperativa en red</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Organización</td>
+                                            <td>Cargos fijos</td>
+                                            <td>Funciones temporales</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Decisión</td>
+                                            <td>Asamblea total</td>
+                                            <td>Decisión situada</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Autoridad</td>
+                                            <td>Estable</td>
+                                            <td>Contextual</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Capital</td>
+                                            <td>Neutral o dominante</td>
+                                            <td>Subordinado a función social</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Comunidad</td>
+                                            <td>Marco externo</td>
+                                            <td>Parte estructural</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br /><br />
+                                <h2>Valor del ejemplo</h2>
+                                <br />
+                                <p>
+                                    Este modelo no promete armonía permanente.<br />Promete
+                                    <strong>capacidad de adaptación sin ruptura</strong>.
+                                </p>
+                                <p>
+                                    La cooperativa deja de sostenerse por estatuto y buena voluntad, y comienza a
+                                    sostenerse por:
+                                </p>
+                                <br />
+                                <ul>
+                                    <li><p>prácticas visibles</p></li>
+                                    <li><p>responsabilidades claras</p></li>
+                                    <li><p>coordinación real</p></li>
+                                </ul>
+                                <br />
+                                <p>
+                                    Aquí, la <em>comunidad organizada</em> deja de ser una consigna y se vuelve
+                                    <strong>ingeniería social mínima</strong>.
+                                </p>
+                                <p>
+                                    Aplicada a una cooperativa productiva, la lógica post-institucional muestra su
+                                    potencia real:<br />no elimina la organización, <strong>la aligera</strong>;<br />no
+                                    disuelve la política interna, <strong>la vuelve funcional</strong>.
+                                </p>
+                                <br />
+                                <p>
+                                    Es una forma concreta de pasar del orden estructural al orden dinámico sin perder
+                                    cohesión ni sentido colectivo.
+                                </p>
+                                <br />
+                                <br />
+                                <br />
                             </div>
                         </div>
                         <section
