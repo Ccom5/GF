@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>RESONANCIAS - Ficción Ética Filosófica</title>
-        
+
         <!-- URL Canónica -->
         <link rel="canonical" href="https://gf-amd.pages.dev/" />
         <meta
@@ -47,16 +47,17 @@
 
         <!-- Scripts de accesibilidad -->
         <script>
-        (function() {
-            var path = window.location.pathname;
-            if (path.slice(-1) !== '/' && path.indexOf('.') === -1) {
-                window.location.pathname = path + '.html';
-            }
-        })();
-    </script>
+            (function () {
+                var path = window.location.pathname;
+                if (path.slice(-1) !== "/" && path.indexOf(".") === -1) {
+                    window.location.pathname = path + ".html";
+                }
+            })();
+        </script>
         <script src="/scr/js/main.js" defer></script>
         <script src="/scr/js/back-to-top.js" defer></script>
-    </head>    <body>
+    </head>
+    <body>
         <!-- Skip to main content -->
         <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
@@ -71,7 +72,7 @@
                 <nav class="main-nav" role="navigation" aria-label="Navegación principal">
                     <a href="/" aria-current="page">Inicio</a>
                     <a href="/pages/obras.html">Libros</a>
-                     <a href="/pages/libros/lector.html">Biblioteca</a>
+                    <a href="/pages/libros/lector.html">Biblioteca</a>
                     <a href="/pages/blog-2026.html">Blog</a>
                     <a href="/pages/quien-soy.html">Quién soy</a>
                     <a href="/pages/contacto.html">Contacto</a>
@@ -179,27 +180,6 @@
                     <p class="lead">Ensayos, relatos y reflexiones sobre la palabra, la imaginación y el futuro</p>
                 </div>
             </section>
-
-            <!-- Sección Año Nuevo -->
-            <section class="featured-works" aria-labelledby="new-year-title">
-                <div class="container">
-                    <article class="work-card new-book-card">
-                        <div class="work-image">
-                            <img src="/img/Año Nuevo.jpg" alt="Imagen de Año Nuevo" loading="lazy" />
-                        </div>
-                        <div class="work-content">
-                            <h3 id="new-year-title">Nuevo Año</h3>
-                            <p>A la poca gente que todavía reconozco como buena gente —la que piensa, duda y no se entrega— le deseo lo indispensable para cruzar este nuevo año.</p>
-                            <p>No es tiempo de construir grandes cosas. Vivimos en una intemperie donde el poder global trabaja para erosionar democracias, vaciar derechos y volver sospechosa a la pobreza y al pensamiento crítico. En este paisaje, crear se vuelve un acto frágil, casi clandestino.</p>
-                            <p>Tal vez este no sea un año para avanzar, sino para sostener. Para cuidar lo cercano, defender lo mínimo, resistir sin épica mientras buscamos una salida posible hacia algo que alguna vez fue democracia: imperfecta, discutible, pero viva. No este presente de simulacro, administrado por lógicas mafiosas y violencia normalizada.</p>
-                            <p>Por eso no deseo paz ni prosperidad vacía. Deseo lucidez para comprender, resistencia para no ceder, valentía para cambiar sin esperar señales desde arriba.</p>
-                            <p>Porque hace tiempo que nadie convoca.  
-Y aun así, seguimos.</p>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
             <!-- Sección de obras destacadas -->
             <section class="featured-works" aria-labelledby="featured-title">
                 <div class="container">
@@ -227,7 +207,9 @@ Y aun así, seguimos.</p>
                                     No es un obsequio para guardar, sino una llave. Una llave para abrir otra forma de
                                     mirar. Otra forma de vivir.
                                 </p>
-                                <a href="/pages/carousel.html" class="read-more-link">clic en imagen para tu regalo →</a>
+                                <a href="/pages/carousel.html" class="read-more-link"
+                                    >clic en imagen para tu regalo →</a
+                                >
                             </div>
                         </article>
 
@@ -390,42 +372,42 @@ Y aun así, seguimos.</p>
                 </div>
             </div>
         </div>
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const hamburgerBtn = document.querySelector('.hamburger-btn');
-        const sideMenu = document.querySelector('.side-menu');
-        const closeBtn = document.querySelector('.close-btn');
-        const menuOverlay = document.querySelector('.menu-overlay');
-        const accordionToggles = document.querySelectorAll('.accordion-toggle');
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const hamburgerBtn = document.querySelector(".hamburger-btn");
+                const sideMenu = document.querySelector(".side-menu");
+                const closeBtn = document.querySelector(".close-btn");
+                const menuOverlay = document.querySelector(".menu-overlay");
+                const accordionToggles = document.querySelectorAll(".accordion-toggle");
 
-        const toggleMenu = (show) => {
-            sideMenu.classList.toggle('active', show);
-            menuOverlay.classList.toggle('active', show);
-            hamburgerBtn.setAttribute('aria-expanded', 'show');
-            sideMenu.setAttribute('aria-hidden', !show);
-        };
+                const toggleMenu = (show) => {
+                    sideMenu.classList.toggle("active", show);
+                    menuOverlay.classList.toggle("active", show);
+                    hamburgerBtn.setAttribute("aria-expanded", "show");
+                    sideMenu.setAttribute("aria-hidden", !show);
+                };
 
-        if (hamburgerBtn && sideMenu && closeBtn && menuOverlay) {
-            hamburgerBtn.addEventListener('click', () => toggleMenu(true));
-            closeBtn.addEventListener('click', () => toggleMenu(false));
-            menuOverlay.addEventListener('click', () => toggleMenu(false));
-        }
-
-        accordionToggles.forEach(toggle => {
-            toggle.addEventListener('click', () => {
-                const content = toggle.nextElementSibling;
-                const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-
-                toggle.setAttribute('aria-expanded', !isExpanded);
-                
-                if (content.style.maxHeight) {
-                    content.style.maxHeight = null;
-                } else {
-                    content.style.maxHeight = content.scrollHeight + 'px';
+                if (hamburgerBtn && sideMenu && closeBtn && menuOverlay) {
+                    hamburgerBtn.addEventListener("click", () => toggleMenu(true));
+                    closeBtn.addEventListener("click", () => toggleMenu(false));
+                    menuOverlay.addEventListener("click", () => toggleMenu(false));
                 }
+
+                accordionToggles.forEach((toggle) => {
+                    toggle.addEventListener("click", () => {
+                        const content = toggle.nextElementSibling;
+                        const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+
+                        toggle.setAttribute("aria-expanded", !isExpanded);
+
+                        if (content.style.maxHeight) {
+                            content.style.maxHeight = null;
+                        } else {
+                            content.style.maxHeight = content.scrollHeight + "px";
+                        }
+                    });
+                });
             });
-        });
-    });
-</script>
+        </script>
     </body>
 </html>
