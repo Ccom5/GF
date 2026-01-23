@@ -32,7 +32,7 @@ class ResonanciasApp {
         const closeBtn = document.querySelector('.close-btn');
 
         if (hamburgerBtn) {
-            hamburgerBtn.addEventListener('click', () => this.toggleMobileMenu());
+            hamburgerBtn.addEventListener('click', () => { console.log('Hamburger button clicked!'); this.toggleMobileMenu(); });
         }
 
         if (closeBtn) {

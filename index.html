@@ -372,42 +372,6 @@
                 </div>
             </div>
         </div>
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                const hamburgerBtn = document.querySelector(".hamburger-btn");
-                const sideMenu = document.querySelector(".side-menu");
-                const closeBtn = document.querySelector(".close-btn");
-                const menuOverlay = document.querySelector(".menu-overlay");
-                const accordionToggles = document.querySelectorAll(".accordion-toggle");
 
-                const toggleMenu = (show) => {
-                    sideMenu.classList.toggle("active", show);
-                    menuOverlay.classList.toggle("active", show);
-                    hamburgerBtn.setAttribute("aria-expanded", "show");
-                    sideMenu.setAttribute("aria-hidden", !show);
-                };
-
-                if (hamburgerBtn && sideMenu && closeBtn && menuOverlay) {
-                    hamburgerBtn.addEventListener("click", () => toggleMenu(true));
-                    closeBtn.addEventListener("click", () => toggleMenu(false));
-                    menuOverlay.addEventListener("click", () => toggleMenu(false));
-                }
-
-                accordionToggles.forEach((toggle) => {
-                    toggle.addEventListener("click", () => {
-                        const content = toggle.nextElementSibling;
-                        const isExpanded = toggle.getAttribute("aria-expanded") === "true";
-
-                        toggle.setAttribute("aria-expanded", !isExpanded);
-
-                        if (content.style.maxHeight) {
-                            content.style.maxHeight = null;
-                        } else {
-                            content.style.maxHeight = content.scrollHeight + "px";
-                        }
-                    });
-                });
-            });
-        </script>
     </body>
 </html>
