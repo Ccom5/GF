@@ -1513,13 +1513,29 @@ main section:first-of-type {
             
             .libros-grid {
               display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-              gap: var(--spacing-2xl);
-              max-width: 1100px;
+              grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+              gap: var(--spacing-sm); /* Reducir el gap para que quepan 4 columnas */
+              max-width: 1200px; /* Aumentar el ancho máximo para 4 columnas */
               margin: 0 auto;
             }
             
-            .libro {
+            @media (max-width: 1200px) {
+              .libros-grid {
+                grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas medianas-grandes */
+              }
+            }
+            
+            @media (max-width: 900px) {
+              .libros-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+              }
+            }
+            
+            @media (max-width: 600px) {
+              .libros-grid {
+                grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+              }
+            }            .libro {
               position: relative;
               overflow: hidden;
               border-radius: 12px;
@@ -1592,3 +1608,58 @@ main section:first-of-type {
     width: 100%;
     object-fit: cover;
 }
+
+.content-card--full-width {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/* Center table in article content */
+.article-content table {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+}
+
+
+
+/* Table styling for better visual presentation */
+.article-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-sm); /* Slightly reduced font size */
+}
+
+.article-content th,
+.article-content td {
+    border: 1px solid var(--color-mid);
+    padding: var(--spacing-md);
+    text-align: left;
+}
+
+.article-content th {
+    background-color: var(--color-secondary);
+    color: var(--color-light);
+    font-weight: 600;
+    font-family: var(--font-heading);
+}
+
+/* Zebra striping for rows */
+.article-content tbody tr:nth-child(even) {
+    background-color: var(--color-primary);
+}
+
+.article-content tbody tr:hover {
+    background-color: var(--color-muted);
+}
+
+/* Ensure strong text is readable and keeps its emphasis */
+.article-content td strong {
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
