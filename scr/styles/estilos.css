@@ -1662,4 +1662,16 @@ main section:first-of-type {
     font-weight: 600;
     color: var(--color-dark);
 }
+.article-content .MathJax_Display,
+.article-content mjx-container[display="true"] {
+  text-align: left !important;
+  margin-left: 0 !important;
+}
+.article-content mjx-container[display="true"] {
+  margin: 0.8em 0;
+}
 
+/* Utility class for centering text */
+.text-center {
+    text-align: center;
+}

@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calentamiento Global: Retardos y Percepción | RESONANCIAS</title>
+        <meta name="description" content="Un análisis del calentamiento global desde la perspectiva de la Dinámica de Sistemas de Jay Forrester, enfocándose en los retardos temporales entre acción y efecto." />
+
+        <!-- URL Canónica -->
+        <link rel="canonical" href="https://gf-amd.pages.dev/pages/calentamiento.html" />
+
+        <!-- SEO y Accesibilidad -->
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Gabriel Ferré" />
+        <meta name="keywords" content="calentamiento global, cambio climático, dinámica de sistemas, Jay Forrester, retardos temporales, percepción del riesgo, modelo de sistemas, física climática" />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Calentamiento Global: Retardos y Percepción | RESONANCIAS" />
+        <meta property="og:description" content="Un análisis del calentamiento global desde la perspectiva de la Dinámica de Sistemas de Jay Forrester, enfocándose en los retardos temporales entre acción y efecto." />
+        <meta property="og:image" content="https://gf-amd.pages.dev/img/calentamiento.jpg" />
+        <meta property="og:url" content="https://gf-amd.pages.dev/pages/calentamiento.html" />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="RESONANCIAS" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Calentamiento Global: Retardos y Percepción | RESONANCIAS" />
+        <meta name="twitter:description" content="Un análisis del calentamiento global desde la perspectiva de la Dinámica de Sistemas de Jay Forrester, enfocándose en los retardos temporales entre acción y efecto." />
+        <meta name="twitter:image" content="https://gf-amd.pages.dev/img/calentamiento.jpg" />
+
+        <!-- Favicon -->
+        <link rel="icon" href="/img/favicon.png" type="image/png" />
+
+        <!-- Estilos -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="/scr/styles/estilos.css" />
+
+        <!-- Scripts -->
+
+        <script src="/scr/js/main.js" defer></script>
+
+        <!-- Estilos responsivos para el layout del artículo -->
+        <style>
+            @media (max-width: 768px) {
+                .article-layout {
+                    flex-direction: column !important;
+                    gap: var(--spacing-lg) !important;
+                }
+                .image-card {
+                    position: relative !important;
+                    top: auto !important;
+                    width: 100% !important;
+                    min-width: auto !important;
+                    margin-bottom: var(--spacing-lg) !important;
+                }
+            }
+        </style>
+        <style>
+            /* Markdown incrustado desde Obsidian */
+            .md-obsidian h1,
+            .md-obsidian h2,
+            .md-obsidian h3,
+            .md-obsidian h4,
+            .md-obsidian h5,
+            .md-obsidian h6 {
+                margin-top: 1.6em;
+                margin-bottom: 0.6em;
+                line-height: 1.3;
+            }
+
+            .md-obsidian p {
+                margin: 0.9em 0;
+                line-height: 1.75;
+            }
+
+            .md-obsidian ul,
+            .md-obsidian ol {
+                margin: 0.9em 0 0.9em 1.6em;
+            }
+
+            .md-obsidian li {
+                margin: 0.4em 0;
+            }
+
+            .md-obsidian blockquote {
+                margin: 1.2em 0;
+                padding-left: 1em;
+                border-left: 3px solid var(--color-secondary);
+                color: var(--color-neutral);
+                font-style: italic;
+            }
+
+            .md-obsidian hr {
+                margin: 2em 0;
+                border: none;
+                border-top: 1px solid var(--color-mid);
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Skip to main content -->
+        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="nav-container">
+                <a href="/" class="logo" aria-label="RESONANCIAS - Inicio">
+                    <img src="/img/logo.png" alt="Logo RESONANCIAS" width="40" height="40" />
+                </a>
+
+                <!-- Navegación principal -->
+                <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+                    <a href="/">Inicio</a>
+                    <a href="/pages/obras.html">Libros</a>
+                    <a href="/pages/blog-2026.html">Blog</a>
+                    <a href="/pages/quien-soy.html">Quién soy</a>
+                    <a href="/pages/contacto.html">Contacto</a>
+                </nav>
+
+                <!-- Redes sociales y búsqueda -->
+                <div class="social-nav">
+                    <div class="search-container">
+                        <button id="searchToggle" class="search-toggle" aria-label="Buscar" aria-expanded="false">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    <div class="social-links">
+                        <a
+                            href="https://bsky.app/profile/gabrielferre.bsky.social"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Bluesky">
+                            <i class="fa-brands fa-bluesky"></i>
+                        </a>
+                        <a
+                            href="https://www.youtube.com/@Gabriel-Ferre-v3l"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Botón menú móvil -->
+                <button
+                    class="hamburger-btn"
+                    aria-label="Menú de navegación"
+                    aria-expanded="false"
+                    aria-controls="sideMenu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Menú lateral móvil -->
+        <aside class="side-menu" id="sideMenu" role="navigation" aria-label="Menú de navegación lateral">
+            <div class="menu-header">
+                <h2 class="menu-title">Navegación</h2>
+                <button class="close-btn" aria-label="Cerrar menú">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Menú tipo acordeón -->
+            <div class="accordion-menu">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/" class="accordion-link">
+                            <i class="fa-solid fa-house"></i>
+                            Inicio
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/obras.html" class="accordion-link">
+                            <i class="fa-solid fa-book"></i>
+                            Libros
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/blog-2026.html" class="accordion-link">
+                            <i class="fa-solid fa-blog"></i>
+                            Blog
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/quien-soy.html" class="accordion-link">
+                            <i class="fa-solid fa-user"></i>
+                            Quién soy
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/contacto.html" class="accordion-link">
+                            <i class="fa-solid fa-envelope"></i>
+                            Contacto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Overlay para menú -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+        <section
+            class="works-hero"
+            style="
+                margin-top: 0 !important;
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                    url(&quot;/img/calentamiento.jpg&quot;);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                color: var(--color-light);
+                padding: var(--spacing-3xl) 0;
+                text-align: center;
+                min-height: 400px;
+                display: flex;
+                align-items: center;
+            ">
+            <div class="container">
+                <h2
+                    style="
+                        font-size: var(--font-size-4xl);
+                        margin-bottom: var(--spacing-lg);
+                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                    ">
+                    Calentamiento Global
+                </h2>
+                <p
+                    style="
+                        font-size: var(--font-size-xl);
+                        max-width: 600px;
+                        margin: 0 auto;
+                        line-height: 1.6;
+                        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+                    ">
+El factor del retardo temporal                </p>
+            </div>
+        </section>
+        <!-- Contenido principal -->
+        <main id="main-content" role="main">
+            <!-- Artículo principal -->
+            <div class="content-card">
+                <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+                    <div class="container" style="max-width: 800px; margin: 0 auto">
+                        <!-- Header del artículo -->
+                        <header class="post-header" style="text-align: center; margin-bottom: var(--spacing-2xl)">
+                            <h1
+                                style="
+                                    font-size: var(--font-size-3xl);
+                                    color: var(--color-dark);
+                                    margin-bottom: var(--spacing-lg);
+                                ">
+                                Retardos - Energía y Percepción
+                            </h1>
+                            <div
+                                class="post-meta"
+                                style="
+                                    display: flex;
+                                    justify-content: center;
+                                    gap: var(--spacing-lg);
+                                    color: var(--color-neutral);
+                                    font-size: var(--font-size-sm);
+                                    flex-wrap: wrap;
+                                ">
+<time datetime="2026-01-27">27 de Enero 2026</time>
+                                <span>· Gabriel Ferré</span>
+                                
+                            </div>
+                        </header>
+
+                        <div
+                            class="article-layout"
+                            style="display: flex; gap: var(--spacing-xl); align-items: flex-start">
+                            <div class="article-content" style="flex: 1; line-height: 1.5; color: var(--color-dark)">
+                                <div
+  id="intro-paragraph"
+  class="md-obsidian"
+  style="
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-2xl);
+    color: var(--color-warm);
+    position: relative;
+  "
+>
+<h2>Una lectura Forresteriana del calentamiento global</h2>
+<br>
+<h2>1. Punto de partida</h2>
+<p>El debate climático suele centrarse en <strong>magnitudes</strong>: cuántos grados, cuántas partes por millón, cuántas toneladas emitidas. Sin embargo, desde la perspectiva de la <strong>Dinámica de Sistemas</strong>, iniciada por Jay Forrester, el comportamiento global de un sistema complejo rara vez está gobernado principalmente por las magnitudes. Está gobernado por su <strong>estructura</strong> y, en particular, por los <strong>retardos entre acción y efecto</strong>.</p>
+<p>Este documento no pretende modelar el clima con precisión, sino explorar una idea estructural: el calentamiento global puede entenderse como un sistema con <strong>desfases temporales múltiples</strong>, donde la respuesta aparece mucho después de la causa, y donde el control humano llega inevitablemente fuera de fase.</p>
+<br>
+<h2>2. El planeta como sistema con memoria</h2>
+<p>A escala climática, la Tierra puede describirse como un sistema que:</p>
+<ul>
+<li>recibe energía (principalmente solar),</li>
+<li>intercambia energía internamente entre subsistemas,</li>
+<li>pierde energía al espacio,</li>
+<li><strong>acumula</strong> energía durante largos períodos.</li>
+</ul>
+<p>Esa acumulación introduce memoria. Un sistema con memoria no responde instantáneamente: integra el pasado. Esta característica es central para entender por qué el calentamiento observable no coincide temporalmente con las acciones que lo provocan.</p>
+<br>
+<h2>3. Dos constantes de tiempo fundamentales</h2>
+<p>Una simplificación útil consiste en separar la respuesta térmica en <strong>dos escalas temporales dominantes</strong>:</p>
+<h3>τ₁ – Respuesta rápida (décadas)</h3>
+<ul>
+<li>Atmósfera</li>
+<li>Océano superficial</li>
+<li>Hielos estacionales</li>
+</ul>
+<p>Esta escala produce el calentamiento que percibimos en tiempos humanos: décadas.</p>
+<h3>τ₂ – Respuesta lenta (siglos)</h3>
+<ul>
+<li>Océano profundo</li>
+<li>Circulación termoalina</li>
+<li>Ajuste energético de fondo</li>
+</ul>
+<p>Esta escala acumula energía silenciosamente y la libera muy lentamente.</p>
+<p>La clave no es solo que existan dos escalas, sino que <strong>τ₂ ≫ τ₁</strong>. Esto genera un desfase estructural: cuando la respuesta lenta se manifiesta, la causa original pertenece a un pasado lejano.</p>
+<br>
+<h2>4. Estructura mínima tipo Forrester</h2>
+<p>Siguiendo la lógica de Forrester, el sistema puede representarse mediante:</p>
+<h3>Stocks (acumuladores)</h3>
+<ul>
+<li>S₁: forzamiento acumulado (gases de efecto invernadero)</li>
+<li>S₂: energía térmica rápida</li>
+<li>S₃: energía térmica lenta</li>
+<li>S₄: conciencia y capacidad de respuesta humana</li>
+</ul>
+<h3>Flujos</h3>
+<ul>
+<li>emisiones → S₁</li>
+<li>transferencia S₁ → S₂ (con retardo τ₁)</li>
+<li>transferencia S₂ → S₃ (con retardo τ₂)</li>
+<li>acción humana → reducción de emisiones (con retardos sociales)</li>
+</ul>
+<p>Esta estructura ya contiene, implícitamente, el comportamiento problemático.</p>
+<br>
+<h2>5. El retardo cognitivo</h2>
+<p>A los retardos físicos se suma uno decisivo: el <strong>retardo humano</strong>.</p>
+<p>Entre el aumento de temperatura y la acción correctiva existen al menos dos demoras adicionales:</p>
+<ul>
+<li>τ₃: tiempo entre señal física y toma de conciencia</li>
+<li>τ₄: tiempo entre conciencia y acción efectiva</li>
+</ul>
+<p>En muchos casos:</p>
+<p>τ₂ ≫ (τ₃ + τ₄)</p>
+<p>Esto implica que, incluso actuando “a tiempo” desde la percepción humana, el sistema físico ya está comprometido.</p>
+<br>
+<img
+                                        src="/img/calentamiento.jpg"
+                                        alt="Diagrama de dinámica de sistemas del calentamiento global con retardos temporales"
+                                        style="
+                                            width: 100%;
+                                            height: auto;
+                                            max-height: 600px;
+                                            object-fit: contain;
+                                            border-radius: 8px;
+                                            margin-bottom: var(--spacing-md);
+                                        " />
+<h2>6. Overshoot: el resultado estructural</h2>
+<p>Forrester mostró que cuando el tiempo de ajuste del sistema excede el tiempo de reacción del control, aparece inevitablemente el <strong>sobrepaso</strong> (overshoot).</p>
+<p>En este contexto:</p>
+<ul>
+<li>el forzamiento puede estabilizarse,</li>
+<li>las emisiones pueden reducirse,</li>
+<li>y aun así la temperatura continúa aumentando.</li>
+</ul>
+<p>No por inacción moral, sino por estructura dinámica.</p>
+<br>
+<h2>7. Una analogía formal: crecimiento exponencial</h2>
+<p>Este comportamiento es matemáticamente equivalente al crecimiento exponencial clásico (bacterias en una botella, interés compuesto):</p>
+<ul>
+<li>el problema parece pequeño durante la mayor parte del tiempo,</li>
+<li>la fase final domina el resultado,</li>
+<li>la toma de conciencia ocurre cuando queda poco margen de maniobra.</li>
+</ul>
+<p>La analogía no es retórica: comparte la misma lógica temporal.</p>
+<br>
+<h2>8. Por qué las magnitudes engañan</h2>
+<p>El énfasis exclusivo en números absolutos induce una falsa sensación de control:</p>
+<ul>
+<li>reducir emisiones no equivale a reducir temperatura inmediata,</li>
+<li>detener el crecimiento no implica revertir el daño,</li>
+<li>la pendiente futura puede estar fijada antes de que el problema sea evidente.</li>
+</ul>
+<p>En sistemas con memoria, <strong>el pasado pesa más que el presente</strong>.</p>
+<br>
+<h2>9. Implicaciones</h2>
+<p>Este enfoque no conduce necesariamente al fatalismo, pero sí a una conclusión incómoda:</p>
+<blockquote>
+<p>La dificultad principal no es técnica ni moral, sino temporal.</p>
+</blockquote>
+<p>La estructura del sistema hace que las decisiones humanas lleguen tarde respecto de los procesos físicos que intentan regular.</p>
+<br>
+<hr>
+<p>Este texto no busca cerrar una respuesta definitiva. Puede leerse como:</p>
+<ul>
+<li>un ensayo conceptual sobre retardos y percepción,</li>
+<li>una base para un modelo dinámico más formal,</li>
+<li>Es el esqueleto de una observacion donde el tiempo, más que el conflicto, es el verdadero antagonista.</li>
+</ul>
+<p>La idea central permanece:</p>
+<blockquote>
+<p>En sistemas complejos con memoria, los retardos gobiernan el destino más que las magnitudes visibles.</p>
+</blockquote>
+<p>Comprender esa estructura es, quizás, el primer paso para dejar de sorprendernos por consecuencias que, en realidad, estaban escritas mucho antes de hacerse visibles.</p>
+<br>
+<br>
+</div>
+                            </div>
+                        </div><a
+    href="/pages/anexo-global.html"
+    style="
+        display: block; /* Changed from inline-flex */
+        margin: 0 auto; /* Added for centering */
+        width: fit-content; /* Adapt width to content */
+        background: var(--color-secondary);
+        color: var(--color-light);
+        border: none;
+        padding: var(--spacing-md) var(--spacing-xl);
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+        margin-bottom: var(--spacing-2xl);
+    "
+    onmouseover="this.style.background='var(--color-warm)'; this.style.transform='translateY(-2px)'"
+    onmouseout="this.style.background='var(--color-secondary)'; this.style.transform='translateY(0)'">
+    Anexo-Cálculos
+</a>
+                        <section
+                            class="blog-subscription"
+                            style="
+                                margin-top: var(--spacing-3xl);
+                                background: var(--color-mid);
+                                padding: var(--spacing-2xl);
+                                border-radius: 12px;
+                                text-align: center;
+                            ">
+                            <nav class="share-footer" aria-label="Compartir página">
+                                <a
+                                    href="https://www.facebook.com/sharer/sharer.php?u=https://gf-amd.pages.dev/pages/blog.-ia.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn facebook"
+                                    title="Compartir en Facebook"
+                                    aria-label="Compartir en Facebook">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                                <a
+                                    href="https://twitter.com/intent/tweet?url=https://gf-amd.pages.dev/pages/blog.-ia&text=Necesitamos%20Humanidad%20Antes%20que%20IA:%20Tecnología%20y%20Desigualdad%20|%20RESONANCIAS"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn twitter"
+                                    title="Compartir en X"
+                                    aria-label="Compartir en X">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+
+                                <a
+                                    href="https://api.whatsapp.com/send?text=Necesitamos%20Humanidad%20Antes%20que%20IA:%20Tecnología%20y%20Desigualdad%20|%20RESONANCIAS%20https://gf-amd.pages.dev/pages/blog.-ia.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn whatsapp"
+                                    title="Compartir en WhatsApp"
+                                    aria-label="Compartir en WhatsApp">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                                <a
+                                    href="https://bsky.app/intent/compose?text=Necesitamos%20Humanidad%20Antes%20que%20IA:%20Tecnología%20y%20Desigualdad%20|%20RESONANCIAS%20https://gf-amd.pages.dev/pages/blog.-ia.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn bluesky"
+                                    title="Compartir en Bluesky"
+                                    aria-label="Compartir en Bluesky">
+                                    <i class="fa-brands fa-bluesky"></i>
+                                </a>
+                            </nav>
+                            <h3
+                                style="
+                                    color: var(--color-dark);
+                                    margin-bottom: var(--spacing-md);
+                                    font-size: var(--font-size-2xl);
+                                ">
+                                Comparte en tus redes
+                            </h3>
+                            <h4>Suscribete</h4>
+
+                            <p
+                                style="
+                                    color: var(--color-warm);
+                                    margin-bottom: var(--spacing-xl);
+                                    max-width: 500px;
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                    line-height: 1.6;
+                                ">
+                                Recibe notificaciones cuando publique nuevos ensayos y reflexiones. Sin spam, solo
+                                contenido de calidad.
+                            </p>
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    gap: var(--spacing-md);
+                                    max-width: 400px;
+                                    margin: 0 auto;
+                                    flex-wrap: wrap;
+                                ">
+                                <a
+                                    href="/pages/contacto.html"
+                                    style="
+                                        background: var(--color-secondary);
+                                        color: var(--color-light);
+                                        border: none;
+                                        padding: var(--spacing-md) var(--spacing-xl);
+                                        border-radius: 8px;
+                                        font-weight: 600;
+                                        text-decoration: none;
+                                        cursor: pointer;
+                                        transition: all var(--transition-fast);
+                                        display: inline-flex;
+                                        align-items: center;
+                                        gap: var(--spacing-sm);
+                                    "
+                                    onmouseover="this.style.background='var(--color-warm)'; this.style.transform='translateY(-2px)'"
+                                    onmouseout="this.style.background='var(--color-secondary)'; this.style.transform='translateY(0)'">
+                                    <svg
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                    Contáctame
+                                </a>
+                            </div>
+                            <p
+                                style="
+                                    font-size: var(--font-size-sm);
+                                    color: var(--color-neutral);
+                                    margin-top: var(--spacing-md);
+                                ">
+                                * Puedes darte de baja en cualquier momento
+                            </p>
+                        </section>
+                        <!-- Footer del artículo -->
+
+                        <footer
+                            style="
+                                margin-top: var(--spacing-2xl);
+                                padding-top: var(--spacing-xl);
+                                border-top: 1px solid var(--color-mid);
+                            ">
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    flex-wrap: wrap;
+                                    gap: var(--spacing-md);
+                                ">
+                                <div>
+                                    <p style="color: var(--color-neutral); font-size: var(--font-size-sm); margin: 0">
+                                        Publicado el <time datetime="2025-08">Agosto 2025</time>
+                                    </p>
+                                </div>
+                                <div style="display: flex; gap: var(--spacing-sm)">
+                                    <a
+                                        href="/pages/blog-2026.html"
+                                        style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                                        ← Volver al blog
+                                    </a>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content">
+                <p>
+                    <a href="/" class="footer-logo-link">
+                        <img src="/img/logo2_footer.png" alt="Logo RESONANCIAS" width="90" height="40" />
+                    </a>
+                    © 2026 RESONANCIAS · Todos los derechos reservados
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
