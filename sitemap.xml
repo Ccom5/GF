@@ -9,107 +9,197 @@
 
 <url>
   <loc>https://gf-amd.pages.dev/</loc>
-  <lastmod>2025-10-03T04:45:48+00:00</lastmod>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://gf-amd.pages.dev/pages/obras</loc>
-  <lastmod>2025-10-03T04:45:48+00:00</lastmod>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://gf-amd.pages.dev/pages/libros/lector</loc>
-  <lastmod>2025-10-03T04:45:48+00:00</lastmod>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://gf-amd.pages.dev/pages/blog</loc>
-  <lastmod>2025-10-03T04:45:48+00:00</lastmod>
+  <loc>https://gf-amd.pages.dev/pages/blog-2026</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gf-amd.pages.dev/pages/Tecnica/Tecnica</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://gf-amd.pages.dev/pages/quien-soy</loc>
-  <lastmod>2025-10-03T04:45:48+00:00</lastmod>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://gf-amd.pages.dev/pages/contacto</loc>
-  <lastmod>2025-10-03T04:45:48+00:00</lastmod>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://gf-amd.pages.dev/pages/carousel</loc>
-  <lastmod>2025-10-03T04:45:48+00:00</lastmod>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://gf-amd.pages.dev/pages/blog-literatura</loc>
-  <lastmod>2025-10-03T04:45:48+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/blog-lenguaje</loc>
-  <lastmod>2025-10-03T04:45:48+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/libros/lector?book=Reconoci%C3%A9ndonos-en-el-Universo</loc>
-  <lastmod>2025-10-03T04:45:48+00:00</lastmod>
-  <priority>0.64</priority>
+  <loc>https://gf-amd.pages.dev/pages/blog</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://gf-amd.pages.dev/pages/libros/lector?book=cronicas-de-la-expiacion</loc>
-  <lastmod>2025-10-03T04:45:48+00:00</lastmod>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://gf-amd.pages.dev/pages/libros/lector?book=saber-no-percibido</loc>
-  <lastmod>2025-10-03T04:45:48+00:00</lastmod>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://gf-amd.pages.dev/pages/libros/biblioteca</loc>
-  <lastmod>2025-10-03T04:45:48+00:00</lastmod>
+  <loc>https://gf-amd.pages.dev/pages/vigilancia</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://gf-amd.pages.dev/pages/ensayo-sociedad</loc>
-  <lastmod>2025-10-03T04:45:48+00:00</lastmod>
+  <loc>https://gf-amd.pages.dev/pages/esperanza</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://gf-amd.pages.dev/pages/carta-abierta</loc>
-  <lastmod>2025-10-03T04:45:48+00:00</lastmod>
+  <loc>https://gf-amd.pages.dev/pages/pensar</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://gf-amd.pages.dev/pages/blog-cerebro</loc>
-  <lastmod>2025-10-03T04:45:48+00:00</lastmod>
+  <loc>https://gf-amd.pages.dev/pages/punto-vista</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://gf-amd.pages.dev/pages/blog-agente-ia</loc>
-  <lastmod>2025-10-03T04:45:48+00:00</lastmod>
+  <loc>https://gf-amd.pages.dev/pages/estado-espia</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://gf-amd.pages.dev/pages/blog-guerra</loc>
-  <lastmod>2025-10-03T04:45:48+00:00</lastmod>
+  <loc>https://gf-amd.pages.dev/pages/Tecnica/Electrica</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://gf-amd.pages.dev/pages/blog-ia</loc>
-  <lastmod>2025-10-03T04:45:48+00:00</lastmod>
+  <loc>https://gf-amd.pages.dev/pages/Tecnica/calentamiento</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://gf-amd.pages.dev/pages/entrada-p</loc>
-  <lastmod>2025-10-03T04:45:48+00:00</lastmod>
+  <loc>https://gf-amd.pages.dev/pages/Tecnica/Cambio-paradigma</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://gf-amd.pages.dev/pages/libros/cronicas.html</loc>
-  <lastmod>2025-10-03T04:45:48+00:00</lastmod>
+  <loc>https://gf-amd.pages.dev/pages/blog-literatura</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gf-amd.pages.dev/pages/blog-lenguaje</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gf-amd.pages.dev/pages/Blog-unidad.html</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gf-amd.pages.dev/pages/blog-sociales.html</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gf-amd.pages.dev/pages/blog-apatia.html</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gf-amd.pages.dev/pages/blog-etica.html</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gf-amd.pages.dev/pages/blog-informarse.html</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gf-amd.pages.dev/pages/blog-sociedad.html</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gf-amd.pages.dev/pages/blog-OpenAI.html</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gf-amd.pages.dev/pages/Blog-ignorancia.html</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gf-amd.pages.dev/pages/ensayo-sociedad.html</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gf-amd.pages.dev/pages/carta-abierta.html</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gf-amd.pages.dev/pages/blog-cerebro.html</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gf-amd.pages.dev/pages/blog-agente-ia.html</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gf-amd.pages.dev/pages/blog-guerra.html</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gf-amd.pages.dev/pages/blog-ia.html</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gf-amd.pages.dev/pages/entrada-p.html</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gf-amd.pages.dev/pages/blog-lenguaje.html</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gf-amd.pages.dev/pages/blog-literatura.html</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gf-amd.pages.dev/pages/Tecnica/anexo-global</loc>
+  <lastmod>2026-01-30T22:25:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 
