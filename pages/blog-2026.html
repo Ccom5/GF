@@ -69,7 +69,8 @@
                     <a href="/">Inicio</a>
                     <a href="/pages/obras.html">Libros</a>
                     <a href="/pages/libros/lector.html">Biblioteca</a>
-                    <a href="/pages/blog" aria-current="page">Blog</a>
+                    <a href="/pages/blog-2026.html">Blog</a>
+                    <a href="/pages/Tecnica/Tecnica.html">Técnica</a>
                     <a href="/pages/quien-soy.html">Quién soy</a>
                     <a href="/pages/contacto.html">Contacto</a>
                 </nav>
@@ -81,24 +82,7 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </div>
-                    <div class="social-links">
-                        <a
-                            href="https://www.youtube.com/@Gabriel-Ferre-v3l"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="YouTube">
-                            <i class="fa-brands fa-youtube"></i>
-                        </a>
-                        <a
-                            href="https://bsky.app/profile/gabrielferre.bsky.social"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Bluesky">
-                            <i class="fa-brands fa-bluesky"></i>
-                        </a>
-                    </div>
                 </div>
-
                 <!-- Botón menú móvil -->
                 <button
                     class="hamburger-btn"
@@ -111,7 +95,6 @@
                 </button>
             </div>
         </header>
-
         <!-- Menú lateral móvil -->
         <aside class="side-menu" id="sideMenu" role="navigation" aria-label="Menú de navegación lateral">
             <div class="menu-header">
@@ -123,7 +106,6 @@
                     </svg>
                 </button>
             </div>
-
             <!-- Menú tipo acordeón -->
             <div class="accordion-menu">
                 <div class="accordion-item">
@@ -187,7 +169,7 @@
 
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <button class="accordion-toggle" aria-expanded="true">
+                        <button class="accordion-toggle" aria-expanded="false">
                             <svg
                                 width="20"
                                 height="20"
@@ -219,7 +201,26 @@
                         <a href="/pages/blog.html">Blog-2025</a>
                     </div>
                 </div>
-
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/Tecnica/Tecnica.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 5 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 5 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 5a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09A1.65 1.65 0 0 0 15 5a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19 9c0 .69.4 1.31 1.01 1.59.31.14.65.22.99.22h.09a2 2 0 1 1 0 4h-.09A1.65 1.65 0 0 0 19.4 15z"></path>
+                            </svg>
+                            Tecnica
+                        </a>
+                    </div>
+                </div>
                 <div class="accordion-item">
                     <div class="accordion-header">
                         <a href="/pages/quien-soy.html" class="accordion-link">
@@ -334,194 +335,6 @@
                                     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
                                     gap: var(--spacing-xl);
                                 ">
-                                <article
-                                    class="blog-entry-card"
-                                    style="
-                                        background: var(--color-light);
-                                        border-radius: 12px;
-                                        overflow: hidden;
-                                        box-shadow: var(--shadow-md);
-                                        transition: all var(--transition-fast);
-                                    "
-                                >
-                                    <!-- Imagen -->
-                                    <div class="entry-image" style="height: 250px; position: relative; overflow: hidden">
-                                        <img
-                                            src="/img/cobre-electricidad.jpg"
-                                            alt="Imagen representativa de la electrificación y la dependencia de materiales como el cobre."
-                                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8"
-                                        />
-                                        <div
-                                            style="
-                                                position: absolute;
-                                                top: var(--spacing-md);
-                                                right: var(--spacing-md);
-                                                background: var(--color-accent);
-                                                color: var(--color-light);
-                                                padding: var(--spacing-xs) var(--spacing-sm);
-                                                border-radius: 15px;
-                                                font-size: var(--font-size-sm);
-                                                font-weight: 600;
-                                            ">
-                                            Proyecto
-                                        </div>
-                                    </div>
-
-                                    <!-- Contenido -->
-                                    <div style="padding: var(--spacing-xl); position: relative">
-                                        <h3
-                                            style="
-                                                font-size: var(--font-size-xl);
-                                                margin-bottom: var(--spacing-md);
-                                                color: var(--color-dark);
-                                            "
-                                        >
-                                            <a
-                                                href="/pages/Electrica.html"
-                                                style="
-                                                    text-decoration: none;
-                                                    color: inherit;
-                                                    transition: color var(--transition-fast);
-                                                "
-                                            >
-                                                Límites materiales: Electrificación y Dependencia
-                                            </a>
-                                        </h3>
-
-                                        <p
-                                            style="
-                                                color: var(--color-dark);
-                                                margin-bottom: var(--spacing-lg);
-                                                line-height: 1.6;
-                                            "
-                                        >
-                                            Análisis sobre los límites materiales de la electrificación, la dependencia del cobre y el aluminio, y la necesidad de repensar el sistema eléctrico argentino.
-                                        </p>
-                                        <div style="display: flex; justify-content: space-between; align-items: center">
-                                            <span class="entry-date" style="font-size: var(--font-size-sm); color: var(--color-neutral)">
-                                                📅 28 Enero 2026
-                                            </span>
-                                            <a
-                                                href="/pages/Electrica.html"
-                                                style="
-                                                    color: var(--color-secondary);
-                                                    text-decoration: none;
-                                                    font-weight: 600;
-                                                    display: flex;
-                                                    align-items: center;
-                                                    gap: var(--spacing-xs);
-                                                "
-                                            >
-                                                Leer más
-                                                <svg
-                                                    width="16"
-                                                    height="16"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    stroke="currentColor"
-                                                    stroke-width="2"
-                                                >
-                                                    <path d="M7 17l9.2-9.2M17 17V7H7" />
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </article>
-                                <!-- Entrada para Calentamiento Global -->
-                                <article
-                                    class="blog-entry-card"
-                                    style="
-                                        background: var(--color-light);
-                                        border-radius: 12px;
-                                        overflow: hidden;
-                                        box-shadow: var(--shadow-md);
-                                        transition: all var(--transition-fast);
-                                    "
-                                >
-                                    <!-- Imagen -->
-                                    <div class="entry-image" style="height: 250px; position: relative; overflow: hidden">
-                                        <img
-                                            src="/img/calentamiento.jpg"
-                                            alt="Imagen representativa del calentamiento global"
-                                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8"
-                                        />
-                                        <div
-                                            style="
-                                                position: absolute;
-                                                top: var(--spacing-md);
-                                                right: var(--spacing-md);
-                                                background: var(--color-accent);
-                                                color: var(--color-light);
-                                                padding: var(--spacing-xs) var(--spacing-sm);
-                                                border-radius: 15px;
-                                                font-size: var(--font-size-sm);
-                                                font-weight: 600;
-                                            "
-                                        >
-                                            Análisis
-                                        </div>
-                                    </div>
-
-                                    <!-- Contenido -->
-                                    <div style="padding: var(--spacing-xl); position: relative">
-                                        <h3
-                                            style="
-                                                font-size: var(--font-size-xl);
-                                                margin-bottom: var(--spacing-md);
-                                                color: var(--color-dark);
-                                            "
-                                        >
-                                            <a
-                                                href="/pages/calentamiento.html"
-                                                style="
-                                                    text-decoration: none;
-                                                    color: inherit;
-                                                    transition: color var(--transition-fast);
-                                                "
-                                            >
-                                                Calentamiento Global: Retardos y Percepción
-                                            </a>
-                                        </h3>
-
-                                        <p
-                                            style="
-                                                color: var(--color-dark);
-                                                margin-bottom: var(--spacing-lg);
-                                                line-height: 1.6;
-                                            "
-                                        >
-                                            Un análisis del calentamiento global desde la perspectiva de la Dinámica de Sistemas de Jay Forrester, enfocándose en los retardos temporales entre acción y efecto.
-                                        </p>
-                                        <div style="display: flex; justify-content: space-between; align-items: center">
-                                            <span class="entry-date" style="font-size: var(--font-size-sm); color: var(--color-neutral)">
-                                                📅 27 Enero 2026
-                                            </span>
-                                            <a
-                                                href="/pages/calentamiento.html"
-                                                style="
-                                                    color: var(--color-secondary);
-                                                    text-decoration: none;
-                                                    font-weight: 600;
-                                                    display: flex;
-                                                    align-items: center;
-                                                    gap: var(--spacing-xs);
-                                                "
-                                            >
-                                                Leer más
-                                                <svg
-                                                    width="16"
-                                                    height="16"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    stroke="currentColor"
-                                                    stroke-width="2"
-                                                >
-                                                    <path d="M7 17l9.2-9.2M17 17V7H7" />
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </article>
                                 <!-- Entrada para Vigilancia -->
                                 <article
                                     class="blog-entry-card"
@@ -571,7 +384,7 @@
                                                     color: inherit;
                                                     transition: color var(--transition-fast);
                                                 ">
-                                                Vigilancia Algorítmica y Poder
+                                                La vigilancia algorítmica en América Latina
                                             </a>
                                         </h3>
 
@@ -581,13 +394,14 @@
                                                 margin-bottom: var(--spacing-lg);
                                                 line-height: 1.6;
                                             ">
-                                            Análisis sobre los riesgos de la vigilancia algorítmica y el avance de tecnologías de análisis masivo de datos en la región.
+                                            El avance de tecnologías de análisis masivo de datos reabre un debate
+                                            histórico sobre control, justicia y derechos en la región
                                         </p>
                                         <div style="display: flex; justify-content: space-between; align-items: center">
                                             <span
                                                 class="entry-date"
                                                 style="font-size: var(--font-size-sm); color: var(--color-neutral)">
-                                                📅 24 Enero 2026
+                                                📅 28 Enero 2026
                                             </span>
                                             <a
                                                 href="/pages/vigilancia.html"
@@ -749,7 +563,7 @@
                                                 color: var(--color-dark);
                                             ">
                                             <a
-                                                href="/pages/pensar"
+                                                href="/pages/pensar.html"
                                                 style="
                                                     text-decoration: none;
                                                     color: inherit;
@@ -961,98 +775,6 @@
                                             </span>
                                             <a
                                                 href="/pages/estado-espia.html"
-                                                style="
-                                                    color: var(--color-secondary);
-                                                    text-decoration: none;
-                                                    font-weight: 600;
-                                                    display: flex;
-                                                    align-items: center;
-                                                    gap: var(--spacing-xs);
-                                                ">
-                                                Leer más
-                                                <svg
-                                                    width="16"
-                                                    height="16"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    stroke="currentColor"
-                                                    stroke-width="2">
-                                                    <path d="M7 17l9.2-9.2M17 17V7H7" />
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </article>
-                                <!-- Entrada Nueva: Cambio de Paradigma -->
-                                <article
-                                    class="blog-entry-card"
-                                    style="
-                                        background: var(--color-light);
-                                        border-radius: 12px;
-                                        overflow: hidden;
-                                        box-shadow: var(--shadow-md);
-                                        transition: all var(--transition-fast);
-                                    ">
-                                    <!-- Imagen -->
-                                    <div
-                                        class="entry-image"
-                                        style="height: 250px; position: relative; overflow: hidden">
-                                        <img
-                                            src="/img/cambio-paradisgma.jpg"
-                                            alt="Cambio de Paradigma de Gobernabilidad"
-                                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8" />
-                                        <div
-                                            style="
-                                                position: absolute;
-                                                top: var(--spacing-md);
-                                                right: var(--spacing-md);
-                                                background: var(--color-accent);
-                                                color: var(--color-light);
-                                                padding: var(--spacing-xs) var(--spacing-sm);
-                                                border-radius: 15px;
-                                                font-size: var(--font-size-sm);
-                                                font-weight: 600;
-                                            ">
-                                            Gobernabilidad
-                                        </div>
-                                    </div>
-
-                                    <!-- Contenido -->
-                                    <div style="padding: var(--spacing-xl); position: relative">
-                                        <h3
-                                            style="
-                                                font-size: var(--font-size-xl);
-                                                margin-bottom: var(--spacing-md);
-                                                color: var(--color-dark);
-                                            ">
-                                            <a
-                                                href="/pages/Cambio-paradigma.html"
-                                                style="
-                                                    text-decoration: none;
-                                                    color: inherit;
-                                                    transition: color var(--transition-fast);
-                                                ">
-                                                Cambio de Paradigma de Gobernabilidad
-                                            </a>
-                                        </h3>
-
-                                        <p
-                                            style="
-                                                color: var(--color-dark);
-                                                margin-bottom: var(--spacing-lg);
-                                                line-height: 1.6;
-                                            ">
-                                            Análisis completo sobre el cambio de paradigma en la gobernabilidad: del
-                                            orden estructural al dinámico.
-                                        </p>
-                                        <div style="display: flex; justify-content: space-between; align-items: center">
-                                            <span
-                                                class="entry-date"
-                                                style="font-size: var(--font-size-sm); color: var(--color-neutral)">
-                                                📅 Enero 2026
-                                            </span>
-                                            <a
-                                                href="/pages/Cambio-paradigma.html"
                                                 style="
                                                     color: var(--color-secondary);
                                                     text-decoration: none;

@@ -42,47 +42,206 @@
     <header class="header">
         <div class="nav-container">
             <a href="/" class="logo"><img src="/img/logo.png" alt="Logo RESONANCIAS" width="40" height="40" /></a>
-            <nav class="main-nav">
-                <a href="/">Inicio</a>
-                <a href="/pages/obras.html">Libros</a>
-                <a href="/pages/blog-2026.html">Blog</a>
-                <a href="/pages/quien-soy.html">Quién soy</a>
-                <a href="/pages/contacto.html">Contacto</a>
-            </nav>
-            <div class="social-nav">
-                <div class="search-container">
-                    <button id="searchToggle" class="search-toggle"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <!-- Navegación principal -->
+                <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+                    <a href="/" aria-current="page">Inicio</a>
+                    <a href="/pages/obras.html">Libros</a>
+                    <a href="/pages/libros/lector.html">Biblioteca</a>
+                    <a href="/pages/blog-2026.html">Blog</a>
+                    <a href="/pages/Tecnica/Tecnica.html">Técnica</a>
+                    <a href="/pages/quien-soy.html">Quién soy</a>
+                    <a href="/pages/contacto.html">Contacto</a>
+                </nav>
+
+                <!-- Redes sociales y búsqueda -->
+                <div class="social-nav">
+                    <div class="search-container">
+                        <button id="searchToggle" class="search-toggle" aria-label="Buscar" aria-expanded="false">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="social-links">
-                    <a href="https://bsky.app/profile/gabrielferre.bsky.social" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-bluesky"></i></a>
-                    <a href="https://www.youtube.com/@Gabriel-Ferre-v3l" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+                <!-- Botón menú móvil -->
+                <button
+                    class="hamburger-btn"
+                    aria-label="Menú de navegación"
+                    aria-expanded="false"
+                    aria-controls="sideMenu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Menú lateral móvil -->
+        <aside class="side-menu" id="sideMenu" role="navigation" aria-label="Menú de navegación lateral">
+            <div class="menu-header">
+                <h2 class="menu-title">Menú del Blog</h2>
+                <button class="close-btn" aria-label="Cerrar menú">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <!-- Menú tipo acordeón -->
+            <div class="accordion-menu">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/index.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                            </svg>
+                            Inicio
+                        </a>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <button class="accordion-toggle" aria-expanded="false">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                            Libros
+                            <svg
+                                class="accordion-arrow"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="accordion-content">
+                        <a href="/pages/obras.html">Todas las obras</a>
+                        <a href="/pages/carousel.html">El Regalo Escondido</a>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/libros/lector.html" class="accordion-link">
+                            <i class="fa-solid fa-book-reader"></i>
+                            Biblioteca
+                        </a>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <button class="accordion-toggle" aria-expanded="false">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14,2 14,8 20,8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10,9 9,9 8,9"></polyline>
+                            </svg>
+                            Blog
+                            <svg
+                                class="accordion-arrow"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="accordion-content active">
+                        <a href="/pages/blog-2026.html">Blog-2026</a>
+                        <a href="/pages/blog.html">Blog-2025</a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/Tecnica/Tecnica.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 5 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 5 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 5a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09A1.65 1.65 0 0 0 15 5a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19 9c0 .69.4 1.31 1.01 1.59.31.14.65.22.99.22h.09a2 2 0 1 1 0 4h-.09A1.65 1.65 0 0 0 19.4 15z"></path>
+                            </svg>
+                            Tecnica
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/quien-soy.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            Quién soy
+                        </a>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/contacto.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            Contacto
+                        </a>
+                    </div>
                 </div>
             </div>
-            <button class="hamburger-btn" aria-controls="sideMenu">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-        </div>
-    </header>
-
-    <aside class="side-menu" id="sideMenu">
-        <div class="menu-header">
-            <h2 class="menu-title">Navegación</h2>
-            <button class="close-btn">×</button>
-        </div>
-        <div class="accordion-menu">
-            <div class="accordion-item"><div class="accordion-header"><a href="/" class="accordion-link"><i class="fa-solid fa-house"></i> Inicio</a></div></div>
-            <div class="accordion-item"><div class="accordion-header"><a href="/pages/obras.html" class="accordion-link"><i class="fa-solid fa-book"></i> Libros</a></div></div>
-            <div class="accordion-item"><div class="accordion-header"><a href="/pages/blog-2026.html" class="accordion-link"><i class="fa-solid fa-blog"></i> Blog</a></div></div>
-            <div class="accordion-item"><div class="accordion-header"><a href="/pages/quien-soy.html" class="accordion-link"><i class="fa-solid fa-user"></i> Quién soy</a></div></div>
-            <div class="accordion-item"><div class="accordion-header"><a href="/pages/contacto.html" class="accordion-link"><i class="fa-solid fa-envelope"></i> Contacto</a></div></div>
-        </div>
-    </aside>
+        </aside>
 
     <div class="menu-overlay" id="menuOverlay"></div>
 
-    <section class="works-hero" style="margin-top:0!important;background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('/img/participativo.jpg');background-size:cover;background-position:center;color:var(--color-light);padding:var(--spacing-3xl) 0;text-align:center;min-height:400px;display:flex;align-items:center">
+    <section class="works-hero" style="margin-top:0!important;background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('/pages/Tecnica/img/participativo.jpg');background-size:cover;background-position:center;color:var(--color-light);padding:var(--spacing-3xl) 0;text-align:center;min-height:400px;display:flex;align-items:center">
         <div class="container">
             <h1 style="font-size:var(--font-size-4xl);margin-bottom:var(--spacing-lg);text-shadow:2px 2px 4px rgba(0,0,0,0.5)">Cambio de Paradigma de Gobernabilidad</h1>
             <p style="font-size:var(--font-size-xl);max-width:600px;margin:0 auto;line-height:1.6;text-shadow:1px 1px 2px rgba(0,0,0,0.5)">Del orden estructural al orden dinámico</p>
@@ -95,15 +254,13 @@
                 <div class="container" style="max-width:800px;margin:0 auto">
                     <header class="post-header" style="text-align:center;margin-bottom:var(--spacing-2xl)">
                         <div class="post-meta" style="display:flex;justify-content:center;gap:var(--spacing-lg);color:var(--color-neutral);font-size:var(--font-size-sm);flex-wrap:wrap">
-                            <time datetime="2026-01">Enero 2026</time>
                             <span>· Gabriel Ferré</span>
-                            <span>· 15 min de lectura</span>
                         </div>
                     </header>
 
                     <div class="article-content" style="line-height:1.5;color:var(--color-dark)">
                         <figure style="text-align:center;margin:var(--spacing-xl) 0">
-                            <img src="/img/participativo.jpg" alt="Cooperación y organización participativa" style="max-width:100%;height:auto;max-height:500px;object-fit:cover;border-radius:12px;box-shadow:var(--shadow-lg)"/>
+                            <img src="/pages/Tecnica/img/participativo.jpg" alt="Cooperación y organización participativa" style="max-width:100%;height:auto;max-height:500px;object-fit:cover;border-radius:12px;box-shadow:var(--shadow-lg)"/>
                             <figcaption style="margin-top:var(--spacing-md);font-size:var(--font-size-sm);color:var(--color-neutral);font-style:italic">De la rigidez estructural a la fluidez participativa</figcaption>
                         </figure><br/>
                                                 <h2>Presentación de la serie</h2><br/>
@@ -265,7 +422,7 @@
                                 </p>
                                 <br />
                                 <img
-                                    src="/img/cambio-paradisgma.jpg"
+                                    src="/pages/Tecnica/img/cambio-paradisgma.jpg"
                                     alt="Esquema visual que representa el cambio de un paradigma estructural a uno dinámico."
                                     style="
                                         width: 100%;
@@ -453,7 +610,7 @@
                                 <p>Sin comunidad activa, la tecnología sólo acelera viejas desigualdades.</p>
                                 <br /><br />
                                 <img
-                                    src="/img/organizada.jpg"
+                                    src="/pages/Tecnica/img/organizada.jpg"
                                     alt="Diagrama que ilustra el concepto de comunidad organizada en red."
                                     style="
                                         width: 100%;
@@ -653,7 +810,7 @@
                                 </p>
                                 <br />
                                 <img
-                                    src="/img/Aneo-tecnico.jpg"
+                                    src="/pages/Tecnica/img/Aneo-tecnico.jpg"
                                     alt="Ilustración que representa la cooperación y la organización participativa."
                                     style="
                                         max-width: 100%;
@@ -723,7 +880,7 @@
                                 <br />
                                 <div style="text-align: center;">
                                 <a
-                                    href="/pages/blog-2026.html"
+                                    href="/pages/Tecnica/Tecnica.html"
                                     class="btn-primary"
                                     style="
                                         padding: var(--spacing-sm) var(--spacing-lg);
@@ -732,7 +889,7 @@
                                         text-decoration: none;
                                         display: inline-block;
                                     ">
-                                    Volver a Blog
+                                    Volver a Tecnica
                                 </a>
                                 </div>
                                 <br />

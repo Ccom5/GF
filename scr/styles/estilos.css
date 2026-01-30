@@ -726,6 +726,11 @@ main {
   box-shadow: var(--shadow-lg);
 }
 
+.card-hover-effect:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
 .work-image-link,
 .work-image {
   display: block;
@@ -872,43 +877,10 @@ main {
   font-size: 1.5rem;
 }
 
-/* Corrección para secciones hero en páginas */
-.works-hero,
-.hero-2,
-section[style*="background:"][style*="linear-gradient"] {
-  margin: 0 !important;
-  position: relative;
-  top: 0;
-}
-
-/* Asegurar que el contenido principal empiece sin gaps */
-main > section:first-child {
-  margin-top: 0 !important;
-  padding-top: var(--spacing-3xl) !important;
-}
-
-/* Clases específicas para heros de páginas */
-.blog-hero {
-  margin: 0 !important;
-  padding-top: var(--spacing-3xl) !important;
-}
-
-/* Asegurar que TODAS las primeras secciones no tengan gap */
-.works-hero,
-.blog-hero,
-.hero-2,
-section[class*="hero"],
-section[style*="linear-gradient"] {
-  margin-top: 0 !important;
-  padding-top: var(--spacing-3xl) !important;
-  position: relative;
-  top: 0;
-  box-sizing: border-box;
-}
-
-/* Fix específico para eliminar cualquier margin o padding superior no deseado */
+/* Asegurar que la primera sección dentro de main no tenga margen superior ni borde, y tenga el padding adecuado */
 main section:first-of-type {
   margin-top: 0 !important;
+  padding-top: var(--spacing-3xl) !important;
   border-top: none !important;
 }
 /* Modal de búsqueda */
@@ -1169,10 +1141,7 @@ main section:first-of-type {
   }
 
   /* Asegurar en móvil que no haya gaps */
-  main {
-    margin-top: 80px;
-    padding-top: 0;
-  }
+
 
   .works-hero,
   .blog-hero,
@@ -1183,12 +1152,11 @@ main section:first-of-type {
     padding-top: var(--spacing-2xl) !important;
   }
 
-  main > section:first-child,
-  main section:first-of-type {
-    margin-top: 0 !important;
-    padding-top: var(--spacing-2xl) !important;
-  }
-
+          main section:first-of-type {
+            margin-top: 0 !important;
+            padding-top: var(--spacing-2xl) !important;
+            border-top: none !important;
+          }
   .hero-card {
     padding: var(--spacing-lg);
   }
@@ -1282,20 +1250,18 @@ main section:first-of-type {
   padding: var(--spacing-lg) 0; /* Add padding to the side navigation */
 }
 
-        :root {
-            --color-light: #ffffffd4; --color-dark: #100f0f; --color-mid: #c4bcb5;
-            --color-accent: #b06900; --color-primary: #d6cdc3; --color-secondary: #d07f2c;
-            --color-warm: #2b2d2e; --color-neutral: #646363; --color-soft: #bd8956;
-            --color-muted: #bfb9b4; --font-heading: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-            --font-body: "Lato", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-            --spacing-sm: 0.5rem; --spacing-md: 1rem; --spacing-lg: 1.5rem; --spacing-xl: 2rem;
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
         body.dark-mode {
-            --color-light: #1a1a1a; --color-dark: #e0e0e0; --color-mid: #4a4845;
-            --color-accent: #ff8c00; --color-primary: #2a2a2a; --color-secondary: #ff8c00;
-            --color-warm: #e0e0e0; --color-neutral: #b0b0b0; --color-soft: #ff8c00;
-            --color-muted: #666666; --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --color-light: #1a1a1a;
+            --color-dark: #e0e0e0;
+            --color-mid: #4a4845;
+            --color-accent: #ff8c00;
+            --color-primary: #2a2a2a;
+            --color-secondary: #ff8c00;
+            --color-warm: #e0e0e0;
+            --color-neutral: #b0b0b0;
+            --color-soft: #ff8c00;
+            --color-muted: #666666;
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {

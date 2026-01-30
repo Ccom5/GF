@@ -9,8 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const date = new Date(dateString);
 
             if (!isNaN(date.getTime())) {
-    // Static date as requested
-    const formattedDate = "jueves, 22 de enero de 2026";
+                const formattedDate = window.ResonanciasUtils.formatDate(date);
 
                 let displayElement = article.querySelector(".entry-date");
                 if (!displayElement) {

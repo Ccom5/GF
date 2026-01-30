@@ -3,30 +3,30 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>El honor por encima de la lealtad | RESONANCIAS</title>
-        <meta name="description" content="Hay palabras que usamos con tanta frecuencia que pierden su verdadero peso. Lealtad es una de ellas. Se pronuncia con orgullo, se exige, se promete. Pero pocas veces se piensa en lo que realmente implica." />
+        <title>Informarse en tiempos de manipulación | RESONANCIAS</title>
+        <meta name="description" content="En época de manipulación, es necesario aplicar criterio: contrastar la información con los hechos concretos y con la historia política reciente." />
 
         <!-- URL Canónica -->
-        <link rel="canonical" href="https://gf-amd.pages.dev/pages/blog-etica.html" />
+        <link rel="canonical" href="https://gf-amd.pages.dev/pages/blog-informarse.html" />
 
         <!-- SEO y Accesibilidad -->
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Gabriel Ferré" />
-        <meta name="keywords" content="Etica, Honor, Lealtad, Gabriel Ferré" />
+        <meta name="keywords" content="informarse, manipulación, medios, sociedad, política, Gabriel Ferré" />
 
         <!-- Open Graph -->
-        <meta property="og:title" content="El honor por encima de la lealtad | RESONANCIAS" />
-        <meta property="og:description" content="Hay palabras que usamos con tanta frecuencia que pierden su verdadero peso. Lealtad es una de ellas. Se pronuncia con orgullo, se exige, se promete. Pero pocas veces se piensa en lo que realmente implica." />
-        <meta property="og:image" content="https://gf-amd.pages.dev/img/etica.jpg" />
-        <meta property="og:url" content="https://gf-amd.pages.dev/pages/blog-etica.html" />
+        <meta property="og:title" content="Informarse en tiempos de manipulación | RESONANCIAS" />
+        <meta property="og:description" content="En época de manipulación, es necesario aplicar criterio: contrastar la información con los hechos concretos y con la historia política reciente." />
+        <meta property="og:image" content="https://gf-amd.pages.dev/img/informarse.jpg" />
+        <meta property="og:url" content="https://gf-amd.pages.dev/pages/blog-informarse.html" />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="RESONANCIAS" />
 
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="El honor por encima de la lealtad | RESONANCIAS" />
-        <meta name="twitter:description" content="Hay palabras que usamos con tanta frecuencia que pierden su verdadero peso. Lealtad es una de ellas. Se pronuncia con orgullo, se exige, se promete. Pero pocas veces se piensa en lo que realmente implica." />
-        <meta name="twitter:image" content="https://gf-amd.pages.dev/img/etica.jpg" />
+        <meta name="twitter:title" content="Informarse en tiempos de manipulación | RESONANCIAS" />
+        <meta name="twitter:description" content="En época de manipulación, es necesario aplicar criterio: contrastar la información con los hechos concretos y con la historia política reciente." />
+        <meta name="twitter:image" content="https://gf-amd.pages.dev/img/informarse.jpg" />
 
         <!-- Favicon -->
         <link rel="icon" href="/img/favicon.png" type="image/png" />
@@ -43,23 +43,7 @@
         <!-- Scripts -->
 
         <script src="/scr/js/main.js" defer></script>
-
-        <!-- Estilos responsivos para el layout del artículo -->
-        <style>
-            @media (max-width: 768px) {
-                .article-layout {
-                    flex-direction: column !important;
-                    gap: var(--spacing-lg) !important;
-                }
-                .image-card {
-                    position: relative !important;
-                    top: auto !important;
-                    width: 100% !important;
-                    min-width: auto !important;
-                    margin-bottom: var(--spacing-lg) !important;
-                }
-            }
-        </style>
+        <script src="/scr/js/back-to-top.js" defer></script>
     </head>
     <body>
         <!-- Skip to main content -->
@@ -76,7 +60,9 @@
                 <nav class="main-nav" role="navigation" aria-label="Navegación principal">
                     <a href="/">Inicio</a>
                     <a href="/pages/obras.html">Libros</a>
-                    <a href="/pages/blog.html">Blog</a>
+                    <a href="/pages/libros/lector.html">Biblioteca</a>
+                    <a href="/pages/blog">Blog</a>
+                    <a href="/pages/Tecnica/Tecnica.html">Técnica</a>
                     <a href="/pages/quien-soy.html">Quién soy</a>
                     <a href="/pages/contacto.html">Contacto</a>
                 </nav>
@@ -88,24 +74,7 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </div>
-                    <div class="social-links">
-                        <a
-                            href="https://bsky.app/profile/gabrielferre.bsky.social"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Bluesky">
-                            <i class="fa-brands fa-bluesky"></i>
-                        </a>
-                        <a
-                            href="https://www.youtube.com/@Gabriel-Ferre-v3l"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="YouTube">
-                            <i class="fa-brands fa-youtube"></i>
-                        </a>
-                    </div>
                 </div>
-
                 <!-- Botón menú móvil -->
                 <button
                     class="hamburger-btn"
@@ -118,11 +87,10 @@
                 </button>
             </div>
         </header>
-
         <!-- Menú lateral móvil -->
         <aside class="side-menu" id="sideMenu" role="navigation" aria-label="Menú de navegación lateral">
             <div class="menu-header">
-                <h2 class="menu-title">Navegación</h2>
+                <h2 class="menu-title">Menú del Blog</h2>
                 <button class="close-btn" aria-label="Cerrar menú">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -130,45 +98,153 @@
                     </svg>
                 </button>
             </div>
-
             <!-- Menú tipo acordeón -->
             <div class="accordion-menu">
                 <div class="accordion-item">
                     <div class="accordion-header">
                         <a href="/" class="accordion-link">
-                            <i class="fa-solid fa-house"></i>
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                            </svg>
                             Inicio
                         </a>
                     </div>
                 </div>
+
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <a href="/pages/obras.html" class="accordion-link">
-                            <i class="fa-solid fa-book"></i>
+                        <button class="accordion-toggle" aria-expanded="false">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
                             Libros
+                            <svg
+                                class="accordion-arrow"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="accordion-content">
+                        <a href="/pages/obras.html">Todas las obras</a>
+                        <a href="/pages/carousel.html">El Regalo Escondido</a>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/libros/lector.html" class="accordion-link">
+                            <i class="fa-solid fa-book-reader"></i>
+                            Biblioteca
                         </a>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <button class="accordion-toggle" aria-expanded="false">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14,2 14,8 20,8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10,9 9,9 8,9"></polyline>
+                            </svg>
+                            Blog
+                            <svg
+                                class="accordion-arrow"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="accordion-content active">
+                        <a href="/pages/blog-2026.html">Blog-2026</a>
+                        <a href="/pages/blog.html">Blog-2025</a>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <a href="/pages/blog.html" class="accordion-link">
-                            <i class="fa-solid fa-blog"></i>
-                            Blog
+                        <a href="/pages/Tecnica/Tecnica.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 5 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 5 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 5a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09A1.65 1.65 0 0 0 15 5a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19 9c0 .69.4 1.31 1.01 1.59.31.14.65.22.99.22h.09a2 2 0 1 1 0 4h-.09A1.65 1.65 0 0 0 19.4 15z"></path>
+                            </svg>
+                            Tecnica
                         </a>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <div class="accordion-header">
                         <a href="/pages/quien-soy.html" class="accordion-link">
-                            <i class="fa-solid fa-user"></i>
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
                             Quién soy
                         </a>
                     </div>
                 </div>
+
                 <div class="accordion-item">
                     <div class="accordion-header">
                         <a href="/pages/contacto.html" class="accordion-link">
-                            <i class="fa-solid fa-envelope"></i>
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
                             Contacto
                         </a>
                     </div>
@@ -178,12 +254,12 @@
 
         <!-- Overlay para menú -->
         <div class="menu-overlay" id="menuOverlay"></div>
-        <section
-            class="works-hero"
-            style="
-                margin-top: 0 !important;
-                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(&quot;/img/honor.jpg&quot;);
-                background-size: cover;
+                    <section
+                        class="works-hero"
+                        style="
+                            margin-top: 0 !important;
+                            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                                url(&quot;/img/informarse.jpg&quot;);                background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
                 color: var(--color-light);
@@ -200,7 +276,7 @@
                         margin-bottom: var(--spacing-lg);
                         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
                     ">
-                    Honor o Lealtad
+                    Informarse
                 </h2>
                 <p
                     style="
@@ -210,7 +286,7 @@
                         line-height: 1.6;
                         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
                     ">
-                    Las ideas resisten al tiempo
+                    En época de manipulación
                 </p>
             </div>
         </section>
@@ -228,7 +304,7 @@
                                     color: var(--color-dark);
                                     margin-bottom: var(--spacing-lg);
                                 ">
-                                El honor por encima de la lealtad
+                                Informarse en tiempos de manipulación
                             </h1>
                             <div
                                 class="post-meta"
@@ -240,7 +316,7 @@
                                     font-size: var(--font-size-sm);
                                     flex-wrap: wrap;
                                 ">
-                                <time datetime="2025-11-13">jueves, 13 de noviembre de 2025</time>
+                                <time datetime="2025-11-07">7 de Noviembre de 2025</time>
                                 <span>· Gabriel Ferré</span>
                                 <span>· 3 min de lectura</span>
                             </div>
@@ -260,45 +336,23 @@
                                         position: relative;
                                     "></p>
 
-                                <p></p>
-                                <h2><strong>No sigo personas: sigo ideas que resisten el tiempo</strong></h2>
                                 <p>
-                                    <br />
-                                    Hay palabras que usamos con tanta frecuencia que pierden su verdadero peso.
-                                    <em>Lealtad</em> es una de ellas. Se pronuncia con orgullo, se exige, se promete.
-                                    Pero pocas veces se piensa en lo que realmente implica. Ser leal se ha convertido en
-                                    sinónimo de ser confiable, constante, fiel. Sin embargo, en nombre de esa lealtad,
-                                    muchos han terminado sosteniendo causas o personas que no lo merecían.
-                                </p>
-                                <br />
-                                <p>
-                                    Hace tiempo entendí que la lealtad, por sí sola, no basta.<br />Puede ser una
-                                    virtud, sí, pero es una virtud <strong>incompleta</strong>.
-                                </p>
-                                <p>
-                                    La <strong>lealtad</strong> nace del vínculo: de la confianza, del afecto o de la
-                                    gratitud. Pero su naturaleza es dependiente. Es una virtud que necesita un
-                                    destinatario —alguien o algo a quien dirigirla—, y ahí radica su fragilidad. Cuando
-                                    la persona o la causa a la que se es leal se desvía de lo correcto, la lealtad puede
-                                    volverse una trampa. Defender al amigo cuando se equivoca, proteger al grupo aun
-                                    cuando actúa injustamente, callar por compromiso: todo eso se hace en nombre de la
-                                    lealtad, pero contradice la conciencia.
-                                </p>
-                                <br />
-                                <p>
-                                    El <strong>honor</strong>, en cambio, no necesita rostro.<br />El honor se sostiene
-                                    solo.<br />No depende de vínculos, sino de <strong>principios</strong>.
-                                </p>
-                                <p>
-                                    Ser honorable no es ser fiel a alguien, sino ser fiel a lo que uno cree que es
-                                    correcto, incluso si eso implica perder amistades, reconocimiento o poder. El honor
-                                    nos exige elegir entre el afecto y la verdad, entre la conveniencia y la justicia.
-                                    No todos están dispuestos a hacerlo, porque el honor no recompensa; simplemente
-                                    mantiene en pie lo que somos.
+                                    Actualmente, la mayoría de los ciudadanos intenta informarse principalmente a través
+                                    de las redes sociales y, en el mejor de los casos, busca luego corroborar lo leído
+                                    en medios nacionales o locales.<br />En Argentina, la concentración mediática es
+                                    notoria: un conglomerado de empresas satélites del Grupo Clarín domina gran parte
+                                    del país. A esto se suma <em>La Derecha Diario</em>, cuyo propietario, Fernando
+                                    Cerimedo —ex asesor de Javier Milei—, ya fue acusado de manipular información
+                                    tendenciosa durante las elecciones de Brasil en favor de Bolsonaro.<br />Estos
+                                    sectores informativos, identificados con la derecha y la extrema derecha y
+                                    reconocidos por su histórico anti-peronismo, suelen tergiversar noticias y difundir
+                                    desinformación de forma sistemática.<br />Esta es la realidad informativa —nacional
+                                    e internacional— que condiciona la manera en que los argentinos intentamos conocer
+                                    los hechos.
                                 </p>
                                 <br />
                                 <img
-                                    src="/img/honor.jpg"
+                                    src="/img/informarse.jpg"
                                     alt="Infografía sobre crónicas de literatura"
                                     style="
                                         width: 100%;
@@ -308,28 +362,60 @@
                                         border-radius: 8px;
                                         margin-bottom: var(--spacing-md);
                                     " />
+                                <h2>Pensar antes de creer</h2>
                                 <p>
-                                    <br />
-                                    Por eso digo que el honor supera a la lealtad.<br />La abarca, la contiene y, cuando
-                                    es necesario, la corrige.<br />Uno puede ser leal dentro del honor, pero nunca
-                                    honorable sin ética. El honor no se mide por la obediencia ni por la permanencia,
-                                    sino por la coherencia entre lo que se piensa, lo que se dice y lo que se hace.
-                                </p>
-                                <p>
-                                    Y ahí aparece la distinción que tanto se pasa por alto: <strong>ética</strong> y
-                                    <strong>moral</strong> no son lo mismo.<br />La ética es el pensamiento: el examen
-                                    constante de lo que es correcto.<br />La moral es la acción: la práctica de esos
-                                    pensamientos en la vida diaria.<br />Una da sentido, la otra da forma.<br />El honor
-                                    es la unión de ambas: pensamiento justo convertido en acto justo.
+                                    Informarse dejó de ser un acto pasivo. Ya no alcanza con leer titulares ni con
+                                    repetir lo que circula en redes. Es necesario aplicar criterio: contrastar la
+                                    información con los hechos concretos y con la historia política reciente.<br />Mi
+                                    mirada se apoya en la experiencia colectiva y en el análisis del accionar de los
+                                    distintos sectores de poder. La derecha, en sus múltiples versiones, repite siempre
+                                    las mismas recetas económicas, laborales y sociales, con resultados conocidos.<br />Esa
+                                    coherencia histórica —por más negativa que sea— se convierte en una referencia útil
+                                    para medir la credibilidad de su discurso mediático.
                                 </p>
                                 <br />
+                                <h2>Dudar es informarse</h2>
                                 <p>
-                                    No sigo personas; sigo <strong>ideas</strong>.<br />Porque las personas cambian,
-                                    pero los principios —cuando son auténticos— se fortalecen con el tiempo.
+                                    El primer paso es desconfiar. No de todo, sino de lo que no encaja con la realidad
+                                    visible o con los antecedentes históricos.<br />Si una noticia beneficia a los
+                                    poderosos o busca culpar siempre al mismo sector popular, vale la pena detenerse
+                                    antes de compartirla.
+                                </p>
+                                <br />
+                                <h2>Mirar la historia, no los titulares</h2>
+                                <p>
+                                    Los hechos se repiten con otros nombres. Lo que hoy se presenta como “ajuste
+                                    inevitable” o “reforma necesaria”, ya se intentó antes y tuvo consecuencias
+                                    claras.<br />Recordar esas experiencias evita caer en el truco de las palabras
+                                    nuevas para políticas viejas.
+                                </p>
+                                <br />
+                                <h2>Contrastar fuentes, no opiniones</h2>
+                                <p>
+                                    Internet está lleno de voces, pero pocas se basan en hechos. Comparar datos entre
+                                    medios de distinto signo ideológico, revisar comunicados oficiales y observar lo que
+                                    realmente ocurre en la calle o en la economía cotidiana, ayuda a encontrar la verdad
+                                    entre tanto ruido.
+                                </p>
+                                <br />
+                                <h2>No confundir información con contenido</h2>
+                                <p>
+                                    Mucho de lo que circula no informa: entretiene, distrae o polariza.<br />Un video
+                                    viral, un meme o una “noticia urgente” suelen estar diseñados para provocar
+                                    reacción, no reflexión.<br />Informarse implica detenerse, leer completo y, sobre
+                                    todo, pensar qué intención hay detrás.
+                                </p>
+                                <br />
+                                <h2>Pensar colectivamente</h2>
+                                <p>
+                                    El pensamiento crítico también se construye en diálogo.<br />Conversar con otros,
+                                    debatir con respeto y nutrirse de distintas miradas populares fortalece la
+                                    comprensión.<br />La verdad no surge de un algoritmo, sino del intercambio, la
+                                    experiencia y la memoria colectiva.
                                 </p>
                                 <br />
                                 <img
-                                    src="/img/etica.jpg"
+                                    src="/img/infografia-informarse.jpg"
                                     alt="Infografía sobre crónicas de literatura"
                                     style="
                                         width: 100%;
@@ -339,16 +425,20 @@
                                         border-radius: 8px;
                                         margin-bottom: var(--spacing-md);
                                     " />
+                                <h2>Conclusión</h2>
                                 <p>
-                                    Vivimos en una época en la que muchos eligen bandos, no convicciones.<br />Y quizá
-                                    por eso el honor se vuelve un concepto incómodo: no se acomoda, no obedece, no busca
-                                    aprobación. Solo responde a la conciencia.
+                                    Informarse hoy es un acto político.<br />No se trata solo de saber qué pasa, sino de
+                                    entender <strong>por qué</strong> pasa y <strong>quién se beneficia</strong> cuando
+                                    nos mienten.<br />El poder económico necesita una sociedad confundida, apática y
+                                    desinformada para imponer su modelo. Por eso disfrazan las mentiras de noticias, la
+                                    crueldad de eficiencia y la injusticia de libertad.
                                 </p>
                                 <p>
-                                    El honor, al final, no es una virtud antigua. Es una necesidad moderna. Porque
-                                    mientras la lealtad puede ser manipulada, el honor solo puede ser vivido.
+                                    Pensar antes de creer es una forma de rebelarse.<br />No contra una noticia, sino
+                                    contra un sistema que quiere que dejemos de pensar.<br />Y cuando un pueblo vuelve a
+                                    pensar, cuando empieza a desconfiar de los dueños de la palabra,
+                                    <strong>ahí empieza a recuperar su voz</strong>.
                                 </p>
-
                                 <br />
                                 <br />
                             </div>
@@ -364,7 +454,7 @@
                             ">
                             <nav class="share-footer" aria-label="Compartir página">
                                 <a
-                                    href="https://www.facebook.com/sharer/sharer.php?u=https://gf-amd.pages.dev/pages/blog-etica.html"
+                                    href="https://www.facebook.com/sharer/sharer.php?u=https://gf-amd.pages.dev/pages/blog.-ia.html"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     class="share-btn facebook"
@@ -373,7 +463,7 @@
                                     <i class="fa-brands fa-facebook"></i>
                                 </a>
                                 <a
-                                    href="https://twitter.com/intent/tweet?url=https://gf-amd.pages.dev/pages/blog-etica.html&text=El%20honor%20por%20encima%20de%20la%20lealtad%20|%20RESONANCIAS"
+                                    href="https://twitter.com/intent/tweet?url=https://gf-amd.pages.dev/pages/blog.-ia&text=Necesitamos%20Humanidad%20Antes%20que%20IA:%20Tecnología%20y%20Desigualdad%20|%20RESONANCIAS"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     class="share-btn twitter"
@@ -383,7 +473,7 @@
                                 </a>
 
                                 <a
-                                    href="https://api.whatsapp.com/send?text=El%20honor%20por%20encima%20de%20la%20lealtad%20|%20RESONANCIAS%20https://gf-amd.pages.dev/pages/blog-etica.html"
+                                    href="https://api.whatsapp.com/send?text=Necesitamos%20Humanidad%20Antes%20que%20IA:%20Tecnología%20y%20Desigualdad%20|%20RESONANCIAS%20https://gf-amd.pages.dev/pages/blog.-ia.html"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     class="share-btn whatsapp"
@@ -392,7 +482,7 @@
                                     <i class="fa-brands fa-whatsapp"></i>
                                 </a>
                                 <a
-                                    href="https://bsky.app/intent/compose?text=El%20honor%20por%20encima%20de%20la%20lealtad%20|%20RESONANCIAS%20https://gf-amd.pages.dev/pages/blog-etica.html"
+                                    href="https://bsky.app/intent/compose?text=Necesitamos%20Humanidad%20Antes%20que%20IA:%20Tecnología%20y%20Desigualdad%20|%20RESONANCIAS%20https://gf-amd.pages.dev/pages/blog.-ia.html"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     class="share-btn bluesky"
@@ -492,7 +582,7 @@
                                 ">
                                 <div>
                                     <p style="color: var(--color-neutral); font-size: var(--font-size-sm); margin: 0">
-                                        Publicado el <time datetime="2025-11-13">jueves, 13 de noviembre de 2025</time>
+                                        Publicado el <time datetime="2025-11-07">7 de Noviembre de 2025</time>
                                     </p>
                                 </div>
                                 <div style="display: flex; gap: var(--spacing-sm)">
