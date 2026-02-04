@@ -1047,6 +1047,10 @@ main section:first-of-type {
     --font-size-2xl: 1.25rem;
   }
 
+  .content-card {
+      overflow-x: auto;
+  }
+
   /* Los botones de compartir se mantienen en el footer en móvil */
   .share-footer {
     flex-wrap: wrap;
@@ -1640,4 +1644,33 @@ main section:first-of-type {
 /* Utility class for centering text */
 .text-center {
     text-align: center;
+}
+
+/* Estilos para la clase pie-imagen */
+.pie-imagen {
+    font-size: 0.85em;
+    text-align: center;
+    color: var(--color-neutral);
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+/* Responsive table container */
+.responsive-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    margin-bottom: var(--spacing-lg); /* Add some space below the table */
+}
+
+/* Responsive canvas for charts */
+.md-obsidian canvas {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Responsive chart container */
+.responsive-chart-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    margin-bottom: var(--spacing-lg); /* Add some space below the chart */
 }
