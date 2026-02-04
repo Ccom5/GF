@@ -523,7 +523,6 @@ button:hover {
 }
 
 .accordion-toggle {
-  justify-content: space-between;
 }
 
 .accordion-arrow {
@@ -1133,8 +1132,7 @@ main section:first-of-type {
 
 @media (max-width: 480px) {
   .side-menu {
-    max-width: 100%;
-    width: 100%;
+    
   }
 
   .hero-section {
