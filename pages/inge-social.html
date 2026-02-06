@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ingeniería Social | RESONANCIAS</title>
+        <meta name="description" content="Método práctico para la verificación de información pública utilizando herramientas OSINT accesibles." />
+
+        <!-- URL Canónica -->
+        <link rel="canonical" href="https://gf-amd.pages.dev/pages/inge-social.html" />
+
+        <!-- SEO y Accesibilidad -->
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Gabriel Ferré" />
+        <meta name="keywords" content="Ingeniería Social, OSINT, Verificación de información, Gabriel Ferré" />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Ingeniería Social | RESONANCIAS" />
+        <meta property="og:description" content="Método práctico para la verificación de información pública utilizando herramientas OSINT accesibles." />
+        <meta property="og:image" content="https://gf-amd.pages.dev/img/osint.jpg" />
+        <meta property="og:url" content="https://gf-amd.pages.dev/pages/inge-social.html" />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="RESONANCIAS" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Ingeniería Social | RESONANCIAS" />
+        <meta name="twitter:description" content="Método práctico para la verificación de información pública utilizando herramientas OSINT accesibles." />
+        <meta name="twitter:image" content="https://gf-amd.pages.dev/img/osint.jpg" />
+
+        <!-- Favicon -->
+        <link rel="icon" href="/img/favicon.png" type="image/png" />
+
+        <!-- Estilos -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="/scr/styles/estilos.css" />
+
+        <!-- Scripts -->
+
+        <script src="/scr/js/main.js" defer></script>
+
+        <!-- Estilos responsivos para el layout del artículo -->
+        <style>
+            @media (max-width: 768px) {
+                .article-layout {
+                    flex-direction: column !important;
+                    gap: var(--spacing-lg) !important;
+                }
+                .image-card {
+                    position: relative !important;
+                    top: auto !important;
+                    width: 100% !important;
+                    min-width: auto !important;
+                    margin-bottom: var(--spacing-lg) !important;
+                }
+            }
+        </style>
+        <style>
+            /* Markdown incrustado desde Obsidian */
+            .md-obsidian h1,
+            .md-obsidian h2,
+            .md-obsidian h3,
+            .md-obsidian h4,
+            .md-obsidian h5,
+            .md-obsidian h6 {
+                margin-top: 1.6em;
+                margin-bottom: 0.6em;
+                line-height: 1.3;
+            }
+
+            .md-obsidian p {
+                margin: 0.9em 0;
+                line-height: 1.75;
+            }
+
+            .md-obsidian ul,
+            .md-obsidian ol {
+                margin: 0.9em 0 0.9em 1.6em;
+            }
+
+            .md-obsidian li {
+                margin: 0.4em 0;
+            }
+
+            .md-obsidian blockquote {
+                margin: 1.2em 0;
+                padding-left: 1em;
+                border-left: 3px solid var(--color-secondary);
+                color: var(--color-neutral);
+                font-style: italic;
+            }
+
+            .md-obsidian hr {
+                margin: 2em 0;
+                border: none;
+                border-top: 1px solid var(--color-mid);
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Skip to main content -->
+        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="nav-container">
+                <a href="/" class="logo" aria-label="RESONANCIAS - Inicio">
+                    <img src="/img/logo.png" alt="Logo RESONANCIAS" width="40" height="40" />
+                </a>
+
+                <!-- Navegación principal -->
+                <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+                    <a href="/" aria-current="page">Inicio</a>
+                    <a href="/pages/obras.html">Libros</a>
+                    <a href="/pages/libros/lector.html">Biblioteca</a>
+                    <a href="/pages/blog-2026.html">Blog</a>
+                    <a href="/pages/Tecnica/Tecnica.html">Técnica</a>
+                    <a href="/pages/quien-soy.html">Quién soy</a>
+                    <a href="/pages/contacto.html">Contacto</a>
+                </nav>
+
+                <!-- Redes sociales y búsqueda -->
+                <div class="social-nav">
+                    <div class="search-container">
+                        <button id="searchToggle" class="search-toggle" aria-label="Buscar" aria-expanded="false">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Botón menú móvil -->
+                <button
+                    class="hamburger-btn"
+                    aria-label="Menú de navegación"
+                    aria-expanded="false"
+                    aria-controls="sideMenu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Menú lateral móvil -->
+        <aside class="side-menu" id="sideMenu" role="navigation" aria-label="Menú de navegación lateral">
+            <div class="menu-header">
+                <h2 class="menu-title">Menú del Blog</h2>
+                <button class="close-btn" aria-label="Cerrar menú">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <!-- Menú tipo acordeón -->
+            <div class="accordion-menu">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/index.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                            </svg>
+                            Inicio
+                        </a>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <button class="accordion-toggle" aria-expanded="false">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                            Libros
+                            <svg
+                                class="accordion-arrow"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="accordion-content">
+                        <a href="/pages/obras.html">Todas las obras</a>
+                        <a href="/pages/carousel.html">El Regalo Escondido</a>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/libros/lector.html" class="accordion-link">
+                            <i class="fa-solid fa-book-reader"></i>
+                            Biblioteca
+                        </a>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <button class="accordion-toggle" aria-expanded="false">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14,2 14,8 20,8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10,9 9,9 8,9"></polyline>
+                            </svg>
+                            Blog
+                            <svg
+                                class="accordion-arrow"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="accordion-content active">
+                        <a href="/pages/blog-2026.html">Blog-2026</a>
+                        <a href="/pages/blog.html">Blog-2025</a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/Tecnica/Tecnica.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 5 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 5 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 5a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09A1.65 1.65 0 0 0 15 5a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19 9c0 .69.4 1.31 1.01 1.59.31.14.65.22.99.22h.09a2 2 0 1 1 0 4h-.09A1.65 1.65 0 0 0 19.4 15z"></path>
+                            </svg>
+                            Tecnica
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/quien-soy.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            Quién soy
+                        </a>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/contacto.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            Contacto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Overlay para menú -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+        <section
+            class="works-hero"
+            style="
+                margin-top: 0 !important;
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(&quot;/img/osint.jpg&quot;);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                color: var(--color-light);
+                padding: var(--spacing-3xl) 0;
+                text-align: center;
+                min-height: 400px;
+                display: flex;
+                align-items: center;
+            ">
+            <div class="container">
+                <h2
+                    style="
+                        font-size: var(--font-size-4xl);
+                        margin-bottom: var(--spacing-lg);
+                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                    ">
+                    Ingeniería Social
+                </h2>
+                <p
+                    style="
+                        font-size: var(--font-size-xl);
+                        max-width: 600px;
+                        margin: 0 auto;
+                        line-height: 1.6;
+                        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+                    ">
+                    De información publúca
+                </p>
+            </div>
+        </section>
+        <!-- Contenido principal -->
+        <main id="main-content" role="main">
+            <!-- Artículo principal -->
+            <div class="content-card">
+                <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+                    <div class="container" style="max-width: 800px; margin: 0 auto">
+                        <!-- Header del artículo -->
+                        <header class="post-header" style="text-align: center; margin-bottom: var(--spacing-2xl)">
+                            <h1
+                                style="
+                                    font-size: var(--font-size-3xl);
+                                    color: var(--color-dark);
+                                    margin-bottom: var(--spacing-lg);
+                                ">
+                                Ingeniería de la informacion pública
+                            </h1>
+                            <div
+                                class="post-meta"
+                                style="
+                                    display: flex;
+                                    justify-content: center;
+                                    gap: var(--spacing-lg);
+                                    color: var(--color-neutral);
+                                    font-size: var(--font-size-sm);
+                                    flex-wrap: wrap;
+                                ">
+                                <span>· Gabriel Ferré</span>
+                            </div>
+                        </header>
+
+                        <div
+                            class="article-layout"
+                            style="display: flex; gap: var(--spacing-xl); align-items: flex-start">
+                            <div class="article-content" style="flex: 1; line-height: 1.5; color: var(--color-dark)">
+                                <div
+                                    id="intro-paragraph"
+                                    class="md-obsidian"
+                                    style="
+                                        font-size: var(--font-size-lg);
+                                        margin-bottom: var(--spacing-2xl);
+                                        color: var(--color-warm);
+                                        position: relative;
+                                    ">
+                                    <h2>
+                                        Verificación de información pública mediante herramientas OSINT de acceso
+                                        abierto
+                                    </h2>
+                                    <p>
+                                        El presente documento tiene como objetivo
+                                        <strong>dejar asentado, de manera abierta y replicable</strong>, un método
+                                        práctico para la verificación de información pública utilizando herramientas
+                                        OSINT accesibles a cualquier usuario.
+                                    </p>
+                                    <ul>
+                                        <li>OSINT (Inteligencia de Fuentes Abiertas) -</li>
+                                    </ul>
+                                    <p>
+                                        No se trata de un sistema automatizado ni de una metodología cerrada, sino de un
+                                        <strong>conjunto de procedimientos simples</strong>, aplicables sin equipamiento
+                                        especializado, orientados a
+                                        <strong>contrastar afirmaciones con evidencia observable</strong>.
+                                    </p>
+                                    <h2>Ingeniería social de la información</h2>
+                                    <p>
+                                        En el ámbito técnico suele asociarse el término <em>ingeniería social</em> a
+                                        técnicas destinadas a manipular personas para obtener acceso o información.
+                                    </p>
+                                    <p>
+                                        Sin embargo, también puede analizarse como
+                                        <strong
+                                            >la forma en que la información es presentada, estructurada y difundida para
+                                            influir en la interpretación que realizan los individuos</strong
+                                        >.
+                                    </p>
+                                    <p>Puede definirse la <strong>ingeniería social de la información</strong> como:</p>
+                                    <blockquote>
+                                        <p>
+                                            El conjunto de mecanismos mediante los cuales la presentación, el contexto y
+                                            la asociación de datos condicionan la percepción de veracidad en el público,
+                                            independientemente de que la información sea correcta o no.
+                                        </p>
+                                    </blockquote>
+                                    <p>Este fenómeno suele operar mediante:</p>
+                                    <ul>
+                                        <li>Asociación de datos reales con conclusiones incorrectas</li>
+                                        <li>Uso de material auténtico fuera de contexto</li>
+                                        <li>Apelación a factores emocionales o identitarios</li>
+                                        <li>Atribución de declaraciones a instituciones sin fuente verificable</li>
+                                        <li>Presentación fragmentaria de hechos reales</li>
+                                    </ul>
+                                    <p>
+                                        En estos casos, la información no siempre es completamente falsa, pero
+                                        <strong>la interpretación inducida puede serlo</strong>.
+                                    </p>
+                                    <h2>Contexto y problema abordado</h2>
+                                    <p>
+                                        En los últimos años se ha incrementado de forma significativa la circulación de:
+                                    </p>
+                                    <ul>
+                                        <li>Información falsa o incompleta</li>
+                                        <li>Imágenes fuera de contexto</li>
+                                        <li>Afirmaciones atribuidas a instituciones sin fuente verificable</li>
+                                        <li>Narrativas que mezclan datos reales con conclusiones incorrectas</li>
+                                    </ul>
+                                    <p>
+                                        Un factor determinante es que la desinformación suele difundirse asociada a
+                                        temas que generan:
+                                    </p>
+                                    <ul>
+                                        <li>interés emocional</li>
+                                        <li>identidad cultural o política</li>
+                                        <li>percepción de amenaza o injusticia</li>
+                                    </ul>
+                                    <p>En estas condiciones, la verificación suele omitirse.</p>
+                                    <h2>Principio general del método</h2>
+                                    <p>
+                                        La verificación de información pública puede realizarse mediante tres pasos
+                                        fundamentales:
+                                    </p>
+                                    <ol>
+                                        <li>Identificación de la fuente primaria</li>
+                                        <li>Búsqueda de evidencia observable</li>
+                                        <li>Contraste independiente mediante herramientas abiertas</li>
+                                    </ol>
+                                    <p>
+                                        El objetivo no es demostrar una hipótesis, sino
+                                        <strong
+                                            >descartar afirmaciones que no pueden sostenerse con evidencia
+                                            verificable</strong
+                                        >.
+                                    </p>
+                                    <br />
+                                    <img
+                                        src="/img/osint.jpg"
+                                        alt="Infraestructura eléctrica con cables de cobre como fondo, representando la dependencia material de la electrificación."
+                                        style="
+                                            width: 100%;
+                                            height: auto;
+                                            max-height: 600px;
+                                            object-fit: contain;
+                                            border-radius: 8px;
+                                            margin-bottom: var(--spacing-md);
+                                        " />
+                                    <h2>Traducción del principio a procedimientos concretos</h2>
+                                    <h3>Verificación de eventos físicos</h3>
+                                    <p>
+                                        Cuando una afirmación describe hechos materiales (incendios, inundaciones,
+                                        construcciones o daños):
+                                    </p>
+                                    <ul>
+                                        <li>Localizar el área en mapas o imágenes satelitales</li>
+                                        <li>Comparar imágenes de fechas distintas</li>
+                                        <li>Identificar cambios visibles en el terreno</li>
+                                    </ul>
+                                    <p>La observación directa del terreno constituye evidencia verificable.</p>
+                                    <h3>Verificación de imágenes difundidas en redes</h3>
+                                    <p>Procedimiento básico:</p>
+                                    <ul>
+                                        <li>Realizar búsqueda inversa</li>
+                                        <li>Determinar la aparición más antigua</li>
+                                        <li>Verificar ubicación y contexto original</li>
+                                    </ul>
+                                    <p>
+                                        Este método permite detectar reutilización de material antiguo o manipulación
+                                        contextual.
+                                    </p>
+                                    <h3>Verificación de declaraciones atribuidas a instituciones</h3>
+                                    <p>Pasos recomendados:</p>
+                                    <ul>
+                                        <li>Buscar comunicados oficiales</li>
+                                        <li>Revisar sitios institucionales o archivos públicos</li>
+                                        <li>Confirmar cobertura en medios verificables</li>
+                                    </ul>
+                                    <p>
+                                        La ausencia de fuente primaria constituye un indicador fuerte de información no
+                                        confirmada.
+                                    </p>
+                                    <h2>Ventajas del enfoque</h2>
+                                    <ul>
+                                        <li>Accesible a cualquier usuario</li>
+                                        <li>No requiere software especializado</li>
+                                        <li>Basado en evidencia observable</li>
+                                        <li>Replicable</li>
+                                        <li>Independiente de opiniones o interpretaciones</li>
+                                    </ul>
+                                    <h2>Limitaciones</h2>
+                                    <p>Este método no reemplaza:</p>
+                                    <ul>
+                                        <li>investigación periodística profesional</li>
+                                        <li>análisis forense digital avanzado</li>
+                                        <li>estudios técnicos especializados</li>
+                                    </ul>
+                                    <p>Se debe considerar que:</p>
+                                    <ul>
+                                        <li>Algunas imágenes satelitales tienen resolución limitada</li>
+                                        <li>No todos los eventos quedan registrados de inmediato</li>
+                                        <li>La ausencia de evidencia no siempre implica inexistencia del hecho</li>
+                                    </ul>
+                                    <p>
+                                        El método es útil principalmente para
+                                        <strong>detectar inconsistencias evidentes</strong>.
+                                    </p>
+                                    <h2>De la teoría a la práctica</h2>
+                                    <p>
+                                        Los mecanismos descritos en la sección anterior no son teóricos ni
+                                        excepcionales; pueden observarse con frecuencia en la circulación cotidiana de
+                                        información en redes sociales.
+                                    </p>
+                                    <p>
+                                        En muchos casos, la construcción de un relato no se basa en la falsificación
+                                        completa de hechos, sino en la selección, asociación y presentación de elementos
+                                        reales de forma que conduzcan a interpretaciones incorrectas.
+                                    </p>
+                                    <p>
+                                        A continuación se presenta un ejemplo reciente en el que pueden identificarse
+                                        claramente estos mecanismos y el procedimiento utilizado para verificar la
+                                        información.
+                                    </p>
+                                    <h2>Ejemplo práctico de verificación</h2>
+                                    <p>
+                                        Hace pocos días comenzó a circular en redes sociales la afirmación de que la
+                                        difusión de los llamados “archivos Epstein” habría sido consecuencia de un
+                                        supuesto hackeo atribuido al Vaticano.
+                                    </p>
+                                    <p>
+                                        La afirmación se difundía acompañada de referencias a un episodio ocurrido años
+                                        antes relacionado con un hacker italiano, presentado fuera de contexto como si
+                                        constituyera evidencia directa.
+                                    </p>
+                                    <p>
+                                        Un elemento relevante en la difusión fue el uso de la figura del papa Francisco
+                                        como parte de la presentación del contenido.<br />En muchos casos, la noticia se
+                                        introducía asociando el tema al Vaticano y a una figura ampliamente conocida y
+                                        valorada por parte del público argentino.
+                                    </p>
+                                    <p>
+                                        Este tipo de encuadre no aporta evidencia sobre el hecho afirmado, pero sí
+                                        cumple una función comunicacional:<br />desplazar la atención del contenido
+                                        verificable hacia un elemento emocionalmente significativo, generando reacciones
+                                        inmediatas y reduciendo la verificación crítica.
+                                    </p>
+                                    <br />
+                                    <br />
+                                    <img
+                                        src="/img/fbipapa.jpg"
+                                        alt="Infraestructura eléctrica con cables de cobre como fondo, representando la dependencia material de la electrificación."
+                                        style="
+                                            width: 100%;
+                                            height: auto;
+                                            max-height: 600px;
+                                            object-fit: contain;
+                                            border-radius: 8px;
+                                            margin-bottom: var(--spacing-md);
+                                        " />
+                                    <h3>Procedimiento de verificación aplicado</h3>
+                                    <p>Se realizaron comprobaciones básicas:</p>
+                                    <ol>
+                                        <li>
+                                            <p>Búsqueda de comunicados oficiales y fuentes primarias</p>
+                                            <ul>
+                                                <li>
+                                                    No existen publicaciones del FBI ni de organismos oficiales que
+                                                    respalden esa afirmación.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <p>Verificación en medios informativos</p>
+                                            <ul>
+                                                <li>
+                                                    Ningún medio confiable reporta un hackeo atribuido al Vaticano en
+                                                    relación con ese material.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <p>Rastreo del origen de la información</p>
+                                            <ul>
+                                                <li>
+                                                    La narrativa se origina en publicaciones en redes sociales y videos,
+                                                    sin documentación verificable.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ol>
+                                    <h3>Conclusión</h3>
+                                    <p>
+                                        La afirmación carece de fuente primaria, evidencia verificable y confirmación
+                                        independiente, por lo que debe considerarse desinformación.
+                                    </p>
+                                    <p>
+                                        Este caso ilustra un patrón frecuente dentro de la ingeniería social de la
+                                        información:
+                                    </p>
+                                    <ul>
+                                        <li>Mezcla de hechos reales con interpretaciones no sustentadas</li>
+                                        <li>Uso de referencias históricas fuera de contexto</li>
+                                        <li>
+                                            Incorporación de elementos emocionalmente significativos para aumentar la
+                                            difusión
+                                        </li>
+                                        <li>
+                                            Desplazamiento del foco hacia aspectos secundarios que distraen del hecho
+                                            principal
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        Este ejemplo muestra que, en muchos casos, la verificación básica requiere solo
+                                        minutos y herramientas abiertas.
+                                    </p>
+                                    <hr />
+                                    <h2>Anexo técnico: herramientas accesibles</h2>
+                                    <p>
+                                        Algunas herramientas abiertas que permiten aplicar los procedimientos
+                                        descriptos:
+                                    </p>
+                                    <p><strong>Observación satelital y mapas</strong></p>
+                                    <ul>
+                                        <li>Google Earth</li>
+                                        <li>Sentinel Hub EO Browser</li>
+                                        <li>NASA Worldview</li>
+                                        <li>Zoom Earth</li>
+                                    </ul>
+                                    <p><strong>Búsqueda inversa de imágenes</strong></p>
+                                    <ul>
+                                        <li>Google Lens</li>
+                                        <li>Yandex Images</li>
+                                        <li>Search by Image</li>
+                                    </ul>
+                                    <p><strong>Archivo y verificación histórica</strong></p>
+                                    <ul>
+                                        <li>Wayback Machine</li>
+                                    </ul>
+                                    <p><strong>Análisis de perfiles y rastreo</strong></p>
+                                    <ul>
+                                        <li>WhatsMyName</li>
+                                        <li>TGStat</li>
+                                        <li>Redective</li>
+                                    </ul>
+                                    <br />
+                                    <blockquote>
+                                        <p>
+                                            La desinformación se apoya en afirmaciones.<br />La verificación se apoya en
+                                            evidencia.
+                                        </p>
+                                    </blockquote>
+                                    <h3>Tabla completa de herramientas</h3>
+                                    <p>Se mantiene una tabla actualizada de herramientas OSINT accesibles en:</p>
+                                    <br />
+                                    <a
+                                        href="https://docs.google.com/spreadsheets/d/1dH5MjjysSAUsnVFTS_w80Ogl_dvRtYVGIKbTuq95nGs/edit?usp=sharing"
+                                        class="btn"
+                                        style="
+                                            display: block; /* Changed from inline-flex */
+                                            margin: 0 auto; /* Added for centering */
+                                            width: fit-content; /* Adapt width to content */
+                                            border: none;
+                                            padding: var(--spacing-md) var(--spacing-xl);
+                                            border-radius: 8px;
+                                            font-weight: 600;
+                                            text-decoration: none;
+                                            cursor: pointer;
+                                            transition: all var(--transition-fast);
+                                            margin-bottom: var(--spacing-2xl);
+                                        ">
+                                        Tabla - Herramientas
+                                    </a>
+
+                                    <br />
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                        <section
+                            class="blog-subscription"
+                            style="
+                                margin-top: var(--spacing-3xl);
+                                background: var(--color-mid);
+                                padding: var(--spacing-2xl);
+                                border-radius: 12px;
+                                text-align: center;
+                            ">
+                            <nav class="share-footer" aria-label="Compartir página">
+                                <a
+                                    href="https://www.facebook.com/sharer/sharer.php?u=https://gf-amd.pages.dev/pages/inge-social.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn facebook"
+                                    title="Compartir en Facebook"
+                                    aria-label="Compartir en Facebook">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                                <a
+                                    href="https://twitter.com/intent/tweet?url=https://gf-amd.pages.dev/pages/inge-social.html&text=Ingeniería%20Social%20|%20RESONANCIAS"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn twitter"
+                                    title="Compartir en X"
+                                    aria-label="Compartir en X">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+
+                                <a
+                                    href="https://api.whatsapp.com/send?text=Ingeniería%20Social%20|%20RESONANCIAS%20https://gf-amd.pages.dev/pages/inge-social.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn whatsapp"
+                                    title="Compartir en WhatsApp"
+                                    aria-label="Compartir en WhatsApp">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                                <a
+                                    href="https://bsky.app/intent/compose?text=Ingeniería%20Social%20|%20RESONANCIAS%20https://gf-amd.pages.dev/pages/inge-social.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn bluesky"
+                                    title="Compartir en Bluesky"
+                                    aria-label="Compartir en Bluesky">
+                                    <i class="fa-brands fa-bluesky"></i>
+                                </a>
+                            </nav>
+                            <h3
+                                style="
+                                    color: var(--color-dark);
+                                    margin-bottom: var(--spacing-md);
+                                    font-size: var(--font-size-2xl);
+                                ">
+                                Comparte en tus redes
+                            </h3>
+
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    gap: var(--spacing-md);
+                                    max-width: 400px;
+                                    margin: 0 auto;
+                                    flex-wrap: wrap;
+                                ">
+                                <a
+                                    href="/pages/contacto.html"
+                                    style="
+                                        background: var(--color-secondary);
+                                        color: var(--color-light);
+                                        border: none;
+                                        padding: var(--spacing-md) var(--spacing-xl);
+                                        border-radius: 8px;
+                                        font-weight: 600;
+                                        text-decoration: none;
+                                        cursor: pointer;
+                                        transition: all var(--transition-fast);
+                                        display: inline-flex;
+                                        align-items: center;
+                                        gap: var(--spacing-sm);
+                                    "
+                                    onmouseover="this.style.background='var(--color-warm)'; this.style.transform='translateY(-2px)'"
+                                    onmouseout="this.style.background='var(--color-secondary)'; this.style.transform='translateY(0)'">
+                                    <svg
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                    Contáctame
+                                </a>
+                            </div>
+                        </section>
+                        <!-- Footer del artículo -->
+
+                        <footer
+                            style="
+                                margin-top: var(--spacing-2xl);
+                                padding-top: var(--spacing-xl);
+                                border-top: 1px solid var(--color-mid);
+                            ">
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    flex-wrap: wrap;
+                                    gap: var(--spacing-md);
+                                ">
+                                <div>
+                                    <p style="color: var(--color-neutral); font-size: var(--font-size-sm); margin: 0">
+                                        Publicado el <time datetime="2026-02-06">6 de febrero de 2026</time>
+                                    </p>
+                                </div>
+                                <div style="display: flex; gap: var(--spacing-sm)">
+                                    <a
+                                        href="/pages/Tecnica/Tecnica.html"
+                                        style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                                        ← Volver a Tecnica
+                                    </a>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content">
+                <p>
+                    <a href="/" class="footer-logo-link">
+                        <img src="/img/logo2_footer.png" alt="Logo RESONANCIAS" width="90" height="40" />
+                    </a>
+                    © 2026 RESONANCIAS · Todos los derechos reservados
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
