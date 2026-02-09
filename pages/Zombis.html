@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>La era en que pensar dejó de ser necesario: El pensamiento reemplazado por lo digital | RESONANCIAS</title>
+        <meta name="description" content="Un análisis sobre cómo la era digital y la inteligencia artificial están erosionando el pensamiento crítico, transformando la conversación pública y cuestionando nuestra agencia como individuos." />
+
+        <!-- URL Canónica -->
+        <link rel="canonical" href="https://gf-amd.pages.dev/pages/Zombis.html" />
+
+        <!-- SEO y Accesibilidad -->
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Gabriel Ferré" />
+        <meta name="keywords" content="pensamiento crítico, era digital, inteligencia artificial, redes sociales, control social, Gabriel Ferré, filosofía, tecnología" />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="La era en que pensar dejó de ser necesario: El pensamiento reemplazado por lo digital | RESONANCIAS" />
+        <meta property="og:description" content="Un análisis sobre cómo la era digital y la inteligencia artificial están erosionando el pensamiento crítico, transformando la conversación pública y cuestionando nuestra agencia como individuos." />
+        <meta property="og:image" content="https://gf-amd.pages.dev/img/zombis.jpg" />
+        <meta property="og:url" content="https://gf-amd.pages.dev/pages/Zombis.html" />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="RESONANCIAS" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="La era en que pensar dejó de ser necesario: El pensamiento reemplazado por lo digital | RESONANCIAS" />
+        <meta name="twitter:description" content="Un análisis sobre cómo la era digital y la inteligencia artificial están erosionando el pensamiento crítico, transformando la conversación pública y cuestionando nuestra agencia como individuos." />
+        <meta name="twitter:image" content="https://gf-amd.pages.dev/img/zombis.jpg" />
+
+        <!-- Favicon -->
+        <link rel="icon" href="/img/favicon.png" type="image/png" />
+
+        <!-- Estilos -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="/scr/styles/estilos.css" />
+
+        <!-- Scripts -->
+
+        <script src="/scr/js/main.js" defer></script>
+        <script src="/scr/js/back-to-top.js" defer></script>
+
+        <!-- Estilos responsivos para el layout del artículo -->
+        <style>
+            @media (max-width: 768px) {
+                .article-layout {
+                    flex-direction: column !important;
+                    gap: var(--spacing-lg) !important;
+                }
+                .image-card {
+                    position: relative !important;
+                    top: auto !important;
+                    width: 100% !important;
+                    min-width: auto !important;
+                    margin-bottom: var(--spacing-lg) !important;
+                }
+            }
+        </style>
+        <style>
+            /* Markdown incrustado desde Obsidian */
+            .md-obsidian h1,
+            .md-obsidian h2,
+            .md-obsidian h3,
+            .md-obsidian h4,
+            .md-obsidian h5,
+            .md-obsidian h6 {
+                margin-top: 1.6em;
+                margin-bottom: 0.6em;
+                line-height: 1.3;
+            }
+
+            .md-obsidian p {
+                margin: 0.9em 0;
+                line-height: 1.75;
+            }
+
+            .md-obsidian ul,
+            .md-obsidian ol {
+                margin: 0.9em 0 0.9em 1.6em;
+            }
+
+            .md-obsidian li {
+                margin: 0.4em 0;
+            }
+
+            .md-obsidian blockquote {
+                margin: 1.2em 0;
+                padding-left: 1em;
+                border-left: 3px solid var(--color-secondary);
+                color: var(--color-neutral);
+                font-style: italic;
+            }
+
+            .md-obsidian hr {
+                margin: 2em 0;
+                border: none;
+                border-top: 1px solid var(--color-mid);
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Skip to main content -->
+        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="nav-container">
+                <a href="/" class="logo" aria-label="RESONANCIAS - Inicio">
+                    <img src="/img/logo.png" alt="Logo RESONANCIAS" width="40" height="40" />
+                </a>
+
+                <!-- Navegación principal -->
+                <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+                    <a href="/" aria-current="page">Inicio</a>
+                    <a href="/pages/obras.html">Libros</a>
+                    <a href="/pages/libros/lector.html">Biblioteca</a>
+                    <a href="/pages/blog-2026.html">Blog</a>
+                    <a href="/pages/Tecnica/Tecnica.html">Técnica</a>
+                    <a href="/pages/quien-soy.html">Quién soy</a>
+                    <a href="/pages/contacto.html">Contacto</a>
+                </nav>
+
+                <!-- Redes sociales y búsqueda -->
+                <div class="social-nav">
+                    <div class="search-container">
+                        <button id="searchToggle" class="search-toggle" aria-label="Buscar" aria-expanded="false">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Botón menú móvil -->
+                <button
+                    class="hamburger-btn"
+                    aria-label="Menú de navegación"
+                    aria-expanded="false"
+                    aria-controls="sideMenu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Menú lateral móvil -->
+        <aside class="side-menu" id="sideMenu" role="navigation" aria-label="Menú de navegación lateral">
+            <div class="menu-header">
+                <h2 class="menu-title">Menú del Blog</h2>
+                <button class="close-btn" aria-label="Cerrar menú">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <!-- Menú tipo acordeón -->
+            <div class="accordion-menu">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/index.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                            </svg>
+                            Inicio
+                        </a>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <button class="accordion-toggle" aria-expanded="false">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                            Libros
+                            <svg
+                                class="accordion-arrow"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="accordion-content">
+                        <a href="/pages/obras.html">Todas las obras</a>
+                        <a href="/pages/carousel.html">El Regalo Escondido</a>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/libros/lector.html" class="accordion-link">
+                            <i class="fa-solid fa-book-reader"></i>
+                            Biblioteca
+                        </a>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <button class="accordion-toggle" aria-expanded="false">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14,2 14,8 20,8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10,9 9,9 8,9"></polyline>
+                            </svg>
+                            Blog
+                            <svg
+                                class="accordion-arrow"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="accordion-content active">
+                        <a href="/pages/blog-2026.html">Blog-2026</a>
+                        <a href="/pages/blog.html">Blog-2025</a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/Tecnica/Tecnica.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 5 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 5 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 5a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09A1.65 1.65 0 0 0 15 5a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19 9c0 .69.4 1.31 1.01 1.59.31.14.65.22.99.22h.09a2 2 0 1 1 0 4h-.09A1.65 1.65 0 0 0 19.4 15z"></path>
+                            </svg>
+                            Tecnica
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/quien-soy.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            Quién soy
+                        </a>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <a href="/pages/contacto.html" class="accordion-link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            Contacto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Overlay para menú -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+        <section
+            class="works-hero"
+            style="
+                margin-top: 0 !important;
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(&quot;/img/zombis.jpg&quot;);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                color: var(--color-light);
+                padding: var(--spacing-3xl) 0;
+                text-align: center;
+                min-height: 400px;
+                display: flex;
+                align-items: center;
+            ">
+            <div class="container">
+                <h2
+                    style="
+                        font-size: var(--font-size-4xl);
+                        margin-bottom: var(--spacing-lg);
+                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                    ">
+El pensamiento reemplazado por lo digital                </h2>
+                <p
+                    style="
+                        font-size: var(--font-size-xl);
+                        max-width: 600px;
+                        margin: 0 auto;
+                        line-height: 1.6;
+                        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+                    ">
+Guerra cognitiva                </p>
+            </div>
+        </section>
+        <!-- Contenido principal -->
+        <main id="main-content" role="main">
+            <!-- Artículo principal -->
+            <div class="content-card">
+                <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+                    <div class="container" style="max-width: 800px; margin: 0 auto">
+                        <!-- Header del artículo -->
+                        <header class="post-header" style="text-align: center; margin-bottom: var(--spacing-2xl)">
+                            <h1
+                                style="
+                                    font-size: var(--font-size-3xl);
+                                    color: var(--color-dark);
+                                    margin-bottom: var(--spacing-lg);
+                                ">
+La era en que pensar dejó de ser necesario                            </h1>
+                            <div
+                                class="post-meta"
+                                style="
+                                    display: flex;
+                                    justify-content: center;
+                                    gap: var(--spacing-lg);
+                                    color: var(--color-neutral);
+                                    font-size: var(--font-size-sm);
+                                    flex-wrap: wrap;
+                                ">
+                                <span>· Gabriel Ferré</span>
+                            </div>
+                        </header>
+
+                        <div
+                            class="article-layout"
+                            style="display: flex; gap: var(--spacing-xl); align-items: flex-start">
+                            <div class="article-content" style="flex: 1; line-height: 1.5; color: var(--color-dark)">
+                                <div
+                                    id="intro-paragraph"
+                                    class="md-obsidian"
+                                    style="
+                                        font-size: var(--font-size-lg);
+                                        margin-bottom: var(--spacing-2xl);
+                                        color: var(--color-warm);
+                                        position: relative;
+                                    ">
+                                    <p>
+                                        Durante décadas hubo quienes advirtieron que la concentración de poder
+                                        —político, económico, mediático o religioso— terminaría generando formas cada
+                                        vez más sofisticadas de control. Durante mucho tiempo esas advertencias parecían
+                                        exageradas o conspirativas. Hoy, sin embargo, basta observar la vida cotidiana
+                                        para notar que algo cambió profundamente en la manera en que las sociedades
+                                        perciben la realidad y reaccionan frente a los abusos.
+                                    </p>
+                                    <p>
+                                        Antes, los grandes escándalos o las injusticias graves generaban movilización,
+                                        investigación, presión social real. Hoy, con frecuencia, generan otra cosa:
+                                        contenido. Se consumen, se comentan, se olvidan y son reemplazados por el
+                                        siguiente tema en cuestión de días o incluso horas.
+                                    </p>
+                                    <p>
+                                        Internet prometía lo contrario. Prometía democratizar la palabra, romper
+                                        monopolios informativos, permitir que cualquiera investigara, aprendiera y
+                                        denunciara. Y en parte lo hizo. Pero también creó un entorno que funciona bajo
+                                        reglas que pocos comprenden y casi nadie controla.
+                                    </p>
+                                    <p>
+                                        Un dato revelador: distintos estudios de tráfico digital muestran que una
+                                        proporción enorme de la actividad en Internet —en algunos momentos cercana a la
+                                        mitad— no proviene de personas, sino de sistemas automatizados. Bots, redes de
+                                        amplificación, mecanismos diseñados para dirigir conversaciones, instalar temas
+                                        o inflar tendencias. No se trata solo de publicidad o marketing. Se trata de
+                                        percepción pública.
+                                    </p>
+                                                                        <p>
+                                        Cuando una parte significativa de la conversación no es humana, el debate deja
+                                        de ser espontáneo. Lo que parece consenso puede ser artificial. Lo que parece
+                                        indignación puede estar inducido. Y lo que parece información puede ser
+                                        simplemente ruido diseñado para distraer.
+                                    </p>
+                                    <br />
+<img
+                                    src="/img/redes-socieales.jpg"
+                                    alt="Infografía sobre crónicas de literatura"
+                                    style="
+                                        width: 100%;
+                                        height: auto;
+                                        max-height: 600px;
+                                        object-fit: contain;
+                                        border-radius: 8px;
+                                        margin-bottom: var(--spacing-md);
+                                    " />
+                                    <p>Pero hay algo todavía más inquietante.</p>
+                                    <p>
+                                        Un canal de comunicación, por definición, tiene dos vías. Se habla y se escucha.
+                                        Se emite y se responde. Se discute y se transforma el pensamiento. Sin embargo,
+                                        el ecosistema digital actual parece empujar hacia otra lógica: una sola vía.
+                                    </p>
+                                    <p>
+                                        Creemos que participamos, pero en gran medida solo recibimos. Recibimos
+                                        contenidos seleccionados por algoritmos, recibimos temas elegidos por
+                                        tendencias, recibimos interpretaciones empaquetadas. Incluso cuando creemos
+                                        buscar, en realidad elegimos entre opciones previamente filtradas.
+                                    </p>
+                                    <p>
+                                        La curiosidad, que durante siglos fue el motor del conocimiento, empieza a
+                                        volverse innecesaria en un entorno donde todo llega servido, resumido y listo
+                                        para consumir. Investigar requiere esfuerzo; deslizar el dedo, no.
+                                    </p>
+                                    <p>
+                                        En ese proceso, también se naturaliza algo peligroso: la pérdida gradual de
+                                        derechos, de privacidad y de acceso a información profunda. No ocurre de golpe,
+                                        ocurre lentamente, entre distracciones, polémicas efímeras y ciclos de
+                                        indignación que se disuelven antes de producir cambios reales.
+                                    </p>
+                                    <p>
+                                        Casos extremadamente graves, como el de Jeffrey Epstein, muestran otra cara del
+                                        problema: hechos que deberían provocar investigaciones persistentes y memoria
+                                        colectiva terminan absorbidos por el espectáculo informativo, mezclados con
+                                        teorías, entretenimiento y saturación.
+                                    </p>
+                                    <br />
+<img
+                                    src="/img/zombis.jpg"
+                                    alt="Infografía sobre crónicas de literatura"
+                                    style="
+                                        width: 100%;
+                                        height: auto;
+                                        max-height: 600px;
+                                        object-fit: contain;
+                                        border-radius: 8px;
+                                        margin-bottom: var(--spacing-md);
+                                    " />
+                                    <p>Nada escandaliza por mucho tiempo cuando todo compite por atención.</p>
+                                    <p>
+                                        Tal vez la pregunta ya no sea si Internet informa o desinforma. Tal vez la
+                                        pregunta más incómoda sea otra:
+                                    </p>
+                                    <p>
+                                        ¿Seguimos siendo participantes de la conversación pública… o nos estamos
+                                        convirtiendo en audiencia permanente de una realidad editada?
+                                    </p>
+                                    <p>
+                                        Y si el flujo de información se vuelve cada vez más unidireccional, la cuestión
+                                        de fondo es aún más inquietante:
+                                    </p>
+                                    <p>
+                                        ¿En qué momento dejamos de hablar entre nosotros y empezamos simplemente a
+                                        escuchar lo que otros decidieron que debíamos oír?
+                                    </p>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                        <section
+                            class="blog-subscription"
+                            style="
+                                margin-top: var(--spacing-3xl);
+                                background: var(--color-mid);
+                                padding: var(--spacing-2xl);
+                                border-radius: 12px;
+                                text-align: center;
+                            ">
+                            <nav class="share-footer" aria-label="Compartir página">
+                                <a
+                                    href="https://www.facebook.com/sharer/sharer.php?u=https://gf-amd.pages.dev/pages/Zombis.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn facebook"
+                                    title="Compartir en Facebook"
+                                    aria-label="Compartir en Facebook">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                                <a
+                                    href="https://twitter.com/intent/tweet?url=https://gf-amd.pages.dev/pages/Zombis.html&text=La%20era%20en%20que%20pensar%20dejó%20de%20ser%20necesario%3A%20El%20pensamiento%20reemplazado%20por%20lo%20digital%20%7C%20RESONANCIAS"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn twitter"
+                                    title="Compartir en X"
+                                    aria-label="Compartir en X">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+
+                                <a
+                                    href="https://api.whatsapp.com/send?text=La%20era%20en%20que%20pensar%20dejó%20de%20ser%20necesario%3A%20El%20pensamiento%20reemplazado%20por%20lo%20digital%20%7C%20RESONANCIAS%20https://gf-amd.pages.dev/pages/Zombis.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn whatsapp"
+                                    title="Compartir en WhatsApp"
+                                    aria-label="Compartir en WhatsApp">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                                <a
+                                    href="https://bsky.app/intent/compose?text=La%20era%20en%20que%20pensar%20dejó%20de%20ser%20necesario%3A%20El%20pensamiento%20reemplazado%20por%20lo%20digital%20%7C%20RESONANCIAS%20https://gf-amd.pages.dev/pages/Zombis.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn bluesky"
+                                    title="Compartir en Bluesky"
+                                    aria-label="Compartir en Bluesky">
+                                    <i class="fa-brands fa-bluesky"></i>
+                                </a>
+                            </nav>
+                            <h3
+                                style="
+                                    color: var(--color-dark);
+                                    margin-bottom: var(--spacing-md);
+                                    font-size: var(--font-size-2xl);
+                                ">
+                                Comparte en tus redes
+                            </h3>
+                            <h4>Suscribete</h4>
+
+                            <p
+                                style="
+                                    color: var(--color-warm);
+                                    margin-bottom: var(--spacing-xl);
+                                    max-width: 500px;
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                    line-height: 1.6;
+                                ">
+                                Recibe notificaciones cuando publique nuevos ensayos y reflexiones. Sin spam, solo
+                                contenido de calidad.
+                            </p>
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    gap: var(--spacing-md);
+                                    max-width: 400px;
+                                    margin: 0 auto;
+                                    flex-wrap: wrap;
+                                ">
+                                <a
+                                    href="/pages/contacto.html"
+                                    style="
+                                        background: var(--color-secondary);
+                                        color: var(--color-light);
+                                        border: none;
+                                        padding: var(--spacing-md) var(--spacing-xl);
+                                        border-radius: 8px;
+                                        font-weight: 600;
+                                        text-decoration: none;
+                                        cursor: pointer;
+                                        transition: all var(--transition-fast);
+                                        display: inline-flex;
+                                        align-items: center;
+                                        gap: var(--spacing-sm);
+                                    "
+                                    onmouseover="this.style.background='var(--color-warm)'; this.style.transform='translateY(-2px)'"
+                                    onmouseout="this.style.background='var(--color-secondary)'; this.style.transform='translateY(0)'">
+                                    <svg
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                    Contáctame
+                                </a>
+                            </div>
+                            <p
+                                style="
+                                    font-size: var(--font-size-sm);
+                                    color: var(--color-neutral);
+                                    margin-top: var(--spacing-md);
+                                ">
+                                * Puedes darte de baja en cualquier momento
+                            </p>
+                        </section>
+                        <!-- Footer del artículo -->
+
+                        <footer
+                            style="
+                                margin-top: var(--spacing-2xl);
+                                padding-top: var(--spacing-xl);
+                                border-top: 1px solid var(--color-mid);
+                            ">
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    flex-wrap: wrap;
+                                    gap: var(--spacing-md);
+                                ">
+                                <div>
+                                    <p style="color: var(--color-neutral); font-size: var(--font-size-sm); margin: 0">
+                                        Publicado el <time datetime="2025-08">Agosto 2025</time>
+                                    </p>
+                                </div>
+                                <div style="display: flex; gap: var(--spacing-sm)">
+                                    <a
+                                        href="/pages/blog-2026.html"
+                                        style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                                        ← Volver al blog
+                                    </a>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content">
+                <p>
+                    <a href="/" class="footer-logo-link">
+                        <img src="/img/logo2_footer.png" alt="Logo RESONANCIAS" width="90" height="40" />
+                    </a>
+                    © 2026 RESONANCIAS · Todos los derechos reservados
+                </p>
+            </div>
+        </footer>
+        <a href="#main-content" class="back-to-top" aria-label="Volver arriba">
+            <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+        </a>
+    </body>
+</html>
