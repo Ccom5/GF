@@ -1,376 +1,380 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lector de Libros - RESONANCIAS</title>
-    <meta name="description" content="Lector de libros interactivo para las obras de Gabriel Ferré. Lee online y ajusta la experiencia de lectura a tu gusto." />
-    <link rel="canonical" href="https://gf-amd.pages.dev/pages/libros/lector.html" />
-    <link rel="icon" href="/img/favicon.png" type="image/png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link rel="stylesheet" href="/scr/styles/estilos.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca · En Mantenimiento</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-light: #ffffffd4;
+      --color-dark: #100f0f;
+      --color-mid: #c4bcb5;
+      --color-accent: #b06900;
+      --font-heading: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      --font-body: "Lato", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      --color-primary: #d6cdc3;
+      --color-secondary: #d07f2c;
+      --color-warm: #2b2d27;
+      --color-neutral: #646363;
+      --color-soft: #bd8956;
+      --color-muted: #bfb9b4;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-warm);
+      background-image:
+        radial-gradient(ellipse at 20% 80%, rgba(176, 105, 0, 0.12) 0%, transparent 70%),
+        radial-gradient(ellipse at 80% 20%, rgba(208, 127, 44, 0.1) 0%, transparent 70%),
+        radial-gradient(ellipse at 50% 50%, rgba(189, 137, 86, 0.06) 0%, transparent 70%);
+      font-family: var(--font-body);
+      color: var(--color-light);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Floating particles */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0;
+      animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        opacity: 0;
+        transform: translateY(100vh) scale(0);
+      }
+      10% {
+        opacity: 0.6;
+      }
+      90% {
+        opacity: 0.3;
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-10vh) scale(1);
+      }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem;
+      max-width: 700px;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Animated book icon */
+    .icon-wrapper {
+      margin-bottom: 2.5rem;
+      display: inline-block;
+      position: relative;
+    }
+
+    .book-icon {
+      width: 100px;
+      height: 100px;
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    .book-icon svg {
+      filter: drop-shadow(0 4px 20px rgba(176, 105, 0, 0.3));
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .gear-badge {
+      position: absolute;
+      bottom: -4px;
+      right: -8px;
+      background: var(--color-secondary);
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 12px rgba(208, 127, 44, 0.5);
+      animation: spinSlow 6s linear infinite;
+    }
+
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .gear-badge svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--color-warm);
+    }
+
+    /* Divider line */
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--color-accent), var(--color-secondary), var(--color-accent), transparent);
+      margin: 0 auto 2rem;
+      border-radius: 2px;
+      animation: shimmer 2.5s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { width: 60px; opacity: 0.7; }
+      50% { width: 120px; opacity: 1; }
+    }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      color: var(--color-primary);
+      margin-bottom: 1.2rem;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+
+    h1 span {
+      color: var(--color-secondary);
+    }
+
+    .message {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--color-muted);
+      line-height: 1.8;
+      margin-bottom: 0.6rem;
+      font-weight: 300;
+    }
+
+    .message strong {
+      color: var(--color-soft);
+      font-weight: 700;
+    }
+
+    .comeback {
+      font-family: var(--font-heading);
+      font-size: clamp(1.3rem, 3vw, 1.7rem);
+      font-weight: 600;
+      color: var(--color-secondary);
+      margin-top: 2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      animation: fadeInUp 1s ease-out 0.4s both;
+    }
+
+    .comeback .arrow {
+      display: inline-block;
+      animation: bounceRight 1.5s ease-in-out infinite;
+      font-size: 1.4em;
+    }
+
+    @keyframes bounceRight {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(6px); }
+    }
+
+    /* Progress bar */
+    .progress-wrapper {
+      margin-top: 2.5rem;
+      animation: fadeInUp 1s ease-out 0.6s both;
+    }
+
+    .progress-label {
+      font-size: 0.8rem;
+      color: var(--color-neutral);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.6rem;
+      font-family: var(--font-heading);
+    }
+
+    .progress-bar {
+      width: 280px;
+      height: 4px;
+      background: rgba(196, 188, 181, 0.15);
+      border-radius: 4px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 30%;
+      background: linear-gradient(90deg, var(--color-accent), var(--color-secondary), var(--color-soft));
+      border-radius: 4px;
+      animation: loading 2.5s ease-in-out infinite;
+    }
+
+    @keyframes loading {
+      0% { width: 10%; transform: translateX(0); }
+      50% { width: 60%; }
+      100% { width: 10%; transform: translateX(900%); }
+    }
+
+    /* Footer */
+    .footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.2rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--color-neutral);
+      font-family: var(--font-body);
+      letter-spacing: 0.05em;
+      z-index: 1;
+    }
+
+    .footer .dot {
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      background: var(--color-accent);
+      border-radius: 50%;
+      margin: 0 0.4rem;
+      vertical-align: middle;
+    }
+
+    /* Card glass effect */
+    .card {
+      background: rgba(43, 45, 39, 0.55);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(196, 188, 181, 0.08);
+      border-radius: 24px;
+      padding: 3.5rem 3rem;
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+  </style>
 </head>
-
 <body>
-    <h1 style="display: none;">Lector de Libros</h1>
-    <nav class="navbar">
-        <div class="navbar-content">
-            <img src="/img/logo.png" alt="Logo RESONANCIAS" width="40" height="40" />
-            <div class="navbar-nav">
-                <a href="/" class="nav-btn"><i class="fas fa-home"></i> Inicio</a>
-                <a href="/pages/obras.html" class="nav-btn"><i class="fas fa-book-open"></i> Obras</a>
-            </div>
-            <div class="navbar-toggles">
-                <button class="menu-toggle" id="menuToggle"><i class="fas fa-book"></i></button>
-                <button class="menu-toggle" id="controlsToggle"><i class="fas fa-cogs"></i></button>
-            </div>
+
+  <!-- Floating Particles -->
+  <div class="particles" id="particles"></div>
+
+  <div class="container">
+    <div class="card">
+
+      <!-- Book Icon with Gear Badge -->
+      <div class="icon-wrapper">
+        <div class="book-icon">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 15C20 12 22 10 25 10H45C47 10 50 11 50 14V82C50 82 47 78 43 78H25C22 78 20 80 20 82V15Z" fill="#b06900" opacity="0.85"/>
+            <path d="M80 15C80 12 78 10 75 10H55C53 10 50 11 50 14V82C50 82 53 78 57 78H75C78 78 80 80 80 82V15Z" fill="#d07f2c" opacity="0.85"/>
+            <path d="M50 14V82" stroke="#d6cdc3" stroke-width="1" opacity="0.4"/>
+            <rect x="26" y="22" width="16" height="2" rx="1" fill="#d6cdc3" opacity="0.5"/>
+            <rect x="26" y="28" width="12" height="2" rx="1" fill="#d6cdc3" opacity="0.35"/>
+            <rect x="26" y="34" width="14" height="2" rx="1" fill="#d6cdc3" opacity="0.3"/>
+            <rect x="58" y="22" width="16" height="2" rx="1" fill="#2b2d27" opacity="0.4"/>
+            <rect x="58" y="28" width="12" height="2" rx="1" fill="#2b2d27" opacity="0.3"/>
+            <rect x="58" y="34" width="14" height="2" rx="1" fill="#2b2d27" opacity="0.25"/>
+          </svg>
         </div>
-    </nav>
-    <div class="menu-overlay" id="menuOverlay"></div>
-    <div class="main-container">
-        <aside class="book-selector" id="bookSelector">
-            <h2>Biblioteca</h2>
-            <input type="text" id="bookSearch" class="search-input" placeholder="Buscar libro..." />
-            <ul class="book-list" id="bookList"></ul>
-        </aside>
-        <main class="reader-panel">
-            <div class="reader-nav-arrow left" id="readerPrev"><i class="fas fa-chevron-left"></i></div>
-            <div class="reader-content" id="readerContent"></div>
-            <div class="reader-nav-arrow right" id="readerNext"><i class="fas fa-chevron-right"></i></div>
-        </main>
-        <aside class="controls-panel" id="controlsPanel">
-            <h2>🔧 Controles</h2>
-            <div class="control-section">
-                <div class="control-title">Navegación</div>
-                <button class="control-btn" id="prevPage">← Anterior</button>
-                <button class="control-btn" id="nextPage">Siguiente →</button>
-                <p id="pageIndicator" style="text-align: center; margin-top: 0.5rem"></p>
-            </div>
-            <div class="control-section" id="font-controls">
-                <div class="control-title">Tamaño de fuente</div>
-                <div class="font-controls">
-                    <button class="font-btn" onclick="changeFontSize(-10)">A-</button>
-                    <span id="fontSizeDisplay">100%</span>
-                    <button class="font-btn" onclick="changeFontSize(10)">A+</button>
-                </div>
-            </div>
-            <div class="control-section" id="image-zoom-controls" style="display: none;">
-                <div class="control-title">Zoom</div>
-                <div class="font-controls">
-                    <button class="font-btn" onclick="changeImageZoom(-0.1)">-</button>
-                    <span id="imageZoomDisplay">100%</span>
-                    <button class="font-btn" onclick="changeImageZoom(0.1)">+</button>
-                </div>
-            </div>
-            <div class="control-section">
-                <div class="control-title">Modo lectura</div>
-                <button class="control-btn" onclick="toggleTheme()">🌙 Modo nocturno</button>
-                <button class="control-btn" onclick="toggleFullscreen()">⛶ Pantalla completa</button>
-            </div>
-        </aside>
+        <div class="gear-badge">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7zm7.43-2.53l1.76-.68a.5.5 0 0 0 .29-.61l-1-2.6a.5.5 0 0 0-.57-.3l-1.86.4a7.04 7.04 0 0 0-1.08-.62l-.4-1.88a.5.5 0 0 0-.49-.4h-2.16a.5.5 0 0 0-.49.4l-.4 1.88c-.39.17-.74.38-1.08.62l-1.86-.4a.5.5 0 0 0-.57.3l-1 2.6a.5.5 0 0 0 .29.61l1.76.68c-.02.35-.02.71 0 1.06l-1.76.68a.5.5 0 0 0-.29.61l1 2.6a.5.5 0 0 0 .57.3l1.86-.4c.34.24.69.45 1.08.62l.4 1.88a.5.5 0 0 0 .49.4h2.16a.5.5 0 0 0 .49-.4l.4-1.88c.39-.17.74-.38 1.08-.62l1.86.4a.5.5 0 0 0 .57-.3l1-2.6a.5.5 0 0 0-.29-.61l-1.76-.68c.02-.35.02-.71 0-1.06z"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h1>Esta sección de <span>Biblioteca</span> se está mejorando para un mejor uso</h1>
+
+      <p class="message">
+        Estamos trabajando para ofrecerte una <strong>experiencia mejorada</strong>. Agradecemos tu paciencia mientras realizamos estas actualizaciones.
+      </p>
+
+      <div class="comeback">
+        ¡Regresa pronto! <span class="arrow">→</span>
+      </div>
+
+      <!-- Progress Indicator -->
+      <div class="progress-wrapper">
+        <div class="progress-label">Mejoras en progreso</div>
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+      </div>
+
     </div>
+  </div>
 
-    <script>
-        // --- STATE MANAGEMENT ---
-        let currentBookId = null;
-        let chapters = [];
-        let currentPage = 0;
-        let totalPages = 0;
-        let fontSize = 100;
-        let activeMenu = null;
-        let imageZoom = 1.0;
+  <!-- Footer -->
+  <div class="footer">
+    Biblioteca <span class="dot"></span> Mantenimiento Programado
+  </div>
 
-        const books = {
-            "1984-george-orwell": { name: "1984-george-orwell", path: "1984-george-orwell/", type: "html" },
-            "el-aleph-jl-borges": { name: "el-aleph-jl-borges", path: "el-aleph-jl-borges/", type: "html" },
-            "el-cuervo-edgar-allan-poe": { name: "el-cuervo-edgar-allan-poe", path: "el-cuervo-edgar-allan-poe/", type: "html" },
-            "el-eternauta": { name: "el-eternauta", path: "el-eternauta/", type: "html", isImageBased: true },
-            "el-horror-segun-lovecraft-vol-2": { name: "el-horror-segun-lovecraft-vol-2", path: "el-horror-segun-lovecraft-vol-2/", type: "html" },
-            "el-horror-segun-lovecraft-vol-1": { name: "el-horror-segun-lovecraft-vol-1", path: "el-horror-segun-lovecraft-vol-1/", type: "html" },
-            "La rebelión de las masas": { name: "La rebelión de las masas", path: "la-rebelion-de-las-masas/", type: "html" },
-            "ilusiones-richard-bach": { name: "ilusiones-richard-bach", path: "ilusiones-richard-bach/", type: "html" },
-            "Las Venas Abiertas de América Latina": { name: "Las Venas Abiertas de América Latina", path: "las_venas_abiertas_de_amxrica_latina/", type: "html" },
-            "Reconociéndonos-en-el-Universo": { name: "Reconociéndonos-en-el-Universo", path: "Reconociéndonos-en-el-Universo/", type: "html" },
-        };
+  <script>
+    // Generate floating particles
+    const particlesContainer = document.getElementById('particles');
+    const colors = ['#b06900', '#d07f2c', '#bd8956', '#c4bcb5', '#d6cdc3'];
 
-        // --- DOM ELEMENTS ---
-        const readerContent = document.getElementById("readerContent");
-        const prevBtn = document.getElementById("prevPage");
-        const nextBtn = document.getElementById("nextPage");
-        const pageIndicator = document.getElementById("pageIndicator");
-        const fontControls = document.getElementById("font-controls");
-        const imageZoomControls = document.getElementById("image-zoom-controls");
-        const imageZoomDisplay = document.getElementById("imageZoomDisplay");
+    function createParticle() {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
 
-        // --- INITIALIZATION ---
-        document.addEventListener("DOMContentLoaded", () => {
-            document.getElementById("menuToggle").addEventListener("click", () => toggleMobileMenu("books"));
-            document.getElementById("controlsToggle").addEventListener("click", () => toggleMobileMenu("controls"));
-            document.getElementById("menuOverlay").addEventListener("click", () => closeMobileMenu());
-            prevBtn.addEventListener("click", () => navigatePage(-1));
-            nextBtn.addEventListener("click", () => navigatePage(1));
-            document.getElementById("readerPrev").addEventListener("click", () => navigatePage(-1));
-            document.getElementById("readerNext").addEventListener("click", () => navigatePage(1));
-            document.getElementById("bookSearch").addEventListener("keyup", filterBooks);
+      const size = Math.random() * 4 + 2;
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const left = Math.random() * 100;
+      const duration = Math.random() * 12 + 10;
+      const delay = Math.random() * 8;
 
-            populateBookList();
-            resetReaderView();
+      particle.style.width = size + 'px';
+      particle.style.height = size + 'px';
+      particle.style.background = color;
+      particle.style.left = left + '%';
+      particle.style.animationDuration = duration + 's';
+      particle.style.animationDelay = delay + 's';
 
-            const urlParams = new URLSearchParams(window.location.search);
-            const bookToLoad = urlParams.get("book");
+      particlesContainer.appendChild(particle);
+    }
 
-            if (bookToLoad && books[bookToLoad]) {
-                selectBook(bookToLoad);
-            }
-        });
+    for (let i = 0; i < 30; i++) {
+      createParticle();
+    }
+  </script>
 
-        // --- BOOK SELECTION & LOADING ---
-        function populateBookList(filter = "") {
-            const bookList = document.getElementById("bookList");
-            bookList.innerHTML = "";
-            Object.keys(books).sort().forEach(bookId => {
-                const book = books[bookId];
-                if (book.name.toLowerCase().includes(filter.toLowerCase())) {
-                    const li = document.createElement("li");
-                    li.className = "book-item";
-                    li.textContent = book.name;
-                    li.onclick = () => selectBook(bookId);
-                    bookList.appendChild(li);
-                }
-            });
-        }
-
-        function filterBooks() {
-            populateBookList(document.getElementById("bookSearch").value);
-        }
-
-        function selectBook(bookId) {
-            currentBookId = bookId;
-            document.querySelectorAll(".book-item").forEach(item => item.classList.remove("active"));
-            document.querySelectorAll(".book-item").forEach(item => {
-                if (item.textContent === books[bookId].name) item.classList.add("active");
-            });
-            if (window.innerWidth <= 1024) closeMobileMenu();
-            showCover(bookId);
-        }
-
-        async function showCover(bookId) {
-            const book = books[bookId];
-            readerContent.innerHTML = `<div class="empty-state"><h3>Cargando portada...</h3></div>`;
-            try {
-                const indexUrl = new URL(`${book.path}index.html`, window.location.href);
-                const response = await fetch(indexUrl);
-                if (!response.ok) throw new Error('No se pudo cargar el índice del libro.');
-
-                const indexHtml = await response.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(indexHtml, "text/html");
-                const coverImg = doc.querySelector("img");
-
-                if (coverImg) {
-                    const coverSrc = coverImg.getAttribute('src');
-                    const coverPath = `/pages/libros/${book.path}${coverSrc}`;
-                    readerContent.innerHTML = `
-                        <div class="cover-display">
-                            <img src="${coverPath}" alt="Portada de ${book.name}">
-                            <button class="control-btn" onclick="startReading()">Iniciar Lectura</button>
-                        </div>`;
-                } else {
-                    startReading();
-                }
-            } catch (error) {
-                readerContent.innerHTML = `<div class="empty-state"><h3>Error al cargar la portada</h3><p>${error.message}</p><button class="control-btn" onclick="startReading()">Intentar leer de todas formas</button></div>`;
-            }
-        }
-
-        async function startReading() {
-            readerContent.innerHTML = `<div class="empty-state"><h3>Cargando libro...</h3></div>`;
-            await loadFullBook();
-        }
-
-        async function loadFullBook() {
-            toggleBookControls();
-            await loadHtmlBook();
-        }
-
-
-
-        function toggleBookControls() {
-            const book = books[currentBookId];
-            if (book && book.isImageBased) {
-                fontControls.style.display = 'none';
-                imageZoomControls.style.display = 'block';
-            } else {
-                fontControls.style.display = 'block';
-                imageZoomControls.style.display = 'none';
-            }
-        }
-
-        async function loadHtmlBook() {
-            const book = books[currentBookId];
-            try {
-                let chapterLinks = [];
-
-                if (book.chapters && book.chapters.length > 0) {
-                    chapterLinks = book.chapters;
-                } else {
-                    const indexUrl = new URL(`${book.path}index.html`, window.location.href);
-                    const indexResponse = await fetch(indexUrl.href);
-                    if (!indexResponse.ok) throw new Error("No se pudo cargar el índice.");
-
-                    const indexHtml = await indexResponse.text();
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(indexHtml, "text/html");
-
-                    chapterLinks = Array.from(doc.querySelectorAll("a[href]"))
-                        .map(a => a.getAttribute("href"))
-                        .filter(href => href && href.toLowerCase().startsWith("text/") && href.endsWith(".html"))
-                        .filter((href, i, a) => a.indexOf(href) === i);
-                }
-
-                if (chapterLinks.length === 0) throw new Error("No se encontraron capítulos.");
-
-                const chaptersData = await Promise.all(chapterLinks.map(async file => {
-                    try {
-                        const chapterUrl = new URL(book.path + file, window.location.href);
-                        const response = await fetch(chapterUrl);
-                        return response.ok ? { html: await response.text(), url: chapterUrl.href } : null;
-                    } catch { return null; }
-                }));
-
-                chapters = chaptersData.filter(data => data !== null);
-                if (chapters.length === 0) throw new Error("No se pudieron cargar los capítulos.");
-                displayBook();
-            } catch (error) {
-                readerContent.innerHTML = `<div class="empty-state"><h3>Error al cargar el libro</h3><p>${error.message}</p></div>`;
-            }
-        }
-
-        function displayBook() {
-            readerContent.innerHTML = "";
-            chapters.forEach(chapterData => {
-                const doc = new DOMParser().parseFromString(chapterData.html, "text/html");
-                doc.querySelectorAll("img").forEach(img => {
-                    let src = img.getAttribute("src");
-                    if (src && !src.startsWith('http')) {
-                        const bookPath = books[currentBookId].path;
-                        // Apply fix ONLY for el-eternauta
-                        if (currentBookId === 'el-eternauta' && src.startsWith('images/')) {
-                            src = src.substring('images/'.length);
-                        }
-                        img.src = `/pages/libros/${bookPath}images/${src}`;
-                    }
-                });
-                const page = document.createElement("div");
-                page.className = "reader-page";
-                page.innerHTML = doc.body.innerHTML;
-                readerContent.appendChild(page);
-            });
-            totalPages = chapters.length;
-            currentPage = 1;
-            if (books[currentBookId].isImageBased) {
-                changeImageZoom(0);
-            }
-            navigatePage(0, true);
-        }
-
-        // --- PAGINATION & NAVIGATION ---
-        function navigatePage(direction, absolute = false) {
-            const newPage = absolute ? 1 : currentPage + direction;
-            if (newPage >= 1 && newPage <= totalPages) {
-                currentPage = newPage;
-                readerContent.scrollTo({ left: (currentPage - 1) * readerContent.clientWidth, behavior: "smooth" });
-                updatePageUI();
-            }
-        }
-
-        function updatePageUI() {
-            const book = books[currentBookId];
-            if (!book || totalPages === 0) {
-                pageIndicator.textContent = "";
-                prevBtn.disabled = true;
-                nextBtn.disabled = true;
-                return;
-            }
-
-            const page = currentPage;
-            pageIndicator.textContent = `Página ${page} de ${totalPages}`;
-            if (book.isImageBased) {
-                imageZoomDisplay.textContent = `${Math.round(imageZoom * 100)}%`;
-            }
-
-            const isFirst = page <= 1;
-            const isLast = page >= totalPages;
-            prevBtn.disabled = isFirst;
-            nextBtn.disabled = isLast;
-            document.getElementById("readerPrev").style.pointerEvents = isFirst ? "none" : "auto";
-            document.getElementById("readerNext").style.pointerEvents = isLast ? "none" : "auto";
-        }
-
-        function resetReaderView() {
-            readerContent.innerHTML = `<div class="empty-state"><h3>Selecciona un libro para comenzar</h3><p>Elige un título de la lista para iniciar la lectura</p></div>`;
-            chapters = [];
-            currentPage = 0;
-            totalPages = 0;
-            imageZoom = 1.0;
-            toggleBookControls();
-            updatePageUI();
-        }
-
-        // --- UI CONTROLS ---
-        function changeImageZoom(amount) {
-            if (!books[currentBookId] || !books[currentBookId].isImageBased) return;
-            imageZoom = Math.max(0.2, imageZoom + amount);
-            const images = readerContent.querySelectorAll('.reader-page img');
-            images.forEach(img => {
-                img.style.maxWidth = `${imageZoom * 100}%`;
-                img.style.maxHeight = `${imageZoom * 100}vh`;
-            });
-            imageZoomDisplay.textContent = `${Math.round(imageZoom * 100)}%`;
-        }
-
-        function changeFontSize(change) {
-            fontSize = Math.max(70, Math.min(150, fontSize + change));
-            document.getElementById("fontSizeDisplay").textContent = `${fontSize}%`;
-            readerContent.style.fontSize = `${fontSize}%`;
-        }
-
-        function toggleTheme() {
-            document.body.classList.toggle("dark-mode");
-        }
-
-        function toggleFullscreen() {
-            if (!document.fullscreenElement) document.documentElement.requestFullscreen();
-            else document.exitFullscreen();
-        }
-
-        function toggleMobileMenu(menuType) {
-            if (activeMenu === menuType) {
-                closeMobileMenu();
-            } else {
-                closeMobileMenu();
-                activeMenu = menuType;
-                document.getElementById("menuOverlay").classList.add("active");
-                if (menuType === "books") {
-                    document.getElementById("bookSelector").classList.add("mobile-visible");
-                    document.getElementById("menuToggle").innerHTML = '<i class="fas fa-times"></i>';
-                } else if (menuType === "controls") {
-                    document.getElementById("controlsPanel").classList.add("mobile-visible");
-                    document.getElementById("controlsToggle").innerHTML = '<i class="fas fa-times"></i>';
-                }
-            }
-        }
-
-        function closeMobileMenu() {
-            activeMenu = null;
-            document.getElementById("menuOverlay").classList.remove("active");
-            document.getElementById("bookSelector").classList.remove("mobile-visible");
-            document.getElementById("controlsPanel").classList.remove("mobile-visible");
-            document.getElementById("menuToggle").innerHTML = '<i class="fas fa-book"></i>';
-            document.getElementById("controlsToggle").innerHTML = '<i class="fas fa-cogs"></i>';
-        }
-    </script>
 </body>
-
 </html>
