@@ -34,12 +34,13 @@
       justify-content: center;
       background-color: var(--color-warm);
       background-image:
-        radial-gradient(ellipse at 20% 80%, rgba(176, 105, 0, 0.12) 0%, transparent 70%),
-        radial-gradient(ellipse at 80% 20%, rgba(208, 127, 44, 0.1) 0%, transparent 70%),
+        radial-gradient(ellipse at 20% 80%, rgba(176, 105, 0, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(208, 127, 44, 0.1) 0%, transparent 50%),
         radial-gradient(ellipse at 50% 50%, rgba(189, 137, 86, 0.06) 0%, transparent 70%);
       font-family: var(--font-body);
       color: var(--color-light);
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: auto;
       position: relative;
     }
 
@@ -274,6 +275,56 @@
       vertical-align: middle;
     }
 
+    /* Back button */
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 2rem;
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-warm);
+      background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 18px rgba(176, 105, 0, 0.35);
+      letter-spacing: 0.03em;
+    }
+
+    .btn-back:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(208, 127, 44, 0.5);
+      background: linear-gradient(135deg, var(--color-soft), var(--color-secondary));
+    }
+
+    .btn-back:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 10px rgba(176, 105, 0, 0.3);
+    }
+
+    .btn-back .btn-arrow {
+      font-size: 1.2em;
+      transition: transform 0.3s ease;
+    }
+
+    .btn-back:hover .btn-arrow {
+      transform: translateX(-4px);
+    }
+
+    .btn-top {
+      margin-bottom: 1.8rem;
+      animation: fadeInUp 1s ease-out 0.2s both;
+    }
+
+    .btn-bottom {
+      margin-top: 1.8rem;
+      animation: fadeInUp 1s ease-out 0.8s both;
+    }
+
     /* Card glass effect */
     .card {
       background: rgba(43, 45, 39, 0.55);
@@ -294,6 +345,11 @@
   <div class="particles" id="particles"></div>
 
   <div class="container">
+    <div class="btn-top">
+      <button class="btn-back" onclick="history.back()">
+        <span class="btn-arrow">←</span> Regresar
+      </button>
+    </div>
     <div class="card">
 
       <!-- Book Icon with Gear Badge -->
@@ -338,6 +394,11 @@
         </div>
       </div>
 
+    </div>
+    <div class="btn-bottom">
+      <button class="btn-back" onclick="history.back()">
+        <span class="btn-arrow">←</span> Regresar
+      </button>
     </div>
   </div>
 
