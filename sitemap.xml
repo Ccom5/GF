@@ -1,247 +1,179 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://gf-amd.pages.dev/</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/obras</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/libros/lector</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/blog-2026</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/Tecnica/Tecnica</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/quien-soy</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/contacto</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/carousel</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/blog</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/Disruptiva-IA</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/semilla</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/Zombis</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/inge-social</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/el-7</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/vigilancia</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/esperanza</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/pensar</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/punto-vista</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/estado-espia</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/Tecnica/transporte</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/Tecnica/Calor</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/Tecnica/hidraulica</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/Tecnica/Electrica</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/Tecnica/calentamiento</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/Tecnica/Cambio-paradigma</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/blog-literatura</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/blog-lenguaje</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/blog.2025/Blog-unidad</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/blog.2025/blog-sociales</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/blog.2025/blog-apatia</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/blog.2025/blog-etica</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/blog.2025/blog-informarse</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/blog.2025/blog-sociedad</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/blog.2025/blog-OpenAI</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/blog.2025/Blog-ignorancia</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/blog.2025/ensayo-sociedad</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/blog.2025/carta-abierta</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/blog.2025/blog-cerebro</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/blog.2025/blog-agente-ia</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/blog.2025/blog-guerra</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/blog.2025/blog-ia</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/blog.2025/entrada-p</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/blog.2025/blog-lenguaje</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/blog.2025/blog-literatura</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/Tecnica/Anexo-trenes</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/Tecnica/anexo-global</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://gf-amd.pages.dev/pages/libros/cronicas.html</loc>
-  <lastmod>2026-02-16T04:27:43+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://gf-amd.pages.dev/</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/quien-soy.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/obras.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/contacto.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2026/blog-2026.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2025/blog.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/tecnica/Tecnica.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2026/Zombis.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2026/estado-espia.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2026/vigilancia.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2026/semilla.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2026/revelion.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2026/punto-vista.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2026/pensar.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2026/esperanza.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2026/el-7.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2026/Disruptiva-IA.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2026/1810.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2026/inge-social.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2025/entrada-p.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2025/ensayo-sociedad.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2025/Blog-unidad.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2025/blog-sociedad.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2025/blog-OpenAI.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2025/blog-informarse.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2025/Blog-ignorancia.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2025/blog-ia.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2025/blog-guerra.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2025/blog-etica.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2025/blog-cerebro.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2025/blog-apatia.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2025/blog-agente-ia.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2025/blog-sociales.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2025/blog-literatura.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/2025/blog-lenguaje.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/tecnica/transporte.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/tecnica/hidraulica.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/tecnica/Electrica.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/tecnica/Cambio-paradigma.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/tecnica/Calor.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/tecnica/calentamiento.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/tecnica/Anexo-trenes.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/blog/tecnica/anexo-global.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://gf-amd.pages.dev/pages/carousel.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
 </urlset>

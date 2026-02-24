@@ -21,9 +21,9 @@
         <meta
             property="og:description"
             content="Ensayos, relatos y reflexiones sobre la palabra, la imaginación y el futuro" />
-        <meta property="og:image" content="/img/hero-v.jpg" />
+        <meta property="og:image" content="/img/ui/hero-v.jpg" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://gf-amd.pages.dev" />
+        <meta property="og:url" content="https://gf-amd.pages.dev/" />
 
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary_large_image" />
@@ -31,10 +31,10 @@
         <meta
             name="twitter:description"
             content="Ensayos, relatos y reflexiones sobre la palabra, la imaginación y el futuro" />
-        <meta name="twitter:image" content="/img/hero-v.jpg" />
+        <meta name="twitter:image" content="/img/ui/hero-v.jpg" />
 
         <!-- Favicon -->
-        <link rel="icon" href="/img/favicon.png" type="image/png" />
+        <link rel="icon" href="/img/ui/favicon.png" type="image/png" />
 
         <!-- Estilos -->
         <link
@@ -43,7 +43,7 @@
             integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
             crossorigin="anonymous"
             referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="/scr/styles/estilos.css" />
+        <link rel="stylesheet" href="/assets/css/estilos.css" />
 
         <!-- Scripts de accesibilidad -->
         <script>
@@ -54,103 +54,25 @@
                 }
             })();
         </script>
-        <script src="/scr/js/main.js" defer></script>
-        <script src="/scr/js/back-to-top.js" defer></script>
+        <script src="/assets/js/main.js" defer></script>
+        <script src="/assets/js/back-to-top.js" defer></script>
     </head>
     <body>
+        <!-- Header + menú -->
+<div id="header"></div>
+<div id="side-menu"></div>
+
+<script src="/assets/js/includes.js"></script>
+
         <!-- Skip to main content -->
         <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
-
-        <!-- Header -->
-        <header class="header" role="banner">
-            <div class="nav-container">
-                <a href="/" class="logo" aria-label="RESONANCIAS - Inicio">
-                    <img src="/img/logo.png" alt="Logo RESONANCIAS" width="40" height="40" />
-                </a>
-
-                <!-- Navegación principal -->
-                <nav class="main-nav" role="navigation" aria-label="Navegación principal">
-                    <a href="/">Inicio</a>
-                    <a href="/pages/obras.html">Libros</a>
-                    <a href="/pages/libros/lector.html">Biblioteca</a>
-                    <a href="/pages/blog-2026.html">Blog</a>
-                    <a href="/pages/Tecnica/Tecnica.html">Técnica</a>
-                    <a href="/pages/quien-soy.html">Quién soy</a>
-                    <a href="/pages/contacto.html">Contacto</a>
-                </nav>
-
-                <!-- Redes sociales y búsqueda -->
-                <div class="social-nav">
-                    <div class="search-container">
-                        <button id="searchToggle" class="search-toggle" aria-label="Buscar" aria-expanded="false">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Botón menú móvil -->
-                <button
-                    class="hamburger-btn"
-                    aria-label="Menú de navegación"
-                    aria-expanded="false"
-                    aria-controls="sideMenu">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </div>
-        </header>
-
-        <!-- Menú lateral móvil mejorado -->
-        <div class="side-menu" id="sideMenu" aria-hidden="true" tabindex="-1">
-            <div class="menu-header">
-                <h2 class="menu-title">Menú Principal</h2>
-                <button class="close-btn" aria-label="Cerrar menú">×</button>
-            </div>
-            <nav class="side-nav">
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <a href="/" class="accordion-link" aria-current="page">Inicio</a>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <a href="/pages/obras.html" class="accordion-link">Libros</a>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <a href="/pages/libros/lector.html" class="accordion-link">Biblioteca</a>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <a href="/pages/blog-2026.html" class="accordion-link">Blog</a>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <a href="/pages/Tecnica/Tecnica.html" class="accordion-link">Técnica</a>
-                    </div>
-                </div>
-                <!-- Example Accordion Item -->
-                <div class="accordion-item">
-                    <button class="accordion-toggle" aria-expanded="true">Más</button>
-                    <div class="accordion-content">
-                        <a href="/pages/quien-soy.html">Quién soy</a>
-                        <a href="/pages/contacto.html">Contacto</a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-        <div class="menu-overlay" aria-hidden="true"></div>
 
         <!-- Contenido principal -->
         <main id="main-content" role="main">
             <!-- Sección Hero -->
             <section class="hero-section" aria-labelledby="hero-title">
                 <video autoplay muted loop playsinline class="hero-video" >
-                    <source src="/img/Loop_2.mp4" type="video/mp4" />
+                    <source src="/img/ui/video/Loop_2.mp4" type="video/mp4" />
                     Tu navegador no soporta el tag de video.
                 </video>
 
@@ -178,7 +100,7 @@
                         <article class="work-card" id="work-card-1">
                             <a href="/pages/carousel.html" class="work-image-link">
                                 <img
-                                    src="/img/libro-regalo.jpg"
+                                    src="/img/libros/libro-regalo.jpg"
                                     alt="Portada del libro El Regalo Escondido"
                                     loading="lazy" />
                             </a>
@@ -206,7 +128,7 @@
                         <article class="work-card" id="work-card-2">
                             <div class="work-image">
                                 <img
-                                    src="/img/voz.jpg"
+                                    src="/img/ui/voz.jpg"
                                     alt="Imagen representativa sobre la importancia de tu voz"
                                     loading="lazy" />
                             </div>
@@ -224,7 +146,7 @@
                                     Únete y comparte tus historias y experiencias. Explora las obras. Sumérgete en
                                     narrativas que despiertan la reflexión y la imaginación.
                                 </p>
-                                <a href="/pages/blog.html" class="read-more-link">Explorar blog →</a>
+                                <a href="/pages/obras.html" class="read-more-link">Explorar blog →</a>
                             </div>
                         </article>
                     </div>

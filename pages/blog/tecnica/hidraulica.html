@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Estructuras Hidráulicas Pasivas: Válvula de Tesla | RESONANCIAS</title>
+        <meta name="description" content="Documento técnico abierto sobre la aplicación de principios de la válvula de Tesla para la disipación pasiva de energía hidráulica en ríos torrenciales, protegiendo puentes sin partes móviles." />
+
+        <!-- URL Canónica -->
+        <link rel="canonical" href="https://gf-amd.pages.dev/pages/Tecnica/hidraulica.html" />
+
+        <!-- SEO y Accesibilidad -->
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Gabriel Ferré" />
+        <meta name="keywords" content="estructuras hidráulicas, válvula de Tesla, ingeniería fluvial, disipación de energía, ríos torrenciales, protección de puentes, ingeniería pasiva, Gabriel Ferré, tecnología, técnica" />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Estructuras Hidráulicas Pasivas: Válvula de Tesla | RESONANCIAS" />
+        <meta property="og:description" content="Documento técnico abierto sobre la aplicación de principios de la válvula de Tesla para la disipación pasiva de energía hidráulica en ríos torrenciales, protegiendo puentes sin partes móviles." />
+        <meta property="og:image" content="https://gf-amd.pages.devimg/tecnica/rios.jpg" />
+        <meta property="og:url" content="https://gf-amd.pages.dev/pages/Tecnica/hidraulica.html" />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="RESONANCIAS" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Estructuras Hidráulicas Pasivas: Válvula de Tesla | RESONANCIAS" />
+        <meta name="twitter:description" content="Documento técnico abierto sobre la aplicación de principios de la válvula de Tesla para la disipación pasiva de energía hidráulica en ríos torrenciales, protegiendo puentes sin partes móviles." />
+        <meta name="twitter:image" content="https://gf-amd.pages.devimg/tecnica/rios.jpg" />
+
+        <!-- Favicon -->
+        <link rel="icon" href="/img/ui/favicon.png" type="image/png" />
+
+        <!-- Estilos -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="/assets/css/estilos.css" />
+
+        <!-- Scripts -->
+
+        <script src="/assets/js/main.js" defer></script>
+
+        <!-- Estilos responsivos para el layout del artículo -->
+        <style>
+            @media (max-width: 768px) {
+                .article-layout {
+                    flex-direction: column !important;
+                    gap: var(--spacing-lg) !important;
+                }
+                .image-card {
+                    position: relative !important;
+                    top: auto !important;
+                    width: 100% !important;
+                    min-width: auto !important;
+                    margin-bottom: var(--spacing-lg) !important;
+                }
+            }
+        </style>
+        <style>
+            /* Markdown incrustado desde Obsidian */
+            .md-obsidian h1,
+            .md-obsidian h2,
+            .md-obsidian h3,
+            .md-obsidian h4,
+            .md-obsidian h5,
+            .md-obsidian h6 {
+                margin-top: 1.6em;
+                margin-bottom: 0.6em;
+                line-height: 1.3;
+            }
+
+            .md-obsidian p {
+                margin: 0.9em 0;
+                line-height: 1.75;
+            }
+
+            .md-obsidian ul,
+            .md-obsidian ol {
+                margin: 0.9em 0 0.9em 1.6em;
+            }
+
+            .md-obsidian li {
+                margin: 0.4em 0;
+            }
+
+            .md-obsidian blockquote {
+                margin: 1.2em 0;
+                padding-left: 1em;
+                border-left: 3px solid var(--color-secondary);
+                color: var(--color-neutral);
+                font-style: italic;
+            }
+
+            .md-obsidian hr {
+                margin: 2em 0;
+                border: none;
+                border-top: 1px solid var(--color-mid);
+            }
+        </style>
+    </head>
+    <body>
+<!-- Header + menú -->
+<div id="header"></div>
+<div id="side-menu"></div>
+
+<script src="/assets/js/includes.js"></script>
+
+        <!-- Skip to main content -->
+        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+        <!-- Header -->
+
+        <!-- Menú lateral móvil -->
+
+        <!-- Overlay para menú -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+        <section
+            class="works-hero"
+            style="
+                margin-top: 0 !important;
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                    url(&quot;/img/tecnica/rios.jpg&quot;);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                color: var(--color-light);
+                padding: var(--spacing-3xl) 0;
+                text-align: center;
+                min-height: 400px;
+                display: flex;
+                align-items: center;
+            ">
+            <div class="container">
+                <h2
+                    style="
+                        font-size: var(--font-size-4xl);
+                        margin-bottom: var(--spacing-lg);
+                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                    ">
+Estructuras hidráulicas pasivas                </h2>
+                <p
+                    style="
+                        font-size: var(--font-size-xl);
+                        max-width: 600px;
+                        margin: 0 auto;
+                        line-height: 1.6;
+                        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+                    ">
+Válvula de Tesla                </p>
+            </div>
+        </section>
+        <!-- Contenido principal -->
+        <main id="main-content" role="main">
+            <!-- Artículo principal -->
+            <div class="content-card">
+                <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+                    <div class="container" style="max-width: 800px; margin: 0 auto">
+                        <!-- Header del artículo -->
+
+                        <div
+                            class="article-layout"
+                            style="display: flex; gap: var(--spacing-xl); align-items: flex-start">
+                            <div class="article-content" style="flex: 1; line-height: 1.5; color: var(--color-dark)">
+                                <div
+  id="intro-paragraph"
+  class="md-obsidian"
+  style="
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-2xl);
+    color: var(--color-warm);
+    position: relative;
+  "
+>
+<h1>Protección de puentes en ríos caudalosos y de régimen torrencial</h1>
+<br>
+<p>El presente documento tiene como objetivo <strong>dejar asentada, de manera abierta y replicable</strong>, una idea técnica aplicada exitosamente en un contexto real, para que pueda ser evaluada, adaptada e implementada por quienes cuenten con los medios técnicos, institucionales o académicos necesarios.</p>
+<p>No se trata de un proyecto ejecutivo ni de una solución cerrada, sino de una <strong>propuesta conceptual basada en experiencia empírica</strong>, orientada a la <strong>disipación pasiva de energía hidráulica</strong> mediante geometría, sin partes móviles, inspirada en el principio de la válvula de Tesla.</p>
+<br>
+<h2>Contexto territorial y problema abordado</h2>
+<p>En numerosas regiones del norte argentino —y en particular en zonas de <strong>pie de montaña</strong>— los ríos presentan un comportamiento <strong>altamente torrencial</strong>:</p>
+<ul>
+<li>Crecidas súbitas y violentas</li>
+<li>Elevadas velocidades de flujo en eventos extremos</li>
+<li>Alta carga de sedimentos, piedras y troncos</li>
+<li>Cambios rápidos en el lecho</li>
+</ul>
+<p>En este contexto, los puentes —especialmente los de pequeña escala o comunitarios— suelen fallar no por colapso estructural directo, sino por:</p>
+<ul>
+<li><strong>Socavación del lecho</strong> alrededor de pilas y estribos</li>
+<li>Concentración de energía cinética durante crecidas</li>
+<li>Impacto de material arrastrado</li>
+</ul>
+<p>La situación se agrava cuando el puente constituye la <strong>única vía de acceso</strong> a una comunidad, transformándose en infraestructura crítica.</p>
+<br>
+<h2>Antecedente empírico (experiencia real)</h2>
+<p>Hace aproximadamente <strong>20 años</strong>, en un pequeño pueblo del <strong>norte de la provincia de Tucumán</strong>, ubicado en zona de pie de montaña, se enfrentó una situación de este tipo.</p>
+<p>El puente peatonal afectado constituía la <strong>única entrada y salida del pueblo</strong>. Las crecidas del río ponían en riesgo recurrente su estabilidad, principalmente por efectos hidráulicos locales.</p>
+<p>Ante la imposibilidad de implementar soluciones complejas o costosas, se diseñó y ejecutó de manera comunitaria una <strong>intervención pasiva</strong>, basada exclusivamente en:</p>
+<ul>
+<li>Geometría fija</li>
+<li>Elementos constructivos simples</li>
+<li>Ausencia total de partes móviles</li>
+</ul>
+<p>La solución no buscó bloquear el flujo, sino <strong>modificar su comportamiento</strong>, forzando pérdidas de energía, recirculaciones y desvíos locales.</p>
+<h3>Resultado</h3>
+<ul>
+<li>La intervención <strong>sigue funcionando hasta el día de hoy</strong></li>
+<li>No ha requerido mantenimiento significativo</li>
+<li>Ha resistido múltiples eventos de crecida</li>
+</ul>
+<p>Este antecedente constituye la <strong>base empírica</strong> que motiva la presente propuesta conceptual.</p>
+<br>
+   <img
+                                    src="/img/tecnica/rios.jpg"
+                                    alt="Aplicacion practica de valvula Tesla para reducir presion de aguas sobre puentes"
+                                    style="
+                                        width: 100%;
+                                        height: auto;
+                                        max-height: 600px;
+                                        object-fit: contain;
+                                        border-radius: 8px;
+                                        margin-bottom: var(--spacing-md);
+                                    " />  
+                                 <p class="pie-imagen">
+    Aplicacion práctica del principio de la válvula de Tesla a escala fluvial:
+    la disipación de energía se logra exclusivamente mediante geometría.
+  </p> <br>   
+<h2>Principio físico general</h2>
+<h3>Descripción cualitativa de la intervención realizada</h3>
+<p>La intervención ejecutada hace aproximadamente dos décadas adoptó una <strong>geometría muy cercana a la válvula de Tesla original</strong>, con adaptaciones necesarias para su aplicación fluvial y constructiva.</p>
+<p>La principal diferencia respecto al diseño clásico fue que la <strong>entrada del agua a la estructura es sensiblemente más amplia que la salida</strong>, configurando una transición gradual similar a un embudo, sin serlo estrictamente. Esta decisión permitió:</p>
+<ul>
+<li>Reducir impactos directos del flujo entrante</li>
+<li>Aceptar grandes volúmenes de agua durante crecidas</li>
+<li>Evitar concentraciones bruscas de velocidad</li>
+</ul>
+<p>En el interior de la estructura, el caudal es forzado a una <strong>desviación casi circular</strong>, generando recirculaciones y turbulencia controlada. Este mecanismo produce una <strong>pérdida efectiva de energía cinética</strong> sin bloquear el flujo.</p>
+<h3>Comportamiento frente a sedimentos</h3>
+<p>Una observación relevante, sostenida por el funcionamiento prolongado de la obra, es su <strong>comportamiento autolimpiante frente a sedimentos finos</strong>.</p>
+<p>La turbulencia interna generada por la desviación del flujo:</p>
+<ul>
+<li>Remueve arenas y gravas pequeñas</li>
+<li>Evita la colmatación progresiva</li>
+<li>Permite que el material fino sea reincorporado al cauce</li>
+</ul>
+<p>Hasta el presente, no se han observado problemas de acumulación significativa de sedimentos en el interior de la estructura.</p>
+<h3>Consideración sobre elementos de mayor tamaño</h3>
+<p>El diseño fue aplicado en un río cuyo régimen sólido <strong>no incluye transporte habitual de troncos ni piedras de gran tamaño</strong>, sino predominantemente arenas.</p>
+<p>Se deja constancia de que, en cursos de agua con arrastre de elementos voluminosos:</p>
+<ul>
+<li>La geometría deberá ser adaptada</li>
+<li>Se deberán prever secciones más abiertas</li>
+<li>Podrán ser necesarios dispositivos complementarios de desvío o retención</li>
+</ul>
+<p>Este aspecto refuerza la necesidad de <strong>evaluaciones hidráulicas y geomorfológicas específicas</strong> para cada sitio.</p>
+<br>
+<h2>Principio general</h2>
+<p>La idea se apoya en un principio sencillo:</p>
+<blockquote>
+<p><em>La energía de un flujo puede reducirse de manera significativa mediante geometría adecuada, sin necesidad de mecanismos móviles.</em></p>
+</blockquote>
+<p>La <strong>válvula de Tesla</strong> es un ejemplo clásico de este enfoque: un dispositivo pasivo que ofrece baja resistencia en una dirección y alta resistencia en la opuesta, transformando flujo ordenado en turbulencia y recirculaciones internas.</p>
+<p>En el caso de ríos caudalosos:</p>
+<ul>
+<li>No se propone una &quot;válvula&quot; literal</li>
+<li>Se adopta el <strong>principio de disipación direccional de energía</strong></li>
+</ul>
+<p>A mayor velocidad y caudal, <strong>mayor es la pérdida inducida por la geometría</strong>, lo cual resulta especialmente valioso durante crecidas extremas.</p>
+<br>
+                                    <img
+                                    src="/img/tecnica/rio2.jpg"
+                                    alt="Otra geometría tipo válvula de Tesla para disipación hidráulica pasiva"
+                                    style="
+                                        width: 100%;
+                                        height: auto;
+                                        max-height: 600px;
+                                        object-fit: contain;
+                                        border-radius: 8px;
+                                        margin-bottom: var(--spacing-md);
+                                    " />
+                                   <p class="pie-imagen">
+    Otro diseño probable del principio de la válvula de Tesla a escala fluvial:
+    la disipación de energía se logra exclusivamente mediante geometría.
+  </p> <br>
+<h2>Traducción del principio al ámbito hidráulico fluvial</h2>
+<p>La aplicación fluvial del principio de la válvula de Tesla debe entenderse como:</p>
+<ul>
+<li>Estructuras <strong>macroscópicas</strong></li>
+<li>Geometrías robustas</li>
+<li>Diseños tolerantes a sedimentos</li>
+</ul>
+<p>Algunos conceptos generales:</p>
+<ul>
+<li>Deflectores con trayectorias no lineales</li>
+<li>Canales laterales que inducen recirculación</li>
+<li>Volúmenes que penalizan la aceleración directa del flujo</li>
+</ul>
+<p>El objetivo no es frenar el río, sino <strong>extraer energía justo donde resulta dañina</strong> para la estructura.</p>
+<br>
+<h2>Ventajas del enfoque propuesto</h2>
+<ul>
+<li><strong>Pasivo</strong>: sin partes móviles</li>
+<li><strong>Robusto</strong>: apto para entornos hostiles</li>
+<li><strong>Escalable</strong>: desde pequeños puentes hasta obras mayores</li>
+<li><strong>Autoadaptativo</strong>: mayor efecto a mayor caudal</li>
+<li><strong>Bajo mantenimiento</strong></li>
+<li><strong>Adecuado para contextos rurales o de bajos recursos</strong></li>
+</ul>
+<br>
+<h2>Limitaciones y advertencias</h2>
+<p>Este documento <strong>no propone una solución universal</strong>.</p>
+<p>Se advierte explícitamente que:</p>
+<ul>
+<li>Cada río presenta condiciones particulares</li>
+<li>La geometría debe adaptarse al régimen hidráulico local</li>
+<li>La carga sólida y el transporte de troncos deben considerarse</li>
+<li>No reemplaza estudios hidráulicos formales</li>
+</ul>
+<p>La propuesta debe ser entendida como <strong>complementaria</strong> a la ingeniería tradicional, no como sustituto.</p>
+<br>
+<h2>Recomendación sobre estudios hidráulicos</h2>
+<p>Para cualquier implementación futura se recomienda:</p>
+<ul>
+<li>Estudios de caudales máximos</li>
+<li>Análisis de velocidades críticas</li>
+<li>Evaluación de socavación</li>
+<li>Modelos físicos o numéricos (cuando sea posible)</li>
+</ul>
+<p>El principio aquí descripto puede servir como <strong>insumo conceptual</strong> para dichos estudios.</p>
+<br>
+<h2>Carácter abierto del documento</h2>
+<p>Este documento se publica como <strong>Documento Técnico Abierto</strong>, con el objetivo de:</p>
+<ul>
+<li>Compartir experiencia empírica</li>
+<li>Estimular investigación aplicada</li>
+<li>Facilitar soluciones locales</li>
+</ul>
+<p>Su contenido puede ser utilizado, adaptado y ampliado libremente, citando el presente antecedente.</p>
+                                    <section>
+  <h2>Funcionamiento del principio de la válvula de Tesla</h2>
+
+  <p>
+    La válvula de Tesla es un dispositivo <strong>pasivo de geometría fija</strong> que permite
+    el flujo preferencial de un fluido en una dirección, sin utilizar partes móviles.
+    Su funcionamiento se basa exclusivamente en la <strong>forma del conducto</strong>,
+    no en mecanismos de cierre.
+  </p>
+
+  <p>
+    Cuando el flujo avanza en la <strong>dirección favorable</strong>, el fluido recorre un
+    camino relativamente directo, con bajas pérdidas de carga. En cambio, cuando el flujo
+    intenta invertirse, la geometría interna lo desvía hacia
+    <strong>trayectorias curvas y ramificaciones laterales</strong>, generando recirculaciones,
+    turbulencia y choques internos que incrementan significativamente la disipación de energía.
+    El resultado no es un bloqueo absoluto, sino una
+    <strong>penalización hidráulica creciente</strong> a medida que aumenta la velocidad del
+    flujo inverso.
+  </p>
+<img
+                                    src="/img/tecnica/Tesla.jpg"
+                                    alt="Valvula Tesla, diseño original"
+                                    style="
+                                        width: 100%;
+                                        height: auto;
+                                        max-height: 600px;
+                                        object-fit: contain;
+                                        border-radius: 8px;
+                                        margin-bottom: var(--spacing-md);
+                                    " />
+  <br>
+                                        <p class="pie-imagen">
+    Principio de la válvula de Tesla original
+  </p> <br>
+                                        <p>
+    Este comportamiento hace que la válvula de Tesla sea especialmente adecuada para aplicaciones
+    donde se busca <strong>reducir energía cinética mediante geometría</strong>, tolerar caudales
+    variables y operar en entornos hostiles, ya que su efecto se intensifica con el caudal y no
+    depende de componentes susceptibles a desgaste o falla mecánica.
+  </p>
+                                        <br>
+                                        
+</section>
+
+<p><em>Documento abierto – Norte de Argentina</em></p>
+                                    <br>
+                                    <div style="text-align: center; margin-top: var(--spacing-xl);">
+                                        <a href="pages/tecnica/Tecnica.html" class="btn-primary">
+                                            Regresar a Tecnica
+                                        </a>
+                                    </div>
+                                    
+</div>
+                            </div>
+                        </div>
+                        <section
+                            class="blog-subscription"
+                            style="
+                                margin-top: var(--spacing-3xl);
+                                background: var(--color-mid);
+                                padding: var(--spacing-2xl);
+                                border-radius: 12px;
+                                text-align: center;
+                            ">
+                            <nav class="share-footer" aria-label="Compartir página">
+                                <a
+                                    href="https://www.facebook.com/sharer/sharer.php?u=https://gf-amd.pages.dev/pages/blog.-ia.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn facebook"
+                                    title="Compartir en Facebook"
+                                    aria-label="Compartir en Facebook">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                                <a
+                                    href="https://twitter.com/intent/tweet?url=https://gf-amd.pages.dev/pages/blog.-ia&text=Necesitamos%20Humanidad%20Antes%20que%20IA:%20Tecnología%20y%20Desigualdad%20|%20RESONANCIAS"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn twitter"
+                                    title="Compartir en X"
+                                    aria-label="Compartir en X">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+
+                                <a
+                                    href="https://api.whatsapp.com/send?text=Necesitamos%20Humanidad%20Antes%20que%20IA:%20Tecnología%20y%20Desigualdad%20|%20RESONANCIAS%20https://gf-amd.pages.dev/pages/blog.-ia.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn whatsapp"
+                                    title="Compartir en WhatsApp"
+                                    aria-label="Compartir en WhatsApp">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                                <a
+                                    href="https://bsky.app/intent/compose?text=Necesitamos%20Humanidad%20Antes%20que%20IA:%20Tecnología%20y%20Desigualdad%20|%20RESONANCIAS%20https://gf-amd.pages.dev/pages/blog.-ia.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn bluesky"
+                                    title="Compartir en Bluesky"
+                                    aria-label="Compartir en Bluesky">
+                                    <i class="fa-brands fa-bluesky"></i>
+                                </a>
+                            </nav>
+                            <h3
+                                style="
+                                    color: var(--color-dark);
+                                    margin-bottom: var(--spacing-md);
+                                    font-size: var(--font-size-2xl);
+                                ">
+                                Comparte en tus redes
+                            </h3>
+                            <h4>Suscribete</h4>
+
+                            <p
+                                style="
+                                    color: var(--color-warm);
+                                    margin-bottom: var(--spacing-xl);
+                                    max-width: 500px;
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                    line-height: 1.6;
+                                ">
+                                Recibe notificaciones cuando publique nuevos ensayos y reflexiones. Sin spam, solo
+                                contenido de calidad.
+                            </p>
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    gap: var(--spacing-md);
+                                    max-width: 400px;
+                                    margin: 0 auto;
+                                    flex-wrap: wrap;
+                                ">
+                                <a
+                                    href="pages/estaticas/contacto.html"
+                                    style="
+                                        background: var(--color-secondary);
+                                        color: var(--color-light);
+                                        border: none;
+                                        padding: var(--spacing-md) var(--spacing-xl);
+                                        border-radius: 8px;
+                                        font-weight: 600;
+                                        text-decoration: none;
+                                        cursor: pointer;
+                                        transition: all var(--transition-fast);
+                                        display: inline-flex;
+                                        align-items: center;
+                                        gap: var(--spacing-sm);
+                                    "
+                                    onmouseover="this.style.background='var(--color-warm)'; this.style.transform='translateY(-2px)'"
+                                    onmouseout="this.style.background='var(--color-secondary)'; this.style.transform='translateY(0)'">
+                                    <svg
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                    Contáctame
+                                </a>
+                            </div>
+                            <p
+                                style="
+                                    font-size: var(--font-size-sm);
+                                    color: var(--color-neutral);
+                                    margin-top: var(--spacing-md);
+                                ">
+                                * Puedes darte de baja en cualquier momento
+                            </p>
+                        </section>
+                        <!-- Footer del artículo -->
+
+                        <footer
+                            style="
+                                margin-top: var(--spacing-2xl);
+                                padding-top: var(--spacing-xl);
+                                border-top: 1px solid var(--color-mid);
+                            ">
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    flex-wrap: wrap;
+                                    gap: var(--spacing-md);
+                                ">
+                                <div>
+                                    <p style="color: var(--color-neutral); font-size: var(--font-size-sm); margin: 0">
+                                    </p>
+                                </div>
+                                
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content">
+                <p>© 2026 RESONANCIAS · Todos los derechos reservados
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>

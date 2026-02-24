@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Por qué programamos en inglés: un estándar accidental</title>
+        <meta
+            name="description"
+            content="Una reflexión sobre la hegemonía del inglés en la programación y por qué deberíamos considerar alternativas en nuestro idioma nativo." />
+
+        <!-- URL Canónica -->
+        <link rel="canonical" href="https://gf-amd.pages.dev/pages/blog/2025/entrada-p.html" />
+
+        <!-- SEO y Accesibilidad -->
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Gabriel Ferré" />
+        <meta name="keywords" content="programación, idiomas, tecnología, soberanía digital, español, desarrollo" />
+
+        <!-- Open Graph -->
+        <meta
+            property="og:title"
+            content="Por qué programamos en inglés: un estándar accidental | RESONANCIAS" />
+        <meta
+            property="og:description"
+            content="Una reflexión sobre la hegemonía del inglés en la programación y por qué deberíamos considerar alternativas en nuestro idioma nativo." />
+        <meta property="og:image" content="https://gf-amd.pages.dev/img/blog-2025/programacion.jpg" />
+        <meta property="og:url" content="https://gf-amd.pages.dev/pages/blog/2025/entrada-p.html" />
+        <meta property="og:type" content="article" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Por qué programamos en inglés: un estándar accidental | RESONANCIAS" />
+        <meta
+            name="twitter:description"
+            content="Una reflexión sobre la hegemonía del inglés en la programación y por qué deberíamos considerar alternativas en nuestro idioma nativo." />
+        <meta name="twitter:image" content="https://gf-amd.pages.dev/img/blog-2025/programacion.jpg" />
+
+        <!-- Favicon -->
+        <link rel="icon" href="/img/ui/favicon.png" type="image/png" />
+
+        <!-- Estilos -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="/assets/css/estilos.css" />
+        <!-- Scripts -->
+        
+     <script src="/assets/js/main.js" defer></script>
+        <script src="/assets/js/back-to-top.js" defer></script>        
+    </head>
+    <body>
+<!-- Header + menú -->
+<div id="header"></div>
+<div id="side-menu"></div>
+
+<script src="/assets/js/includes.js"></script>
+
+        <!-- Skip to main content -->
+        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+        <!-- Header -->
+
+        <!-- Menú lateral móvil -->
+
+        <!-- Overlay para menú -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+
+        <!-- Sección Hero -->
+        <section
+            class="works-hero"
+            style="
+                margin-top: 0 !important;
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                    url(&quot;/img/blog-2025/programacion.jpg&quot;);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                color: var(--color-light);
+                padding: var(--spacing-3xl) 0;
+                text-align: center;
+                min-height: 400px;
+                display: flex;
+                align-items: center;
+            ">
+            <div class="container">
+                <h1
+                    style="
+                        font-size: var(--font-size-4xl);
+                        margin-bottom: var(--spacing-lg);
+                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                    ">
+                    Código en Español
+                </h1>
+                <p
+                    style="
+                        font-size: var(--font-size-xl);
+                        max-width: 600px;
+                        margin: 0 auto;
+                        line-height: 1.6;
+                        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+                    ">
+                    Reclamando nuestro idioma en la programación
+                </p>
+            </div>
+        </section>
+
+        <!-- Contenido principal -->
+        <main id="main-content" role="main">
+            <!-- Breadcrumb -->
+            <nav aria-label="Breadcrumb" style="padding: var(--spacing-lg) 0"><p></p></nav>
+
+            <!-- Artículo principal -->
+            <div class="content-card">
+                <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+                    <div class="container" style="max-width: 800px; margin: 0 auto">
+                        <!-- Header del artículo -->
+
+                        <!-- Contenido del artículo -->
+                        <div class="article-content" style="line-height: 1.8; color: var(--color-dark)">
+                            <p
+                                id="intro-paragraph"
+                                style="
+                                    font-size: var(--font-size-lg);
+                                    margin-bottom: var(--spacing-xl);
+                                    color: var(--color-warm);
+                                    font-style: italic;
+                                    position: relative;
+                                "></p>
+                            <p>
+                                ¿Alguna vez te detuviste a pensar en esto? Como programador, pasás horas escribiendo
+                                <code>if</code>, <code>while</code>, <code>for</code>, <code>class</code>. Son las
+                                primeras palabras que aprendemos, los ladrillos de nuestro mundo digital. Las escribimos
+                                sin preguntar, asumiendo que son una ley universal de la computación.
+                            </p>
+
+                            <p><br /></p>
+
+                            <div id="section-1" style="margin-bottom: var(--spacing-xl); position: relative">
+                                <h2 style="color: var(--color-dark); margin-bottom: var(--spacing-lg)">
+                                    El accidente histórico que se volvió estándar
+                                </h2>
+                                <p>
+                                    La programación moderna nació en Estados Unidos y el Reino Unido. Sus pioneros,
+                                    lógicamente, usaron su propio idioma para nombrar las instrucciones.
+                                    <code>IF</code> (si), <code>WHILE</code> (mientras), <code>PRINT</code> (imprimir).
+                                    Tenía sentido para ellos. Lo que empezó como una conveniencia local, gracias al
+                                    poder cultural y económico anglosajón, se exportó al mundo como un estándar global.
+                                </p>
+                                <p>
+                                    Y todos lo aceptamos. Asumimos que para pensar lógicamente frente a una pantalla,
+                                    debíamos hacerlo con palabras de otro idioma.
+                                </p>
+                                <p>
+                                    Pero la verdad es simple y reveladora:
+                                    <strong>la máquina nunca necesitó inglés</strong>. El único lenguaje que una
+                                    computadora entiende es el binario. Todo lo que escribimos, sea en el idioma que
+                                    sea, es traducido por un compilador o un intérprete a ese nivel fundamental. El
+                                    problema nunca fue el lenguaje máquina, sino el idioma de la interfaz que usamos
+                                    para ingresar los comandos.
+                                </p>
+                            </div>
+
+                            <div id="section-2" style="margin-bottom: var(--spacing-xl); position: relative">
+                                <h2 style="color: var(--color-dark); margin-bottom: var(--spacing-lg)">
+                                    Lo que perdimos en la traducción
+                                </h2>
+                                <p>
+                                    Al aceptar el inglés como la <em>lingua franca</em> obligatoria del código, dejamos
+                                    varias cosas en el camino. No es un detalle menor, es una barrera invisible con
+                                    costos muy reales.
+                                </p>
+                                <h3>1. Una barrera de entrada injusta</h3>
+                                <p>
+                                    Para un argentino, aprender a programar implica una doble carga cognitiva. No solo
+                                    tenés que entender la lógica abstracta de un algoritmo, sino que además tenés que
+                                    aprender el vocabulario técnico en otro idioma. Es una traba que un chico de Silicon
+                                    Valley no tiene. Limita el acceso y profundiza la desigualdad.
+                                </p>
+                                <h3>2. Un sesgo cultural silencioso</h3>
+                                <p>
+                                    El código no es neutral. La forma en que se diseñan los lenguajes de programación
+                                    refleja las prioridades y los valores de sus creadores. Al permitir que un solo
+                                    idioma domine la conversación, aceptamos una única mirada sobre cómo resolver
+                                    problemas, qué es eficiente o qué es importante. Democratizar el lenguaje es también
+                                    democratizar la mirada.
+                                </p>
+                                <h3>3. Colonialismo simbólico</h3>
+                                <p>
+                                    Que el estándar global sea el inglés no es una decisión técnica, es una herencia de
+                                    poder. Es una forma sutil de colonialismo digital que nos recuerda, línea por línea
+                                    de código, dónde se sigue concentrando el poder tecnológico.
+                                </p>
+                            </div>
+                            <img
+                                src="/img/blog-2025/programacion.jpg"
+                                alt="Infografía sobre crónicas de literatura"
+                                style="
+                                    width: 100%;
+                                    height: auto;
+                                    max-height: 600px;
+                                    object-fit: contain;
+                                    border-radius: 8px;
+                                    margin-bottom: var(--spacing-md);
+                                " />
+                            <div id="section-3" style="margin-bottom: var(--spacing-xl); position: relative">
+                                <h2 style="color: var(--color-dark); margin-bottom: var(--spacing-lg)">
+                                    ¿Se puede programar en nuestro idioma?
+                                </h2>
+                                <p>
+                                    Esto no es una fantasía. La viabilidad técnica de programar en la lengua materna
+                                    está demostrada hace décadas.
+                                </p>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            <strong>ALGOL 68</strong>, un lenguaje de 1968, permitía usar palabras clave
+                                            en diferentes idiomas. Se podía escribir
+                                            <code>IF day &lt; length THEN</code> en inglés, o
+                                            <code>WENN tag &lt; monatslaenge DANN</code> en alemán. El resultado era el
+                                            mismo.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <strong>Excel</strong>, la herramienta que usa todo el mundo, traduce sus
+                                            funciones. Nosotros escribimos
+                                            <code>=SI(A1&gt;10, &quot;Mayor&quot;, &quot;Menor&quot;)</code>. Un
+                                            angloparlante escribe
+                                            <code>=IF(A1&gt;10, &quot;Greater&quot;, &quot;Lesser&quot;)</code>. La
+                                            lógica es la misma, la funcionalidad es idéntica. El idioma es una capa
+                                            superficial.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <strong>Scratch</strong>, la plataforma que usan millones de chicos para
+                                            aprender a programar, está traducida a más de 70 idiomas, incluyendo el
+                                            español. Saben que para aprender, nada es más poderoso que la lengua
+                                            materna.
+                                        </p>
+                                    </li>
+                                </ul>
+                                <p>
+                                    Existen lenguajes diseñados enteramente en francés (<strong>Linotte</strong>), en
+                                    tamil (<strong>Ezhil</strong>) o incluso en árabe con escritura de derecha a
+                                    izquierda (<strong>Qalb</strong>). Funcionan perfecto, porque al final del día, el
+                                    compilador hace su trabajo: convertir nuestras ideas en el único lenguaje universal,
+                                    el binario.
+                                </p>
+                            </div>
+
+                            <div id="section-4" style="margin-bottom: var(--spacing-xl); position: relative">
+                                <h2 style="color: var(--color-dark); margin-bottom: var(--spacing-lg)">
+                                    Un llamado a la acción cultural: recuperemos el código
+                                </h2>
+                                <p>
+                                    La hegemonía del inglés en la programación no es una ley de la física. Es una
+                                    convención. Y las convenciones se pueden cambiar.
+                                </p>
+                                <p>
+                                    No se trata de erradicar el inglés, sino de <strong>construir alternativas</strong>.
+                                    De imaginar un futuro donde un estudiante en Salta, un profesional en Córdoba o un
+                                    curioso en Buenos Aires puedan aprender y crear tecnología sin la barrera de un
+                                    idioma ajeno.
+                                </p>
+                                <p>
+                                    Este es un llamado a la acción cultural para nuestra comunidad, en distintos
+                                    niveles:
+                                </p>
+                                <h3>- Para los educadores</h3>
+                                <p>
+                                    Enseñemos primero la lógica en español. Usemos herramientas como Scratch para que
+                                    los más chicos descubran la programación en su idioma. Desmitifiquemos la idea de
+                                    que el inglés es un requisito para pensar como programador.
+                                </p>
+                                <h3>- Para la comunidad de desarrollo</h3>
+                                <p>
+                                    Podemos empezar hoy mismo. Apoyemos proyectos de localización, creemos más
+                                    documentación, tutoriales y foros en español. Hagamos que el ecosistema que rodea al
+                                    código hable nuestro idioma.
+                                </p>
+                                <h3>- Para un futuro soberano</h3>
+                                <p>
+                                    Y pensemos en grande. Crear un entorno de programación verdaderamente nativo no es
+                                    solo traducir palabras. Implica un
+                                    <strong
+                                        >proyecto colaborativo ambicioso, idealmente junto a nuestras universidades
+                                        tecnológicas</strong
+                                    >, para diseñar desde cero una gramática completa. Significa definir cómo un
+                                    <em>parser</em> debe interpretar nuestros <em>tokens</em> (las palabras y símbolos
+                                    de nuestro idioma) y nuestras reglas sintácticas. Como ya dijimos, el lenguaje
+                                    máquina no es el problema; el desafío es construir una interfaz humana que piense y
+                                    hable en nuestro idioma.
+                                </p>
+                                <h3>- Para todos</h3>
+                                <p>
+                                    Empecemos a tener esta conversación. Cuestionemos la inercia. Preguntémonos qué
+                                    ganaríamos si el código también hablara nuestro idioma.
+                                </p>
+                            </div>
+
+                            <div id="section-5" style="margin-bottom: var(--spacing-xl); position: relative">
+                                <h2 style="color: var(--color-dark); margin-bottom: var(--spacing-lg)">Conclusión</h2>
+                                <p>
+                                    Reclamar nuestro idioma en el código no es un acto de nostalgia, es un paso hacia la
+                                    soberanía tecnológica. Es construir un futuro donde la innovación no tenga un idioma
+                                    predefinido, sino que hable con todos nuestros acentos. Es, en definitiva, hacer que
+                                    la puerta de entrada al futuro sea un poco más ancha para todos.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Sección de suscripción al blog -->
+                        <section
+                            class="blog-subscription"
+                            style="
+                                margin-top: var(--spacing-3xl);
+                                background: var(--color-mid);
+                                padding: var(--spacing-2xl);
+                                border-radius: 12px;
+                                text-align: center;
+                            ">
+                            <nav class="share-footer" aria-label="Compartir página">
+                                <a
+                                    href="https://www.facebook.com/sharer/sharer.php?u=https://gf-amd.pages.dev/pages/blog/2025/entrada-p.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn facebook"
+                                    title="Compartir en Facebook"
+                                    aria-label="Compartir en Facebook">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                                <a
+                                    href="https://twitter.com/intent/tweet?url=https://gf-amd.pages.dev/pages/blog/2025/entrada-p.html&text=Por%20qué%20programamos%20en%20inglés%3A%20un%20estándar%20accidental%20%7C%20RESONANCIAS"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn twitter"
+                                    title="Compartir en X"
+                                    aria-label="Compartir en X">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+
+                                <a
+                                    href="https://api.whatsapp.com/send?text=Por%20qué%20programamos%20en%20ingl%C3%A9s%3A%20un%20estándar%20accidental%20%7C%20RESONANCIAS%20https://gf-amd.pages.dev/pages/blog/2025/entrada-p.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn whatsapp"
+                                    title="Compartir en WhatsApp"
+                                    aria-label="Compartir en WhatsApp">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                                <a
+                                    href="https://bsky.app/intent/compose?text=Por%20qué%20programamos%20en%20inglés%3A%20un%20estándar%20accidental%20%7C%20RESONANCIAS%20https://gf-amd.pages.dev/pages/blog/2025/entrada-p.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="share-btn bluesky"
+                                    title="Compartir en Bluesky"
+                                    aria-label="Compartir en Bluesky">
+                                    <i class="fa-brands fa-bluesky"></i>
+                                </a>
+                            </nav>
+                            <h3
+                                style="
+                                    color: var(--color-dark);
+                                    margin-bottom: var(--spacing-md);
+                                    font-size: var(--font-size-2xl);
+                                ">
+                                Comparte en tus redes
+                            </h3>
+                            <h4>Suscribete</h4>
+
+                            <p
+                                style="
+                                    color: var(--color-warm);
+                                    margin-bottom: var(--spacing-xl);
+                                    max-width: 500px;
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                    line-height: 1.6;
+                                ">
+                                Recibe notificaciones cuando publique nuevos ensayos y reflexiones. Sin spam, solo
+                                contenido de calidad.
+                            </p>
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    gap: var(--spacing-md);
+                                    max-width: 400px;
+                                    margin: 0 auto;
+                                    flex-wrap: wrap;
+                                ">
+                                <a
+                                    href="/pages/contacto.html"
+                                    style="
+                                        background: var(--color-secondary);
+                                        color: var(--color-light);
+                                        border: none;
+                                        padding: var(--spacing-md) var(--spacing-xl);
+                                        border-radius: 8px;
+                                        font-weight: 600;
+                                        text-decoration: none;
+                                        cursor: pointer;
+                                        transition: all var(--transition-fast);
+                                        display: inline-flex;
+                                        align-items: center;
+                                        gap: var(--spacing-sm);
+                                    "
+                                    onmouseover="this.style.background='var(--color-warm)'; this.style.transform='translateY(-2px)'"
+                                    onmouseout="this.style.background='var(--color-secondary)'; this.style.transform='translateY(0)'">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    Contáctame
+                                </a>
+                            </div>
+                            <p
+                                style="
+                                    font-size: var(--font-size-sm);
+                                    color: var(--color-neutral);
+                                    margin-top: var(--spacing-md);
+                                ">
+                                * Puedes darte de baja en cualquier momento
+                            </p>
+                        </section>
+
+                        <!-- Footer del artículo -->
+                        <footer
+                            style="
+                                margin-top: var(--spacing-2xl);
+                                padding-top: var(--spacing-xl);
+                                border-top: 1px solid var(--color-mid);
+                            ">
+                            <div
+                                style="
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    flex-wrap: wrap;
+                                    gap: var(--spacing-md);
+                                ">
+                                <div>
+                                    <p style="color: var(--color-neutral); font-size: var(--font-size-sm); margin: 0">
+                                        Publicado el <time datetime="2024-12-15">2024-12-15</time>
+                                    </p>
+                                </div>
+                                <div style="display: flex; gap: var(--spacing-sm)">
+                                    <a
+                                        href="/pages/blog/2025/blog.html"
+                                        style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                                        ← Volver al blog
+                                    </a>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content">
+                <p>
+                    <a href="/" class="footer-logo-link">
+                        <img src="/img/logo2_footer.png" alt="Logo RESONANCIAS" width="90" height="40" />
+                    </a>
+                    © 2025 RESONANCIAS · Todos los derechos reservados
+                </p>
+            </div>
+       </footer>
+        <a href="#main-content" class="back-to-top" aria-label="Volver arriba">
+            <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+        </a>
+    </body>
+</html>
