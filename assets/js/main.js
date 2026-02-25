@@ -8,19 +8,19 @@ class ResonanciasApp {
         this.init();
     }
 
-init() {
-    this.setupSearch();
-    this.setupShareButtons();
-    this.setupScrollEffects();
-    this.setupKeyboardNavigation();
-    this.setupCardTTS();
-    console.log('RESONANCIAS - Sitio cargado correctamente');
-}
+    init() {
+        this.setupSearch();
+        this.setupShareButtons();
+        this.setupScrollEffects();
+        this.setupKeyboardNavigation();
+
+        console.log('RESONANCIAS - Sitio cargado correctamente');
+    }
     initMenu() {
-    this.setupEventListeners();
-    this.setupMobileMenu();
-    this.setupAccordion();
-}
+        this.setupEventListeners();
+        this.setupMobileMenu();
+        this.setupAccordion();
+    }
 
     /**
      * Configurar event listeners principales
@@ -87,9 +87,9 @@ init() {
         const hamburgerBtn = document.querySelector('.hamburger-btn');
         const sideMenu = document.querySelector('.side-menu');
         const menuOverlay = document.querySelector('.menu-overlay');
-        
+
         const isOpen = sideMenu.classList.contains('active');
-        
+
         if (isOpen) {
             this.closeMobileMenu();
         } else {
@@ -108,7 +108,7 @@ init() {
         if (sideMenu) sideMenu.classList.add('active');
         if (menuOverlay) menuOverlay.classList.add('active');
         if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'true');
-        
+
         this.preventBodyScroll(true);
 
         // Focus en el primer elemento del menú
@@ -129,7 +129,7 @@ init() {
         if (sideMenu) sideMenu.classList.remove('active');
         if (menuOverlay) menuOverlay.classList.remove('active');
         if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'false');
-        
+
         this.preventBodyScroll(false);
 
         // Devolver focus al botón hamburguesa
@@ -485,7 +485,7 @@ init() {
      */
     performSearchQuery(query) {
         const searchTerms = query.toLowerCase().split(' ').filter(term => term.length > 1);
-        
+
         return this.searchData.filter(item => {
             const searchableText = `${item.title} ${item.content}`.toLowerCase();
             return searchTerms.some(term => searchableText.includes(term));
@@ -493,7 +493,7 @@ init() {
             // Priorizar coincidencias en el título
             const aInTitle = a.title.toLowerCase().includes(query.toLowerCase());
             const bInTitle = b.title.toLowerCase().includes(query.toLowerCase());
-            
+
             if (aInTitle && !bInTitle) return -1;
             if (!aInTitle && bInTitle) return 1;
             return 0;
@@ -565,20 +565,31 @@ init() {
      */
     setupShareButtons() {
         const shareButtons = document.querySelectorAll('.share-btn');
-        const currentUrl = encodeURIComponent(window.location.href);
+        const productionDomain = 'https://gf-amd.pages.dev';
+
+        // Determinar la URL base a compartir (siempre producción)
+        let shareUrl = window.location.href;
+        if (shareUrl.includes('localhost') || shareUrl.includes('127.0.0.1')) {
+            const path = window.location.pathname === '/' ? '' : window.location.pathname;
+            shareUrl = productionDomain + path;
+        }
+
+        const currentUrl = encodeURIComponent(shareUrl);
+        // Texto simplificado para X (Identificación - Eslogan)
+        const tweetText = encodeURIComponent('RESONANCIAS - Ficción Ética Filosófica');
         const currentTitle = encodeURIComponent(document.title);
 
         shareButtons.forEach(btn => {
-            const href = btn.getAttribute('href');
-            
+            const baseUrl = btn.getAttribute('href').split('?')[0];
+
             if (btn.classList.contains('facebook')) {
-                btn.setAttribute('href', `${href}${currentUrl}`);
+                btn.setAttribute('href', `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`);
             } else if (btn.classList.contains('twitter')) {
-                btn.setAttribute('href', `${href}${currentUrl}&text=${currentTitle}`);
+                btn.setAttribute('href', `${baseUrl}?url=${currentUrl}&text=${tweetText}`);
             } else if (btn.classList.contains('whatsapp')) {
-                btn.setAttribute('href', `${href}${currentTitle} ${currentUrl}`);
-            } else if (btn.classList.contains('telegram')) {
-                btn.setAttribute('href', `${href}${currentUrl}&text=${currentTitle}`);
+                btn.setAttribute('href', `https://api.whatsapp.com/send?text=${tweetText}%20${currentUrl}`);
+            } else if (btn.classList.contains('bluesky')) {
+                btn.setAttribute('href', `https://bsky.app/intent/compose?text=${tweetText}%20${currentUrl}`);
             }
         });
     }
@@ -613,7 +624,7 @@ init() {
         if (header) {
             window.addEventListener('scroll', () => {
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                
+
                 if (scrollTop > 100) {
                     header.style.background = 'rgba(34, 31, 28, 0.98)';
                 } else {
@@ -701,105 +712,7 @@ init() {
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
 
-    /**
-     * Limpiar texto para TTS
-     */
-    cleanCardText(text) {
-        // Crear div temporal para parsear HTML
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = text;
 
-        // Remover scripts y estilos
-        tempDiv.querySelectorAll('script, style, .voice-icon, .voice-container, .tts-active-indicator').forEach(el => el.remove());
-
-        // Obtener texto limpio
-        let cleanedText = tempDiv.textContent;
-
-        return cleanedText
-            .replace(/\s+/g, ' ')
-            .replace(/—/g, ', ')
-            .replace(/\n/g, ' ')
-            .replace(/\.\s*\./g, '.')
-            .replace(/[–—]/g, '-')
-            .replace(/[­​﻿]/g, '')
-            .replace(/ /g, ' ')
-            .trim();
-    }
-
-    /**
-     * Configurar TTS para tarjetas
-     */
-    setupCardTTS() {
-        const cards = document.querySelectorAll('article.work-card, div.guide-card, article.work-detail, article.blog-entry-card, .book-content > div, blockquote, .contact-info > div, .contact-info details, .obra');
-        let activeCardIndicator = null;
-
-        cards.forEach(card => {
-            // Agregar indicador de lectura activa
-            const indicator = document.createElement('div');
-            indicator.className = 'tts-active-indicator';
-            card.style.position = 'relative';
-            card.appendChild(indicator);
-
-            card.addEventListener('click', (event) => {
-                // Evitar que clicks en links/botones activen TTS
-                let targetElement = event.target;
-                let isLinkOrButton = false;
-                
-                while (targetElement && targetElement !== card) {
-                    if (targetElement.tagName === 'A' || 
-                        targetElement.tagName === 'BUTTON' || 
-                        targetElement.classList.contains('voice-icon') ||
-                        targetElement.classList.contains('tts-active-indicator')) {
-                        isLinkOrButton = true;
-                        break;
-                    }
-                    targetElement = targetElement.parentElement;
-                }
-
-                if (isLinkOrButton) {
-                    return;
-                }
-
-                // Verificar que el sistema TTS esté disponible
-                if (!window.ttsSystem) {
-                    console.warn('Sistema de texto a voz no disponible');
-                    return;
-                }
-
-                const cardText = this.cleanCardText(card.textContent);
-
-                if (window.ttsSystem.isPlaying && activeCardIndicator === card) {
-                    // Si esta tarjeta está hablando, detenerla
-                    window.ttsSystem.stopReading();
-                } else {
-                    // Si otra tarjeta está hablando, detenerla primero
-                    if (window.ttsSystem.isPlaying) {
-                        window.ttsSystem.stopReading();
-                    }
-                    
-                    // Iniciar lectura de esta tarjeta
-                    if (cardText.trim()) {
-                        window.ttsSystem.readText(cardText);
-                        
-                        // Actualizar indicador visual
-                        if (activeCardIndicator) {
-                            activeCardIndicator.querySelector('.tts-active-indicator').classList.remove('active');
-                        }
-                        card.querySelector('.tts-active-indicator').classList.add('active');
-                        activeCardIndicator = card;
-                    }
-                }
-            });
-        });
-
-        // Escuchar evento global de parada de TTS
-        document.addEventListener('tts-stopped', () => {
-            if (activeCardIndicator) {
-                activeCardIndicator.querySelector('.tts-active-indicator').classList.remove('active');
-                activeCardIndicator = null;
-            }
-        });
-    }
 
 }
 
