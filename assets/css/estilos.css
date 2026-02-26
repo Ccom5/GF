@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lato:wght@400;700&display=swap");
-
 /* Variables CSS - Paleta de colores original */
 :root {
   /* Colores principales del sitio original */
@@ -74,22 +72,7 @@
   padding: 0;
 }
 
-/* Reset adicional para eliminar gaps */
-section,
-article,
-div {
-  margin: 0;
-  padding: 0;
-}
-
-/* Asegurar que no haya gaps entre elementos */
-main,
-header,
-footer {
-  display: block;
-  margin: 0;
-  padding: 0;
-}
+/* Reset adicional para eliminar gaps en secciones principales */
 
 html {
   scroll-behavior: smooth;
@@ -104,8 +87,6 @@ body {
   background-color: var(--color-primary);
   font-size: var(--font-size-base);
   overflow-x: hidden;
-  margin: 0;
-  padding: 0;
 }
 
 /* Aplicar fuentes específicas */
@@ -226,7 +207,7 @@ button:hover {
   gap: var(--spacing-sm);
   margin: var(--spacing-lg) 0;
   padding: var(--spacing-md);
-  background: --color-mid;
+  background: var(--color-mid);
   border-radius: 25px;
 }
 
@@ -1255,11 +1236,7 @@ body.dark-mode {
   --color-muted: #666666;
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 body {
   font-family: var(--font-body);
   background: var(--color-primary);
@@ -1672,13 +1649,19 @@ body {
 
 @media (max-width: 1200px) {
   .libros-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas medianas-grandes */
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* 3 columnas en pantallas medianas-grandes */
   }
 }
 
 @media (max-width: 900px) {
   .libros-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 2 columnas en pantallas medianas */
   }
 }
 
@@ -1775,20 +1758,15 @@ body {
   margin-right: 0;
 }
 
-/* Center table in article content */
-.article-content table {
-  margin-left: auto;
-  margin-right: auto;
-  display: table;
-}
-
-/* Table styling for better visual presentation */
+/* Table styling for article content */
 .article-content table {
   width: 100%;
   border-collapse: collapse;
   margin-top: var(--spacing-md);
   margin-bottom: var(--spacing-lg);
-  font-size: var(--font-size-sm); /* Slightly reduced font size */
+  margin-left: auto;
+  margin-right: auto;
+  font-size: var(--font-size-sm);
 }
 
 .article-content th,
@@ -1863,36 +1841,39 @@ body {
 }
 /* Back to top */
 .back-to-top {
-    position: fixed;
-    right: 1.25rem;
-    bottom: 1.25rem;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: var(--color-secondary);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
-    z-index: 1500;
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-secondary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+  z-index: 1500;
 }
 
 .back-to-top.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .back-to-top:hover {
-    background: var(--color-primary);
+  background: var(--color-primary);
 }
 
 .back-to-top:focus-visible {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 3px;
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
 }
