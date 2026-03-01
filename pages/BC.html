@@ -1,0 +1,1326 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biblioteca de Clásicos Universales | RESONANCIAS</title>
+
+    <!-- URL Canónica -->
+    <link
+      rel="canonical"
+      href="https://gf-amd.pages.dev/pages/biblioteca-clasicos.html"
+    />
+    <meta
+      name="description"
+      content="Colección curada de grandes clásicos de la literatura universal para lectura online gratuita."
+    />
+
+    <!-- SEO y Accesibilidad -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Gabriel Ferré" />
+    <meta
+      name="keywords"
+      content="libros clásicos, literatura universal, biblioteca online, Gabriel Ferré, RESONANCIAS"
+    />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Biblioteca de Clásicos Universales | RESONANCIAS"
+    />
+    <meta
+      property="og:description"
+      content="Colección curada de grandes clásicos de la literatura universal para lectura online gratuita."
+    />
+    <meta
+      property="og:image"
+      content="https://gf-amd.pages.dev/img/libros/biblioteca-clasicos.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://gf-amd.pages.dev/pages/biblioteca-clasicos.html"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Biblioteca de Clásicos Universales | RESONANCIAS"
+    />
+    <meta
+      name="twitter:description"
+      content="Colección curada de grandes clásicos de la literatura universal para lectura online gratuita."
+    />
+    <meta
+      name="twitter:image"
+      content="https://gf-amd.pages.dev/img/libros/biblioteca-clasicos.jpg"
+    />
+
+    <!-- Estilos del sitio -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/assets/css/estilos.css" />
+
+    <script src="/assets/js/main.js" defer></script>
+    <script src="/assets/js/back-to-top.js" defer></script>
+
+    <!-- Fuentes específicas para la biblioteca -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lora:wght@400;500;600&family=Cormorant+Garamond:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Estilos específicos de la Biblioteca Clásica */
+      :root {
+        --lib-bg: var(--color-primary);
+        --lib-surface: var(--color-light);
+        --lib-accent: var(--color-secondary);
+        --lib-text: var(--color-dark);
+        --lib-muted: var(--color-neutral);
+      }
+
+      #main-content {
+        background-color: var(--lib-bg);
+        color: var(--lib-text);
+        min-height: 100vh;
+      }
+
+      /* Barra de filtros */
+      .filter-bar {
+        background: var(--lib-surface);
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        border-bottom: 1px solid var(--color-mid);
+        position: sticky;
+        top: 80px; /* Alineado con el header fijo del sitio */
+        z-index: 100;
+        backdrop-filter: blur(10px);
+      }
+
+      .filter-bar input {
+        background: var(--color-mid);
+        border: 1px solid var(--color-soft);
+        color: var(--color-dark);
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-family: "Lora", serif;
+        font-size: 0.95rem;
+        width: 300px;
+        outline: none;
+        transition: border-color 0.3s;
+      }
+
+      .filter-bar input:focus {
+        border-color: #d4a234;
+      }
+
+      .filter-bar input::placeholder {
+        color: #72593e;
+      }
+
+      .filter-btn {
+        background: transparent;
+        border: 1px solid var(--color-soft);
+        color: var(--color-dark);
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-family: "Lora", serif;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        background: var(--color-secondary);
+        color: var(--color-light);
+        border-color: var(--color-secondary);
+      }
+
+      /* Bookshelf */
+      .library {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 40px 20px 60px;
+      }
+
+      .shelf-label {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        color: var(--color-secondary);
+        margin: 40px 0 5px;
+        padding-left: 10px;
+        border-left: 3px solid var(--color-accent);
+      }
+
+      .shelf-sublabel {
+        color: #7a6248;
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+        padding-left: 14px;
+        font-style: italic;
+      }
+
+      .bookshelf {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 35px 25px;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+      }
+
+      /* Book Card */
+      .book {
+        position: relative;
+        perspective: 1000px;
+        cursor: pointer;
+      }
+
+      .book a {
+        text-decoration: none;
+        display: block;
+      }
+
+      .book-cover {
+        width: 100%;
+        aspect-ratio: 2/3;
+        border-radius: 4px 12px 12px 4px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition:
+          transform 0.5s ease,
+          box-shadow 0.5s ease;
+        box-shadow:
+          5px 5px 15px rgba(0, 0, 0, 0.5),
+          inset -3px 0 8px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+      }
+
+      .book:hover .book-cover {
+        transform: rotateY(-15deg) translateX(-5px);
+        box-shadow: 15px 10px 30px rgba(0, 0, 0, 0.6);
+      }
+
+      .book-cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px 12px 12px 4px;
+      }
+
+      .book-spine {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 6px;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.4),
+          rgba(0, 0, 0, 0.1)
+        );
+        border-radius: 4px 0 0 4px;
+        z-index: 2;
+      }
+
+      /* Fallback cover design when image fails */
+      .book-cover-fallback {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 15px;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 4px 12px 12px 4px;
+      }
+
+      .book-cover-fallback .fb-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.3;
+        margin-bottom: 10px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      .book-cover-fallback .fb-author {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.8);
+        font-style: italic;
+      }
+
+      .book-cover-fallback .fb-ornament {
+        font-size: 1.5rem;
+        margin: 8px 0;
+        opacity: 0.6;
+      }
+
+      .book-info {
+        margin-top: 12px;
+        text-align: center;
+      }
+
+      .book-title {
+        font-family: "Playfair Display", serif;
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--color-dark);
+        line-height: 1.3;
+        margin-bottom: 3px;
+      }
+
+      .book-author {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 0.85rem;
+        color: var(--color-soft);
+      }
+
+      .book-year {
+        font-size: 0.75rem;
+        color: #5a4a3a;
+        margin-top: 2px;
+      }
+
+      .book-source {
+        font-size: 0.7rem;
+        color: var(--color-secondary);
+        margin-top: 4px;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .book:hover .book-source {
+        opacity: 1;
+      }
+
+      /* Shelf wood effect */
+      .shelf-wood {
+        height: 20px;
+        background: linear-gradient(
+          180deg,
+          var(--color-soft) 0%,
+          var(--color-accent) 40%,
+          #2c1e0e 100%
+        );
+        border-radius: 0 0 4px 4px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        margin-top: -5px;
+        margin-bottom: 15px;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 40px 20px;
+        border-top: 1px solid #3d2a1a;
+        color: #5a4a3a;
+        font-size: 0.85rem;
+      }
+
+      footer a {
+        color: #d4a234;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Tooltip */
+      .tooltip {
+        display: none;
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #2c1810;
+        border: 1px solid #8b6914;
+        color: #e8d5b7;
+        padding: 10px 15px;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        width: 220px;
+        z-index: 50;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        pointer-events: none;
+      }
+
+      .book:hover .tooltip {
+        display: block;
+      }
+
+      /* Scroll to top */
+      .scroll-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: #d4a234;
+        color: #1a0f0a;
+        border: none;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.3s;
+        z-index: 200;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+      }
+
+      .scroll-top.visible {
+        opacity: 1;
+      }
+
+      .scroll-top:hover {
+        background: #e8b84a;
+      }
+
+      .no-results {
+        text-align: center;
+        padding: 60px 20px;
+        color: #7a6248;
+        font-size: 1.2rem;
+        font-style: italic;
+        display: none;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2.2rem;
+        }
+        .bookshelf {
+          grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+          gap: 25px 15px;
+        }
+        .filter-bar input {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        header h1 {
+          font-size: 1.7rem;
+        }
+        .bookshelf {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px 12px;
+        }
+      }
+
+      /* Loading animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .book {
+        animation: fadeIn 0.5s ease forwards;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div id="side-menu"></div>
+    <script src="/assets/js/includes.js"></script>
+
+    <main id="main-content" role="main">
+      <!-- Hero de la biblioteca -->
+      <section
+        class="works-hero"
+        style="
+          background:
+            linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+            url(&quot;/img/libros/biblioteca-clasicos.jpg&quot;);
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          color: var(--color-light);
+          padding: var(--spacing-3xl) 0;
+          text-align: center;
+          min-height: 400px;
+          display: flex;
+          align-items: center;
+        "
+      >
+        <div class="container">
+          <h1
+            style="
+              font-size: var(--font-size-4xl);
+              margin-bottom: var(--spacing-lg);
+              text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            "
+          >
+            Biblioteca Clásica
+          </h1>
+          <p
+            style="
+              font-size: var(--font-size-xl);
+              max-width: 600px;
+              margin: 0 auto;
+              line-height: 1.6;
+              text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            "
+          >
+            Los grandes libros de la literatura universal — lectura online
+            gratuita
+          </p>
+        </div>
+      </section>
+
+      <div class="filter-bar">
+        <input
+          type="text"
+          id="libSearchInput"
+          placeholder="🔍 Buscar por título o autor..."
+        />
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="novela">Novela</button>
+        <button class="filter-btn" data-filter="filosofia">Filosofía</button>
+        <button class="filter-btn" data-filter="teatro">Teatro</button>
+        <button class="filter-btn" data-filter="poesia">Poesía</button>
+        <button class="filter-btn" data-filter="aventura">Aventura</button>
+        <button class="filter-btn" data-filter="ciencia-ficcion">
+          Ciencia Ficción
+        </button>
+        <button class="filter-btn" data-filter="cuento">Cuento</button>
+      </div>
+
+      <section class="library" id="library"></section>
+
+      <div class="no-results" id="noResults">
+        <p>📖 No se encontraron libros con ese criterio.</p>
+      </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="footer-content">
+        <div style="text-align: center; margin-bottom: 2rem">
+          <p style="color: var(--color-dark); margin-bottom: 1rem">
+            Todos los enlaces dirigen a ediciones de dominio público disponibles
+            en
+          </p>
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              gap: 1rem;
+              font-size: 0.9rem;
+            "
+          >
+            <a
+              href="https://www.gutenberg.org"
+              target="_blank"
+              style="color: var(--color-secondary)"
+              >Project Gutenberg</a
+            >
+            <a
+              href="https://archive.org"
+              target="_blank"
+              style="color: var(--color-secondary)"
+              >Internet Archive</a
+            >
+            <a
+              href="https://es.wikisource.org"
+              target="_blank"
+              style="color: var(--color-secondary)"
+              >Wikisource</a
+            >
+            <a
+              href="https://www.cervantesvirtual.com"
+              target="_blank"
+              style="color: var(--color-secondary)"
+              >Biblioteca Cervantes Virtual</a
+            >
+            <a
+              href="https://standardebooks.org"
+              target="_blank"
+              style="color: var(--color-secondary)"
+              >Standard Ebooks</a
+            >
+          </div>
+        </div>
+
+        <nav class="share-footer" aria-label="Compartir página">
+          <span class="share-title">Compartir</span>
+          <a
+            href="https://www.facebook.com/sharer/sharer.php?u=https://gf-amd.pages.dev/pages/biblioteca-clasicos.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="share-btn facebook"
+            title="Compartir en Facebook"
+            aria-label="Compartir en Facebook"
+          >
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a
+            href="https://twitter.com/intent/tweet?url=https://gf-amd.pages.dev/pages/biblioteca-clasicos.html&text=Biblioteca%20de%20Cl%C3%A1sicos%20Universales%20-%20RESONANCIAS"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="share-btn twitter"
+            title="Compartir en X"
+            aria-label="Compartir en X"
+          >
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a
+            href="https://api.whatsapp.com/send?text=Biblioteca%20de%20Cl%C3%A1sicos%20Universales%20-%20RESONANCIAS%20https://gf-amd.pages.dev/pages/biblioteca-clasicos.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="share-btn whatsapp"
+            title="Compartir en WhatsApp"
+            aria-label="Compartir en WhatsApp"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a
+            href="https://bsky.app/intent/compose?text=Biblioteca%20de%20Cl%C3%A1sicos%20Universales%20-%20RESONANCIAS%20https://gf-amd.pages.dev/pages/biblioteca-clasicos.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="share-btn bluesky"
+            title="Compartir en Bluesky"
+            aria-label="Compartir en Bluesky"
+          >
+            <i class="fa-brands fa-bluesky"></i>
+          </a>
+        </nav>
+        <p>© 2025 RESONANCIAS · Todos los derechos reservados</p>
+      </div>
+    </footer>
+
+    <a href="#main-content" class="back-to-top" aria-label="Volver arriba">
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </a>
+
+    <script>
+      const books = [
+        // ── NOVELA ──
+        {
+          title: "Don Quijote de la Mancha",
+          author: "Miguel de Cervantes",
+          year: 1605,
+          genre: "novela",
+          color: "#8B2500",
+          cover: "https://covers.openlibrary.org/b/id/12648247-L.jpg",
+          url: "https://www.cervantesvirtual.com/obra-visor/el-ingenioso-hidalgo-don-quijote-de-la-mancha-6/html/",
+          source: "Cervantes Virtual",
+        },
+        {
+          title: "Orgullo y Prejuicio",
+          author: "Jane Austen",
+          year: 1813,
+          genre: "novela",
+          color: "#6B3A5D",
+          cover: "https://covers.openlibrary.org/b/id/12645114-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/1342",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Crimen y Castigo",
+          author: "Fiódor Dostoyevski",
+          year: 1866,
+          genre: "novela",
+          color: "#4A0E0E",
+          cover: "https://covers.openlibrary.org/b/id/12553070-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/2554",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Anna Karénina",
+          author: "León Tolstói",
+          year: 1877,
+          genre: "novela",
+          color: "#2E4057",
+          cover: "https://covers.openlibrary.org/b/id/12783882-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/1399",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Madame Bovary",
+          author: "Gustave Flaubert",
+          year: 1857,
+          genre: "novela",
+          color: "#5B3256",
+          cover: "https://covers.openlibrary.org/b/id/12842044-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/2413",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Los Hermanos Karamázov",
+          author: "Fiódor Dostoyevski",
+          year: 1880,
+          genre: "novela",
+          color: "#3D1C02",
+          cover: "https://covers.openlibrary.org/b/id/12811213-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/28054",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Guerra y Paz",
+          author: "León Tolstói",
+          year: 1869,
+          genre: "novela",
+          color: "#556B2F",
+          cover: "https://covers.openlibrary.org/b/id/12803354-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/2600",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Jane Eyre",
+          author: "Charlotte Brontë",
+          year: 1847,
+          genre: "novela",
+          color: "#704214",
+          cover: "https://covers.openlibrary.org/b/id/12842040-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/1260",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Cumbres Borrascosas",
+          author: "Emily Brontë",
+          year: 1847,
+          genre: "novela",
+          color: "#3B3B3B",
+          cover: "https://covers.openlibrary.org/b/id/12818889-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/768",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Los Miserables",
+          author: "Victor Hugo",
+          year: 1862,
+          genre: "novela",
+          color: "#1C1C3A",
+          cover: "https://covers.openlibrary.org/b/id/12841940-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/135",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "El Conde de Montecristo",
+          author: "Alejandro Dumas",
+          year: 1844,
+          genre: "novela",
+          color: "#2F4F4F",
+          cover: "https://covers.openlibrary.org/b/id/12806528-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/1184",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Grandes Esperanzas",
+          author: "Charles Dickens",
+          year: 1861,
+          genre: "novela",
+          color: "#5C4033",
+          cover: "https://covers.openlibrary.org/b/id/12782566-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/1400",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "El Retrato de Dorian Gray",
+          author: "Oscar Wilde",
+          year: 1890,
+          genre: "novela",
+          color: "#4B3621",
+          cover: "https://covers.openlibrary.org/b/id/12783528-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/174",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Frankenstein",
+          author: "Mary Shelley",
+          year: 1818,
+          genre: "novela",
+          color: "#2D2D2D",
+          cover: "https://covers.openlibrary.org/b/id/12803375-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/84",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Drácula",
+          author: "Bram Stoker",
+          year: 1897,
+          genre: "novela",
+          color: "#5C0000",
+          cover: "https://covers.openlibrary.org/b/id/12804906-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/345",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Moby Dick",
+          author: "Herman Melville",
+          year: 1851,
+          genre: "novela",
+          color: "#1B4B6E",
+          cover: "https://covers.openlibrary.org/b/id/12803339-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/2701",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "La Metamorfosis",
+          author: "Franz Kafka",
+          year: 1915,
+          genre: "novela",
+          color: "#4A4A2E",
+          cover: "https://covers.openlibrary.org/b/id/12803373-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/5200",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "El Proceso",
+          author: "Franz Kafka",
+          year: 1925,
+          genre: "novela",
+          color: "#3A3A3A",
+          cover: "https://covers.openlibrary.org/b/id/12817040-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/7849",
+          source: "Project Gutenberg",
+        },
+        // ── AVENTURA ──
+        {
+          title: "La Isla del Tesoro",
+          author: "R. L. Stevenson",
+          year: 1883,
+          genre: "aventura",
+          color: "#8B6914",
+          cover: "https://covers.openlibrary.org/b/id/12803361-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/120",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Las Aventuras de Tom Sawyer",
+          author: "Mark Twain",
+          year: 1876,
+          genre: "aventura",
+          color: "#CC7722",
+          cover: "https://covers.openlibrary.org/b/id/12803380-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/74",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Robinson Crusoe",
+          author: "Daniel Defoe",
+          year: 1719,
+          genre: "aventura",
+          color: "#5F7A3B",
+          cover: "https://covers.openlibrary.org/b/id/12803360-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/521",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Viaje al Centro de la Tierra",
+          author: "Julio Verne",
+          year: 1864,
+          genre: "aventura",
+          color: "#8B4513",
+          cover: "https://covers.openlibrary.org/b/id/12803362-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/18857",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "La Vuelta al Mundo en 80 Días",
+          author: "Julio Verne",
+          year: 1873,
+          genre: "aventura",
+          color: "#2E5B88",
+          cover: "https://covers.openlibrary.org/b/id/12803363-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/103",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "20,000 Leguas de Viaje Submarino",
+          author: "Julio Verne",
+          year: 1870,
+          genre: "aventura",
+          color: "#0D3B66",
+          cover: "https://covers.openlibrary.org/b/id/12803364-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/164",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Los Tres Mosqueteros",
+          author: "Alejandro Dumas",
+          year: 1844,
+          genre: "aventura",
+          color: "#6A1B1B",
+          cover: "https://covers.openlibrary.org/b/id/12806529-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/1257",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "El Libro de la Selva",
+          author: "Rudyard Kipling",
+          year: 1894,
+          genre: "aventura",
+          color: "#2D5A27",
+          cover: "https://covers.openlibrary.org/b/id/12803366-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/236",
+          source: "Project Gutenberg",
+        },
+        // ── CIENCIA FICCIÓN ──
+        {
+          title: "La Máquina del Tiempo",
+          author: "H.G. Wells",
+          year: 1895,
+          genre: "ciencia-ficcion",
+          color: "#4A5568",
+          cover: "https://covers.openlibrary.org/b/id/12803377-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/35",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "La Guerra de los Mundos",
+          author: "H.G. Wells",
+          year: 1898,
+          genre: "ciencia-ficcion",
+          color: "#742A2A",
+          cover: "https://covers.openlibrary.org/b/id/12803369-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/36",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "El Hombre Invisible",
+          author: "H.G. Wells",
+          year: 1897,
+          genre: "ciencia-ficcion",
+          color: "#4A6FA5",
+          cover: "https://covers.openlibrary.org/b/id/12818590-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/5230",
+          source: "Project Gutenberg",
+        },
+        // ── FILOSOFÍA ──
+        {
+          title: "La República",
+          author: "Platón",
+          year: -380,
+          genre: "filosofia",
+          color: "#8B7355",
+          cover: "https://covers.openlibrary.org/b/id/12781813-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/1497",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Ética a Nicómaco",
+          author: "Aristóteles",
+          year: -340,
+          genre: "filosofia",
+          color: "#6B6B3B",
+          cover: "https://covers.openlibrary.org/b/id/14350846-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/8438",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Meditaciones",
+          author: "Marco Aurelio",
+          year: 180,
+          genre: "filosofia",
+          color: "#5A4E3C",
+          cover: "https://covers.openlibrary.org/b/id/12804612-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/2680",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "El Príncipe",
+          author: "Nicolás Maquiavelo",
+          year: 1532,
+          genre: "filosofia",
+          color: "#2D2D2D",
+          cover: "https://covers.openlibrary.org/b/id/12665862-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/1232",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Así Habló Zaratustra",
+          author: "Friedrich Nietzsche",
+          year: 1883,
+          genre: "filosofia",
+          color: "#4A3728",
+          cover: "https://covers.openlibrary.org/b/id/12803351-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/1998",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "El Arte de la Guerra",
+          author: "Sun Tzu",
+          year: -500,
+          genre: "filosofia",
+          color: "#8B0000",
+          cover: "https://covers.openlibrary.org/b/id/12803356-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/132",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Leviatán",
+          author: "Thomas Hobbes",
+          year: 1651,
+          genre: "filosofia",
+          color: "#3C3C3C",
+          cover: "https://covers.openlibrary.org/b/id/12806530-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/3207",
+          source: "Project Gutenberg",
+        },
+        // ── TEATRO ──
+        {
+          title: "Hamlet",
+          author: "William Shakespeare",
+          year: 1603,
+          genre: "teatro",
+          color: "#1a1a2e",
+          cover: "https://covers.openlibrary.org/b/id/12803348-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/1524",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Romeo y Julieta",
+          author: "William Shakespeare",
+          year: 1597,
+          genre: "teatro",
+          color: "#7B2D3B",
+          cover: "https://covers.openlibrary.org/b/id/12806531-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/1513",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Otelo",
+          author: "William Shakespeare",
+          year: 1604,
+          genre: "teatro",
+          color: "#2C2C2C",
+          cover: "https://covers.openlibrary.org/b/id/12806532-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/1531",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Macbeth",
+          author: "William Shakespeare",
+          year: 1606,
+          genre: "teatro",
+          color: "#1C1C1C",
+          cover: "https://covers.openlibrary.org/b/id/12806533-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/1533",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "La Vida es Sueño",
+          author: "Calderón de la Barca",
+          year: 1635,
+          genre: "teatro",
+          color: "#4A3B6B",
+          cover: "https://covers.openlibrary.org/b/id/12806534-L.jpg",
+          url: "https://www.cervantesvirtual.com/obra-visor/la-vida-es-sueno--0/html/",
+          source: "Cervantes Virtual",
+        },
+        {
+          title: "Fausto",
+          author: "Johann W. Goethe",
+          year: 1808,
+          genre: "teatro",
+          color: "#3D0C0C",
+          cover: "https://covers.openlibrary.org/b/id/12803352-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/14591",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Casa de Muñecas",
+          author: "Henrik Ibsen",
+          year: 1879,
+          genre: "teatro",
+          color: "#5B4B3B",
+          cover: "https://covers.openlibrary.org/b/id/12806535-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/2542",
+          source: "Project Gutenberg",
+        },
+        // ── POESÍA ──
+        {
+          title: "La Divina Comedia",
+          author: "Dante Alighieri",
+          year: 1320,
+          genre: "poesia",
+          color: "#5B2C2C",
+          cover: "https://covers.openlibrary.org/b/id/12803350-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/8800",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "La Odisea",
+          author: "Homero",
+          year: -700,
+          genre: "poesia",
+          color: "#1E4D6E",
+          cover: "https://covers.openlibrary.org/b/id/12803349-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/1727",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "La Ilíada",
+          author: "Homero",
+          year: -750,
+          genre: "poesia",
+          color: "#8B4513",
+          cover: "https://covers.openlibrary.org/b/id/12806536-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/6130",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Paraíso Perdido",
+          author: "John Milton",
+          year: 1667,
+          genre: "poesia",
+          color: "#2C1E3E",
+          cover: "https://covers.openlibrary.org/b/id/12806537-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/26",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Hojas de Hierba",
+          author: "Walt Whitman",
+          year: 1855,
+          genre: "poesia",
+          color: "#3B5E3B",
+          cover: "https://covers.openlibrary.org/b/id/12803358-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/1322",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Las Flores del Mal",
+          author: "Charles Baudelaire",
+          year: 1857,
+          genre: "poesia",
+          color: "#2D1B2E",
+          cover: "https://covers.openlibrary.org/b/id/12806538-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/36098",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "La Eneida",
+          author: "Virgilio",
+          year: -19,
+          genre: "poesia",
+          color: "#6B4423",
+          cover: "https://covers.openlibrary.org/b/id/12806539-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/228",
+          source: "Project Gutenberg",
+        },
+        // ── CUENTO ──
+        {
+          title: "Cuentos de los Hermanos Grimm",
+          author: "Hermanos Grimm",
+          year: 1812,
+          genre: "cuento",
+          color: "#5A6E3B",
+          cover: "https://covers.openlibrary.org/b/id/12806540-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/2591",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Cuentos de H.C. Andersen",
+          author: "Hans C. Andersen",
+          year: 1835,
+          genre: "cuento",
+          color: "#4B7B8B",
+          cover: "https://covers.openlibrary.org/b/id/12803370-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/1597",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Las Mil y Una Noches",
+          author: "Anónimo",
+          year: 850,
+          genre: "cuento",
+          color: "#8B6914",
+          cover: "https://covers.openlibrary.org/b/id/12803371-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/3435",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Alicia en el País de las Maravillas",
+          author: "Lewis Carroll",
+          year: 1865,
+          genre: "cuento",
+          color: "#3B6B8B",
+          cover: "https://covers.openlibrary.org/b/id/12803372-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/11",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Cuentos de Edgar Allan Poe",
+          author: "Edgar Allan Poe",
+          year: 1845,
+          genre: "cuento",
+          color: "#1a1a1a",
+          cover: "https://covers.openlibrary.org/b/id/12803374-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/2148",
+          source: "Project Gutenberg",
+        },
+        {
+          title: "Fábulas de Esopo",
+          author: "Esopo",
+          year: -600,
+          genre: "cuento",
+          color: "#7B6B3B",
+          cover: "https://covers.openlibrary.org/b/id/12803376-L.jpg",
+          url: "https://www.gutenberg.org/ebooks/11339",
+          source: "Project Gutenberg",
+        },
+      ];
+
+      const genreLabels = {
+        novela: {
+          label: "Novelas",
+          sub: "Las grandes narrativas de la historia",
+        },
+        aventura: { label: "Aventura", sub: "Viajes, exploraciones y hazañas" },
+        "ciencia-ficcion": {
+          label: "Ciencia Ficción",
+          sub: "Visiones del futuro y lo desconocido",
+        },
+        filosofia: {
+          label: "Filosofía",
+          sub: "El pensamiento que transformó el mundo",
+        },
+        teatro: { label: "Teatro", sub: "Las grandes obras dramáticas" },
+        poesia: { label: "Poesía & Épica", sub: "Versos inmortales" },
+        cuento: { label: "Cuentos & Fábulas", sub: "Relatos que perduran" },
+      };
+
+      const genreOrder = [
+        "novela",
+        "aventura",
+        "ciencia-ficcion",
+        "filosofia",
+        "teatro",
+        "poesia",
+        "cuento",
+      ];
+
+      let currentFilter = "all";
+      let searchTerm = "";
+
+      function createBookCard(book, index) {
+        const yearDisplay =
+          book.year < 0 ? `${Math.abs(book.year)} a.C.` : book.year;
+
+        return `
+                <div class="book" data-genre="${book.genre}" style="animation-delay: ${index * 0.05}s">
+                    <a href="${book.url}" target="_blank" rel="noopener noreferrer" title="Leer ${book.title} en ${book.source}">
+                        <div class="book-cover" style="background-color: ${book.color};">
+                            <div class="book-spine"></div>
+                            <img src="${book.cover}" alt="${book.title}" 
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                                 loading="lazy">
+                            <div class="book-cover-fallback" style="display:none; background-color: ${book.color};">
+                                <div class="fb-ornament">❦</div>
+                                <div class="fb-title">${book.title}</div>
+                                <div class="fb-author">${book.author}</div>
+                                <div class="fb-ornament">✦</div>
+                            </div>
+                        </div>
+                        <div class="book-info">
+                            <div class="book-title">${book.title}</div>
+                            <div class="book-author">${book.author}</div>
+                            <div class="book-year">${yearDisplay}</div>
+                            <div class="book-source">📖 Leer en ${book.source}</div>
+                        </div>
+                    </a>
+                </div>
+            `;
+      }
+
+      function renderLibrary() {
+        const library = document.getElementById("library");
+        const noResults = document.getElementById("noResults");
+        library.innerHTML = "";
+
+        const filteredBooks = books.filter((book) => {
+          const matchesGenre =
+            currentFilter === "all" || book.genre === currentFilter;
+          const matchesSearch =
+            searchTerm === "" ||
+            book.title.toLowerCase().includes(searchTerm) ||
+            book.author.toLowerCase().includes(searchTerm);
+          return matchesGenre && matchesSearch;
+        });
+
+        if (filteredBooks.length === 0) {
+          noResults.style.display = "block";
+          return;
+        }
+        noResults.style.display = "none";
+
+        const genresToShow =
+          currentFilter === "all" ? genreOrder : [currentFilter];
+        let globalIndex = 0;
+
+        genresToShow.forEach((genre) => {
+          const genreBooks = filteredBooks.filter((b) => b.genre === genre);
+          if (genreBooks.length === 0) return;
+
+          const info = genreLabels[genre];
+          const section = document.createElement("div");
+          section.innerHTML = `
+                    <div class="shelf-label">${info.label}</div>
+                    <div class="shelf-sublabel">${info.sub}</div>
+                    <div class="bookshelf">
+                        ${genreBooks.map((book) => createBookCard(book, globalIndex++)).join("")}
+                    </div>
+                    <div class="shelf-wood"></div>
+                `;
+          library.appendChild(section);
+        });
+      }
+
+      // Filter buttons
+      document.querySelectorAll(".filter-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document
+            .querySelectorAll(".filter-btn")
+            .forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          currentFilter = btn.dataset.filter;
+          renderLibrary();
+        });
+      });
+
+      // Search
+      const searchInput = document.getElementById("libSearchInput");
+      let searchTimeout;
+      searchInput.addEventListener("input", () => {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+          searchTerm = searchInput.value.toLowerCase().trim();
+          renderLibrary();
+        }, 250);
+      });
+
+      // Initial render
+      renderLibrary();
+    </script>
+  </body>
+</html>
