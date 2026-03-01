@@ -1,561 +1,688 @@
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Contacto - Gabriel Ferré | RESONANCIAS</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - Gabriel Ferré | RESONANCIAS</title>
 
-        <!-- URL Canónica -->
-        <link rel="canonical" href="https://gf-amd.pages.dev/pages/contacto.html" />
-        <meta
-            name="description"
-            content="Ponte en contacto con Gabriel Ferré. Formulario de contacto para consultas, comentarios y colaboraciones." />
+    <!-- URL Canónica -->
+    <link rel="canonical" href="https://gf-amd.pages.dev/pages/contacto.html" />
+    <meta
+      name="description"
+      content="Ponte en contacto con Gabriel Ferré. Formulario de contacto para consultas, comentarios y colaboraciones."
+    />
 
-        <!-- SEO y Accesibilidad -->
-        <meta name="robots" content="index, follow" />
-        <meta name="author" content="Gabriel Ferré" />
-        <meta name="keywords" content="contacto, Gabriel Ferré, formulario, consultas, colaboraciones" />
+    <!-- SEO y Accesibilidad -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Gabriel Ferré" />
+    <meta
+      name="keywords"
+      content="contacto, Gabriel Ferré, formulario, consultas, colaboraciones"
+    />
 
-        <!-- Open Graph -->
-        <meta property="og:title" content="Contacto - Gabriel Ferré | RESONANCIAS" />
-        <meta property="og:description" content="Ponte en contacto con Gabriel Ferré para consultas y colaboraciones" />
-        <meta property="og:image" content="https://gf-amd.pages.dev/img/blog-2026/ero-2.jpg" />
-        <meta property="og:url" content="https://gf-amd.pages.dev/pages/contacto.html" />
-        <meta property="og:type" content="website" />
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Contacto - Gabriel Ferré | RESONANCIAS"
+    />
+    <meta
+      property="og:description"
+      content="Ponte en contacto con Gabriel Ferré para consultas y colaboraciones"
+    />
+    <meta
+      property="og:image"
+      content="https://gf-amd.pages.dev/img/blog-2026/ero-2.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://gf-amd.pages.dev/pages/contacto.html"
+    />
+    <meta property="og:type" content="website" />
 
-        <!-- Twitter Card -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contacto - RESONANCIAS" />
-        <meta
-            name="twitter:description"
-            content="Ponte en contacto con Gabriel Ferré para consultas y colaboraciones" />
-        <meta name="twitter:image" content="https://gf-amd.pages.dev/img/ero-2.jpg" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contacto - RESONANCIAS" />
+    <meta
+      name="twitter:description"
+      content="Ponte en contacto con Gabriel Ferré para consultas y colaboraciones"
+    />
+    <meta
+      name="twitter:image"
+      content="https://gf-amd.pages.dev/img/blog-2026/ero-2.jpg"
+    />
 
-        <!-- Favicon -->
-        <link rel="icon" href="/img/ui/favicon.png" type="image/png" />
+    <!-- Favicon -->
+    <link rel="icon" href="/img/ui/favicon.png" type="image/png" />
 
-        <!-- Estilos -->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="/assets/css/estilos.css" />
+    <!-- Estilos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/assets/css/estilos.css" />
 
-        <!-- Scripts -->
+    <!-- Scripts -->
 
-        <script src="/assets/js/main.js" defer></script>
-        <script src="/assets/js/back-to-top.js" defer></script>
+    <script src="/assets/js/main.js" defer></script>
+    <script src="/assets/js/back-to-top.js" defer></script>
 
-        <!-- Estilos para el formulario de contacto -->
-        <style>
-            /* 
+    <!-- Estilos para el formulario de contacto -->
+    <style>
+      /* 
             NOTA: Estos estilos se han añadido directamente aquí para una rápida implementación.
             Para una mejor organización, se recomienda moverlos a un archivo CSS dedicado, 
             como 'forms.css' o integrarlos en 'main.css'.
             */
 
-            .contact-form .form-group {
+      .contact-form .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+      }
+
+      .contact-form label {
+        font-weight: 600;
+        color: var(--color-dark);
+      }
+
+      .contact-form input[type="text"],
+      .contact-form input[type="email"],
+      .contact-form select,
+      .contact-form textarea {
+        width: 100%;
+        padding: var(--spacing-md);
+        border: 1px solid var(--color-mid);
+        border-radius: 8px;
+        font-size: var(--font-size-base);
+        background-color: #fdfdfd;
+        transition: all var(--transition-fast);
+      }
+
+      .contact-form input[type="text"]:focus,
+      .contact-form input[type="text"]:focus,
+      .contact-form select:focus,
+      .contact-form textarea:focus {
+        outline: none;
+        border-color: var(--color-secondary);
+        box-shadow: 0 0 0 3px rgba(176, 105, 0, 0.2);
+      }
+
+      /* Estilo específico para el grupo del checkbox */
+      .form-group-checkbox {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-md);
+      }
+
+      .form-group-checkbox label {
+        font-weight: 400; /* Peso normal para el label del checkbox */
+        color: var(--color-warm);
+      }
+
+      .contact-form input[type="checkbox"] {
+        width: 1.25em;
+        height: 1.25em;
+        accent-color: var(--color-secondary);
+      }
+
+      .contact-form button[type="submit"] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--spacing-md);
+        background: var(--color-secondary);
+        color: var(--color-light);
+        padding: var(--spacing-md) var(--spacing-xl);
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: var(--font-size-lg);
+        box-shadow: var(--shadow-md);
+        border: none;
+        cursor: pointer;
+      }
+
+      .contact-form button[type="submit"]:hover {
+        background: var(--color-warm);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .contact-form .required-notice {
+        font-size: var(--font-size-sm);
+        color: var(--color-neutral);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header + menú -->
+    <div id="header"></div>
+    <div id="side-menu"></div>
+
+    <script src="/assets/js/includes.js"></script>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Contenido principal -->
+    <main id="main-content" role="main">
+      <!-- Hero de contacto -->
+      <section
+        class="works-hero"
+        style="
+          background:
+            linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+            url(&quot;/img/blog-2026/ero-2.jpg&quot;);
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          color: var(--color-light);
+          padding: var(--spacing-3xl) 0;
+          text-align: center;
+          min-height: 400px;
+          display: flex;
+          align-items: center;
+        "
+      >
+        <div class="container">
+          <h1
+            style="
+              font-size: var(--font-size-4xl);
+              margin-bottom: var(--spacing-lg);
+              text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            "
+          >
+            Contacto
+          </h1>
+          <p
+            style="
+              font-size: var(--font-size-xl);
+              max-width: 600px;
+              margin: 0 auto;
+              line-height: 1.6;
+              text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            "
+          >
+            ¿Tienes alguna pregunta, comentario o propuesta? Me encantaría
+            escucharte.
+          </p>
+        </div>
+      </section>
+
+      <!-- Formulario de contacto -->
+      <section
+        class="contact-form-section"
+        style="padding: var(--spacing-3xl) 0"
+      >
+        <div class="container">
+          <div class="contact-grid">
+            <!-- Formulario -->
+            <div
+              class="contact-form-container"
+              style="
+                background: var(--color-light);
+                padding: var(--spacing-2xl);
+                border-radius: 12px;
+                box-shadow: var(--shadow-md);
+              "
+            >
+              <h2
+                style="
+                  color: var(--color-dark);
+                  margin-bottom: var(--spacing-xl);
+                  font-size: var(--font-size-2xl);
+                "
+              >
+                Envíame un mensaje
+              </h2>
+              <form
+                id="contactForm"
+                class="contact-form"
+                action="https://formspree.io/f/mwpqynwp"
+                method="POST"
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: var(--spacing-lg);
+                "
+              >
+                <div class="form-group">
+                  <label for="name">Nombre *</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Tu nombre completo"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="tu@email.com"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="subject">Asunto *</label>
+                  <select id="subject" name="subject" required>
+                    <option value="">Selecciona un tema</option>
+                    <option value="comentario">
+                      Comentario sobre una obra
+                    </option>
+                    <option value="colaboracion">
+                      Propuesta de colaboración
+                    </option>
+                    <option value="consulta">Consulta general</option>
+                    <option value="prensa">Consulta de prensa</option>
+                    <option value="tecnico">Problema técnico del sitio</option>
+                    <option value="otro">Otro tema</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Mensaje *</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    required
+                    placeholder="Escribe tu mensaje aquí..."
+                  ></textarea>
+                </div>
+
+                <div class="form-group form-group-checkbox">
+                  <input type="checkbox" id="newsletter" name="newsletter" />
+                  <label for="newsletter"
+                    >Me gustaría recibir notificaciones ocasionales sobre nuevas
+                    publicaciones (opcional)</label
+                  >
+                </div>
+
+                <button type="submit">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M22 2L11 13"></path>
+                    <polygon points="22,2 15,22 11,13 2,9"></polygon>
+                  </svg>
+                  Enviar mensaje
+                </button>
+
+                <p class="required-notice">
+                  * Campos obligatorios. Responderé a la brevedad posible.
+                </p>
+              </form>
+            </div>
+
+            <!-- Información de contacto -->
+            <div
+              class="contact-info"
+              style="
                 display: flex;
                 flex-direction: column;
-                gap: var(--spacing-sm);
-            }
-
-            .contact-form label {
-                font-weight: 600;
-                color: var(--color-dark);
-            }
-
-            .contact-form input[type="text"],
-            .contact-form input[type="email"],
-            .contact-form select,
-            .contact-form textarea {
-                width: 100%;
-                padding: var(--spacing-md);
-                border: 1px solid var(--color-mid);
-                border-radius: 8px;
-                font-size: var(--font-size-base);
-                background-color: #fdfdfd;
-                transition: all var(--transition-fast);
-            }
-
-            .contact-form input[type="text"]:focus,
-            .contact-form select:focus,
-            .contact-form textarea:focus {
-                outline: none;
-                border-color: var(--color-secondary);
-                box-shadow: 0 0 0 3px rgba(176, 105, 0, 0.2);
-            }
-
-            /* Estilo específico para el grupo del checkbox */
-            .form-group-checkbox {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                gap: var(--spacing-md);
-            }
-
-            .form-group-checkbox label {
-                font-weight: 400; /* Peso normal para el label del checkbox */
-                color: var(--color-warm);
-            }
-
-            .contact-form input[type="checkbox"] {
-                width: 1.25em;
-                height: 1.25em;
-                accent-color: var(--color-secondary);
-            }
-
-            .contact-form button[type="submit"] {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: var(--spacing-md);
-                background: var(--color-secondary);
-                color: var(--color-light);
-                padding: var(--spacing-md) var(--spacing-xl);
-                border-radius: 8px;
-                text-decoration: none;
-                font-weight: 600;
-                font-size: var(--font-size-lg);
-                box-shadow: var(--shadow-md);
-                border: none;
-                cursor: pointer;
-            }
-
-            .contact-form button[type="submit"]:hover {
-                background: var(--color-warm);
-                transform: translateY(-2px);
-                box-shadow: var(--shadow-lg);
-            }
-
-            .contact-form .required-notice {
-                font-size: var(--font-size-sm);
-                color: var(--color-neutral);
-            }
-        </style>
-    </head>
-    <body>
-<!-- Header + menú -->
-<div id="header"></div>
-<div id="side-menu"></div>
-
-<script src="/assets/js/includes.js"></script>
-        <!-- Skip to main content -->
-        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
-
-        <!-- Contenido principal -->
-        <main id="main-content" role="main">
-            <!-- Hero de contacto -->
-            <section
-                class="works-hero"
+                gap: var(--spacing-xl);
+              "
+            >
+              <!-- Información general -->
+              <div
                 style="
-                    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(&quot;/img/blog-2026/ero-2.jpg&quot;);
-                    background-size: cover;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    color: var(--color-light);
-                    padding: var(--spacing-3xl) 0;
-                    text-align: center;
-                    min-height: 400px;
+                  background: var(--color-mid);
+                  padding: var(--spacing-xl);
+                  border-radius: 12px;
+                "
+              >
+                <h3
+                  style="
+                    color: var(--color-dark);
+                    margin-bottom: var(--spacing-lg);
                     display: flex;
                     align-items: center;
-                ">
-                <div class="container">
-                    <h1
-                        style="
-                            font-size: var(--font-size-4xl);
-                            margin-bottom: var(--spacing-lg);
-                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-                        ">
-                        Contacto
-                    </h1>
-                    <p
-                        style="
-                            font-size: var(--font-size-xl);
-                            max-width: 600px;
-                            margin: 0 auto;
-                            line-height: 1.6;
-                            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-                        ">
-                        ¿Tienes alguna pregunta, comentario o propuesta? Me encantaría escucharte.
-                    </p>
-                </div>
-            </section>
-
-            <!-- Formulario de contacto -->
-            <section class="contact-form-section" style="padding: var(--spacing-3xl) 0">
-                <div class="container">
-                    <div class="contact-grid">
-                        <!-- Formulario -->
-                        <div
-                            class="contact-form-container"
-                            style="
-                                background: var(--color-light);
-                                padding: var(--spacing-2xl);
-                                border-radius: 12px;
-                                box-shadow: var(--shadow-md);
-                            ">
-                            <h2
-                                style="
-                                    color: var(--color-dark);
-                                    margin-bottom: var(--spacing-xl);
-                                    font-size: var(--font-size-2xl);
-                                ">
-                                Envíame un mensaje
-                            </h2>
-                            <form
-                                id="contactForm"
-                                class="contact-form"
-                                action="https://formspree.io/f/mwpqynwp"
-                                method="POST"
-                                style="display: flex; flex-direction: column; gap: var(--spacing-lg)">
-                                <div class="form-group">
-                                    <label for="name">Nombre *</label>
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        name="name"
-                                        required
-                                        placeholder="Tu nombre completo" />
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="email">Email *</label>
-                                    <input type="email" id="email" name="email" required placeholder="tu@email.com" />
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="subject">Asunto *</label>
-                                    <select id="subject" name="subject" required>
-                                        <option value="">Selecciona un tema</option>
-                                        <option value="comentario">Comentario sobre una obra</option>
-                                        <option value="colaboracion">Propuesta de colaboración</option>
-                                        <option value="consulta">Consulta general</option>
-                                        <option value="prensa">Consulta de prensa</option>
-                                        <option value="tecnico">Problema técnico del sitio</option>
-                                        <option value="otro">Otro tema</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="message">Mensaje *</label>
-                                    <textarea
-                                        id="message"
-                                        name="message"
-                                        rows="6"
-                                        required
-                                        placeholder="Escribe tu mensaje aquí..."></textarea>
-                                </div>
-
-                                <div class="form-group form-group-checkbox">
-                                    <input type="checkbox" id="newsletter" name="newsletter" />
-                                    <label for="newsletter"
-                                        >Me gustaría recibir notificaciones ocasionales sobre nuevas publicaciones
-                                        (opcional)</label
-                                    >
-                                </div>
-
-                                <button type="submit">
-                                    <svg
-                                        width="20"
-                                        height="20"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M22 2L11 13"></path>
-                                        <polygon points="22,2 15,22 11,13 2,9"></polygon>
-                                    </svg>
-                                    Enviar mensaje
-                                </button>
-
-                                <p class="required-notice">* Campos obligatorios. Responderé a la brevedad posible.</p>
-                            </form>
-                        </div>
-
-                        <!-- Información de contacto -->
-                        <div class="contact-info" style="display: flex; flex-direction: column; gap: var(--spacing-xl)">
-                            <!-- Información general -->
-                            <div style="background: var(--color-mid); padding: var(--spacing-xl); border-radius: 12px">
-                                <h3
-                                    style="
-                                        color: var(--color-dark);
-                                        margin-bottom: var(--spacing-lg);
-                                        display: flex;
-                                        align-items: center;
-                                        gap: var(--spacing-sm);
-                                    ">
-                                    <svg
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                        <circle cx="12" cy="7" r="4"></circle>
-                                    </svg>
-                                    Sobre el contacto
-                                </h3>
-                                <p style="color: var(--color-dark); line-height: 1.6; margin-bottom: var(--spacing-md)">
-                                    Me complace recibir comentarios, críticas constructivas y propuestas de
-                                    colaboración. También valoro mucho las reflexiones y experiencias que compartes
-                                    después de leer alguna de mis obras.
-                                </p>
-                                <p style="color: var(--color-warm); line-height: 1.6">
-                                    Generalmente respondo en un plazo de 24-48 horas. Si tu consulta es urgente, no
-                                    dudes en mencionarlo en el mensaje.
-                                </p>
-                            </div>
-
-                            <!-- Redes sociales -->
-
-                            <!-- Preguntas frecuentes -->
-                            <div
-                                style="
-                                    background: var(--color-light);
-                                    padding: var(--spacing-xl);
-                                    border-radius: 12px;
-                                    box-shadow: var(--shadow-sm);
-                                ">
-                                <h3
-                                    style="
-                                        color: var(--color-dark);
-                                        margin-bottom: var(--spacing-lg);
-                                        display: flex;
-                                        align-items: center;
-                                        gap: var(--spacing-sm);
-                                    ">
-                                    <svg
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2">
-                                        <circle cx="12" cy="12" r="10"></circle>
-                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                                        <point cx="12" cy="17" fill="currentColor"></point>
-                                    </svg>
-                                    Preguntas frecuentes
-                                </h3>
-                                <div style="display: flex; flex-direction: column; gap: var(--spacing-md)">
-                                    <details
-                                        style="
-                                            border: 1px solid var(--color-mid);
-                                            border-radius: 8px;
-                                            padding: var(--spacing-md);
-                                        ">
-                                        <summary
-                                            style="font-weight: 600; color: var(--color-secondary); cursor: pointer">
-                                            ¿Puedo usar tus obras en mi proyecto?
-                                        </summary>
-                                        <p
-                                            style="
-                                                margin-top: var(--spacing-sm);
-                                                color: var(--color-warm);
-                                                font-size: var(--font-size-sm);
-                                                line-height: 1.5;
-                                            ">
-                                            Sí, mis obras están bajo licencia Creative Commons BY-NC-SA 4.0. Puedes
-                                            usarlas para fines no comerciales con la debida atribución.
-                                        </p>
-                                    </details>
-                                    <details
-                                        style="
-                                            border: 1px solid var(--color-mid);
-                                            border-radius: 8px;
-                                            padding: var(--spacing-md);
-                                        ">
-                                        <summary
-                                            style="font-weight: 600; color: var(--color-secondary); cursor: pointer">
-                                            ¿Aceptas colaboraciones?
-                                        </summary>
-                                        <p
-                                            style="
-                                                margin-top: var(--spacing-sm);
-                                                color: var(--color-warm);
-                                                font-size: var(--font-size-sm);
-                                                line-height: 1.5;
-                                            ">
-                                            Estoy abierto a colaboraciones que se alineen con mis intereses en
-                                            literatura filosófica y pensamiento crítico. Escríbeme con tu propuesta.
-                                        </p>
-                                    </details>
-                                    <details
-                                        style="
-                                            border: 1px solid var(--color-mid);
-                                            border-radius: 8px;
-                                            padding: var(--spacing-md);
-                                        ">
-                                        <summary
-                                            style="font-weight: 600; color: var(--color-secondary); cursor: pointer">
-                                            ¿Tienes planes de publicar más obras?
-                                        </summary>
-                                        <p
-                                            style="
-                                                margin-top: var(--spacing-sm);
-                                                color: var(--color-warm);
-                                                font-size: var(--font-size-sm);
-                                                line-height: 1.5;
-                                            ">
-                                            Constantemente trabajo en nuevos proyectos. Suscríbete al blog para recibir
-                                            notificaciones sobre nuevas publicaciones.
-                                        </p>
-                                    </details>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- Footer -->
-        <footer class="footer" role="contentinfo">
-            <div class="footer-content">
-                <!-- Botones de compartir integrados en el footer -->
-                <nav class="share-footer" aria-label="Compartir página">
-                    <span class="share-title">Compartir</span>
-                    <a
-                                                            href="https://www.facebook.com/sharer/sharer.php?u=https://gf-amd.pages.dev/pages/contacto.html"                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="share-btn facebook"
-                        title="Compartir en Facebook"
-                        aria-label="Compartir en Facebook">
-                        <i class="fa-brands fa-facebook"></i>
-                    </a>
-                    <a
-                                                            href="https://twitter.com/intent/tweet?url=https://gf-amd.pages.dev/pages/contacto.html&text=Contacto%20-%20Gabriel%20Ferré%20%7C%20RESONANCIAS"                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="share-btn twitter"
-                        title="Compartir en X"
-                        aria-label="Compartir en X">
-                        <i class="fa-brands fa-x-twitter"></i>
-                    </a>
-
-                    <a
-                                                            href="https://api.whatsapp.com/send?text=Contacto%20-%20Gabriel%20Ferré%20%7C%20RESONANCIAS%20https://gf-amd.pages.dev/pages/contacto.html"                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="share-btn whatsapp"
-                        title="Compartir en WhatsApp"
-                        aria-label="Compartir en WhatsApp">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </a>
-                    <a
-                                                            href="https://bsky.app/intent/compose?text=Contacto%20-%20Gabriel%20Ferré%20%7C%20RESONANCIAS%20https://gf-amd.pages.dev/pages/contacto.html"                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="share-btn bluesky"
-                        title="Compartir en Bluesky"
-                        aria-label="Compartir en Bluesky">
-                        <i class="fa-brands fa-bluesky"></i>
-                    </a>
-                </nav>
-
-                <p>© 2025 RESONANCIAS · Todos los derechos reservados
+                    gap: var(--spacing-sm);
+                  "
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                  Sobre el contacto
+                </h3>
+                <p
+                  style="
+                    color: var(--color-dark);
+                    line-height: 1.6;
+                    margin-bottom: var(--spacing-md);
+                  "
+                >
+                  Me complace recibir comentarios, críticas constructivas y
+                  propuestas de colaboración. También valoro mucho las
+                  reflexiones y experiencias que compartes después de leer
+                  alguna de mis obras.
                 </p>
-            </div>
-        </footer>
+                <p style="color: var(--color-warm); line-height: 1.6">
+                  Generalmente respondo en un plazo de 24-48 horas. Si tu
+                  consulta es urgente, no dudes en mencionarlo en el mensaje.
+                </p>
+              </div>
 
-        <!-- Modal de búsqueda -->
-        <div id="searchModal" class="search-modal" role="dialog" aria-labelledby="search-title" aria-hidden="true">
-            <div class="search-modal-content">
-                <div class="search-modal-header">
-                    <h2 id="search-title">Buscar en el sitio</h2>
-                    <button class="search-close" aria-label="Cerrar búsqueda">×</button>
+              <!-- Redes sociales -->
+
+              <!-- Preguntas frecuentes -->
+              <div
+                style="
+                  background: var(--color-light);
+                  padding: var(--spacing-xl);
+                  border-radius: 12px;
+                  box-shadow: var(--shadow-sm);
+                "
+              >
+                <h3
+                  style="
+                    color: var(--color-dark);
+                    margin-bottom: var(--spacing-lg);
+                    display: flex;
+                    align-items: center;
+                    gap: var(--spacing-sm);
+                  "
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <point cx="12" cy="17" fill="currentColor"></point>
+                  </svg>
+                  Preguntas frecuentes
+                </h3>
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    gap: var(--spacing-md);
+                  "
+                >
+                  <details
+                    style="
+                      border: 1px solid var(--color-mid);
+                      border-radius: 8px;
+                      padding: var(--spacing-md);
+                    "
+                  >
+                    <summary
+                      style="
+                        font-weight: 600;
+                        color: var(--color-secondary);
+                        cursor: pointer;
+                      "
+                    >
+                      ¿Puedo usar tus obras en mi proyecto?
+                    </summary>
+                    <p
+                      style="
+                        margin-top: var(--spacing-sm);
+                        color: var(--color-warm);
+                        font-size: var(--font-size-sm);
+                        line-height: 1.5;
+                      "
+                    >
+                      Sí, mis obras están bajo licencia Creative Commons
+                      BY-NC-SA 4.0. Puedes usarlas para fines no comerciales con
+                      la debida atribución.
+                    </p>
+                  </details>
+                  <details
+                    style="
+                      border: 1px solid var(--color-mid);
+                      border-radius: 8px;
+                      padding: var(--spacing-md);
+                    "
+                  >
+                    <summary
+                      style="
+                        font-weight: 600;
+                        color: var(--color-secondary);
+                        cursor: pointer;
+                      "
+                    >
+                      ¿Aceptas colaboraciones?
+                    </summary>
+                    <p
+                      style="
+                        margin-top: var(--spacing-sm);
+                        color: var(--color-warm);
+                        font-size: var(--font-size-sm);
+                        line-height: 1.5;
+                      "
+                    >
+                      Estoy abierto a colaboraciones que se alineen con mis
+                      intereses en literatura filosófica y pensamiento crítico.
+                      Escríbeme con tu propuesta.
+                    </p>
+                  </details>
+                  <details
+                    style="
+                      border: 1px solid var(--color-mid);
+                      border-radius: 8px;
+                      padding: var(--spacing-md);
+                    "
+                  >
+                    <summary
+                      style="
+                        font-weight: 600;
+                        color: var(--color-secondary);
+                        cursor: pointer;
+                      "
+                    >
+                      ¿Tienes planes de publicar más obras?
+                    </summary>
+                    <p
+                      style="
+                        margin-top: var(--spacing-sm);
+                        color: var(--color-warm);
+                        font-size: var(--font-size-sm);
+                        line-height: 1.5;
+                      "
+                    >
+                      Constantemente trabajo en nuevos proyectos. Suscríbete al
+                      blog para recibir notificaciones sobre nuevas
+                      publicaciones.
+                    </p>
+                  </details>
                 </div>
-                <div class="search-input-container">
-                    <input
-                        type="search"
-                        id="searchInput"
-                        placeholder="Escribe tu búsqueda..."
-                        aria-label="Términos de búsqueda" />
-                    <button id="searchButton" aria-label="Buscar">
-                        <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="M21 21L16.65 16.65"></path>
-                        </svg>
-                    </button>
-                </div>
-                <div id="searchResults" class="search-results">
-                    <div class="no-results">Escribe algo para comenzar la búsqueda...</div>
-                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </section>
+    </main>
 
-        <!-- Script para el formulario -->
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const form = document.getElementById("contactForm");
-                const inputs = form.querySelectorAll("input, select, textarea");
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="footer-content">
+        <!-- Botones de compartir integrados en el footer -->
+        <nav class="share-footer" aria-label="Compartir página">
+          <span class="share-title">Compartir</span>
+          <a
+            href="https://www.facebook.com/sharer/sharer.php?u=https://gf-amd.pages.dev/pages/contacto.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="share-btn facebook"
+            title="Compartir en Facebook"
+            aria-label="Compartir en Facebook"
+          >
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a
+            href="https://twitter.com/intent/tweet?url=https://gf-amd.pages.dev/pages/contacto.html&text=Contacto%20-%20Gabriel%20Ferré%20%7C%20RESONANCIAS"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="share-btn twitter"
+            title="Compartir en X"
+            aria-label="Compartir en X"
+          >
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
 
-                // Validación en tiempo real
-                inputs.forEach((input) => {
-                    input.addEventListener("blur", validateField);
-                    input.addEventListener("focus", clearErrors);
-                });
+          <a
+            href="https://api.whatsapp.com/send?text=Contacto%20-%20Gabriel%20Ferré%20%7C%20RESONANCIAS%20https://gf-amd.pages.dev/pages/contacto.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="share-btn whatsapp"
+            title="Compartir en WhatsApp"
+            aria-label="Compartir en WhatsApp"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a
+            href="https://bsky.app/intent/compose?text=Contacto%20-%20Gabriel%20Ferré%20%7C%20RESONANCIAS%20https://gf-amd.pages.dev/pages/contacto.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="share-btn bluesky"
+            title="Compartir en Bluesky"
+            aria-label="Compartir en Bluesky"
+          >
+            <i class="fa-brands fa-bluesky"></i>
+          </a>
+        </nav>
 
-                function validateField(e) {
-                    const field = e.target;
-                    field.style.borderColor = field.checkValidity() ? "var(--color-mid)" : "#ff6b6b";
-                }
+        <p>© 2025 RESONANCIAS · Todos los derechos reservados</p>
+      </div>
+    </footer>
 
-                function clearErrors(e) {
-                    e.target.style.borderColor = "var(--color-secondary)";
-                }
+    <!-- Modal de búsqueda -->
+    <div
+      id="searchModal"
+      class="search-modal"
+      role="dialog"
+      aria-labelledby="search-title"
+      aria-hidden="true"
+    >
+      <div class="search-modal-content">
+        <div class="search-modal-header">
+          <h2 id="search-title">Buscar en el sitio</h2>
+          <button class="search-close" aria-label="Cerrar búsqueda">×</button>
+        </div>
+        <div class="search-input-container">
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Escribe tu búsqueda..."
+            aria-label="Términos de búsqueda"
+          />
+          <button id="searchButton" aria-label="Buscar">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="M21 21L16.65 16.65"></path>
+            </svg>
+          </button>
+        </div>
+        <div id="searchResults" class="search-results">
+          <div class="no-results">
+            Escribe algo para comenzar la búsqueda...
+          </div>
+        </div>
+      </div>
+    </div>
 
-                // Envío del formulario
-                form.addEventListener("submit", function (e) {
-                    // Solo validar campos, no prevenir el envío
-                    const requiredFields = form.querySelectorAll("[required]");
-                    let allValid = true;
+    <!-- Script para el formulario -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("contactForm");
+        const inputs = form.querySelectorAll("input, select, textarea");
 
-                    requiredFields.forEach((field) => {
-                        if (!field.checkValidity()) {
-                            allValid = false;
-                            field.style.borderColor = "#ff6b6b";
-                        }
-                    });
+        // Validación en tiempo real
+        inputs.forEach((input) => {
+          input.addEventListener("blur", validateField);
+          input.addEventListener("focus", clearErrors);
+        });
 
-                    // Solo prevenir envío si hay errores de validación
-                    if (!allValid) {
-                        e.preventDefault();
-                        return false;
-                    }
+        function validateField(e) {
+          const field = e.target;
+          field.style.borderColor = field.checkValidity()
+            ? "var(--color-mid)"
+            : "#ff6b6b";
+        }
 
-                    // Si todo está válido, mostrar indicador y permitir envío a Formspree
-                    const button = form.querySelector('button[type="submit"]');
-                    button.innerHTML =
-                        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;"><circle cx="12" cy="12" r="10"></circle></svg> Enviando...';
-                    button.disabled = true;
+        function clearErrors(e) {
+          e.target.style.borderColor = "var(--color-secondary)";
+        }
 
-                    // Permitir que el formulario se envíe normalmente a Formspree
-                    return true;
-                });
+        // Envío del formulario
+        form.addEventListener("submit", function (e) {
+          // Solo validar campos, no prevenir el envío
+          const requiredFields = form.querySelectorAll("[required]");
+          let allValid = true;
 
-                // Hover effects para redes sociales
-                const socialLinks = document.querySelectorAll(
-                    '.contact-info a[href*="facebook"], .contact-info a[href*="twitter"], .contact-info a[href*="youtube"]'
-                );
-                socialLinks.forEach((link) => {
-                    link.addEventListener("mouseenter", () => {
-                        link.style.background = "var(--color-mid)";
-                        link.style.transform = "translateX(5px)";
-                    });
-                    link.addEventListener("mouseleave", () => {
-                        link.style.background = "transparent";
-                        link.style.transform = "translateX(0)";
-                    });
-                });
-            });
-        </script>
-    </body>
+          requiredFields.forEach((field) => {
+            if (!field.checkValidity()) {
+              allValid = false;
+              field.style.borderColor = "#ff6b6b";
+            }
+          });
+
+          // Solo prevenir envío si hay errores de validación
+          if (!allValid) {
+            e.preventDefault();
+            return false;
+          }
+
+          // Si todo está válido, mostrar indicador y permitir envío a Formspree
+          const button = form.querySelector('button[type="submit"]');
+          button.innerHTML =
+            '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;"><circle cx="12" cy="12" r="10"></circle></svg> Enviando...';
+          button.disabled = true;
+
+          // Permitir que el formulario se envíe normalmente a Formspree
+          return true;
+        });
+
+        // Hover effects para redes sociales
+        const socialLinks = document.querySelectorAll(
+          '.contact-info a[href*="facebook"], .contact-info a[href*="twitter"], .contact-info a[href*="youtube"]',
+        );
+        socialLinks.forEach((link) => {
+          link.addEventListener("mouseenter", () => {
+            link.style.background = "var(--color-mid)";
+            link.style.transform = "translateX(5px)";
+          });
+          link.addEventListener("mouseleave", () => {
+            link.style.background = "transparent";
+            link.style.transform = "translateX(0)";
+          });
+        });
+      });
+    </script>
+  </body>
 </html>
