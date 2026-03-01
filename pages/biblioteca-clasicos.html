@@ -1,380 +1,1145 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Biblioteca · En Mantenimiento</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --color-light: #ffffffd4;
-      --color-dark: #100f0f;
-      --color-mid: #c4bcb5;
-      --color-accent: #b06900;
-      --font-heading: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-      --font-body: "Lato", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-      --color-primary: #d6cdc3;
-      --color-secondary: #d07f2c;
-      --color-warm: #2b2d27;
-      --color-neutral: #646363;
-      --color-soft: #bd8956;
-      --color-muted: #bfb9b4;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biblioteca de Clásicos Universales | RESONANCIAS</title>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <!-- URL Canónica -->
+    <link
+      rel="canonical"
+      href="https://gf-amd.pages.dev/pages/biblioteca-clasicos.html"
+    />
+    <meta
+      name="description"
+      content="Colección curada de grandes clásicos de la literatura universal para lectura online gratuita."
+    />
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: var(--color-warm);
-      background-image:
-        radial-gradient(ellipse at 20% 80%, rgba(176, 105, 0, 0.12) 0%, transparent 70%),
-        radial-gradient(ellipse at 80% 20%, rgba(208, 127, 44, 0.1) 0%, transparent 70%),
-        radial-gradient(ellipse at 50% 50%, rgba(189, 137, 86, 0.06) 0%, transparent 70%);
-      font-family: var(--font-body);
-      color: var(--color-light);
-      overflow: hidden;
-      position: relative;
-    }
+    <!-- SEO y Accesibilidad -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Gabriel Ferré" />
+    <meta
+      name="keywords"
+      content="libros clásicos, literatura universal, biblioteca online, Gabriel Ferré, RESONANCIAS"
+    />
 
-    /* Floating particles */
-    .particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-    }
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Biblioteca de Clásicos Universales | RESONANCIAS"
+    />
+    <meta
+      property="og:description"
+      content="Colección curada de grandes clásicos de la literatura universal para lectura online gratuita."
+    />
+    <meta
+      property="og:image"
+      content="https://gf-amd.pages.dev/img/libros/biblioteca-clasicos.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://gf-amd.pages.dev/pages/biblioteca-clasicos.html"
+    />
+    <meta property="og:type" content="website" />
 
-    .particle {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0;
-      animation: floatUp linear infinite;
-    }
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Biblioteca de Clásicos Universales | RESONANCIAS"
+    />
+    <meta
+      name="twitter:description"
+      content="Colección curada de grandes clásicos de la literatura universal para lectura online gratuita."
+    />
+    <meta
+      name="twitter:image"
+      content="https://gf-amd.pages.dev/img/libros/biblioteca-clasicos.jpg"
+    />
 
-    @keyframes floatUp {
-      0% {
-        opacity: 0;
-        transform: translateY(100vh) scale(0);
+    <!-- Estilos del sitio -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/assets/css/estilos.css" />
+
+    <script src="/assets/js/main.js" defer></script>
+    <script src="/assets/js/back-to-top.js" defer></script>
+
+    <!-- Fuentes específicas para la biblioteca -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lora:wght@400;500;600&family=Cormorant+Garamond:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Estilos específicos de la Biblioteca Clásica */
+      :root {
+        --lib-bg: var(--color-primary);
+        --lib-surface: var(--color-light);
+        --lib-accent: var(--color-secondary);
+        --lib-text: var(--color-dark);
+        --lib-muted: var(--color-neutral);
       }
-      10% {
+
+      #main-content {
+        background-color: var(--lib-bg);
+        color: var(--lib-text);
+        min-height: 100vh;
+      }
+
+      /* Barra de filtros */
+      .filter-bar {
+        background: var(--lib-surface);
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        border-bottom: 1px solid var(--color-mid);
+        position: sticky;
+        top: 80px; /* Alineado con el header fijo del sitio */
+        z-index: 100;
+        backdrop-filter: blur(10px);
+      }
+
+      /* Hero Section */
+      .works-hero {
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("/img/libros/biblioteca-clasicos.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: var(--color-light);
+        padding: var(--spacing-3xl) 0;
+        text-align: center;
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+      }
+
+      .filter-bar input {
+        background: var(--color-mid);
+        border: 1px solid var(--color-soft);
+        color: var(--color-dark);
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-family: "Lora", serif;
+        font-size: 0.95rem;
+        width: 300px;
+        outline: none;
+        transition: border-color 0.3s;
+      }
+
+      .filter-bar input:focus {
+        border-color: #d4a234;
+      }
+
+      .filter-bar input::placeholder {
+        color: #72593e;
+      }
+
+      .filter-btn {
+        background: transparent;
+        border: 1px solid var(--color-soft);
+        color: var(--color-dark);
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-family: "Lora", serif;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        background: var(--color-secondary);
+        color: var(--color-light);
+        border-color: var(--color-secondary);
+      }
+
+      /* Bookshelf */
+      .library {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 40px 20px 60px;
+      }
+
+      .shelf-label {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        color: var(--color-secondary);
+        margin: 40px 0 5px;
+        padding-left: 10px;
+        border-left: 3px solid var(--color-accent);
+      }
+
+      .shelf-sublabel {
+        color: #7a6248;
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+        padding-left: 14px;
+        font-style: italic;
+      }
+
+      .bookshelf {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 35px 25px;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+      }
+
+      /* Book Card */
+      .book {
+        position: relative;
+        perspective: 1000px;
+        cursor: pointer;
+      }
+
+      .book a {
+        text-decoration: none;
+        display: block;
+      }
+
+      .book-cover {
+        width: 100%;
+        aspect-ratio: 2/3;
+        border-radius: 4px 12px 12px 4px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition:
+          transform 0.5s ease,
+          box-shadow 0.5s ease;
+        box-shadow:
+          5px 5px 15px rgba(0, 0, 0, 0.5),
+          inset -3px 0 8px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+      }
+
+      .book:hover .book-cover {
+        transform: rotateY(-15deg) translateX(-5px);
+        box-shadow: 15px 10px 30px rgba(0, 0, 0, 0.6);
+      }
+
+      .book-cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px 12px 12px 4px;
+      }
+
+      .book-spine {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 6px;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.4),
+          rgba(0, 0, 0, 0.1)
+        );
+        border-radius: 4px 0 0 4px;
+        z-index: 2;
+      }
+
+      /* Fallback cover design when image fails */
+      .book-cover-fallback {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 15px;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 4px 12px 12px 4px;
+        z-index: 1;
+      }
+
+      .book-cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px 12px 12px 4px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+      }
+
+      .book-cover-fallback .fb-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.3;
+        margin-bottom: 10px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      .book-cover-fallback .fb-author {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.8);
+        font-style: italic;
+      }
+
+      .book-cover-fallback .fb-ornament {
+        font-size: 1.5rem;
+        margin: 8px 0;
         opacity: 0.6;
       }
-      90% {
-        opacity: 0.3;
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(-10vh) scale(1);
-      }
-    }
 
-    .container {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 2rem;
-      max-width: 700px;
-      animation: fadeInUp 1s ease-out;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
+      .book-info {
+        margin-top: 12px;
+        text-align: center;
       }
-      to {
+
+      .book-title {
+        font-family: "Playfair Display", serif;
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--color-dark);
+        line-height: 1.3;
+        margin-bottom: 3px;
+      }
+
+      .book-author {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 0.85rem;
+        color: var(--color-soft);
+      }
+
+      .book-year {
+        font-size: 0.75rem;
+        color: #5a4a3a;
+        margin-top: 2px;
+      }
+
+      .book-source {
+        font-size: 0.7rem;
+        color: var(--color-secondary);
+        margin-top: 4px;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .book:hover .book-source {
         opacity: 1;
-        transform: translateY(0);
       }
-    }
 
-    /* Animated book icon */
-    .icon-wrapper {
-      margin-bottom: 2.5rem;
-      display: inline-block;
-      position: relative;
-    }
+      /* Shelf wood effect */
+      .shelf-wood {
+        height: 20px;
+        background: linear-gradient(
+          180deg,
+          var(--color-soft) 0%,
+          var(--color-accent) 40%,
+          #2c1e0e 100%
+        );
+        border-radius: 0 0 4px 4px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        margin-top: -5px;
+        margin-bottom: 15px;
+      }
 
-    .book-icon {
-      width: 100px;
-      height: 100px;
-      animation: pulse 3s ease-in-out infinite;
-    }
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 40px 20px;
+        border-top: 1px solid #3d2a1a;
+        color: #5a4a3a;
+        font-size: 0.85rem;
+      }
 
-    .book-icon svg {
-      filter: drop-shadow(0 4px 20px rgba(176, 105, 0, 0.3));
-    }
+      footer a {
+        color: #d4a234;
+        text-decoration: none;
+      }
 
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
+      footer a:hover {
+        text-decoration: underline;
+      }
 
-    .gear-badge {
-      position: absolute;
-      bottom: -4px;
-      right: -8px;
-      background: var(--color-secondary);
-      border-radius: 50%;
-      width: 38px;
-      height: 38px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 2px 12px rgba(208, 127, 44, 0.5);
-      animation: spinSlow 6s linear infinite;
-    }
+      /* Tooltip */
+      .tooltip {
+        display: none;
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #2c1810;
+        border: 1px solid #8b6914;
+        color: #e8d5b7;
+        padding: 10px 15px;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        width: 220px;
+        z-index: 50;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        pointer-events: none;
+      }
 
-    @keyframes spinSlow {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
+      .book:hover .tooltip {
+        display: block;
+      }
 
-    .gear-badge svg {
-      width: 22px;
-      height: 22px;
-      fill: var(--color-warm);
-    }
+      /* Scroll to top */
+      .scroll-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: #d4a234;
+        color: #1a0f0a;
+        border: none;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.3s;
+        z-index: 200;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+      }
 
-    /* Divider line */
-    .divider {
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--color-accent), var(--color-secondary), var(--color-accent), transparent);
-      margin: 0 auto 2rem;
-      border-radius: 2px;
-      animation: shimmer 2.5s ease-in-out infinite;
-    }
+      .scroll-top.visible {
+        opacity: 1;
+      }
 
-    @keyframes shimmer {
-      0%, 100% { width: 60px; opacity: 0.7; }
-      50% { width: 120px; opacity: 1; }
-    }
+      .scroll-top:hover {
+        background: #e8b84a;
+      }
 
-    h1 {
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-      color: var(--color-primary);
-      margin-bottom: 1.2rem;
-      line-height: 1.3;
-      letter-spacing: -0.02em;
-    }
+      .no-results {
+        text-align: center;
+        padding: 60px 20px;
+        color: #7a6248;
+        font-size: 1.2rem;
+        font-style: italic;
+        display: none;
+      }
 
-    h1 span {
-      color: var(--color-secondary);
-    }
+      /* Responsive */
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2.2rem;
+        }
+        .works-hero {
+          min-height: 250px;
+          padding: var(--spacing-xl) 0;
+        }
+        .works-hero h1 {
+          font-size: 2.5rem !important;
+        }
+        .filter-bar {
+          padding: 12px;
+          gap: 8px;
+        }
+        .filter-btn {
+          padding: 8px 15px;
+          font-size: 0.8rem;
+        }
+        .bookshelf {
+          grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+          gap: 25px 15px;
+        }
+        .filter-bar input {
+          width: 100%;
+          padding: 8px 15px;
+          margin-bottom: 5px;
+        }
+      }
 
-    .message {
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      color: var(--color-muted);
-      line-height: 1.8;
-      margin-bottom: 0.6rem;
-      font-weight: 300;
-    }
+      @media (max-width: 480px) {
+        header h1 {
+          font-size: 1.7rem;
+        }
+        .works-hero {
+          min-height: 200px;
+          padding: var(--spacing-lg) 0;
+        }
+        .works-hero h1 {
+          font-size: 2rem !important;
+        }
+        .works-hero p {
+          font-size: 1rem !important;
+        }
+        .filter-bar {
+          padding: 10px 5px;
+          gap: 6px;
+        }
+        .filter-btn {
+          padding: 6px 12px;
+          font-size: 0.75rem;
+        }
+        .bookshelf {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px 12px;
+        }
+        .filter-bar input {
+          padding: 6px 12px;
+        }
+      }
 
-    .message strong {
-      color: var(--color-soft);
-      font-weight: 700;
-    }
+      /* Loading animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-    .comeback {
-      font-family: var(--font-heading);
-      font-size: clamp(1.3rem, 3vw, 1.7rem);
-      font-weight: 600;
-      color: var(--color-secondary);
-      margin-top: 2rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      animation: fadeInUp 1s ease-out 0.4s both;
-    }
+      .book {
+        animation: fadeIn 0.5s ease forwards;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div id="side-menu"></div>
+    <script src="/assets/js/includes.js"></script>
 
-    .comeback .arrow {
-      display: inline-block;
-      animation: bounceRight 1.5s ease-in-out infinite;
-      font-size: 1.4em;
-    }
-
-    @keyframes bounceRight {
-      0%, 100% { transform: translateX(0); }
-      50% { transform: translateX(6px); }
-    }
-
-    /* Progress bar */
-    .progress-wrapper {
-      margin-top: 2.5rem;
-      animation: fadeInUp 1s ease-out 0.6s both;
-    }
-
-    .progress-label {
-      font-size: 0.8rem;
-      color: var(--color-neutral);
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      margin-bottom: 0.6rem;
-      font-family: var(--font-heading);
-    }
-
-    .progress-bar {
-      width: 280px;
-      height: 4px;
-      background: rgba(196, 188, 181, 0.15);
-      border-radius: 4px;
-      margin: 0 auto;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      width: 30%;
-      background: linear-gradient(90deg, var(--color-accent), var(--color-secondary), var(--color-soft));
-      border-radius: 4px;
-      animation: loading 2.5s ease-in-out infinite;
-    }
-
-    @keyframes loading {
-      0% { width: 10%; transform: translateX(0); }
-      50% { width: 60%; }
-      100% { width: 10%; transform: translateX(900%); }
-    }
-
-    /* Footer */
-    .footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 1.2rem;
-      text-align: center;
-      font-size: 0.75rem;
-      color: var(--color-neutral);
-      font-family: var(--font-body);
-      letter-spacing: 0.05em;
-      z-index: 1;
-    }
-
-    .footer .dot {
-      display: inline-block;
-      width: 5px;
-      height: 5px;
-      background: var(--color-accent);
-      border-radius: 50%;
-      margin: 0 0.4rem;
-      vertical-align: middle;
-    }
-
-    /* Card glass effect */
-    .card {
-      background: rgba(43, 45, 39, 0.55);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(196, 188, 181, 0.08);
-      border-radius: 24px;
-      padding: 3.5rem 3rem;
-      box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.04);
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Floating Particles -->
-  <div class="particles" id="particles"></div>
-
-  <div class="container">
-    <div class="card">
-
-      <!-- Book Icon with Gear Badge -->
-      <div class="icon-wrapper">
-        <div class="book-icon">
-          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 15C20 12 22 10 25 10H45C47 10 50 11 50 14V82C50 82 47 78 43 78H25C22 78 20 80 20 82V15Z" fill="#b06900" opacity="0.85"/>
-            <path d="M80 15C80 12 78 10 75 10H55C53 10 50 11 50 14V82C50 82 53 78 57 78H75C78 78 80 80 80 82V15Z" fill="#d07f2c" opacity="0.85"/>
-            <path d="M50 14V82" stroke="#d6cdc3" stroke-width="1" opacity="0.4"/>
-            <rect x="26" y="22" width="16" height="2" rx="1" fill="#d6cdc3" opacity="0.5"/>
-            <rect x="26" y="28" width="12" height="2" rx="1" fill="#d6cdc3" opacity="0.35"/>
-            <rect x="26" y="34" width="14" height="2" rx="1" fill="#d6cdc3" opacity="0.3"/>
-            <rect x="58" y="22" width="16" height="2" rx="1" fill="#2b2d27" opacity="0.4"/>
-            <rect x="58" y="28" width="12" height="2" rx="1" fill="#2b2d27" opacity="0.3"/>
-            <rect x="58" y="34" width="14" height="2" rx="1" fill="#2b2d27" opacity="0.25"/>
-          </svg>
+    <main id="main-content" role="main">
+      <section class="works-hero">
+        <div class="container">
+          <h1
+            style="
+              font-size: var(--font-size-4xl);
+              margin-bottom: var(--spacing-lg);
+              text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            "
+          >
+            Biblioteca Clásica
+          </h1>
+          <p
+            style="
+              font-size: var(--font-size-xl);
+              max-width: 600px;
+              margin: 0 auto;
+              line-height: 1.6;
+              text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            "
+          >
+            Los grandes libros de la literatura universal — lectura online
+            gratuita
+          </p>
         </div>
-        <div class="gear-badge">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7zm7.43-2.53l1.76-.68a.5.5 0 0 0 .29-.61l-1-2.6a.5.5 0 0 0-.57-.3l-1.86.4a7.04 7.04 0 0 0-1.08-.62l-.4-1.88a.5.5 0 0 0-.49-.4h-2.16a.5.5 0 0 0-.49.4l-.4 1.88c-.39.17-.74.38-1.08.62l-1.86-.4a.5.5 0 0 0-.57.3l-1 2.6a.5.5 0 0 0 .29.61l1.76.68c-.02.35-.02.71 0 1.06l-1.76.68a.5.5 0 0 0-.29.61l1 2.6a.5.5 0 0 0 .57.3l1.86-.4c.34.24.69.45 1.08.62l.4 1.88a.5.5 0 0 0 .49.4h2.16a.5.5 0 0 0 .49-.4l.4-1.88c.39-.17.74-.38 1.08-.62l1.86.4a.5.5 0 0 0 .57-.3l1-2.6a.5.5 0 0 0-.29-.61l-1.76-.68c.02-.35.02-.71 0-1.06z"/>
-          </svg>
-        </div>
+      </section>
+
+      <div class="filter-bar">
+        <input
+          type="text"
+          id="libSearchInput"
+          placeholder="🔍 Buscar por título o autor..."
+        />
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="novela">Novela</button>
+        <button class="filter-btn" data-filter="filosofia">Filosofía</button>
+        <button class="filter-btn" data-filter="teatro">Teatro</button>
+        <button class="filter-btn" data-filter="poesia">Poesía</button>
+        <button class="filter-btn" data-filter="aventura">Aventura</button>
+        <button class="filter-btn" data-filter="ciencia-ficcion">
+          Ciencia Ficción
+        </button>
+        <button class="filter-btn" data-filter="cuento">Cuento</button>
       </div>
 
-      <div class="divider"></div>
+      <section class="library" id="library"></section>
 
-      <h1>Esta sección de <span>Biblioteca</span> se está mejorando para un mejor uso</h1>
-
-      <p class="message">
-        Estamos trabajando para ofrecerte una <strong>experiencia mejorada</strong>. Agradecemos tu paciencia mientras realizamos estas actualizaciones.
-      </p>
-
-      <div class="comeback">
-        ¡Regresa pronto! <span class="arrow">→</span>
+      <div class="no-results" id="noResults">
+        <p>📖 No se encontraron libros con ese criterio.</p>
       </div>
+    </main>
 
-      <!-- Progress Indicator -->
-      <div class="progress-wrapper">
-        <div class="progress-label">Mejoras en progreso</div>
-        <div class="progress-bar">
-          <div class="progress-fill"></div>
+    <footer class="footer" role="contentinfo">
+      <div class="footer-content">
+        <div style="text-align: center; margin-bottom: 2rem">
+          <p style="color: var(--color-dark); margin-bottom: 1rem">
+            Todos los enlaces dirigen a ediciones de dominio público disponibles
+            en
+          </p>
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              gap: 1rem;
+              font-size: 0.9rem;
+            "
+          >
+            <a
+              href="https://www.gutenberg.org"
+              target="_blank"
+              style="color: var(--color-secondary)"
+              >Project Gutenberg</a
+            >
+            <a
+              href="https://archive.org"
+              target="_blank"
+              style="color: var(--color-secondary)"
+              >Internet Archive</a
+            >
+            <a
+              href="https://es.wikisource.org"
+              target="_blank"
+              style="color: var(--color-secondary)"
+              >Wikisource</a
+            >
+            <a
+              href="https://www.cervantesvirtual.com"
+              target="_blank"
+              style="color: var(--color-secondary)"
+              >Biblioteca Cervantes Virtual</a
+            >
+            <a
+              href="https://standardebooks.org"
+              target="_blank"
+              style="color: var(--color-secondary)"
+              >Standard Ebooks</a
+            >
+          </div>
         </div>
+
+        <nav class="share-footer" aria-label="Compartir página">
+          <span class="share-title">Compartir</span>
+          <a
+            href="https://www.facebook.com/sharer/sharer.php?u=https://gf-amd.pages.dev/pages/biblioteca-clasicos.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="share-btn facebook"
+            title="Compartir en Facebook"
+            aria-label="Compartir en Facebook"
+          >
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a
+            href="https://twitter.com/intent/tweet?url=https://gf-amd.pages.dev/pages/biblioteca-clasicos.html&text=Biblioteca%20de%20Cl%C3%A1sicos%20Universales%20-%20RESONANCIAS"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="share-btn twitter"
+            title="Compartir en X"
+            aria-label="Compartir en X"
+          >
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a
+            href="https://api.whatsapp.com/send?text=Biblioteca%20de%20Cl%C3%A1sicos%20Universales%20-%20RESONANCIAS%20https://gf-amd.pages.dev/pages/biblioteca-clasicos.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="share-btn whatsapp"
+            title="Compartir en WhatsApp"
+            aria-label="Compartir en WhatsApp"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a
+            href="https://bsky.app/intent/compose?text=Biblioteca%20de%20Cl%C3%A1sicos%20Universales%20-%20RESONANCIAS%20https://gf-amd.pages.dev/pages/biblioteca-clasicos.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="share-btn bluesky"
+            title="Compartir en Bluesky"
+            aria-label="Compartir en Bluesky"
+          >
+            <i class="fa-brands fa-bluesky"></i>
+          </a>
+        </nav>
+        <p>© 2025 RESONANCIAS · Todos los derechos reservados</p>
       </div>
+    </footer>
 
-    </div>
-  </div>
+    <a href="#main-content" class="back-to-top" aria-label="Volver arriba">
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </a>
 
-  <!-- Footer -->
-  <div class="footer">
-    Biblioteca <span class="dot"></span> Mantenimiento Programado
-  </div>
+    <script>
+      const books = [
+        {
+          title: "20 Tesis de Política",
+          author: "Enrique Dussel",
+          year: 2006,
+          genre: "filosofia",
+          color: "#2E4057",
+          url: "https://drive.google.com/file/d/1KHqUHzKsS1wb9p_z3I6s804OrTdkf9Q5/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "Una síntesis del pensamiento decolonial del autor que propone una nueva forma de entender el poder político desde la ética y el servicio a la comunidad.",
+        },
+        {
+          title: "Crítica de la razón práctica",
+          author: "Immanuel Kant",
+          year: 1788,
+          genre: "filosofia",
+          color: "#2D2D2D",
+          url: "https://drive.google.com/file/d/1vQSap9oG0UIy-szHts5AT3OXIwh_Hl6j/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            'Obra fundamental de la ética moderna que explora la ley moral y el "imperativo categórico" como base del comportamiento humano racional.',
+        },
+        {
+          title: "La rebelión de las masas",
+          author: "José Ortega y Gasset",
+          year: 1929,
+          genre: "filosofia",
+          color: "#5A4E3C",
+          url: "https://drive.google.com/file/d/1aTuYXJXnuvdVRzhj0ANn1uTAoccAiOJo/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            'Analiza el surgimiento del "hombre-masa" y su impacto en la dirección de la historia y la cultura europea del siglo XX.',
+        },
+        {
+          title: "Más allá del bien y del mal",
+          author: "Friedrich Nietzsche",
+          year: 1886,
+          genre: "filosofia",
+          color: "#4A3728",
+          url: "https://drive.google.com/file/d/1TPCAFhI5z7eyttwIOeHYKTQVAHDnJ4Aa/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "Una crítica feroz a la moral tradicional y la metafísica, donde el autor propone la superación de los valores heredados a través de la voluntad de poder.",
+        },
+        {
+          title: "La Raza Cósmica",
+          author: "José Vasconcelos",
+          year: 1925,
+          genre: "filosofia",
+          color: "#8B6914",
+          url: "https://drive.google.com/file/d/1PKnIOu5pfkYt355NOhhhG3TuCOeY-DY-/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "Ensayo mexicano que propone el surgimiento de una quinta raza en Iberoamérica, fruto del mestizaje universal, para guiar una nueva era espiritual.",
+        },
+        {
+          title: "El laberinto de la soledad",
+          author: "Octavio Paz",
+          year: 1950,
+          genre: "filosofia",
+          color: "#7e5a3e",
+          url: "https://drive.google.com/file/d/1CW30T5_uril9iG_1kRJOqQdVqeX1Q5w_/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "Reflexión profunda sobre la identidad, la historia y la psicología del pueblo mexicano, explorando los mitos y máscaras que definen su cultura.",
+        },
+        {
+          title: "Las venas abiertas de América Latina",
+          author: "Eduardo Galeano",
+          year: 1971,
+          genre: "filosofia",
+          color: "#8B0000",
+          url: "https://drive.google.com/file/d/1U5hHJBDmMFpIjtNd3gKKWZxgCliLEHOG/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "Crónica detallada del saqueo de recursos naturales en la región desde la conquista hasta la era moderna bajo un prisma de resistencia social.",
+        },
+        {
+          title: "Antología del cuento extraño",
+          author: "AA. VV.",
+          year: 1976,
+          genre: "cuento",
+          color: "#4A3B6B",
+          url: "https://drive.google.com/file/d/1ZoBZmw-Bf79MJVW7Bcdyrh8RnxF2rk-x/view?usp=sharing",
+          source: "Biblioteca Personal",
+        },
+        {
+          title: "Antología universal del relato fantástico",
+          author: "AA. VV.",
+          year: 1980,
+          genre: "cuento",
+          color: "#2C1E3E",
+          url: "https://drive.google.com/file/d/1RK2422wzr1Glz62IYhT9lEgWrJBUkLqn/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "Compilación de piezas maestras donde lo irracional irrumpe en la realidad, desafiando las leyes de la lógica y la percepción.",
+        },
+        {
+          title: "Cuentos Completos",
+          author: "Antón Chéjov",
+          year: 1890,
+          genre: "cuento",
+          color: "#2E4057",
+          url: "https://drive.google.com/file/d/1sChewUpZzy0oQZMHh45q7Y6MlNeQyVVk/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "Relatos que capturan la cotidianidad y la melancolía de la condición humana con una sutileza psicológica que revolucionó el género.",
+        },
+        {
+          title: "Cuentos Clásicos",
+          author: "Edgar Allan Poe",
+          year: 1845,
+          genre: "cuento",
+          color: "#1a1a1a",
+          url: "https://drive.google.com/file/d/1_RMIcb1z3IWazwEk0hZ0YuvQPudaCwGA/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "Historias magistrales de suspenso, horror y lógica que sentaron las bases del relato corto moderno y la literatura de detectives.",
+        },
+        {
+          title: "Cuentos de amor, de locura y de muerte",
+          author: "Horacio Quiroga",
+          year: 1917,
+          genre: "cuento",
+          color: "#1b3022",
+          url: "https://drive.google.com/file/d/16B9iwwJDN4MTrApMg0DzM5qC2vpiu2Ir/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "Relatos intensos ambientados en la selva misionera que exploran la lucha desesperada del hombre contra una naturaleza implacable y su propia psique.",
+        },
+        {
+          title: "Ficciones",
+          author: "Jorge Luis Borges",
+          year: 1944,
+          genre: "cuento",
+          color: "#2C1E0E",
+          url: "https://drive.google.com/file/d/1IDOQack8tARL0hbOCnZxpvvzzRIw0leP/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "Obra cumbre de la literatura hispana que explora laberintos, espejos y paradojas metafísicas a través de cuentos de una precisión intelectual asombrosa.",
+        },
+        {
+          title: "En las montañas de la locura",
+          author: "H.P. Lovecraft",
+          year: 1936,
+          genre: "cuento",
+          color: "#0a1a0a",
+          url: "https://drive.google.com/file/d/1suG_FEY71vFgZ0G0HlJzMsXLppJNDKEk/view?usp=sharing",
+          source: "Biblioteca Personal",
+        },
+        {
+          title: "Cien Años de Soledad",
+          author: "Gabriel García Márquez",
+          year: 1967,
+          genre: "novela",
+          color: "#d4a234",
+          url: "https://drive.google.com/file/d/1rrB_JQpwwY-Meh2cIwB6rBKAvdn_1m2Q/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "La epopeya de la familia Buendía en el mítico pueblo de Macondo, donde lo fantástico y lo histórico se entrelazan de forma inseparable.",
+        },
+        {
+          title: "Crimen y castigo",
+          author: "Fiódor Dostoievski",
+          year: 1866,
+          genre: "novela",
+          color: "#3D0C0C",
+          url: "https://drive.google.com/file/d/1R7KvHbhd7k2mh8iXFNRED6mjK6ll3Tx0/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "La atormentada historia de Raskólnikov, un joven que comete un asesinato para probar una teoría y debe enfrentar la culpa y la redención.",
+        },
+        {
+          title: "Guerra y paz",
+          author: "León Tolstói",
+          year: 1869,
+          genre: "novela",
+          color: "#556B2F",
+          url: "https://drive.google.com/file/d/1MFGinkCyxLWcuwiFK_5gSO5vDzcCHK__/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "Un vasto fresco de la sociedad rusa durante las guerras napoleónicas, entrelazando las vidas de familias aristocráticas con eventos bélicos masivos.",
+        },
+        {
+          title: "Doña Bárbara",
+          author: "Rómulo Gallegos",
+          year: 1929,
+          genre: "novela",
+          color: "#4e5d32",
+          url: "https://drive.google.com/file/d/1LsgFQdJXlZTVoLyRiy9p8jEy_7hOodpU/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "Enfrentamiento simbólico entre la civilización y la barbarie en los llanos venezolanos, personificado en la lucha por el control de las tierras.",
+        },
+        {
+          title: "El Conde de Montecristo",
+          author: "Alexandre Dumas",
+          year: 1844,
+          genre: "novela",
+          color: "#2F4F4F",
+          url: "https://drive.google.com/file/d/1DLNuPTe_6ZosDk2LrPnMywEFaG0rKk5F/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "Clásico relato de injusticia y venganza donde Edmundo Dantés escapa de prisión para transformarse en un poderoso noble y castigar a sus enemigos.",
+        },
+        {
+          title: "El Túnel",
+          author: "Ernesto Sábato",
+          year: 1948,
+          genre: "novela",
+          color: "#1a1a1a",
+          url: "https://drive.google.com/file/d/1zEldcjrXWrUpNtePN_czSs62hD8u4lnp/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "Una confesión sombría de Juan Pablo Castel, un pintor que asesina a la única mujer que parece haberlo comprendido realmente.",
+        },
+        {
+          title: "La Isla del Tesoro",
+          author: "Robert Louis Stevenson",
+          year: 1883,
+          genre: "aventura",
+          color: "#2E4057",
+          url: "https://drive.google.com/file/d/1XWV616Tm5zFLlBN1dMKgeBZ6oKULMOTt/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "La historia definitiva de piratas, mapas del tesoro y motines en alta mar vista a través de los ojos del joven Jim Hawkins.",
+        },
+        {
+          title: "Martín Fierro",
+          author: "José Hernández",
+          year: 1872,
+          genre: "poesia",
+          color: "#5A4E3C",
+          url: "https://drive.google.com/file/d/1XOKCkNCV5_9593KPKZJsHRXlZAMoHuG4/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "Poema épico argentino que narra la vida, las penurias y la rebeldía del gaucho ante un sistema social que intenta marginarlo.",
+        },
+        {
+          title: "Democracia electrónica",
+          author: "Isaac Asimov",
+          year: 1977,
+          genre: "ciencia-ficcion",
+          color: "#2D2D2D",
+          url: "https://drive.google.com/file/d/19mcxtSjJuJ5P-MqyEkkPeCLFQcm7sWm4/view?usp=sharing",
+          source: "Biblioteca Personal",
+        },
+        {
+          title: "Trilogía de la fundación",
+          author: "Isaac Asimov",
+          year: 1951,
+          genre: "ciencia-ficcion",
+          color: "#0a1a0a",
+          url: "https://drive.google.com/file/d/1m4GIDc7dlMPFDV820_BCqkeXmsQXGOb_/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "Crónica del colapso de un imperio galáctico y los esfuerzos de un científico por preservar el conocimiento humano mediante la psicohistoria.",
+        },
+        {
+          title: "Viaje al centro de la Tierra",
+          author: "Julio Verne",
+          year: 1864,
+          genre: "aventura",
+          color: "#1b3022",
+          url: "https://drive.google.com/file/d/1A5SFjIhupGhHibwjDXFJzBHCSr97OfQ4/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "Un profesor y su sobrino emprenden una expedición sin precedentes a través de un cráter volcánico, descubriendo mundos subterráneos prehistóricos.",
+        },
+        {
+          title: "Desolación, Ternura, Tala y Lagar",
+          author: "Gabriela Mistral",
+          year: 1922,
+          genre: "poesia",
+          color: "#4A3B6B",
+          url: "https://drive.google.com/file/d/1X8Nksj41wgvs25vWEziQGXiQdbPypesV/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "Compendio de las obras principales de la Premio Nobel chilena, que transitan entre el dolor desgarrador, el amor maternal y la conexión mística con la tierra.",
+        },
+        {
+          title: "Poemas Humanos",
+          author: "César Vallejo",
+          year: 1939,
+          genre: "poesia",
+          color: "#2C1E3E",
+          url: "https://drive.google.com/file/d/1CGnLnK6oI-N5ro_xBJ70yiBv1Mfuyo6N/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "Obra póstuma que refleja la solidaridad del autor ante el sufrimiento universal y la fragilidad del cuerpo humano con un lenguaje innovador.",
+        },
+        {
+          title: "Pedro Páramo",
+          author: "Juan Rulfo",
+          year: 1955,
+          genre: "novela",
+          color: "#3D0C0C",
+          url: "https://drive.google.com/file/d/1822FoBlGAWW4G76ZTLykFaSHmVfjAXny/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "Juan Preciado viaja a Comala para encontrar a su padre, solo para descubrir un pueblo fantasmagórico lleno de voces y murmullos del pasado.",
+        },
+        {
+          title: "Los Miserables",
+          author: "Victor Hugo",
+          year: 1862,
+          genre: "novela",
+          color: "#2C1E0E",
+          url: "https://drive.google.com/file/d/1hsFQS38N0S-Fpdu5bm7fBXydMf3p99Hb/view?usp=sharing",
+          source: "Biblioteca Personal",
+          summary:
+            "Una poderosa historia de redención, injusticia y sacrificio ambientada en la convulsa Francia del siglo XIX siguiendo el rastro de Jean Valjean.",
+        },
+      ];
 
-  <script>
-    // Generate floating particles
-    const particlesContainer = document.getElementById('particles');
-    const colors = ['#b06900', '#d07f2c', '#bd8956', '#c4bcb5', '#d6cdc3'];
+      const genreLabels = {
+        novela: {
+          label: "Novelas",
+          sub: "Grandes narrativas de largo aliento",
+        },
+        aventura: {
+          label: "Aventuras",
+          sub: "Epopeyas y viajes extraordinarios",
+        },
+        "ciencia-ficcion": {
+          label: "Ciencia Ficción",
+          sub: "Visiones del futuro y la tecnología",
+        },
+        filosofia: {
+          label: "Pensamiento",
+          sub: "Ensayos, filosofía y crítica social",
+        },
+        teatro: {
+          label: "Dramaturgia",
+          sub: "Obras para el escenario y la vida",
+        },
+        poesia: {
+          label: "Poesía",
+          sub: "El ritmo de la palabra y el alma",
+        },
+        cuento: {
+          label: "Cuentos",
+          sub: "Relatos breves de mundos infinitos",
+        },
+      };
 
-    function createParticle() {
-      const particle = document.createElement('div');
-      particle.classList.add('particle');
+      const genreOrder = [
+        "novela",
+        "aventura",
+        "ciencia-ficcion",
+        "filosofia",
+        "teatro",
+        "poesia",
+        "cuento",
+      ];
 
-      const size = Math.random() * 4 + 2;
-      const color = colors[Math.floor(Math.random() * colors.length)];
-      const left = Math.random() * 100;
-      const duration = Math.random() * 12 + 10;
-      const delay = Math.random() * 8;
+      let currentFilter = "all";
+      let searchTerm = "";
 
-      particle.style.width = size + 'px';
-      particle.style.height = size + 'px';
-      particle.style.background = color;
-      particle.style.left = left + '%';
-      particle.style.animationDuration = duration + 's';
-      particle.style.animationDelay = delay + 's';
+      function createBookCard(book, index) {
+        const yearDisplay =
+          book.year < 0 ? `${Math.abs(book.year)} a.C.` : book.year;
 
-      particlesContainer.appendChild(particle);
-    }
+        // Extraer thumbnail para archivos de Google Drive
+        let previewImg = "";
+        if (book.url.includes("drive.google.com")) {
+          const match = book.url.match(/\/d\/([^\/]+)/);
+          if (match && match[1]) {
+            const fileId = match[1];
+            previewImg = `<img src="https://lh3.googleusercontent.com/u/0/d/${fileId}=w400-h600-iv1" 
+                               alt="${book.title}" 
+                               onerror="this.style.display='none';" 
+                               loading="lazy">`;
+          }
+        }
 
-    for (let i = 0; i < 30; i++) {
-      createParticle();
-    }
-  </script>
+        return `
+                <div class="book" data-genre="${book.genre}" style="animation-delay: ${index * 0.05}s">
+                    <a href="${book.url}" target="_blank" rel="nofollow noopener noreferrer" title="Leer ${book.title} en ${book.source}">
+                        <div class="book-cover" style="background-color: ${book.color};">
+                            <div class="book-spine"></div>
+                            ${previewImg}
+                            <div class="book-cover-fallback" style="background-color: ${book.color};">
+                                <div class="fb-ornament">❦</div>
+                                <div class="fb-title">${book.title}</div>
+                                <div class="fb-author">${book.author}</div>
+                                <div class="fb-ornament">✦</div>
+                            </div>
+                        </div>
+                        <div class="book-info">
+                            <div class="book-title">${book.title}</div>
+                            <div class="book-author">${book.author}</div>
+                            <div class="book-year">${yearDisplay}</div>
+                            <div class="book-summary" style="font-size: 0.75rem; color: #72593e; margin-top: 8px; line-height: 1.4; font-style: italic;">${book.summary || ""}</div>
+                            <div class="book-source">📖 Leer en ${book.source}</div>
+                        </div>
+                    </a>
+                </div>
+            `;
+      }
 
-</body>
+      function renderLibrary() {
+        const library = document.getElementById("library");
+        const noResults = document.getElementById("noResults");
+        library.innerHTML = "";
+
+        const filteredBooks = books.filter((book) => {
+          const matchesGenre =
+            currentFilter === "all" || book.genre === currentFilter;
+          const matchesSearch =
+            searchTerm === "" ||
+            book.title.toLowerCase().includes(searchTerm) ||
+            book.author.toLowerCase().includes(searchTerm);
+          return matchesGenre && matchesSearch;
+        });
+
+        if (filteredBooks.length === 0) {
+          noResults.style.display = "block";
+          return;
+        }
+        noResults.style.display = "none";
+
+        const genresToShow =
+          currentFilter === "all" ? genreOrder : [currentFilter];
+        let globalIndex = 0;
+
+        genresToShow.forEach((genre) => {
+          const genreBooks = filteredBooks.filter((b) => b.genre === genre);
+          if (genreBooks.length === 0) return;
+
+          const info = genreLabels[genre];
+          const section = document.createElement("div");
+          section.innerHTML = `
+                    <div class="shelf-label">${info.label}</div>
+                    <div class="shelf-sublabel">${info.sub}</div>
+                    <div class="bookshelf">
+                        ${genreBooks.map((book) => createBookCard(book, globalIndex++)).join("")}
+                    </div>
+                    <div class="shelf-wood"></div>
+                `;
+          library.appendChild(section);
+        });
+      }
+
+      // Filter buttons
+      document.querySelectorAll(".filter-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document
+            .querySelectorAll(".filter-btn")
+            .forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          currentFilter = btn.dataset.filter;
+          renderLibrary();
+        });
+      });
+
+      // Search
+      const searchInput = document.getElementById("libSearchInput");
+      let searchTimeout;
+      searchInput.addEventListener("input", () => {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+          searchTerm = searchInput.value.toLowerCase().trim();
+          renderLibrary();
+        }, 250);
+      });
+
+      // Initial render
+      renderLibrary();
+    </script>
+  </body>
 </html>
