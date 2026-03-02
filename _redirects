@@ -1,4 +1,1 @@
-https://www.gf-amd.pages.dev/* https://gf-amd.pages.dev/:splat 301
-http://www.gf-amd.pages.dev/* https://gf-amd.pages.dev/:splat 301
-http://gf-amd.pages.dev/* https://gf-amd.pages.dev/:splat 301
-/:splat.html /:splat 301
+/* https://resonancias.pages.dev/:splat 301
