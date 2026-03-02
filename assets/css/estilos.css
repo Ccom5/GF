@@ -1941,10 +1941,10 @@ body {
   background: linear-gradient(135deg, #0d47a1, #1976d2);
 }
 .tag-etica {
-  background: linear-gradient(135deg, #006064, #0097a7);
+  background: linear-gradient(135deg, #263238, #455a64);
 }
 .tag-tecnica {
-  background: linear-gradient(135deg, #263238, #455a64);
+  background: linear-gradient(135deg, #006064, #0097a7);
 }
 .tag-default {
   background: var(--color-accent);
