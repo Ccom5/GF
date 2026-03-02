@@ -565,7 +565,7 @@ class ResonanciasApp {
      */
     setupShareButtons() {
         const shareButtons = document.querySelectorAll('.share-btn');
-        const productionDomain = 'https://gf-amd.pages.dev';
+        const productionDomain = 'https://resonancias.pages.dev';
 
         // Determinar la URL base a compartir (siempre producción)
         let shareUrl = window.location.href;
