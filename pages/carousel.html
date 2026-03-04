@@ -1,514 +1,554 @@
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>El Regalo Escondido - Libro Gratis | RESONANCIAS</title>
+    <title>El Regalo Escondido - Libro Gratis | RESONANCIAS</title>
 
-        <!-- URL Canónica -->
-        <link rel="canonical" href="https://resonancias.pages.dev/pages/carousel.html" />
+    <!-- URL Canónica -->
+    <link
+      rel="canonical"
+      href="https://resonancias.pages.dev/pages/carousel.html"
+    />
 
-        <meta
-            name="description"
-            content="Lee gratis 'El Regalo Escondido' de Gabriel Ferré. Un manuscrito sobre encontrar lo extraordinario en lo cotidiano." />
+    <meta
+      name="description"
+      content="Lee gratis 'El Regalo Escondido' de Gabriel Ferré. Un manuscrito sobre encontrar lo extraordinario en lo cotidiano."
+    />
 
-        <!-- Open Graph -->
-        <meta property="og:title" content="El Regalo Escondido - Libro Gratis | RESONANCIAS" />
-        <meta
-            property="og:description"
-            content="Lee gratis 'El Regalo Escondido' de Gabriel Ferré. Un manuscrito sobre encontrar lo extraordinario en lo cotidiano." />
-        <meta property="og:image" content="https://resonancias.pages.dev/img/libros/car/1.jpg" />
-        <meta property="og:url" content="https://resonancias.pages.dev/pages/carousel.html" />
-        <meta property="og:type" content="website" />
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="El Regalo Escondido - Libro Gratis | RESONANCIAS"
+    />
+    <meta
+      property="og:description"
+      content="Lee gratis 'El Regalo Escondido' de Gabriel Ferré. Un manuscrito sobre encontrar lo extraordinario en lo cotidiano."
+    />
+    <meta
+      property="og:image"
+      content="https://resonancias.pages.dev/img/libros/car/1.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://resonancias.pages.dev/pages/carousel.html"
+    />
+    <meta property="og:site_name" content="RESONANCIAS" />
+    <meta property="og:type" content="website" />
 
-        <!-- Twitter Card -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="El Regalo Escondido - Libro Gratis | RESONANCIAS" />
-        <meta
-            name="twitter:description"
-            content="Lee gratis 'El Regalo Escondido' de Gabriel Ferré. Un manuscrito sobre encontrar lo extraordinario en lo cotidiano." />
-        <meta name="twitter:image" content="https://resonancias.pages.dev/img/libros/car/1.jpg" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="El Regalo Escondido - Libro Gratis | RESONANCIAS"
+    />
+    <meta
+      name="twitter:description"
+      content="Lee gratis 'El Regalo Escondido' de Gabriel Ferré. Un manuscrito sobre encontrar lo extraordinario en lo cotidiano."
+    />
+    <meta
+      name="twitter:image"
+      content="https://resonancias.pages.dev/img/libros/car/1.jpg"
+    />
 
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-            body {
-                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-                background: linear-gradient(135deg, rgba(211, 186, 145, 0.34) 0%, rgba(157, 128, 80, 0.25) 100%);
-                display: flex;
-                flex-direction: column;
-                min-height: 100vh;
-                margin: 0;
-            }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgba(211, 186, 145, 0.34) 0%,
+          rgba(157, 128, 80, 0.25) 100%
+        );
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+      }
 
-            main {
-                flex: 1;
-            }
+      main {
+        flex: 1;
+      }
 
-            .page-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 30px;
-                width: 100%;
-                max-width: 70%;
-                padding: 10px 30px; /* Padding vertical y un mínimo horizontal */
-                margin: 0 auto; /* centra en horizontal */
-            }
+      .page-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        width: 100%;
+        max-width: 70%;
+        padding: 10px 30px; /* Padding vertical y un mínimo horizontal */
+        margin: 0 auto; /* centra en horizontal */
+      }
 
-            .carousel-title {
-                color: #100f0f;
-                font-size: 2.5rem;
-                font-weight: 400;
-                text-align: center;
-                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.59);
-                margin: 0;
-                letter-spacing: 1px;
-            }
+      .carousel-title {
+        color: #100f0f;
+        font-size: 2.5rem;
+        font-weight: 400;
+        text-align: center;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.59);
+        margin: 0;
+        letter-spacing: 1px;
+      }
 
-            .carousel-container {
-                width: 85%;
-                position: relative;
-                background: var(--color-muted);
-                border-radius: 10px;
-                box-shadow: 0 10px 40px rgba(28, 26, 26, 0.53);
-                overflow: hidden;
-            }
+      .carousel-container {
+        width: 85%;
+        position: relative;
+        background: var(--color-muted);
+        border-radius: 10px;
+        box-shadow: 0 10px 40px rgba(28, 26, 26, 0.53);
+        overflow: hidden;
+      }
 
-            .carousel {
-                position: relative;
-                width: 100%;
-                overflow: hidden;
-            }
+      .carousel {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+      }
 
-            .carousel-track {
-                display: flex;
-                transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            }
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
 
-            .carousel-slide {
-                min-width: 100%;
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
+      .carousel-slide {
+        min-width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-            .carousel-slide img {
-                width: 100%;
-                height: auto;
-                display: block;
-                object-fit: contain;
-                max-height: 70vh; /* Limita la altura al 70% del alto de la pantalla */
-            }
+      .carousel-slide img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+        max-height: 70vh; /* Limita la altura al 70% del alto de la pantalla */
+      }
 
-            .slide-content {
-                text-align: center;
-                color: #f1f1f1;
-                background: rgba(0, 0, 0, 0.7);
-                padding: 20px 30px;
-                border-radius: 15px;
-                backdrop-filter: blur(10px);
-                margin: 10px;
-                max-width: 90%;
-            }
+      .slide-content {
+        text-align: center;
+        color: #f1f1f1;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 20px 30px;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        margin: 10px;
+        max-width: 90%;
+      }
 
-            .slide-content h2 {
-                font-size: 2.5rem;
-                margin-bottom: 10px;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            }
+      .slide-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
 
-            .slide-content p {
-                font-size: 1rem;
-                opacity: 0.9;
-            }
+      .slide-content p {
+        font-size: 1rem;
+        opacity: 0.9;
+      }
 
-            .carousel-controls {
-                position: absolute;
-                top: 85%;
-                transform: translateY(-50%);
-                background: rgba(255, 255, 255, 0.44);
-                border: none;
-                width: 40px;
-                height: 40px;
-                border-radius: 20%;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 20px;
-                transition: all 0.3s ease;
-                z-index: 10;
-            }
+      .carousel-controls {
+        position: absolute;
+        top: 85%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.44);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 20%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        transition: all 0.3s ease;
+        z-index: 10;
+      }
 
-            .carousel-controls:hover {
-                background: #d07f2c;
-                transform: translateY(-50%) scale(1.1);
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.72);
-            }
+      .carousel-controls:hover {
+        background: #d07f2c;
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.72);
+      }
 
-            .prev {
-                left: 10px;
-            }
+      .prev {
+        left: 10px;
+      }
 
-            .next {
-                right: 10px;
-            }
+      .next {
+        right: 10px;
+      }
 
-            .control-panel {
-                background: #ab8447;
-                padding: 10px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 20px;
-            }
+      .control-panel {
+        background: #ab8447;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
 
-            .dots-container {
-                display: flex;
-                gap: 8px;
-            }
+      .dots-container {
+        display: flex;
+        gap: 8px;
+      }
 
-            .dot {
-                width: 10px;
-                height: 10px;
-                border-radius: 50%;
-                background: #ccc;
-                cursor: pointer;
-                transition: all 0.3s ease;
-            }
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #ccc;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
 
-            .dot.active {
-                background: #d56613;
-                transform: scale(1.2);
-            }
+      .dot.active {
+        background: #d56613;
+        transform: scale(1.2);
+      }
 
-            .play-pause-btn {
-                background: #643800;
-                color: white;
-                border: none;
-                padding: 8px 16px;
-                border-radius: 20px;
-                cursor: pointer;
-                font-size: 14px;
-                transition: all 0.3s ease;
-                display: flex;
-                align-items: center;
-                gap: 6px;
-            }
+      .play-pause-btn {
+        background: #643800;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
 
-            .play-pause-btn:hover {
-                background: #ae3319;
-                transform: translateY(-1px);
-                box-shadow: 0 3px 10px rgba(53, 41, 21, 0.75);
-            }
+      .play-pause-btn:hover {
+        background: #ae3319;
+        transform: translateY(-1px);
+        box-shadow: 0 3px 10px rgba(53, 41, 21, 0.75);
+      }
 
-            .progress-bar {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                height: 3px;
-                background: #9a8474;
-                overflow: hidden;
-            }
+      .progress-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: #9a8474;
+        overflow: hidden;
+      }
 
-            .progress {
-                height: 100%;
-                background: linear-gradient(90deg, #ea8a66, #713109);
-                width: 0%;
-                transition: width 0.1s linear;
-            }
+      .progress {
+        height: 100%;
+        background: linear-gradient(90deg, #ea8a66, #713109);
+        width: 0%;
+        transition: width 0.1s linear;
+      }
 
-            @media (max-width: 768px) {
-                .page-container {
-                    gap: 20px;
-                }
+      @media (max-width: 768px) {
+        .page-container {
+          gap: 20px;
+        }
 
-                .carousel-title {
-                    font-size: 2rem;
-                }
+        .carousel-title {
+          font-size: 2rem;
+        }
 
-                .slide-content h2 {
-                    font-size: 1.5rem;
-                }
+        .slide-content h2 {
+          font-size: 1.5rem;
+        }
 
-                .carousel-controls {
-                    width: 40px;
-                    height: 40px;
-                    font-size: 16px;
-                }
+        .carousel-controls {
+          width: 40px;
+          height: 40px;
+          font-size: 16px;
+        }
 
-                .prev {
-                    left: 5px;
-                }
+        .prev {
+          left: 5px;
+        }
 
-                .next {
-                    right: 5px;
-                }
-            }
+        .next {
+          right: 5px;
+        }
+      }
 
-            @media (max-width: 580px) {
-                .carousel-title {
-                    font-size: 1.8rem;
-                }
+      @media (max-width: 580px) {
+        .carousel-title {
+          font-size: 1.8rem;
+        }
 
-                .page-container {
-                    gap: 15px;
-                }
+        .page-container {
+          gap: 15px;
+        }
 
-                .slide-content {
-                    padding: 12px 15px;
-                    margin: 10px;
-                }
-            }
-        </style>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="/assets/css/estilos.css" />
+        .slide-content {
+          padding: 12px 15px;
+          margin: 10px;
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/assets/css/estilos.css" />
+  </head>
+  <body>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-    </head>
-    <body>
-        <!-- Skip to main content -->
-        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <!-- Header + menú -->
+    <div id="header"></div>
+    <div id="side-menu"></div>
 
-<!-- Header + menú -->
-<div id="header"></div>
-<div id="side-menu"></div>
-
-<script src="/assets/js/includes.js"></script>        
-        <!-- Menú lateral móvil mejorado -->
-        <main id="main-content" role="main">
-            <div class="page-container">
-                <h1 class="carousel-title"><b>El Regalo Escondido</b></h1>
-                <div class="carousel-container">
-                    <div class="carousel">
-                        <div class="carousel-track" id="carouselTrack">
-                            <div class="carousel-slide">
-                                <img src="/img/libros/car/1.jpg" alt="Imagen 1 del carrusel" />
-                            </div>
-                            <div class="carousel-slide">
-                                <img src="/img/libros/car/2.jpg" alt="Imagen 2 del carrusel" />
-                            </div>
-                            <div class="carousel-slide">
-                                <img src="/img/libros/car/3.jpg" alt="Imagen 3 del carrusel" />
-                            </div>
-                            <div class="carousel-slide"><img src="/img/libros/car/4.jpg" alt="Imagen 4 del carrusel" /></div>
-                            <div class="carousel-slide"><img src="/img/libros/car/5.jpg" alt="Imagen 5 del carrusel" /></div>
-                            <div class="carousel-slide"><img src="/img/libros/car/6.jpg" alt="Imagen 6 del carrusel" /></div>
-                        </div>
-                        <button class="carousel-controls prev" onclick="prevSlide()">‹</button>
-                        <button class="carousel-controls next" onclick="nextSlide()">›</button>
-                    </div>
-                    <div class="control-panel">
-                        <div class="dots-container" id="dotsContainer"></div>
-                        <button class="play-pause-btn" id="playPauseBtn" onclick="toggleAutoplay()">
-                            <span id="playPauseIcon">⏸</span>
-                            <span id="playPauseText">Pausar</span>
-                        </button>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" id="progress"></div>
-                    </div>
-                </div>
+    <script src="/assets/js/includes.js"></script>
+    <!-- Menú lateral móvil mejorado -->
+    <main id="main-content" role="main">
+      <div class="page-container">
+        <h1 class="carousel-title"><b>El Regalo Escondido</b></h1>
+        <div class="carousel-container">
+          <div class="carousel">
+            <div class="carousel-track" id="carouselTrack">
+              <div class="carousel-slide">
+                <img src="/img/libros/car/1.jpg" alt="Imagen 1 del carrusel" />
+              </div>
+              <div class="carousel-slide">
+                <img src="/img/libros/car/2.jpg" alt="Imagen 2 del carrusel" />
+              </div>
+              <div class="carousel-slide">
+                <img src="/img/libros/car/3.jpg" alt="Imagen 3 del carrusel" />
+              </div>
+              <div class="carousel-slide">
+                <img src="/img/libros/car/4.jpg" alt="Imagen 4 del carrusel" />
+              </div>
+              <div class="carousel-slide">
+                <img src="/img/libros/car/5.jpg" alt="Imagen 5 del carrusel" />
+              </div>
+              <div class="carousel-slide">
+                <img src="/img/libros/car/6.jpg" alt="Imagen 6 del carrusel" />
+              </div>
             </div>
-        </main>
-        <footer class="footer" role="contentinfo">
-            <div class="footer-content">
-                <p>© 2025 RESONANCIAS · Todos los derechos reservados</p>
-            </div>
-        </footer>
-        <script>
-            let currentSlide = 0;
-            const totalSlides = 6;
-            let isPlaying = true;
-            let autoplayInterval = null;
-            let progressInterval = null;
-            const intervalDuration = 4000;
+            <button class="carousel-controls prev" onclick="prevSlide()">
+              ‹
+            </button>
+            <button class="carousel-controls next" onclick="nextSlide()">
+              ›
+            </button>
+          </div>
+          <div class="control-panel">
+            <div class="dots-container" id="dotsContainer"></div>
+            <button
+              class="play-pause-btn"
+              id="playPauseBtn"
+              onclick="toggleAutoplay()"
+            >
+              <span id="playPauseIcon">⏸</span>
+              <span id="playPauseText">Pausar</span>
+            </button>
+          </div>
+          <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer" role="contentinfo">
+      <div class="footer-content">
+        <p>© 2025 RESONANCIAS · Todos los derechos reservados</p>
+      </div>
+    </footer>
+    <script>
+      let currentSlide = 0;
+      const totalSlides = 6;
+      let isPlaying = true;
+      let autoplayInterval = null;
+      let progressInterval = null;
+      const intervalDuration = 4000;
 
-            const track = document.getElementById("carouselTrack");
-            const dotsContainer = document.getElementById("dotsContainer");
-            const progress = document.getElementById("progress");
-            const playPauseIcon = document.getElementById("playPauseIcon");
-            const playPauseText = document.getElementById("playPauseText");
+      const track = document.getElementById("carouselTrack");
+      const dotsContainer = document.getElementById("dotsContainer");
+      const progress = document.getElementById("progress");
+      const playPauseIcon = document.getElementById("playPauseIcon");
+      const playPauseText = document.getElementById("playPauseText");
 
-            // Crear puntos de navegación
-            function createDots() {
-                for (let i = 0; i < totalSlides; i++) {
-                    const dot = document.createElement("div");
-                    dot.className = "dot";
-                    dot.onclick = () => goToSlide(i);
-                    dotsContainer.appendChild(dot);
-                }
-            }
+      // Crear puntos de navegación
+      function createDots() {
+        for (let i = 0; i < totalSlides; i++) {
+          const dot = document.createElement("div");
+          dot.className = "dot";
+          dot.onclick = () => goToSlide(i);
+          dotsContainer.appendChild(dot);
+        }
+      }
 
-            // Actualizar posición del carousel
-            function updateSlidePosition() {
-                const translateX = -currentSlide * 100;
-                track.style.transform = `translateX(${translateX}%)`;
-            }
+      // Actualizar posición del carousel
+      function updateSlidePosition() {
+        const translateX = -currentSlide * 100;
+        track.style.transform = `translateX(${translateX}%)`;
+      }
 
-            // Actualizar puntos activos
-            function updateDots() {
-                const dots = dotsContainer.querySelectorAll(".dot");
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle("active", index === currentSlide);
-                });
-            }
+      // Actualizar puntos activos
+      function updateDots() {
+        const dots = dotsContainer.querySelectorAll(".dot");
+        dots.forEach((dot, index) => {
+          dot.classList.toggle("active", index === currentSlide);
+        });
+      }
 
-            // Ir al siguiente slide
-            function nextSlide() {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                updateSlidePosition();
-                updateDots();
-                resetProgress();
-            }
+      // Ir al siguiente slide
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlidePosition();
+        updateDots();
+        resetProgress();
+      }
 
-            // Ir al slide anterior
-            function prevSlide() {
-                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                updateSlidePosition();
-                updateDots();
-                resetProgress();
-            }
+      // Ir al slide anterior
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlidePosition();
+        updateDots();
+        resetProgress();
+      }
 
-            // Ir a un slide específico
-            function goToSlide(index) {
-                currentSlide = index;
-                updateSlidePosition();
-                updateDots();
-                resetProgress();
-            }
+      // Ir a un slide específico
+      function goToSlide(index) {
+        currentSlide = index;
+        updateSlidePosition();
+        updateDots();
+        resetProgress();
+      }
 
-            // Iniciar autoplay
-            function startAutoplay() {
-                if (autoplayInterval) clearInterval(autoplayInterval);
-                autoplayInterval = setInterval(nextSlide, intervalDuration);
-            }
+      // Iniciar autoplay
+      function startAutoplay() {
+        if (autoplayInterval) clearInterval(autoplayInterval);
+        autoplayInterval = setInterval(nextSlide, intervalDuration);
+      }
 
-            // Detener autoplay
-            function stopAutoplay() {
-                if (autoplayInterval) {
-                    clearInterval(autoplayInterval);
-                    autoplayInterval = null;
-                }
-            }
+      // Detener autoplay
+      function stopAutoplay() {
+        if (autoplayInterval) {
+          clearInterval(autoplayInterval);
+          autoplayInterval = null;
+        }
+      }
 
-            // Toggle autoplay
-            function toggleAutoplay() {
-                if (isPlaying) {
-                    stopAutoplay();
-                    stopProgressBar();
-                    playPauseIcon.textContent = "▶";
-                    playPauseText.textContent = "Reproducir";
-                    isPlaying = false;
-                } else {
-                    startAutoplay();
-                    startProgressBar();
-                    playPauseIcon.textContent = "⏸";
-                    playPauseText.textContent = "Pausar";
-                    isPlaying = true;
-                }
-            }
+      // Toggle autoplay
+      function toggleAutoplay() {
+        if (isPlaying) {
+          stopAutoplay();
+          stopProgressBar();
+          playPauseIcon.textContent = "▶";
+          playPauseText.textContent = "Reproducir";
+          isPlaying = false;
+        } else {
+          startAutoplay();
+          startProgressBar();
+          playPauseIcon.textContent = "⏸";
+          playPauseText.textContent = "Pausar";
+          isPlaying = true;
+        }
+      }
 
-            // Barra de progreso
-            function startProgressBar() {
-                resetProgress();
-                if (progressInterval) clearInterval(progressInterval);
+      // Barra de progreso
+      function startProgressBar() {
+        resetProgress();
+        if (progressInterval) clearInterval(progressInterval);
 
-                let progressWidth = 0;
-                const increment = 100 / (intervalDuration / 100);
+        let progressWidth = 0;
+        const increment = 100 / (intervalDuration / 100);
 
-                progressInterval = setInterval(() => {
-                    progressWidth += increment;
-                    if (progressWidth >= 100) {
-                        progressWidth = 0;
-                    }
-                    progress.style.width = progressWidth + "%";
-                }, 100);
-            }
+        progressInterval = setInterval(() => {
+          progressWidth += increment;
+          if (progressWidth >= 100) {
+            progressWidth = 0;
+          }
+          progress.style.width = progressWidth + "%";
+        }, 100);
+      }
 
-            function stopProgressBar() {
-                if (progressInterval) {
-                    clearInterval(progressInterval);
-                    progressInterval = null;
-                }
-            }
+      function stopProgressBar() {
+        if (progressInterval) {
+          clearInterval(progressInterval);
+          progressInterval = null;
+        }
+      }
 
-            function resetProgress() {
-                progress.style.width = "0%";
-                if (isPlaying) {
-                    startProgressBar();
-                }
-            }
+      function resetProgress() {
+        progress.style.width = "0%";
+        if (isPlaying) {
+          startProgressBar();
+        }
+      }
 
-            // Inicializar carousel
-            function initCarousel() {
-                createDots();
-                updateDots();
-                startAutoplay();
-                startProgressBar();
-            }
+      // Inicializar carousel
+      function initCarousel() {
+        createDots();
+        updateDots();
+        startAutoplay();
+        startProgressBar();
+      }
 
-            // Navegación con teclado
-            document.addEventListener("keydown", (e) => {
-                if (e.key === "ArrowRight") {
-                    nextSlide();
-                } else if (e.key === "ArrowLeft") {
-                    prevSlide();
-                } else if (e.key === " ") {
-                    e.preventDefault();
-                    toggleAutoplay();
-                }
-            });
+      // Navegación con teclado
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") {
+          nextSlide();
+        } else if (e.key === "ArrowLeft") {
+          prevSlide();
+        } else if (e.key === " ") {
+          e.preventDefault();
+          toggleAutoplay();
+        }
+      });
 
-            // Pausar en hover
-            const carouselContainer = document.querySelector(".carousel-container");
-            carouselContainer.addEventListener("mouseenter", () => {
-                if (isPlaying) {
-                    stopProgressBar();
-                }
-            });
+      // Pausar en hover
+      const carouselContainer = document.querySelector(".carousel-container");
+      carouselContainer.addEventListener("mouseenter", () => {
+        if (isPlaying) {
+          stopProgressBar();
+        }
+      });
 
-            carouselContainer.addEventListener("mouseleave", () => {
-                if (isPlaying) {
-                    startProgressBar();
-                }
-            });
+      carouselContainer.addEventListener("mouseleave", () => {
+        if (isPlaying) {
+          startProgressBar();
+        }
+      });
 
-            // Soporte táctil
-            let startX = 0;
-            let endX = 0;
+      // Soporte táctil
+      let startX = 0;
+      let endX = 0;
 
-            carouselContainer.addEventListener("touchstart", (e) => {
-                startX = e.touches[0].clientX;
-            });
+      carouselContainer.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+      });
 
-            carouselContainer.addEventListener("touchend", (e) => {
-                endX = e.changedTouches[0].clientX;
-                const threshold = 50;
-                const diff = startX - endX;
+      carouselContainer.addEventListener("touchend", (e) => {
+        endX = e.changedTouches[0].clientX;
+        const threshold = 50;
+        const diff = startX - endX;
 
-                if (Math.abs(diff) > threshold) {
-                    if (diff > 0) {
-                        nextSlide();
-                    } else {
-                        prevSlide();
-                    }
-                }
-            });
+        if (Math.abs(diff) > threshold) {
+          if (diff > 0) {
+            nextSlide();
+          } else {
+            prevSlide();
+          }
+        }
+      });
 
-            window.addEventListener("load", initCarousel);
-        </script>
-    </body>
+      window.addEventListener("load", initCarousel);
+    </script>
+  </body>
 </html>

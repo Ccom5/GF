@@ -3,30 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>El mal que no queremos ver</title>
-    <meta name="description" content="Siempre buscamos un demonio" />
+    <title>Latencia estructural</title>
+    <meta name="description" content="el desfase entre el tiempo físico  y el tiempo humano" />
 
     <!-- URL Canónica -->
-    <link rel="canonical" href="https://resonancias.pages.dev/pages/blog/2026/el-mal.html" />
+    <link rel="canonical" href="https://resonancias.pages.dev/pages/blog/tecnica/Latencia estructural.html" />
 
     <!-- SEO y Accesibilidad -->
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Gabriel Ferré" />
-    <meta name="keywords" content="mal  - responsabilidad  - cultura  - sociedad  - figuras públicas  - secularismo  - ética  - tradición" />
+    <meta name="keywords" content="None" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="El mal que no queremos ver" />
-    <meta property="og:description" content="Siempre buscamos un demonio" />
-    <meta property="og:image" content="https://resonancias.pages.dev/img/blog-2026/el-mal.jpg" />
-    <meta property="og:url" content="https://resonancias.pages.dev/pages/blog/2026/el-mal.html" />
-    <meta property="og:site_name" content="RESONANCIAS" />
+    <meta property="og:title" content="Latencia estructural" />
+    <meta property="og:description" content="el desfase entre el tiempo físico  y el tiempo humano" />
+    <meta property="og:image" content="/img/tecnica/factor-tiempo.jpg" />
+    <meta property="og:url" content="https://resonancias.pages.dev/pages/blog/tecnica/Latencia estructural.html" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="RESONANCIAS" />
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="El mal que no queremos ver | RESONANCIAS." />
-    <meta name="twitter:description" content="Siempre buscamos un demonio" />
-    <meta name="twitter:image" content="https://resonancias.pages.dev/img/blog-2026/el-mal.jpg" />
+    <meta name="twitter:title" content="Latencia estructural" />
+    <meta name="twitter:description" content="el desfase entre el tiempo físico  y el tiempo humano" />
+    <meta name="twitter:image" content="/img/tecnica/factor-tiempo.jpg" />
 
     <!-- Favicon -->
     <link rel="icon" href="/favicon.png" type="image/png" />
@@ -42,9 +42,8 @@
     <link rel="stylesheet" href="/assets/css/estilos.css" />
 
     <!-- Scripts -->
-
     <script src="/assets/js/main.js" defer></script>
-    <script src="/assets/js/back-to-top.js" defer></script>
+
     <!-- Estilos responsivos para el layout del artículo -->
     <style>
       @media (max-width: 768px) {
@@ -58,6 +57,43 @@
           width: 100% !important;
           min-width: auto !important;
           margin-bottom: var(--spacing-lg) !important;
+        }
+      }
+
+      /* Fix for content overflow */
+      .md-obsidian {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        max-width: 100%;
+      }
+
+      .md-obsidian img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        display: block;
+        margin: var(--spacing-md) auto;
+      }
+
+      .md-obsidian table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+        border-collapse: collapse;
+        margin: var(--spacing-lg) 0;
+      }
+
+      /* Horizontal view and smaller screen fixes */
+      @media (max-width: 1024px) {
+        .content-card {
+          margin: var(--spacing-md) !important;
+          padding: var(--spacing-md) !important;
+          max-width: calc(100% - 2 * var(--spacing-md)) !important;
+        }
+
+        .article-content {
+          width: 100%;
+          min-width: 0;
         }
       }
     </style>
@@ -104,15 +140,16 @@
     </style>
   </head>
   <body>
-    <!-- Skip to main content -->
-    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
-
     <!-- Header + menú -->
     <div id="header"></div>
     <div id="side-menu"></div>
 
     <script src="/assets/js/includes.js"></script>
-    <script src="/assets/js/back-to-top.js"></script>
+    <script src="/assets/js/back-to-top.js" defer></script>
+
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
     <!-- Overlay para menú -->
     <div class="menu-overlay" id="menuOverlay"></div>
     <section
@@ -121,7 +158,7 @@
         margin-top: 0 !important;
         background:
           linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-          url("/img/blog-2026/el-mal.jpg");
+          url("/img/tecnica/factor-tiempo.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -141,7 +178,7 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
           "
         >
-          El mal que no queremos ver
+          Latencia estructural
         </h2>
         <p
           style="
@@ -152,10 +189,11 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
           "
         >
-          Siempre buscamos un demonio
+          el desfase entre el tiempo físico  y el tiempo humano
         </p>
       </div>
     </section>
+
     <!-- Contenido principal -->
     <main id="main-content" role="main">
       <!-- Artículo principal -->
@@ -174,7 +212,7 @@
                   margin-bottom: var(--spacing-lg);
                 "
               >
-                El mal que no queremos ver
+                Latencia estructural
               </h1>
               <div
                 class="post-meta"
@@ -190,7 +228,6 @@
                 <span>· Gabriel Ferré</span>
               </div>
             </header>
-
             <div
               class="article-layout"
               style="
@@ -214,33 +251,221 @@
                   "
                 >
                   <!-- Insertar contenido aquí -->
-<h1>El mal que no queremos ver</h1>
-<h3>Siempre buscamos un demonio</h3>
-<p><em>"No puede ser humano. Eso solo lo haría un demonio."</em><br />
-Si alguna vez pensaste esto al enterarte de un escándalo, un abuso o un crimen que te dejó sin palabras, no estás solo. En Argentina, como en muchos lugares del mundo, reaccionamos así una y otra vez: buscamos explicaciones fuera de lo humano. Buscamos fuerzas externas, conspiraciones invisibles, manipulaciones que “justifiquen” lo que resulta insoportable de aceptar: que cualquier ser humano, incluso los que admiramos, puede hacer cosas horribles.  </p>
-<h2>Por qué buscamos fuerzas externas</h2>
-<p>Nos da alivio. Es más fácil pensar que el mal viene de afuera que asumir que está dentro de la experiencia humana. Si el mal es algo externo, seguimos siendo buenos, seguimos creyendo que la sociedad tiene sentido. Admitir que cualquiera puede cometer atrocidades genera ansiedad: nos obliga a mirarnos de frente y preguntarnos qué somos capaces de hacer. Y eso duele.  </p>
-<h2>El reflejo cultural</h2>
-<p>No es casual que esto ocurra en un país con una tradición católica profunda. Historias de demonios, posesiones y fuerzas que corrompen al inocente forman parte de nuestro imaginario colectivo. Incluso para quienes no somos creyentes, estas imágenes funcionan como símbolos: representan lo que queremos mantener fuera de nosotros y de nuestra sociedad.  </p>
-<p>Pero ojo: no se trata de culpar a la fe. La religión puede ser un camino de sentido y de ética para millones de personas. El problema aparece cuando la sociedad usa esas ideas simbólicas para evitar enfrentar la realidad incómoda: que el mal es humano. Reconocerlo no debilita la espiritualidad; simplemente nos permite mirar las cosas con más claridad.  </p>
-<h2>Excusas para figuras públicas</h2>
-<p>Los escándalos de políticos, artistas o empresarios muestran este mecanismo en acción. Las explicaciones tienden a buscar culpables externos: “fue manipulado”, “no era él mismo”, “alguien lo obligó”. Estas narrativas alivian nuestra ansiedad social: nos dicen que el problema está afuera y no amenaza nuestra identidad colectiva.  </p>
-<p>Pero el efecto secundario es evidente: la responsabilidad se diluye. Si el mal siempre viene de afuera, no necesitamos cuestionar al individuo ni a la sociedad que lo rodea. Y así, los errores se repiten, la impunidad se perpetúa, y seguimos confiando en líderes o instituciones como si fueran inmunes a la corrupción.  </p>
-<p><img src="/img/blog-2026/el-mal.jpg" alt="vacio" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" /></p>
-
-<h2>Una mirada secular</h2>
-<p>Desde un enfoque secular o racional, el mal deja de ser una fuerza externa y se entiende como parte de la experiencia humana. Esto no significa que todos los humanos sean malos, ni que la vida sea un caos moral sin sentido. Significa que nuestras decisiones tienen consecuencias, y que asumir nuestra capacidad de equivocarnos y de hacer daño es el primer paso para construir sociedades más justas.  </p>
-<p>Podemos valorar la herencia cultural y religiosa como un gran caudal de símbolos y enseñanzas, sin necesidad de invocar fuerzas sobrenaturales para entender lo que ocurre. El mal es humano, y asumirlo nos da poder: nos permite actuar, corregir errores y protegernos sin depender de fantasías externas que alivien nuestra incomodidad.  </p>
-<h2>La necesidad de un orden moral</h2>
-<p>Lo más profundo de este fenómeno es algo que nos atraviesa a todos: <strong>la necesidad de creer que el mundo tiene un orden moral</strong>. Queremos pensar que el bien y el mal están claros, que existen reglas y justicia. Admitir que el mal puede ser humano, cotidiano y cercano nos obliga a cuestionarlo todo: líderes, instituciones, normas y a nosotros mismos.  </p>
-<p>Por eso resulta más cómodo inventar demonios o fuerzas externas que expliquen lo inexplicable. Nos tranquiliza pensar que la maldad no está en nosotros ni en los que admiramos. Pero esa comodidad tiene un precio: si no reconocemos la dimensión humana del mal, nos volvemos más vulnerables a repetir errores, a excusar conductas dañinas y a naturalizar injusticias.  </p>
-<p>Aceptar que el mal es humano no significa perder la esperanza ni el sentido de justicia. Significa asumir responsabilidad. Significa mirar de frente lo que somos capaces de hacer y, con esa conciencia, intentar construir un mundo más ético, más justo y más humano. 
-Somos 2 caras de la misma moneda, y tenemos la elección de utilizar una de las 2, para construir para todos, o destruir lo que nos molesta u odiamos. 
-No hay demonios externos.</p>
+<h1>La latencia estructural</h1>
+<h3>El desfase entre el tiempo físico y el tiempo humano</h3>
+<p>En múltiples áreas técnicas —infraestructura, energía, transporte, clima, organización territorial— se repite un mismo patrón.</p>
+<p>El problema no suele ser la ausencia de conocimiento.<br />
+Tampoco necesariamente la falta absoluta de recursos.</p>
+<p>El problema es temporal.</p>
+<p>Los sistemas físicos operan en tiempo continuo.<br />
+Se desgastan, acumulan tensiones, pierden margen, se saturan.</p>
+<p>Los sistemas humanos operan en tiempo discreto.<br />
+Detectan, discuten, validan, deciden e implementan.</p>
+<p>Entre ambos tiempos aparece un desfase estructural.</p>
+<p>Ese desfase es el hilo que une muchos de los fenómenos analizados en esta sección técnica.</p>
+<hr />
+<h2>1) La secuencia que se repite</h2>
+<p>En organizaciones públicas, privadas y técnicas suele observarse una secuencia recurrente:</p>
+<p><strong>Error → Detección → Validación → Decisión → Implementación</strong></p>
+<p>El error puede ser físico (desgaste, erosión, saturación), estructural (diseño insuficiente) o conceptual (paradigma inadecuado).</p>
+<p>Pero lo relevante no es el error inicial.<br />
+Es el tiempo que transcurre hasta su corrección efectiva.</p>
+<p>Cada etapa introduce un retardo:</p>
+<ul>
+<li>
+<p>Detectar requiere evidencia.</p>
+</li>
+<li>
+<p>Validar requiere consenso o legitimidad.</p>
+</li>
+<li>
+<p>Decidir requiere asignación de recursos.</p>
+</li>
+<li>
+<p>Implementar requiere plazos técnicos.</p>
+</li>
+</ul>
+<p>Mientras tanto, el fenómeno físico continúa su evolución.</p>
+<hr />
+<h2>2) El desgaste no espera consenso</h2>
+<p>El asfalto envejece aunque no haya presupuesto aprobado.<br />
+Un sistema eléctrico se fatiga aunque el debate continúe.<br />
+La concentración urbana aumenta aunque no exista planificación ferroviaria.<br />
+El CO₂ se acumula independientemente de los ciclos electorales.</p>
+<p>La física no espera validación institucional.</p>
+<p>Cuando el tiempo humano total supera el margen de resiliencia del sistema físico, el costo final aumenta.</p>
+<p>No por mala intención.<br />
+Sino por acumulación de tensiones no atendidas a tiempo.</p>
+<p><br>
+<img
+                                    src="/img/tecnica/desgaste.jpg"
+                                    alt=""
+                                    style="
+                                        width: 100%;
+                                        height: auto;
+                                        max-height: 600px;
+                                        object-fit: contain;
+                                        border-radius: 8px;
+                                        margin-bottom: var(--spacing-md);
+                                    " /></p>
+<hr />
+<h2>3) El costo del retardo</h2>
+<p>El efecto acumulativo del desfase temporal produce un patrón frecuente:</p>
+<ol>
+<li>
+<p>Subatención prolongada.</p>
+</li>
+<li>
+<p>Acumulación silenciosa de deterioro.</p>
+</li>
+<li>
+<p>Falla visible o crisis.</p>
+</li>
+<li>
+<p>Inversión intensa pero tardía.</p>
+</li>
+<li>
+<p>Corrección parcial con mayor costo.</p>
+</li>
+</ol>
+<p>La intervención temprana suele ser más económica y menos traumática que la corrección posterior.</p>
+<p>Sin embargo, la intervención temprana compite con prioridades visibles y urgencias inmediatas.</p>
+<p>El desgaste estructural, al ser silencioso, pierde esa competencia.</p>
+<hr />
+<h2>4) No es un problema moral</h2>
+<p>El retardo humano es en gran medida estructural.</p>
+<p>Las instituciones necesitan:</p>
+<ul>
+<li>
+<p>pruebas,</p>
+</li>
+<li>
+<p>legitimidad,</p>
+</li>
+<li>
+<p>estabilidad,</p>
+</li>
+<li>
+<p>previsibilidad presupuestaria.</p>
+</li>
+</ul>
+<p>Los inversores necesitan señales claras y reducción de incertidumbre.</p>
+<p>La sociedad necesita evidencia tangible antes de modificar conductas.</p>
+<p>El desfase no es necesariamente negligencia.<br />
+Es una propiedad emergente de sistemas humanos complejos.</p>
+<p>Pero esa propiedad tiene consecuencias físicas acumulativas.</p>
+<hr />
+<h2>5) La variable no explicitada</h2>
+<p>En muchas áreas técnicas se miden indicadores económicos, financieros o coyunturales.</p>
+<p>Lo que rara vez se mide de forma sistemática es la latencia entre:</p>
+<ul>
+<li>
+<p>aparición del problema,</p>
+</li>
+<li>
+<p>reconocimiento del problema,</p>
+</li>
+<li>
+<p>corrección efectiva.</p>
+</li>
+</ul>
+<p>Esa latencia es una variable estructural.</p>
+<p>Y cuanto mayor es, mayor es el costo acumulado.</p>
+<hr />
+<h2>6) Un marco para las notas técnicas</h2>
+<p>Las distintas notas de esta sección analizan fenómenos diversos:</p>
+<ul>
+<li>
+<p>infraestructura,</p>
+</li>
+<li>
+<p>energía,</p>
+</li>
+<li>
+<p>movilidad,</p>
+</li>
+<li>
+<p>ordenamiento territorial,</p>
+</li>
+<li>
+<p>clima,</p>
+</li>
+<li>
+<p>hidráulica,</p>
+</li>
+<li>
+<p>recursos estratégicos.</p>
+</li>
+</ul>
+<p>El punto común no es el sector.</p>
+<p>Es el tiempo.</p>
+<p>En cada caso puede observarse cómo el desgaste físico o estructural avanza de forma continua, mientras la respuesta humana se organiza en etapas sucesivas.</p>
+<p>El desfase temporal entre ambos procesos es el factor recurrente.</p>
+<hr />
+<h2>7) Una hipótesis general</h2>
+<p>Podría formularse así:</p>
+<blockquote>
+<p>En sistemas complejos, el mayor costo no proviene del error inicial, sino del retardo acumulado en su tratamiento.</p>
+</blockquote>
+<p>Reducir ese retardo no siempre requiere más recursos.</p>
+<p>Requiere medir mejor, anticipar mejor y estabilizar decisiones en horizontes compatibles con la dinámica física de los sistemas.</p>
+<hr />
+<h2>8) El hilo temporal del desgaste</h2>
+<p>El desgaste no es solo material.<br />
+Es temporal.</p>
+<p>Cada año de postergación modifica la estructura futura de costos y posibilidades.</p>
+<p>Cuando la intervención llega tarde, no corrige el punto de partida original.<br />
+Corrige un sistema ya más deteriorado.</p>
+<p>Comprender ese hilo temporal permite reinterpretar muchos problemas no como fallas aisladas, sino como desincronizaciones estructurales.</p>
+<p><br>
+<img
+                                    src="/img/tecnica/factor-tiempo.jpg"
+                                    alt=""
+                                    style="
+                                        width: 100%;
+                                        height: auto;
+                                        max-height: 600px;
+                                        object-fit: contain;
+                                        border-radius: 8px;
+                                        margin-bottom: var(--spacing-md);
+                                    " /> </p>
+<h2>9) Un caso concreto: el desgaste que no se mide</h2>
+<p>Un ejemplo claro de esta latencia estructural es el estado físico de la infraestructura nacional.</p>
+<p>El capital material existente —rutas, redes eléctricas, puertos, vías férreas, sistemas hidráulicos— se desgasta todos los días. Ese desgaste no se detiene cuando el presupuesto se discute ni cuando la prioridad pública se desplaza hacia otro tema.</p>
+<p>Sin embargo, no existe una medición consolidada y periódica del deterioro físico acumulado. Lo que sí existe es una secuencia conocida:</p>
+<ul>
+<li>
+<p>subinversión prolongada,</p>
+</li>
+<li>
+<p>acumulación silenciosa de tensión estructural,</p>
+</li>
+<li>
+<p>falla visible,</p>
+</li>
+<li>
+<p>inversión reactiva,</p>
+</li>
+<li>
+<p>corrección parcial.</p>
+</li>
+</ul>
+<p>El problema no es exclusivamente presupuestario.<br />
+Es temporal.</p>
+<p>La infraestructura envejece en tiempo continuo.<br />
+La inversión ocurre en pulsos.</p>
+<p>Entre ambos ritmos aparece el desfase.</p>
+<p>Y ese desfase incrementa el costo final, incluso si la inversión total acumulada fuera equivalente.</p>
+<p>Lo que no se mide de manera sistemática no solo se deteriora:<br />
+acumula latencia.</p>
+<p>Este ejemplo no es una excepción sectorial. Es una manifestación concreta de un patrón más amplio: </p>
+<p><strong><em>Cuando el tiempo humano de reacción es mayor que el tiempo físico de acumulación del problema, el sistema converge hacia soluciones más costosas y menos eficientes.</em></strong> </p>
+<p>Comprender esa desincronización es el hilo conceptual que articula las demás notas técnicas de esta sección.</p>
 <!--fin-->
                 </div>
               </div>
             </div>
+
             <section
               class="blog-subscription"
               style="
@@ -253,7 +478,7 @@ No hay demonios externos.</p>
             >
               <nav class="share-footer" aria-label="Compartir página">
                 <a
-                  href="https://www.facebook.com/sharer/sharer.php?u=https://resonancias.pages.dev/pages/blog/2026/el-mal"
+                  href="https://www.facebook.com/sharer/sharer.php?u=https://resonancias.pages.dev/pages/blog/tecnica/Latencia estructural.html"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="share-btn facebook"
@@ -263,7 +488,7 @@ No hay demonios externos.</p>
                   <i class="fa-brands fa-facebook"></i>
                 </a>
                 <a
-                  href="https://twitter.com/intent/tweet?url=https://resonancias.pages.dev/pages/blog/2026/el-mal&text="
+                  href="https://twitter.com/intent/tweet?url=https://resonancias.pages.dev/pages/blog/tecnica/Latencia estructural.html&text="
                   target="_blank"
                   rel="noopener noreferrer"
                   class="share-btn twitter"
@@ -274,7 +499,7 @@ No hay demonios externos.</p>
                 </a>
 
                 <a
-                  href="https://api.whatsapp.com/send?text=https://resonancias.pages.dev/pages/blog/2026/el-mal"
+                  href="https://api.whatsapp.com/send?text=https://resonancias.pages.dev/pages/blog/tecnica/Latencia estructural.html"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="share-btn whatsapp"
@@ -284,7 +509,7 @@ No hay demonios externos.</p>
                   <i class="fa-brands fa-whatsapp"></i>
                 </a>
                 <a
-                  href="https://bsky.app/intent/compose?text=https://resonancias.pages.dev/pages/blog/2026/el-mal"
+                  href="https://bsky.app/intent/compose?text=https://resonancias.pages.dev/pages/blog/tecnica/Latencia estructural.html"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="share-btn bluesky"
@@ -303,7 +528,7 @@ No hay demonios externos.</p>
               >
                 Comparte en tus redes
               </h3>
-              <h4>Suscribete</h4>
+              <h4>Suscríbete</h4>
 
               <p
                 style="
@@ -380,7 +605,6 @@ No hay demonios externos.</p>
                 * Puedes darte de baja en cualquier momento
               </p>
             </section>
-            <!-- Footer del artículo -->
 
             <footer
               style="
@@ -398,25 +622,17 @@ No hay demonios externos.</p>
                   gap: var(--spacing-md);
                 "
               >
-                <span
-                  class="entry-date"
-                  style="
-                    font-size: var(--font-size-sm);
-                    color: var(--color-neutral);
-                  "
-                >
-                  📅 2026-02-24
-                </span>
+                <div>📅 2026-02-24</div>
                 <div style="display: flex; gap: var(--spacing-sm)">
                   <a
-                    href="/pages/blog/2026/blog-2026.html"
+                    href="/pages/blog/tecnica/Tecnica.html"
                     style="
                       color: var(--color-secondary);
                       text-decoration: none;
                       font-weight: 600;
                     "
                   >
-                    ← Volver al blog
+                    ← Volver a Técnica
                   </a>
                 </div>
               </div>
@@ -426,13 +642,13 @@ No hay demonios externos.</p>
       </div>
     </main>
     <!-- Footer -->
+    <a href="#main-content" class="back-to-top" aria-label="Volver arriba">
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </a>
     <footer class="footer" role="contentinfo">
       <div class="footer-content">
         <p>© 2026 RESONANCIAS · Todos los derechos reservados</p>
       </div>
     </footer>
-    <a href="#main-content" class="back-to-top" aria-label="Volver arriba">
-      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
-    </a>
   </body>
 </html>
