@@ -1,0 +1,216 @@
+/* --- Hero Section --- */
+.works-hero {
+  margin-top: 80px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--color-light);
+  padding: var(--spacing-3xl) 0;
+  text-align: center;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.works-hero h2 {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--spacing-lg);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.works-hero p {
+  font-size: var(--font-size-xl);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Estructura de Tarjetas --- */
+.presentation-card {
+  text-align: center;
+}
+
+.presentation-card .post-meta {
+  color: var(--color-neutral);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-md);
+  font-style: italic;
+  font-family: "EB Garamond", serif;
+}
+
+/* --- Lista de Fragmentos y Unificación --- */
+.article-content {
+  line-height: 1.5;
+  color: var(--color-dark);
+}
+
+.fragmento-entry {
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+}
+
+.fragmento-entry:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.fragmento-entry:not(:last-child) {
+  border-bottom: 1px solid var(--color-mid);
+}
+
+.fragmento-entry h1,
+.fragmento-entry h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: var(--font-size-2xl);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.fragmento-entry .entry-quote {
+  font-family: "EB Garamond", serif;
+  font-style: italic;
+  color: var(--color-warm);
+  margin-bottom: 16px;
+  font-size: 1.1em;
+}
+
+.fragmento-entry .entry-description {
+  font-family: "EB Garamond", serif;
+  line-height: 1.7;
+  color: var(--color-dark);
+  margin-bottom: 24px;
+  max-width: 90%;
+}
+
+.fragmento-entry .entry-link {
+  font-family: "Cormorant Garamond", serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  color: var(--color-dark);
+  font-size: var(--font-size-sm);
+  border-bottom: 1px solid var(--color-warm);
+  padding-bottom: 2px;
+  transition: all 0.3s ease;
+}
+
+.fragmento-entry .entry-link:hover {
+  color: var(--color-warm);
+}
+
+/* --- Página de Lectura (Reading View) --- */
+.reading-body {
+  background-color: #f5f1e8 !important;
+  color: #212121 !important;
+  font-family: "EB Garamond", serif !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Forzar tipografía en todos los elementos de lectura para evitar herencias de estilos.css */
+.reading-body p,
+.reading-body div,
+.reading-body span {
+  font-family: "EB Garamond", serif !important;
+  font-size: 22px;
+  line-height: 1.9;
+  letter-spacing: 0.01em;
+  color: #212121;
+}
+
+.back-link {
+  display: inline-block;
+  margin: 40px 0 0 40px;
+  font-size: 22px;
+  color: #4d4c4c !important;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-family: "EB Garamond", serif !important;
+}
+
+.back-link:hover {
+  color: #4a4a4a !important;
+}
+
+.reading-container {
+  max-width: 650px;
+  margin: 140px auto 140px auto; /* Restaurado a 140px */
+  padding: 0 40px;
+}
+
+.reading-container h1 {
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 35px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+  color: #212121;
+}
+
+.reading-container .epigraph {
+  font-size: 20px !important;
+  font-style: italic !important;
+  color: #4f4942 !important;
+  margin-bottom: 56px;
+  line-height: 1.6;
+}
+
+.reading-content p {
+  margin-bottom: 1.3em;
+  text-align: left;
+}
+
+.reading-content p:last-child {
+  margin-bottom: 0;
+}
+
+.cierre-narrativo {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
+
+.cierre-narrativo img {
+  width: 180px;
+  height: auto;
+  opacity: 0.7;
+  display: inline-block;
+  filter: contrast(1.1);
+}
+
+/* Responsive para Lectura */
+@media (max-width: 768px) {
+  .back-link {
+    margin: 24px 0 0 24px;
+    font-size: 21px;
+  }
+
+  .reading-container {
+    margin: 100px auto;
+    padding: 0 24px;
+  }
+
+  .reading-container h1 {
+    font-size: 31px;
+  }
+
+  .reading-body p,
+  .reading-body div {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reading-container {
+    margin: 80px auto;
+    padding: 0 20px;
+  }
+
+  .reading-container h1 {
+    font-size: 29px;
+  }
+}
