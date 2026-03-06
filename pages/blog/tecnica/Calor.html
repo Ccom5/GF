@@ -1,584 +1,936 @@
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Física del Calor: Mitigación y Aplicación Práctica | RESONANCIAS</title>
-        <meta name="description" content="Explora la física del calor, la mitigación del deshielo glacial en los Andes y su aplicación en el control térmico pasivo en viviendas." />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Física del Calor: Mitigación y Aplicación Práctica | RESONANCIAS
+    </title>
+    <meta
+      name="description"
+      content="Explora la física del calor, la mitigación del deshielo glacial en los Andes y su aplicación en el control térmico pasivo en viviendas."
+    />
 
-        <!-- URL Canónica -->
-        <link rel="canonical" href="https://resonancias.pages.dev/pages/blog/tecnica/Calor.html" />
+    <!-- URL Canónica -->
+    <link
+      rel="canonical"
+      href="https://resonancias.pages.dev/pages/blog/tecnica/Calor.html"
+    />
 
-        <!-- SEO y Accesibilidad -->
-        <meta name="robots" content="index, follow" />
-        <meta name="author" content="Gabriel Ferré" />
-        <meta name="keywords" content="física del calor, mitigación, deshielo glacial, Andes, calentamiento global, albedo, control térmico pasivo, eficiencia energética, Gabriel Ferré" />
+    <!-- SEO y Accesibilidad -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Gabriel Ferré" />
+    <meta
+      name="keywords"
+      content="física del calor, mitigación, deshielo glacial, Andes, calentamiento global, albedo, control térmico pasivo, eficiencia energética, Gabriel Ferré"
+    />
 
-        <!-- Open Graph -->
-        <meta property="og:title" content="Física del Calor: Mitigación y Aplicación Práctica | RESONANCIAS" />
-        <meta property="og:description" content="Explora la física del calor, la mitigación del deshielo glacial en los Andes y su aplicación en el control térmico pasivo en viviendas." />
-        <meta property="og:image" content="https://resonancias.pages.dev/img/tecnica/calor.jpg" />
-        <meta property="og:url" content="https://resonancias.pages.dev/pages/blog/tecnica/Calor.html" />
-        <meta property="og:type" content="article" />
-        <meta property="og:site_name" content="RESONANCIAS" />
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Física del Calor: Mitigación y Aplicación Práctica | RESONANCIAS"
+    />
+    <meta
+      property="og:description"
+      content="Explora la física del calor, la mitigación del deshielo glacial en los Andes y su aplicación en el control térmico pasivo en viviendas."
+    />
+    <meta
+      property="og:image"
+      content="https://resonancias.pages.dev/img/tecnica/calor.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://resonancias.pages.dev/pages/blog/tecnica/Calor.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="RESONANCIAS" />
 
-        <!-- Twitter Card -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Física del Calor: Mitigación y Aplicación Práctica | RESONANCIAS" />
-        <meta name="twitter:description" content="Explora la física del calor, la mitigación del deshielo glacial en los Andes y su aplicación en el control térmico pasivo en viviendas." />
-        <meta name="twitter:image" content="https://resonancias.pages.dev/img/tecnica/calor.jpg" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Física del Calor: Mitigación y Aplicación Práctica | RESONANCIAS"
+    />
+    <meta
+      name="twitter:description"
+      content="Explora la física del calor, la mitigación del deshielo glacial en los Andes y su aplicación en el control térmico pasivo en viviendas."
+    />
+    <meta
+      name="twitter:image"
+      content="https://resonancias.pages.dev/img/tecnica/calor.jpg"
+    />
 
-        <!-- Favicon -->
-        <link rel="icon" href="/img/ui/favicon.png" type="image/png" />
+    <!-- Favicon -->
+    <link rel="icon" href="/img/ui/favicon.png" type="image/png" />
 
-        <!-- Estilos -->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="/assets/css/estilos.css" />
+    <!-- Estilos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/assets/css/estilos.css" />
 
-        <!-- Scripts -->
+    <!-- Scripts -->
 
-        <script src="/assets/js/main.js" defer></script>
-<script src="/assets/js/back-to-top.js" defer></script>
-        <!-- Estilos responsivos para el layout del artículo -->
-        <style>
-            @media (max-width: 768px) {
-                .article-layout {
-                    flex-direction: column !important;
-                    gap: var(--spacing-lg) !important;
-                }
-                .image-card {
-                    position: relative !important;
-                    top: auto !important;
-                    width: 100% !important;
-                    min-width: auto !important;
-                    margin-bottom: var(--spacing-lg) !important;
-                }
-            }
-        
+    <script src="/assets/js/main.js" defer></script>
+    <script src="/assets/js/back-to-top.js" defer></script>
+    <!-- Estilos responsivos para el layout del artículo -->
+    <style>
+      /* === RESPONSIVE MÓVIL === */
+      @media (max-width: 768px) {
+        .article-layout {
+          flex-direction: column !important;
+          gap: var(--spacing-lg) !important;
+        }
+        .image-card {
+          position: relative !important;
+          top: auto !important;
+          width: 100% !important;
+          min-width: auto !important;
+          margin-bottom: var(--spacing-lg) !important;
+        }
+        .content-card {
+          max-width: 100% !important;
+          width: 100% !important;
+          margin: var(--spacing-md) 0 !important;
+          border-radius: 0 !important;
+          padding: var(--spacing-md) !important;
+          box-sizing: border-box !important;
+        }
+        .content-card .container {
+          padding: 0 !important;
+          max-width: 100% !important;
+        }
+        table {
+          display: block !important;
+          width: 100% !important;
+          overflow-x: auto !important;
+          -webkit-overflow-scrolling: touch !important;
+          font-size: 0.9rem !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .content-card {
+          padding: var(--spacing-sm) !important;
+        }
+      }
+
       .content-card {
         max-width: 1000px !important;
       }
-
-      .content-card { max-width: 1000px !important; }
     </style>
-        <style>
-            /* Markdown incrustado desde Obsidian */
-            .md-obsidian h1,
-            .md-obsidian h2,
-            .md-obsidian h3,
-            .md-obsidian h4,
-            .md-obsidian h5,
-            .md-obsidian h6 {
-                margin-top: 1.6em;
-                margin-bottom: 0.6em;
-                line-height: 1.3;
-            }
+    <style>
+      /* Markdown incrustado desde Obsidian */
+      .md-obsidian h1,
+      .md-obsidian h2,
+      .md-obsidian h3,
+      .md-obsidian h4,
+      .md-obsidian h5,
+      .md-obsidian h6 {
+        margin-top: 1.6em;
+        margin-bottom: 0.6em;
+        line-height: 1.3;
+      }
 
-            .md-obsidian p {
-                margin: 0.9em 0;
-                line-height: 1.75;
-            }
+      .md-obsidian p {
+        margin: 0.9em 0;
+        line-height: 1.75;
+      }
 
-            .md-obsidian ul,
-            .md-obsidian ol {
-                margin: 0.9em 0 0.9em 1.6em;
-            }
+      .md-obsidian ul,
+      .md-obsidian ol {
+        margin: 0.9em 0 0.9em 1.6em;
+      }
 
-            .md-obsidian li {
-                margin: 0.4em 0;
-            }
+      .md-obsidian li {
+        margin: 0.4em 0;
+      }
 
-            .md-obsidian blockquote {
-                margin: 1.2em 0;
-                padding-left: 1em;
-                border-left: 3px solid var(--color-secondary);
-                color: var(--color-neutral);
-                font-style: italic;
-            }
+      .md-obsidian blockquote {
+        margin: 1.2em 0;
+        padding-left: 1em;
+        border-left: 3px solid var(--color-secondary);
+        color: var(--color-neutral);
+        font-style: italic;
+      }
 
-            .md-obsidian hr {
-                margin: 2em 0;
-                border: none;
-                border-top: 1px solid var(--color-mid);
-            }
-        </style>
-    </head>
-    <body>
-<!-- Header + menú -->
-<div id="header"></div>
-<div id="side-menu"></div>
+      .md-obsidian hr {
+        margin: 2em 0;
+        border: none;
+        border-top: 1px solid var(--color-mid);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header + menú -->
+    <div id="header"></div>
+    <div id="side-menu"></div>
 
-<script src="/assets/js/includes.js"></script>
+    <script src="/assets/js/includes.js"></script>
 
-        <!-- Skip to main content -->
-        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-        <!-- Header -->
+    <!-- Header -->
 
-        
-        <section
-            class="works-hero"
-            style="
-                margin-top: 0 !important;
-                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-url(&quot;/img/tecnica/calor.jpg&quot;);
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                color: var(--color-light);
-                padding: var(--spacing-3xl) 0;
-                text-align: center;
-                min-height: 400px;
+    <section
+      class="works-hero"
+      style="
+        margin-top: 0 !important;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url(&quot;/img/tecnica/calor.jpg&quot;);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: var(--color-light);
+        padding: var(--spacing-3xl) 0;
+        text-align: center;
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+      "
+    >
+      <div class="container">
+        <h2
+          style="
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          "
+        >
+          Física del Calor
+        </h2>
+        <p
+          style="
+            font-size: var(--font-size-xl);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+          "
+        >
+          Aplicacion Práctica
+        </p>
+      </div>
+    </section>
+    <!-- Contenido principal -->
+    <main id="main-content" role="main">
+      <!-- Artículo principal -->
+      <div class="content-card">
+        <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+          <div class="container" style="max-width: 1000px; margin: 0 auto">
+            <!-- Header del artículo -->
+
+            <div
+              class="article-layout"
+              style="
                 display: flex;
-                align-items: center;
-            ">
-            <div class="container">
-                <h2
+                gap: var(--spacing-xl);
+                align-items: flex-start;
+              "
+            >
+              <div
+                class="article-content"
+                style="flex: 1; line-height: 1.5; color: var(--color-dark)"
+              >
+                <div
+                  id="intro-paragraph"
+                  class="md-obsidian"
+                  style="
+                    font-size: var(--font-size-lg);
+                    margin-bottom: var(--spacing-2xl);
+                    color: var(--color-warm);
+                    position: relative;
+                  "
+                >
+                  <h2>
+                    Experiencia empírica aplicada a la mitigación del deshielo
+                    glacial en los Andes del Perú
+                  </h2>
+                  <h2>Contexto territorial y problema abordado</h2>
+                  <br />
+                  <p>
+                    Los <strong>glaciares tropicales andinos</strong>,
+                    particularmente en el Perú, han experimentado en las últimas
+                    décadas un <strong>retroceso acelerado</strong>, con
+                    consecuencias directas sobre:
+                  </p>
+                  <ul>
+                    <li><p>Disponibilidad futura de agua</p></li>
+                    <li><p>Regulación estacional de caudales</p></li>
+                    <li><p>Estabilidad de ecosistemas de altura</p></li>
+                    <li><p>Seguridad hídrica de comunidades aguas abajo</p></li>
+                  </ul>
+                  <p>
+                    Un aspecto crítico del proceso de deshielo es el
+                    <strong>efecto de retroalimentación térmica</strong> que se
+                    produce cuando el hielo desaparece y deja expuestas
+                    superficies rocosas oscuras, las cuales:
+                  </p>
+                  <ul>
+                    <li><p>Absorben mayor radiación solar</p></li>
+                    <li><p>Elevan su temperatura superficial</p></li>
+                    <li>
+                      <p>Aceleran el calentamiento del entorno inmediato</p>
+                    </li>
+                    <li>
+                      <p>
+                        Dificultan la reaparición o persistencia de nieve y
+                        hielo
+                      </p>
+                    </li>
+                  </ul>
+                  <p>
+                    Este mecanismo, bien documentado en glaciología, agrava el
+                    problema incluso sin cambios adicionales en la temperatura
+                    media del aire.
+                  </p>
+                  <h2>Antecedente empírico (experiencia real)</h2>
+                  <p>
+                    A comienzos de la década de 2010, en una zona de
+                    <strong>alta montaña del sur del Perú</strong>, cercana al
+                    antiguo glaciar <strong>Chalón Sombrero</strong> (región de
+                    Ayacucho, ~4.700 m s.n.m.), se llevó adelante una
+                    experiencia experimental no convencional.
+                  </p>
+                  <p>
+                    Ante la pérdida acelerada del glaciar y la ausencia de
+                    recursos para intervenciones complejas, un grupo local
+                    impulsó una acción directa basada en un principio simple:
+                  </p>
+                  <blockquote>
+                    <p>
+                      <em
+                        >Si el hielo se pierde y deja roca oscura, esa roca
+                        acelera aún más el calentamiento; si se aclara la
+                        superficie, se reduce la absorción de energía.</em
+                      >
+                    </p>
+                  </blockquote>
+                  <p>
+                    La intervención consistió en
+                    <strong>pintar de blanco sectores de roca expuesta</strong>
+                    en zonas altas, próximas a antiguos cuerpos glaciares.
+                  </p>
+                  <br />
+                  <img
+                    src="/img/tecnica/calor-montaña.jpg"
+                    alt="Infraestructura eléctrica con cables de cobre como fondo, representando la dependencia material de la electrificación."
                     style="
-                        font-size: var(--font-size-4xl);
-                        margin-bottom: var(--spacing-lg);
-                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-                    ">
-                    Física del Calor
-                </h2>
-                <p
+                      width: 100%;
+                      height: auto;
+                      max-height: 600px;
+                      object-fit: contain;
+                      border-radius: 8px;
+                      margin-bottom: var(--spacing-md);
+                    "
+                  />
+                  <h2>Materiales y procedimiento</h2>
+                  <p>
+                    La aplicación se realizó de forma
+                    <strong>manual y artesanal</strong>, utilizando materiales
+                    de <strong>bajo impacto ambiental</strong>, entre ellos:
+                  </p>
+                  <ul>
+                    <li><p>Cal (hidróxido de calcio)</p></li>
+                    <li><p>Agua</p></li>
+                    <li>
+                      <p>
+                        Aglutinantes naturales (en algunos casos derivados
+                        orgánicos simples, como clara de huevo)
+                      </p>
+                    </li>
+                  </ul>
+                  <p>
+                    El objetivo no fue crear una capa estructural ni
+                    impermeable, sino
+                    <strong>modificar ópticamente la superficie</strong>,
+                    aumentando su reflectividad solar.
+                  </p>
+                  <p>Las tareas se realizaron:</p>
+                  <ul>
+                    <li><p>Sin maquinaria pesada</p></li>
+                    <li><p>Con transporte manual de materiales</p></li>
+                    <li>
+                      <p>
+                        Sobre áreas limitadas, seleccionadas por su exposición
+                        solar y cercanía a zonas previamente glaciadas
+                      </p>
+                    </li>
+                  </ul>
+                  <h2>Principio físico involucrado</h2>
+                  <h3>Modificación del albedo</h3>
+                  <p>El fundamento de la intervención es directo:</p>
+                  <ul>
+                    <li>
+                      <p>
+                        Las superficies claras poseen
+                        <strong>mayor albedo</strong>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Reflejan una fracción mayor de la radiación solar
+                        incidente
+                      </p>
+                    </li>
+                    <li><p>Absorben menos energía térmica</p></li>
+                    <li>
+                      <p>
+                        Alcanzan temperaturas superficiales menores que
+                        superficies oscuras equivalentes
+                      </p>
+                    </li>
+                  </ul>
+                  <p>
+                    En ambientes de alta montaña, donde la radiación solar es
+                    intensa y la atmósfera más delgada, este efecto resulta
+                    particularmente relevante.
+                  </p>
+                  <h3>Efecto microclimático local</h3>
+                  <p>La reducción de temperatura superficial:</p>
+                  <ul>
+                    <li>
+                      <p>
+                        Disminuye la transferencia de calor al aire inmediato
+                      </p>
+                    </li>
+                    <li><p>Reduce el calentamiento del entorno rocoso</p></li>
+                    <li><p>Favorece la persistencia de nieve estacional</p></li>
+                    <li>
+                      <p>
+                        Atenúa, localmente, el ciclo de retroalimentación
+                        térmica negativo
+                      </p>
+                    </li>
+                  </ul>
+                  <p>
+                    No se trata de “crear frío”, sino de
+                    <strong
+                      >evitar calentamiento adicional inducido por el
+                      oscurecimiento del terreno</strong
+                    >.
+                  </p>
+                  <h2>Resultados observados</h2>
+                  <p>
+                    Los resultados reportados fueron
+                    <strong
+                      >modestos pero consistentes con el principio
+                      físico</strong
+                    >:
+                  </p>
+                  <ul>
+                    <li>
+                      <p>Menor temperatura superficial en áreas tratadas</p>
+                    </li>
+                    <li>
+                      <p>
+                        Persistencia relativa de nieve y hielo residual en
+                        comparación con zonas adyacentes no intervenidas
+                      </p>
+                    </li>
+                    <li>
+                      <p>Ausencia de efectos ambientales adversos inmediatos</p>
+                    </li>
+                  </ul>
+                  <p>
+                    No se registró regeneración glacial en sentido estricto, ni
+                    se afirmó reversión del proceso global de deshielo.
+                  </p>
+                  <p>
+                    El valor de la experiencia reside en haber
+                    <strong
+                      >verificado empíricamente un efecto local medible</strong
+                    >, utilizando medios extremadamente simples.
+                  </p>
+                  <h2>Alcance y limitaciones</h2>
+                  <p>
+                    Este tipo de intervención presenta
+                    <strong>limitaciones claras</strong>, que deben
+                    explicitarse:
+                  </p>
+                  <ul>
+                    <li>
+                      <p>
+                        El efecto es
+                        <strong
+                          >local y dependiente de la superficie tratada</strong
+                        >
+                      </p>
+                    </li>
+                    <li>
+                      <p>No es viable cubrir extensiones glaciares completas</p>
+                    </li>
+                    <li><p>Requiere reaplicación periódica</p></li>
+                    <li>
+                      <p>
+                        No sustituye la mitigación climática global ni políticas
+                        de reducción de emisiones
+                      </p>
+                    </li>
+                  </ul>
+                  <p>Su utilidad se restringe a:</p>
+                  <ul>
+                    <li><p>Zonas críticas puntuales</p></li>
+                    <li><p>Experiencias piloto</p></li>
+                    <li><p>Contextos de bajo acceso tecnológico</p></li>
+                    <li><p>Investigación aplicada a pequeña escala</p></li>
+                  </ul>
+                  <h2>Valor técnico del antecedente</h2>
+                  <p>
+                    Más allá de su escala, la experiencia peruana resulta
+                    relevante porque:
+                  </p>
+                  <ul>
+                    <li>
+                      <p>
+                        Aplica un <strong>principio físico básico</strong> de
+                        forma directa
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Interviene sobre un
+                        <strong>mecanismo de retroalimentación</strong>, no
+                        sobre el síntoma final
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Demuestra que
+                        <strong
+                          >no toda acción técnica requiere alta
+                          complejidad</strong
+                        >
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Pone en evidencia el rol del
+                        <strong>diseño superficial</strong> en procesos
+                        climáticos locales
+                      </p>
+                    </li>
+                  </ul>
+                  <p>
+                    En este sentido, dialoga con otras estrategias pasivas
+                    empleadas en distintos campos de la ingeniería: disipación
+                    de energía por geometría, control térmico por reflectividad,
+                    y uso de materiales simples para modificar flujos de
+                    energía.
+                  </p>
+                  <hr />
+                  <h2>Aplicación de control térmico pasivo en viviendas</h2>
+                  <h3>
+                    Coberturas claras en techos metálicos como extensión del
+                    mismo principio físico
+                  </h3>
+                  <p>
+                    La experiencia de modificación del albedo superficial en
+                    zonas de alta montaña permite establecer un
+                    <strong>vínculo técnico directo</strong> con una práctica
+                    ampliamente difundida —aunque a menudo subestimada— en
+                    contextos urbanos y rurales de la Argentina: la
+                    <strong
+                      >aplicación de cubiertas claras o blancas en techos
+                      metálicos</strong
+                    >.
+                  </p>
+                  <p>
+                    En ambos casos, la intervención no busca alterar el clima ni
+                    eliminar la radiación incidente, sino
+                    <strong
+                      >reducir la fracción de energía absorbida por superficies
+                      expuestas</strong
+                    >, actuando sobre un mismo principio físico elemental.
+                  </p>
+
+                  <h2>Contexto constructivo local</h2>
+                  <p>
+                    En amplias regiones del país, especialmente en climas
+                    cálidos o de elevada radiación solar, es habitual el uso de:
+                  </p>
+                  <ul>
+                    <li>Techos de chapa galvanizada</li>
+                    <li>Cubiertas metálicas prepintadas</li>
+                    <li>
+                      Sistemas constructivos livianos, de baja inercia térmica
+                    </li>
+                  </ul>
+                  <p>
+                    Estas soluciones presentan ventajas evidentes en costo,
+                    disponibilidad y velocidad constructiva, pero comparten una
+                    limitación física clara:<br />la
+                    <strong
+                      >alta carga térmica inducida por radiación solar
+                      directa</strong
+                    >.
+                  </p>
+                  <p>
+                    En viviendas sin aislamiento adecuado, el techo se convierte
+                    en el <strong>principal vector de ingreso de calor</strong>,
+                    superando ampliamente a muros y aberturas.
+                  </p>
+                  <br />
+                  <img
+                    src="/img/tecnica/fisicacalor.jpg"
+                    alt="Infraestructura eléctrica con cables de cobre como fondo, representando la dependencia material de la electrificación."
                     style="
-                        font-size: var(--font-size-xl);
-                        max-width: 600px;
-                        margin: 0 auto;
-                        line-height: 1.6;
-                        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-                    ">
-Aplicacion  Práctica                </p>
+                      width: 100%;
+                      height: auto;
+                      max-height: 600px;
+                      object-fit: contain;
+                      border-radius: 8px;
+                      margin-bottom: var(--spacing-md);
+                    "
+                  />
+                  <h2>Principio físico compartido</h2>
+                  <p>El paralelismo con la experiencia andina es directo:</p>
+                  <blockquote>
+                    <p>
+                      <em
+                        >Superficies oscuras absorben mayor radiación solar;
+                        superficies claras reflejan una fracción mayor de la
+                        energía incidente.</em
+                      >
+                    </p>
+                  </blockquote>
+                  <p>En términos térmicos:</p>
+                  <ul>
+                    <li>
+                      Chapa oscura → mayor absorción → mayor temperatura
+                      superficial → mayor flujo de calor hacia el interior
+                    </li>
+                    <li>
+                      Chapa blanca → menor absorción → menor temperatura
+                      superficial → menor carga térmica interior
+                    </li>
+                  </ul>
+                  <p>
+                    En condiciones de alta insolación, la diferencia de
+                    temperatura superficial entre una cubierta oscura y una
+                    blanca puede ser <strong>muy significativa</strong>, aun
+                    cuando el material base sea el mismo.
+                  </p>
+
+                  <h2>Control pasivo frente a soluciones activas</h2>
+                  <p>
+                    La aplicación de pintura blanca o recubrimientos reflectivos
+                    en techos metálicos constituye una forma clara de
+                    <strong>control térmico pasivo</strong>, con características
+                    comunes a la intervención en alta montaña:
+                  </p>
+                  <ul>
+                    <li>No requiere aporte energético</li>
+                    <li>No incorpora partes móviles</li>
+                    <li>
+                      Funciona de manera continua mientras exista radiación
+                    </li>
+                    <li>
+                      Incrementa su efecto cuanto más extremas son las
+                      condiciones externas
+                    </li>
+                  </ul>
+                  <p>
+                    Al igual que en el caso glacial, no se introduce un
+                    mecanismo de compensación artificial, sino una
+                    <strong
+                      >modificación de la respuesta térmica del sistema</strong
+                    >.
+                  </p>
+                  <h2>Resultados observables en vivienda</h2>
+                  <p>
+                    Incluso sin instrumentación avanzada, los efectos suelen ser
+                    evidentes:
+                  </p>
+                  <ul>
+                    <li>Menor temperatura del cielorraso</li>
+                    <li>Reducción del sobrecalentamiento diurno</li>
+                    <li>Disminución de la necesidad de ventilación forzada</li>
+                    <li>Mejora del confort térmico en espacios habitables</li>
+                  </ul>
+                  <p>
+                    Desde el punto de vista energético, no se trata de
+                    “eficiencia”, sino de
+                    <strong>reducción directa de demanda</strong>.
+                  </p>
+                  <h2>Analogía técnica entre ambos casos</h2>
+                  <p>
+                    Aunque los contextos difieren radicalmente en escala y
+                    función, el esquema físico es el mismo:
+                  </p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Alta montaña</th>
+                        <th>Vivienda con techo metálico</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Roca oscura expuesta</td>
+                        <td>Chapa metálica expuesta</td>
+                      </tr>
+                      <tr>
+                        <td>Alta radiación solar</td>
+                        <td>Alta radiación solar</td>
+                      </tr>
+                      <tr>
+                        <td>Elevada absorción térmica</td>
+                        <td>Elevada absorción térmica</td>
+                      </tr>
+                      <tr>
+                        <td>Superficie aclarada</td>
+                        <td>Pintura blanca</td>
+                      </tr>
+                      <tr>
+                        <td>Menor calentamiento local</td>
+                        <td>Menor carga térmica interior</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>
+                    En ambos casos, la intervención
+                    <strong>no cambia el entorno</strong>, sino que
+                    <strong>modifica el intercambio energético</strong> entre el
+                    sistema y su ambiente.
+                  </p>
+                  <img
+                    src="/img/tecnica/calor.jpg"
+                    alt="Infraestructura eléctrica con cables de cobre como fondo, representando la dependencia material de la electrificación."
+                    style="
+                      width: 100%;
+                      height: auto;
+                      max-height: 600px;
+                      object-fit: contain;
+                      border-radius: 8px;
+                      margin-bottom: var(--spacing-md);
+                    "
+                  />
+                  <h2>Limitaciones compartidas</h2>
+                  <p>
+                    Así como la pintura de rocas no detiene el retroceso glacial
+                    global, la pintura blanca en techos:
+                  </p>
+                  <ul>
+                    <li>No reemplaza el aislamiento térmico</li>
+                    <li>No corrige deficiencias de diseño bio-climático</li>
+                    <li>
+                      No soluciona problemas estructurales o de ventilación
+                    </li>
+                  </ul>
+                  <p>
+                    Su valor reside en ser una
+                    <strong
+                      >medida simple, económica y de implementación
+                      inmediata</strong
+                    >, especialmente relevante en contextos de recursos
+                    limitados.
+                  </p>
+                  <p>
+                    Desde una superficie rocosa en los Andes peruanos hasta un
+                    techo de chapa en una vivienda argentina, el principio es el
+                    mismo:
+                  </p>
+                  <p>
+                    <strong>no toda energía que llega debe ser absorbida</strong
+                    >.
+                  </p>
+                  <p>
+                    Registrar, analizar y aplicar estos mecanismos simples forma
+                    parte de una
+                    <strong>ingeniería consciente de los límites</strong>, donde
+                    pequeñas decisiones materiales pueden producir efectos
+                    acumulativos relevantes.
+                  </p>
+                  <p>
+                    En un escenario de restricciones energéticas y climáticas
+                    crecientes, este tipo de experiencias practicas y pasivas
+                    —modestas, locales y físicamente fundadas— merecen ser
+                    documentadas y pensadas como parte de una respuesta técnica
+                    más amplia, aun cuando no encajen en el imaginario de
+                    soluciones espectaculares.
+                  </p>
+                  <br />
+                </div>
+              </div>
             </div>
-        </section>
-        <!-- Contenido principal -->
-        <main id="main-content" role="main">
-            <!-- Artículo principal -->
-            <div class="content-card">
-                <article class="blog-post" style="padding: var(--spacing-2xl) 0">
-                    <div class="container" style="max-width: 1000px; margin: 0 auto">
-                        <!-- Header del artículo -->
+            <section
+              class="blog-subscription"
+              style="
+                margin-top: var(--spacing-3xl);
+                background: var(--color-mid);
+                padding: var(--spacing-2xl);
+                border-radius: 12px;
+                text-align: center;
+              "
+            >
+              <nav class="share-footer" aria-label="Compartir página">
+                <a
+                  href="https://www.facebook.com/sharer/sharer.php?u=https://resonancias.pages.dev/pages/blog/tecnica/Calor.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="share-btn facebook"
+                  title="Compartir en Facebook"
+                  aria-label="Compartir en Facebook"
+                >
+                  <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a
+                  href="https://twitter.com/intent/tweet?url=https://resonancias.pages.dev/pages/blog/tecnica/Calor.html&text=Física%20del%20Calor:%20Mitigación%20y%20Aplicación%20Práctica%20|%20RESONANCIAS"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="share-btn twitter"
+                  title="Compartir en X"
+                  aria-label="Compartir en X"
+                >
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
 
-                        <div
-                            class="article-layout"
-                            style="display: flex; gap: var(--spacing-xl); align-items: flex-start">
-                            <div class="article-content" style="flex: 1; line-height: 1.5; color: var(--color-dark)">
-                                <div
-  id="intro-paragraph"
-  class="md-obsidian"
-  style="
-    font-size: var(--font-size-lg);
-    margin-bottom: var(--spacing-2xl);
-    color: var(--color-warm);
-    position: relative;
-  "
->
-  <h2>Experiencia empírica aplicada a la mitigación del deshielo glacial en los Andes del Perú</h2>
-<h2>Contexto territorial y problema abordado</h2>
-                                    <br>
-<p>Los <strong>glaciares tropicales andinos</strong>, particularmente en el Perú, han experimentado en las últimas décadas un <strong>retroceso acelerado</strong>, con consecuencias directas sobre:</p>
-<ul>
-<li><p>Disponibilidad futura de agua</p>
-</li>
-<li><p>Regulación estacional de caudales</p>
-</li>
-<li><p>Estabilidad de ecosistemas de altura</p>
-</li>
-<li><p>Seguridad hídrica de comunidades aguas abajo</p>
-</li>
-</ul>
-<p>Un aspecto crítico del proceso de deshielo es el <strong>efecto de retroalimentación térmica</strong> que se produce cuando el hielo desaparece y deja expuestas superficies rocosas oscuras, las cuales:</p>
-<ul>
-<li><p>Absorben mayor radiación solar</p>
-</li>
-<li><p>Elevan su temperatura superficial</p>
-</li>
-<li><p>Aceleran el calentamiento del entorno inmediato</p>
-</li>
-<li><p>Dificultan la reaparición o persistencia de nieve y hielo</p>
-</li>
-</ul>
-<p>Este mecanismo, bien documentado en glaciología, agrava el problema incluso sin cambios adicionales en la temperatura media del aire.</p>
-<h2>Antecedente empírico (experiencia real)</h2>
-<p>A comienzos de la década de 2010, en una zona de <strong>alta montaña del sur del Perú</strong>, cercana al antiguo glaciar <strong>Chalón Sombrero</strong> (región de Ayacucho, ~4.700 m s.n.m.), se llevó adelante una experiencia experimental no convencional.</p>
-<p>Ante la pérdida acelerada del glaciar y la ausencia de recursos para intervenciones complejas, un grupo local impulsó una acción directa basada en un principio simple:</p>
-<blockquote>
-<p><em>Si el hielo se pierde y deja roca oscura, esa roca acelera aún más el calentamiento; si se aclara la superficie, se reduce la absorción de energía.</em></p>
-</blockquote>
-<p>La intervención consistió en <strong>pintar de blanco sectores de roca expuesta</strong> en zonas altas, próximas a antiguos cuerpos glaciares.</p>
-                                    <br>
-<img
-                                    src="/img/tecnica/calor-montaña.jpg"
-                                    alt="Infraestructura eléctrica con cables de cobre como fondo, representando la dependencia material de la electrificación."
-                                    style="
-                                        width: 100%;
-                                        height: auto;
-                                        max-height: 600px;
-                                        object-fit: contain;
-                                        border-radius: 8px;
-                                        margin-bottom: var(--spacing-md);
-                                    " />
-<h2>Materiales y procedimiento</h2>
-<p>La aplicación se realizó de forma <strong>manual y artesanal</strong>, utilizando materiales de <strong>bajo impacto ambiental</strong>, entre ellos:</p>
-<ul>
-<li><p>Cal (hidróxido de calcio)</p>
-</li>
-<li><p>Agua</p>
-</li>
-<li><p>Aglutinantes naturales (en algunos casos derivados orgánicos simples, como clara de huevo)</p>
-</li>
-</ul>
-<p>El objetivo no fue crear una capa estructural ni impermeable, sino <strong>modificar ópticamente la superficie</strong>, aumentando su reflectividad solar.</p>
-<p>Las tareas se realizaron:</p>
-<ul>
-<li><p>Sin maquinaria pesada</p>
-</li>
-<li><p>Con transporte manual de materiales</p>
-</li>
-<li><p>Sobre áreas limitadas, seleccionadas por su exposición solar y cercanía a zonas previamente glaciadas</p>
-</li>
-</ul>
-<h2>Principio físico involucrado</h2>
-<h3>Modificación del albedo</h3>
-<p>El fundamento de la intervención es directo:</p>
-<ul>
-<li><p>Las superficies claras poseen <strong>mayor albedo</strong></p>
-</li>
-<li><p>Reflejan una fracción mayor de la radiación solar incidente</p>
-</li>
-<li><p>Absorben menos energía térmica</p>
-</li>
-<li><p>Alcanzan temperaturas superficiales menores que superficies oscuras equivalentes</p>
-</li>
-</ul>
-<p>En ambientes de alta montaña, donde la radiación solar es intensa y la atmósfera más delgada, este efecto resulta particularmente relevante.</p>
-<h3>Efecto microclimático local</h3>
-<p>La reducción de temperatura superficial:</p>
-<ul>
-<li><p>Disminuye la transferencia de calor al aire inmediato</p>
-</li>
-<li><p>Reduce el calentamiento del entorno rocoso</p>
-</li>
-<li><p>Favorece la persistencia de nieve estacional</p>
-</li>
-<li><p>Atenúa, localmente, el ciclo de retroalimentación térmica negativo</p>
-</li>
-</ul>
-<p>No se trata de “crear frío”, sino de <strong>evitar calentamiento adicional inducido por el oscurecimiento del terreno</strong>.</p>
-<h2>Resultados observados</h2>
-<p>Los resultados reportados fueron <strong>modestos pero consistentes con el principio físico</strong>:</p>
-<ul>
-<li><p>Menor temperatura superficial en áreas tratadas</p>
-</li>
-<li><p>Persistencia relativa de nieve y hielo residual en comparación con zonas adyacentes no intervenidas</p>
-</li>
-<li><p>Ausencia de efectos ambientales adversos inmediatos</p>
-</li>
-</ul>
-<p>No se registró regeneración glacial en sentido estricto, ni se afirmó reversión del proceso global de deshielo.</p>
-<p>El valor de la experiencia reside en haber <strong>verificado empíricamente un efecto local medible</strong>, utilizando medios extremadamente simples.</p>
-<h2>Alcance y limitaciones</h2>
-<p>Este tipo de intervención presenta <strong>limitaciones claras</strong>, que deben explicitarse:</p>
-<ul>
-<li><p>El efecto es <strong>local y dependiente de la superficie tratada</strong></p>
-</li>
-<li><p>No es viable cubrir extensiones glaciares completas</p>
-</li>
-<li><p>Requiere reaplicación periódica</p>
-</li>
-<li><p>No sustituye la mitigación climática global ni políticas de reducción de emisiones</p>
-</li>
-</ul>
-<p>Su utilidad se restringe a:</p>
-<ul>
-<li><p>Zonas críticas puntuales</p>
-</li>
-<li><p>Experiencias piloto</p>
-</li>
-<li><p>Contextos de bajo acceso tecnológico</p>
-</li>
-<li><p>Investigación aplicada a pequeña escala</p>
-</li>
-</ul>
-<h2>Valor técnico del antecedente</h2>
-<p>Más allá de su escala, la experiencia peruana resulta relevante porque:</p>
-<ul>
-<li><p>Aplica un <strong>principio físico básico</strong> de forma directa</p>
-</li>
-<li><p>Interviene sobre un <strong>mecanismo de retroalimentación</strong>, no sobre el síntoma final</p>
-</li>
-<li><p>Demuestra que <strong>no toda acción técnica requiere alta complejidad</strong></p>
-</li>
-<li><p>Pone en evidencia el rol del <strong>diseño superficial</strong> en procesos climáticos locales</p>
-</li>
-</ul>
-<p>En este sentido, dialoga con otras estrategias pasivas empleadas en distintos campos de la ingeniería: disipación de energía por geometría, control térmico por reflectividad, y uso de materiales simples para modificar flujos de energía.</p>
-<hr>
-<h2>Aplicación de control térmico pasivo en viviendas</h2>
-<h3>Coberturas claras en techos metálicos como extensión del mismo principio físico</h3>
-<p>La experiencia de modificación del albedo superficial en zonas de alta montaña permite establecer un <strong>vínculo técnico directo</strong> con una práctica ampliamente difundida —aunque a menudo subestimada— en contextos urbanos y rurales de la Argentina: la <strong>aplicación de cubiertas claras o blancas en techos metálicos</strong>.</p>
-<p>En ambos casos, la intervención no busca alterar el clima ni eliminar la radiación incidente, sino <strong>reducir la fracción de energía absorbida por superficies expuestas</strong>, actuando sobre un mismo principio físico elemental.</p>
-                                   
-<h2>Contexto constructivo local</h2>
-<p>En amplias regiones del país, especialmente en climas cálidos o de elevada radiación solar, es habitual el uso de:</p>
-<ul>
-<li>Techos de chapa galvanizada  </li>
-<li>Cubiertas metálicas prepintadas  </li>
-<li>Sistemas constructivos livianos, de baja inercia térmica</li>
-</ul>
-<p>Estas soluciones presentan ventajas evidentes en costo, disponibilidad y velocidad constructiva, pero comparten una limitación física clara:<br>la <strong>alta carga térmica inducida por radiación solar directa</strong>.</p>
-<p>En viviendas sin aislamiento adecuado, el techo se convierte en el <strong>principal vector de ingreso de calor</strong>, superando ampliamente a muros y aberturas.</p>
-                                     <br>
-                               <img
-                                    src="/img/tecnica/fisicacalor.jpg"
-                                    alt="Infraestructura eléctrica con cables de cobre como fondo, representando la dependencia material de la electrificación."
-                                    style="
-                                        width: 100%;
-                                        height: auto;
-                                        max-height: 600px;
-                                        object-fit: contain;
-                                        border-radius: 8px;
-                                        margin-bottom: var(--spacing-md);
-                                    " />     
-<h2>Principio físico compartido</h2>
-<p>El paralelismo con la experiencia andina es directo:</p>
-<blockquote>
-<p><em>Superficies oscuras absorben mayor radiación solar; superficies claras reflejan una fracción mayor de la energía incidente.</em></p>
-</blockquote>
-<p>En términos térmicos:</p>
-<ul>
-<li>Chapa oscura → mayor absorción → mayor temperatura superficial → mayor flujo de calor hacia el interior  </li>
-<li>Chapa blanca → menor absorción → menor temperatura superficial → menor carga térmica interior</li>
-</ul>
-<p>En condiciones de alta insolación, la diferencia de temperatura superficial entre una cubierta oscura y una blanca puede ser <strong>muy significativa</strong>, aun cuando el material base sea el mismo.</p>
-                                    
-<h2>Control pasivo frente a soluciones activas</h2>
-<p>La aplicación de pintura blanca o recubrimientos reflectivos en techos metálicos constituye una forma clara de <strong>control térmico pasivo</strong>, con características comunes a la intervención en alta montaña:</p>
-<ul>
-<li>No requiere aporte energético  </li>
-<li>No incorpora partes móviles  </li>
-<li>Funciona de manera continua mientras exista radiación  </li>
-<li>Incrementa su efecto cuanto más extremas son las condiciones externas</li>
-</ul>
-<p>Al igual que en el caso glacial, no se introduce un mecanismo de compensación artificial, sino una <strong>modificación de la respuesta térmica del sistema</strong>.</p>
-<h2>Resultados observables en vivienda</h2>
-<p>Incluso sin instrumentación avanzada, los efectos suelen ser evidentes:</p>
-<ul>
-<li>Menor temperatura del cielorraso  </li>
-<li>Reducción del sobrecalentamiento diurno  </li>
-<li>Disminución de la necesidad de ventilación forzada  </li>
-<li>Mejora del confort térmico en espacios habitables</li>
-</ul>
-<p>Desde el punto de vista energético, no se trata de “eficiencia”, sino de <strong>reducción directa de demanda</strong>.</p>
-<h2>Analogía técnica entre ambos casos</h2>
-<p>Aunque los contextos difieren radicalmente en escala y función, el esquema físico es el mismo:</p>
-<table>
-<thead>
-<tr>
-<th>Alta montaña</th>
-<th>Vivienda con techo metálico</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Roca oscura expuesta</td>
-<td>Chapa metálica expuesta</td>
-</tr>
-<tr>
-<td>Alta radiación solar</td>
-<td>Alta radiación solar</td>
-</tr>
-<tr>
-<td>Elevada absorción térmica</td>
-<td>Elevada absorción térmica</td>
-</tr>
-<tr>
-<td>Superficie aclarada</td>
-<td>Pintura blanca</td>
-</tr>
-<tr>
-<td>Menor calentamiento local</td>
-<td>Menor carga térmica interior</td>
-</tr>
-</tbody></table>
-<p>En ambos casos, la intervención <strong>no cambia el entorno</strong>, sino que <strong>modifica el intercambio energético</strong> entre el sistema y su ambiente.</p>
-                                    <img
-                                    src="/img/tecnica/calor.jpg"
-                                    alt="Infraestructura eléctrica con cables de cobre como fondo, representando la dependencia material de la electrificación."
-                                    style="
-                                        width: 100%;
-                                        height: auto;
-                                        max-height: 600px;
-                                        object-fit: contain;
-                                        border-radius: 8px;
-                                        margin-bottom: var(--spacing-md);
-                                    " /> 
-<h2>Limitaciones compartidas</h2>
-<p>Así como la pintura de rocas no detiene el retroceso glacial global, la pintura blanca en techos:</p>
-<ul>
-<li>No reemplaza el aislamiento térmico  </li>
-<li>No corrige deficiencias de diseño bio-climático  </li>
-<li>No soluciona problemas estructurales o de ventilación</li>
-</ul>
-<p>Su valor reside en ser una <strong>medida simple, económica y de implementación inmediata</strong>, especialmente relevante en contextos de recursos limitados.</p>
-<p>Desde una superficie rocosa en los Andes peruanos hasta un techo de chapa en una vivienda argentina, el principio es el mismo:</p>
-<p><strong>no toda energía que llega debe ser absorbida</strong>.</p>
-<p>Registrar, analizar y aplicar estos mecanismos simples forma parte de una <strong>ingeniería consciente de los límites</strong>, donde pequeñas decisiones materiales pueden producir efectos acumulativos relevantes.</p>
-<p>En un escenario de restricciones energéticas y climáticas crecientes, este tipo de experiencias practicas y  pasivas —modestas, locales y físicamente fundadas— merecen ser documentadas y pensadas como parte de una respuesta técnica más amplia, aun cuando no encajen en el imaginario de soluciones espectaculares.</p>
-                                    <br>
+                <a
+                  href="https://api.whatsapp.com/send?text=Física%20del%20Calor:%20Mitigación%20y%20Aplicación%20Práctica%20|%20RESONANCIAS%20https://resonancias.pages.dev/pages/blog/tecnica/Calor.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="share-btn whatsapp"
+                  title="Compartir en WhatsApp"
+                  aria-label="Compartir en WhatsApp"
+                >
+                  <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a
+                  href="https://bsky.app/intent/compose?text=Física%20del%20Calor:%20Mitigación%20y%20Aplicación%20Práctica%20|%20RESONANCIAS%20https://resonancias.pages.dev/pages/blog/tecnica/Calor.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="share-btn bluesky"
+                  title="Compartir en Bluesky"
+                  aria-label="Compartir en Bluesky"
+                >
+                  <i class="fa-brands fa-bluesky"></i>
+                </a>
+              </nav>
+              <h3
+                style="
+                  color: var(--color-dark);
+                  margin-bottom: var(--spacing-md);
+                  font-size: var(--font-size-2xl);
+                "
+              >
+                Comparte en tus redes
+              </h3>
 
-</div>
-                            </div>
-                        </div>
-                        <section
-                            class="blog-subscription"
-                            style="
-                                margin-top: var(--spacing-3xl);
-                                background: var(--color-mid);
-                                padding: var(--spacing-2xl);
-                                border-radius: 12px;
-                                text-align: center;
-                            ">
-                            <nav class="share-footer" aria-label="Compartir página">
-                                <a
-                                    href="https://www.facebook.com/sharer/sharer.php?u=https://resonancias.pages.dev/pages/blog/tecnica/Calor.html"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="share-btn facebook"
-                                    title="Compartir en Facebook"
-                                    aria-label="Compartir en Facebook">
-                                    <i class="fa-brands fa-facebook"></i>
-                                </a>
-                                <a
-                                    href="https://twitter.com/intent/tweet?url=https://resonancias.pages.dev/pages/blog/tecnica/Calor.html&text=Física%20del%20Calor:%20Mitigación%20y%20Aplicación%20Práctica%20|%20RESONANCIAS"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="share-btn twitter"
-                                    title="Compartir en X"
-                                    aria-label="Compartir en X">
-                                    <i class="fa-brands fa-x-twitter"></i>
-                                </a>
+              <div
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: var(--spacing-md);
+                  max-width: 400px;
+                  margin: 0 auto;
+                  flex-wrap: wrap;
+                "
+              >
+                <a
+                  href="/pages/quien-soy.html"
+                  style="
+                    background: var(--color-secondary);
+                    color: var(--color-light);
+                    border: none;
+                    padding: var(--spacing-md) var(--spacing-xl);
+                    border-radius: 8px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    cursor: pointer;
+                    transition: all var(--transition-fast);
+                    display: inline-flex;
+                    align-items: center;
+                    gap: var(--spacing-sm);
+                  "
+                  onmouseover="
+                    this.style.background = 'var(--color-warm)';
+                    this.style.transform = 'translateY(-2px)';
+                  "
+                  onmouseout="
+                    this.style.background = 'var(--color-secondary)';
+                    this.style.transform = 'translateY(0)';
+                  "
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  Contáctame
+                </a>
+              </div>
+            </section>
+            <!-- Footer del artículo -->
 
-                                <a
-                                    href="https://api.whatsapp.com/send?text=Física%20del%20Calor:%20Mitigación%20y%20Aplicación%20Práctica%20|%20RESONANCIAS%20https://resonancias.pages.dev/pages/blog/tecnica/Calor.html"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="share-btn whatsapp"
-                                    title="Compartir en WhatsApp"
-                                    aria-label="Compartir en WhatsApp">
-                                    <i class="fa-brands fa-whatsapp"></i>
-                                </a>
-                                <a
-                                    href="https://bsky.app/intent/compose?text=Física%20del%20Calor:%20Mitigación%20y%20Aplicación%20Práctica%20|%20RESONANCIAS%20https://resonancias.pages.dev/pages/blog/tecnica/Calor.html"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="share-btn bluesky"
-                                    title="Compartir en Bluesky"
-                                    aria-label="Compartir en Bluesky">
-                                    <i class="fa-brands fa-bluesky"></i>
-                                </a>
-                            </nav>
-                            <h3
-                                style="
-                                    color: var(--color-dark);
-                                    margin-bottom: var(--spacing-md);
-                                    font-size: var(--font-size-2xl);
-                                ">
-                                Comparte en tus redes
-                            </h3>
-                            
-                            <div
-                                style="
-                                    display: flex;
-                                    justify-content: center;
-                                    align-items: center;
-                                    gap: var(--spacing-md);
-                                    max-width: 400px;
-                                    margin: 0 auto;
-                                    flex-wrap: wrap;
-                                ">
-                                <a
-                                    href="/pages/quien-soy.html"
-                                    style="
-                                        background: var(--color-secondary);
-                                        color: var(--color-light);
-                                        border: none;
-                                        padding: var(--spacing-md) var(--spacing-xl);
-                                        border-radius: 8px;
-                                        font-weight: 600;
-                                        text-decoration: none;
-                                        cursor: pointer;
-                                        transition: all var(--transition-fast);
-                                        display: inline-flex;
-                                        align-items: center;
-                                        gap: var(--spacing-sm);
-                                    "
-                                    onmouseover="this.style.background='var(--color-warm)'; this.style.transform='translateY(-2px)'"
-                                    onmouseout="this.style.background='var(--color-secondary)'; this.style.transform='translateY(0)'">
-                                    <svg
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2">
-                                        <path
-                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                        <polyline points="22,6 12,13 2,6"></polyline>
-                                    </svg>
-                                    Contáctame
-                                </a>
-                            </div>
-                        
-                        </section>
-                        <!-- Footer del artículo -->
-
-                        <footer
-                            style="
-                                margin-top: var(--spacing-2xl);
-                                padding-top: var(--spacing-xl);
-                                border-top: 1px solid var(--color-mid);
-                            ">
-                            <div
-                                style="
-                                    display: flex;
-                                    justify-content: space-between;
-                                    align-items: center;
-                                    flex-wrap: wrap;
-                                    gap: var(--spacing-md);
-                                ">
-                                <div>
-                                    <p style="color: var(--color-neutral); font-size: var(--font-size-sm); margin: 0">
-                                        Publicado el <time datetime="">2026</time>
-                                    </p>
-                                </div>
-                                <div style="display: flex; gap: var(--spacing-sm)">
-                                    <a
-                                        href="/pages/blog/tecnica/Tecnica.html"
-                                        style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
-                                        ← Volver a Tecnica
-                                    </a>
-                                </div>
-                            </div>
-                        </footer>
-                    </div>
-                </article>
-            </div>
-        </main>
-         <!-- Footer -->
-   <a href="#main-content" class="back-to-top" aria-label="Volver arriba">
-            <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
-        </a>
-        <footer class="footer" role="contentinfo">
-            <div class="footer-content">
-                <p>© 2026 RESONANCIAS · Todos los derechos reservados
-                </p>
-            </div>
-        </footer>
-    </body>
+            <footer
+              style="
+                margin-top: var(--spacing-2xl);
+                padding-top: var(--spacing-xl);
+                border-top: 1px solid var(--color-mid);
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  flex-wrap: wrap;
+                  gap: var(--spacing-md);
+                "
+              >
+                <div>
+                  <p
+                    style="
+                      color: var(--color-neutral);
+                      font-size: var(--font-size-sm);
+                      margin: 0;
+                    "
+                  >
+                    Publicado el <time datetime="">2026</time>
+                  </p>
+                </div>
+                <div style="display: flex; gap: var(--spacing-sm)">
+                  <a
+                    href="/pages/blog/tecnica/Tecnica.html"
+                    style="
+                      color: var(--color-secondary);
+                      text-decoration: none;
+                      font-weight: 600;
+                    "
+                  >
+                    ← Volver a Tecnica
+                  </a>
+                </div>
+              </div>
+            </footer>
+          </div>
+        </article>
+      </div>
+    </main>
+    <!-- Footer -->
+    <a href="#main-content" class="back-to-top" aria-label="Volver arriba">
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </a>
+    <footer class="footer" role="contentinfo">
+      <div class="footer-content">
+        <p>© 2026 RESONANCIAS · Todos los derechos reservados</p>
+      </div>
+    </footer>
+  </body>
 </html>

@@ -83,8 +83,8 @@
         gap: 30px;
         width: 100%;
         max-width: 70%;
-        padding: 10px 30px; /* Padding vertical y un mínimo horizontal */
-        margin: 0 auto; /* centra en horizontal */
+        padding: 10px 30px;
+        margin: 0 auto;
       }
 
       .carousel-title {
@@ -104,6 +104,32 @@
         border-radius: 10px;
         box-shadow: 0 10px 40px rgba(28, 26, 26, 0.53);
         overflow: hidden;
+      }
+
+      /* En pantallas muy pequeñas el contenedor ocupa todo */
+      @media (max-width: 480px) {
+        .page-container {
+          max-width: 100%;
+          padding: 8px 0;
+          gap: 10px;
+        }
+
+        .carousel-container {
+          width: 100%;
+          border-radius: 0;
+          box-shadow: none;
+        }
+
+        .carousel-slide img {
+          max-height: 85vh;
+          width: 100%;
+          object-fit: contain;
+        }
+
+        .carousel-title {
+          font-size: 1.4rem;
+          padding: 0 10px;
+        }
       }
 
       .carousel {
@@ -254,11 +280,21 @@
 
       @media (max-width: 768px) {
         .page-container {
-          gap: 20px;
+          max-width: 95%;
+          padding: 10px 10px;
+          gap: 15px;
+        }
+
+        .carousel-container {
+          width: 100%;
         }
 
         .carousel-title {
-          font-size: 2rem;
+          font-size: 1.8rem;
+        }
+
+        .carousel-slide img {
+          max-height: 80vh;
         }
 
         .slide-content h2 {
@@ -282,11 +318,22 @@
 
       @media (max-width: 580px) {
         .carousel-title {
-          font-size: 1.8rem;
+          font-size: 1.5rem;
         }
 
         .page-container {
-          gap: 15px;
+          max-width: 100%;
+          padding: 8px 4px;
+          gap: 10px;
+        }
+
+        .carousel-container {
+          width: 100%;
+          border-radius: 4px;
+        }
+
+        .carousel-slide img {
+          max-height: 82vh;
         }
 
         .slide-content {

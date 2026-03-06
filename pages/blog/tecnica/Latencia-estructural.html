@@ -67,6 +67,7 @@
 
     <!-- Estilos responsivos para el layout del artículo -->
     <style>
+      /* === RESPONSIVE MÓVIL === */
       @media (max-width: 768px) {
         .article-layout {
           flex-direction: column !important;
@@ -78,6 +79,24 @@
           width: 100% !important;
           min-width: auto !important;
           margin-bottom: var(--spacing-lg) !important;
+        }
+        .content-card {
+          max-width: 100% !important;
+          width: 100% !important;
+          margin: var(--spacing-md) 0 !important;
+          border-radius: 0 !important;
+          padding: var(--spacing-md) !important;
+          box-sizing: border-box !important;
+        }
+        .content-card .container {
+          padding: 0 !important;
+          max-width: 100% !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .content-card {
+          padding: var(--spacing-sm) !important;
         }
       }
 
@@ -102,24 +121,6 @@
         overflow-x: auto;
         border-collapse: collapse;
         margin: var(--spacing-lg) 0;
-      }
-
-      /* Horizontal view and smaller screen fixes */
-      .content-card {
-        max-width: 1000px !important;
-      }
-
-      @media (max-width: 1024px) {
-        .content-card {
-          margin: var(--spacing-md) !important;
-          padding: var(--spacing-md) !important;
-          max-width: calc(100% - 2 * var(--spacing-md)) !important;
-        }
-
-        .article-content {
-          width: 100%;
-          min-width: 0;
-        }
       }
 
       .content-card {
@@ -179,7 +180,6 @@
     <!-- Skip to main content -->
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-    
     <section
       class="works-hero"
       style="

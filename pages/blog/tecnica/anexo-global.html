@@ -1,1533 +1,1827 @@
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Anexo Global: Desequilibrio energético y retardo | RESONANCIAS</title>
-        <meta
-            name="description"
-            content="Un análisis del desequilibrio energético de la Tierra y su retardo térmico, desde la perspectiva de la Dinámica de Sistemas." />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Anexo Global: Desequilibrio energético y retardo | RESONANCIAS
+    </title>
+    <meta
+      name="description"
+      content="Un análisis del desequilibrio energético de la Tierra y su retardo térmico, desde la perspectiva de la Dinámica de Sistemas."
+    />
 
-        <!-- URL Canónica -->
-        <link rel="canonical" href="https://resonancias.pages.dev/pages/blog/tecnica/anexo-global.html" />
+    <!-- URL Canónica -->
+    <link
+      rel="canonical"
+      href="https://resonancias.pages.dev/pages/blog/tecnica/anexo-global.html"
+    />
 
-        <!-- SEO y Accesibilidad -->
-        <meta name="robots" content="index, follow" />
-        <meta name="author" content="Gabriel Ferré" />
-        <meta
-            name="keywords"
-            content="desequilibrio energético, retardo térmico, dinámica de sistemas, clima, energía, océanos, Forrester, física climática" />
+    <!-- SEO y Accesibilidad -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Gabriel Ferré" />
+    <meta
+      name="keywords"
+      content="desequilibrio energético, retardo térmico, dinámica de sistemas, clima, energía, océanos, Forrester, física climática"
+    />
 
-        <!-- Open Graph -->
-        <meta property="og:title" content="Anexo Global: Desequilibrio energético y retardo | RESONANCIAS" />
-        <meta
-            property="og:description"
-            content="Un análisis del desequilibrio energético de la Tierra y su retardo térmico, desde la perspectiva de la Dinámica de Sistemas." />
-        <meta property="og:image" content="https://resonancias.pages.dev/img/tecnica/esenario-global.jpg" />
-        <meta property="og:url" content="https://resonancias.pages.dev/pages/blog/tecnica/anexo-global.html" />
-        <meta property="og:type" content="article" />
-        <meta property="og:site_name" content="RESONANCIAS" />
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Anexo Global: Desequilibrio energético y retardo | RESONANCIAS"
+    />
+    <meta
+      property="og:description"
+      content="Un análisis del desequilibrio energético de la Tierra y su retardo térmico, desde la perspectiva de la Dinámica de Sistemas."
+    />
+    <meta
+      property="og:image"
+      content="https://resonancias.pages.dev/img/tecnica/esenario-global.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://resonancias.pages.dev/pages/blog/tecnica/anexo-global.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="RESONANCIAS" />
 
-        <!-- Twitter Card -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Anexo Global: Desequilibrio energético y retardo | RESONANCIAS" />
-        <meta
-            name="twitter:description"
-            content="Un análisis del desequilibrio energético de la Tierra y su retardo térmico, desde la perspectiva de la Dinámica de Sistemas." />
-        <meta name="twitter:image" content="https://resonancias.pages.dev/img/tecnica/esenario-global.jpg" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Anexo Global: Desequilibrio energético y retardo | RESONANCIAS"
+    />
+    <meta
+      name="twitter:description"
+      content="Un análisis del desequilibrio energético de la Tierra y su retardo térmico, desde la perspectiva de la Dinámica de Sistemas."
+    />
+    <meta
+      name="twitter:image"
+      content="https://resonancias.pages.dev/img/tecnica/esenario-global.jpg"
+    />
 
-        <!-- Favicon -->
-        <link rel="icon" href="/img/ui/favicon.png" type="image/png" />
+    <!-- Favicon -->
+    <link rel="icon" href="/img/ui/favicon.png" type="image/png" />
 
-        <!-- Estilos -->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="/assets/css/estilos.css" />
+    <!-- Estilos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/assets/css/estilos.css" />
 
-        <!-- Scripts -->
+    <!-- Scripts -->
 
-         <script src="/assets/js/main.js" defer></script>
-        <script src="/assets/js/back-to-top.js" defer></script>
-        <!-- Estilos responsivos para el layout del artículo -->
-        <style>
-            @media (max-width: 768px) {
-                .article-layout {
-                    flex-direction: column !important;
-                    gap: var(--spacing-lg) !important;
-                }
-                .image-card {
-                    position: relative !important;
-                    top: auto !important;
-                    width: 100% !important;
-                    min-width: auto !important;
-                    margin-bottom: var(--spacing-lg) !important;
-                }
-            }
-        
+    <script src="/assets/js/main.js" defer></script>
+    <script src="/assets/js/back-to-top.js" defer></script>
+    <!-- Estilos responsivos para el layout del artículo -->
+    <style>
+      /* === RESPONSIVE MÓVIL === */
+      @media (max-width: 768px) {
+        .article-layout {
+          flex-direction: column !important;
+          gap: var(--spacing-lg) !important;
+        }
+        .image-card {
+          position: relative !important;
+          top: auto !important;
+          width: 100% !important;
+          min-width: auto !important;
+          margin-bottom: var(--spacing-lg) !important;
+        }
+        .content-card {
+          max-width: 100% !important;
+          width: 100% !important;
+          margin: var(--spacing-md) 0 !important;
+          border-radius: 0 !important;
+          padding: var(--spacing-md) !important;
+          box-sizing: border-box !important;
+        }
+        .content-card .container {
+          padding: 0 !important;
+          max-width: 100% !important;
+        }
+        /* Fórmulas matemáticas y código preformateado: scroll interno */
+        pre,
+        code {
+          display: block !important;
+          overflow-x: auto !important;
+          white-space: pre-wrap !important;
+          word-break: break-word !important;
+          font-size: 0.85rem !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .content-card {
+          padding: var(--spacing-sm) !important;
+        }
+      }
+
       .content-card {
         max-width: 1000px !important;
       }
-
-      .content-card { max-width: 1000px !important; }
     </style>
-        <style>
-            /* Markdown incrustado desde Obsidian */
-            .md-obsidian h1,
-            .md-obsidian h2,
-            .md-obsidian h3,
-            .md-obsidian h4,
-            .md-obsidian h5,
-            .md-obsidian h6 {
-                margin-top: 1.6em;
-                margin-bottom: 0.6em;
-                line-height: 1.3;
-            }
+    <style>
+      /* Markdown incrustado desde Obsidian */
+      .md-obsidian h1,
+      .md-obsidian h2,
+      .md-obsidian h3,
+      .md-obsidian h4,
+      .md-obsidian h5,
+      .md-obsidian h6 {
+        margin-top: 1.6em;
+        margin-bottom: 0.6em;
+        line-height: 1.3;
+      }
 
-            .md-obsidian p {
-                margin: 0.9em 0;
-                line-height: 1.75;
-            }
+      .md-obsidian p {
+        margin: 0.9em 0;
+        line-height: 1.75;
+      }
 
-            .md-obsidian ul,
-            .md-obsidian ol {
-                margin: 0.9em 0 0.9em 1.6em;
-            }
+      .md-obsidian ul,
+      .md-obsidian ol {
+        margin: 0.9em 0 0.9em 1.6em;
+      }
 
-            .md-obsidian li {
-                margin: 0.4em 0;
-            }
+      .md-obsidian li {
+        margin: 0.4em 0;
+      }
 
-            .md-obsidian blockquote {
-                margin: 1.2em 0;
-                padding-left: 1em;
-                border-left: 3px solid var(--color-secondary);
-                color: var(--color-neutral);
-                font-style: italic;
-            }
+      .md-obsidian blockquote {
+        margin: 1.2em 0;
+        padding-left: 1em;
+        border-left: 3px solid var(--color-secondary);
+        color: var(--color-neutral);
+        font-style: italic;
+      }
 
-            .md-obsidian hr {
-                margin: 2em 0;
-                border: none;
-                border-top: 1px solid var(--color-mid);
-            }
-        </style>
-    </head>
-    <body>
-<!-- Header + menú -->
-<div id="header"></div>
-<div id="side-menu"></div>
+      .md-obsidian hr {
+        margin: 2em 0;
+        border: none;
+        border-top: 1px solid var(--color-mid);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header + menú -->
+    <div id="header"></div>
+    <div id="side-menu"></div>
 
-<script src="/assets/js/includes.js"></script>
-        <script src="/assets/js/back-to-top.js"></script>
+    <script src="/assets/js/includes.js"></script>
+    <script src="/assets/js/back-to-top.js"></script>
 
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-        <!-- Skip to main content -->
-        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <!-- Header -->
 
-        <!-- Header -->
-
-        
-        <section
-            class="works-hero"
-            style="
-                margin-top: 0 !important;
-                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                    url(&quot;/img/tecnica/esenario-global.jpg&quot;);
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                color: var(--color-light);
-                padding: var(--spacing-3xl) 0;
-                text-align: center;
-                min-height: 400px;
+    <section
+      class="works-hero"
+      style="
+        margin-top: 0 !important;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url(&quot;/img/tecnica/esenario-global.jpg&quot;);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: var(--color-light);
+        padding: var(--spacing-3xl) 0;
+        text-align: center;
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+      "
+    >
+      <div class="container">
+        <h2
+          style="
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          "
+        >
+          Anexo Desequilibrio energético
+        </h2>
+      </div>
+    </section>
+    <!-- Contenido principal -->
+    <main id="main-content" role="main">
+      <!-- Artículo principal -->
+      <div class="content-card">
+        <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+          <div class="container" style="max-width: 1000px; margin: 0 auto">
+            <!-- Header del artículo -->
+            <div
+              class="article-layout"
+              style="
                 display: flex;
-                align-items: center;
-            ">
-            <div class="container">
-                <h2
+                gap: var(--spacing-xl);
+                align-items: flex-start;
+              "
+            >
+              <div
+                class="article-content"
+                style="flex: 1; line-height: 1.5; color: var(--color-dark)"
+              >
+                <div
+                  id="intro-paragraph"
+                  class="md-obsidian"
+                  style="
+                    font-size: var(--font-size-lg);
+                    margin-bottom: var(--spacing-2xl);
+                    color: var(--color-warm);
+                    position: relative;
+                  "
+                >
+                  <h2>¿Cuánta energia acumula la Tierra?</h2>
+                  <p>
+                    El
+                    <strong
+                      >desequilibrio energético de la Tierra (Earth Energy
+                      Imbalance, EEI)</strong
+                    >
+                    se define como la diferencia entre:
+                  </p>
+                  <ul>
+                    <li>
+                      <p>Energía solar absorbida por el sistema Tierra</p>
+                    </li>
+                    <li>
+                      <p>Energía infrarroja emitida nuevamente al espacio</p>
+                    </li>
+                  </ul>
+                  <p>
+                    Cuando la energía absorbida es mayor que la emitida, el
+                    sistema
+                    <strong>acumula energía interna</strong>.
+                  </p>
+                  <p>
+                    Las mediciones satelitales y oceánicas coinciden en que, en
+                    promedio global y multianual, la Tierra presenta actualmente
+                    un desequilibrio positivo del orden de:
+                  </p>
+                  <p><strong>≈ 0,6 a 1,3 W/m²</strong></p>
+                  <p>
+                    Este valor representa una ganancia neta continua de energía,
+                    pequeña en términos instantáneos, pero enorme cuando se
+                    integra en el tiempo y en toda la superficie del planeta.
+                  </p>
+                  <hr />
+                  <h2>2) Interpretación física del desequilibrio</h2>
+                  <p>
+                    Un desequilibrio positivo <strong>no implica</strong> que
+                    esté entrando más energía del Sol, sino que:
+                  </p>
+                  <ul>
+                    <li>
+                      <p>
+                        La eficiencia con la que el planeta
+                        <strong
+                          >pierde energía hacia el espacio ha disminuido</strong
+                        >.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        El sistema necesita elevar su temperatura media para
+                        restablecer el equilibrio radiativo.
+                      </p>
+                    </li>
+                  </ul>
+                  <p>
+                    Este proceso es coherente con la termodinámica: un sistema
+                    abierto puede aumentar su energía interna si el flujo neto
+                    entrante es positivo.
+                  </p>
+                  <hr />
+                  <h2>3) Escalado global del desequilibrio</h2>
+                  <p>Superficie total de la Tierra:</p>
+                  <p><strong>A ≈ 5,1 × 10¹⁴ m²</strong></p>
+                  <p>Si tomamos un valor medio representativo:</p>
+                  <p><strong>EEI ≈ 1 W/m²</strong></p>
+                  <p>La potencia neta acumulada por el planeta es:</p>
+                  <pre><code>P = 1 W/m² × 5,1 × 10¹⁴ m² ≈ 5,1 × 10¹⁴ W
+</code></pre>
+                  <p>Es decir:</p>
+                  <p><strong>≈ 510 teravatios continuos</strong></p>
+                  <p>
+                    Este flujo es del orden de <strong>30 veces</strong> el
+                    consumo energético total de la civilización humana actual.
+                  </p>
+                  <hr />
+                  <h2>4) Energía acumulada por año</h2>
+                  <p>Un año tiene aproximadamente:</p>
+                  <p><strong>t ≈ 3,15 × 10⁷ s</strong></p>
+                  <p>La energía acumulada anualmente es:</p>
+                  <pre><code>E = 5,1 × 10¹⁴ W × 3,15 × 10⁷ s ≈ 1,6 × 10²² J/año
+</code></pre>
+                  <p>Esto equivale a:</p>
+                  <p><strong>≈ 16 zettajulios (ZJ) por año</strong></p>
+                  <p>
+                    Esta energía no se disipa:
+                    <strong>se acumula en el sistema climático</strong>.
+                  </p>
+                  <hr />
+                  <h2>5) ¿Dónde se almacena esa energía?</h2>
+                  <p>La distribución aproximada del exceso energético es:</p>
+                  <ul>
+                    <li>
+                      <p><strong>Océanos:</strong> ~90%</p>
+                    </li>
+                    <li>
+                      <p><strong>Continentes:</strong> ~6%</p>
+                    </li>
+                    <li>
+                      <p><strong>Criosfera (hielos):</strong> ~4%</p>
+                    </li>
+                    <li>
+                      <p><strong>Atmósfera:</strong> ~1%</p>
+                    </li>
+                  </ul>
+                  <p>
+                    Esto implica que la temperatura del aire representa solo una
+                    <strong>fracción mínima</strong> del balance energético
+                    total del planeta.
+                  </p>
+                  <hr />
+                  <h2>6) El océano como reservorio dominante</h2>
+                  <p>Los océanos tienen:</p>
+                  <ul>
+                    <li><p>Enorme capacidad calorífica</p></li>
+                    <li><p>Circulación lenta y estratificada</p></li>
+                    <li><p>Escalas temporales de respuesta largas</p></li>
+                  </ul>
+                  <p>
+                    Esto introduce una <strong>inercia térmica</strong> muy
+                    grande en el sistema climático.
+                  </p>
+                  <p>
+                    El calentamiento atmosférico visible es solo la expresión
+                    superficial de un proceso que ocurre mayormente en el
+                    océano.
+                  </p>
+                  <hr />
+                  <h2>
+                    7) Retardo y desenganche de fase (analogía del resorte)
+                  </h2>
+                  <img
+                    src="/img/tecnica/resorte.jpg"
+                    alt="Diagrama de dinámica de sistemas del calentamiento global con retardos temporales"
                     style="
-                        font-size: var(--font-size-4xl);
-                        margin-bottom: var(--spacing-lg);
-                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-                    ">
-                    Anexo Desequilibrio energético
-                </h2>
-            </div>
-        </section>
-        <!-- Contenido principal -->
-        <main id="main-content" role="main">
-            <!-- Artículo principal -->
-            <div class="content-card">
-                <article class="blog-post" style="padding: var(--spacing-2xl) 0">
-                    <div class="container" style="max-width: 1000px; margin: 0 auto">
-                        <!-- Header del artículo -->
-                        <div
-                            class="article-layout"
-                            style="display: flex; gap: var(--spacing-xl); align-items: flex-start">
-                            <div class="article-content" style="flex: 1; line-height: 1.5; color: var(--color-dark)">
-                                <div
-                                    id="intro-paragraph"
-                                    class="md-obsidian"
-                                    style="
-                                        font-size: var(--font-size-lg);
-                                        margin-bottom: var(--spacing-2xl);
-                                        color: var(--color-warm);
-                                        position: relative;
-                                    ">
-                                    <h2>¿Cuánta energia acumula la Tierra?</h2>
-                                    <p>
-                                        El
-                                        <strong
-                                            >desequilibrio energético de la Tierra (Earth Energy Imbalance, EEI)</strong
-                                        >
-                                        se define como la diferencia entre:
-                                    </p>
-                                    <ul>
-                                        <li><p>Energía solar absorbida por el sistema Tierra</p></li>
-                                        <li><p>Energía infrarroja emitida nuevamente al espacio</p></li>
-                                    </ul>
-                                    <p>
-                                        Cuando la energía absorbida es mayor que la emitida, el sistema
-                                        <strong>acumula energía interna</strong>.
-                                    </p>
-                                    <p>
-                                        Las mediciones satelitales y oceánicas coinciden en que, en promedio global y
-                                        multianual, la Tierra presenta actualmente un desequilibrio positivo del orden
-                                        de:
-                                    </p>
-                                    <p><strong>≈ 0,6 a 1,3 W/m²</strong></p>
-                                    <p>
-                                        Este valor representa una ganancia neta continua de energía, pequeña en términos
-                                        instantáneos, pero enorme cuando se integra en el tiempo y en toda la superficie
-                                        del planeta.
-                                    </p>
-                                    <hr />
-                                    <h2>2) Interpretación física del desequilibrio</h2>
-                                    <p>
-                                        Un desequilibrio positivo <strong>no implica</strong> que esté entrando más
-                                        energía del Sol, sino que:
-                                    </p>
-                                    <ul>
-                                        <li>
-                                            <p>
-                                                La eficiencia con la que el planeta
-                                                <strong>pierde energía hacia el espacio ha disminuido</strong>.
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                El sistema necesita elevar su temperatura media para restablecer el
-                                                equilibrio radiativo.
-                                            </p>
-                                        </li>
-                                    </ul>
-                                    <p>
-                                        Este proceso es coherente con la termodinámica: un sistema abierto puede
-                                        aumentar su energía interna si el flujo neto entrante es positivo.
-                                    </p>
-                                    <hr />
-                                    <h2>3) Escalado global del desequilibrio</h2>
-                                    <p>Superficie total de la Tierra:</p>
-                                    <p><strong>A ≈ 5,1 × 10¹⁴ m²</strong></p>
-                                    <p>Si tomamos un valor medio representativo:</p>
-                                    <p><strong>EEI ≈ 1 W/m²</strong></p>
-                                    <p>La potencia neta acumulada por el planeta es:</p>
-                                    <pre><code>P = 1 W/m² × 5,1 × 10¹⁴ m² ≈ 5,1 × 10¹⁴ W
-</code></pre>
-                                    <p>Es decir:</p>
-                                    <p><strong>≈ 510 teravatios continuos</strong></p>
-                                    <p>
-                                        Este flujo es del orden de <strong>30 veces</strong> el consumo energético total
-                                        de la civilización humana actual.
-                                    </p>
-                                    <hr />
-                                    <h2>4) Energía acumulada por año</h2>
-                                    <p>Un año tiene aproximadamente:</p>
-                                    <p><strong>t ≈ 3,15 × 10⁷ s</strong></p>
-                                    <p>La energía acumulada anualmente es:</p>
-                                    <pre><code>E = 5,1 × 10¹⁴ W × 3,15 × 10⁷ s ≈ 1,6 × 10²² J/año
-</code></pre>
-                                    <p>Esto equivale a:</p>
-                                    <p><strong>≈ 16 zettajulios (ZJ) por año</strong></p>
-                                    <p>
-                                        Esta energía no se disipa: <strong>se acumula en el sistema climático</strong>.
-                                    </p>
-                                    <hr />
-                                    <h2>5) ¿Dónde se almacena esa energía?</h2>
-                                    <p>La distribución aproximada del exceso energético es:</p>
-                                    <ul>
-                                        <li>
-                                            <p><strong>Océanos:</strong> ~90%</p>
-                                        </li>
-                                        <li>
-                                            <p><strong>Continentes:</strong> ~6%</p>
-                                        </li>
-                                        <li>
-                                            <p><strong>Criosfera (hielos):</strong> ~4%</p>
-                                        </li>
-                                        <li>
-                                            <p><strong>Atmósfera:</strong> ~1%</p>
-                                        </li>
-                                    </ul>
-                                    <p>
-                                        Esto implica que la temperatura del aire representa solo una
-                                        <strong>fracción mínima</strong> del balance energético total del planeta.
-                                    </p>
-                                    <hr />
-                                    <h2>6) El océano como reservorio dominante</h2>
-                                    <p>Los océanos tienen:</p>
-                                    <ul>
-                                        <li><p>Enorme capacidad calorífica</p></li>
-                                        <li><p>Circulación lenta y estratificada</p></li>
-                                        <li><p>Escalas temporales de respuesta largas</p></li>
-                                    </ul>
-                                    <p>
-                                        Esto introduce una <strong>inercia térmica</strong> muy grande en el sistema
-                                        climático.
-                                    </p>
-                                    <p>
-                                        El calentamiento atmosférico visible es solo la expresión superficial de un
-                                        proceso que ocurre mayormente en el océano.
-                                    </p>
-                                    <hr />
-                                    <h2>7) Retardo y desenganche de fase (analogía del resorte)</h2>
-                                    <img
-                                        src="/img/tecnica/resorte.jpg"
-                                        alt="Diagrama de dinámica de sistemas del calentamiento global con retardos temporales"
-                                        style="
-                                            width: 100%;
-                                            height: auto;
-                                            max-height: 600px;
-                                            object-fit: contain;
-                                            border-radius: 8px;
-                                            margin-bottom: var(--spacing-md);
-                                        " />
-                                    <p>
-                                        El comportamiento del sistema climático puede modelarse como un sistema forzado
-                                        con retardo:
-                                    </p>
-                                    <ul>
-                                        <li>
-                                            <p>
-                                                La perturbación inicial (aumento de gases de efecto invernadero desde la
-                                                primera industrialización)
-                                            </p>
-                                        </li>
-                                        <li><p>Genera un forzamiento radiativo inmediato</p></li>
-                                        <li>
-                                            <p>
-                                                Pero la respuesta térmica global es
-                                                <strong>retardada y no lineal</strong>
-                                            </p>
-                                        </li>
-                                    </ul>
-                                    <p>Es análogo a torcer un resorte en un extremo:</p>
-                                    <ul>
-                                        <li><p>La energía se introduce de inmediato</p></li>
-                                        <li><p>La deformación total tarda en propagarse</p></li>
-                                        <li><p>Existe un desfase temporal entre causa y efecto observable</p></li>
-                                    </ul>
-                                    <p>En el sistema climático:</p>
-                                    <ul>
-                                        <li>
-                                            <p>
-                                                La fase inicial del forzamiento puede ubicarse a fines del siglo XVIII –
-                                                comienzos del XIX
-                                            </p>
-                                        </li>
-                                        <li><p>La respuesta completa se extiende durante décadas y siglos</p></li>
-                                    </ul>
-                                    <hr />
-                                    <h2>8) Calentamiento comprometido</h2>
-                                    <p>
-                                        Debido a este retardo, incluso si el forzamiento se estabilizara abruptamente,
-                                        el sistema todavía debería calentarse hasta alcanzar un nuevo equilibrio
-                                        radiativo.
-                                    </p>
-                                    <p>
-                                        Las estimaciones físicas indican un calentamiento adicional comprometido del
-                                        orden de:
-                                    </p>
-                                    <p><strong>≈ 0,4 a 0,7 °C</strong></p>
-                                    <p>
-                                        Este calentamiento no depende de emisiones futuras, sino de la energía
-                                        <strong>ya almacenada</strong>.
-                                    </p>
-                                    <hr />
-                                    <h2>9) Implicancia para el análisis histórico</h2>
-                                    <p>
-                                        Esto permite interpretar el período desde la primera industrialización hasta la
-                                        actualidad como:
-                                    </p>
-                                    <ul>
-                                        <li>
-                                            <p>Una fase prolongada de <strong>carga energética</strong> del sistema</p>
-                                        </li>
-                                        <li><p>Con expresión térmica parcial y retardada</p></li>
-                                        <li>
-                                            <p>
-                                                Donde los efectos más visibles aparecen cuando los grandes reservorios
-                                                (océanos) comienzan a acoplarse dinámicamente a la atmósfera
-                                            </p>
-                                        </li>
-                                    </ul>
-                                    <p>
-                                        El sistema no responde en equilibrio instantáneo, sino como un sistema dinámico
-                                        con memoria.
-                                    </p>
-                                    <hr />
-                                    <h2>10) Idea central</h2>
-                                    <blockquote>
-                                        <p>
-                                            El calentamiento global no es un evento puntual, sino un proceso de
-                                            acumulación energética con fuerte retardo temporal, donde la fase actual
-                                            refleja energía introducida décadas atrás.
-                                        </p>
-                                    </blockquote>
-                                    <p>
-                                        Este marco permite analizar el clima moderno no como una anomalía aislada, sino
-                                        como una
-                                        <strong>fase avanzada de respuesta de un sistema fuera de equilibrio</strong>.
-                                    </p>
-                                    <hr />
-                                    <h2>11) Formalización mínima: modelo dinámico con retardo</h2>
-                                    <p>
-                                        Para capturar el comportamiento global con <strong>máxima simplicidad</strong>,
-                                        se puede usar un modelo de primer orden con inercia térmica dominante (tipo
-                                        <em>energy balance model</em>).
-                                    </p>
-                                    <h3>11.1 Variable principal</h3>
-                                    <p>Definimos:</p>
-                                    <ul>
-                                        <li>
-                                            <p><strong>T(t)</strong>: anomalía de temperatura media global</p>
-                                        </li>
-                                        <li>
-                                            <p><strong>F(t)</strong>: forzamiento radiativo efectivo (W/m²)</p>
-                                        </li>
-                                    </ul>
-                                    <h3>11.2 Ecuación diferencial básica</h3>
-                                    <p>C · dT/dt = F(t) − λ · T(t)</p>
-                                    <p>Donde:</p>
-                                    <ul>
-                                        <li>
-                                            <p>
-                                                <strong>C</strong> es la capacidad térmica efectiva del sistema
-                                                (dominada por el océano)
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                <strong>λ</strong> es el parámetro de retroalimentación radiativa
-                                                (W/m²·K)
-                                            </p>
-                                        </li>
-                                    </ul>
-                                    <p>
-                                        Esta ecuación ya introduce <strong>retardo</strong>: el sistema no responde
-                                        instantáneamente al forzamiento.
-                                    </p>
-                                    <hr />
-                                    <h2>12) Sistema con constante de tiempo</h2>
-                                    <p>La ecuación equivale a un sistema con constante de tiempo:</p>
-                                    <p>τ = C / λ</p>
-                                    <p>Órdenes de magnitud plausibles:</p>
-                                    <ul>
-                                        <li><p>τ ≈ 20–40 años (atmósfera + océano superficial)</p></li>
-                                        <li><p>τ ≈ 100–300 años (acoplamiento con océano profundo)</p></li>
-                                    </ul>
-                                    <p>
-                                        Esto explica por qué el forzamiento iniciado en la industrialización sigue
-                                        manifestándose hoy.
-                                    </p>
-                                    <hr />
-                                    <h2>13) Modelo con memoria explícita</h2>
-                                    <p>Puede escribirse la respuesta como una convolución:</p>
-                                    <p>T(t) = ∫₀ᵗ G(t − t′) · F(t′) dt′</p>
-                                    <p>Con un kernel exponencial:</p>
-                                    <p>G(Δt) = (1/C) · e^(−Δt/τ)</p>
-                                    <p>
-                                        Esto formaliza el <strong>desenganche de fase</strong>: la energía entra en t′,
-                                        la respuesta se propaga gradualmente.
-                                    </p>
-                                    <hr />
-                                    <h2>14) Respuesta a un escalón de forzamiento</h2>
-                                    <p>
-                                        Si el forzamiento crece y luego se mantiene aproximadamente constante (caso
-                                        industrial):
-                                    </p>
-                                    <p>T(t) = (F₀ / λ) · (1 − e^(−t/τ))</p>
-                                    <p>
-                                        La fase actual corresponde a una respuesta incompleta, lejos del equilibrio
-                                        final.
-                                    </p>
-                                    <hr />
-                                    <h2>15) Simplificación y control del error</h2>
-                                    <p>El modelo es deliberadamente simple:</p>
-                                    <ul>
-                                        <li><p>ignora no linealidades</p></li>
-                                        <li><p>ignora retroalimentaciones lentas y rápidas</p></li>
-                                    </ul>
-                                    <p>Para <strong>acotar el error</strong>:</p>
-                                    <ul>
-                                        <li><p>se descartan extremos</p></li>
-                                        <li><p>se usan valores medios efectivos de τ</p></li>
-                                        <li><p>se trabaja con tendencias multidecadales</p></li>
-                                    </ul>
-                                    <p>
-                                        Esto no elimina el error, pero lo vuelve
-                                        <strong>controlable y comparable</strong>.
-                                    </p>
-                                    <hr />
-                                    <h2>16) Lectura final</h2>
-                                    <p>Este modelo no busca precisión predictiva, sino:</p>
-                                    <ul>
-                                        <li><p>capturar órdenes de magnitud</p></li>
-                                        <li><p>formalizar el retardo de fase</p></li>
-                                        <li><p>vincular pasado energético con presente climático</p></li>
-                                    </ul>
-                                    <p>
-                                        Es una descripción mínima, pero físicamente coherente, de un sistema climático
-                                        con memoria.
-                                    </p>
-                                    <hr />
-                                    <p>
-                                        <strong>la forma correcta de simplificar sin autoengañarse</strong><br /><strong
-                                            >formalización dinámica mínima</strong
-                                        >, pensada para:
-                                    </p>
-                                    <ul>
-                                        <li>
-                                            <p>
-                                                modelar el <strong>retardo / desenganche de fase</strong> de manera
-                                                explícita
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                aceptar grandes errores <strong>pero acotarlos conscientemente</strong>
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                trabajar con <strong>valores medios efectivos</strong>, descartando
-                                                extremos matemáticos y físicos
-                                            </p>
-                                        </li>
-                                    </ul>
-                                    <h3>En el documento</h3>
-                                    <ol>
-                                        <li>
-                                            <p><strong>Modelo dinámico de primer orden</strong></p>
-                                            <ul>
-                                                <li><p>Ecuación tipo balance energético</p></li>
-                                                <li><p>Introduce inercia térmica de forma natural</p></li>
-                                                <li><p>No requiere complejidad excesiva</p></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <p><strong>Constante de tiempo τ</strong></p>
-                                            <ul>
-                                                <li><p>Interpretable físicamente</p></li>
-                                                <li>
-                                                    <p>Permite separar escalas:</p>
-                                                    <ul>
-                                                        <li>
-                                                            <p>respuesta rápida (atmósfera + océano superficial)</p>
-                                                        </li>
-                                                        <li><p>respuesta lenta (océano profundo)</p></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <p><strong>Modelo con memoria (convolución)</strong></p>
-                                            <ul>
-                                                <li><p>Formaliza exactamente tu analogía del resorte</p></li>
-                                                <li>
-                                                    <p>
-                                                        El kernel exponencial representa el “enganche progresivo” del
-                                                        sistema
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <p><strong>Respuesta a escalón de forzamiento</strong></p>
-                                            <ul>
-                                                <li><p>Ideal para representar la industrialización</p></li>
-                                                <li>
-                                                    <p>
-                                                        Muestra que hoy estamos en una fase <strong>intermedia</strong>,
-                                                        no final
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <p><strong>Tratamiento del error</strong></p>
-                                            <ul>
-                                                <li>
-                                                    <p>No se niega: se <strong>controla</strong></p>
-                                                </li>
-                                                <li><p>Se descartan extremos</p></li>
-                                                <li><p>Se trabaja con medias robustas y escalas largas</p></li>
-                                            </ul>
-                                        </li>
-                                    </ol>
-                                    <hr />
-                                    <h3>Punto clave</h3>
-                                    <p><strong>No busco precisión</strong>, sino:</p>
-                                    <blockquote>
-                                        <p>
-                                            <strong>reducir el error estructural de la simplificación</strong>, no
-                                            eliminarlo
-                                        </p>
-                                    </blockquote>
-                                    <p>Esto es pensamiento físico, no “modelo ingenuo”.</p>
-                                    <br />
-                                    <hr />
-                                    <h1>Anexo II</h1>
-                                    <h3>
-                                        Estimar una constante de tiempo básica τ, usando solo fechas históricas y el
-                                        modelo más simple posible. Nada fino, pero <strong>honesto físicamente</strong>.
-                                    </h3>
-                                    <p>Voy a hacerlo en <strong>modo razonamiento</strong>, no como verdad revelada.</p>
-                                    <hr />
-                                    <h2>1 - Qué estamos modelando exactamente</h2>
-                                    <p>Tomamos el modelo más simple en el documento:</p>
-                                    $$ \begin{aligned} T(t) &= \frac{F_0}{\lambda}\left(1 - e^{-t/\tau}\right)
-                                    \end{aligned} $$
+                      width: 100%;
+                      height: auto;
+                      max-height: 600px;
+                      object-fit: contain;
+                      border-radius: 8px;
+                      margin-bottom: var(--spacing-md);
+                    "
+                  />
+                  <p>
+                    El comportamiento del sistema climático puede modelarse como
+                    un sistema forzado con retardo:
+                  </p>
+                  <ul>
+                    <li>
+                      <p>
+                        La perturbación inicial (aumento de gases de efecto
+                        invernadero desde la primera industrialización)
+                      </p>
+                    </li>
+                    <li><p>Genera un forzamiento radiativo inmediato</p></li>
+                    <li>
+                      <p>
+                        Pero la respuesta térmica global es
+                        <strong>retardada y no lineal</strong>
+                      </p>
+                    </li>
+                  </ul>
+                  <p>Es análogo a torcer un resorte en un extremo:</p>
+                  <ul>
+                    <li><p>La energía se introduce de inmediato</p></li>
+                    <li><p>La deformación total tarda en propagarse</p></li>
+                    <li>
+                      <p>
+                        Existe un desfase temporal entre causa y efecto
+                        observable
+                      </p>
+                    </li>
+                  </ul>
+                  <p>En el sistema climático:</p>
+                  <ul>
+                    <li>
+                      <p>
+                        La fase inicial del forzamiento puede ubicarse a fines
+                        del siglo XVIII – comienzos del XIX
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        La respuesta completa se extiende durante décadas y
+                        siglos
+                      </p>
+                    </li>
+                  </ul>
+                  <hr />
+                  <h2>8) Calentamiento comprometido</h2>
+                  <p>
+                    Debido a este retardo, incluso si el forzamiento se
+                    estabilizara abruptamente, el sistema todavía debería
+                    calentarse hasta alcanzar un nuevo equilibrio radiativo.
+                  </p>
+                  <p>
+                    Las estimaciones físicas indican un calentamiento adicional
+                    comprometido del orden de:
+                  </p>
+                  <p><strong>≈ 0,4 a 0,7 °C</strong></p>
+                  <p>
+                    Este calentamiento no depende de emisiones futuras, sino de
+                    la energía
+                    <strong>ya almacenada</strong>.
+                  </p>
+                  <hr />
+                  <h2>9) Implicancia para el análisis histórico</h2>
+                  <p>
+                    Esto permite interpretar el período desde la primera
+                    industrialización hasta la actualidad como:
+                  </p>
+                  <ul>
+                    <li>
+                      <p>
+                        Una fase prolongada de
+                        <strong>carga energética</strong> del sistema
+                      </p>
+                    </li>
+                    <li><p>Con expresión térmica parcial y retardada</p></li>
+                    <li>
+                      <p>
+                        Donde los efectos más visibles aparecen cuando los
+                        grandes reservorios (océanos) comienzan a acoplarse
+                        dinámicamente a la atmósfera
+                      </p>
+                    </li>
+                  </ul>
+                  <p>
+                    El sistema no responde en equilibrio instantáneo, sino como
+                    un sistema dinámico con memoria.
+                  </p>
+                  <hr />
+                  <h2>10) Idea central</h2>
+                  <blockquote>
+                    <p>
+                      El calentamiento global no es un evento puntual, sino un
+                      proceso de acumulación energética con fuerte retardo
+                      temporal, donde la fase actual refleja energía introducida
+                      décadas atrás.
+                    </p>
+                  </blockquote>
+                  <p>
+                    Este marco permite analizar el clima moderno no como una
+                    anomalía aislada, sino como una
+                    <strong
+                      >fase avanzada de respuesta de un sistema fuera de
+                      equilibrio</strong
+                    >.
+                  </p>
+                  <hr />
+                  <h2>11) Formalización mínima: modelo dinámico con retardo</h2>
+                  <p>
+                    Para capturar el comportamiento global con
+                    <strong>máxima simplicidad</strong>, se puede usar un modelo
+                    de primer orden con inercia térmica dominante (tipo
+                    <em>energy balance model</em>).
+                  </p>
+                  <h3>11.1 Variable principal</h3>
+                  <p>Definimos:</p>
+                  <ul>
+                    <li>
+                      <p>
+                        <strong>T(t)</strong>: anomalía de temperatura media
+                        global
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <strong>F(t)</strong>: forzamiento radiativo efectivo
+                        (W/m²)
+                      </p>
+                    </li>
+                  </ul>
+                  <h3>11.2 Ecuación diferencial básica</h3>
+                  <p>C · dT/dt = F(t) − λ · T(t)</p>
+                  <p>Donde:</p>
+                  <ul>
+                    <li>
+                      <p>
+                        <strong>C</strong> es la capacidad térmica efectiva del
+                        sistema (dominada por el océano)
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <strong>λ</strong> es el parámetro de retroalimentación
+                        radiativa (W/m²·K)
+                      </p>
+                    </li>
+                  </ul>
+                  <p>
+                    Esta ecuación ya introduce <strong>retardo</strong>: el
+                    sistema no responde instantáneamente al forzamiento.
+                  </p>
+                  <hr />
+                  <h2>12) Sistema con constante de tiempo</h2>
+                  <p>
+                    La ecuación equivale a un sistema con constante de tiempo:
+                  </p>
+                  <p>τ = C / λ</p>
+                  <p>Órdenes de magnitud plausibles:</p>
+                  <ul>
+                    <li>
+                      <p>τ ≈ 20–40 años (atmósfera + océano superficial)</p>
+                    </li>
+                    <li>
+                      <p>τ ≈ 100–300 años (acoplamiento con océano profundo)</p>
+                    </li>
+                  </ul>
+                  <p>
+                    Esto explica por qué el forzamiento iniciado en la
+                    industrialización sigue manifestándose hoy.
+                  </p>
+                  <hr />
+                  <h2>13) Modelo con memoria explícita</h2>
+                  <p>Puede escribirse la respuesta como una convolución:</p>
+                  <p>T(t) = ∫₀ᵗ G(t − t′) · F(t′) dt′</p>
+                  <p>Con un kernel exponencial:</p>
+                  <p>G(Δt) = (1/C) · e^(−Δt/τ)</p>
+                  <p>
+                    Esto formaliza el <strong>desenganche de fase</strong>: la
+                    energía entra en t′, la respuesta se propaga gradualmente.
+                  </p>
+                  <hr />
+                  <h2>14) Respuesta a un escalón de forzamiento</h2>
+                  <p>
+                    Si el forzamiento crece y luego se mantiene aproximadamente
+                    constante (caso industrial):
+                  </p>
+                  <p>T(t) = (F₀ / λ) · (1 − e^(−t/τ))</p>
+                  <p>
+                    La fase actual corresponde a una respuesta incompleta, lejos
+                    del equilibrio final.
+                  </p>
+                  <hr />
+                  <h2>15) Simplificación y control del error</h2>
+                  <p>El modelo es deliberadamente simple:</p>
+                  <ul>
+                    <li><p>ignora no linealidades</p></li>
+                    <li><p>ignora retroalimentaciones lentas y rápidas</p></li>
+                  </ul>
+                  <p>Para <strong>acotar el error</strong>:</p>
+                  <ul>
+                    <li><p>se descartan extremos</p></li>
+                    <li><p>se usan valores medios efectivos de τ</p></li>
+                    <li><p>se trabaja con tendencias multidecadales</p></li>
+                  </ul>
+                  <p>
+                    Esto no elimina el error, pero lo vuelve
+                    <strong>controlable y comparable</strong>.
+                  </p>
+                  <hr />
+                  <h2>16) Lectura final</h2>
+                  <p>Este modelo no busca precisión predictiva, sino:</p>
+                  <ul>
+                    <li><p>capturar órdenes de magnitud</p></li>
+                    <li><p>formalizar el retardo de fase</p></li>
+                    <li>
+                      <p>vincular pasado energético con presente climático</p>
+                    </li>
+                  </ul>
+                  <p>
+                    Es una descripción mínima, pero físicamente coherente, de un
+                    sistema climático con memoria.
+                  </p>
+                  <hr />
+                  <p>
+                    <strong
+                      >la forma correcta de simplificar sin
+                      autoengañarse</strong
+                    ><br /><strong>formalización dinámica mínima</strong>,
+                    pensada para:
+                  </p>
+                  <ul>
+                    <li>
+                      <p>
+                        modelar el
+                        <strong>retardo / desenganche de fase</strong> de manera
+                        explícita
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        aceptar grandes errores
+                        <strong>pero acotarlos conscientemente</strong>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        trabajar con <strong>valores medios efectivos</strong>,
+                        descartando extremos matemáticos y físicos
+                      </p>
+                    </li>
+                  </ul>
+                  <h3>En el documento</h3>
+                  <ol>
+                    <li>
+                      <p><strong>Modelo dinámico de primer orden</strong></p>
+                      <ul>
+                        <li><p>Ecuación tipo balance energético</p></li>
+                        <li>
+                          <p>Introduce inercia térmica de forma natural</p>
+                        </li>
+                        <li><p>No requiere complejidad excesiva</p></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <p><strong>Constante de tiempo τ</strong></p>
+                      <ul>
+                        <li><p>Interpretable físicamente</p></li>
+                        <li>
+                          <p>Permite separar escalas:</p>
+                          <ul>
+                            <li>
+                              <p>
+                                respuesta rápida (atmósfera + océano
+                                superficial)
+                              </p>
+                            </li>
+                            <li><p>respuesta lenta (océano profundo)</p></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <p><strong>Modelo con memoria (convolución)</strong></p>
+                      <ul>
+                        <li>
+                          <p>Formaliza exactamente tu analogía del resorte</p>
+                        </li>
+                        <li>
+                          <p>
+                            El kernel exponencial representa el “enganche
+                            progresivo” del sistema
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <p><strong>Respuesta a escalón de forzamiento</strong></p>
+                      <ul>
+                        <li>
+                          <p>Ideal para representar la industrialización</p>
+                        </li>
+                        <li>
+                          <p>
+                            Muestra que hoy estamos en una fase
+                            <strong>intermedia</strong>, no final
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <p><strong>Tratamiento del error</strong></p>
+                      <ul>
+                        <li>
+                          <p>No se niega: se <strong>controla</strong></p>
+                        </li>
+                        <li><p>Se descartan extremos</p></li>
+                        <li>
+                          <p>Se trabaja con medias robustas y escalas largas</p>
+                        </li>
+                      </ul>
+                    </li>
+                  </ol>
+                  <hr />
+                  <h3>Punto clave</h3>
+                  <p><strong>No busco precisión</strong>, sino:</p>
+                  <blockquote>
+                    <p>
+                      <strong
+                        >reducir el error estructural de la
+                        simplificación</strong
+                      >, no eliminarlo
+                    </p>
+                  </blockquote>
+                  <p>Esto es pensamiento físico, no “modelo ingenuo”.</p>
+                  <br />
+                  <hr />
+                  <h1>Anexo II</h1>
+                  <h3>
+                    Estimar una constante de tiempo básica τ, usando solo fechas
+                    históricas y el modelo más simple posible. Nada fino, pero
+                    <strong>honesto físicamente</strong>.
+                  </h3>
+                  <p>
+                    Voy a hacerlo en <strong>modo razonamiento</strong>, no como
+                    verdad revelada.
+                  </p>
+                  <hr />
+                  <h2>1 - Qué estamos modelando exactamente</h2>
+                  <p>Tomamos el modelo más simple en el documento:</p>
+                  $$ \begin{aligned} T(t) &= \frac{F_0}{\lambda}\left(1 -
+                  e^{-t/\tau}\right) \end{aligned} $$
 
-                                    <p>Donde:</p>
-                                    <ul>
-                                        <li><p>el forzamiento empieza a crecer con la industrialización</p></li>
-                                        <li><p>el sistema responde lentamente</p></li>
-                                        <li><p>hoy observamos una fracción de la respuesta total</p></li>
-                                    </ul>
-                                    <p>La pregunta es:</p>
-                                    <blockquote>
-                                        <p>
-                                            <strong
-                                                >¿qué τ hace coherente el tiempo histórico con el calentamiento
-                                                observado?</strong
-                                            >
-                                        </p>
-                                    </blockquote>
-                                    <hr />
-                                    <h2>2 Elegir el “t = 0” (muy importante)</h2>
-                                    <p>Esto es una decisión <strong>conceptual</strong>, no exacta.</p>
-                                    <p>Opciones posibles:</p>
-                                    <ul>
-                                        <li><p>1760 (primera revolución industrial)</p></li>
-                                        <li><p>1800 (inicio visible del uso de carbón a escala)</p></li>
-                                        <li><p>1850 (referencia climática común)</p></li>
-                                    </ul>
-                                    <p>
-                                        Para un modelo grosero pero razonable:<br />👉
-                                        <strong>tomamos año 1800 como t = 0</strong>
-                                    </p>
-                                    <p>Hoy ≈ 2020–2025<br />Entonces:</p>
-                                    <p>t≈220 años</p>
-                                    <hr />
-                                    <h2>3 Cuánto del calentamiento “final” ya vimos</h2>
-                                    <p>Este punto es clave Estimaciones físicas dicen:</p>
-                                    <ul>
-                                        <li>
-                                            <p>calentamiento ya observado: <strong>≈ 1,2 °C</strong></p>
-                                        </li>
-                                        <li>
-                                            <p>calentamiento comprometido adicional: <strong>≈ 0,4–0,7 °C</strong></p>
-                                        </li>
-                                    </ul>
-                                    <p>Entonces el calentamiento total de equilibrio sería:</p>
-                                    $$ T_{e q} \approx 1,6-1,9^{\circ} \mathrm{C} $$
+                  <p>Donde:</p>
+                  <ul>
+                    <li>
+                      <p>
+                        el forzamiento empieza a crecer con la industrialización
+                      </p>
+                    </li>
+                    <li><p>el sistema responde lentamente</p></li>
+                    <li>
+                      <p>hoy observamos una fracción de la respuesta total</p>
+                    </li>
+                  </ul>
+                  <p>La pregunta es:</p>
+                  <blockquote>
+                    <p>
+                      <strong
+                        >¿qué τ hace coherente el tiempo histórico con el
+                        calentamiento observado?</strong
+                      >
+                    </p>
+                  </blockquote>
+                  <hr />
+                  <h2>2 Elegir el “t = 0” (muy importante)</h2>
+                  <p>
+                    Esto es una decisión <strong>conceptual</strong>, no exacta.
+                  </p>
+                  <p>Opciones posibles:</p>
+                  <ul>
+                    <li><p>1760 (primera revolución industrial)</p></li>
+                    <li>
+                      <p>1800 (inicio visible del uso de carbón a escala)</p>
+                    </li>
+                    <li><p>1850 (referencia climática común)</p></li>
+                  </ul>
+                  <p>
+                    Para un modelo grosero pero razonable:<br />👉
+                    <strong>tomamos año 1800 como t = 0</strong>
+                  </p>
+                  <p>Hoy ≈ 2020–2025<br />Entonces:</p>
+                  <p>t≈220 años</p>
+                  <hr />
+                  <h2>3 Cuánto del calentamiento “final” ya vimos</h2>
+                  <p>Este punto es clave Estimaciones físicas dicen:</p>
+                  <ul>
+                    <li>
+                      <p>
+                        calentamiento ya observado: <strong>≈ 1,2 °C</strong>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        calentamiento comprometido adicional:
+                        <strong>≈ 0,4–0,7 °C</strong>
+                      </p>
+                    </li>
+                  </ul>
+                  <p>Entonces el calentamiento total de equilibrio sería:</p>
+                  $$ T_{e q} \approx 1,6-1,9^{\circ} \mathrm{C} $$
 
-                                    <p>Tomemos un valor medio:<br />👉 <strong>1,8 °C</strong></p>
-                                    <p>Fracción ya realizada:</p>
-                                    $$ f\left(S_2\right)=\max \left(0, S_2-S_{c r i t}\right) $$
-                                    <p>O sea:</p>
-                                    <blockquote>
-                                        <p><strong>el sistema habría expresado ~2/3 de su respuesta total</strong></p>
-                                    </blockquote>
-                                    <hr />
-                                    <h2>4 Resolver τ desde el modelo</h2>
-                                    Usamos: $$ \frac{T(t)}{T_{e q}}=1-e^{-t / \tau} $$ Entonces: $$ e^{-t /
-                                    \tau}=1-0,67=0,33 $$ Tomamos logaritmo: $$ -\frac{t}{\tau}=\ln (0,33) \approx-1,11
-                                    $$ Despejamos t : $$ \tau \approx \frac{220}{1,11} \approx 198 \text { años } $$
-                                    <h2>5 Resultado bruto (pero muy informativo)</h2>
-                                    <p>👉 <strong>τ ≈ 200 años</strong></p>
-                                    <p>Este número es:</p>
-                                    <ul>
-                                        <li><p>demasiado grande para la atmósfera sola</p></li>
-                                        <li><p>demasiado chico para procesos geológicos</p></li>
-                                        <li>
-                                            <p>
-                                                <strong>Coherente con el acoplamiento océano profundo</strong>
-                                                ✅
-                                            </p>
-                                        </li>
-                                    </ul>
-                                    <p>O sea:</p>
-                                    <blockquote>
-                                        <p>estamos midiendo el &quot; retardo a largo plazo”, no el chico</p>
-                                    </blockquote>
-                                    <hr />
-                                    <h2>6 Qué errores tiene este cálculo (y por qué no lo invalida)</h2>
-                                    <p>Errores claros:</p>
-                                    <ul>
-                                        <li><p>el forzamiento no fue un escalón perfecto</p></li>
-                                        <li><p>hubo aceleración fuerte post-1950</p></li>
-                                        <li><p>el sistema no es estrictamente lineal</p></li>
-                                    </ul>
-                                    <p>
-                                        Pero <strong>todos esos errores tienden a subestimar τ</strong>, no a inflarlo.
-                                    </p>
-                                    <p>Por eso este resultado:</p>
-                                    <ul>
-                                        <li><p>no es exacto</p></li>
-                                        <li>
-                                            <p>pero <strong>es físicamente consistente</strong></p>
-                                        </li>
-                                    </ul>
-                                    <hr />
-                                    <h2>7 Interpretación profunda</h2>
-                                    <p>Este τ ~200 años significa:</p>
-                                    <ul>
-                                        <li>
-                                            <p>
-                                                gran parte del calentamiento actual<br />
-                                                👉 <strong>proviene de energía introducida hace muchas décadas</strong>
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>el sistema aún <strong>no alcanzó equilibrio</strong></p>
-                                        </li>
-                                        <li>
-                                            <p>estamos viendo una <strong>fase tardía de carga</strong>, no el final</p>
-                                        </li>
-                                    </ul>
-                                    <hr />
-                                    <h2>8 Conclusión del paso 1</h2>
-                                    <p>
-                                        ✔️ Ya tenemos una <strong>constante de tiempo básica estimada</strong><br />✔️
-                                        Es compatible con física oceánica<br />✔️ Justifica el “desenganche de fase”
-                                        histórico<br />✔️ Da base sólida para avanzar
-                                    </p>
-                                    <hr />
-                                    <br />
-                                    <h1>Paso 2</h1>
-                                    <h2>1 El núcleo del problema: exponenciales + retardo cognitivo</h2>
-                                    <p>
-                                        Los humanos (y los sistemas políticos)
-                                        <strong>no pensamos en exponenciales</strong>, pensamos en:
-                                    </p>
-                                    <ul>
-                                        <li><p>lineales</p></li>
-                                        <li><p>proporcionales</p></li>
-                                        <li><p>reactivas</p></li>
-                                    </ul>
-                                    <p>
-                                        Pero el sistema que describimos (clima + energía acumulada)
-                                        <strong>no es lineal</strong>, es:
-                                    </p>
-                                    <ul>
-                                        <li><p>forzado exponencialmente (emisiones)</p></li>
-                                        <li><p>integrado en el tiempo (océanos)</p></li>
-                                        <li><p>con respuesta retardada (τ₂)</p></li>
-                                    </ul>
-                                    <p>Eso crea una trampa estructural:</p>
-                                    <blockquote>
-                                        <p>
-                                            <strong
-                                                >cuando la señal se vuelve obvia, el proceso ya es irreversible en el
-                                                corto plazo</strong
-                                            >
-                                        </p>
-                                    </blockquote>
-                                    <hr />
-                                    <h2>2 Analogía de la botella y las bacterias</h2>
-                                    <p>No es solo pedagógica: <strong>es formalmente equivalente</strong>.</p>
-                                    <h3>El experimento clásico:</h3>
-                                    <ul>
-                                        <li><p>Bacterias en una botella, duplican cada X tiempo</p></li>
-                                        <li><p>Botella con recursos finitos</p></li>
-                                        <li>
-                                            <p>
-                                                Pregunta:<br />
-                                                👉 <em>¿En qué momento se dan cuenta del problema?</em>
-                                            </p>
-                                        </li>
-                                    </ul>
-                                    <p>Respuesta:</p>
-                                    <ul>
-                                        <li>
-                                            <p>cuando la botella está <strong>7/8 llena</strong></p>
-                                        </li>
-                                        <li>
-                                            <p>queda <strong>una duplicación mas</strong></p>
-                                        </li>
-                                        <li>
-                                            <p>el colapso ocurre <strong>en el siguiente intervalo</strong></p>
-                                        </li>
-                                    </ul>
-                                    <p>Matemáticamente:</p>
-                                    <ul>
-                                        <li><p>el sistema es exponencial</p></li>
-                                        <li><p>la percepción es tardía</p></li>
-                                        <li>
-                                            <p>la corrección llega <strong>fuera de fase</strong></p>
-                                        </li>
-                                    </ul>
-                                    <p>Eso es exactamente lo que pasa con:</p>
-                                    <ul>
-                                        <li><p>emisiones</p></li>
-                                        <li><p>energía acumulada</p></li>
-                                        <li><p>calentamiento comprometido</p></li>
-                                    </ul>
-                                    <hr />
-                                    <h2>3 Traducción directa al clima</h2>
-                                    <p>En términos del modelo τ₁ + τ₂:</p>
-                                    <ul>
-                                        <li><p>τ₁ (rápido) → genera alarma visible</p></li>
-                                        <li><p>τ₂ (lento) → acumula energía silenciosamente</p></li>
-                                    </ul>
-                                    <p>Cuando τ₂ empieza a acoplarse fuerte:</p>
-                                    <ul>
-                                        <li>
-                                            <p><strong>no hace falta más forzamiento</strong></p>
-                                        </li>
-                                        <li><p>el sistema ya está cargado</p></li>
-                                        <li><p>la pendiente efectiva aumenta sola</p></li>
-                                    </ul>
-                                    <p>
-                                        Eso es el equivalente a la
-                                        <strong>última duplicación bacteriana que colapsa todo</strong>.
-                                    </p>
-                                    <hr />
-                                    <h2>4 El error humano estructural (no moral)</h2>
-                                    <p>Esto es importante:<br />no es que “no queremos actuar”, es que:</p>
-                                    <ul>
-                                        <li><p>la señal temprana es débil</p></li>
-                                        <li><p>el daño es diferido</p></li>
-                                        <li><p>el costo de actuar es inmediato</p></li>
-                                        <li><p>el beneficio es invisible</p></li>
-                                    </ul>
-                                    <p>En sistemas dinámicos eso se llama:</p>
-                                    <blockquote>
-                                        <p><strong>inestabilidad por retardo de control</strong></p>
-                                    </blockquote>
-                                    <p>Llegás a corregir cuando el sistema <strong>ya cruzó el umbral</strong>.</p>
-                                    <hr />
-                                    <h2>5 El paralelismo con interés compuesto</h2>
-                                    <p>Referencia al interés compuesto.</p>
-                                    <p>En ambos casos:</p>
-                                    <ul>
-                                        <li><p>el crecimiento temprano parece irrelevante</p></li>
-                                        <li><p>el tramo final domina todo</p></li>
-                                        <li><p>la intuición humana falla</p></li>
-                                    </ul>
-                                    <p>Ejemplo financiero:</p>
-                                    <ul>
-                                        <li>el 90 % del capital se genera en el último tramo</li>
-                                    </ul>
-                                    <p>Ejemplo climático:</p>
-                                    <ul>
-                                        <li>
-                                            gran parte del impacto se manifiesta <strong>después</strong> de que el
-                                            forzamiento se estabiliza
-                                        </li>
-                                    </ul>
-                                    <p>Eso rompe la idea intuitiva de:</p>
-                                    <blockquote>
-                                        <p>“si dejamos de emitir, el problema se frena”</p>
-                                    </blockquote>
-                                    <p>
-                                        No.<br />Se frena <strong>el forzamiento</strong>, no la respuesta ya
-                                        comprometida.
-                                    </p>
-                                    <hr />
-                                    <h2>6 La frase dura (pero correcta)</h2>
-                                    <blockquote>
-                                        <p>
-                                            <strong
-                                                >La toma de conciencia ocurre cerca del punto donde la reversibilidad
-                                                desaparece.</strong
-                                            >
-                                        </p>
-                                    </blockquote>
-                                    <p>No porque falte voluntad, sino porque:</p>
-                                    <ul>
-                                        <li><p>el sistema tiene memoria</p></li>
-                                        <li><p>el crecimiento fue exponencial</p></li>
-                                        <li><p>el control llega fuera de fase</p></li>
-                                    </ul>
-                                    <hr />
-                                    <h2>7 Conexión con diagrama temporal</h2>
-                                    <p>
-                                        En el diagrama
-                                        <br />
-                                        <img
-                                            src="/img/tecnica/esenario-global.jpg"
-                                            alt="Diagrama conceptual de desequilibrio energético en la Tierra y el retardo térmico"
-                                            style="
-                                                width: 100%;
-                                                height: auto;
-                                                max-height: 600px;
-                                                object-fit: contain;
-                                                border-radius: 8px;
-                                                margin-bottom: var(--spacing-md);
-                                            " />
-                                    </p>
+                  <p>Tomemos un valor medio:<br />👉 <strong>1,8 °C</strong></p>
+                  <p>Fracción ya realizada:</p>
+                  $$ f\left(S_2\right)=\max \left(0, S_2-S_{c r i t}\right) $$
+                  <p>O sea:</p>
+                  <blockquote>
+                    <p>
+                      <strong
+                        >el sistema habría expresado ~2/3 de su respuesta
+                        total</strong
+                      >
+                    </p>
+                  </blockquote>
+                  <hr />
+                  <h2>4 Resolver τ desde el modelo</h2>
+                  Usamos: $$ \frac{T(t)}{T_{e q}}=1-e^{-t / \tau} $$ Entonces:
+                  $$ e^{-t / \tau}=1-0,67=0,33 $$ Tomamos logaritmo: $$
+                  -\frac{t}{\tau}=\ln (0,33) \approx-1,11 $$ Despejamos t : $$
+                  \tau \approx \frac{220}{1,11} \approx 198 \text { años } $$
+                  <h2>5 Resultado bruto (pero muy informativo)</h2>
+                  <p>👉 <strong>τ ≈ 200 años</strong></p>
+                  <p>Este número es:</p>
+                  <ul>
+                    <li><p>demasiado grande para la atmósfera sola</p></li>
+                    <li><p>demasiado chico para procesos geológicos</p></li>
+                    <li>
+                      <p>
+                        <strong
+                          >Coherente con el acoplamiento océano profundo</strong
+                        >
+                        ✅
+                      </p>
+                    </li>
+                  </ul>
+                  <p>O sea:</p>
+                  <blockquote>
+                    <p>
+                      estamos midiendo el &quot; retardo a largo plazo”, no el
+                      chico
+                    </p>
+                  </blockquote>
+                  <hr />
+                  <h2>
+                    6 Qué errores tiene este cálculo (y por qué no lo invalida)
+                  </h2>
+                  <p>Errores claros:</p>
+                  <ul>
+                    <li><p>el forzamiento no fue un escalón perfecto</p></li>
+                    <li><p>hubo aceleración fuerte post-1950</p></li>
+                    <li><p>el sistema no es estrictamente lineal</p></li>
+                  </ul>
+                  <p>
+                    Pero
+                    <strong>todos esos errores tienden a subestimar τ</strong>,
+                    no a inflarlo.
+                  </p>
+                  <p>Por eso este resultado:</p>
+                  <ul>
+                    <li><p>no es exacto</p></li>
+                    <li>
+                      <p>pero <strong>es físicamente consistente</strong></p>
+                    </li>
+                  </ul>
+                  <hr />
+                  <h2>7 Interpretación profunda</h2>
+                  <p>Este τ ~200 años significa:</p>
+                  <ul>
+                    <li>
+                      <p>
+                        gran parte del calentamiento actual<br />
+                        👉
+                        <strong
+                          >proviene de energía introducida hace muchas
+                          décadas</strong
+                        >
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        el sistema aún <strong>no alcanzó equilibrio</strong>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        estamos viendo una
+                        <strong>fase tardía de carga</strong>, no el final
+                      </p>
+                    </li>
+                  </ul>
+                  <hr />
+                  <h2>8 Conclusión del paso 1</h2>
+                  <p>
+                    ✔️ Ya tenemos una
+                    <strong>constante de tiempo básica estimada</strong><br />✔️
+                    Es compatible con física oceánica<br />✔️ Justifica el
+                    “desenganche de fase” histórico<br />✔️ Da base sólida para
+                    avanzar
+                  </p>
+                  <hr />
+                  <br />
+                  <h1>Paso 2</h1>
+                  <h2>
+                    1 El núcleo del problema: exponenciales + retardo cognitivo
+                  </h2>
+                  <p>
+                    Los humanos (y los sistemas políticos)
+                    <strong>no pensamos en exponenciales</strong>, pensamos en:
+                  </p>
+                  <ul>
+                    <li><p>lineales</p></li>
+                    <li><p>proporcionales</p></li>
+                    <li><p>reactivas</p></li>
+                  </ul>
+                  <p>
+                    Pero el sistema que describimos (clima + energía acumulada)
+                    <strong>no es lineal</strong>, es:
+                  </p>
+                  <ul>
+                    <li><p>forzado exponencialmente (emisiones)</p></li>
+                    <li><p>integrado en el tiempo (océanos)</p></li>
+                    <li><p>con respuesta retardada (τ₂)</p></li>
+                  </ul>
+                  <p>Eso crea una trampa estructural:</p>
+                  <blockquote>
+                    <p>
+                      <strong
+                        >cuando la señal se vuelve obvia, el proceso ya es
+                        irreversible en el corto plazo</strong
+                      >
+                    </p>
+                  </blockquote>
+                  <hr />
+                  <h2>2 Analogía de la botella y las bacterias</h2>
+                  <p>
+                    No es solo pedagógica:
+                    <strong>es formalmente equivalente</strong>.
+                  </p>
+                  <h3>El experimento clásico:</h3>
+                  <ul>
+                    <li>
+                      <p>Bacterias en una botella, duplican cada X tiempo</p>
+                    </li>
+                    <li><p>Botella con recursos finitos</p></li>
+                    <li>
+                      <p>
+                        Pregunta:<br />
+                        👉 <em>¿En qué momento se dan cuenta del problema?</em>
+                      </p>
+                    </li>
+                  </ul>
+                  <p>Respuesta:</p>
+                  <ul>
+                    <li>
+                      <p>cuando la botella está <strong>7/8 llena</strong></p>
+                    </li>
+                    <li>
+                      <p>queda <strong>una duplicación mas</strong></p>
+                    </li>
+                    <li>
+                      <p>
+                        el colapso ocurre
+                        <strong>en el siguiente intervalo</strong>
+                      </p>
+                    </li>
+                  </ul>
+                  <p>Matemáticamente:</p>
+                  <ul>
+                    <li><p>el sistema es exponencial</p></li>
+                    <li><p>la percepción es tardía</p></li>
+                    <li>
+                      <p>la corrección llega <strong>fuera de fase</strong></p>
+                    </li>
+                  </ul>
+                  <p>Eso es exactamente lo que pasa con:</p>
+                  <ul>
+                    <li><p>emisiones</p></li>
+                    <li><p>energía acumulada</p></li>
+                    <li><p>calentamiento comprometido</p></li>
+                  </ul>
+                  <hr />
+                  <h2>3 Traducción directa al clima</h2>
+                  <p>En términos del modelo τ₁ + τ₂:</p>
+                  <ul>
+                    <li><p>τ₁ (rápido) → genera alarma visible</p></li>
+                    <li><p>τ₂ (lento) → acumula energía silenciosamente</p></li>
+                  </ul>
+                  <p>Cuando τ₂ empieza a acoplarse fuerte:</p>
+                  <ul>
+                    <li>
+                      <p><strong>no hace falta más forzamiento</strong></p>
+                    </li>
+                    <li><p>el sistema ya está cargado</p></li>
+                    <li><p>la pendiente efectiva aumenta sola</p></li>
+                  </ul>
+                  <p>
+                    Eso es el equivalente a la
+                    <strong
+                      >última duplicación bacteriana que colapsa todo</strong
+                    >.
+                  </p>
+                  <hr />
+                  <h2>4 El error humano estructural (no moral)</h2>
+                  <p>
+                    Esto es importante:<br />no es que “no queremos actuar”, es
+                    que:
+                  </p>
+                  <ul>
+                    <li><p>la señal temprana es débil</p></li>
+                    <li><p>el daño es diferido</p></li>
+                    <li><p>el costo de actuar es inmediato</p></li>
+                    <li><p>el beneficio es invisible</p></li>
+                  </ul>
+                  <p>En sistemas dinámicos eso se llama:</p>
+                  <blockquote>
+                    <p><strong>inestabilidad por retardo de control</strong></p>
+                  </blockquote>
+                  <p>
+                    Llegás a corregir cuando el sistema
+                    <strong>ya cruzó el umbral</strong>.
+                  </p>
+                  <hr />
+                  <h2>5 El paralelismo con interés compuesto</h2>
+                  <p>Referencia al interés compuesto.</p>
+                  <p>En ambos casos:</p>
+                  <ul>
+                    <li><p>el crecimiento temprano parece irrelevante</p></li>
+                    <li><p>el tramo final domina todo</p></li>
+                    <li><p>la intuición humana falla</p></li>
+                  </ul>
+                  <p>Ejemplo financiero:</p>
+                  <ul>
+                    <li>el 90 % del capital se genera en el último tramo</li>
+                  </ul>
+                  <p>Ejemplo climático:</p>
+                  <ul>
+                    <li>
+                      gran parte del impacto se manifiesta
+                      <strong>después</strong> de que el forzamiento se
+                      estabiliza
+                    </li>
+                  </ul>
+                  <p>Eso rompe la idea intuitiva de:</p>
+                  <blockquote>
+                    <p>“si dejamos de emitir, el problema se frena”</p>
+                  </blockquote>
+                  <p>
+                    No.<br />Se frena <strong>el forzamiento</strong>, no la
+                    respuesta ya comprometida.
+                  </p>
+                  <hr />
+                  <h2>6 La frase dura (pero correcta)</h2>
+                  <blockquote>
+                    <p>
+                      <strong
+                        >La toma de conciencia ocurre cerca del punto donde la
+                        reversibilidad desaparece.</strong
+                      >
+                    </p>
+                  </blockquote>
+                  <p>No porque falte voluntad, sino porque:</p>
+                  <ul>
+                    <li><p>el sistema tiene memoria</p></li>
+                    <li><p>el crecimiento fue exponencial</p></li>
+                    <li><p>el control llega fuera de fase</p></li>
+                  </ul>
+                  <hr />
+                  <h2>7 Conexión con diagrama temporal</h2>
+                  <p>
+                    En el diagrama
+                    <br />
+                    <img
+                      src="/img/tecnica/esenario-global.jpg"
+                      alt="Diagrama conceptual de desequilibrio energético en la Tierra y el retardo térmico"
+                      style="
+                        width: 100%;
+                        height: auto;
+                        max-height: 600px;
+                        object-fit: contain;
+                        border-radius: 8px;
+                        margin-bottom: var(--spacing-md);
+                      "
+                    />
+                  </p>
 
-                                    <ul>
-                                        <li>
-                                            <p>hoy estamos cerca del punto donde:</p>
-                                            <ul>
-                                                <li><p>τ₁ está casi saturado</p></li>
-                                                <li><p>τ₂ empieza a acoplarse perceptiblemente</p></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                    <p>Eso es el momento psicológico de “conciencia global”.</p>
-                                    <p>Pero dinámicamente:</p>
-                                    <ul>
-                                        <li><p>el sistema ya está lanzado</p></li>
-                                        <li><p>la pendiente futura está en gran parte fijada</p></li>
-                                    </ul>
-                                    <hr />
-                                    <h2>8 Importante matiz (para no caer en fatalismo simplista)</h2>
-                                    <p>Esto <strong>no significa</strong>:</p>
-                                    <ul>
-                                        <li><p>extinción inmediata</p></li>
-                                        <li><p>colapso instantáneo</p></li>
-                                        <li><p>imposibilidad total de mitigación</p></li>
-                                    </ul>
-                                    <p>Sí significa:</p>
-                                    <ul>
-                                        <li>
-                                            <p><strong>no hay retorno rápido</strong></p>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                las decisiones de hoy afectan <strong>qué tan violento</strong> es el
-                                                ajuste, no si ocurre o no
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>la escala temporal humana está desalineada con la física del sistema</p>
-                                        </li>
-                                    </ul>
-                                    <hr />
-                                    <h2>9 En términos técnicos</h2>
-                                    <blockquote>
-                                        <p>
-                                            <em
-                                                >Un sistema con crecimiento exponencial del forzamiento, respuesta
-                                                retardada y control reactivo inevitablemente entra en régimen
-                                                irreversible antes de que el observador perciba la cercanía del
-                                                colapso.</em
-                                            >
-                                        </p>
-                                    </blockquote>
-                                    <p>Eso es dinámica de sistemas.<br />Y aplica igual a:</p>
-                                    <ul>
-                                        <li><p>clima</p></li>
-                                        <li><p>población</p></li>
-                                        <li><p>recursos</p></li>
-                                        <li><p>deuda</p></li>
-                                        <li><p>ecosistemas</p></li>
-                                    </ul>
-                                    <hr />
-                                    <h1><strong>computación digital y dinámica de sistemas</strong></h1>
-                                    <h2>1 Forrester: el problema no es la complejidad, es el <em>retardo</em></h2>
-                                    <p>Forrester mostró algo contraintuitivo:</p>
-                                    <blockquote>
-                                        <p>
-                                            Sistemas simples con retardos producen comportamientos más caóticos que
-                                            sistemas complejos sin retardos.
-                                        </p>
-                                    </blockquote>
-                                    <p>En clima (y en este modelo):</p>
-                                    <ul>
-                                        <li><p>las ecuaciones pueden ser simples</p></li>
-                                        <li>
-                                            <p><strong>los delays (retardos) destruyen la intuición</strong></p>
-                                        </li>
-                                    </ul>
-                                    <p>Y los humanos <strong>siempre subestiman los delays</strong>.</p>
-                                    <hr />
-                                    <h2>2 Traducción formal a Dinámica de Sistemas</h2>
-                                    <p>En términos de Forrester, tenemos que:</p>
-                                    <h3><em>Stocks</em> (acumuladores)</h3>
-                                    <ul>
-                                        <li><p>Energía térmica oceánica</p></li>
-                                        <li><p>CO₂ atmosférico</p></li>
-                                        <li><p>Daño climático acumulado (no lineal)</p></li>
-                                    </ul>
-                                    <h3><em>Flows</em></h3>
-                                    <ul>
-                                        <li><p>Emisiones</p></li>
-                                        <li><p>Absorción oceánica</p></li>
-                                        <li><p>Pérdida radiativa al espacio</p></li>
-                                    </ul>
-                                    <h3><em>Delays</em></h3>
-                                    <p>Y acá está lo clave:</p>
-                                    <div class="responsive-table">
-                                        <div class="responsive-table">
-                                                                                <table>
-                                                                                    <thead>
-                                                                                        <tr>
-                                                                                            <th>Delay</th>
-                                                                                            <th>Qué representa</th>
-                                                                                            <th>Orden</th>
-                                                                                        </tr>
-                                                                                    </thead>
-                                                                                    <tbody>
-                                                                                        <tr>
-                                                                                            <td>D₁</td>
-                                                                                            <td>Atmósfera → temp</td>
-                                                                                            <td>años</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td>D₂</td>
-                                                                                            <td>Superficie → océano</td>
-                                                                                            <td>décadas</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td>D₃</td>
-                                                                                            <td>Océano profundo → superficie</td>
-                                                                                            <td>siglos</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td>D₄</td>
-                                                                                            <td>Señal física → conciencia humana</td>
-                                                                                            <td>décadas</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td>D₅</td>
-                                                                                            <td>Conciencia → acción efectiva</td>
-                                                                                            <td>décadas</td>
-                                                                                        </tr>
-                                                                                    </tbody>
-                                                                                </table>
-                                                                            </div>                                    </div>
-                                    <p>
-                                        👉
-                                        <strong>Los delays sociales son comparables o mayores que los físicos.</strong>
-                                    </p>
-                                    <p>Forrester insistía en esto:</p>
-                                    <blockquote>
-                                        <p><em>el sistema falla porque el control llega tarde</em></p>
-                                    </blockquote>
-                                    <hr />
-                                    <h2>3 El punto crítico de Forrester</h2>
-                                    <p>Forrester mostró que cuando:</p>
-                                    <ul>
-                                        <li>
-                                            <p>
-                                                el <strong>tiempo de ajuste del sistema (τ₂)</strong><br />
-                                                es mayor que
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>el <strong>tiempo de decisión humana</strong></p>
-                                        </li>
-                                    </ul>
-                                    <p>el sistema <strong>inevitablemente sobrepasa el límite</strong>.</p>
-                                    <p>En símbolos simples:</p>
-                                    <p>
-                                        τsistema≫τcontrol⇒overshoot + colapso\tau_{sistema} \gg \tau_{control}
-                                        \Rightarrow \text{overshoot + colapso}τsistema​≫τcontrol​⇒overshoot + colapso
-                                    </p>
-                                    <p>No por maldad.<br />Por estructura.</p>
-                                    <hr />
-                                    <h2>4 El error humano estructural (Forrester puro)</h2>
-                                    <p>Los decisores:</p>
-                                    <ul>
-                                        <li><p>reaccionan a niveles, no a derivadas</p></li>
-                                        <li>
-                                            <p>ven el problema cuando el <em>stock</em> ya está alto</p>
-                                        </li>
-                                        <li>
-                                            <p>actúan sobre el <em>flow</em> cuando el daño ya está comprometido</p>
-                                        </li>
-                                    </ul>
-                                    <p>Eso genera:</p>
-                                    <ul>
-                                        <li><p>correcciones tardías</p></li>
-                                        <li><p>oscilaciones</p></li>
-                                        <li><p>decisiones que empeoran el problema</p></li>
-                                    </ul>
-                                    <p>Forrester lo mostró en:</p>
-                                    <ul>
-                                        <li><p>urbanismo</p></li>
-                                        <li><p>industria</p></li>
-                                        <li><p>población</p></li>
-                                        <li><p>recursos</p></li>
-                                    </ul>
-                                    <p>El clima es <strong>el mismo patrón</strong>, pero con delays más largos.</p>
-                                    <hr />
-                                    <h2>5 Intervalos acción–efecto (lo que busco cuantificar)</h2>
-                                    <p>Podemos ordenar los tiempos así (muy aproximado):</p>
-<div class="responsive-table">
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th>Acción</th>
-                                                <th>Primer efecto visible</th>
-                                                <th>Efecto dominante</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Emisión CO₂</td>
-                                                <td>años</td>
-                                                <td>siglos</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Reducción emisiones</td>
-                                                <td>décadas</td>
-                                                <td>siglos</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Calentamiento visible</td>
-                                                <td>inmediato</td>
-                                                <td>continuo</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Estabilizar temperatura</td>
-                                                <td>nunca rápido</td>
-                                                <td>≥ τ₂</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Daño ecosistémico</td>
-                                                <td>décadas</td>
-                                                <td>irreversible</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    </div>
-                                    <p>👉 Esto rompe el modelo mental político de 4–5 años.</p>
-                                    <hr />
-                                    <h2>6 Por qué la simulación es imprescindible</h2>
-                                    <p>Forrester decía algo brutal:</p>
-                                    <blockquote>
-                                        <p>
-                                            <em>La mente humana no puede simular sistemas con múltiples retardos.</em>
-                                        </p>
-                                    </blockquote>
-                                    <p>Por eso:</p>
-                                    <ul>
-                                        <li><p>el razonamiento intuitivo falla</p></li>
-                                        <li><p>incluso cuando los datos son correctos</p></li>
-                                        <li><p>incluso con buenas intenciones</p></li>
-                                    </ul>
-                                    <p>
-                                        Este enfoque de
-                                        <strong>modelo dinámico simple con grandes errores controlados</strong> es
-                                        exactamente el método correcto.
-                                    </p>
-                                    <hr />
-                                    <h2>7 Lo que ya tenemos</h2>
-                                    <ul>
-                                        <li>
-                                            <p>un modelo de <strong>dos stocks térmicos</strong></p>
-                                        </li>
-                                        <li>
-                                            <p>con <strong>delays físicos claros</strong></p>
-                                        </li>
-                                        <li>
-                                            <p>y un <strong>delay cognitivo-social implícito</strong></p>
-                                        </li>
-                                    </ul>
-                                    <p>
-                                        Eso ya es un modelo Forresteriano completo, aunque no esté dibujado en Vensim.
-                                    </p>
-                                    <hr />
-                                    <h2>Estructura conceptual mínima (Forrester)</h2>
-                                    <h3>🔹 Stocks principales (acumuladores)</h3>
-                                    <p>Definimos solo los imprescindibles:</p>
-                                    <ol>
-                                        <li>
-                                            <p>
-                                                <strong>S₁ = Forzamiento acumulado</strong><br />
-                                                (CO₂ equivalente + otros gases)
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                <strong>S₂ = Energía térmica rápida</strong><br />
-                                                (atmósfera + océano superficial)
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                <strong>S₃ = Energía térmica lenta</strong><br />
-                                                (océano profundo)
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                <strong>S₄ = Conciencia / respuesta humana acumulada</strong><br />
-                                                (capacidad real de actuar, no intención)
-                                            </p>
-                                        </li>
-                                    </ol>
-                                    <hr />
-                                    <h3>🔹 Flujos principales</h3>
-                                    <ul>
-                                        <li><p>F₁: emisiones → S₁</p></li>
-                                        <li><p>F₂: transferencia S₁ → S₂</p></li>
-                                        <li><p>F₃: transferencia S₂ → S₃</p></li>
-                                        <li><p>F₄: pérdida radiativa al espacio</p></li>
-                                        <li><p>F₅: acción humana → reducción de F₁</p></li>
-                                    </ul>
-                                    <hr />
-                                    <h3>🔹 Delays explícitos</h3>
-                                    <p>Aquí está lo esencial:</p>
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th>Delay</th>
-                                                <th>Entre</th>
-                                                <th>Orden de magnitud</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>τ₁</td>
-                                                <td>S₁ → S₂</td>
-                                                <td>~30–40 años</td>
-                                            </tr>
-                                            <tr>
-                                                <td>τ₂</td>
-                                                <td>S₂ → S₃</td>
-                                                <td>~150–300 años</td>
-                                            </tr>
-                                            <tr>
-                                                <td>τ₃</td>
-                                                <td>Señal climática → conciencia</td>
-                                                <td>~20–40 años</td>
-                                            </tr>
-                                            <tr>
-                                                <td>τ₄</td>
-                                                <td>conciencia → acción efectiva</td>
-                                                <td>~10–30 años</td>
-                                            </tr>
-                                            <tr>
-                                                <td>👉 <strong>τ₂ ≫ τ₃ + τ₄</strong></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Esto ya anticipa el overshoot.</td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <hr />
-                                    <h2>Representación causal (sin ecuaciones aún)</h2>
-                                    <br />
-                                    <p>
-                                        Emisiones ──► [ S₁ ] ──delay τ₁──► [ S₂ ] ──delay τ₂──► [ S₃ ] ▲ │ │ ▼ Acción
-                                        humana ◄── delay τ₄ ◄── Conciencia ◄── delay τ₃ ◄── Señal térmica
-                                    </p>
-                                    <br />
-                                    <p>Observación clave (Forrester):</p>
-                                    <blockquote>
-                                        <p>
-                                            el bucle de control es <strong>más lento</strong> que el bucle de
-                                            acumulación
-                                        </p>
-                                    </blockquote>
-                                    <p>Eso garantiza <strong>sobrepaso</strong>.</p>
-                                    <hr />
-                                    <h2>Semi-matemático: ecuaciones mínimas</h2>
-                                    <p>Nada sofisticado, solo balances.</p>
-                                    <h3>🔹 Forzamiento (S₁)</h3>
-                                    $$ \frac{d S_1}{d t}=E(t)-k_1 S₁ $$
-                                    <p>Esto representa:</p>
-                                    <ul>
-                                        <li><p>respuesta rápida al forzamiento</p></li>
-                                        <li><p>drenaje lento hacia el océano profundo</p></li>
-                                    </ul>
-                                    <hr />
-                                    <h3>🔹 Energía lenta (S₃)</h3>
-                                    $$ \frac{d S_3}{d t}=\frac{1}{\tau_2}\left(S_2-S_3\right) $$
-                                    <p>
-                                        👉 S₃ <strong>solo acumula</strong>, casi no devuelve nada en tiempos humanos.
-                                    </p>
-                                    <hr />
-                                    <h3>🔹 Conciencia humana (S₄)</h3>
-                                    <p>Este es el punto fino que casi nadie modela bien:</p>
-                                    $$ \frac{d S_4}{d t}=\frac{1}{\tau_3}\left(f\left(S_2\right)-S_4\right) $$ Donde:
-                                    <ul>
-                                        <li>f(S₂) = percepción del daño (no lineal, con umbral)</li>
-                                    </ul>
-                                    <p>Ejemplo simple:</p>
-                                    $$ f\left(S_2\right)=\max \left(0, S_2-S_{c r i t}\right) $$
-                                    <p>La conciencia <strong>no crece hasta que el daño es evidente</strong>.</p>
-                                    <hr />
-                                    <h3>🔹 Acción humana (control)</h3>
-                                    <p>
-                                        La acción actúa sobre emisiones, pero con delay: $$ E(t)=E_0-g \cdot
-                                        S_4\left(t-\tau_4\right) $$
-                                    </p>
-
-                                    <hr />
-                                    <h2>El punto crítico</h2>
-                                    <p>El sistema entra en régimen peligroso cuando:</p>
-                                    $$ \begin{aligned} \tau_2 &\gg (\tau_3 + \tau_4) \end{aligned} $$
-                                    <p>En ese caso:</p>
-                                    <ul>
-                                        <li><p>aunque E(t) empiece a bajar</p></li>
-                                        <li><p>S₃ sigue creciendo</p></li>
-                                        <li><p>S₂ sigue aumentando por acoplamiento</p></li>
-                                        <li>
-                                            <p>la pendiente térmica <strong>no se frena</strong></p>
-                                        </li>
-                                    </ul>
-                                    <p>Esto es el equivalente matemático a:</p>
-                                    <blockquote>
-                                        <p>“la botella se llena en la última duplicación”</p>
-                                    </blockquote>
-                                    <hr />
-                                    <h2>Overshoot inevitable (criterio conceptual)</h2>
-                                    <p>
-                                        El sobrepaso ocurre si: $$ \frac{d S_3}{d
-                                        t}=\frac{1}{\tau_2}\left(S_2-S_3\right) $$ Es decir:
-                                    </p>
-                                    <ul>
-                                        <li><p>el daño sigue creciendo</p></li>
-                                        <li><p>aun cuando “hacemos lo correcto”</p></li>
-                                    </ul>
-                                    <p>Eso destruye la narrativa intuitiva de control.</p>
-                                    <hr />
-                                    <h2>Traducción</h2>
-                                    <blockquote>
-                                        <p>
-                                            <em
-                                                >El sistema tiene una memoria térmica cuyo tiempo característico excede
-                                                el tiempo de percepción y reacción humana, produciendo un acoplamiento
-                                                tardío que elimina la capacidad de amortiguación.</em
-                                            >
-                                        </p>
-                                    </blockquote>
-                                    <p>Eso <strong>no es opinión</strong>.<br />Es estructura del sistema.</p>
-                                    <hr />
-                                    <h2>Por qué este modelo es valioso aun siendo “tosco”</h2>
-                                    <p>Porque:</p>
-                                    <ul>
-                                        <li>
-                                            <p>captura <strong>la topología correcta</strong></p>
-                                        </li>
-                                        <li>
-                                            <p>preserva los <strong>delays dominantes</strong></p>
-                                        </li>
-                                        <li>
-                                            <p>reproduce <strong>overshoot sin necesidad de ajuste fino</strong></p>
-                                        </li>
-                                    </ul>
-                                    <p>Forrester siempre decía:</p>
-                                    <blockquote>
-                                        <p>_La estructura importa más que los parámetros.</p>
-                                    </blockquote>
-                                    <br />
-                                </div>
-                            </div>
-                        </div>
-                        <a
-                            href="/pages/blog/tecnica/calentamiento.html"
-                            style="
-                                display: block; /* Centering styles */
-                                margin: 0 auto; /* Center the block element */
-                                width: fit-content; /* Adapt width to content */
-                                background: var(--color-secondary);
-                                color: var(--color-light);
-                                border: none;
-                                padding: var(--spacing-md) var(--spacing-xl);
-                                border-radius: 8px;
-                                font-weight: 600;
-                                text-decoration: none;
-                                cursor: pointer;
-                                transition: all var(--transition-fast);
-                                margin-bottom: var(--spacing-2xl); /* Margin below the button */
-                            "
-                            onmouseover="this.style.background='var(--color-warm)'; this.style.transform='translateY(-2px)'"
-                            onmouseout="this.style.background='var(--color-secondary)'; this.style.transform='translateY(0)'">
-                            Regresar Calentamiento Global
-                        </a>
-                        <section
-                            class="blog-subscription"
-                            style="
-                                margin-top: var(--spacing-3xl);
-                                background: var(--color-mid);
-                                padding: var(--spacing-2xl);
-                                border-radius: 12px;
-                                text-align: center;
-                            ">
-                            <nav class="share-footer" aria-label="Compartir página">
-                                <a
-                                    href="https://www.facebook.com/sharer/sharer.php?u=https://resonancias.pages.dev/pages/blog/tecnica/anexo-global.html"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="share-btn facebook"
-                                    title="Compartir en Facebook"
-                                    aria-label="Compartir en Facebook">
-                                    <i class="fa-brands fa-facebook"></i>
-                                </a>
-                                <a
-                                    href="https://twitter.com/intent/tweet?url=https://resonancias.pages.dev/pages/blog/tecnica/anexo-global.html&text=Anexo%20Global:%20Desequilibrio%20energético%20y%20retardo%20|%20RESONANCIAS"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="share-btn twitter"
-                                    title="Compartir en X"
-                                    aria-label="Compartir en X">
-                                    <i class="fa-brands fa-x-twitter"></i>
-                                </a>
-
-                                <a
-                                    href="https://api.whatsapp.com/send?text=Anexo%20Global:%20Desequilibrio%20energético%20y%20retardo%20|%20RESONANCIAS%20https://resonancias.pages.dev/pages/blog/tecnica/anexo-global.html"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="share-btn whatsapp"
-                                    title="Compartir en WhatsApp"
-                                    aria-label="Compartir en WhatsApp">
-                                    <i class="fa-brands fa-whatsapp"></i>
-                                </a>
-                                <a
-                                    href="https://bsky.app/intent/compose?text=Anexo%20Global:%20Desequilibrio%20energético%20y%20retardo%20|%20RESONANCIAS%20https://resonancias.pages.dev/pages/blog/tecnica/anexo-global.html"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="share-btn bluesky"
-                                    title="Compartir en Bluesky"
-                                    aria-label="Compartir en Bluesky">
-                                    <i class="fa-brands fa-bluesky"></i>
-                                </a>
-                            </nav>
-                            <h3
-                                style="
-                                    color: var(--color-dark);
-                                    margin-bottom: var(--spacing-md);
-                                    font-size: var(--font-size-2xl);
-                                ">
-                                Comparte en tus redes
-                            </h3>
-                            <h4>Suscribete</h4>
-
-                            <p
-                                style="
-                                    color: var(--color-warm);
-                                    margin-bottom: var(--spacing-xl);
-                                    max-width: 500px;
-                                    margin-left: auto;
-                                    margin-right: auto;
-                                    line-height: 1.6;
-                                ">
-                                Recibe notificaciones cuando publique nuevos ensayos y reflexiones. Sin spam, solo
-                                contenido de calidad.
-                            </p>
-                            <div
-                                style="
-                                    display: flex;
-                                    justify-content: center;
-                                    align-items: center;
-                                    gap: var(--spacing-md);
-                                    max-width: 400px;
-                                    margin: 0 auto;
-                                    flex-wrap: wrap;
-                                ">
-                                <a
-                                    href="/pages/quien-soy.html"
-                                    style="
-                                        background: var(--color-secondary);
-                                        color: var(--color-light);
-                                        border: none;
-                                        padding: var(--spacing-md) var(--spacing-xl);
-                                        border-radius: 8px;
-                                        font-weight: 600;
-                                        text-decoration: none;
-                                        cursor: pointer;
-                                        transition: all var(--transition-fast);
-                                        display: inline-flex;
-                                        align-items: center;
-                                        gap: var(--spacing-sm);
-                                    "
-                                    onmouseover="this.style.background='var(--color-warm)'; this.style.transform='translateY(-2px)'"
-                                    onmouseout="this.style.background='var(--color-secondary)'; this.style.transform='translateY(0)'">
-                                    <svg
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2">
-                                        <path
-                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                        <polyline points="22,6 12,13 2,6"></polyline>
-                                    </svg>
-                                    Contáctame
-                                </a>
-                            </div>
-                            <p
-                                style="
-                                    font-size: var(--font-size-sm);
-                                    color: var(--color-neutral);
-                                    margin-top: var(--spacing-md);
-                                ">
-                                * Puedes darte de baja en cualquier momento
-                            </p>
-                        </section>
-                        <!-- Footer del artículo -->
-
-                        <footer
-                            style="
-                                margin-top: var(--spacing-2xl);
-                                padding-top: var(--spacing-xl);
-                                border-top: 1px solid var(--color-mid);
-                            ">
-                            <div
-                                style="
-                                    display: flex;
-                                    justify-content: space-between;
-                                    align-items: center;
-                                    flex-wrap: wrap;
-                                    gap: var(--spacing-md);
-                                ">
-                                <div>
-                                    <p style="color: var(--color-neutral); font-size: var(--font-size-sm); margin: 0">
-                                        Publicado el <time datetime="2026-01-27">27 de Enero 2026</time>
-                                    </p>
-                                </div>
-                                <div style="display: flex; gap: var(--spacing-sm)">
-                                    <a
-                                        href="/pages/blog/tecnica/Tecnica.html"
-                                        style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
-                                        ← Volver a Técnica
-                                    </a>
-                                </div>
-                            </div>
-                        </footer>
+                  <ul>
+                    <li>
+                      <p>hoy estamos cerca del punto donde:</p>
+                      <ul>
+                        <li><p>τ₁ está casi saturado</p></li>
+                        <li><p>τ₂ empieza a acoplarse perceptiblemente</p></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <p>Eso es el momento psicológico de “conciencia global”.</p>
+                  <p>Pero dinámicamente:</p>
+                  <ul>
+                    <li><p>el sistema ya está lanzado</p></li>
+                    <li>
+                      <p>la pendiente futura está en gran parte fijada</p>
+                    </li>
+                  </ul>
+                  <hr />
+                  <h2>
+                    8 Importante matiz (para no caer en fatalismo simplista)
+                  </h2>
+                  <p>Esto <strong>no significa</strong>:</p>
+                  <ul>
+                    <li><p>extinción inmediata</p></li>
+                    <li><p>colapso instantáneo</p></li>
+                    <li><p>imposibilidad total de mitigación</p></li>
+                  </ul>
+                  <p>Sí significa:</p>
+                  <ul>
+                    <li>
+                      <p><strong>no hay retorno rápido</strong></p>
+                    </li>
+                    <li>
+                      <p>
+                        las decisiones de hoy afectan
+                        <strong>qué tan violento</strong> es el ajuste, no si
+                        ocurre o no
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        la escala temporal humana está desalineada con la física
+                        del sistema
+                      </p>
+                    </li>
+                  </ul>
+                  <hr />
+                  <h2>9 En términos técnicos</h2>
+                  <blockquote>
+                    <p>
+                      <em
+                        >Un sistema con crecimiento exponencial del forzamiento,
+                        respuesta retardada y control reactivo inevitablemente
+                        entra en régimen irreversible antes de que el observador
+                        perciba la cercanía del colapso.</em
+                      >
+                    </p>
+                  </blockquote>
+                  <p>Eso es dinámica de sistemas.<br />Y aplica igual a:</p>
+                  <ul>
+                    <li><p>clima</p></li>
+                    <li><p>población</p></li>
+                    <li><p>recursos</p></li>
+                    <li><p>deuda</p></li>
+                    <li><p>ecosistemas</p></li>
+                  </ul>
+                  <hr />
+                  <h1>
+                    <strong>computación digital y dinámica de sistemas</strong>
+                  </h1>
+                  <h2>
+                    1 Forrester: el problema no es la complejidad, es el
+                    <em>retardo</em>
+                  </h2>
+                  <p>Forrester mostró algo contraintuitivo:</p>
+                  <blockquote>
+                    <p>
+                      Sistemas simples con retardos producen comportamientos más
+                      caóticos que sistemas complejos sin retardos.
+                    </p>
+                  </blockquote>
+                  <p>En clima (y en este modelo):</p>
+                  <ul>
+                    <li><p>las ecuaciones pueden ser simples</p></li>
+                    <li>
+                      <p>
+                        <strong
+                          >los delays (retardos) destruyen la intuición</strong
+                        >
+                      </p>
+                    </li>
+                  </ul>
+                  <p>
+                    Y los humanos
+                    <strong>siempre subestiman los delays</strong>.
+                  </p>
+                  <hr />
+                  <h2>2 Traducción formal a Dinámica de Sistemas</h2>
+                  <p>En términos de Forrester, tenemos que:</p>
+                  <h3><em>Stocks</em> (acumuladores)</h3>
+                  <ul>
+                    <li><p>Energía térmica oceánica</p></li>
+                    <li><p>CO₂ atmosférico</p></li>
+                    <li><p>Daño climático acumulado (no lineal)</p></li>
+                  </ul>
+                  <h3><em>Flows</em></h3>
+                  <ul>
+                    <li><p>Emisiones</p></li>
+                    <li><p>Absorción oceánica</p></li>
+                    <li><p>Pérdida radiativa al espacio</p></li>
+                  </ul>
+                  <h3><em>Delays</em></h3>
+                  <p>Y acá está lo clave:</p>
+                  <div class="responsive-table">
+                    <div class="responsive-table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Delay</th>
+                            <th>Qué representa</th>
+                            <th>Orden</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>D₁</td>
+                            <td>Atmósfera → temp</td>
+                            <td>años</td>
+                          </tr>
+                          <tr>
+                            <td>D₂</td>
+                            <td>Superficie → océano</td>
+                            <td>décadas</td>
+                          </tr>
+                          <tr>
+                            <td>D₃</td>
+                            <td>Océano profundo → superficie</td>
+                            <td>siglos</td>
+                          </tr>
+                          <tr>
+                            <td>D₄</td>
+                            <td>Señal física → conciencia humana</td>
+                            <td>décadas</td>
+                          </tr>
+                          <tr>
+                            <td>D₅</td>
+                            <td>Conciencia → acción efectiva</td>
+                            <td>décadas</td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
-                </article>
+                  </div>
+                  <p>
+                    👉
+                    <strong
+                      >Los delays sociales son comparables o mayores que los
+                      físicos.</strong
+                    >
+                  </p>
+                  <p>Forrester insistía en esto:</p>
+                  <blockquote>
+                    <p>
+                      <em>el sistema falla porque el control llega tarde</em>
+                    </p>
+                  </blockquote>
+                  <hr />
+                  <h2>3 El punto crítico de Forrester</h2>
+                  <p>Forrester mostró que cuando:</p>
+                  <ul>
+                    <li>
+                      <p>
+                        el <strong>tiempo de ajuste del sistema (τ₂)</strong
+                        ><br />
+                        es mayor que
+                      </p>
+                    </li>
+                    <li>
+                      <p>el <strong>tiempo de decisión humana</strong></p>
+                    </li>
+                  </ul>
+                  <p>
+                    el sistema
+                    <strong>inevitablemente sobrepasa el límite</strong>.
+                  </p>
+                  <p>En símbolos simples:</p>
+                  <p>
+                    τsistema≫τcontrol⇒overshoot + colapso\tau_{sistema} \gg
+                    \tau_{control} \Rightarrow \text{overshoot +
+                    colapso}τsistema​≫τcontrol​⇒overshoot + colapso
+                  </p>
+                  <p>No por maldad.<br />Por estructura.</p>
+                  <hr />
+                  <h2>4 El error humano estructural (Forrester puro)</h2>
+                  <p>Los decisores:</p>
+                  <ul>
+                    <li><p>reaccionan a niveles, no a derivadas</p></li>
+                    <li>
+                      <p>
+                        ven el problema cuando el <em>stock</em> ya está alto
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        actúan sobre el <em>flow</em> cuando el daño ya está
+                        comprometido
+                      </p>
+                    </li>
+                  </ul>
+                  <p>Eso genera:</p>
+                  <ul>
+                    <li><p>correcciones tardías</p></li>
+                    <li><p>oscilaciones</p></li>
+                    <li><p>decisiones que empeoran el problema</p></li>
+                  </ul>
+                  <p>Forrester lo mostró en:</p>
+                  <ul>
+                    <li><p>urbanismo</p></li>
+                    <li><p>industria</p></li>
+                    <li><p>población</p></li>
+                    <li><p>recursos</p></li>
+                  </ul>
+                  <p>
+                    El clima es <strong>el mismo patrón</strong>, pero con
+                    delays más largos.
+                  </p>
+                  <hr />
+                  <h2>5 Intervalos acción–efecto (lo que busco cuantificar)</h2>
+                  <p>Podemos ordenar los tiempos así (muy aproximado):</p>
+                  <div class="responsive-table">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Acción</th>
+                          <th>Primer efecto visible</th>
+                          <th>Efecto dominante</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Emisión CO₂</td>
+                          <td>años</td>
+                          <td>siglos</td>
+                        </tr>
+                        <tr>
+                          <td>Reducción emisiones</td>
+                          <td>décadas</td>
+                          <td>siglos</td>
+                        </tr>
+                        <tr>
+                          <td>Calentamiento visible</td>
+                          <td>inmediato</td>
+                          <td>continuo</td>
+                        </tr>
+                        <tr>
+                          <td>Estabilizar temperatura</td>
+                          <td>nunca rápido</td>
+                          <td>≥ τ₂</td>
+                        </tr>
+                        <tr>
+                          <td>Daño ecosistémico</td>
+                          <td>décadas</td>
+                          <td>irreversible</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p>👉 Esto rompe el modelo mental político de 4–5 años.</p>
+                  <hr />
+                  <h2>6 Por qué la simulación es imprescindible</h2>
+                  <p>Forrester decía algo brutal:</p>
+                  <blockquote>
+                    <p>
+                      <em
+                        >La mente humana no puede simular sistemas con múltiples
+                        retardos.</em
+                      >
+                    </p>
+                  </blockquote>
+                  <p>Por eso:</p>
+                  <ul>
+                    <li><p>el razonamiento intuitivo falla</p></li>
+                    <li><p>incluso cuando los datos son correctos</p></li>
+                    <li><p>incluso con buenas intenciones</p></li>
+                  </ul>
+                  <p>
+                    Este enfoque de
+                    <strong
+                      >modelo dinámico simple con grandes errores
+                      controlados</strong
+                    >
+                    es exactamente el método correcto.
+                  </p>
+                  <hr />
+                  <h2>7 Lo que ya tenemos</h2>
+                  <ul>
+                    <li>
+                      <p>un modelo de <strong>dos stocks térmicos</strong></p>
+                    </li>
+                    <li>
+                      <p>con <strong>delays físicos claros</strong></p>
+                    </li>
+                    <li>
+                      <p>
+                        y un <strong>delay cognitivo-social implícito</strong>
+                      </p>
+                    </li>
+                  </ul>
+                  <p>
+                    Eso ya es un modelo Forresteriano completo, aunque no esté
+                    dibujado en Vensim.
+                  </p>
+                  <hr />
+                  <h2>Estructura conceptual mínima (Forrester)</h2>
+                  <h3>🔹 Stocks principales (acumuladores)</h3>
+                  <p>Definimos solo los imprescindibles:</p>
+                  <ol>
+                    <li>
+                      <p>
+                        <strong>S₁ = Forzamiento acumulado</strong><br />
+                        (CO₂ equivalente + otros gases)
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <strong>S₂ = Energía térmica rápida</strong><br />
+                        (atmósfera + océano superficial)
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <strong>S₃ = Energía térmica lenta</strong><br />
+                        (océano profundo)
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <strong
+                          >S₄ = Conciencia / respuesta humana acumulada</strong
+                        ><br />
+                        (capacidad real de actuar, no intención)
+                      </p>
+                    </li>
+                  </ol>
+                  <hr />
+                  <h3>🔹 Flujos principales</h3>
+                  <ul>
+                    <li><p>F₁: emisiones → S₁</p></li>
+                    <li><p>F₂: transferencia S₁ → S₂</p></li>
+                    <li><p>F₃: transferencia S₂ → S₃</p></li>
+                    <li><p>F₄: pérdida radiativa al espacio</p></li>
+                    <li><p>F₅: acción humana → reducción de F₁</p></li>
+                  </ul>
+                  <hr />
+                  <h3>🔹 Delays explícitos</h3>
+                  <p>Aquí está lo esencial:</p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Delay</th>
+                        <th>Entre</th>
+                        <th>Orden de magnitud</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>τ₁</td>
+                        <td>S₁ → S₂</td>
+                        <td>~30–40 años</td>
+                      </tr>
+                      <tr>
+                        <td>τ₂</td>
+                        <td>S₂ → S₃</td>
+                        <td>~150–300 años</td>
+                      </tr>
+                      <tr>
+                        <td>τ₃</td>
+                        <td>Señal climática → conciencia</td>
+                        <td>~20–40 años</td>
+                      </tr>
+                      <tr>
+                        <td>τ₄</td>
+                        <td>conciencia → acción efectiva</td>
+                        <td>~10–30 años</td>
+                      </tr>
+                      <tr>
+                        <td>👉 <strong>τ₂ ≫ τ₃ + τ₄</strong></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>Esto ya anticipa el overshoot.</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <hr />
+                  <h2>Representación causal (sin ecuaciones aún)</h2>
+                  <br />
+                  <p>
+                    Emisiones ──► [ S₁ ] ──delay τ₁──► [ S₂ ] ──delay τ₂──► [ S₃
+                    ] ▲ │ │ ▼ Acción humana ◄── delay τ₄ ◄── Conciencia ◄──
+                    delay τ₃ ◄── Señal térmica
+                  </p>
+                  <br />
+                  <p>Observación clave (Forrester):</p>
+                  <blockquote>
+                    <p>
+                      el bucle de control es <strong>más lento</strong> que el
+                      bucle de acumulación
+                    </p>
+                  </blockquote>
+                  <p>Eso garantiza <strong>sobrepaso</strong>.</p>
+                  <hr />
+                  <h2>Semi-matemático: ecuaciones mínimas</h2>
+                  <p>Nada sofisticado, solo balances.</p>
+                  <h3>🔹 Forzamiento (S₁)</h3>
+                  $$ \frac{d S_1}{d t}=E(t)-k_1 S₁ $$
+                  <p>Esto representa:</p>
+                  <ul>
+                    <li><p>respuesta rápida al forzamiento</p></li>
+                    <li><p>drenaje lento hacia el océano profundo</p></li>
+                  </ul>
+                  <hr />
+                  <h3>🔹 Energía lenta (S₃)</h3>
+                  $$ \frac{d S_3}{d t}=\frac{1}{\tau_2}\left(S_2-S_3\right) $$
+                  <p>
+                    👉 S₃ <strong>solo acumula</strong>, casi no devuelve nada
+                    en tiempos humanos.
+                  </p>
+                  <hr />
+                  <h3>🔹 Conciencia humana (S₄)</h3>
+                  <p>Este es el punto fino que casi nadie modela bien:</p>
+                  $$ \frac{d S_4}{d
+                  t}=\frac{1}{\tau_3}\left(f\left(S_2\right)-S_4\right) $$
+                  Donde:
+                  <ul>
+                    <li>f(S₂) = percepción del daño (no lineal, con umbral)</li>
+                  </ul>
+                  <p>Ejemplo simple:</p>
+                  $$ f\left(S_2\right)=\max \left(0, S_2-S_{c r i t}\right) $$
+                  <p>
+                    La conciencia
+                    <strong>no crece hasta que el daño es evidente</strong>.
+                  </p>
+                  <hr />
+                  <h3>🔹 Acción humana (control)</h3>
+                  <p>
+                    La acción actúa sobre emisiones, pero con delay: $$
+                    E(t)=E_0-g \cdot S_4\left(t-\tau_4\right) $$
+                  </p>
+
+                  <hr />
+                  <h2>El punto crítico</h2>
+                  <p>El sistema entra en régimen peligroso cuando:</p>
+                  $$ \begin{aligned} \tau_2 &\gg (\tau_3 + \tau_4) \end{aligned}
+                  $$
+                  <p>En ese caso:</p>
+                  <ul>
+                    <li><p>aunque E(t) empiece a bajar</p></li>
+                    <li><p>S₃ sigue creciendo</p></li>
+                    <li><p>S₂ sigue aumentando por acoplamiento</p></li>
+                    <li>
+                      <p>la pendiente térmica <strong>no se frena</strong></p>
+                    </li>
+                  </ul>
+                  <p>Esto es el equivalente matemático a:</p>
+                  <blockquote>
+                    <p>“la botella se llena en la última duplicación”</p>
+                  </blockquote>
+                  <hr />
+                  <h2>Overshoot inevitable (criterio conceptual)</h2>
+                  <p>
+                    El sobrepaso ocurre si: $$ \frac{d S_3}{d
+                    t}=\frac{1}{\tau_2}\left(S_2-S_3\right) $$ Es decir:
+                  </p>
+                  <ul>
+                    <li><p>el daño sigue creciendo</p></li>
+                    <li><p>aun cuando “hacemos lo correcto”</p></li>
+                  </ul>
+                  <p>Eso destruye la narrativa intuitiva de control.</p>
+                  <hr />
+                  <h2>Traducción</h2>
+                  <blockquote>
+                    <p>
+                      <em
+                        >El sistema tiene una memoria térmica cuyo tiempo
+                        característico excede el tiempo de percepción y reacción
+                        humana, produciendo un acoplamiento tardío que elimina
+                        la capacidad de amortiguación.</em
+                      >
+                    </p>
+                  </blockquote>
+                  <p>
+                    Eso <strong>no es opinión</strong>.<br />Es estructura del
+                    sistema.
+                  </p>
+                  <hr />
+                  <h2>Por qué este modelo es valioso aun siendo “tosco”</h2>
+                  <p>Porque:</p>
+                  <ul>
+                    <li>
+                      <p>captura <strong>la topología correcta</strong></p>
+                    </li>
+                    <li>
+                      <p>preserva los <strong>delays dominantes</strong></p>
+                    </li>
+                    <li>
+                      <p>
+                        reproduce
+                        <strong>overshoot sin necesidad de ajuste fino</strong>
+                      </p>
+                    </li>
+                  </ul>
+                  <p>Forrester siempre decía:</p>
+                  <blockquote>
+                    <p>_La estructura importa más que los parámetros.</p>
+                  </blockquote>
+                  <br />
+                </div>
+              </div>
             </div>
-            
-        </main>
-        <!-- Footer -->
-   <a href="#main-content" class="back-to-top" aria-label="Volver arriba">
-            <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
-        </a>
-        <footer class="footer" role="contentinfo">
-            <div class="footer-content">
-                <p>© 2026 RESONANCIAS · Todos los derechos reservados
-                </p>
-            </div>
-        </footer>
-    </body>
+            <a
+              href="/pages/blog/tecnica/calentamiento.html"
+              style="
+                display: block; /* Centering styles */
+                margin: 0 auto; /* Center the block element */
+                width: fit-content; /* Adapt width to content */
+                background: var(--color-secondary);
+                color: var(--color-light);
+                border: none;
+                padding: var(--spacing-md) var(--spacing-xl);
+                border-radius: 8px;
+                font-weight: 600;
+                text-decoration: none;
+                cursor: pointer;
+                transition: all var(--transition-fast);
+                margin-bottom: var(--spacing-2xl); /* Margin below the button */
+              "
+              onmouseover="
+                this.style.background = 'var(--color-warm)';
+                this.style.transform = 'translateY(-2px)';
+              "
+              onmouseout="
+                this.style.background = 'var(--color-secondary)';
+                this.style.transform = 'translateY(0)';
+              "
+            >
+              Regresar Calentamiento Global
+            </a>
+            <section
+              class="blog-subscription"
+              style="
+                margin-top: var(--spacing-3xl);
+                background: var(--color-mid);
+                padding: var(--spacing-2xl);
+                border-radius: 12px;
+                text-align: center;
+              "
+            >
+              <nav class="share-footer" aria-label="Compartir página">
+                <a
+                  href="https://www.facebook.com/sharer/sharer.php?u=https://resonancias.pages.dev/pages/blog/tecnica/anexo-global.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="share-btn facebook"
+                  title="Compartir en Facebook"
+                  aria-label="Compartir en Facebook"
+                >
+                  <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a
+                  href="https://twitter.com/intent/tweet?url=https://resonancias.pages.dev/pages/blog/tecnica/anexo-global.html&text=Anexo%20Global:%20Desequilibrio%20energético%20y%20retardo%20|%20RESONANCIAS"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="share-btn twitter"
+                  title="Compartir en X"
+                  aria-label="Compartir en X"
+                >
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a
+                  href="https://api.whatsapp.com/send?text=Anexo%20Global:%20Desequilibrio%20energético%20y%20retardo%20|%20RESONANCIAS%20https://resonancias.pages.dev/pages/blog/tecnica/anexo-global.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="share-btn whatsapp"
+                  title="Compartir en WhatsApp"
+                  aria-label="Compartir en WhatsApp"
+                >
+                  <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a
+                  href="https://bsky.app/intent/compose?text=Anexo%20Global:%20Desequilibrio%20energético%20y%20retardo%20|%20RESONANCIAS%20https://resonancias.pages.dev/pages/blog/tecnica/anexo-global.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="share-btn bluesky"
+                  title="Compartir en Bluesky"
+                  aria-label="Compartir en Bluesky"
+                >
+                  <i class="fa-brands fa-bluesky"></i>
+                </a>
+              </nav>
+              <h3
+                style="
+                  color: var(--color-dark);
+                  margin-bottom: var(--spacing-md);
+                  font-size: var(--font-size-2xl);
+                "
+              >
+                Comparte en tus redes
+              </h3>
+              <h4>Suscribete</h4>
+
+              <p
+                style="
+                  color: var(--color-warm);
+                  margin-bottom: var(--spacing-xl);
+                  max-width: 500px;
+                  margin-left: auto;
+                  margin-right: auto;
+                  line-height: 1.6;
+                "
+              >
+                Recibe notificaciones cuando publique nuevos ensayos y
+                reflexiones. Sin spam, solo contenido de calidad.
+              </p>
+              <div
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: var(--spacing-md);
+                  max-width: 400px;
+                  margin: 0 auto;
+                  flex-wrap: wrap;
+                "
+              >
+                <a
+                  href="/pages/quien-soy.html"
+                  style="
+                    background: var(--color-secondary);
+                    color: var(--color-light);
+                    border: none;
+                    padding: var(--spacing-md) var(--spacing-xl);
+                    border-radius: 8px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    cursor: pointer;
+                    transition: all var(--transition-fast);
+                    display: inline-flex;
+                    align-items: center;
+                    gap: var(--spacing-sm);
+                  "
+                  onmouseover="
+                    this.style.background = 'var(--color-warm)';
+                    this.style.transform = 'translateY(-2px)';
+                  "
+                  onmouseout="
+                    this.style.background = 'var(--color-secondary)';
+                    this.style.transform = 'translateY(0)';
+                  "
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  Contáctame
+                </a>
+              </div>
+              <p
+                style="
+                  font-size: var(--font-size-sm);
+                  color: var(--color-neutral);
+                  margin-top: var(--spacing-md);
+                "
+              >
+                * Puedes darte de baja en cualquier momento
+              </p>
+            </section>
+            <!-- Footer del artículo -->
+
+            <footer
+              style="
+                margin-top: var(--spacing-2xl);
+                padding-top: var(--spacing-xl);
+                border-top: 1px solid var(--color-mid);
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  flex-wrap: wrap;
+                  gap: var(--spacing-md);
+                "
+              >
+                <div>
+                  <p
+                    style="
+                      color: var(--color-neutral);
+                      font-size: var(--font-size-sm);
+                      margin: 0;
+                    "
+                  >
+                    Publicado el
+                    <time datetime="2026-01-27">27 de Enero 2026</time>
+                  </p>
+                </div>
+                <div style="display: flex; gap: var(--spacing-sm)">
+                  <a
+                    href="/pages/blog/tecnica/Tecnica.html"
+                    style="
+                      color: var(--color-secondary);
+                      text-decoration: none;
+                      font-weight: 600;
+                    "
+                  >
+                    ← Volver a Técnica
+                  </a>
+                </div>
+              </div>
+            </footer>
+          </div>
+        </article>
+      </div>
+    </main>
+    <!-- Footer -->
+    <a href="#main-content" class="back-to-top" aria-label="Volver arriba">
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </a>
+    <footer class="footer" role="contentinfo">
+      <div class="footer-content">
+        <p>© 2026 RESONANCIAS · Todos los derechos reservados</p>
+      </div>
+    </footer>
+  </body>
 </html>

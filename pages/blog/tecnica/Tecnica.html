@@ -78,13 +78,69 @@
       .content-card {
         max-width: 1000px !important;
       }
+
+      /* === RESPONSIVE MÓVIL === */
       @media (max-width: 768px) {
+        /* El content-card usa todo el ancho disponible con padding lateral */
+        .content-card {
+          max-width: 100% !important;
+          width: 100% !important;
+          margin: var(--spacing-md) 0 !important;
+          border-radius: 0 !important;
+          padding: var(--spacing-md) !important;
+          box-sizing: border-box !important;
+        }
+
+        /* El container interno no añade padding extra */
+        .content-card .container {
+          padding: 0 !important;
+          max-width: 100% !important;
+        }
+
+        /* Tarjeta destacada: pasa a columna única */
         .featured-card {
           grid-template-columns: 1fr !important;
         }
+
         .featured-image {
-          height: 250px !important;
+          height: 220px !important;
           min-height: auto !important;
+        }
+
+        /* Grid de tarjetas: evita overflow forzando 1 columna */
+        .blog-entries-grid {
+          grid-template-columns: 1fr !important;
+          gap: var(--spacing-lg) !important;
+        }
+
+        /* Ajuste de altura de imágenes de tarjetas */
+        .entry-image {
+          height: 220px !important;
+        }
+
+        /* El article-layout deja de ser flex para no saltarse el ancho */
+        .article-layout {
+          flex-direction: column !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .content-card {
+          padding: var(--spacing-sm) !important;
+        }
+
+        .featured-image {
+          height: 180px !important;
+        }
+
+        .entry-image {
+          height: 180px !important;
+        }
+
+        /* El intro paragraph no limita el ancho */
+        #intro-paragraph,
+        #featured-entry-container {
+          max-width: 100% !important;
         }
       }
     </style>
@@ -101,7 +157,6 @@
 
     <!-- Header -->
 
-    
     <section
       class="works-hero"
       style="

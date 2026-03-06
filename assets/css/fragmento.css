@@ -108,6 +108,7 @@
   color: #212121 !important;
   font-family: "EB Garamond", serif !important;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Forzar tipografía en todos los elementos de lectura para evitar herencias de estilos.css */
