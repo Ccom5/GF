@@ -76,14 +76,14 @@
     <script src="/assets/js/back-to-top.js" defer></script>
   </head>
   <body>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
     <!-- Header + menú -->
     <div id="header"></div>
     <div id="side-menu"></div>
 
     <script src="/assets/js/includes.js"></script>
-
-    <!-- Skip to main content -->
-    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
     <main id="main-content" role="main">
       <!-- Hero del blog -->
@@ -171,6 +171,112 @@
                   gap: var(--spacing-xl);
                 "
               >
+                <!-- el mal que no queremos ver -->
+                <article
+                  class="blog-entry-card"
+                  style="
+                    background: var(--color-light);
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: var(--shadow-md);
+                    transition: all var(--transition-fast);
+                  "
+                >
+                  <!-- Imagen -->
+                  <div
+                    class="entry-image"
+                    style="
+                      aspect-ratio: 16/9;
+                      position: relative;
+                      overflow: hidden;
+                    "
+                  >
+                    <img
+                      src="/img/blog-2026/guerra.jpg"
+                      alt="El mal que no queremos ver"
+                      style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        opacity: 0.8;
+                      "
+                    />
+                    <div class="category-tag tag-sociedad">Sociedad</div>
+                  </div>
+
+                  <!-- Contenido -->
+                  <div style="padding: var(--spacing-xl); position: relative">
+                    <h3
+                      style="
+                        font-size: var(--font-size-xl);
+                        margin-bottom: var(--spacing-md);
+                        color: var(--color-dark);
+                      "
+                    >
+                      <a
+                        href="/pages/blog/2026/guerra.html"
+                        style="
+                          text-decoration: none;
+                          color: inherit;
+                          transition: color var(--transition-fast);
+                        "
+                      >
+                        El Inicio de la Erosión
+                      </a>
+                    </h3>
+                    <p
+                      style="
+                        color: var(--color-dark);
+                        margin-bottom: var(--spacing-lg);
+                        line-height: 1.6;
+                      "
+                    >
+                      "Lo que estamos observando no es el fin del mundo mañana."
+                      Son los primeros síntomas de un proceso de desgaste sistémico,
+                      silencioso pero letal en esta guerra ilegal contra Irán.
+                    </p>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                      "
+                    >
+                      <span
+                        class="entry-date"
+                        style="
+                          font-size: var(--font-size-sm);
+                          color: var(--color-neutral);
+                        "
+                      >
+                        📅 23 de febrero de 2026
+                      </span>
+                      <a
+                        href="/pages/blog/2026/guerra.html"
+                        style="
+                          color: var(--color-secondary);
+                          text-decoration: none;
+                          font-weight: 600;
+                          display: flex;
+                          align-items: center;
+                          gap: var(--spacing-xs);
+                        "
+                      >
+                        Leer más
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path d="M7 17l9.2-9.2M17 17V7H7" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </article>
                 <!-- el mal que no queremos ver -->
                 <article
                   class="blog-entry-card"
@@ -551,13 +657,11 @@
                         margin-bottom: var(--spacing-lg);
                         line-height: 1.6;
                       "
-                    ></p>
-                    <p>
+                    >
                       A partir de cierto punto, mirar el pasado deja de ser un
                       ejercicio académico y se vuelve una herramienta para
                       entender el presente.
                     </p>
-                    <p></p>
                     <div
                       style="
                         display: flex;
@@ -572,7 +676,7 @@
                           color: var(--color-neutral);
                         "
                       >
-                        📅 19 Febrero 2026
+                        📅 19 de febrero de 2026
                       </span>
                       <a
                         href="/pages/blog/2026/1810.html"
@@ -659,13 +763,11 @@
                         margin-bottom: var(--spacing-lg);
                         line-height: 1.6;
                       "
-                    ></p>
-                    <p>
+                    >
                       Hoy, al mirar nuestro presente saturado de pantallas,
                       consignas y urgencias morales, el libro de José Ortega y
                       Gasset resuena con una actualidad inquietante.
                     </p>
-                    <p></p>
                     <div
                       style="
                         display: flex;
@@ -680,7 +782,7 @@
                           color: var(--color-neutral);
                         "
                       >
-                        📅 17 Febrero 2026
+                        📅 17 de febrero de 2026
                       </span>
                       <a
                         href="/pages/blog/2026/revelion.html"
@@ -768,14 +870,11 @@
                         margin-bottom: var(--spacing-lg);
                         line-height: 1.6;
                       "
-                    ></p>
-                    <strong
-                      >¿y si el capitalismo estuviera acelerando su propio
-                      colapso al invertir miles de millones en inteligencia
-                      artificial?</strong
                     >
-
-                    <p></p>
+                      ¿Y si el capitalismo estuviera acelerando su propio
+                      colapso al invertir miles de millones en inteligencia
+                      artificial?
+                    </p>
                     <div
                       style="
                         display: flex;
@@ -790,7 +889,7 @@
                           color: var(--color-neutral);
                         "
                       >
-                        📅 13 Febrero 2026
+                        📅 13 de febrero de 2026
                       </span>
                       <a
                         href="/pages/blog/2026/Disruptiva-IA.html"
