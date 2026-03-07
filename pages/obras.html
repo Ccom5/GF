@@ -89,6 +89,15 @@
           margin-bottom: var(--spacing-lg) !important;
         }
       }
+      @media (max-width: 600px) {
+        .solicitud-container {
+          padding: 0.75rem 0.5rem !important;
+          max-width: 100% !important;
+        }
+        .solicitud-box {
+          padding: 1.25rem 1rem !important;
+        }
+      }
     </style>
   </head>
   <body>
@@ -109,7 +118,7 @@
         style="
           background:
             linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-            url(&quot;/img/libros/libros.jpg&quot;);
+            url('/img/libros/libros.jpg');
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
@@ -152,7 +161,7 @@
 
         <!-- Solicitud de lectura -->
         <div
-          class="container"
+          class="container solicitud-container"
           style="
             padding: 2rem 1rem;
             text-align: left;
@@ -161,6 +170,7 @@
           "
         >
           <div
+            class="solicitud-box"
             style="
               background: #f4f4f4;
               padding: 2rem;
@@ -176,8 +186,7 @@
             <p>
               El acceso a las obras se comparte de forma personal. El correo
               electrónico no se solicita como requisito técnico, sino como un
-              gesto de cercanía: una forma de saber quién lee y de abrir un
-              canal de diálogo.
+              gesto de cercanía
             </p>
             <p>El email se utiliza únicamente para:</p>
             <ul
@@ -188,7 +197,6 @@
               "
             >
               <li>enviar el enlace privado a la obra solicitada</li>
-              <li>mantener un contacto directo con el lector</li>
               <li>
                 recibir, si así lo deseas, comentarios, críticas o sugerencias
                 que ayuden a afinar el texto
@@ -580,16 +588,16 @@
 
     <!-- Script para efectos de hover en las portadas -->
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const workCovers = document.querySelectorAll(".work-cover img");
+      document.addEventListener('DOMContentLoaded', function () {
+        const workCovers = document.querySelectorAll('.work-cover img');
 
         workCovers.forEach((cover) => {
-          cover.addEventListener("mouseenter", () => {
-            cover.style.transform = "scale(1.05) rotate(2deg)";
+          cover.addEventListener('mouseenter', () => {
+            cover.style.transform = 'scale(1.05) rotate(2deg)';
           });
 
-          cover.addEventListener("mouseleave", () => {
-            cover.style.transform = "scale(1) rotate(0deg)";
+          cover.addEventListener('mouseleave', () => {
+            cover.style.transform = 'scale(1) rotate(0deg)';
           });
         });
       });
