@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soberanía tecnológica - Independencia económica</title>
+    <meta
+      name="description"
+      content="Ni tecnocracia corporativa ni atraso: la tercera posición en la era digital"
+    />
+
+    <!-- URL Canónica -->
+    <link
+      rel="canonical"
+      href="https://resonancias.pages.dev/pages/blog/2026/Soberania-tecnologica.html"
+    />
+
+    <!-- SEO y Accesibilidad -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Gabriel Ferré" />
+    <meta
+      name="keywords"
+      content="soberanía tecnológica, independencia económica, tecnología, desarrollo nacional"
+    />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Soberanía tecnológica - independencia económica"
+    />
+    <meta
+      property="og:description"
+      content="Ni tecnocracia corporativa ni atraso: la tercera posición en la era digital"
+    />
+    <meta
+      property="og:image"
+      content="https://resonancias.pages.dev/img/blog-2026/tecno-arg.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://resonancias.pages.dev/pages/blog/2026/Soberania-tecnologica.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="RESONANCIAS" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Soberanía tecnológica - independencia económica"
+    />
+    <meta
+      name="twitter:description"
+      content="Ni tecnocracia corporativa ni atraso: la tercera posición en la era digital"
+    />
+    <meta
+      name="twitter:image"
+      content="https://resonancias.pages.dev/img/blog-2026/tecno-arg.jpg"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/img/ui/favicon.png" type="image/png" />
+
+    <!-- Estilos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/assets/css/estilos.css" />
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js" defer></script>
+    <script src="/assets/js/back-to-top.js" defer></script>
+
+    <!-- Estilos responsivos para el layout del artículo -->
+    <style>
+      @media (max-width: 768px) {
+        .article-layout {
+          flex-direction: column !important;
+          gap: var(--spacing-lg) !important;
+        }
+        .image-card {
+          position: relative !important;
+          top: auto !important;
+          width: 100% !important;
+          min-width: auto !important;
+          margin-bottom: var(--spacing-lg) !important;
+        }
+      }
+    </style>
+    <style>
+      /* Markdown incrustado desde Obsidian */
+      .md-obsidian h1,
+      .md-obsidian h2,
+      .md-obsidian h3,
+      .md-obsidian h4,
+      .md-obsidian h5,
+      .md-obsidian h6 {
+        margin-top: 1.6em;
+        margin-bottom: 0.6em;
+        line-height: 1.3;
+      }
+
+      .md-obsidian p {
+        margin: 0.9em 0;
+        line-height: 1.75;
+      }
+
+      .md-obsidian ul,
+      .md-obsidian ol {
+        margin: 0.9em 0 0.9em 1.6em;
+      }
+
+      .md-obsidian li {
+        margin: 0.4em 0;
+      }
+
+      .md-obsidian blockquote {
+        margin: 1.2em 0;
+        padding-left: 1em;
+        border-left: 3px solid var(--color-secondary);
+        color: var(--color-neutral);
+        font-style: italic;
+      }
+
+      .md-obsidian hr {
+        margin: 2em 0;
+        border: none;
+        border-top: 1px solid var(--color-mid);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Header + menú -->
+    <div id="header"></div>
+    <div id="side-menu"></div>
+
+    <script src="/assets/js/includes.js"></script>
+    <script src="/assets/js/back-to-top.js"></script>
+    <!-- Overlay para menú -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <section
+      class="works-hero"
+      style="
+        margin-top: 0 !important;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url('/img/blog-2026/tecno-arg.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: var(--color-light);
+        padding: var(--spacing-3xl) 0;
+        text-align: center;
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+      "
+    >
+      <div class="container">
+        <h2
+          style="
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          "
+        >
+          Soberanía tecnológica
+        </h2>
+        <p
+          style="
+            font-size: var(--font-size-xl);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+          "
+        >
+          Ni tecnocracia corporativa ni atraso: la tercera posición en la era
+          digital
+        </p>
+      </div>
+    </section>
+    <!-- Contenido principal -->
+    <main id="main-content" role="main">
+      <!-- Artículo principal -->
+      <div class="content-card">
+        <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+          <div class="container" style="max-width: 800px; margin: 0 auto">
+            <!-- Header del artículo -->
+            <header
+              class="post-header"
+              style="text-align: center; margin-bottom: var(--spacing-2xl)"
+            >
+              <h1
+                style="
+                  font-size: var(--font-size-3xl);
+                  color: var(--color-dark);
+                  margin-bottom: var(--spacing-lg);
+                "
+              >
+                Soberanía tecnológica
+              </h1>
+              <div
+                class="post-meta"
+                style="
+                  display: flex;
+                  justify-content: center;
+                  gap: var(--spacing-lg);
+                  color: var(--color-neutral);
+                  font-size: var(--font-size-sm);
+                  flex-wrap: wrap;
+                "
+              >
+                <span>· Gabriel Ferré</span>
+              </div>
+            </header>
+
+            <div
+              class="article-layout"
+              style="
+                display: flex;
+                gap: var(--spacing-xl);
+                align-items: flex-start;
+              "
+            >
+              <div
+                class="article-content"
+                style="flex: 1; line-height: 1.5; color: var(--color-dark)"
+              >
+                <div
+                  id="intro-paragraph"
+                  class="md-obsidian"
+                  style="
+                    font-size: var(--font-size-lg);
+                    margin-bottom: var(--spacing-2xl);
+                    color: var(--color-warm);
+                    position: relative;
+                  "
+                >
+                  <!-- Insertar contenido aquí -->
+                  <h2
+                    style="
+                      font-size: var(--font-size-2xl);
+                      color: var(--color-warm);
+                      margin-top: 0;
+                    "
+                  >
+                    Independencia económica
+                  </h2>
+                  <p>
+                    <em
+                      >Ni tecnocracia corporativa ni atraso: la tercera posición
+                      en la era digital</em
+                    >
+                  </p>
+                  <br />
+                  <h2>El nuevo escenario tecnológico</h2>
+                  <p>
+                    Hoy vivimos una nueva revolución tecnológica. Plataformas
+                    digitales, automatización, algoritmos y sistemas
+                    inteligentes están reorganizando la economía mundial. Sin
+                    embargo, el debate público suele limitarse a la fascinación
+                    por la innovación o a la competencia entre empresas
+                    tecnológicas.
+                  </p>
+                  <p>
+                    Pocas veces se discute lo esencial:
+                    <strong
+                      >quién controla estas tecnologías, quién captura el valor
+                      económico que generan y qué impacto tendrán sobre el
+                      trabajo, la soberanía y la organización social</strong
+                    >.
+                  </p>
+                  <p>
+                    Como ocurrió con otras revoluciones tecnológicas en la
+                    historia, el problema no es solo técnico:
+                    <strong>es profundamente político</strong>.
+                  </p>
+                  <h2>La tecnología nunca es neutral</h2>
+                  <p>
+                    Toda tecnología se desarrolla dentro de un sistema económico
+                    y de relaciones de poder. Cuando la innovación queda
+                    exclusivamente guiada por el mercado, tiende a concentrar
+                    beneficios en quienes poseen capital, infraestructura y
+                    control de los datos.
+                  </p>
+                  <p>
+                    La historia reciente de internet lo demuestra: grandes
+                    corporaciones globales lograron concentrar niveles de poder
+                    económico e informacional sin precedentes.
+                  </p>
+                  <p>Esto plantea un interrogante fundamental:</p>
+                  <p>
+                    <strong
+                      >¿la revolución digital será un instrumento de desarrollo
+                      social o un nuevo mecanismo de concentración de riqueza y
+                      poder?</strong
+                    >
+                  </p>
+                  <h2>La tradición nacional-desarrollista</h2>
+                  <p>
+                    El pensamiento político argentino ya enfrentó dilemas
+                    similares durante el proceso de industrialización del siglo
+                    XX.
+                  </p>
+                  <p>
+                    La doctrina formulada por Juan Domingo Perón planteó una
+                    respuesta conocida como
+                    <strong>la tercera posición</strong>: un camino que
+                    rechazaba tanto el liberalismo económico absoluto como la
+                    subordinación total del individuo al Estado.
+                  </p>
+                  <p>Sus pilares fueron:</p>
+                  <ul>
+                    <li>
+                      <p>soberanía política</p>
+                    </li>
+                    <li>
+                      <p>independencia económica</p>
+                    </li>
+                    <li>
+                      <p>justicia social</p>
+                    </li>
+                  </ul>
+                  <p>
+                    Bajo ese enfoque, el capital y la producción debían
+                    <strong
+                      >servir al desarrollo nacional y al bienestar de la
+                      comunidad organizada</strong
+                    >, no a intereses concentrados.
+                  </p>
+                  <h2>
+                    Del petróleo a los datos: los nuevos recursos estratégicos
+                  </h2>
+                  <p>
+                    Durante el siglo XX, los recursos estratégicos fueron la
+                    energía, la industria pesada y la infraestructura
+                    productiva.
+                  </p>
+                  <p>En el siglo XXI, nuevos recursos se vuelven centrales:</p>
+                  <ul>
+                    <li>
+                      <p>datos</p>
+                    </li>
+                    <li>
+                      <p>conocimiento tecnológico</p>
+                    </li>
+                    <li>
+                      <p>infraestructura digital</p>
+                    </li>
+                    <li>
+                      <p>capacidad de procesamiento y algoritmos</p>
+                    </li>
+                  </ul>
+                  <p>
+                    Quien controla estos elementos controla gran parte del poder
+                    económico global.
+                  </p>
+                  <p>
+                    Por eso,
+                    <strong
+                      >la soberanía tecnológica se convierte en una nueva forma
+                      de independencia económica</strong
+                    >.
+                  </p>
+                  <h2>Hacia una política tecnológica nacional</h2>
+                  <p>
+                    Un enfoque nacional-desarrollista para la era digital podría
+                    apoyarse en varios ejes:
+                  </p>
+                  <p>
+                    <strong>Soberanía de datos</strong><br />
+                    Los datos generados por la sociedad no pueden ser explotados
+                    sin regulación por corporaciones extranjeras.
+                  </p>
+                  <p>
+                    <strong>Infraestructura tecnológica propia</strong><br />
+                    Centros de datos, plataformas y capacidades de desarrollo
+                    deben formar parte de una estrategia nacional.
+                  </p>
+                  <p>
+                    <strong>Tecnología aplicada al desarrollo productivo</strong
+                    ><br />
+                    La innovación debe fortalecer la industria, la energía, la
+                    salud y la educación, no solo el consumo digital.
+                  </p>
+                  <p>
+                    <strong>Estado planificador y promotor</strong><br />
+                    El Estado debe orientar la inversión tecnológica y fomentar
+                    sectores estratégicos.
+                  </p>
+                  <p>
+                    <strong>Justicia social en la economía digital</strong
+                    ><br />
+                    La automatización y las plataformas no pueden destruir
+                    derechos laborales ni concentrar riqueza sin redistribución.
+                  </p>
+                  <h2>Comunidad organizada en la era digital</h2>
+                  <p>
+                    La doctrina de la
+                    <strong>comunidad organizada</strong> propone una sociedad
+                    donde el Estado, los trabajadores y el sector productivo
+                    participan en la construcción del desarrollo nacional.
+                  </p>
+                  <p>En el mundo tecnológico esto podría traducirse en:</p>
+                  <ul>
+                    <li>
+                      <p>participación de universidades y sistema científico</p>
+                    </li>
+                    <li>
+                      <p>cooperativas tecnológicas</p>
+                    </li>
+                    <li>
+                      <p>sindicatos involucrados en la transición digital</p>
+                    </li>
+                    <li>
+                      <p>
+                        empresas nacionales comprometidas con el desarrollo del
+                        país
+                      </p>
+                    </li>
+                  </ul>
+                  <p>
+                    La tecnología, en este sentido, deja de ser solo un negocio
+                    y se convierte en
+                    <strong>una herramienta de construcción nacional</strong>.
+                  </p>
+                  <h2>El desafío del siglo XXI</h2>
+                  <p>
+                    Las grandes potencias ya entendieron que la tecnología es un
+                    campo de disputa geopolítica.
+                  </p>
+                  <p>
+                    Estados Unidos, China y Europa desarrollan políticas activas
+                    para proteger su soberanía tecnológica.
+                  </p>
+                  <p>
+                    Para países como Argentina, el desafío es aún mayor:
+                    <strong
+                      >evitar quedar relegados a simples consumidores de
+                      tecnología producida en otros centros de poder</strong
+                    >.
+                  </p>
+                  <blockquote>
+                    <p>
+                      Cada revolución tecnológica re-define el poder en el
+                      mundo.<br />
+                      En el siglo XX, los países que dominaron la industria
+                      dominaron la economía global.<br />
+                      En el siglo XXI, quienes controlen la tecnología y los
+                      datos definirán el nuevo orden económico.
+                    </p>
+                    <p>
+                      La pregunta para nuestra sociedad es simple pero
+                      decisiva:<br />
+                      <strong
+                        >¿seremos productores de tecnología o simples
+                        consumidores de sistemas diseñados por otros?</strong
+                      >
+                    </p>
+                    <p>
+                      Recuperar una visión nacional-desarrollista para la era
+                      digital no significa rechazar la innovación. Significa
+                      algo mucho más profundo:
+                      <strong
+                        >poner la tecnología al servicio de la soberanía
+                        nacional, el trabajo y el bienestar de toda la
+                        comunidad</strong
+                      >.
+                    </p>
+                  </blockquote>
+                  <p>
+                    <strong
+                      >Un país que solo consume tecnología se vuelve
+                      dependiente; un país que la produce construye su
+                      soberanía.</strong
+                    >
+                  </p>
+                  <br />
+                  <img
+                    src="/img/blog-2026/soberania-arg.jpg"
+                    alt="Soberanía tecnológica"
+                    style="
+                      width: 100%;
+                      height: auto;
+                      max-height: 600px;
+                      object-fit: contain;
+                      border-radius: 8px;
+                      margin-bottom: var(--spacing-md);
+                    "
+                  />
+                  <br />
+                  <h2>Principios ideológicos fundamentales</h2>
+                  <h3>1. La tecnología debe servir al pueblo</h3>
+                  <p>
+                    La innovación tecnológica no es un fin en sí mismo. Su
+                    propósito debe ser mejorar la vida de la sociedad,
+                    fortalecer el trabajo y promover el bienestar colectivo.
+                  </p>
+                  <h3>
+                    2. La soberanía tecnológica es parte de la independencia
+                    económica
+                  </h3>
+                  <p>
+                    Un país que depende completamente de tecnología extranjera
+                    pierde capacidad de decisión. La producción tecnológica
+                    nacional es un componente central de la soberanía.
+                  </p>
+                  <h3>
+                    3. Los datos generados por la sociedad son un recurso
+                    estratégico
+                  </h3>
+                  <p>
+                    La información producida por millones de ciudadanos no puede
+                    ser explotada sin regulación por corporaciones globales. Los
+                    datos deben protegerse como un activo de la comunidad.
+                  </p>
+                  <h3>
+                    4. El desarrollo tecnológico debe fortalecer el sistema
+                    productivo
+                  </h3>
+                  <p>
+                    La innovación debe orientarse a mejorar la industria, la
+                    energía, la salud, la educación y la infraestructura del
+                    país, no solo al consumo digital o la especulación
+                    financiera.
+                  </p>
+                  <h3>
+                    5. El Estado debe planificar y orientar el desarrollo
+                    tecnológico
+                  </h3>
+                  <p>
+                    El mercado por sí solo no garantiza desarrollo equilibrado.
+                    El Estado tiene la responsabilidad de promover sectores
+                    estratégicos, financiar investigación y orientar la
+                    inversión.
+                  </p>
+                  <h3>6. La tecnología no puede destruir derechos laborales</h3>
+                  <p>
+                    La automatización y las plataformas digitales no deben
+                    utilizarse para precarizar el trabajo. El progreso técnico
+                    debe traducirse en mejores condiciones de vida y trabajo.
+                  </p>
+                  <h3>7. La innovación debe integrarse al proyecto nacional</h3>
+                  <p>
+                    La política tecnológica debe formar parte de una estrategia
+                    de desarrollo nacional, articulando universidades,
+                    industria, trabajadores y Estado.
+                  </p>
+                  <h3>
+                    8. La comunidad organizada también debe existir en el mundo
+                    digital
+                  </h3>
+                  <p>
+                    La construcción tecnológica debe incluir participación
+                    social: cooperativas, organizaciones laborales,
+                    instituciones científicas y empresas comprometidas con el
+                    desarrollo del país.
+                  </p>
+                  <h3>9. La cooperación regional fortalece la soberanía</h3>
+                  <p>
+                    Los países del sur global pueden desarrollar capacidades
+                    tecnológicas mediante cooperación regional y proyectos
+                    compartidos, reduciendo dependencias externas.
+                  </p>
+                  <h3>
+                    10. El progreso tecnológico debe traducirse en justicia
+                    social
+                  </h3>
+                  <p>
+                    El verdadero desarrollo no se mide solo en innovación o
+                    crecimiento económico, sino en la capacidad de una sociedad
+                    para distribuir los beneficios del progreso entre todos sus
+                    miembros.
+                  </p>
+                  <blockquote>
+                    <p>
+                      La tecnología no debe gobernar a los pueblos; los pueblos
+                      deben gobernar la tecnología.
+                    </p>
+                  </blockquote>
+                  <br />
+                  <br />
+                  <!--fin-->
+                </div>
+              </div>
+            </div>
+            <section
+              class="blog-subscription"
+              style="
+                margin-top: var(--spacing-3xl);
+                background: var(--color-mid);
+                padding: var(--spacing-2xl);
+                border-radius: 12px;
+                text-align: center;
+              "
+            >
+              <nav class="share-footer" aria-label="Compartir página">
+                <a
+                  href="https://www.facebook.com/sharer/sharer.php?u=https://resonancias.pages.dev/pages/blog/2026/Soberania-tecnologica.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="share-btn facebook"
+                  title="Compartir en Facebook"
+                  aria-label="Compartir en Facebook"
+                >
+                  <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a
+                  href="https://twitter.com/intent/tweet?url=https://resonancias.pages.dev/pages/blog/2026/Soberania-tecnologica.html&text=Soberanía tecnológica - independencia económica | RESONANCIAS"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="share-btn twitter"
+                  title="Compartir en X"
+                  aria-label="Compartir en X"
+                >
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a
+                  href="https://api.whatsapp.com/send?text=Soberanía tecnológica - independencia económica | RESONANCIAS https://resonancias.pages.dev/pages/blog/2026/Soberania-tecnologica.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="share-btn whatsapp"
+                  title="Compartir en WhatsApp"
+                  aria-label="Compartir en WhatsApp"
+                >
+                  <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a
+                  href="https://bsky.app/intent/compose?text=Soberanía tecnológica - independencia económica | RESONANCIAS https://resonancias.pages.dev/pages/blog/2026/Soberania-tecnologica.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="share-btn bluesky"
+                  title="Compartir en Bluesky"
+                  aria-label="Compartir en Bluesky"
+                >
+                  <i class="fa-brands fa-bluesky"></i>
+                </a>
+              </nav>
+              <h3
+                style="
+                  color: var(--color-dark);
+                  margin-bottom: var(--spacing-md);
+                  font-size: var(--font-size-2xl);
+                "
+              >
+                Comparte en tus redes
+              </h3>
+              <h4>Suscribete</h4>
+
+              <p
+                style="
+                  color: var(--color-warm);
+                  margin-bottom: var(--spacing-xl);
+                  max-width: 500px;
+                  margin-left: auto;
+                  margin-right: auto;
+                  line-height: 1.6;
+                "
+              >
+                Recibe notificaciones cuando publique nuevos ensayos y
+                reflexiones. Sin spam, solo contenido de calidad.
+              </p>
+              <div
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: var(--spacing-md);
+                  max-width: 400px;
+                  margin: 0 auto;
+                  flex-wrap: wrap;
+                "
+              >
+                <a
+                  href="/pages/contacto.html"
+                  style="
+                    background: var(--color-secondary);
+                    color: var(--color-light);
+                    border: none;
+                    padding: var(--spacing-md) var(--spacing-xl);
+                    border-radius: 8px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    cursor: pointer;
+                    transition: all var(--transition-fast);
+                    display: inline-flex;
+                    align-items: center;
+                    gap: var(--spacing-sm);
+                  "
+                  onmouseover="
+                    this.style.background = 'var(--color-warm)';
+                    this.style.transform = 'translateY(-2px)';
+                  "
+                  onmouseout="
+                    this.style.background = 'var(--color-secondary)';
+                    this.style.transform = 'translateY(0)';
+                  "
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  Contáctame
+                </a>
+              </div>
+              <p
+                style="
+                  font-size: var(--font-size-sm);
+                  color: var(--color-neutral);
+                  margin-top: var(--spacing-md);
+                "
+              >
+                * Puedes darte de baja en cualquier momento
+              </p>
+            </section>
+            <!-- Footer del artículo -->
+
+            <footer
+              style="
+                margin-top: var(--spacing-2xl);
+                padding-top: var(--spacing-xl);
+                border-top: 1px solid var(--color-mid);
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  flex-wrap: wrap;
+                  gap: var(--spacing-md);
+                "
+              >
+                <span
+                  class="entry-date"
+                  style="
+                    font-size: var(--font-size-sm);
+                    color: var(--color-neutral);
+                  "
+                >
+                  📅 2026-03-09
+                </span>
+                <div style="display: flex; gap: var(--spacing-sm)">
+                  <a
+                    href="/pages/blog/2026/blog-2026.html"
+                    style="
+                      color: var(--color-secondary);
+                      text-decoration: none;
+                      font-weight: 600;
+                    "
+                  >
+                    ← Volver al blog
+                  </a>
+                </div>
+              </div>
+            </footer>
+          </div>
+        </article>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="footer-content">
+        <p>© 2026 RESONANCIAS · Todos los derechos reservados</p>
+      </div>
+    </footer>
+    <a href="#main-content" class="back-to-top" aria-label="Volver arriba">
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </a>
+  </body>
+</html>
