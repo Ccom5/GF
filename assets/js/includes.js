@@ -10,6 +10,7 @@ async function loadHTML(id, url) {
 Promise.all([
   loadHTML("header", "/includes/header.html"),
   loadHTML("side-menu", "/includes/side-menu.html"),
+  loadHTML("footer", "/includes/footer.html"),
 ]).then(() => {
   if (window.app && typeof window.app.initMenu === "function") {
     window.app.initMenu();

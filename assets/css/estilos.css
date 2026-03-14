@@ -212,10 +212,10 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: var(--spacing-sm);
-  margin: var(--spacing-lg) 0;
-  padding: var(--spacing-md);
-  background: var(--color-mid);
+  gap: var(--spacing-xs);
+  margin: var(--spacing-sm) 0;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-dark);
   border-radius: 25px;
 }
 
@@ -816,7 +816,7 @@ main {
 .footer {
   background: var(--color-dark);
   color: var(--color-light);
-  padding: var(--spacing-2xl) 0;
+  padding: var(--spacing-lg) 0;
   text-align: center;
 }
 
@@ -974,7 +974,7 @@ main section:first-of-type {
 .share-title {
   font-size: var(--font-size-sm);
   font-weight: 600;
-  color: var(--color-accent);
+  color: var(--color-light);
   margin-right: var(--spacing-sm);
 }
 
