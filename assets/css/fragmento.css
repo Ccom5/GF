@@ -26,6 +26,46 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
+/* --- Estructura de Tarjetas y Grid --- */
+.fragments-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+  max-width: 1200px;
+  margin: var(--spacing-2xl) auto;
+  padding: 0 var(--spacing-lg);
+}
+
+/* Sobrescribir estilos de .content-card para el grid */
+.fragments-grid .fragments-list-card {
+  max-width: 100%;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.row-separator {
+  grid-column: 1 / -1;
+  justify-self: center;
+  max-width: 100%;
+  height: auto;
+  margin: var(--spacing-xl) 0;
+}
+
+@media (max-width: 1024px) {
+  .fragments-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .fragments-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
 /* --- Estructura de Tarjetas --- */
 .presentation-card {
   text-align: center;
