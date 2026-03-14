@@ -861,7 +861,7 @@ main {
 }
 
 /* Asegurar que la primera sección dentro de main no tenga margen superior ni borde, y tenga el padding adecuado */
-main section:first-of-type {
+main > section:first-of-type {
   margin-top: 0 !important;
   padding-top: var(--spacing-3xl) !important;
   border-top: none !important;
@@ -1133,7 +1133,7 @@ main section:first-of-type {
     padding-top: var(--spacing-2xl) !important;
   }
 
-  main section:first-of-type {
+  main > section:first-of-type {
     margin-top: 0 !important;
     padding-top: var(--spacing-2xl) !important;
     border-top: none !important;
