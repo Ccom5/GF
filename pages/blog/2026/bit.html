@@ -30,92 +30,88 @@
     <meta name="twitter:image:alt" content="Representación visual de código binario y conexiones técnicas." />
 
     <!-- Favicon -->
-    <link rel="icon" href="/img/ui/favicon.png" type="image/png" />
+        <!-- Favicon -->
+        <link rel="icon" href="/img/ui/favicon.png" type="image/png" />
 
-    <!-- Estilos -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="/assets/css/estilos.css" />
+        <!-- Estilos -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="/assets/css/estilos.css" />
+        <!-- Scripts -->
+        <script src="/assets/js/main.js" defer></script>
+        <script src="/assets/js/back-to-top.js" defer></script>
+        <!-- Estilos responsivos para el layout del artículo -->
+        <style>
+            @media (max-width: 768px) {
+                .article-layout {
+                    flex-direction: column !important;
+                    gap: var(--spacing-lg) !important;
+                }
+                .image-card {
+                    position: relative !important;
+                    top: auto !important;
+                    width: 100% !important;
+                    min-width: auto !important;
+                    margin-bottom: var(--spacing-lg) !important;
+                }
+            }
+        </style>
+        <style>
+            /* Markdown incrustado desde Obsidian */
+            .md-obsidian h1,
+            .md-obsidian h2,
+            .md-obsidian h3,
+            .md-obsidian h4,
+            .md-obsidian h5,
+            .md-obsidian h6 {
+                margin-top: 1.6em;
+                margin-bottom: 0.6em;
+                line-height: 1.3;
+            }
 
-    <!-- Scripts -->
+            .md-obsidian p {
+                margin: 0.9em 0;
+                line-height: 1.75;
+            }
 
-    <script src="/assets/js/main.js" defer></script>
-    <script src="/assets/js/back-to-top.js" defer></script>
-    <!-- Estilos responsivos para el layout del artículo -->
-    <style>
-      @media (max-width: 768px) {
-        .article-layout {
-          flex-direction: column !important;
-          gap: var(--spacing-lg) !important;
-        }
-        .image-card {
-          position: relative !important;
-          top: auto !important;
-          width: 100% !important;
-          min-width: auto !important;
-          margin-bottom: var(--spacing-lg) !important;
-        }
-      }
-    </style>
-    <style>
-      /* Markdown incrustado desde Obsidian */
-      .md-obsidian h1,
-      .md-obsidian h2,
-      .md-obsidian h3,
-      .md-obsidian h4,
-      .md-obsidian h5,
-      .md-obsidian h6 {
-        margin-top: 1.6em;
-        margin-bottom: 0.6em;
-        line-height: 1.3;
-      }
+            .md-obsidian ul,
+            .md-obsidian ol {
+                margin: 0.9em 0 0.9em 1.6em;
+            }
 
-      .md-obsidian p {
-        margin: 0.9em 0;
-        line-height: 1.75;
-      }
+            .md-obsidian li {
+                margin: 0.4em 0;
+            }
 
-      .md-obsidian ul,
-      .md-obsidian ol {
-        margin: 0.9em 0 0.9em 1.6em;
-      }
+            .md-obsidian blockquote {
+                margin: 1.2em 0;
+                padding-left: 1em;
+                border-left: 3px solid var(--color-secondary);
+                color: var(--color-neutral);
+                font-style: italic;
+            }
 
-      .md-obsidian li {
-        margin: 0.4em 0;
-      }
+            .md-obsidian hr {
+                margin: 2em 0;
+                border: none;
+                border-top: 1px solid var(--color-mid);
+            }
+        </style>
+    </head>
+    <body>
+<!-- Header + menú -->
+<div id="header"></div>
+<div id="side-menu"></div>
+<div class="menu-overlay" id="menuOverlay"></div>
 
-      .md-obsidian blockquote {
-        margin: 1.2em 0;
-        padding-left: 1em;
-        border-left: 3px solid var(--color-secondary);
-        color: var(--color-neutral);
-        font-style: italic;
-      }
+<script src="/assets/js/includes.js"></script>
 
-      .md-obsidian hr {
-        margin: 2em 0;
-        border: none;
-        border-top: 1px solid var(--color-mid);
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Skip to main content -->
-    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
-
-    <!-- Header + menú -->
-    <div id="header"></div>
-    <div id="side-menu"></div>
-
-    <script src="/assets/js/includes.js"></script>
-    <script src="/assets/js/back-to-top.js"></script>
-    <!-- Overlay para menú -->
-    <div class="menu-overlay" id="menuOverlay"></div>
+<!-- Skip to main content -->
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
     <section
       class="works-hero"
       style='
@@ -388,54 +384,7 @@
       </div>
     </main>
     <!-- Footer -->
-    <footer class="footer" role="contentinfo">
-      <div class="footer-content">
-        <nav class="share-footer" aria-label="Compartir página">
-          <span class="share-title">Compartir en redes</span>
-          <a
-            href="https://www.facebook.com/sharer/sharer.php?u=https://resonancias.pages.dev/pages/blog/2026/bit.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="share-btn facebook"
-            title="Compartir en Facebook"
-            aria-label="Compartir en Facebook"
-          >
-            <i class="fa-brands fa-facebook"></i>
-          </a>
-          <a
-            href="https://twitter.com/intent/tweet?url=https://resonancias.pages.dev/pages/blog/2026/bit.html&text=Del%20Bit%20al%20Diálogo%20|%20RESONANCIAS"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="share-btn twitter"
-            title="Compartir en X"
-            aria-label="Compartir en X"
-          >
-            <i class="fa-brands fa-x-twitter"></i>
-          </a>
-          <a
-            href="https://api.whatsapp.com/send?text=Del%20Bit%20al%20Diálogo%20|%20RESONANCIAS%20https://resonancias.pages.dev/pages/blog/2026/bit.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="share-btn whatsapp"
-            title="Compartir en WhatsApp"
-            aria-label="Compartir en WhatsApp"
-          >
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
-          <a
-            href="https://bsky.app/intent/compose?text=Del%20Bit%20al%20Diálogo%20|%20RESONANCIAS%20https://resonancias.pages.dev/pages/blog/2026/bit.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="share-btn bluesky"
-            title="Compartir en Bluesky"
-            aria-label="Compartir en Bluesky"
-          >
-            <i class="fa-brands fa-bluesky"></i>
-          </a>
-        </nav>
-        <p>© 2026 RESONANCIAS · Todos los derechos reservados</p>
-      </div>
-    </footer>
+    <div id="footer"></div>
     <a href="#main-content" class="back-to-top" aria-label="Volver arriba">
       <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
     </a>
