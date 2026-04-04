@@ -32,7 +32,6 @@
             section img {
                 border-radius: 12px; /* Esquinas redondeadas */
                 border: 1px solid rgba(255, 255, 255, 0.1); /* Borde fino sutil */
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra de profundidad */
                 transition: transform 0.3s ease;
                 display: block;
                 margin: 20px auto;
@@ -300,6 +299,10 @@
                 background: transparent;
                 border: none;
                 margin: 40px 0;
+                padding: 40px 30px;
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
             }
 
             /* Aplicamos el efecto de "ventana flotante" solo a la imagen */
@@ -309,6 +312,8 @@
                 box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); /* Sombra profunda */
                 border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil de luz */
                 margin-bottom: 20px; /* Espacio con el texto de abajo */
+                padding: 10px;
+                background: var(--panel-bg);
             }
 
             .img-container img {
@@ -463,7 +468,9 @@
             <!-- SECCIÓN: VISIÓN -->
             <section id="vision" class="visible">
                 <div class="img-card">
-                    <img src="img/n-3.png" alt="logo Nexo" style="width: 50%; display: block; margin: 0 auto" />
+                    <div class="img-container">
+                        <img src="img/n-3.png" alt="logo Nexo" style="width: 50%; display: block; margin: 0 auto" />
+                    </div>
                     <p style="text-align: center; line-height: 1.6">
                         El horizonte final de tu biblioteca personal.<br />Un ecosistema donde el caos se convierte en
                         red de sabiduría.
@@ -477,7 +484,9 @@
                 </p>
 
                 <div class="img-card">
-                    <img src="img/panel.png" alt="Dashboard Central de Nexo" />
+                    <div class="img-container">
+                        <img src="img/panel.png" alt="Dashboard Central de Nexo" />
+                    </div>
                     <div class="img-card-overlay">
                         <div class="img-card-title">🏙️ Dashboard Central</div>
                         <div class="img-card-desc">Estado inicial de flet_app.py con vista panorámica.</div>
@@ -648,7 +657,9 @@ OPENROUTER_API_KEY=tu_llave_aqui</code></pre>
                 </div>
 
                 <div class="img-card">
-                    <img src="img/chat.png" alt="Interfaz de Chat RAG" />
+                    <div class="img-container">
+                        <img src="img/chat.png" alt="Interfaz de Chat RAG" />
+                    </div>
                     <div class="img-card-overlay">
                         <div class="img-card-title">💬 Interfaz de Chat</div>
                         <div class="img-card-desc">Interactuando directamente con el contexto de tus notas.</div>
@@ -708,7 +719,9 @@ OPENROUTER_API_KEY=tu_llave_aqui</code></pre>
                 </div>
 
                 <div class="img-card">
-                    <img src="img/avanzado.png" alt="Modal de Funciones Avanzadas" />
+                    <div class="img-container">
+                        <img src="img/avanzado.png" alt="Modal de Funciones Avanzadas" />
+                    </div>
                     <div class="img-card-overlay">
                         <div class="img-card-title">⚙️ Panel Avanzado</div>
                         <div class="img-card-desc">Control total sobre las funciones de la IA y el vault de notas.</div>
