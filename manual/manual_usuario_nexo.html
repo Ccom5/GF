@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Manual de Usuario | Nexo ∞</title>
+        <!-- Google Fonts: Inter para legibilidad y Outfit para títulos modernos -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;500;700&display=swap"
+            rel="stylesheet" />
+        <style>
+            :root {
+                /* Nueva Paleta "Nexo Electric" */
+                --bg-deep: #0d1117; /* Fondo base tipo GitHub Dark */
+                --bg-slate: #161b22; /* Sidebar y contenedores */
+                --panel-bg: #21262d; /* Tarjetas e info-cards */
+                --accent: #58a6ff; /* Azul brillante eléctrico */
+                --accent-glow: rgba(88, 166, 255, 0.3);
+                --text-main: #f0f6fc; /* Blanco roto para no cansar la vista */
+                --text-dim: #8b949e; /* Gris plata para descripciones */
+
+                /* Semántica con más vida */
+                --success: #3fb950;
+                --warning: #d29922;
+                --error: #f85149;
+
+                /* Gradiente más dinámico */
+                --grad: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+            }
+            /* Estilo para que las capturas de Nexo se vean elegantes */
+            .img-card img,
+            section img {
+                border-radius: 12px; /* Esquinas redondeadas */
+                border: 1px solid rgba(255, 255, 255, 0.1); /* Borde fino sutil */
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra de profundidad */
+                transition: transform 0.3s ease;
+                display: block;
+                margin: 20px auto;
+                max-width: 100%;
+            }
+
+            /* Efecto opcional: que la imagen crezca un poco al pasar el mouse */
+            section img:hover {
+                transform: scale(1.02);
+                border-color: var(--accent); /* Tu nuevo azul #58a6ff */
+            }
+            * {
+                box-sizing: border-box;
+                scroll-behavior: smooth;
+            }
+
+            body {
+                margin: 0;
+                font-family: "Inter", sans-serif;
+                background-color: var(--bg-deep);
+                color: var(--text-main);
+                line-height: 1.6;
+                display: flex;
+            }
+
+            /* --- Sidebar Navigation --- */
+            .sidebar {
+                position: fixed;
+                width: 300px;
+                height: 100vh;
+                background: var(--bg-slate);
+                border-right: 1px solid rgba(255, 255, 255, 0.05);
+                padding: 40px 20px;
+                overflow-y: auto;
+                z-index: 100;
+            }
+
+            .logo-box {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 50px;
+                padding: 0 10px;
+            }
+
+            .logo-symbol {
+                width: 35px;
+                height: 35px;
+                background: var(--accent);
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 800;
+                font-size: 20px;
+                color: white;
+                box-shadow: 0 0 15px var(--accent-glow);
+            }
+
+            .logo-text {
+                font-family: "Outfit", sans-serif;
+                font-size: 22px;
+                font-weight: 700;
+                letter-spacing: -0.5px;
+            }
+
+            .nav-menu {
+                list-style: none;
+                padding: 0;
+            }
+
+            .nav-item {
+                margin-bottom: 5px;
+            }
+
+            .nav-link {
+                display: flex;
+                align-items: center;
+                padding: 12px 15px;
+                color: var(--text-dim);
+                text-decoration: none;
+                border-radius: 10px;
+                transition: 0.2s;
+                font-size: 15px;
+            }
+
+            .nav-link:hover {
+                color: white;
+                background: rgba(255, 255, 255, 0.03);
+            }
+
+            .nav-link.active {
+                background: rgba(88, 166, 255, 0.15); /* Fondo suave azulado */
+                color: var(--accent);
+                border-left: 4px solid var(--accent);
+                box-shadow: none; /* Menos bulto, más elegancia */
+            }
+
+            /* --- Content Area --- */
+            .content {
+                margin-left: 300px;
+                flex: 1;
+                padding: 60px 10%;
+            }
+
+            section {
+                max-width: 900px;
+                margin-bottom: 100px;
+                opacity: 0;
+                transform: translateY(20px);
+                transition: 0.6s all ease-out;
+            }
+
+            section.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .hero-banner {
+                background: var(--grad);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                padding: 60px;
+                border-radius: 30px;
+                margin-bottom: 60px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .hero-banner h1 {
+                background: linear-gradient(90deg, #ffffff, var(--accent));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                filter: drop-shadow(0 0 15px var(--accent-glow)); /* Esto le da el "aura" */
+            }
+
+            .hero-banner p {
+                font-size: 18px;
+                color: var(--text-dim);
+                max-width: 500px;
+            }
+
+            /* Indicadores visuales */
+            .info-card,
+            .card,
+            .step-box {
+                background: var(--panel-bg);
+                border: 1px solid rgba(255, 255, 255, 0.1); /* Borde fino para separar del fondo */
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            }
+
+            /* --- Image Recommendations --- */
+            .img-placeholder {
+                width: 100%;
+                min-height: 300px;
+                background: #0a0c14;
+                border: 2px dashed #2a2f45;
+                border-radius: 16px;
+                margin: 30px 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color: #49506c;
+                padding: 40px;
+                text-align: center;
+                transition: 0.3s;
+            }
+
+            .img-placeholder:hover {
+                border-color: var(--accent);
+                background: #0d101a;
+            }
+
+            .placeholder-icon {
+                font-size: 40px;
+                margin-bottom: 15px;
+                opacity: 0.5;
+            }
+
+            .placeholder-title {
+                font-weight: 700;
+                color: var(--text-dim);
+                margin-bottom: 8px;
+            }
+
+            .placeholder-desc {
+                font-size: 13px;
+                max-width: 350px;
+                line-height: 1.4;
+            }
+
+            /* Workflow Steps */
+            .steps-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+                margin-top: 40px;
+            }
+
+            .step-box {
+                background: rgba(255, 255, 255, 0.02);
+                padding: 30px;
+                border-radius: 20px;
+                border: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .step-num {
+                font-size: 32px;
+                font-weight: 800;
+                font-family: "Outfit";
+                color: var(--accent);
+                margin-bottom: 15px;
+                opacity: 0.8;
+            }
+
+            code {
+                font-family: "Consolas", monospace;
+                background: #000;
+                color: #79c0ff;
+                padding: 2px 6px;
+                border-radius: 4px;
+                font-size: 0.9em;
+            }
+
+            .highlight-box {
+                border-left: 4px solid var(--accent);
+                padding-left: 20px;
+                margin: 20px 0;
+                background: rgba(74, 127, 193, 0.05);
+                padding: 20px;
+                border-radius: 0 12px 12px 0;
+            }
+
+            footer {
+                margin-top: 100px;
+                padding: 40px 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+                text-align: center;
+                color: #49506c;
+                font-size: 14px;
+            }
+
+            .card {
+                background: rgba(37, 42, 61, 0.5);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                border-radius: 16px;
+                padding: 24px;
+                margin-bottom: 24px;
+                transition: 0.3s;
+            }
+
+            .card:hover {
+                border-color: rgba(255, 255, 255, 0.1);
+            }
+
+            .card h3 {
+                margin-top: 0;
+                color: white;
+                font-size: 18px;
+            }
+
+            /* --- Image Cards --- */
+            /* Eliminamos el fondo o bordes del contenedor principal para que sea invisible */
+            .img-card {
+                background: transparent;
+                border: none;
+                margin: 40px 0;
+            }
+
+            /* Aplicamos el efecto de "ventana flotante" solo a la imagen */
+            .img-container {
+                border-radius: 12px;
+                overflow: hidden; /* Corta la imagen con el redondeo */
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); /* Sombra profunda */
+                border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil de luz */
+                margin-bottom: 20px; /* Espacio con el texto de abajo */
+            }
+
+            .img-container img {
+                width: 100%;
+                display: block;
+                transition: transform 0.3s ease;
+            }
+
+            /* El texto ahora se ve limpio debajo */
+            .img-card-overlay {
+                padding: 10px 0;
+                text-align: center;
+            }
+
+            .img-card-title {
+                font-weight: 600;
+                color: var(--accent); /* Tu nuevo azul #58a6ff */
+                margin-bottom: 5px;
+            }
+            .img-card-title {
+                font-weight: 600;
+                color: white;
+                margin-bottom: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+            }
+
+            .img-card-desc {
+                font-size: 14px;
+                color: var(--text-dim);
+            }
+
+            /* API Keys Styles */
+            .api-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+                margin-top: 20px;
+            }
+
+            .api-card {
+                background: #f8f9fa;
+                padding: 20px;
+                border-radius: 10px;
+                border-left: 5px solid var(--accent);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+                color: #333;
+            }
+
+            .api-card h4 {
+                margin-top: 0;
+                color: var(--accent);
+            }
+
+            .api-link {
+                display: inline-block;
+                margin-top: 10px;
+                color: var(--accent);
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            .api-link:hover {
+                text-decoration: underline;
+            }
+
+            /* Mobile Adjustments */
+            @media (max-width: 900px) {
+                .sidebar {
+                    width: 100%;
+                    height: auto;
+                    position: relative;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    padding: 10px 15px;
+                }
+
+                .logo-box {
+                    margin-bottom: 0;
+                    margin-right: 15px;
+                }
+
+                .logo-text {
+                    display: none;
+                }
+
+                .nav-menu {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    gap: 5px;
+                    padding: 0;
+                }
+
+                .nav-item {
+                    margin-bottom: 0;
+                }
+
+                .nav-link {
+                    padding: 6px 8px;
+                    font-size: 11px;
+                    white-space: nowrap;
+                    overflow: visible;
+                }
+
+                .nav-link span {
+                    display: inline !important;
+                    visibility: visible !important;
+                }
+
+                .content {
+                    margin-left: 0;
+                    padding: 20px 5%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <aside class="sidebar">
+            <div class="logo-box">
+                <div class="logo-text">Nexo</div>
+            </div>
+            <nav class="nav-menu">
+                <div class="nav-item">
+                    <a href="#vision" class="nav-link active"><span>Visión Nexo ∞</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="#primeros-pasos" class="nav-link"><span>Primeros Pasos</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="#workflow" class="nav-link"><span>Flujo de Trabajo</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="#chat" class="nav-link"><span>Chat Inteligente</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="#visualizacion" class="nav-link"><span>Vista Gráfica</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="#avanzado" class="nav-link"><span>Funciones Avanzadas</span></a>
+                </div>
+            </nav>
+        </aside>
+
+        <div class="content">
+            <!-- SECCIÓN: VISIÓN -->
+            <section id="vision" class="visible">
+                <div class="img-card">
+                    <img src="img/n-3.png" alt="logo Nexo" style="width: 50%; display: block; margin: 0 auto" />
+                    <p style="text-align: center; line-height: 1.6">
+                        El horizonte final de tu biblioteca personal.<br />Un ecosistema donde el caos se convierte en
+                        red de sabiduría.
+                    </p>
+                </div>
+                <h2>La Filosofía del Sistema</h2>
+                <p>
+                    Nexo ∞ no es una herramienta de escritura, es un <b>amplificador cognitivo</b>. El sistema trabaja
+                    sobre los documentos que tú creas, enriqueciéndolos con metadatos semánticos, conectándolos mediante
+                    grafos inteligentes y sugiriendo nuevas vías de investigación.
+                </p>
+
+                <div class="img-card">
+                    <img src="img/panel.png" alt="Dashboard Central de Nexo" />
+                    <div class="img-card-overlay">
+                        <div class="img-card-title">🏙️ Dashboard Central</div>
+                        <div class="img-card-desc">Estado inicial de flet_app.py con vista panorámica.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: PRIMEROS PASOS (FLUJO DE USUARIO) -->
+            <section id="primeros-pasos">
+                <h2>Protocolo de Instalación</h2>
+                <p>
+                    Nexo ∞ guía tu configuración mediante un proceso automatizado de 5 etapas para asegurar una
+                    sincronización perfecta entre tu mente y el sistema.
+                </p>
+
+                <div class="steps-container">
+                    <div class="step-box">
+                        <div class="step-num">01</div>
+                        <h3>Perfilado</h3>
+                        <p>
+                            En el <b>Diálogo de Bienvenida</b>, defines tu nombre y la temática de tu biblioteca. Esto
+                            permite que la IA personalice el Dashboard y los criterios de análisis desde el primer
+                            segundo.
+                        </p>
+                    </div>
+                    <div class="step-box">
+                        <div class="step-num">02</div>
+                        <h3>Verificación de Motor</h3>
+                        <p>
+                            El sistema busca la presencia de <b>Obsidian</b> en tu equipo. Es un requisito esencial, ya
+                            que Nexo utiliza su arquitectura para renderizar tu grafo de conocimiento.
+                        </p>
+                    </div>
+                    <div class="step-box">
+                        <div class="step-num">03</div>
+                        <h3>Asistente de Descarga</h3>
+                        <p>
+                            <b>Si no tienes Obsidian:</b> Nexo detendrá el proceso y te ofrecerá un acceso directo a la
+                            descarga oficial. La instalación se pausará hasta que el motor visual esté listo.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="steps-container" style="margin-top: 20px">
+                    <div class="step-box">
+                        <div class="step-num">04</div>
+                        <h3>Despliegue del Vault</h3>
+                        <p>
+                            <b>Una vez detectado Obsidian:</b> El sistema crea automáticamente tu espacio de trabajo en
+                            <code>Documentos/Nexo</code> e instala los plugins necesarios para que las gráficas y tablas
+                            funcionen de inmediato.
+                        </p>
+                    </div>
+                    <div class="step-box">
+                        <div class="step-num">05</div>
+                        <h3>Activación de IA</h3>
+                        <p>
+                            Finalmente, se verifica la conexión con tus llaves de <b>Gemini</b> , <b>Groq</b> y
+                            recomiendo tambien <b>OpenRoute</b> en el archivo de configuración. Si todo es correcto, el
+                            sistema se ilumina y queda listo para procesar tus documentos.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <b>🚀 Listo para operar:</b> Al terminar, podrás importar tus archivos (DOCX, PDF, EPUB) a tu
+                    biblioteca nexo o si los tiene en formato.md simplemente los agregas en 📂 /tu
+                    usuario/Documentos/Nexo/ - Asi puedes empezar a ver cómo la IA comienza a tejer conexiones
+                    automáticamente en tu nuevo ecosistema.
+                </div>
+            </section>
+
+            <!-- SECCIÓN: API KEY -->
+            <section id="configuracion-api">
+                <h2>Activación de Energía (API Keys)</h2>
+                <p>
+                    Para que Nexo ∞ pueda pensar, analizar y razonar, necesita conectarse a los motores de IA. Puedes
+                    obtener tus llaves de acceso de forma gratuita en los siguientes enlaces:
+                </p>
+
+                <div class="api-container">
+                    <div class="api-card">
+                        <h4>1. Google Gemini (Cerebro Analítico)</h4>
+                        <p>Es el motor principal para el análisis profundo de documentos y visión.</p>
+                        <a href="https://aistudio.google.com/app/apikey" target="_blank" class="api-link"
+                            >Obtener Gemini API Key →</a
+                        >
+                    </div>
+
+                    <div class="api-card">
+                        <h4>2. Groq (Velocidad Instantánea)</h4>
+                        <p>Permite que el chat responda a una velocidad casi humana y procese textos rápidos.</p>
+                        <a href="https://console.groq.com/keys" target="_blank" class="api-link"
+                            >Obtener Groq API Key →</a
+                        >
+                    </div>
+
+                    <div class="api-card">
+                        <h4>3. OpenRouter (Modelos Alternativos)</h4>
+                        <p>Brinda acceso a una amplia gama de modelos de código abierto y respaldo técnico.</p>
+                        <a href="https://openrouter.ai/keys" target="_blank" class="api-link"
+                            >Obtener OpenRouter API Key →</a
+                        >
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 20px">
+                    <strong>¿Dónde pegar estas llaves?</strong>
+                    <p>
+                        Abre el archivo <code>.env</code> en la carpeta raíz de Nexo ∞ y reemplaza los valores
+                        correspondientes. El archivo debería verse así:
+                    </p>
+                    <pre><code>GEMINI_API_KEY=tu_llave_aqui
+GROQ_API_KEY=tu_llave_aqui
+OPENROUTER_API_KEY=tu_llave_aqui</code></pre>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: WORKFLOW -->
+            <section id="workflow">
+                <h2>Ciclo de Procesamiento</h2>
+                <div class="steps-container">
+                    <div class="step-box">
+                        <div class="step-num">01</div>
+                        <h3>Analizar Documentos</h3>
+                        <p>
+                            Escanea archivos de <code>biblioteca/Documentos</code> y genera metadatos (Frontmatter YAML)
+                            con etiquetas, tono y temática.
+                        </p>
+                    </div>
+                    <div class="step-box">
+                        <div class="step-num">02</div>
+                        <h3>Enlazar Notas</h3>
+                        <p>
+                            Inyecta <b>Wikilinks</b> y <b>Tags</b> que activan el grafo relacional dinámicamente,
+                            conectando conceptos entre documentos.
+                        </p>
+                    </div>
+                    <div class="step-box">
+                        <div class="step-num">03</div>
+                        <h3>Generar Ideas</h3>
+                        <p>
+                            Ejecuta un <b>Análisis Completo</b> que detecta patrones ocultos y genera "Semillas" de
+                            ideas basadas en tu biblioteca.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: CHAT -->
+            <section id="chat">
+                <h2>Chat con Biblioteca (RAG)</h2>
+                <p>
+                    Pregúntale a tus propios documentos. Nexo ∞ utiliza un sistema de
+                    <b>Generación Aumentada por Recuperación</b> para responder usando exclusivamente tu información.
+                </p>
+
+                <div class="info-card">
+                    <h3>Conversación de Alta Fidelidad</h3>
+                    <p>
+                        Al chatear, el sistema localiza los fragmentos exactos de tus notas que responden a tu pregunta,
+                        asegurando respuestas libres de invenciones (alucinaciones).
+                    </p>
+                    <div class="highlight-box">
+                        <b>Caché Inteligente:</b> Si repites una pregunta, Nexo te entrega la respuesta al instante sin
+                        gastar tokens de tu API.
+                    </div>
+                </div>
+
+                <div class="img-card">
+                    <img src="img/chat.png" alt="Interfaz de Chat RAG" />
+                    <div class="img-card-overlay">
+                        <div class="img-card-title">💬 Interfaz de Chat</div>
+                        <div class="img-card-desc">Interactuando directamente con el contexto de tus notas.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: VISUALIZACIÓN -->
+            <section id="visualizacion">
+                <h2>Exploración Visual (MRV 4.0)</h2>
+                <p>Haz clic en <b>🌐 Ver Gráficos</b> para abrir el Visor Web con sus 4 perspectivas:</p>
+                <div class="info-card">
+                    <p><b>🎯 Radar:</b> Dashboard de ideas y puntos ciegos.</p>
+                    <p><b>🔷 Constelaciones:</b> Documentos agrupados por género con hover interactivo.</p>
+                    <p><b>🌱 Mapa:</b> El universo Nexo en un grafo concéntrico.</p>
+                    <p><b>◆ Hubs:</b> Foco en temas específicos y sus conexiones.</p>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: AVANZADO -->
+            <section id="avanzado">
+                <h2>Centro de Comando Superior</h2>
+                <p>
+                    Pulsa el botón <b>🛠️ Avanzado</b> para acceder a las herramientas de mantenimiento y optimización
+                    profunda del ecosistema.
+                </p>
+
+                <div class="card">
+                    <h3>😴 Modo Ocio de la IA</h3>
+                    <p>
+                        Activa el <b>Modo Ocio</b> cuando no estés usando la app. Nexo aprovechará el tiempo para elevar
+                        la calidad de tus documentos antiguos (<code>optimized</code>), buscando temas ocultos y
+                        mejorando los wikilinks automáticamente.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🔓 Liberar y Desbloquear</h3>
+                    <p>Desde este panel puedes "liberar" el sistema para realizar tareas de mantenimiento masivo:</p>
+                    <ul>
+                        <li>
+                            <b>Reiniciar Todo:</b> Limpia el estado de análisis para procesar toda la biblioteca desde
+                            cero.
+                        </li>
+                        <li>
+                            <b>Sincronizar Vault:</b> Asegura que Obsidian y la App de Flet vean exactamente lo mismo.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>📊 Monitor de Desempeño</h3>
+                    <p>
+                        Observa el "latido" de tu sistema. El monitor muestra la latencia en milisegundos de cada API,
+                        permitiéndote diagnosticar cuellos de botella o caídas de servicio.
+                    </p>
+                </div>
+
+                <div class="img-card">
+                    <img src="img/avanzado.png" alt="Modal de Funciones Avanzadas" />
+                    <div class="img-card-overlay">
+                        <div class="img-card-title">⚙️ Panel Avanzado</div>
+                        <div class="img-card-desc">Control total sobre las funciones de la IA y el vault de notas.</div>
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                Nexo ∞ | Arquitectura Cognitiva v3.1 | Powered by Gemini & Groq
+                <br /><span style="font-size: 12px; margin-top: 8px; display: inline-block"
+                    >Designed for maximum cognitive enhancement.</span
+                >
+            </footer>
+        </div>
+
+        <script>
+            // Animaciones de visibilidad
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) entry.target.classList.add("visible");
+                    });
+                },
+                { threshold: 0.1 }
+            );
+
+            document.querySelectorAll("section").forEach((s) => observer.observe(s));
+
+            // Navegación Activa
+            const links = document.querySelectorAll(".nav-link");
+            window.addEventListener("scroll", () => {
+                let curr = "";
+                document.querySelectorAll("section").forEach((s) => {
+                    if (pageYOffset >= s.offsetTop - 150) curr = s.getAttribute("id");
+                });
+                links.forEach((l) => {
+                    l.classList.remove("active");
+                    if (l.getAttribute("href").substring(1) === curr) l.classList.add("active");
+                });
+            });
+        </script>
+    </body>
+</html>
