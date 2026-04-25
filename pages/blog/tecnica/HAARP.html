@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HAARP: El Techo Elástico | RESONANCIAS</title>
+  <meta name="description" content="Descubre cómo la intervención en la ionosfera afecta el clima global a través del acoplamiento vertical. Un análisis técnico sobre HAARP y la geoingeniería." />
+
+  <!-- URL Canónica -->
+  <link rel="canonical" href="https://resonancias.pages.dev/pages/blog/tecnica/HAARP.html" />
+
+  <!-- SEO y Accesibilidad -->
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Gabriel Ferré" />
+  <meta name="keywords" content="HAARP, ionosfera, clima, geoingeniería, acoplamiento vertical" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="HAARP: El Techo Elástico | RESONANCIAS" />
+  <meta property="og:description" content="Explora cómo el acoplamiento vertical y la dilatación de la ionosfera influyen en el clima global. Un análisis sobre HAARP y la geoingeniería atmosférica." />
+  <meta property="og:image" content="https://resonancias.pages.dev/img/tecnica/capas.png" />
+  <meta property="og:image:alt" content="Esquema de las capas de la atmósfera mostrando la ionosfera y el acoplamiento vertical" />
+  <meta property="og:url" content="https://resonancias.pages.dev/pages/blog/tecnica/HAARP.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="RESONANCIAS" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HAARP: El Techo Elástico | RESONANCIAS" />
+  <meta name="twitter:description" content="¿La alta atmósfera mueve los hilos del clima? Descubre el efecto del calentamiento ionosférico en las corrientes en chorro." />
+  <meta name="twitter:image" content="https://resonancias.pages.dev/img/tecnica/capas.png" />
+  <meta name="twitter:image:alt" content="Esquema técnico de la atmósfera terrestre y la ionosfera" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.png" type="image/png" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/assets/css/estilos.css" />
+
+  <!-- Scripts -->
+  <script src="/assets/js/main.js" defer></script>
+
+  <!-- Estilos responsivos para el layout del artículo -->
+  <style>
+    @media (max-width: 768px) {
+      .article-layout {
+        flex-direction: column !important;
+        gap: var(--spacing-lg) !important;
+      }
+
+      .image-card {
+        position: relative !important;
+        top: auto !important;
+        width: 100% !important;
+        min-width: auto !important;
+        margin-bottom: var(--spacing-lg) !important;
+      }
+    }
+
+    /* Fix for content overflow */
+    .md-obsidian {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      max-width: 100%;
+    }
+
+    .md-obsidian img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      margin: var(--spacing-md) auto;
+    }
+
+    .md-obsidian table {
+      width: 100%;
+      display: block;
+      overflow-x: auto;
+      border-collapse: collapse;
+      margin: var(--spacing-lg) 0;
+    }
+
+    /* Horizontal view and smaller screen fixes */
+    @media (max-width: 1024px) {
+      .content-card {
+        margin: var(--spacing-md) !important;
+        padding: var(--spacing-md) !important;
+        max-width: calc(100% - 2 * var(--spacing-md)) !important;
+      }
+
+      .article-content {
+        width: 100%;
+        min-width: 0;
+      }
+    }
+  </style>
+  <style>
+    /* Markdown incrustado desde Obsidian */
+    .md-obsidian h1,
+    .md-obsidian h2,
+    .md-obsidian h3,
+    .md-obsidian h4,
+    .md-obsidian h5,
+    .md-obsidian h6 {
+      margin-top: 1.6em;
+      margin-bottom: 0.6em;
+      line-height: 1.3;
+    }
+
+    .md-obsidian p {
+      margin: 0.9em 0;
+      line-height: 1.75;
+    }
+
+    .md-obsidian ul,
+    .md-obsidian ol {
+      margin: 0.9em 0 0.9em 1.6em;
+    }
+
+    .md-obsidian li {
+      margin: 0.4em 0;
+    }
+
+    .md-obsidian blockquote {
+      margin: 1.2em 0;
+      padding-left: 1em;
+      border-left: 3px solid var(--color-secondary);
+      color: var(--color-neutral);
+      font-style: italic;
+    }
+
+    .md-obsidian hr {
+      margin: 2em 0;
+      border: none;
+      border-top: 1px solid var(--color-mid);
+    }
+
+    /* Estilos de la Animación Simulación */
+    .sim-container {
+        max-width: 900px;
+        text-align: center;
+        margin: var(--spacing-xl) auto;
+        padding: 20px;
+        background-color: #020617;
+        border-radius: 12px;
+        color: #f8fafc;
+    }
+
+    .sim-canvas {
+        border-bottom: 4px solid #1e293b;
+        background: radial-gradient(circle at 50% 120%, #1e40af 0%, #020617 80%);
+        cursor: crosshair;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+        border-radius: 10px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .sim-controls {
+        margin-top: 25px;
+        background: rgba(30, 41, 59, 0.7);
+        padding: 20px;
+        border-radius: 12px;
+        backdrop-filter: blur(10px);
+        border: 1px solid #334155;
+    }
+
+    .sim-button {
+        background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .sim-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+    }
+
+    .sim-description {
+        margin: 15px 0;
+        line-height: 1.6;
+        color: #cbd5e1;
+    }
+
+    .sim-label-box {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 15px;
+        font-size: 0.85rem;
+    }
+
+    .sim-tag { display: flex; align-items: center; gap: 6px; }
+    .sim-circle { width: 10px; height: 10px; border-radius: 50%; }
+  </style>
+</head>
+
+<body>
+  <!-- Header + menú -->
+  <div id="header"></div>
+  <div id="side-menu"></div>
+
+  <script src="/assets/js/includes.js"></script>
+  <script src="/assets/js/back-to-top.js" defer></script>
+
+  <!-- Skip to main content -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- Overlay para menú -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <section class="works-hero" style="
+        margin-top: 0 !important;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(&quot;/img/tecnica/capas.png&quot;);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: var(--color-light);
+        padding: var(--spacing-3xl) 0;
+        text-align: center;
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+      ">
+    <div class="container">
+      <h2 style="
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          ">
+        Calentador Ionosférico
+      </h2>
+      <p style="
+            font-size: var(--font-size-xl);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+          ">
+        El Techo Elástico
+      </p>
+    </div>
+  </section>
+
+  <!-- Contenido principal -->
+  <main id="main-content" role="main">
+    <!-- Artículo principal -->
+    <div class="content-card">
+      <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+        <div class="container" style="max-width: 800px; margin: 0 auto">
+          <!-- Header del artículo -->
+          <header class="post-header" style="text-align: center; margin-bottom: var(--spacing-2xl)">
+            <h1 style="font-size: var(--font-size-3xl); color: var(--color-dark); margin-bottom: var(--spacing-lg)">
+              El Techo Elástico
+            </h1>
+            <div class="post-meta" style="
+                  display: flex;
+                  justify-content: center;
+                  gap: var(--spacing-lg);
+                  color: var(--color-neutral);
+                  font-size: var(--font-size-sm);
+                  flex-wrap: wrap;
+                ">
+              <span>· Gabriel Ferré</span>
+            </div>
+          </header>
+          <div class="article-layout" style="display: flex; gap: var(--spacing-xl); align-items: flex-start">
+            <div class="article-content" style="flex: 1; line-height: 1.5; color: var(--color-dark)">
+              <div id="intro-paragraph" class="md-obsidian" style="
+                    font-size: var(--font-size-lg);
+                    margin-bottom: var(--spacing-2xl);
+                    color: var(--color-warm);
+                    position: relative;
+                  ">
+                <!-- Insertar contenido aquí -->
+                <h1>¿La alta atmósfera mueve los hilos del clima?</h1>
+                <br />
+                <p>
+                  En artículos anteriores analizamos cómo el sistema terrestre opera con
+                  <strong>retardos temporales</strong> masivos, donde el océano actúa como un resorte que acumula
+                  energía.
+                </p>
+
+                <p>
+                  <a href="/pages/blog/tecnica/calentamiento.html">Calentamiento Global</a>
+                </p>
+
+                <p>
+                  Hoy vamos a explorar otra pieza del rompecabezas: el <strong>acoplamiento vertical</strong>. No
+                  podemos entender el clima que vivimos aquí abajo en nuestras ciudades sin observar lo que se está
+                  haciendo "arriba".
+                </p>
+                <br />
+                <h3>El Efecto Palanca: Dilatación y Desvío</h3>
+                <p>
+                  La atmósfera no es un conjunto de capas aisladas; es un fluido integrado. Para entender esto,
+                  imagina que el aire es como una alfombra muy larga y pesada que baja desde una montaña. Si alguien
+                  en la cima levanta una esquina de la alfombra y la sacude, esa ondulación viajará por toda la tela
+                  hasta llegar a la base.
+                </p>
+                <p>
+                  En la atmósfera, cuando se inyectan ondas de radio de alta frecuencia en la ionosfera (a partir de
+                  los 60 km), se genera un <strong>punto de dilatación</strong>. Es como si la atmósfera fuera un
+                  <strong>techo elástico</strong>: al aplicar energía en un punto específico, el plasma se expande y
+                  crea un "abultamiento". Como la atmósfera es un fluido (como el agua de una piscina), un empujón en
+                  un extremo termina moviendo todo el volumen.
+                </p>
+                <p>
+                  Esta dilatación aumenta la presión sobre las capas inferiores, actuando como una cuña que desvía las
+                  <strong>Corrientes en Chorro</strong> (<em>Jet Streams</em>). Estas corrientes son los verdaderos
+                  "rieles de un tren" para las tormentas: vientos de altísima velocidad que deciden si una tormenta
+                  llega a una costa o si una sequía se instala sobre un continente. Si el "techo" se infla y mueve
+                  estos rieles, el tren (el clima) termina en un destino completamente distinto al natural.
+                </p>
+                <br />
+                <h3>De la Comunicación a la Geoingeniería: Una Cronología de Intervención</h3>
+                <p>
+                  Lo que comenzó como una necesidad militar de comunicación ha evolucionado hacia una capacidad de
+                  modificación ambiental. Originalmente, el interés era usar la ionosfera como un espejo para reflejar
+                  ondas de radio a larga distancia. Sin embargo, al aprender a "modular" este espejo natural, se
+                  descubrió que también se podía influir en la dinámica del aire. Esta capacidad ya ha sido
+                  documentada por la política internacional y la ingeniería de patentes:
+                </p>
+                <br />
+                <ol>
+                  <li>
+                    <p>
+                      <strong>La Base Teórica (Patente US 4,686,605):</strong> Atribuida a Bernard Eastlund y
+                      vinculada al origen de HAARP, esta patente describe métodos para "alterar una región en la
+                      atmósfera, ionosfera y/o magnetosfera", mencionando la capacidad de desviar vientos de gran
+                      altitud.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <strong>La Alerta Internacional (UE):</strong> En 1999, el Parlamento Europeo emitió una
+                      resolución (A4-0005/1999) instando a la transparencia debido a los riesgos de manipulación
+                      climática. El trasfondo es la <strong>asimetría de poder</strong>: quien domine el "techo",
+                      tiene la llave para abrir o cerrar el paso de la humedad hacia otros territorios.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <strong>Una Red Global de Intervención:</strong> Ya no es solo Alaska. Hoy operan instalaciones
+                      masivas en todo el mundo que actúan como "calentadores" ionosféricos:
+                    </p>
+                    <ol>
+                      <li>
+                        <p><strong>Sura (Rusia):</strong> Con una capacidad de calentamiento superior a HAARP.</p>
+                      </li>
+                      <li>
+                        <p><strong>Meridian (China):</strong> Un ambicioso proyecto de monitoreo y manipulación.</p>
+                      </li>
+                      <li>
+
+                        <p><strong>EISCAT (Noruega):</strong> Investigación avanzada en el Ártico.</p>
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+                <p> <br>
+                  <img src="/img/tecnica/capas.png"
+                    alt="Esquema técnico de las capas atmosféricas y el acoplamiento vertical" style="
+                      width: 100%;
+                      height: auto;
+                      max-height: 600px;
+                      object-fit: contain;
+                      border-radius: 8px;
+                      margin-bottom: var(--spacing-md);
+                    " />
+                </p>
+                <br />
+                <h3>Consecuencias: El Sistema Fuera de Fase</h3>
+                <p>
+                  Como mencionamos en la nota sobre el calentamiento global, los sistemas con retardo son peligrosos
+                  porque no vemos el daño de inmediato. El clima no es una máquina lineal; es un sistema
+                  <strong>caótico y resonante</strong>. Al emitir energía hacia la alta atmósfera, corremos el riesgo
+                  de entrar en resonancia con los ciclos naturales. Es como empujar a alguien en un columpio: si lo
+                  haces en el momento justo, el movimiento se amplifica de forma violenta.
+                </p>
+                <p>
+                  Lo que vemos hoy en las noticias —nieve en el Sahara, sequías extremas o inundaciones repentinas en
+                  desiertos— no es solo un síntoma de la inercia térmica oceánica. Podría ser también la respuesta del
+                  sistema a estos "golpes" energéticos en el techo de la atmósfera. Si cada potencia "infla" su propia
+                  sección del techo, el resultado es un caos en la base: nuestro clima superficial. Estamos alterando
+                  la <strong>causalidad natural</strong> del planeta.
+                </p>
+                <br />
+                <h3>Conclusión: El Riesgo del "Gatillo"</h3>
+                <p>
+                  Más allá de quién tenga la patente original, el problema es sistémico. Estamos operando sobre un
+                  equilibrio ya precario. Como sociedad, solemos despertar cuando el sistema está al 90% de su
+                  capacidad, pero en la modificación atmosférica, el "punto de no retorno" puede estar ocurriendo
+                  ahora mismo, en el silencio de las ondas de radio.
+                </p>
+                <p>
+                  No sabemos si nuestros "empujes" tecnológicos están acelerando procesos que ya no podremos detener.
+                </p>
+                <hr />
+                <p>
+                  <strong>Nota Técnica - La fragilidad del equilibrio:</strong>
+                </p>
+
+                <p>
+                  La atmósfera no tiene compartimentos estancos: lo que sucede a 100 km de altura tiene un eco
+                  mecánico en la troposfera.
+                </p>
+
+                <p>
+                  El "Techo Elástico" es real: cualquier dilatación forzada en el plasma ionosférico actúa como una
+                  cuña física que altera el flujo de las corrientes en chorro.
+                </p>
+                <br />
+                <div class="sim-container">
+                    <h2 style="color: #f8fafc; margin-top: 0;">El Techo Elástico Curvado</h2>
+                    <p class="sim-description">
+                        Interactúa con la <strong>Ionosfera</strong> (capa superior azul). Observa cómo la deformación de la curvatura natural 
+                        genera una "cuña" de presión que desplaza la <strong>Corriente en Chorro</strong> (línea amarilla) sobre el horizonte.
+                    </p>
+                    
+                    <div class="sim-label-box">
+                        <div class="sim-tag"><span class="sim-circle" style="background: #38bdf8;"></span> Ionosfera</div>
+                        <div class="sim-tag"><span class="sim-circle" style="background: #fbbf24;"></span> Jet Stream</div>
+                        <div class="sim-tag"><span class="sim-circle" style="background: #ef4444;"></span> Pulso RF</div>
+                    </div>
+
+                    <canvas id="horizonCanvas" class="sim-canvas"></canvas>
+
+                    <div class="sim-controls">
+                        <button class="sim-button" onclick="resetSim()">Restablecer Equilibrio</button>
+                        <p style="font-size: 0.8rem; color: #64748b; margin-top: 10px;">
+                            Inspirado en la dinámica de acoplamiento vertical y deformación de capas fluidas.
+                        </p>
+                    </div>
+                </div>
+
+                <script>
+                    const canvas = document.getElementById('horizonCanvas');
+                    const ctx = canvas.getContext('2d');
+
+                    canvas.width = 800;
+                    canvas.height = 450;
+
+                    let points = [];
+                    const numLayers = 10;
+                    const pointsPerLayer = 50;
+                    
+                    const centerX = canvas.width / 2;
+                    const centerY = canvas.height * 1.5; 
+                    const baseRadius = canvas.height * 1.1; 
+
+                    function init() {
+                        points = [];
+                        for (let l = 0; l < numLayers; l++) {
+                            const layerRadius = baseRadius + (l * 22); 
+                            for (let p = 0; p < pointsPerLayer; p++) {
+                                const angle = (-40 + (p * (80 / (pointsPerLayer - 1)))) * (Math.PI / 180);
+                                const x = centerX + Math.sin(angle) * layerRadius;
+                                const y = centerY - Math.cos(angle) * layerRadius;
+                                
+                                points.push({
+                                    x: x,
+                                    y: y,
+                                    origX: x,
+                                    origY: y,
+                                    vx: 0,
+                                    vy: 0,
+                                    layer: l
+                                });
+                            }
+                        }
+                    }
+
+                    let isDown = false;
+                    let mx = 0, my = 0;
+
+                    canvas.addEventListener('mousedown', e => { isDown = true; setMouse(e); });
+                    canvas.addEventListener('mousemove', e => { setMouse(e); });
+                    window.addEventListener('mouseup', () => isDown = false);
+
+                    function setMouse(e) {
+                        const r = canvas.getBoundingClientRect();
+                        mx = e.clientX - r.left;
+                        my = e.clientY - r.top;
+                    }
+
+                    function resetSim() { init(); }
+
+                    function animate() {
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                        ctx.beginPath();
+                        ctx.arc(centerX, centerY, baseRadius - 5, 0, Math.PI * 2);
+                        ctx.fillStyle = '#020617';
+                        ctx.fill();
+
+                        points.forEach(p => {
+                            if (isDown) {
+                                const dx = p.x - mx;
+                                const dy = p.y - my;
+                                const d = Math.sqrt(dx*dx + dy*dy);
+                                if (d < 180) {
+                                    const f = (180 - d) / 180;
+                                    p.vx += (dx/d) * f * 1.8;
+                                    p.vy += (dy/d) * f * 1.8;
+                                }
+                            }
+
+                            p.vx += (p.origX - p.x) * 0.06;
+                            p.vy += (p.origY - p.y) * 0.06;
+                            
+                            p.vx *= 0.9;
+                            p.vy *= 0.9;
+                            
+                            p.x += p.vx;
+                            p.y += p.vy;
+                        });
+
+                        for (let l = 0; l < numLayers; l++) {
+                            ctx.beginPath();
+                            const startIdx = l * pointsPerLayer;
+                            ctx.moveTo(points[startIdx].x, points[startIdx].y);
+
+                            for (let p = 1; p < pointsPerLayer; p++) {
+                                const pt = points[startIdx + p];
+                                ctx.lineTo(pt.x, pt.y);
+                            }
+
+                            if (l === numLayers - 1) { 
+                                ctx.strokeStyle = '#38bdf8';
+                                ctx.lineWidth = 4;
+                                ctx.shadowBlur = isDown ? 15 : 5;
+                                ctx.shadowColor = '#38bdf8';
+                            } else if (l === 4) { 
+                                ctx.strokeStyle = '#fbbf24';
+                                ctx.lineWidth = 3;
+                                ctx.shadowBlur = 0;
+                            } else {
+                                ctx.strokeStyle = `rgba(148, 163, 184, ${0.1 + (l/numLayers)*0.3})`;
+                                ctx.lineWidth = 1;
+                                ctx.shadowBlur = 0;
+                            }
+                            ctx.stroke();
+                        }
+
+                        if (isDown) {
+                            ctx.shadowBlur = 0;
+                            ctx.beginPath();
+                            ctx.arc(mx, my, 20, 0, Math.PI*2);
+                            ctx.fillStyle = 'rgba(239, 68, 68, 0.3)';
+                            ctx.fill();
+                            ctx.strokeStyle = '#ef4444';
+                            ctx.lineWidth = 2;
+                            ctx.stroke();
+                            
+                            ctx.beginPath();
+                            ctx.setLineDash([5, 5]);
+                            ctx.moveTo(mx, -50);
+                            ctx.lineTo(mx, my);
+                            ctx.stroke();
+                            ctx.setLineDash([]);
+                        }
+
+                        requestAnimationFrame(animate);
+                    }
+
+                    init();
+                    animate();
+                </script>
+                <ul>
+                  <li>
+                    <p><strong>Glosario rápido:</strong>:</p>
+                    <ul>
+                      <li>
+                        <p><strong>Ionosfera:</strong> La capa "eléctrica" de nuestra atmósfera (60-1000 km).</p>
+                      </li>
+                      <li>
+                        <p><strong>Plasma:</strong> Gas ionizado que reacciona a campos electromagnéticos.</p>
+                      </li>
+                      <li>
+                        <p>
+                          <strong>Acoplamiento:</strong> La forma en que dos sistemas (como capas de aire) se pasan
+                          energía entre sí.
+                        </p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <!--fin-->
+                <div style="text-align: center; margin-top: var(--spacing-xl)">
+                  <a href="/pages/blog/tecnica/Tecnica.html" class="btn-primary">
+                    Regresar a Tecnica
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <a href="#main-content" class="back-to-top" aria-label="Volver arriba">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </a>
+  <div id="footer"></div>
+</body>
+
+</html>
