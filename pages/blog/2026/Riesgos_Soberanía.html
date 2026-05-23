@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riesgos y Soberanía: Control social digital | RESONANCIAS</title>
+  <meta name="description"
+    content="Análisis de los riesgos para la soberanía nacional al tercerizar datos estatales a corporaciones extranjeras para crear un Gemelo Digital Social de la sociedad argentina." />
+
+  <!-- URL Canónica -->
+  <link rel="canonical" href="https://resonancias.pages.dev/pages/blog/2026/Riesgos_Soberanía.html" />
+
+  <!-- SEO y Accesibilidad -->
+  <meta name="date" content="2026-05-23" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Gabriel Ferré" />
+  <meta name="keywords"
+    content="riesgos soberanía, gemelo digital social, soberanía tecnológica, datos personales, Argentina, Palantir, control social, Gabriel Ferré" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Riesgos y Soberanía: Control social digital | RESONANCIAS" />
+  <meta property="og:description"
+    content="Análisis de los riesgos para la soberanía nacional al tercerizar datos estatales a corporaciones extranjeras para crear un Gemelo Digital Social de la sociedad argentina." />
+  <meta property="og:image" content="https://resonancias.pages.dev/img/blog-2026/gemelo-digital.jpg" />
+  <meta property="og:image:width" content="1408" />
+  <meta property="og:image:height" content="768" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:alt" content="Riesgos y Soberanía: Control social digital" />
+  <meta property="og:url" content="https://resonancias.pages.dev/pages/blog/2026/Riesgos_Soberanía.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="RESONANCIAS" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Riesgos y Soberanía: Control social digital | RESONANCIAS" />
+  <meta name="twitter:description"
+    content="Análisis de los riesgos para la soberanía nacional al tercerizar datos estatales a corporaciones extranjeras para crear un Gemelo Digital Social de la sociedad argentina." />
+  <meta name="twitter:image" content="https://resonancias.pages.dev/img/blog-2026/gemelo-digital.jpg" />
+  <meta name="twitter:image:alt" content="Riesgos y Soberanía: Control social digital" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.png" type="image/png" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/assets/css/estilos.css" />
+
+  <!-- Scripts -->
+
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/back-to-top.js" defer></script>
+  <!-- Estilos responsivos para el layout del artículo -->
+  <style>
+    @media (max-width: 768px) {
+      .article-layout {
+        flex-direction: column !important;
+        gap: var(--spacing-lg) !important;
+      }
+
+      .image-card {
+        position: relative !important;
+        top: auto !important;
+        width: 100% !important;
+        min-width: auto !important;
+        margin-bottom: var(--spacing-lg) !important;
+      }
+    }
+  </style>
+  <style>
+    /* Markdown incrustado desde Obsidian */
+    .md-obsidian h1,
+    .md-obsidian h2,
+    .md-obsidian h3,
+    .md-obsidian h4,
+    .md-obsidian h5,
+    .md-obsidian h6 {
+      margin-top: 1.6em;
+      margin-bottom: 0.6em;
+      line-height: 1.3;
+    }
+
+    .md-obsidian p {
+      margin: 0.9em 0;
+      line-height: 1.75;
+    }
+
+    .md-obsidian ul,
+    .md-obsidian ol {
+      margin: 0.9em 0 0.9em 1.6em;
+    }
+
+    .md-obsidian li {
+      margin: 0.4em 0;
+    }
+
+    .md-obsidian blockquote {
+      margin: 1.2em 0;
+      padding-left: 1em;
+      border-left: 3px solid var(--color-secondary);
+      color: var(--color-neutral);
+      font-style: italic;
+    }
+
+    .md-obsidian hr {
+      margin: 2em 0;
+      border: none;
+      border-top: 1px solid var(--color-mid);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Skip to main content -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- Header + menú -->
+  <div id="header"></div>
+  <div id="side-menu"></div>
+
+  <script src="/assets/js/includes.js"></script>
+  <script src="/assets/js/back-to-top.js"></script>
+  <!-- Overlay para menú -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <section class="works-hero" style="
+        margin-top: 0 !important;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url(&quot;/img/blog-2026/gemelo-digital.jpg&quot;);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: var(--color-light);
+        padding: var(--spacing-3xl) 0;
+        text-align: center;
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+      ">
+    <div class="container">
+      <h2 style="
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          ">
+        Riesgos Y Soberanía
+      </h2>
+      <p style="
+            font-size: var(--font-size-xl);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+          ">
+        Control social digital
+      </p>
+    </div>
+  </section>
+  <!-- Contenido principal -->
+  <main id="main-content" role="main">
+    <!-- Artículo principal -->
+    <div class="content-card">
+      <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+        <div class="container" style="max-width: 800px; margin: 0 auto">
+          <!-- Header del artículo -->
+          <header class="post-header" style="text-align: center; margin-bottom: var(--spacing-2xl)">
+            <h1 style="font-size: var(--font-size-3xl); color: var(--color-dark); margin-bottom: var(--spacing-lg)">
+              Riesgos Y Soberanía
+            </h1>
+            <div class="post-meta" style="
+                  display: flex;
+                  justify-content: center;
+                  gap: var(--spacing-lg);
+                  color: var(--color-neutral);
+                  font-size: var(--font-size-sm);
+                  flex-wrap: wrap;
+                ">
+              <span>· Gabriel Ferré</span>
+            </div>
+          </header>
+
+          <div class="article-layout" style="display: flex; gap: var(--spacing-xl); align-items: flex-start">
+            <div class="article-content" style="flex: 1; line-height: 1.5; color: var(--color-dark)">
+              <div id="intro-paragraph" class="md-obsidian" style="
+                    font-size: var(--font-size-lg);
+                    margin-bottom: var(--spacing-2xl);
+                    color: var(--color-warm);
+                    position: relative;
+                  ">
+                <!-- Insertar contenido aquí -->
+                <h3>¿Qué pasa cuando una empresa extranjera maneja la radiografía de la sociedad argentina?</h3>
+                <p>
+                  Vivimos tan anestesiados por la mentira diaria, la persecución y el desguace planificado de los
+                  jubilados, la salud y la educación, que una noticia sobre 'intercambio de datos' nos parece un
+                  trámite de oficina. Error total. No te están pidiendo los datos para darte un mejor servicio; le
+                  están vendiendo la radiografía de tu miseria a una corporación de inteligencia extranjera para que
+                  el ajuste ya no lo tenga que hacer un funcionario dando la cara, sino una máquina inaccesible.
+                </p>
+                <p>
+                  Aceptémoslo: cuando escuchamos hablar de "convenios de modernización", "eficiencia estatal" o
+                  "integración de datos", solemos bostezar. Suena a burocracia abstracta. Pero detrás de esos
+                  eslóganes corporativos se esconde una realidad mucho más incómoda: la creación de un
+                  <strong>Gemelo Digital Social</strong>.
+                  <strong>"Si pensás que el ajuste actual es cruel, esperá a ver lo que pasa cuando lo maneje un
+                    algoritmo
+                    extranjero."</strong>
+                </p>
+                <h3>¿Qué es un Gemelo Digital Social?</h3>
+                <p>
+                  Imaginate un clon tuyo, pero hecho exclusivamente de datos. Este clon sabe cuánto ganás, qué
+                  remedios comprás, si pagás el boleto de colectivo con subsidio, en qué escuela estudian tus hijos y
+                  si alguna vez tuviste una multa de tránsito.
+                </p>
+
+                <p>
+                  Empresas globales de análisis de datos (como la cuestionada Palantir) tienen la tecnología para
+                  cruzar las bases de datos de ANSES, AFIP, salud y seguridad, y meterlas en una licuadora
+                  algorítmica. ¿El resultado? Un perfil predictivo que decide si sos "riesgoso", si vas a "defraudar
+                  al Estado" o si "merecés" un plan social.
+                </p>
+                <br />
+                <p>
+                  <img src="/img/blog-2026/gemelo-digital.jpg" alt="Gemelo Digital Social - Riesgos y Soberanía"
+                    style="max-width: 100%; height: auto; display: block; margin: 0 auto" />
+                </p>
+
+                <h3>El peligro de tercerizar los ojos del Estado</h3>
+                <p>
+                  Entregarle esta infraestructura a una corporación extranjera no es solo un problema de privacidad;
+                  es una cesión de soberanía. Cuando una empresa privada diseña y controla el algoritmo, ocurre lo que
+                  los expertos llaman <strong>"privatización del poder estatal"</strong>:
+                </p>
+                <ul>
+                  <li>
+                    <strong>La caja negra:</strong> El algoritmo se vuelve "propiedad intelectual" de la empresa.
+                    Ningún ciudadano —y a veces ni el propio Estado— puede auditar cómo toma las decisiones.
+                  </li>
+                  <li>
+                    <strong>La "misión expansiva" (<em>mission creep</em>):</strong> Lo que hoy se firma como un
+                    sistema para "optimizar la ayuda social", mañana se puede usar para la vigilancia predictiva o la
+                    persecución política.
+                  </li>
+                  <li>
+                    <strong>El costo de los errores:</strong> Si el algoritmo se equivoca y te marca como "falso
+                    positivo", no te atiende un empleado público en una oficina. Te bloquean la SUBE, te quitan una
+                    asignación o te frena la policía en la calle porque un sistema cerrado decidió que eras un riesgo.
+                    "El algoritmo no se equivoca: te descarta."
+                  </li>
+                </ul>
+                <p>
+                  En un país donde lo ilegal se naturalizó, el peligro del 'Gemelo Digital' no es que te espíen porque
+                  seas un agente secreto; el peligro es que sos un número prescindible.
+                </p>
+                <p>
+                  Imaginate esto: un software cerrado, diseñado en Estados Unidos o Europa, decide cruzar tus datos de
+                  salud con los de la AFIP. Como fuiste a un hospital público o compraste un medicamento oncológico,
+                  el sistema calcula que sos un 'gasto de alto riesgo' o un 'perfil conflictivo'. Al día siguiente, te
+                  dan de baja el subsidio, te bloquean la SUBE o te rechazan una cobertura. ¿A quién le vas a ir a
+                  reclamar? ¿A un bot? ¿A una empresa de Silicon Valley? El Estado se lava las manos y te atiende una
+                  pantalla que dice 'Acceso Denegado'. Te convirtieron en un falso positivo y te jodieron la vida con
+                  un click.
+                </p>
+                <h3>Contra la pared de la ley</h3>
+                <p>
+                  Este tipo de proyectos no tiene vía libre en Argentina. Nuestro país cuenta con herramientas legales
+                  para frenar estos abusos:
+                </p>
+                <blockquote>
+                  <p>
+                    La <strong>Ley 25.326 de Protección de Datos Personales</strong>, las garantías constitucionales
+                    de privacidad y el principio de <strong>no discriminación</strong> son barreras explícitas. Ningún
+                    gobierno puede entregar datos sensibles de la población sin una finalidad específica, transparente
+                    y respetando el debido proceso.
+                  </p>
+                </blockquote>
+                <p>
+                  Si las decisiones que afectan los derechos de los argentinos las va a tomar un software cerrado,
+                  diseñado en el extranjero y sin control público, estamos ante un escenario de vulnerabilidad
+                  inédito.
+                </p>
+                <h3>Conclusión</h3>
+                <p>
+                  "La soberanía no es solo una bandera; es que no usen tus propios datos para cazarte en el
+                  zoológico."
+                </p>
+                <p>
+                  Nos hablan de libertad mientras le entregan las llaves de nuestra vida privada a contratistas de
+                  inteligencia militar extranjera. Es la privatización definitiva del control social. Usan la excusa
+                  de la 'modernización' para armar una lista negra digital automatizada.
+                </p>
+                <p>
+                  Si dejamos pasar esto porque 'ya nada nos sorprende', estamos firmando el cheque en blanco para que
+                  nos persigan, nos clasifiquen y nos descarten sin mover un solo dedo de la mano del mercado. Si no
+                  reaccionamos ahora, el próximo derecho que te saquen lo va a decidir un algoritmo que ni siquiera
+                  habla castellano. La eficiencia no puede ser el caballo de Troya para el control social. Digitalizar
+                  el Estado es necesario; entregarle la radiografía de nuestras vidas a corporaciones extranjeras para
+                  que hagan inteligencia sobre nosotros es, lisa y llanamente, una entrega de soberanía.
+                </p>
+
+                <p><strong>No somos datos esperando ser optimizados. Somos ciudadanos.</strong></p>
+              </div>
+            </div>
+          </div>
+          <!-- Footer del artículo -->
+
+          <footer style="
+                margin-top: var(--spacing-2xl);
+                padding-top: var(--spacing-xl);
+                border-top: 1px solid var(--color-mid);
+              ">
+            <div style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  flex-wrap: wrap;
+                  gap: var(--spacing-md);
+                ">
+              <span class="entry-date" style="font-size: var(--font-size-sm); color: var(--color-neutral)">
+                📅 2026-23-05
+              </span>
+              <div style="display: flex; gap: var(--spacing-sm)">
+                <a href="/pages/blog/2026/blog-2026.html"
+                  style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                  ← Volver al blog
+                </a>
+              </div>
+            </div>
+            <div style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: var(--spacing-md);
+                  max-width: 400px;
+                  margin: 0 auto;
+                  flex-wrap: wrap;
+                ">
+              <a href="/pages/quien-soy.html" style="
+                    background: var(--color-secondary);
+                    color: var(--color-light);
+                    border: none;
+                    padding: var(--spacing-md) var(--spacing-xl);
+                    border-radius: 8px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    cursor: pointer;
+                    transition: all var(--transition-fast);
+                    display: inline-flex;
+                    align-items: center;
+                    gap: var(--spacing-sm);
+                  " onmouseover="
+                    this.style.background = 'var(--color-warm)';
+                    this.style.transform = 'translateY(-2px)';
+                  " onmouseout="
+                    this.style.background = 'var(--color-secondary)';
+                    this.style.transform = 'translateY(0)';
+                  ">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                Contáctame
+              </a>
+            </div>
+          </footer>
+        </div>
+      </article>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-content">
+      <nav class="share-footer" aria-label="Compartir página">
+        <span class="share-title">Compartir en redes</span>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://resonancias.pages.dev/pages/blog/2026/Acuerdos.html"
+          target="_blank" rel="noopener noreferrer" class="share-btn facebook" title="Compartir en Facebook"
+          aria-label="Compartir en Facebook">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://twitter.com/intent/tweet?url=https://resonancias.pages.dev/pages/blog/2026/Acuerdos.html&text=Acuerdo%20entre%20élites%20|%20RESONANCIAS"
+          target="_blank" rel="noopener noreferrer" class="share-btn twitter" title="Compartir en X"
+          aria-label="Compartir en X">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="https://api.whatsapp.com/send?text=Acuerdo%20entre%20élites%20|%20RESONANCIAS%20https://resonancias.pages.dev/pages/blog/2026/Acuerdos.html"
+          target="_blank" rel="noopener noreferrer" class="share-btn whatsapp" title="Compartir en WhatsApp"
+          aria-label="Compartir en WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="https://bsky.app/intent/compose?text=Acuerdo%20entre%20élites%20|%20RESONANCIAS%20https://resonancias.pages.dev/pages/blog/2026/Acuerdos.html"
+          target="_blank" rel="noopener noreferrer" class="share-btn bluesky" title="Compartir en Bluesky"
+          aria-label="Compartir en Bluesky">
+          <i class="fa-brands fa-bluesky"></i>
+        </a>
+      </nav>
+      <p>© 2026 RESONANCIAS · Todos los derechos reservados</p>
+    </div>
+  </footer>
+  <a href="#main-content" class="back-to-top" aria-label="Volver arriba">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </a>
+</body>
+
+</html>
