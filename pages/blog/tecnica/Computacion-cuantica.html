@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Computación Cuántica: Rompiendo la Mordaza Binaria</title>
+  <meta name="description"
+    content="Propuesta de un nuevo paradigma entre la Computación Ondulatoria Cuántica y la Lógica Difusa para superar los límites de la computación convencional.">
+
+  <!-- URL Canónica -->
+  <link rel="canonical" href="https://resonancias.pages.dev/pages/blog/tecnica/computacion-cuantica.html" />
+
+  <!-- SEO y Accesibilidad -->
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Gabriel Ferré" />
+  <meta name="keywords"
+    content="computación cuántica, computación ondulatoria, lógica difusa, octoniones, oct-it, hardware cuántico, paradigma computacional" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Computación Cuántica: Rompiendo la Mordaza Binaria" />
+  <meta property="og:description"
+    content="Propuesta de un nuevo paradigma entre la Computación Ondulatoria Cuántica y la Lógica Difusa para superar los límites de la computación convencional." />
+  <meta property="og:image" content="https://resonancias.pages.dev/img/tecnica/eroecuantica.jpg" />
+  <meta property="og:url" content="https://resonancias.pages.dev/pages/blog/tecnica/computacion-cuantica.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="RESONANCIAS" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Computación Cuántica: Rompiendo la Mordaza Binaria" />
+  <meta name="twitter:description"
+    content="Propuesta de un nuevo paradigma entre la Computación Ondulatoria Cuántica y la Lógica Difusa para superar los límites de la computación convencional." />
+  <meta name="twitter:image:alt" content="Diagrama del octógono Oct-it: vector de fase y amplitud en espacio lógico" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.png" type="image/png" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/assets/css/estilos.css" />
+
+  <!-- Scripts -->
+  <script src="/assets/js/main.js" defer></script>
+
+  <!-- Estilos responsivos para el layout del artículo -->
+  <style>
+    @media (max-width: 768px) {
+      .article-layout {
+        flex-direction: column !important;
+        gap: var(--spacing-lg) !important;
+      }
+
+      .image-card {
+        position: relative !important;
+        top: auto !important;
+        width: 100% !important;
+        min-width: auto !important;
+        margin-bottom: var(--spacing-lg) !important;
+      }
+    }
+
+    /* Fix for content overflow */
+    .md-obsidian {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      max-width: 100%;
+    }
+
+    .md-obsidian img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      margin: var(--spacing-md) auto;
+    }
+
+    .md-obsidian table {
+      width: 100%;
+      display: block;
+      overflow-x: auto;
+      border-collapse: collapse;
+      margin: var(--spacing-lg) 0;
+    }
+
+    /* Horizontal view and smaller screen fixes */
+    @media (max-width: 1024px) {
+      .content-card {
+        margin: var(--spacing-md) !important;
+        padding: var(--spacing-md) !important;
+        max-width: calc(100% - 2 * var(--spacing-md)) !important;
+      }
+
+      .article-content {
+        width: 100%;
+        min-width: 0;
+      }
+    }
+
+    /* Estilos del Simulador Interactivo COD */
+    .simulador-box {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      margin: 10px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .simulador-box canvas {
+      background-color: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .simulador-box .controles {
+      width: 100%;
+      max-width: 580px;
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
+    .simulador-box .control-grupo {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .simulador-box .control-grupo label {
+      font-size: 0.85rem;
+      color: #100f0f;
+      margin-bottom: 5px;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    .simulador-box input[type="range"] {
+      width: 100%;
+      accent-color: #58a6ff;
+    }
+  </style>
+  <style>
+    /* Markdown incrustado desde Obsidian */
+    .md-obsidian h1,
+    .md-obsidian h2,
+    .md-obsidian h3,
+    .md-obsidian h4,
+    .md-obsidian h5,
+    .md-obsidian h6 {
+      margin-top: 1.6em;
+      margin-bottom: 0.6em;
+      line-height: 1.3;
+    }
+
+    .md-obsidian p {
+      margin: 0.9em 0;
+      line-height: 1.75;
+    }
+
+    .md-obsidian ul,
+    .md-obsidian ol {
+      margin: 0.9em 0 0.9em 1.6em;
+    }
+
+    .md-obsidian li {
+      margin: 0.4em 0;
+    }
+
+    .md-obsidian blockquote {
+      margin: 1.2em 0;
+      padding-left: 1em;
+      border-left: 3px solid var(--color-secondary);
+      color: var(--color-neutral);
+      font-style: italic;
+    }
+
+    .md-obsidian hr {
+      margin: 2em 0;
+      border: none;
+      border-top: 1px solid var(--color-mid);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header + menú -->
+  <div id="header"></div>
+  <div id="side-menu"></div>
+
+  <script src="/assets/js/includes.js"></script>
+  <script src="/assets/js/back-to-top.js" defer></script>
+
+  <!-- Skip to main content -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- Overlay para menú -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <section class="works-hero" role="img" aria-label="Computación Cuántica: Rompiendo la Mordaza Binaria" style='
+        margin-top: 0 !important;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("/img/tecnica/eroecuantica.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: var(--color-light);
+        padding: var(--spacing-3xl) 0;
+        text-align: center;
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+      '>
+    <div class="container">
+      <h2 style="
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          ">
+        Computación Cuántica: Rompiendo la Mordaza Binaria
+      </h2>
+      <p style="
+            font-size: var(--font-size-xl);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+          ">
+        Rompiendo la Mordaza Binaria </p>
+    </div>
+  </section>
+
+  <!-- Contenido principal -->
+  <main id="main-content" role="main"
+    style="flex: 1; display: flex; flex-direction: column; min-height: calc(100vh - 200px)">
+    <!-- Artículo principal -->
+    <div class="content-card" style="max-width: 100%; padding: var(--spacing-2xl) 0;">
+      <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+        <div class="container" style="max-width: 800px; margin: 0 auto">>
+          <!-- Header del artículo -->
+          <header class="post-header" style="text-align: center; margin-bottom: var(--spacing-2xl)">
+            <h1 style="
+                  font-size: var(--font-size-3xl);
+                  color: var(--color-dark);
+                  margin-bottom: var(--spacing-lg);
+                ">
+              Rompiendo la Mordaza Binaria </h1>
+            <div class="post-meta" style="
+                  display: flex;
+                  justify-content: center;
+                  gap: var(--spacing-lg);
+                  color: var(--color-neutral);
+                  font-size: var(--font-size-sm);
+                  flex-wrap: wrap;
+                ">
+              <span>· Gabriel Ferré</span>
+            </div>
+          </header>
+          <div class="article-layout" style="
+                 display: flex;
+                 gap: var(--spacing-xl);
+                 align-items: flex-start;
+               ">
+            <div class="article-content"
+              style="flex: 1; line-height: 1.5; color: var(--color-dark); display: flex; flex-direction: column; gap: var(--spacing-lg);">
+              <div id="intro-paragraph" class="md-obsidian" style="
+                    font-size: var(--font-size-lg);
+                    margin-bottom: var(--spacing-2xl);
+                    color: var(--color-warm);
+                    position: relative;
+                  ">
+                <!-- Insertar contenido aquí -->
+                <h1>Rompiendo la Mordaza Binaria: </h1>
+                <h3>Mi propuesta para un nuevo paradigma entre la Computación Ondulatoria Cuántica y la Lógica Difusa
+                </h3>
+                <p><strong>Autor:</strong> Gabril Ferré es mi seudonimo</p>
+                <p><strong>Marco de Investigación:</strong> "tesis-computacion-ondulatoria."</p>
+                <h3>1. La Paradoja del Embudo Cuántico: El origen de mi sospecha técnica</h3>
+                <p>Quienes observamos la evolución del hardware desde una perspectiva crítica solemos toparnos con una
+                  incómoda realidad:
+                  la optimización incremental tiene un límite biológico y tecnológico infranqueable. En las últimas
+                  décadas, la industria
+                  de la computación cuántica se ha embarcado en una carrera puramente cuantitativa: añadir más qubits,
+                  diseñar
+                  refrigeradores de dilución más potentes y estabilizar sistemas a fracciones de milikelvin. Sin
+                  embargo, detrás de estos
+                  colosales esfuerzos de ingeniería se esconde un secreto a voces: los resultados prácticos siguen
+                  siendo notablemente
+                  discretos y, en muchos aspectos, mediocres en comparación con las expectativas teóricas iniciales.</p>
+                <p><strong>Mi hipótesis parte de una premisa disruptiva:</strong> el cuello de botella no está en la
+                  física de los qubits en sí, sino en
+                  la arquitectura de los sistemas de control que los rodean. Identifico en la informática actual un
+                  profundo <em>sesgo de
+                    trayectoria</em> (<em>path dependency</em>): llevamos más de ochenta años perfeccionando el silicio,
+                  el álgebra de Boole y la
+                  arquitectura secuencial de Von Neumann. Al intentar gobernar los entornos cuánticos nativos —que
+                  operan de forma natural
+                  en espacios multidimensionales y continuos—, los laboratorios actuales recurren a una electrónica
+                  clásica intermedia
+                  configurada bajo una rígida lógica binaria (<em>Radix-2</em>: 0 y 1).</p>
+                <p>Denomino a esta desconexión una verdadera <strong>mordaza binaria</strong> o un embudo destructivo de
+                  datos. Desde mi perspectiva,
+                  estamos obligando a la inmensa riqueza paralela de una QPU a colapsar prematuramente y a traducirse a
+                  cadenas
+                  secuenciales de ceros y unos simplemente porque es el único lenguaje que nuestra electrónica
+                  intermedia clásica es capaz
+                  de enrutar. El inconformismo con esta mediocridad sistémica impulsó la sospecha original que planteé
+                  inicialmente en mi
+                  blog: si queremos resolver los problemas complejos del mañana, es absurdo seguir domesticando la
+                  materia con las
+                  anteojeras lógicas del ayer. <strong>Por ello, propongo el desarrollo de un puente cognitivo de
+                    hardware</strong> que hable el mismo
+                  idioma fluido de la naturaleza.</p>
+                <h3>2. El Axioma del Continuo: De la rigidez del bit a la fluidez ondulatoria</h3>
+                <p>La naturaleza íntima de la realidad no funciona a base de golpes discretos o interrupción de
+                  corrientes; la física
+                  fundamental es analógica, continua y esencialmente ondulatoria. Reducir la capacidad de procesamiento
+                  de la materia a
+                  los extremos absolutos de un interruptor ("encendido" o "apagado") es una limitación artificial
+                  autoimpuesta.</p>
+                <p><strong>Mi hipótesis de la Computación Ondulatoria Difusa (COD) nace de un ejercicio personal de
+                    pensamiento lateral:</strong> en
+                  lugar de forzar sistemas cuánticos a imitar compuertas lógicas rígidas, propongo delegar el
+                  procesamiento de datos a una
+                  arquitectura basada en variables continuas y modulaciones de fase físicas. Utilizando las propiedades
+                  intrínsecas de las
+                  ondas —como la fase, la amplitud y la interferencia— demuestro conceptualmente que es posible
+                  codificar y operar estados
+                  lógicos infinitamente más ricos que un bit clásico, procesando la incertidumbre y el contexto
+                  directamente en el tejido
+                  del hardware.</p>
+                <h3>3. El Marco Matemático: El "Oct-it" y la Geometría Octoniónica</h3>
+                <p>Para dotar a mi hipótesis de la solidez necesaria en su fase de diseño en papel, <strong>he
+                    sustituido el concepto tradicional
+                    de bit y he definido una nueva unidad lógica base: el Oct-it</strong>.</p>
+                <p>A diferencia de un bit, defino el estado de un <em>Oct-it</em> mediante un vector en coordenadas
+                  polares dentro de un espacio
+                  de fases delimitado geométricamente por un octógono regular de mi autoría:</p>
+                <ul>
+                  <li>
+                    <p><strong>La Fase (θ):</strong> Determina cuál de los 8 vértices puros (estados discretos base de
+                      control) es el dominante en la
+                      operación. He espaciado estos vértices simétricamente en múltiplos exactos de:</p>
+                    <p>θ\=n4π​</p>
+                  </li>
+                  <li>
+                    <p><strong>La Magnitud o Amplitud (r):</strong> Representa la certeza, la energía o el grado de
+                      verdad del estado lógico en un rango
+                      continuo (0≤r≤1).</p>
+                    <ul>
+                      <li>
+                        <p>Cuando r\=1, el sistema se sitúa en el perímetro del octógono, manifestando un estado puro y
+                          determinista.</p>
+                      </li>
+                      <li>
+                        <p>Cuando r&lt;1, introduzco el concepto de <strong>Estado Difuso Nativo</strong>, donde
+                          coexiste información intermedia y matices
+                          contextuales.</p>
+                      </li>
+                      <li>
+                        <p>Cuando r\=0, ubico el vector en el centro exacto del octógono, lo que matemáticamente
+                          equivale a la
+                          incertidumbre total o al vacío lógico de mi sistema.</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+
+
+                <figure style="margin: var(--spacing-lg) 0; text-align: center;">
+                  <img src="/img/tecnica/oct-it.jpg"
+                    alt="Diagrama del oct-it: vector de fase y amplitud en espacio lógico" style="
+                        width: 100%;
+                        height: auto;
+                        max-height: 600px;
+                        object-fit: contain;
+                        border-radius: 8px;
+                        margin-bottom: var(--spacing-sm);
+                      " />
+                  <figcaption
+                    style="font-size: var(--font-size-sm); color: var(--color-neutral); font-style: italic; line-height: 1.5; text-align: justify; margin: 0 auto; max-width: 95%;">
+                    <strong>El Espacio de Fases del Oct-it.</strong> Mapeo geométrico bidimensional de la unidad lógica
+                    base mediante una estructura octogonal regular. Los 8 vértices ($V_0$ a $V_7$) definen los estados
+                    puros de control espaciados simétricamente a $\frac{\pi}{4}$ radianes. El gradiente interno
+                    representa el Estado Difuso Nativo ($0 < r < 1$) donde coexisten los matices contextuales antes del
+                      colapso del vector en el centro ($r=0$), que equivale matemáticamente al vacío lógico por
+                      interferencia destructiva. </figcaption>
+                </figure>
+                <p>Para dotar a mi arquitectura de la capacidad de resolver problemas de alta complejidad contextual,
+                  <strong>he descartado el
+                    álgebra lineal ordinaria para este octógono y he optado por mapearlo utilizando Octoniones
+                    (O)</strong>. Exploto una propiedad
+                  matemática fascinante de los octoniones: la <strong>no-asociatividad</strong>. En mi espacio
+                  algebraico:
+                </p>
+                <p>(A⋅B)⋅C\=A⋅(B⋅C)</p>
+                <p>En términos de mi modelo de computación, esto significa que el orden en el que interactúan los datos
+                  altera el resultado
+                  de manera intrínseca. Utilizo esta característica para emular el funcionamiento del lenguaje humano y
+                  los entornos
+                  lógicos difusos, donde el contexto circundante modifica por completo el significado de una variable
+                  aislada.</p>
+                <h3>4. La Primera Encarnación: Canales de Radiofrecuencia e Interferencia Estructural</h3>
+                <p>En mi primera materialización conceptual para evadir la rigidez del silicio, prescindí por completo
+                  de los transistores
+                  tradicionales y opté por la física electromagnética a temperatura ambiente, utilizando frecuencias de
+                  microondas y
+                  Radiofrecuencia (RF).</p>
+                <p>Bajo este esquema macroscópico que diseñé, la señal física se comporta como una onda sinusoide
+                  modulada en fase en 8
+                  posiciones distintas, realizando un mapeo directo sobre una constelación del tipo 8-PSK. <strong>Lo
+                    que considero
+                    verdaderamente revolucionario de mi enfoque es la naturaleza de sus compuertas lógicas: estas no
+                    ejecutan código
+                    secuencial, sino interferencia física estructural</strong>.</p>
+                <p>He planteado estas compuertas como canales o tubos resonantes (como bifurcaciones en Y y acopladores
+                  direccionales)
+                  fabricados mediante impresión 3D de alta precisión por sinterizado de metal por láser. En mi diseño,
+                  la geometría
+                  interna del canal es, en sí misma, la función matemática. Al inyectar las ondas de RF por las entradas
+                  del circuito,
+                  estas viajan y colisionan dentro de la estructura; la interferencia constructiva o destructiva
+                  resultante resuelve la
+                  operación matemática de manera pasiva e instantánea a la velocidad de la luz, sin consumir ciclos de
+                  reloj clásicos.</p>
+                <p>
+                  <br />
+                  <img src="/img/tecnica/bifurcacion-Y.png"
+                    alt="Canales resonantes bifurcados en Y para interferencia estructural de radiofrecuencia" style="
+                      width: 100%;
+                      height: auto;
+                      max-height: 600px;
+                      object-fit: contain;
+                      border-radius: 8px;
+                      margin-bottom: var(--spacing-md);
+                    " />
+                <p>Incluso el método de depuración de errores o el filtrado de estados prohibidos lo diseñé de forma
+                  pasiva mediante un
+                  mecanismo de <strong>cancelación activa</strong>. Si el resultado geométrico arrojaba un componente en
+                  una coordenada no permitida,
+                  mi hardware inyectaba automáticamente una réplica de la misma onda con idéntica potencia pero
+                  desfasada exactamente en
+                  media longitud de onda (Δϕ\=π). El resultado era una aniquilación destructiva total que colapsaba el
+                  vector espurio a
+                  cero de forma completamente limpia y pasiva.</p>
+                <h4>Mi hallazgo del cuello de botella macroscópico</h4>
+                <p>La honestidad científica me obligó a registrar un punto ciego crítico en esta fase: las paredes de
+                  metal impresas en 3D
+                  presentan imperfecciones microscópicas y fricción interna. Al analizar analíticamente este fenómeno,
+                  encontré que genera
+                  atenuación de la señal y pérdidas severas por dispersión. A medida que intentaba miniaturizar el
+                  sistema, descubrí que
+                  la Relación Señal/Ruido (SNR) se degradaba drásticamente, provocando que los 8 puntos limpios de mi
+                  constelación del
+                  Oct-it se volvieran difusos e ilegibles al aproximarse al centro del vacío lógico.</p>
+                <h3>5. El Salto Superador: Óptica Cuántica en Gas de Cesio-133</h3>
+                <p>Para resolver definitivamente las pérdidas por fricción de las guías de onda metálicas que yo mismo
+                  detecté, <strong>hice
+                    evolucionar mi hipótesis de forma radical:</strong> mudé el concepto de interferencia física desde
+                  el mundo macroscópico hacia
+                  los contenedores de información perfectos y libres de desgaste de la naturaleza: los
+                  <strong>átomos</strong>.
+                </p>
+                <p>En esta segunda iteración de mi autoría, sustituyo las microondas por óptica cuántica operando sobre
+                  un <strong>Gas
+                    monoatómico de Cesio-133</strong>. En lugar de fabricar complejos e imperfectos tubos de metal a
+                  escala micro, mi sistema
+                  emplea pulsos de luz láser finamente sintonizados (fotones de control). He diseñado las operaciones de
+                  rotación de fase
+                  y filtrado algebraico para que se ejecuten directamente al interactuar estos fotones con los niveles
+                  electrónicos
+                  hiperfinos de los átomos de Cesio de manera pasiva y resonante. Al eliminar las paredes físicas
+                  mediante mi propuesta
+                  óptica, la fidelidad matemática alcanza niveles moleculares absolutos.</p>
+                <h3>6. El Cilindro Lógico: Un espacio vectorial en tres dimensiones (0−1−D)</h3>
+                <p>Al trasladar mi hipótesis al entorno atómico del Cesio, <strong>expandí matemáticamente mi estructura
+                    lógica</strong>, haciéndola
+                  evolucionar desde el plano bidimensional del octógono hacia un <strong>Cilindro Lógico</strong> de mi
+                  invención que unifica un
+                  espacio híbrido complejo-real (C×R).</p>
+                <p>Bajo este nuevo enfoque, abandono el binarismo tradicional para operar en una base ternaria
+                  conceptual diseñada por mí:</p>
+                <ul>
+                  <li>
+                    <p><strong>Estado 0:</strong> Representa la certeza determinista en el extremo negativo del eje
+                      real.</p>
+                  </li>
+                  <li>
+                    <p><strong>Estado 1:</strong> Representa la certeza determinista en el extremo positivo del eje
+                      real.</p>
+                  </li>
+                  <li>
+                    <p><strong>Estado D (Difuso Real):</strong> Un gradiente analógico continuo que no es ni 0 ni 1,
+                    <p>En mi diseño con gas de Cesio, el <strong>Estado D</strong> adquiere una dimensión física
+                      concreta al
+                      convertirse en una <strong>"trampa de
+                        coherencia oscura"</strong> controlada. Cuando los fotones de control interactúan con los
+                      átomos,
+                      elevan el vector de estado de
+                      mi sistema (Ψ) hacia una tercera dimensión geométrica: el <strong>Eje vertical Z</strong>.</p>
+                    <p>Esta "altitud" cuántica abstrae temporalmente los datos de la horizontal clásica. Es ahí, en la
+                      cúspide del cilindro y
+                      protegida en la coherencia oscura que propongo, donde la interferencia atómica resuelve los
+                      cálculos
+                      de forma
+                      masivamente paralela a la velocidad de la luz, antes de proyectar el resultado final direccionado
+                      de
+                      vuelta hacia mi
+                      plano base del octógono de fases.</p>
+                    <p>_(Nota de autoría: Esta tridimensionalidad geométrica es la que modelé específicamente en los
+                      parámetros de mi script interactivo de soporte, donde permito manipular el Eje X de la Amplitud
+                      Real,
+                      el Eje Y del Desfase Ondulatorio y el Eje Z del Nivel de Difusión Atómica para observar la
+                      transición
+                      del vector Ψ generado por mi arquitectura)_.</p>
+
+                    <figure style="margin: var(--spacing-lg) 0; text-align: center;">
+                      <div class="simulador-box">
+                        <canvas id="canvasCOD" width="580" height="400"></canvas>
+                        <div class="controles">
+                          <div class="control-grupo">
+                            <label id="lblX">Eje X (Amplitud Real / Binario): 0.00</label>
+                            <input type="range" id="sldX" min="-100" max="100" value="35">
+                          </div>
+                          <div class="control-grupo">
+                            <label id="lblY">Eje Y (Desfase de Onda / Plano Octogonal): 0.00</label>
+                            <input type="range" id="sldY" min="-100" max="100" value="50">
+                          </div>
+                          <div class="control-grupo">
+                            <label id="lblZ">Eje Z (Nivel de Difusión Atómica 'D'): 0.00</label>
+                            <input type="range" id="sldZ" min="-100" max="100" value="60">
+                          </div>
+                        </div>
+                      </div>
+
+                      <script>
+                        (function () {
+                          const canvas = document.getElementById('canvasCOD');
+                          const ctx = canvas.getContext('2d');
+
+                          const sldX = document.getElementById('sldX');
+                          const sldY = document.getElementById('sldY');
+                          const sldZ = document.getElementById('sldZ');
+
+                          const lblX = document.getElementById('lblX');
+                          const lblY = document.getElementById('lblY');
+                          const lblZ = document.getElementById('lblZ');
+
+                          // Configuración de visualización isométrica
+                          const ESCALA = 140;
+                          const CENTRO_X = 325;
+                          const CENTRO_Y = 220;
+
+                          function proyectar(x, y, z) {
+                            const angulo = Math.PI / 6.0; // Perspectiva a 30 grados
+                            const x2d = x - (y * Math.cos(angulo));
+                            const y2d = -z + (y * Math.sin(angulo)); // Z invertido para que apunte al cielo de la pantalla
+                            return {
+                              x: CENTRO_X + (x2d * ESCALA),
+                              y: CENTRO_Y + (y2d * ESCALA)
+                            };
+                          }
+
+                          function linea3D(x1, y1, z1, x2, y2, z2, color, grosor = 1, esDiscontinua = false) {
+                            const p1 = proyectar(x1, y1, z1);
+                            const p2 = proyectar(x2, y2, z2);
+                            ctx.beginPath();
+                            ctx.strokeStyle = color;
+                            ctx.lineWidth = grosor;
+                            ctx.setLineDash(esDiscontinua ? [4, 4] : []);
+                            ctx.moveTo(p1.x, p1.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.stroke();
+                          }
+
+                          function punto3D(x, y, z, texto, color) {
+                            const p = proyectar(x, y, z);
+                            ctx.beginPath();
+                            ctx.fillStyle = color;
+                            ctx.arc(p.x, p.y, 5, 0, 2 * Math.PI);
+                            ctx.fill();
+                            ctx.fillStyle = "#c9d1d9";
+                            ctx.font = "bold 12px -apple-system, sans-serif";
+                            ctx.fillText(texto, p.x + 10, p.y + 4);
+                          }
+
+                          function render() {
+                            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                            // Captura de valores flotantes (-1.0 a 1.0)
+                            const valX = sldX.value / 100;
+                            const valY = sldY.value / 100;
+                            const valZ = sldZ.value / 100;
+
+                            lblX.innerText = `Eje X (Amplitud Real / Binario): ${valX.toFixed(2)}`;
+                            lblY.innerText = `Eje Y (Desfase de Onda / Plano Octogonal): ${valY.toFixed(2)}`;
+                            lblZ.innerText = `Eje Z (Nivel de Difusión Atómica 'D'): ${valZ.toFixed(2)}`;
+
+                            // 1. DIBUJAR EJES DE REFERENCIA FISICA
+                            linea3D(-1.5, 0, 0, 1.5, 0, 0, "#30363d", 1); // Eje X
+                            linea3D(0, -1.5, 0, 0, 1.5, 0, "#30363d", 1); // Eje Y
+                            linea3D(0, 0, -1.2, 0, 0, 1.5, "#30363d", 1); // Eje Z
+
+                            const pEjeX = proyectar(1.55, 0, 0);
+                            const pEjeY = proyectar(0, 1.55, 0);
+                            const pEjeZ = proyectar(0, 0, 1.55);
+                            ctx.fillStyle = "#8b949e";
+                            ctx.font = "10px sans-serif";
+                            ctx.fillText("Amplitud (X)", pEjeX.x, pEjeX.y);
+                            ctx.fillText("Desfase (Y)", pEjeY.x, pEjeY.y);
+                            ctx.fillText("Difusión (Z)", pEjeZ.x, pEjeZ.y);
+
+                            // 2. CONSTRUCCIÓN DEL OCTÓGONO BASE EN EL PLANO ECUATORIAL (Z = 0)
+                            let vertices = [];
+                            for (let i = 0; i < 8; i++) {
+                              let angulo = i * Math.PI / 4.0;
+                              vertices.push({ x: Math.cos(angulo), y: Math.sin(angulo), z: 0 });
+                            }
+                            for (let i = 0; i < 8; i++) {
+                              let sig = (i + 1) % 8;
+                              linea3D(vertices[i].x, vertices[i].y, vertices[i].z, vertices[sig].x, vertices[sig].y, vertices[sig].z, "rgba(88, 166, 255, 0.35)", 2);
+                            }
+
+                            // 3. HITOS DE LA LOGICA TERNARIA (0, 1, D)
+                            punto3D(-1, 0, 0, "Estado '0'", "#f85149");
+                            punto3D(1, 0, 0, "Estado '1'", "#f85149");
+                            punto3D(0, 0, 1, "Estado 'D' (Cesio Coherente)", "#2ea043");
+
+                            // 4. PROYECCIÓN DE SOMBRA DEL VECTOR (Volumen y profundidad)
+                            linea3D(valX, valY, valZ, valX, valY, 0, "rgba(210, 153, 34, 0.25)", 1, true);
+                            linea3D(0, 0, 0, valX, valY, 0, "rgba(210, 153, 34, 0.25)", 1, true);
+
+                            // 5. VECTOR DE ESTADO ACTUAL (FOTÓNICO/ATÓMICO)
+                            linea3D(0, 0, 0, valX, valY, valZ, "#ffab70", 3);
+                            punto3D(valX, valY, valZ, " Vector de Estado (ψ)", "#ffab70");
+                          }
+
+                          sldX.addEventListener('input', render);
+                          sldY.addEventListener('input', render);
+                          sldZ.addEventListener('input', render);
+
+                          render();
+                        })();
+                      </script>
+                      <figcaption
+                        style="font-size: var(--font-size-sm); color: var(--color-neutral); font-style: italic; line-height: 1.5; text-align: justify; margin: 0 auto; max-width: 95%;">
+                        <strong>El Cilindro Lógico Tridimensional ($\mathbb{C} \times \mathbb{R}$).</strong> Interfaz
+                        interactiva de soporte desarrollada para visualizar el comportamiento dinámico del vector de
+                        estado ($\Psi$). Al migrar la hipótesis al gas de Cesio-133, el sistema expande el binarismo
+                        clásico hacia una base ternaria conceptual ($0$, $1$ y el Estado Difuso Real "D"). El eje
+                        vertical $Z$ representa la "altitud" cuántica de la trampa de coherencia oscura, aislando el
+                        procesamiento analógico y masivamente paralelo de la horizontal binaria tradicional antes de su
+                        proyección final.
+                      </figcaption>
+                    </figure>
+
+                    <h3>7. Auditoría de Viabilidad: Desafíos en mi horizonte del papel</h3>
+                    <p>Para mantener el rigor que me exijo como ingeniero ante cualquier propuesta científica
+                      rupturista, el
+                      pipeline actual de
+                      mi investigación en esta phase de diseño teórico enfoca sus esfuerzos en resolver tres puntos
+                      ciegos
+                      críticos que he
+                      auto-auditado:</p>
+                    <ul>
+                      <li>
+                        <p><strong>El dilema de la lectura cuántica:</strong> El Estado D (Difuso) en la trampa de
+                          coherencia oscura que diseñé es altamente
+                          sensible. Medir las rotaciones de fase finales en mi octógono sin provocar que este estado
+                          colapse
+                          prematuramente de
+                          forma destructiva es mi mayor reto técnico actual. Me encuentro estudiando la viabilidad de
+                          implementar <em>mediciones
+                            débiles</em> (<em>weak measurements</em>) para extraer información sutil del sistema
+                          continuo
+                      </li>
+                      <li>
+                        <p><strong>La paradoja térmica:</strong> Una de las promesas más atractivas de mi primera fase
+                          con
+                          RF macroscópica era su capacidad
+                          de operar por completo a temperatura ambiente. Sin embargo, reconozco que mi transición
+                          superadora
+                          hacia el gas de
+                          Cesio-133 reintroduce la necesidad de infraestructuras complejas, como confinamientos
+                          magnéticos y
+                          trampas ópticas
+                          (láseres de enfriamiento y Doppler) para estabilizar mecánicamente los estados atómicos.</p>
+                      </li>
+                      <li>
+                        <p><strong>Mapeo del álgebra no-asociativa:</strong> Traducir las reglas de los octoniones (O) a
+                          transiciones electrónicas reales en
+                          el Cesio implica una alta complejidad matemática. Actualmente trabajo en demostrar en papel
+                          que
+                          combinando
+                          únicamente mis operadores de rotación de fase e inversión puedo mapear de forma universal
+                          cualquier coordenada
+                          interna del cilindro lógico.</p>
+                      </li>
+                    </ul>
+                    <h3>8. Conclusión: Hacia un hardware libre de ataduras</h3>
+                    <p>La consistencia matemática de mi propuesta de Computación Ondulatoria Difusa (COD) demuestra en
+                      el
+                      papel que existe una
+                      alternativa viable al cuello de botella de los sistemas actuales. Al dividir mi interfaz en un
+                      plano
+                      de filtrado
+                      octogonal y un eje vertical de libertad tridimensional controlado por bombardeo fotónico,
+                      demuestro
+                      que no estamos
+                      obligados a aceptar la mediocridad de traducir la riqueza de la naturaleza a cadenas binarias
+                      secuenciales.</p>
+                    <p>El objetivo último de mi hipótesis general no es simplemente competir en velocidad bruta
+                      añadiendo
+                      miles de componentes
+                      idénticos en costosos entornos criogénicos. Propongo un salto cualitativo fundamental: transformar
+                      el
+                      hardware
+                      intermedio del futuro para que deje de operar como un conjunto de compuertas lógicas rígidas y
+                      artificiales, y comience
+                      a moldear paisajes probabilísticos y resonantes directamente sobre la estructura íntima de la
+                      materia.
+                    </p>
+                    <br>
+                    hechizo de la coherencia oscura. Se aceptan sugerencias y debates a través del correo <a
+                      href="mailto:g.ferre2025@gmail.com">g.ferre2025@gmail.com</a> o en mi cuenta de red social X <a
+                      href="https://x.com/Miguel_CCom5" target="_blank" rel="noopener noreferrer">@Miguel_CCom5</a>".
+                    </p>
+                    <!--fin-->
+              </div>
+            </div>
+          </div>
+          <section class="blog-subscription" style="
+                margin-top: var(--spacing-3xl);
+                background: var(--color-mid);
+                padding: var(--spacing-2xl);
+                border-radius: 12px;
+                text-align: center;
+              ">
+            <nav class="share-footer" aria-label="Compartir página">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://resonancias.pages.dev/pages/blog/tecnica/Computación_Ondulatoria_Cuántica_y_Difusa-personalizada.html"
+                target="_blank" rel="noopener noreferrer" class="share-btn facebook" title="Compartir en Facebook"
+                aria-label="Compartir en Facebook">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="https://twitter.com/intent/tweet?url=https://resonancias.pages.dev/pages/blog/tecnica/Computación_Ondulatoria_Cuántica_y_Difusa-personalizada.html&text="
+                target="_blank" rel="noopener noreferrer" class="share-btn twitter" title="Compartir en X"
+                aria-label="Compartir en X">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+
+              <a href="https://api.whatsapp.com/send?text=https://resonancias.pages.dev/pages/blog/tecnica/Computación_Ondulatoria_Cuántica_y_Difusa-personalizada.html"
+                target="_blank" rel="noopener noreferrer" class="share-btn whatsapp" title="Compartir en WhatsApp"
+                aria-label="Compartir en WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+              <a href="https://bsky.app/intent/compose?text=https://resonancias.pages.dev/pages/blog/tecnica/Computación_Ondulatoria_Cuántica_y_Difusa-personalizada.html"
+                target="_blank" rel="noopener noreferrer" class="share-btn bluesky" title="Compartir en Bluesky"
+                aria-label="Compartir en Bluesky">
+                <i class="fa-brands fa-bluesky"></i>
+              </a>
+            </nav>
+            <h3 style="
+                  color: var(--color-dark);
+                  margin-bottom: var(--spacing-md);
+                  font-size: var(--font-size-2xl);
+                ">
+              Comparte en tus redes
+            </h3>
+            <h4>Suscríbete</h4>
+
+            <p style="
+                  color: var(--color-warm);
+                  margin-bottom: var(--spacing-xl);
+                  max-width: 500px;
+                  margin-left: auto;
+                  margin-right: auto;
+                  line-height: 1.6;
+                ">
+              Recibe notificaciones cuando publique nuevos ensayos y
+              reflexiones. Sin spam, solo contenido de calidad.
+            </p>
+            <div style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: var(--spacing-md);
+                  max-width: 400px;
+                  margin: 0 auto;
+                  flex-wrap: wrap;
+                ">
+              <a href="/pages/contacto.html" style="
+                    background: var(--color-secondary);
+                    color: var(--color-light);
+                    border: none;
+                    padding: var(--spacing-md) var(--spacing-xl);
+                    border-radius: 8px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    cursor: pointer;
+                    transition: all var(--transition-fast);
+                    display: inline-flex;
+                    align-items: center;
+                    gap: var(--spacing-sm);
+                  " onmouseover="
+                    this.style.background = 'var(--color-warm)';
+                    this.style.transform = 'translateY(-2px)';
+                  " onmouseout="
+                    this.style.background = 'var(--color-secondary)';
+                    this.style.transform = 'translateY(0)';
+                  ">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                Contáctame
+              </a>
+            </div>
+            <p style="
+                  font-size: var(--font-size-sm);
+                  color: var(--color-neutral);
+                  margin-top: var(--spacing-md);
+                ">
+              * Puedes darte de baja en cualquier momento
+            </p>
+          </section>
+
+          <footer style="
+                margin-top: var(--spacing-2xl);
+                padding-top: var(--spacing-xl);
+                border-top: 1px solid var(--color-mid);
+              ">
+            <div style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  flex-wrap: wrap;
+                  gap: var(--spacing-md);
+                ">
+              <div>📅 02/06/2026</div>
+              <div style="display: flex; gap: var(--spacing-sm)">
+                <a href="/pages/blog/tecnica/Tecnica.html" style="
+                      color: var(--color-secondary);
+                      text-decoration: none;
+                      font-weight: 600;
+                    ">
+                  ← Volver a Técnica
+                </a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </article>
+    </div>
+  </main>
+  <!-- Footer -->
+  <a href="#main-content" class="back-to-top" aria-label="Volver arriba">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </a>
+  <footer class="footer" role="contentinfo">
+    <div class="footer-content">
+      <p>© 2026 RESONANCIAS · Todos los derechos reservados</p>
+    </div>
+  </footer>
+</body>
+
+</html>
