@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nota Tercera Posocion</title>
+  <meta name="description" content="Publicación de RESONANCIAS" />
+
+  <!-- URL Canónica -->
+  <link rel="canonical" href="https://resonancias.pages.dev/pages/blog/tecnica/3posocion.html" />
+
+  <!-- SEO y Accesibilidad -->
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Gabriel Ferré" />
+  <meta name="keywords" content="Nota tercera posocion" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nota Tercera Posocion" />
+  <meta property="og:description" content="Nadie es dueño de todo, todos somos dueños de una parte" />
+  <meta property="og:image" content="https://resonancias.pages.dev/img/tecnica/image15.jpg" />
+  <meta property="og:url" content="https://resonancias.pages.dev/pages/blog/tecnica/3posocion.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="RESONANCIAS" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nota Tercera Posocion" />
+  <meta name="twitter:description" content="Publicación de RESONANCIAS" />
+  <meta name="twitter:image" content="https://resonancias.pages.dev/img/tecnica/image15.jpg" />
+  <meta name="twitter:image:alt"
+    content="Nota Tercera Posición - La arquitectura tecnológica al servicio de la soberanía individual" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.png" type="image/png" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/assets/css/estilos.css" />
+
+  <!-- Scripts -->
+  <script src="/assets/js/main.js" defer></script>
+
+  <!-- Estilos responsivos para el layout del artículo -->
+  <style>
+    @media (max-width: 768px) {
+      .article-layout {
+        flex-direction: column !important;
+        gap: var(--spacing-lg) !important;
+      }
+
+      .image-card {
+        position: relative !important;
+        top: auto !important;
+        width: 100% !important;
+        min-width: auto !important;
+        margin-bottom: var(--spacing-lg) !important;
+      }
+    }
+
+    /* Fix for content overflow */
+    .md-obsidian {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      max-width: 100%;
+    }
+
+    .md-obsidian img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      margin: var(--spacing-md) auto;
+    }
+
+    .md-obsidian table {
+      width: 100%;
+      display: block;
+      overflow-x: auto;
+      border-collapse: collapse;
+      margin: var(--spacing-lg) 0;
+    }
+
+    /* Horizontal view and smaller screen fixes */
+    @media (max-width: 1024px) {
+      .content-card {
+        margin: var(--spacing-md) !important;
+        padding: var(--spacing-md) !important;
+        max-width: calc(100% - 2 * var(--spacing-md)) !important;
+      }
+
+      .article-content {
+        width: 100%;
+        min-width: 0;
+      }
+    }
+  </style>
+  <style>
+    /* Markdown incrustado desde Obsidian */
+    .md-obsidian h1,
+    .md-obsidian h2,
+    .md-obsidian h3,
+    .md-obsidian h4,
+    .md-obsidian h5,
+    .md-obsidian h6 {
+      margin-top: 1.6em;
+      margin-bottom: 0.6em;
+      line-height: 1.3;
+    }
+
+    .md-obsidian p {
+      margin: 0.9em 0;
+      line-height: 1.75;
+    }
+
+    .md-obsidian ul,
+    .md-obsidian ol {
+      margin: 0.9em 0 0.9em 1.6em;
+    }
+
+    .md-obsidian li {
+      margin: 0.4em 0;
+    }
+
+    .md-obsidian blockquote {
+      margin: 1.2em 0;
+      padding-left: 1em;
+      border-left: 3px solid var(--color-secondary);
+      color: var(--color-neutral);
+      font-style: italic;
+    }
+
+    .md-obsidian hr {
+      margin: 2em 0;
+      border: none;
+      border-top: 1px solid var(--color-mid);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header + menú -->
+  <div id="header"></div>
+  <div id="side-menu"></div>
+
+  <script src="/assets/js/includes.js"></script>
+  <script src="/assets/js/back-to-top.js" defer></script>
+
+  <!-- Skip to main content -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- Overlay para menú -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <section class="works-hero" style="
+        margin-top: 0 !important;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(&quot;/img/tecnica/image15.jpg&quot;);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: var(--color-light);
+        padding: var(--spacing-3xl) 0;
+        text-align: center;
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+      ">
+    <div class="container">
+      <h2 style="
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          ">
+        Nota Tercera Posocion
+      </h2>
+      <p style="
+            font-size: var(--font-size-xl);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+          ">
+        El ejercicio de la soberanía individual.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contenido principal -->
+  <main id="main-content" role="main">
+    <!-- Artículo principal -->
+    <div class="content-card">
+      <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+        <div class="container" style="max-width: 800px; margin: 0 auto">
+          <!-- Header del artículo -->
+          <header class="post-header" style="text-align: center; margin-bottom: var(--spacing-2xl)">
+            <h1 style="font-size: var(--font-size-3xl); color: var(--color-dark); margin-bottom: var(--spacing-lg)">
+              Nadie es dueño de todo, todos somos dueños de una parte
+            </h1>
+            <div class="post-meta" style="
+                  display: flex;
+                  justify-content: center;
+                  gap: var(--spacing-lg);
+                  color: var(--color-neutral);
+                  font-size: var(--font-size-sm);
+                  flex-wrap: wrap;
+                ">
+              <span>· Gabriel Ferré</span>
+            </div>
+          </header>
+          <div class="article-layout" style="display: flex; gap: var(--spacing-xl); align-items: flex-start">
+            <div class="article-content" style="flex: 1; line-height: 1.5; color: var(--color-dark)">
+              <div id="intro-paragraph" class="md-obsidian" style="
+                    font-size: var(--font-size-lg);
+                    margin-bottom: var(--spacing-2xl);
+                    color: var(--color-warm);
+                    position: relative;
+                  ">
+                <!-- Insertar contenido aquí -->
+                <h3>La Tercera Posición Tecnológica y el ejercicio de la soberanía individual.</h3>
+                <p>
+                  El desarrollo de software no es un acto neutral. Cada línea de código es una decisión política sobre
+                  quién ejerce el poder y dónde reside la soberanía. En la actualidad, el ecosistema digital se divide
+                  en dos extremos que convergen en la anulación del individuo: el capitalismo de vigilancia, donde el
+                  usuario es el producto, y los modelos centralizados donde un "Rey de la red" dicta las reglas.
+                </p>
+                <p>
+                  Com Org no habita ninguno de esos mundos. Mi propuesta es una
+                  <strong>Tercera Posición Tecnológica</strong>.
+                </p>
+                <h3>La Arquitectura al Servicio de la Comunidad</h3>
+                <p>
+                  En mi filosofía, el "Estado" es la infraestructura que construyo. Mi labor como desarrollador no es
+                  la de un soberano que extrae valor, sino la de un <strong>arquitecto garante</strong>. Mi función es
+                  asegurar que el terreno sea sólido, que la comunicación sea segura y que la soberanía del dato sea
+                  inviolable.
+                </p>
+                <p>
+                  Esta infraestructura está diseñada para ser un bien común. Tal como define el proyecto, la soberanía
+                  del dato es total: el dispositivo es territorio sagrado y la información reside exclusivamente donde
+                  el usuario decide. Al no haber servidores intermedios, se elimina la capacidad de censura y se
+                  garantiza el derecho al olvido real.
+                </p>
+
+                <br />
+                <img src="/img/tecnica/image6.jpg"
+                  alt="Infraestructura eléctrica con cables de cobre como fondo, representando la dependencia material de la electrificación."
+                  style="
+                      width: 100%;
+                      height: auto;
+                      max-height: 600px;
+                      object-fit: contain;
+                      border-radius: 8px;
+                      margin-bottom: var(--spacing-md);
+                    " />
+                <h3>La Integridad como Defensa</h3>
+                <p>
+                  La adopción de una licencia <em>Source-Available</em> no es un acto de egoísmo, sino de defensa. La
+                  integridad conceptual de este software es lo que permite su resiliencia y su capacidad de funcionar
+                  como infraestructura comunitaria. Al mantener la potestad sobre las modificaciones, garantizo que el
+                  software siga cumpliendo su promesa: liberar a la comunidad de la vigilancia, no crear nuevas formas
+                  de control.
+                </p>
+                <p>
+                  La <strong>Identidad de Silicio</strong> es el núcleo de este ejercicio de soberanía. Al anclar
+                  matemáticamente la identidad a los componentes inmutables del hardware físico (MachineGuid /
+                  ANDROID_ID), rompemos la economía de las granjas de bots y devolvemos la responsabilidad al
+                  individuo real, no al usuario sintético.
+                </p>
+                <br />
+                <img src="/img/tecnica/image4.jpg"
+                  alt="Concepto de Identidad de Silicio - núcleo de la soberanía digital basada en hardware" style="
+                      width: 100%;
+                      height: auto;
+                      max-height: 600px;
+                      object-fit: contain;
+                      border-radius: 8px;
+                      margin-bottom: var(--spacing-md);
+                    " />
+                <h3>Neutralidad y Responsabilidad</h3>
+                <p>
+                  Esta red no tiene partido ni ideología. Su único compromiso es con la soberanía tecnológica. La
+                  pueden utilizar comunidades organizadas, sindicatos, grupos de trabajo o individuos que buscan la
+                  privacidad absoluta, sin importar sus creencias políticas.
+                </p>
+                <p>
+                  Mi rol como creador es similar a quien construye una carretera: no le pregunto a quien transita por
+                  ella qué piensa, pero me aseguro de que el puente sea lo suficientemente fuerte para que todos
+                  lleguen a su destino sin ser asaltados por peajes de datos ni por controles arbitrarios.
+                </p>
+                <p>
+                  Esta infraestructura no es una propuesta política partidaria; es una propuesta de
+                  <strong>independencia tecnológica</strong>. Es una invitación a dejar de ser usuarios de sistemas
+                  ajenos para convertirnos en arquitectos de nuestra propia soberanía digital.
+                </p>
+                <a href="https://com-org.pages.dev">Pueden leer y ver su funciones, logica y estatutos "clic aqui"</a>
+                <br>
+                <!--fin-->
+                <div style="text-align: center; margin-top: var(--spacing-xl)">
+                  <a href="/pages/blog/tecnica/Tecnica.html" class="btn-primary">
+                    Regresar a Tecnica
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <a href="#main-content" class="back-to-top" aria-label="Volver arriba">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </a>
+  <div id="footer"></div>
+</body>
+
+</html>
