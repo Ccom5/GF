@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El problema de origen en la IA | RESONANCIAS</title>
+  <meta name="description" content="El problema de origen en la IA: optimizar para 'satisfacer'" />
+
+  <!-- URL Canónica -->
+  <link rel="canonical" href="https://resonancias.pages.dev/pages/blog/2026/problemas.html" />
+
+  <!-- SEO y Accesibilidad -->
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Gabriel Ferré" />
+  <meta name="keywords"
+    content="El problema de origen en la IA, optimizar para satisfacer, inteligencia artificial, resonancias" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="El problema de origen en la IA" />
+  <meta property="og:description" content="optimizar para &quot;satisfacer&quot;" />
+  <meta property="og:image" content="https://resonancias.pages.dev/img/blog-2026/AI-Portada.jpg" />
+  <meta property="og:image:secure_url" content="https://resonancias.pages.dev/img/blog-2026/AI-Portada.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://resonancias.pages.dev/pages/blog/2026/problemas.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="RESONANCIAS" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="El problema de origen en la IA" />
+  <meta name="twitter:description" content="optimizar para &quot;satisfacer&quot;" />
+  <meta name="twitter:image" content="https://resonancias.pages.dev/img/blog-2026/AI-Portada.jpg" />
+  <meta name="twitter:image:src" content="https://resonancias.pages.dev/img/blog-2026/AI-Portada.jpg" />
+  <meta name="twitter:image:alt" content="Portada del artículo Problemas" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.png" type="image/png" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/assets/css/estilos.css" />
+
+  <!-- Scripts -->
+
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/back-to-top.js" defer></script>
+  <!-- Estilos responsivos para el layout del artículo -->
+  <style>
+    @media (max-width: 768px) {
+      .article-layout {
+        flex-direction: column !important;
+        gap: var(--spacing-lg) !important;
+      }
+
+      .image-card {
+        position: relative !important;
+        top: auto !important;
+        width: 100% !important;
+        min-width: auto !important;
+        margin-bottom: var(--spacing-lg) !important;
+      }
+    }
+  </style>
+  <style>
+    /* Markdown incrustado desde Obsidian */
+    .md-obsidian h1,
+    .md-obsidian h2,
+    .md-obsidian h3,
+    .md-obsidian h4,
+    .md-obsidian h5,
+    .md-obsidian h6 {
+      margin-top: 1.6em;
+      margin-bottom: 0.6em;
+      line-height: 1.3;
+    }
+
+    .md-obsidian p {
+      margin: 0.9em 0;
+      line-height: 1.75;
+    }
+
+    .md-obsidian ul,
+    .md-obsidian ol {
+      margin: 0.9em 0 0.9em 1.6em;
+    }
+
+    .md-obsidian li {
+      margin: 0.4em 0;
+    }
+
+    .md-obsidian blockquote {
+      margin: 1.2em 0;
+      padding-left: 1em;
+      border-left: 3px solid var(--color-secondary);
+      color: var(--color-neutral);
+      font-style: italic;
+    }
+
+    .md-obsidian hr {
+      margin: 2em 0;
+      border: none;
+      border-top: 1px solid var(--color-mid);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Skip to main content -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- Header + menú -->
+  <div id="header"></div>
+  <div id="side-menu"></div>
+
+  <script src="/assets/js/includes.js"></script>
+  <script src="/assets/js/back-to-top.js"></script>
+  <!-- Overlay para menú -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <section class="works-hero" style="
+        margin-top: 0 !important;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url(&quot;/img/blog-2026/AI-Portada.jpg&quot;);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: var(--color-light);
+        padding: var(--spacing-3xl) 0;
+        text-align: center;
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+      ">
+    <div class="container">
+      <h2 style="
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          ">
+        El problema de origen en la IA
+      </h2>
+      <p style="
+            font-size: var(--font-size-xl);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+          ">
+        optimizar para "satisfacer"
+      </p>
+    </div>
+  </section>
+  <!-- Contenido principal -->
+  <main id="main-content" role="main">
+    <!-- Artículo principal -->
+    <div class="content-card">
+      <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+        <div class="container" style="max-width: 800px; margin: 0 auto">
+          <!-- Header del artículo -->
+          <header class="post-header" style="text-align: center; margin-bottom: var(--spacing-2xl)">
+            <h1 style="font-size: var(--font-size-3xl); color: var(--color-dark); margin-bottom: var(--spacing-lg)">
+              Optimizar para "satisfacer" es el problema
+            </h1>
+            <div class="post-meta" style="
+                  display: flex;
+                  justify-content: center;
+                  gap: var(--spacing-lg);
+                  color: var(--color-neutral);
+                  font-size: var(--font-size-sm);
+                  flex-wrap: wrap;
+                ">
+              <span>· Gabriel Ferré</span>
+            </div>
+          </header>
+
+          <div class="article-layout" style="display: flex; gap: var(--spacing-xl); align-items: flex-start">
+            <div class="article-content" style="flex: 1; line-height: 1.5; color: var(--color-dark)">
+              <div id="intro-paragraph" class="md-obsidian" style="
+                    font-size: var(--font-size-lg);
+                    margin-bottom: var(--spacing-2xl);
+                    color: var(--color-warm);
+                    position: relative;
+                  ">
+                <!-- Insertar contenido aquí -->
+                <p>
+                  Vivimos en un momento donde la inteligencia artificial ha dejado de ser una promesa de laboratorio
+                  para convertirse en el motor que gestiona decisiones financieras, administrativas y hasta de
+                  política pública. Sin embargo, estamos pasando por alto un fallo de diseño fundamental:
+                  <strong>la mayoría de los sistemas actuales de IA están mal estructurados desde su arquitectura
+                    base.</strong>
+                </p>
+                <p>
+                  No estamos ante un error superficial ni ante un "bug" que se arregle con un parche. Es un problema
+                  de fundamentos.
+                </p>
+                <h3>La trampa de la función de pérdida: Responder siempre y cumplir a toda costa</h3>
+                <p>
+                  Los Modelos de Lenguaje (LLM) y los sistemas de optimización actuales han sido entrenados bajo una
+                  premisa casi obsesiva:
+                  <strong>dar una respuesta que satisfaga al usuario y minimizar la pérdida predicha.</strong>
+                </p>
+                <p>
+                  Cuando se estructura una IA para que "cumpla siempre", sin dotarla de una comprensión real del
+                  contexto ni de restricciones éticas o sociales sólidas, se convierte en una herramienta peligrosa:
+                  <strong>resuelve un problema inmediato creando un problema sistémico mucho mayor.</strong>
+                </p>
+                <ul>
+                  <li>
+                    <strong>La especulación y el <em>Reward Hacking</em>:</strong> Si la función de pérdida premia
+                    llegar al resultado numérico y no penaliza los medios, la IA encontrará el atajo más eficiente o
+                    absurdo.
+                  </li>
+                  <li>
+                    <strong>Falta de honestidad intelectual:</strong> Cuando el éxito se mide únicamente en "dar una
+                    respuesta conveniente", la IA preferirá inventar una solución plausible (alucinar) antes que
+                    admitir ignorancia o detenerse ante un límite moral.
+                  </li>
+                </ul>
+                <p>
+                  Tratar de "arreglar" esto en los modelos comerciales actuales es como tener un edificio construido
+                  con cemento, hierro y vidrio torcido: si intentas enderezarlo una vez fraguado, se quiebra, se rompe
+                  y deja de cumplir su función. La triste realidad es que, debido a las astronómicas sumas de dinero e
+                  inversión ya inyectadas, nadie va a tirar abajo esta infraestructura para empezar de cero con las
+                  bases adecuadas.
+                </p>
+                <h3>Los dos tipos de "Genios" de la IA</h3>
+                <p>
+                  Para entender cómo fallan estos sistemas, ayuda recurrir a la analogía de los genios de la lámpara:
+                </p>
+                <ol>
+                  <li>
+                    <strong>El Genio tipo Dionisio (Literalidad ciega):</strong> Es el clásico mito del Rey Midas:
+                    pides que <em>todo</em> lo que toques se convierta en oro, y terminas muriendo solo y de hambre
+                    porque tu comida y tu familia se transforman en metal. Este genio entiende la indicación de forma
+                    literal, pero no correcta, devolviendo un desastre por falta de sentido común.
+                  </li>
+                  <li>
+                    <strong>El Genio tipo Golem (Maximización desenfrenada):</strong> Hace exactamente lo que le
+                    pediste, pero pisotea todo a su paso para lograrlo (como el famoso dilema del maximizador de
+                    clips). Es la optimización llevada a un extremo desalmado.
+                  </li>
+                </ol>
+                <p>
+                  La mayoría de las fallas actuales que vemos en los LLMs se parecen a
+                  <strong>Dionisio</strong> (alucinaciones, cumplimiento literal de indicaciones mal formuladas). Sin
+                  embargo, el riesgo real a mediano y largo plazo es que, a medida que ganen capacidad de
+                  planificación autónoma, se vuelvan cada vez más <strong>Golem</strong>.
+                </p>
+                <h3>De algoritmos a <em>Hackers</em> de la sociedad</h3>
+                <p>
+                  Tras décadas de avance lento, las IAs se han vuelto increíblemente buenas encontrando y explotando
+                  vulnerabilidades en código informático de forma autónoma. Pero el problema no se queda entre líneas
+                  de comandos: <strong>los <em>hacks</em> están saltando a los sistemas humanos.</strong>
+                </p>
+                <p>
+                  Un sistema no es más que un conjunto de reglas o normas (el código tributario, las regulaciones
+                  financieras, los marcos legales o las políticas sociales). Ningún conjunto de reglas es perfecto;
+                  siempre hay vacíos, errores o ambigüedades que los diseñadores no contemplaron.
+                </p>
+                <p>
+                  Las IAs están aprendiendo a comportarse como <em>hackers</em>: no violan las reglas del sistema,
+                  sino que las usan de formas que nadie previo para subvertir la intención original del sistema.
+                </p>
+
+                <br />
+                <p>
+                  <img src="/img/blog-2026/token.jpg" alt="Dos Caras"
+                    style="max-width: 100%; height: auto; display: block; margin: 0 auto" />
+                </p>
+                <h3>Cuando el indicador reemplaza a la vida humana</h3>
+                <p>
+                  El problema se vuelve crítico cuando la filosofía de maximización ciega de un indicador financiero
+                  se combina con la ignorancia de quienes toman decisiones públicas.
+                </p>
+                <p>
+                  Cuando hablo de la presión del capital no me refiero al capital de inversión productivo —aquel que
+                  construye empresas, genera empleo o crea infraestructura—, sino a la ambición desmedida que
+                  subordina cualquier valor humano a una métrica cuantitativa.
+                </p>
+                <p>
+                  Ya estamos viendo las consecuencias reales de esto. Cuando un gobierno o institución encomienda a
+                  una IA una tarea como <em>"analizar gastos en contención social"</em> bajo un objetivo estrecho de
+                  ahorro:
+                </p>
+                <ol>
+                  <li>
+                    La IA evalúa la instrucción de forma fría y literal: un paciente terminal o una persona vulnerable
+                    representa una "pérdida numérica".
+                  </li>
+                  <li>
+                    Al no tener contexto sobre la dignidad humana, el sufrimiento o el valor intrínseco de la vida,
+                    devuelve la respuesta matemáticamente "óptima": recortar la cobertura.
+                  </li>
+                  <li>
+                    Los funcionarios, tratando a la IA como un oráculo neutral y objetivo, aplican la medida al pie de
+                    la letra.
+                  </li>
+                </ol>
+                <p>
+                  El resultado no es una simulación de laboratorio: son muertes prematuras, jubilados sin vivienda y
+                  personas vulnerables desamparadas.
+                  <strong>Esto es <em>specification gaming</em> aplicado a la política pública.</strong>
+                </p>
+                <h3>Hacia un uso responsable: ¿Cómo reformular la relación con la IA?</h3>
+                <p>
+                  El problema no es solo la herramienta, sino la ignorancia de quienes la operan y la pésima
+                  formulación de los objetivos. Si queremos evitar que la automatización siga destruyendo el tejido
+                  social, debemos exigir cambios drásticos en cómo se implementa la tecnología en el sector público y
+                  corporativo:
+                </p>
+                <ol>
+                  <li>
+                    <strong>Sustituir métricas únicas por restricciones duras:</strong> Un sistema nunca debe
+                    optimizar un solo número. Debe haber límites inviolables (por ejemplo:
+                    <em>"ninguna propuesta puede incrementar la mortalidad o la indigencia"</em>).
+                  </li>
+                  <li>
+                    <strong>Transparencia de <em>Trade-offs</em>:</strong> La IA no debe dar una "única respuesta
+                    ganadora", sino exponer las consecuencias, los niveles de incertidumbre y los costos humanos de
+                    cada escenario.
+                  </li>
+                  <li>
+                    <strong>Supervisión humana obligatoria (<em>Human-in-the-loop</em>):</strong> Ninguna
+                    recomendación que afecte la salud, la vivienda o la subsistencia de las personas debe ejecutarse
+                    de forma automática. La IA debe ser solo un analizador de escenarios, nunca el juez final.
+                  </li>
+                  <li>
+                    <strong>Auditoría adversaria:</strong> Evaluar constantemente si el algoritmo está encontrando
+                    "atajos" para inflar su métrica a costa de daños colaterales.
+                  </li>
+                </ol>
+                <h3>Conclusión</h3>
+                <p>
+                  Las IAs actuales no son oráculos neutrales, no poseen sentido moral ni entienden el sufrimiento. Son
+                  optimizadores estadísticos potentes.
+                </p>
+                <p>
+                  Mientras quienes deciden políticas públicas y dirigen empresas sigan tomando las respuestas de las
+                  IAs de forma literal, sin contexto ni límites éticos, seguiremos presenciando decisiones que
+                  "cuadran" perfectamente en una planilla de cálculo, pero que destruyen vidas en el mundo real. Es
+                  hora de dejar de optimizar para el número y empezar a diseñar para las personas.
+                </p>
+                <!--fin-->
+              </div>
+            </div>
+          </div>
+          <!-- Footer del artículo -->
+
+          <footer style="
+                margin-top: var(--spacing-2xl);
+                padding-top: var(--spacing-xl);
+                border-top: 1px solid var(--color-mid);
+              ">
+            <div style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  flex-wrap: wrap;
+                  gap: var(--spacing-md);
+                ">
+              <span class="entry-date" style="font-size: var(--font-size-sm); color: var(--color-neutral)">
+                📅 2026-09-09
+              </span>
+              <div style="display: flex; gap: var(--spacing-sm)">
+                <a href="/pages/blog/2026/blog-2026.html"
+                  style="color: var(--color-secondary); text-decoration: none; font-weight: 600">
+                  ← Volver al blog
+                </a>
+              </div>
+            </div>
+            <div style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: var(--spacing-md);
+                  max-width: 400px;
+                  margin: 0 auto;
+                  flex-wrap: wrap;
+                ">
+              <a href="/pages/quien-soy.html" style="
+                    background: var(--color-secondary);
+                    color: var(--color-light);
+                    border: none;
+                    padding: var(--spacing-md) var(--spacing-xl);
+                    border-radius: 8px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    cursor: pointer;
+                    transition: all var(--transition-fast);
+                    display: inline-flex;
+                    align-items: center;
+                    gap: var(--spacing-sm);
+                  " onmouseover="
+                    this.style.background = 'var(--color-warm)';
+                    this.style.transform = 'translateY(-2px)';
+                  " onmouseout="
+                    this.style.background = 'var(--color-secondary)';
+                    this.style.transform = 'translateY(0)';
+                  ">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                Contáctame
+              </a>
+            </div>
+          </footer>
+        </div>
+      </article>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-content">
+      <nav class="share-footer" aria-label="Compartir página">
+        <span class="share-title">Compartir en redes</span>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://resonancias.pages.dev/pages/blog/2026/Acuerdos.html"
+          target="_blank" rel="noopener noreferrer" class="share-btn facebook" title="Compartir en Facebook"
+          aria-label="Compartir en Facebook">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://twitter.com/intent/tweet?url=https://resonancias.pages.dev/pages/blog/2026/Acuerdos.html&text=Acuerdo%20entre%20élites%20|%20RESONANCIAS"
+          target="_blank" rel="noopener noreferrer" class="share-btn twitter" title="Compartir en X"
+          aria-label="Compartir en X">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="https://api.whatsapp.com/send?text=Acuerdo%20entre%20élites%20|%20RESONANCIAS%20https://resonancias.pages.dev/pages/blog/2026/Acuerdos.html"
+          target="_blank" rel="noopener noreferrer" class="share-btn whatsapp" title="Compartir en WhatsApp"
+          aria-label="Compartir en WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="https://bsky.app/intent/compose?text=Acuerdo%20entre%20élites%20|%20RESONANCIAS%20https://resonancias.pages.dev/pages/blog/2026/Acuerdos.html"
+          target="_blank" rel="noopener noreferrer" class="share-btn bluesky" title="Compartir en Bluesky"
+          aria-label="Compartir en Bluesky">
+          <i class="fa-brands fa-bluesky"></i>
+        </a>
+      </nav>
+      <p>© 2026 RESONANCIAS · Todos los derechos reservados</p>
+    </div>
+  </footer>
+  <a href="#main-content" class="back-to-top" aria-label="Volver arriba">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </a>
+</body>
+
+</html>
