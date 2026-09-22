@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infraestructura de Datos e Interoperabilidad | RESONANCIAS</title>
+    <meta
+      name="description"
+      content="Propuesta de un marco nacional de normalización, interoperabilidad y referenciación territorial para la información pública en Argentina: diagnóstico, principios y beneficios para el sector público, privado y comunitario."
+    />
+
+    <!-- URL Canónica -->
+    <link rel="canonical" href="https://resonancias.pages.dev/pages/blog/tecnica/info-publica.html" />
+
+    <!-- SEO y Accesibilidad -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Gabriel Ferré" />
+    <meta
+      name="keywords"
+      content="interoperabilidad, datos públicos, información pública, normalización de datos, georreferenciación, Argentina, Gabriel Ferré"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Infraestructura de Datos e Interoperabilidad | RESONANCIAS" />
+    <meta
+      property="og:description"
+      content="Propuesta de un marco nacional de normalización, interoperabilidad y referenciación territorial para la información pública en Argentina."
+    />
+    <meta property="og:image" content="https://resonancias.pages.dev/img/tecnica/red-arg.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Infraestructura de datos e interoperabilidad de información pública" />
+    <meta property="og:url" content="https://resonancias.pages.dev/pages/blog/tecnica/info-publica.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="RESONANCIAS" />
+    <meta property="og:locale" content="es_AR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Infraestructura de Datos e Interoperabilidad | RESONANCIAS" />
+    <meta
+      name="twitter:description"
+      content="Propuesta de un marco nacional de normalización, interoperabilidad y referenciación territorial para la información pública en Argentina."
+    />
+    <meta name="twitter:image" content="https://resonancias.pages.dev/img/tecnica/red-arg.jpg" />
+    <meta name="twitter:image:alt" content="Infraestructura de datos e interoperabilidad de información pública" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/img/ui/favicon.png" type="image/png" />
+
+    <!-- Estilos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/assets/css/estilos.css" />
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js" defer></script>
+
+    <!-- Estilos responsivos para el layout del artículo -->
+    <style>
+      @media (max-width: 768px) {
+        .article-layout {
+          flex-direction: column !important;
+          gap: var(--spacing-lg) !important;
+        }
+        .image-card {
+          position: relative !important;
+          top: auto !important;
+          width: 100% !important;
+          min-width: auto !important;
+          margin-bottom: var(--spacing-lg) !important;
+        }
+      }
+
+      /* Fix for content overflow */
+      .md-obsidian {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        max-width: 100%;
+      }
+
+      .md-obsidian img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        display: block;
+        margin: var(--spacing-md) auto;
+      }
+
+      .md-obsidian table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+        border-collapse: collapse;
+        margin: var(--spacing-lg) 0;
+      }
+
+      /* Horizontal view and smaller screen fixes */
+      @media (max-width: 1024px) {
+        .content-card {
+          margin: var(--spacing-md) !important;
+          padding: var(--spacing-md) !important;
+          max-width: calc(100% - 2 * var(--spacing-md)) !important;
+        }
+
+        .article-content {
+          width: 100%;
+          min-width: 0;
+        }
+      }
+    </style>
+    <style>
+      /* Markdown incrustado desde Obsidian */
+      .md-obsidian h1,
+      .md-obsidian h2,
+      .md-obsidian h3,
+      .md-obsidian h4,
+      .md-obsidian h5,
+      .md-obsidian h6 {
+        margin-top: 1.6em;
+        margin-bottom: 0.6em;
+        line-height: 1.3;
+      }
+
+      .md-obsidian p {
+        margin: 0.9em 0;
+        line-height: 1.75;
+      }
+
+      .md-obsidian ul,
+      .md-obsidian ol {
+        margin: 0.9em 0 0.9em 1.6em;
+      }
+
+      .md-obsidian li {
+        margin: 0.4em 0;
+      }
+
+      .md-obsidian blockquote {
+        margin: 1.2em 0;
+        padding-left: 1em;
+        border-left: 3px solid var(--color-secondary);
+        color: var(--color-neutral);
+        font-style: italic;
+      }
+
+      .md-obsidian hr {
+        margin: 2em 0;
+        border: none;
+        border-top: 1px solid var(--color-mid);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header + menú -->
+    <div id="header"></div>
+    <div id="side-menu"></div>
+
+    <script src="/assets/js/includes.js"></script>
+    <script src="/assets/js/back-to-top.js" defer></script>
+
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Overlay para menú -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <section
+      class="works-hero"
+      style="
+        margin-top: 0 !important;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(&quot;/img/tecnica/red-arg.jpg&quot;);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: var(--color-light);
+        padding: var(--spacing-3xl) 0;
+        text-align: center;
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+      ">
+      <div class="container">
+        <h2
+          style="
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          ">
+          Datos e Interoperabilidad
+        </h2>
+        <p
+          style="
+            font-size: var(--font-size-xl);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+          ">
+          Gestión de la información técnica y pública
+        </p>
+      </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main id="main-content" role="main">
+      <!-- Artículo principal -->
+      <div class="content-card">
+        <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+          <div class="container" style="max-width: 800px; margin: 0 auto">
+            <!-- Header del artículo -->
+            <header class="post-header" style="text-align: center; margin-bottom: var(--spacing-2xl)">
+              <h1 style="font-size: var(--font-size-3xl); color: var(--color-dark); margin-bottom: var(--spacing-lg)">
+                Infraestructura de Datos e Interoperabilidad
+              </h1>
+              <div
+                class="post-meta"
+                style="
+                  display: flex;
+                  justify-content: center;
+                  gap: var(--spacing-lg);
+                  color: var(--color-neutral);
+                  font-size: var(--font-size-sm);
+                  flex-wrap: wrap;
+                ">
+                <span>· Gabriel Ferré</span>
+              </div>
+            </header>
+            <div class="article-layout" style="display: flex; gap: var(--spacing-xl); align-items: flex-start">
+              <div class="article-content" style="flex: 1; line-height: 1.5; color: var(--color-dark)">
+                <div
+                  id="intro-paragraph"
+                  class="md-obsidian"
+                  style="
+                    font-size: var(--font-size-lg);
+                    margin-bottom: var(--spacing-2xl);
+                    color: var(--color-warm);
+                    position: relative;
+                  ">
+                  <!-- Insertar contenido aquí -->
+                  <h3>Transformar la información dispersa en conocimiento para el desarrollo</h3>
+                  <blockquote>
+                    <p><strong>Nota de autor / Divulgación:</strong></p>
+                    <p>
+                      <em
+                        >Este ensayo aborda una problemática crítica en la gestión de la información técnica y pública:
+                        la fragmentación y falta de semántica común en los datos de interés público. Se propone un marco
+                        de normalización e interoperabilidad pensado como una infraestructura básica para la toma de
+                        decisiones, la planificación y la innovación. El enfoque conceptual expuesto en esta nota está
+                        disponible libremente para ser tomado por legisladores, asesores y actores del sector público o
+                        privado que deseen impulsar normativas o iniciativas en esta materia.</em
+                      >
+                    </p>
+                  </blockquote>
+                  <h2>1. El diagnóstico: Una abundancia de datos en un mar de inconexión</h2>
+                  <p>
+                    En Argentina, la cantidad de datos e información generados a diario por organismos gubernamentales,
+                    universidades, cooperativas, centros de investigación y sector privado es inmensa. Se produce
+                    información sobre producción, empleo, infraestructura, transporte, recursos naturales, salud y
+                    educación.
+                  </p>
+                  <p>
+                    Sin embargo, nos enfrentamos a un problema estructural:
+                    <strong>la información se encuentra atomizada e incomunicada.</strong>
+                  </p>
+                  <h3>El verdadero problema no es el formato de archivo</h3>
+                  <p>
+                    Suele pensarse que la solución a la falta de datos abiertos es simplemente dejar de publicar
+                    archivos en formato <code>.pdf</code> o <code>.html</code> y pasar a compartirlos en
+                    <code>.csv</code>, <code>.json</code> o <code>.excel</code>. Aunque el formato abierto es un paso
+                    inicial necesario, es ampliamente insuficiente.
+                  </p>
+                  <p>
+                    <strong
+                      >Los datos pueden hablar idiomas completamente distintos aun usando el mismo formato
+                      técnico.</strong
+                    >
+                  </p>
+                  <p>
+                    Por ejemplo, al intentar integrar dos bases de datos publicadas en formato <code>.json</code> sobre
+                    el mercado laboral y la producción local:
+                  </p>
+                  <ul>
+                    <li>
+                      Una entidad registra: <code>localidad = "San Miguel"</code>, <code>trabajadores = 1250</code>
+                    </li>
+                    <li>
+                      Otra entidad registra: <code>municipio = "San Miguel de Tucumán"</code>,
+                      <code>empleo_registrado = 1250</code>
+                    </li>
+                  </ul>
+                  <p>
+                    Para que un analista, una empresa o un algoritmo puedan cruzar estos datos, se presentan múltiples
+                    incertidumbres semánticas:
+                  </p>
+                  <ol>
+                    <li>
+                      ¿"San Miguel" y "San Miguel de Tucumán" refieren exactamente a la misma unidad territorial y con
+                      los mismos límites geoespaciales?
+                    </li>
+                    <li>
+                      ¿"Trabajadores" y "empleo registrado" contemplan la misma metodología de medición y universo de
+                      estudio?
+                    </li>
+                    <li>¿Corresponden al mismo período temporal y frecuencia de actualización?</li>
+                    <li>¿Tienen el mismo identificador o código estándar nacional?</li>
+                  </ol>
+                  
+                   <br />
+                  <img
+                    src="/img/tecnica/red-arg-1.jpg"
+                    alt="Infraestructura eléctrica con cables de cobre como fondo, representando la dependencia material de la electrificación."
+                    style="
+                      width: 100%;
+                      height: auto;
+                      max-height: 600px;
+                      object-fit: contain;
+                      border-radius: 8px;
+                      margin-bottom: var(--spacing-md);
+                    "
+                  />
+
+                  <p>
+                    El costo real de este escenario no aparece en los presupuestos públicos ni en los balances
+                    corporativos:
+                    <strong
+                      >se gastan miles de horas hombre en buscar, solicitar, limpiar, reinterpretar y reestructurar
+                      información antes de poder comenzar a analizarla o tomar una sola decisión.</strong
+                    >
+                  </p>
+                  <h2>2. La propuesta: La información interoperable como infraestructura pública</h2>
+                  <p>
+                    Así como un país requiere de rutas, redes eléctricas y fibra óptica para que circule la producción
+                    física y digital,
+                    <strong
+                      >necesita una infraestructura común de información para poder comprender su propia
+                      realidad.</strong
+                    >
+                  </p>
+                  <p>
+                    La propuesta de fondo es avanzar hacia un marco nacional de
+                    <strong>Normalización, Interoperabilidad y Referenciación Territorial</strong> para la información
+                    de interés público.
+                  </p>
+                  <h3>Principios clave de la propuesta</h3>
+                  <ol>
+                    <li>
+                      <strong>Interoperabilidad por sobre la mera apertura:</strong> No se trata solo de publicar más
+                      datos ("datos abiertos"), sino de garantizar que los datos puedan "hablar entre sí" (<em
+                        >interoperabilidad semántica, técnica y territorial</em
+                      >).
+                    </li>
+                    <li>
+                      <strong>Respeto estricto a la privacidad:</strong> La regulación no debe forzar a las empresas ni
+                      a las personas privadas a publicar sus datos confidenciales. El principio básico es:
+                      <em
+                        >si una entidad privada decide publicar voluntariamente información de interés público, esa
+                        información debe seguir el estándar común para ser útil a la sociedad.</em
+                      >
+                    </li>
+                    <li>
+                      <strong>Neutralidad tecnológica:</strong> No se impone el uso de un software o base de datos
+                      centralizada. Cada actor mantiene sus sistemas, siempre que exponga sus datos estructurados bajo
+                      un lenguaje, metadatos e identificadores comunes.
+                    </li>
+                    <li>
+                      <strong>Georreferenciación transversal:</strong> La mayor parte de los fenómenos económicos,
+                      productivos y sociales ocurren en un territorio. Toda información debe poder anclarse a
+                      identificadores geográficos normalizados (provincias, municipios, geometrías).
+                    </li>
+                  </ol>
+                  <h2>3. Beneficios transversales: ¿A quiénes sirve esta solución?</h2>
+                  <p>
+                    Un estándar de información interoperable no es un proyecto burocrático; es una palanca de eficiencia
+                    e innovación para todos los sectores de la sociedad.
+                  </p>
+                  <br />
+                  <img
+                    src="/img/tecnica/red-arg-2.jpg"
+                    alt="Infraestructura eléctrica con cables de cobre como fondo, representando la dependencia material de la electrificación."
+                    style="
+                      width: 100%;
+                      height: auto;
+                      max-height: 600px;
+                      object-fit: contain;
+                      border-radius: 8px;
+                      margin-bottom: var(--spacing-md);
+                    "
+                  />
+                  <h3>A. Para la Industria, el Comercio y el Sector Productivo</h3>
+                  <ul>
+                    <li>
+                      <strong>Reducción de costos de logística y prospección:</strong> Permite cruzar en tiempo real
+                      datos de infraestructura vial, capacidad energética, oferta laboral y centros de insumos para
+                      tomar decisiones de radicación e inversión.
+                    </li>
+                    <li>
+                      <strong>Inteligencia de mercado accesible:</strong> Las PyMEs y cooperativas —que no poseen
+                      recursos para contratar costosos estudios de mercado privados— pueden acceder a tableros
+                      integrados de producción y comercio.
+                    </li>
+                  </ul>
+                  <h3>B. Para las ONGs, Organizaciones Sociales y Comunitarias</h3>
+                  <ul>
+                    <li>
+                      <strong>Diagnósticos territoriales precisos:</strong> Facilita identificar dónde están las
+                      necesidades de infraestructura social, salud, ambiente o educación mediante el cruce de capas de
+                      información pública y territorial.
+                    </li>
+                    <li>
+                      <strong>Transparencia y control ciudadano:</strong> Permite auditar de manera objetiva el avance y
+                      resultado real de las obras o programas sociales ejecutados.
+                    </li>
+                  </ul>
+                  <h3>C. Para el Sector Público y los Gobiernos (Nación, Provincias, Municipios)</h3>
+                  <ul>
+                    <li>
+                      <strong>Planificación basada en evidencia:</strong> Evita la duplicación de inversiones y el
+                      solapamiento de programas estatales.
+                    </li>
+                    <li>
+                      <strong>Monitoreo automatizado:</strong> Permite construir tableros de control unificados para
+                      emergencias ambientales, desarrollo urbano o transporte sin necesidad de solicitar informes
+                      manuales a cada dependencia.
+                    </li>
+                  </ul>
+                  <h3>D. Para la Academia, Investigadores y Desarrolladores de IA</h3>
+                  <ul>
+                    <li>
+                      <strong>Alimento estructurado para Inteligencia Artificial y Ciencia de Datos:</strong> Los
+                      modelos de IA y de análisis predictivo no se benefician de datos desordenados. Un estándar
+                      nacional provee contexto, trazabilidad, calidad y metadatos indispensables para entrenar
+                      herramientas de análisis avanzado.
+                    </li>
+                    <li>
+                      <strong>Aceleración de la investigación aplicada:</strong> Reduce los tiempos de tesis e
+                      investigaciones científicas al eliminar la fase de "limpieza y reconstrucción de datos".
+                    </li>
+                  </ul>
+                  <h2>4. Perspectiva técnica: ¿Cómo se articula en la práctica?</h2>
+                  <p>
+                    A nivel de arquitectura, la solución no requiere un único gran servidor estatal centralizado, sino
+                    una <strong>capa de lenguaje unificada y distribuida</strong>:
+                  </p>
+                  <ol>
+                    <li>
+                      <strong>Diccionario de Entidades e Identificadores Unívocos:</strong> Uso de códigos
+                      estandarizados para provincias (<code>provincia_id</code>), municipios
+                      (<code>municipio_id</code>), actividades económicas (<code>actividad_id</code>), etc.
+                    </li>
+                    <li>
+                      <strong>Estructura de Metadatos Mínima Obligatoria:</strong> Cada dataset expone su autoría,
+                      metodología, fecha de actualización, frecuencia, sistema de coordenadas y nivel de confianza.
+                    </li>
+                    <li>
+                      <strong>Acceso vía APIs Abiertas:</strong> Mecanismos de consulta automatizados que permiten a
+                      aplicaciones externas integrar la información en tiempo real.
+                    </li>
+                  </ol>
+                  <h2>5. Conclusión: De la dispersión documental a la infraestructura de conocimiento</h2>
+                  <p>
+                    Un país no puede planificar, producir ni resolver sus problemas si carece de un lenguaje común para
+                    describir su realidad.
+                  </p>
+                  <p>
+                    Avanzar hacia un marco de normalización e interoperabilidad de la información de interés público es
+                    dar el salto conceptual definitivo:
+                    <strong
+                      >dejar de ver a la información pública como un conjunto de documentos aislados en carpetas o
+                      portales web, y empezar a tratarla como una infraestructura estratégica para el desarrollo
+                      económico, social y tecnológico.</strong
+                    >
+                  </p>
+                  <h3>¿Cómo llevar esto a la práctica legislativa?</h3>
+                  <p>
+                    Para los equipos técnicos y legisladores interesados en darle formato de ley a estas bases, la norma
+                    debería contemplar:
+                  </p>
+                  <ol>
+                    <li>La creación de un <strong>Estándar Nacional de Información de Interés Público</strong>.</li>
+                    <li>
+                      Un principio explícito sobre la
+                      <strong>no obligatoriedad de revelación de datos privados</strong>, aplicando las reglas solo
+                      sobre la información pública o publicada de forma voluntaria.
+                    </li>
+                    <li>
+                      Un esquema de <strong>implementación gradual</strong> (comenzando por la Administración Pública
+                      Nacional, siguiendo por programas con financiamiento público y posterior adhesión
+                      provincial/municipal).
+                    </li>
+                    <li>
+                      La gobernanza participativa del estándar entre el Estado, la academia y el sector
+                      técnico-productivo.
+                    </li>
+                  </ol>
+                  <!--fin-->
+                </div>
+                <a
+                  href="/pages/blog/tecnica/anexo-red-arg.html"
+                  style="
+                    display: block;
+                    margin: 0 auto;
+                    width: fit-content;
+                    background: var(--color-secondary);
+                    color: var(--color-light);
+                    border: none;
+                    padding: var(--spacing-md) var(--spacing-xl);
+                    border-radius: 8px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    cursor: pointer;
+                    transition: all var(--transition-fast);
+                    margin-bottom: var(--spacing-2xl);
+                  "
+                  onmouseover="
+                    this.style.background = 'var(--color-warm)';
+                    this.style.transform = 'translateY(-2px)';
+                  "
+                  onmouseout="
+                    this.style.background = 'var(--color-secondary)';
+                    this.style.transform = 'translateY(0)';
+                  "
+                >
+                  Consultar Anexo Técnico
+                </a>
+              </div>
+            </div>            
+            <!-- Footer del artículo -->
+
+            <footer
+              style="
+                margin-top: var(--spacing-2xl);
+                padding-top: var(--spacing-xl);
+                border-top: 1px solid var(--color-mid);
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  flex-wrap: wrap;
+                  gap: var(--spacing-md);
+                "
+              >
+                <div>
+                  <p
+                    style="
+                      color: var(--color-neutral);
+                      font-size: var(--font-size-sm);
+                      margin: 0;
+                    "
+                  >
+                    Publicado el <time datetime="">2026</time>
+                  </p>
+                </div>
+                <div style="display: flex; gap: var(--spacing-sm)">
+                  <a
+                    href="/pages/blog/tecnica/Tecnica.html"
+                    style="
+                      color: var(--color-secondary);
+                      text-decoration: none;
+                      font-weight: 600;
+                    "
+                  >
+                    ← Volver a Tecnica
+                  </a>
+                </div>
+              </div>
+            </footer>
+          </div>
+        </article>
+      </div>
+    </main>
+    <!-- Footer -->
+    <a href="#main-content" class="back-to-top" aria-label="Volver arriba">
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </a>
+    <div id="footer"></div>
+  </body>
+</html>

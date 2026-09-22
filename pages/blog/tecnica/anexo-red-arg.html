@@ -1,0 +1,945 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Anexo Técnico - Modelo Nacional de Interoperabilidad de Información |
+      RESONANCIAS
+    </title>
+    <meta
+      name="description"
+      content="Anexo técnico: propuesta de modelo nacional de interoperabilidad de información, estándares y arquitectura de articulación."
+    />
+
+    <!-- URL Canónica -->
+    <link rel="canonical" href="https://resonancias.pages.dev/pages/blog/tecnica/anexo-red-arg.html" />
+
+    <!-- SEO y Accesibilidad -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Gabriel Ferré" />
+    <meta name="keywords" content="interoperabilidad, datos publicos, anexo tecnico, Gabriel Ferré" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Anexo Técnico - Modelo Nacional de Interoperabilidad de Información | RESONANCIAS"
+    />
+    <meta
+      property="og:description"
+      content="Anexo técnico: propuesta de modelo nacional de interoperabilidad de información, estándares y arquitectura de articulación."
+    />
+    <meta property="og:image" content="https://resonancias.pages.dev/img/tecnica/red-arg.jpg" />
+    <meta property="og:url" content="https://resonancias.pages.dev/pages/blog/tecnica/anexo-red-arg.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="RESONANCIAS" />
+
+     <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Anexo Técnico - Modelo Nacional de Interoperabilidad de Información | RESONANCIAS"
+    />
+    <meta
+      name="twitter:description"
+      content="Anexo técnico: propuesta de modelo nacional de interoperabilidad de información, estándares y arquitectura de articulación."
+    />
+    <meta name="twitter:image" content="https://resonancias.pages.dev/img/tecnica/red-arg.jpg" />
+    <meta name="twitter:image:alt" content="Anexo Técnico Modelo Nacional de Interoperabilidad" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/img/ui/favicon.png" type="image/png" />
+
+    <!-- Estilos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/assets/css/estilos.css" />
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js" defer></script>
+
+    <!-- Estilos responsivos para el layout del artículo -->
+    <style>
+      /* === RESPONSIVE MÓVIL === */
+      @media (max-width: 768px) {
+        .article-layout {
+          flex-direction: column !important;
+          gap: var(--spacing-lg) !important;
+        }
+        .image-card {
+          position: relative !important;
+          top: auto !important;
+          width: 100% !important;
+          min-width: auto !important;
+          margin-bottom: var(--spacing-lg) !important;
+        }
+        /* Tarjeta principal ocupa todo el ancho */
+        .content-card {
+          max-width: 100% !important;
+          width: 100% !important;
+          margin: var(--spacing-md) 0 !important;
+          border-radius: 0 !important;
+          padding: var(--spacing-md) !important;
+          box-sizing: border-box !important;
+        }
+        /* El container interno no añade padding extra */
+        .content-card .container {
+          padding: 0 !important;
+          max-width: 100% !important;
+        }
+        /* Tablas: scroll horizontal interno en lugar de romper el layout */
+        table {
+          display: block !important;
+          width: 100% !important;
+          overflow-x: auto !important;
+          -webkit-overflow-scrolling: touch !important;
+          font-size: 0.9rem !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .content-card {
+          padding: var(--spacing-sm) !important;
+        }
+        table {
+          font-size: 0.8rem !important;
+        }
+      }
+
+      .content-card {
+        max-width: 1000px !important;
+      }
+    </style>
+    <style>
+      /* Markdown incrustado desde Obsidian */
+      .md-obsidian {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        max-width: 100%;
+      }
+
+      .md-obsidian h1,
+      .md-obsidian h2,
+      .md-obsidian h3,
+      .md-obsidian h4,
+      .md-obsidian h5,
+      .md-obsidian h6 {
+        margin-top: 1.6em;
+        margin-bottom: 0.6em;
+        line-height: 1.3;
+        color: var(--color-dark);
+      }
+
+      .md-obsidian h1 {
+        font-size: var(--font-size-2xl);
+      }
+
+      .md-obsidian h2 {
+        font-size: var(--font-size-xl);
+      }
+
+      .md-obsidian h3 {
+        font-size: var(--font-size-lg);
+      }
+
+      .md-obsidian p {
+        margin: 0.9em 0;
+        line-height: 1.75;
+      }
+
+      .md-obsidian ul,
+      .md-obsidian ol {
+        margin: 0.9em 0 0.9em 1.6em;
+      }
+
+      .md-obsidian li {
+        margin: 0.4em 0;
+      }
+
+      .md-obsidian blockquote {
+        margin: 1.2em 0;
+        padding-left: 1em;
+        border-left: 3px solid var(--color-secondary);
+        color: var(--color-neutral);
+        font-style: italic;
+      }
+
+      .md-obsidian hr {
+        margin: 2em 0;
+        border: none;
+        border-top: 1px solid var(--color-mid);
+      }
+
+      .md-obsidian table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+        border-collapse: collapse;
+        margin: var(--spacing-lg) 0;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .md-obsidian th,
+      .md-obsidian td {
+        border: 1px solid var(--color-mid);
+        padding: var(--spacing-sm) var(--spacing-md);
+        text-align: left;
+      }
+
+      .md-obsidian th {
+        background-color: var(--color-primary);
+        font-weight: 600;
+      }
+
+      /* Bloques de código legibles y responsivos */
+      .md-obsidian pre {
+        background: #1e1e1e;
+        color: #d4d4d4;
+        padding: var(--spacing-md);
+        border-radius: 8px;
+        overflow-x: auto;
+        max-width: 100%;
+        margin: var(--spacing-md) 0;
+        font-size: 0.875rem;
+        line-height: 1.45;
+        box-sizing: border-box;
+      }
+
+      .md-obsidian code {
+        font-family: Consolas, Monaco, "Courier New", monospace;
+        font-size: 0.9em;
+      }
+
+      .md-obsidian p code,
+      .md-obsidian li code,
+      .md-obsidian td code {
+        background: #f1ede8;
+        color: var(--color-warm);
+        padding: 0.15em 0.4em;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header + menú -->
+    <div id="header"></div>
+    <div id="side-menu"></div>
+
+    <script src="/assets/js/includes.js"></script>
+    <script src="/assets/js/back-to-top.js" defer></script>
+
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Overlay para menú -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <section
+      class="works-hero"
+      style='
+        margin-top: 0 !important;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("/img/tecnica/red-arg.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: var(--color-light);
+        padding: var(--spacing-3xl) 0;
+        text-align: center;
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+      '
+    >
+      <div class="container">
+        <h2
+          style="
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          "
+        >
+          Anexo Técnico
+        </h2>
+        <p
+          style="
+            font-size: var(--font-size-xl);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+          "
+        >
+          Modelo Nacional de Interoperabilidad de Información
+        </p>
+      </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main id="main-content" role="main">
+      <!-- Artículo principal -->
+      <div class="content-card">
+        <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+          <div class="container" style="max-width: 1000px; margin: 0 auto">
+            <div
+              class="article-layout"
+              style="
+                display: flex;
+                gap: var(--spacing-xl);
+                align-items: flex-start;
+              "
+            >
+              <div
+                class="article-content"
+                style="flex: 1; line-height: 1.5; color: var(--color-dark)"
+              >
+                <div
+                  id="intro-paragraph"
+                  class="md-obsidian"
+                  style="
+                    font-size: var(--font-size-base);
+                    margin-bottom: var(--spacing-2xl);
+                    position: relative;
+                  "
+                >
+                  <!-- Insertar contenido aquí -->
+<h1>Anexo Técnico: Modelo Nacional de Interoperabilidad de Información</h1>
+<blockquote>
+<p><strong>Documento de trabajo — propuesta inicial</strong></p>
+<p>Este anexo técnico complementa la nota de análisis y propone una arquitectura conceptual e implementación de
+referencia para articular componentes de información pública y de interés público que ya existen en la República
+Argentina.</p>
+<p>El documento no pretende reemplazar los estándares oficiales existentes ni imponer una tecnología única. Su objetivo
+es explorar una posible estructura común que permita que sistemas, organismos y fuentes diferentes puedan
+<strong>identificar, interpretar, relacionar y utilizar información de manera interoperable</strong>.</p>
+</blockquote>
+<hr />
+<h2>1. Diagnóstico de la infraestructura existente: articular en lugar de reinventar</h2>
+<p>Argentina no parte desde cero. El país ya cuenta con activos normativos y técnicos de considerable valor que pueden
+constituir la base de una infraestructura nacional de información interoperable.</p>
+<h3>Datos abiertos y metadatos administrativos</h3>
+<p>La Ley 27.275 de Acceso a la Información Pública, el Decreto 117/2016 y el <strong>Perfil Nacional de Metadatos para Datos
+Abiertos</strong> conforman una base normativa y técnica para la publicación, documentación y catalogación de información
+pública en formatos electrónicos abiertos y reutilizables.</p>
+<h3>Infraestructura de Datos Espaciales</h3>
+<p>La <strong>Infraestructura de Datos Espaciales de la República Argentina (IDERA)</strong> proporciona estándares, perfiles de
+metadatos, catálogos de objetos geográficos y pautas para la publicación de información y servicios geoespaciales
+interoperables, incluyendo estándares OGC como WMS, WFS y WCS.</p>
+<p>La infraestructura existente demuestra que el país ya dispone de numerosos componentes necesarios para una arquitectura
+nacional de información.</p>
+<h3>El desafío</h3>
+<p>El problema, por lo tanto, no consiste necesariamente en crear nuevas capas tecnológicas desde cero, sino en <strong>articular
+los estándares y sistemas existentes bajo un modelo común de interoperabilidad</strong>.</p>
+<p>La finalidad sería permitir que información semántica, administrativa, estadística, económica y geoespacial pueda
+relacionarse sin que cada organismo o sistema tenga que reconstruir manualmente el significado de los datos producidos
+por los demás.</p>
+<blockquote>
+<p><strong>Argentina ya posee muchos de los componentes fundamentales de una infraestructura nacional de información. El
+desafío es conseguir que esos componentes puedan trabajar conjuntamente.</strong></p>
+</blockquote>
+<hr />
+<h1>2. Modelo Nacional de Interoperabilidad de Información</h1>
+<p>La propuesta no establece un formato de archivo único para toda la información nacional.</p>
+<p>No se plantea que todos los organismos deban publicar necesariamente un único tipo de archivo, ni que JSON, JSON-LD,
+CSV, XML, GeoJSON u otros formatos deban ser tratados como equivalentes.</p>
+<p>Se propone, en cambio, un <strong>Modelo Nacional de Interoperabilidad de Información</strong>: una capa común de conceptos,
+identificadores, metadatos y reglas que pueda ser implementada mediante diferentes formatos y servicios.</p>
+<pre class="codehilite"><code class="language-text">                 MODELO NACIONAL
+                DE INTEROPERABILIDAD
+                         │
+       ┌─────────────────┼─────────────────┐
+       │                 │                 │
+   SEMÁNTICA         IDENTIDAD         METADATOS
+       │                 │                 │
+       └─────────────────┼─────────────────┘
+                         │
+             ┌───────────┼───────────┐
+             │           │           │
+         MEDICIÓN      TIEMPO     TERRITORIO
+             │           │           │
+             └───────────┼───────────┘
+                         │
+                    GEOMETRÍA
+                         │
+                FORMATOS / SERVICIOS
+                         │
+          ┌──────────────┼──────────────┐
+          ↓              ↓              ↓
+       JSON-LD        GeoJSON          WFS
+       CSV            XML              API
+       etc.           etc.             etc.
+</code></pre>
+
+<p>La arquitectura se entiende como una <strong>capa de interoperabilidad</strong>, no como un reemplazo de los estándares técnicos
+especializados ya existentes.</p>
+<hr />
+<h1>3. Dimensiones fundamentales del modelo</h1>
+<h2>3.1 Semántica</h2>
+<p>Los datos deben utilizar vocabularios, diccionarios y definiciones comunes que permitan determinar qué representa cada
+variable.</p>
+<p>Por ejemplo, no debería considerarse automáticamente equivalente:</p>
+<pre class="codehilite"><code class="language-text">trabajadores
+empleos
+puestos de trabajo
+empleo registrado
+personas ocupadas
+</code></pre>
+
+<p>El modelo debería permitir identificar con precisión:</p>
+<ul>
+<li>nombre de la variable;</li>
+<li>definición;</li>
+<li>población o universo al que se refiere;</li>
+<li>alcance;</li>
+<li>clasificación utilizada;</li>
+<li>relación con otros conceptos;</li>
+<li>fuente del vocabulario o definición.</li>
+</ul>
+<p>El objetivo es que dos sistemas diferentes puedan reconocer cuándo están hablando del mismo concepto y cuándo no.</p>
+<h2>3.2 Identidad e identificadores</h2>
+<p>Las entidades que ya poseen identificadores oficiales deberían utilizar esos identificadores en lugar de códigos creados
+arbitrariamente por cada sistema.</p>
+<p>Esto puede incluir:</p>
+<ul>
+<li>unidades territoriales;</li>
+<li>organismos;</li>
+<li>actividades económicas;</li>
+<li>establecimientos;</li>
+<li>registros;</li>
+<li>infraestructuras;</li>
+<li>partidas o unidades catastrales, cuando corresponda;</li>
+<li>personas jurídicas, cuando corresponda y conforme al régimen aplicable;</li>
+<li>otros objetos que dispongan de identificadores oficiales.</li>
+</ul>
+<blockquote>
+<p><strong>Cuando una entidad ya dispone de un identificador oficial y vigente, los sistemas interoperables deberían utilizar
+ese identificador o mantener una correspondencia explícita con él.</strong></p>
+</blockquote>
+<h2>3.3 Metadatos y procedencia</h2>
+<p>Los metadatos deben permitir conocer qué información se está observando, quién la produce, bajo qué metodología, cuándo
+fue publicada y cómo puede ser reutilizada.</p>
+<p>Como mínimo, según la naturaleza del conjunto de datos, deberían poder describirse:</p>
+<ul>
+<li>identificador del conjunto de datos;</li>
+<li>título;</li>
+<li>organismo o entidad responsable;</li>
+<li>fuente;</li>
+<li>fecha de publicación;</li>
+<li>período de referencia;</li>
+<li>frecuencia de actualización;</li>
+<li>metodología;</li>
+<li>licencia;</li>
+<li>cobertura territorial;</li>
+<li>variables;</li>
+<li>unidades de medida;</li>
+<li>restricciones de acceso;</li>
+<li>documentación asociada;</li>
+<li>fecha de última validación o actualización.</li>
+</ul>
+<p>La interoperabilidad requiere también <strong>trazabilidad</strong>: un sistema consumidor debe poder conocer de dónde proviene el
+dato que está utilizando.</p>
+<h2>3.4 Calidad</h2>
+<p>La procedencia oficial de una fuente no debería confundirse automáticamente con la calidad estadística o técnica de un
+dato.</p>
+<p>Por ello, el modelo debería distinguir entre:</p>
+<pre class="codehilite"><code class="language-text">FUENTE
+¿Quién produce o publica el dato?
+
+CALIDAD
+¿Cómo fue obtenido, validado y documentado?
+
+METODOLOGÍA
+¿Cómo fue medido o calculado?
+
+ACTUALIZACIÓN
+¿Cuándo fue revisado?
+</code></pre>
+
+<p>La clasificación de calidad debería basarse en criterios documentados y verificables, evitando utilizar simplemente
+términos como “oficial” como si fueran una medida universal de exactitud.</p>
+<h2>3.5 Medición</h2>
+<p>Toda medición debería poder expresar, cuando corresponda:</p>
+<ul>
+<li>variable medida;</li>
+<li>definición de la variable;</li>
+<li>valor;</li>
+<li>unidad de medida;</li>
+<li>población o universo;</li>
+<li>cobertura;</li>
+<li>período de referencia;</li>
+<li>metodología;</li>
+<li>clasificación utilizada;</li>
+<li>tratamiento de datos faltantes o estimados.</li>
+</ul>
+<p>Esto resulta especialmente importante para evitar que valores numéricos aparentemente iguales sean interpretados como
+equivalentes cuando en realidad representan fenómenos diferentes.</p>
+<h2>3.6 Tiempo</h2>
+<p>La dimensión temporal debe formar parte de la interoperabilidad.</p>
+<p>Un dato no debería ser interpretado solamente por su valor, sino también por el período al que corresponde.</p>
+<p>El modelo debería permitir distinguir, según el caso:</p>
+<ul>
+<li>fecha de publicación;</li>
+<li>fecha de actualización;</li>
+<li>período de referencia;</li>
+<li>fecha de inicio y finalización de una medición;</li>
+<li>frecuencia de actualización;</li>
+<li>vigencia del dato.</li>
+</ul>
+<h2>3.7 Territorio</h2>
+<p>La información susceptible de localización debería vincularse con las unidades territoriales oficiales correspondientes.</p>
+<p>El modelo debería permitir relacionar, cuando corresponda:</p>
+<ul>
+<li>país;</li>
+<li>provincia;</li>
+<li>departamento;</li>
+<li>municipio;</li>
+<li>localidad;</li>
+<li>región;</li>
+<li>unidad estadística;</li>
+<li>otras divisiones territoriales reconocidas oficialmente.</li>
+</ul>
+<p>La referencia territorial debe utilizar identificadores estables y documentados, evitando depender exclusivamente del
+nombre textual de una localidad.</p>
+<p>Por ejemplo:</p>
+<pre class="codehilite"><code class="language-text">&quot;San Miguel&quot;
+&quot;San Miguel de Tucumán&quot;
+</code></pre>
+
+<p>no deberían resolverse únicamente mediante coincidencia de texto. Un identificador territorial permite determinar
+inequívocamente qué entidad representa cada registro.</p>
+<h2>3.8 Geometría</h2>
+<p>La existencia de una referencia territorial no implica necesariamente que el dato deba contener una geometría.</p>
+<p>Por ello se distinguen:</p>
+<p><strong>Identidad territorial</strong></p>
+<pre class="codehilite"><code class="language-text">municipio_id = 240056
+</code></pre>
+
+<p>de:</p>
+<p><strong>Representación geométrica</strong></p>
+<pre class="codehilite"><code class="language-text">geometry = ...
+</code></pre>
+
+<p>Cuando exista información espacial, su representación debería ajustarse al marco geodésico y a las especificaciones
+técnicas aplicables.</p>
+<hr />
+<h1>4. Precisiones técnicas sobre georreferenciación</h1>
+<h2>4.1 Marco geodésico de referencia</h2>
+<p>La información geoespacial producida en el marco nacional debería expresarse conforme al <strong>Marco de Referencia Geodésico
+Nacional POSGAR 07</strong>, utilizando el sistema de coordenadas y código CRS apropiado para la naturaleza del dato y del
+servicio.</p>
+<p>Debe distinguirse entre:</p>
+<ul>
+<li><strong>marco geodésico nacional</strong>, como POSGAR 07;</li>
+<li><strong>sistema de coordenadas o CRS concreto</strong> utilizado por un conjunto de datos;</li>
+<li><strong>código EPSG</strong> que identifica técnicamente dicho CRS cuando corresponda.</li>
+</ul>
+<p>Por lo tanto, no debe suponerse que POSGAR 07 y un determinado código EPSG son conceptos equivalentes.</p>
+<h2>4.2 Formatos y servicios geoespaciales</h2>
+<p>Los formatos de intercambio y los servicios web cumplen funciones diferentes.</p>
+<h3>Formatos de intercambio</h3>
+<ul>
+<li>GeoJSON;</li>
+<li>CSV;</li>
+<li>JSON-LD;</li>
+<li>XML;</li>
+<li>otros formatos abiertos apropiados.</li>
+</ul>
+<h3>Servicios interoperables</h3>
+<ul>
+<li>WMS para representación cartográfica;</li>
+<li>WFS para entidades vectoriales;</li>
+<li>WCS para coberturas;</li>
+<li>APIs de consulta y distribución;</li>
+<li>otros servicios compatibles con los estándares adoptados.</li>
+</ul>
+<p>La propuesta no pretende homologar estas tecnologías entre sí. La exigencia sería que la información pueda distribuirse
+mediante <strong>formatos y servicios interoperables adecuados a su naturaleza</strong>, de acuerdo con los estándares nacionales e
+internacionales aplicables.</p>
+<hr />
+<h1>5. Ejemplo práctico: estructura de referencia</h1>
+<p>El siguiente ejemplo es <strong>exclusivamente ilustrativo</strong>. No representa un conjunto de datos oficial existente.</p>
+<pre class="codehilite"><code class="language-json">{
+  &quot;$schema&quot;: &quot;https://ejemplo.gob.ar/esquema/interoperabilidad/v1/schema.json&quot;,
+  &quot;@context&quot;: {
+    &quot;schema&quot;: &quot;http://schema.org/&quot;,
+    &quot;clae&quot;: &quot;https://ejemplo.gob.ar/vocabularios/clae/&quot;,
+    &quot;indicadores&quot;: &quot;https://ejemplo.gob.ar/vocabularios/indicadores/&quot;
+  },
+  &quot;ejemplo&quot;: true,
+  &quot;naturaleza&quot;: &quot;modelo_propuesto&quot;,
+  &quot;type&quot;: &quot;Feature&quot;,
+  &quot;metadata&quot;: {
+    &quot;dataset_id&quot;: &quot;ar-ejemplo-empleo-local-2026&quot;,
+    &quot;titulo&quot;: &quot;Registro de ejemplo de empleo formal local&quot;,
+    &quot;fecha_publicacion&quot;: &quot;2026-09-22T00:00:00Z&quot;,
+    &quot;frecuencia_actualizacion&quot;: &quot;R/P1M&quot;,
+    &quot;licencia&quot;: &quot;https://creativecommons.org/licenses/by/4.0/deed.es&quot;
+  },
+  &quot;fuente&quot;: {
+    &quot;tipo&quot;: &quot;organismo_publico&quot;,
+    &quot;identidad&quot;: &quot;Organismo emisor (ejemplo)&quot;,
+    &quot;responsable&quot;: &quot;Área responsable (ejemplo)&quot;
+  },
+  &quot;calidad&quot;: {
+    &quot;nivel_validacion&quot;: &quot;campo_de_ejemplo&quot;,
+    &quot;metodologia_url&quot;: &quot;https://ejemplo.gob.ar/metodologia&quot;,
+    &quot;fecha_validacion&quot;: &quot;2026-09-01&quot;
+  },
+  &quot;territorio&quot;: {
+    &quot;pais_id&quot;: &quot;AR&quot;,
+    &quot;provincia_id&quot;: &quot;24&quot;,
+    &quot;provincia_nombre&quot;: &quot;Tucumán&quot;,
+    &quot;departamento_id&quot;: &quot;24084&quot;,
+    &quot;departamento_nombre&quot;: &quot;Capital&quot;,
+    &quot;municipio_id&quot;: &quot;240056&quot;,
+    &quot;municipio_nombre&quot;: &quot;San Miguel de Tucumán&quot;
+  },
+  &quot;referencia_espacial&quot;: {
+    &quot;marco_geodesico&quot;: &quot;POSGAR 07&quot;,
+    &quot;codigo_crs&quot;: &quot;EPSG:4326&quot;
+  },
+  &quot;properties&quot;: {
+    &quot;actividad_economica&quot;: {
+      &quot;clae_codigo&quot;: &quot;620100&quot;,
+      &quot;descripcion&quot;: &quot;Actividad económica de ejemplo&quot;
+    },
+    &quot;medicion&quot;: {
+      &quot;variable&quot;: &quot;indicadores:empleo_registrado_puestostrabajo&quot;,
+      &quot;valor&quot;: 1250,
+      &quot;unidad_medida&quot;: &quot;puestos&quot;,
+      &quot;periodo_referencia&quot;: &quot;2026-08&quot;,
+      &quot;tipo_cobertura&quot;: &quot;registrado_formal&quot;
+    }
+  },
+  &quot;geometry&quot;: {
+    &quot;type&quot;: &quot;Point&quot;,
+    &quot;coordinates&quot;: [-65.2176, -26.8241]
+  }
+}
+</code></pre>
+
+<blockquote>
+<p><strong>Nota:</strong> Los identificadores, vocabularios, códigos y valores utilizados en este ejemplo tienen finalidad
+exclusivamente demostrativa y deberían ser reemplazados por las referencias oficiales correspondientes en una
+implementación real.</p>
+</blockquote>
+<hr />
+<h1>6. Identificadores oficiales</h1>
+<p>El modelo debería evitar la generación de códigos ad-hoc cuando ya exista un sistema nacional de identificación
+aplicable.</p>
+<table>
+<thead>
+<tr>
+<th>Campo del modelo</th>
+<th>Fuente / sistema de referencia</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>provincia_id</code></td>
+<td>Codificación territorial oficial aplicable</td>
+<td><code>"24"</code></td>
+</tr>
+<tr>
+<td><code>departamento_id</code></td>
+<td>Codificación territorial oficial aplicable</td>
+<td><code>"24084"</code></td>
+</tr>
+<tr>
+<td><code>municipio_id</code></td>
+<td>Codificación territorial oficial aplicable</td>
+<td><code>"240056"</code></td>
+</tr>
+<tr>
+<td><code>clae_codigo</code></td>
+<td>Clasificador de actividades económicas vigente</td>
+<td><code>"620100"</code></td>
+</tr>
+<tr>
+<td><code>marco_geodesico</code></td>
+<td>IGN / marco geodésico nacional</td>
+<td><code>"POSGAR 07"</code></td>
+</tr>
+<tr>
+<td><code>codigo_crs</code></td>
+<td>Código CRS/EPSG correspondiente</td>
+<td><code>"EPSG:4326"</code> / otro CRS aplicable</td>
+</tr>
+</tbody>
+</table>
+<p>La tabla es ilustrativa y no pretende sustituir los catálogos oficiales.</p>
+<hr />
+<h1>7. Reglas generales para APIs y servicios de consulta</h1>
+<p>Las implementaciones que adopten el modelo deberían facilitar la consulta automatizada de la información.</p>
+<h3>7.1 Filtros territoriales</h3>
+<pre class="codehilite"><code class="language-text">GET /api/v1/recursos?municipio_id=240056
+</code></pre>
+
+<h3>7.2 Consultas temporales</h3>
+<pre class="codehilite"><code class="language-text">GET /api/v1/recursos?fecha_desde=2026-01-01&amp;fecha_hasta=2026-08-31
+</code></pre>
+
+<h3>7.3 Consultas por variables</h3>
+<pre class="codehilite"><code class="language-text">GET /api/v1/recursos?clae_codigo=620100
+</code></pre>
+
+<h3>7.4 Combinación de filtros</h3>
+<p>El objetivo final debería ser poder cruzar:</p>
+<pre class="codehilite"><code class="language-text">municipio
++
+actividad económica
++
+período
++
+variable
+</code></pre>
+
+<p>sin reconstruir manualmente la estructura de cada fuente.</p>
+<hr />
+<h1>8. Compatibilidad con la infraestructura existente</h1>
+<p>El Modelo Nacional de Interoperabilidad debería diseñarse para convivir con:</p>
+<ul>
+<li>Perfil Nacional de Metadatos para Datos Abiertos;</li>
+<li>data.gob.ar y mecanismos de catalogación;</li>
+<li>IDERA;</li>
+<li>catálogos de objetos geográficos;</li>
+<li>estándares ISO aplicables;</li>
+<li>estándares OGC;</li>
+<li>sistemas estadísticos existentes;</li>
+<li>registros administrativos;</li>
+<li>APIs y servicios públicos ya operativos.</li>
+</ul>
+<p>La finalidad sería construir una <strong>capa de articulación</strong>, no reemplazar las infraestructuras especializadas.</p>
+<hr />
+<h1>9. No existe una única tecnología obligatoria</h1>
+<p>JSON-LD puede constituir una alternativa para expresar relaciones semánticas.</p>
+<p>GeoJSON puede resultar apropiado para determinados datos geográficos.</p>
+<p>CSV puede continuar siendo útil para determinados conjuntos tabulares.</p>
+<p>XML puede ser necesario en determinados sistemas.</p>
+<p>WFS, WMS, WCS y APIs pueden servir para diferentes modalidades de distribución.</p>
+<p>La cuestión central no es imponer uno de estos mecanismos, sino garantizar que los sistemas puedan <strong>comprender y
+relacionar el significado de la información</strong>.</p>
+<hr />
+<h1>10. Validación e interoperabilidad</h1>
+<p>Una implementación nacional debería contemplar mecanismos automáticos de validación.</p>
+<p>Según el tipo de dato, un sistema consumidor debería poder comprobar:</p>
+<ul>
+<li>existencia y validez del identificador;</li>
+<li>tipo de dato;</li>
+<li>unidad de medida;</li>
+<li>período;</li>
+<li>referencia territorial;</li>
+<li>sistema de referencia;</li>
+<li>presencia de metadatos mínimos;</li>
+<li>vocabulario utilizado;</li>
+<li>procedencia declarada.</li>
+</ul>
+<p>Esto permitiría pasar de una interoperabilidad dependiente principalmente de interpretación humana a otra en la que una
+parte importante de las comprobaciones pueda realizarse automáticamente.</p>
+<hr />
+<h1>11. Beneficio para análisis, planificación e inteligencia artificial</h1>
+<p>Una estructura interoperable no solamente facilitaría la consulta humana.</p>
+<p>También permitiría que herramientas estadísticas, sistemas SIG, aplicaciones, motores de búsqueda y sistemas de
+inteligencia artificial trabajen sobre información con mayor contexto.</p>
+<p>Un sistema podría recibir:</p>
+<pre class="codehilite"><code class="language-text">VARIABLE
+empleo registrado
+
+VALOR
+1250
+
+UNIDAD
+puestos de trabajo
+
+ACTIVIDAD
+620100
+
+TERRITORIO
+240056
+
+PERÍODO
+2026-08
+
+FUENTE
+organismo determinado
+
+METODOLOGÍA
+documentación asociada
+</code></pre>
+
+<p>en lugar de recibir solamente:</p>
+<pre class="codehilite"><code class="language-text">1250
+</code></pre>
+
+<blockquote>
+<p><strong>Un número aislado es un dato. Un número contextualizado puede convertirse en información reutilizable.</strong></p>
+</blockquote>
+<hr />
+<h1>12. Principio de neutralidad tecnológica</h1>
+<p>La regulación debería definir principalmente:</p>
+<ul>
+<li>qué debe poder comprender un sistema;</li>
+<li>qué información mínima debe acompañar un dato;</li>
+<li>cómo debe identificarse una entidad;</li>
+<li>cómo debe expresarse su relación territorial y temporal;</li>
+<li>qué mecanismos de validación deben existir;</li>
+<li>qué niveles de interoperabilidad deben cumplirse.</li>
+</ul>
+<p>Las tecnologías concretas podrán evolucionar sin necesidad de modificar el principio estructural.</p>
+<hr />
+<h1>13. Implementación progresiva</h1>
+<h3>Etapa 1 — Normalización conceptual</h3>
+<p>Definición de vocabularios, identificadores, metadatos, unidades, períodos, reglas territoriales y requisitos mínimos.</p>
+<h3>Etapa 2 — Catálogo nacional de interoperabilidad</h3>
+<p>Registro de vocabularios, identificadores, esquemas, catálogos, APIs, servicios geoespaciales y mecanismos de
+validación.</p>
+<h3>Etapa 3 — Adaptación de nuevos sistemas</h3>
+<p>Los nuevos sistemas públicos que produzcan información reutilizable deberían diseñarse desde el inicio conforme al
+modelo.</p>
+<h3>Etapa 4 — Adaptación progresiva de sistemas existentes</h3>
+<p>Los sistemas heredados podrían incorporarse mediante capas de interoperabilidad, adaptadores o servicios de traducción,
+evitando exigir una reconstrucción inmediata de cada sistema.</p>
+<h3>Etapa 5 — Interoperabilidad ampliada</h3>
+<p>Una vez consolidada la infraestructura pública, podrían incorporarse progresivamente otras fuentes de interés público,
+conforme a su régimen jurídico y reglas de publicación.</p>
+<hr />
+<h1>14. Información producida por actores no estatales</h1>
+<p>La interoperabilidad no debería confundirse con una obligación general de hacer pública la información privada.</p>
+<p>Una persona, empresa, cooperativa, organización o institución privada no debería quedar obligada por este modelo
+simplemente por generar o poseer información.</p>
+<p>La cuestión cambia cuando un actor decide <strong>publicar voluntariamente información de interés público</strong>.</p>
+<p>En ese caso, cuando corresponda y dentro del marco jurídico aplicable, la publicación podría acogerse a reglas de
+interoperabilidad que permitan que esa información sea comprendida y relacionada con otras fuentes.</p>
+<blockquote>
+<p><strong>La obligación de interoperabilidad se vincula a la publicación pública de información alcanzada por el modelo, no a
+la mera generación o posesión de información privada.</strong></p>
+</blockquote>
+<hr />
+<h1>15. Resultado buscado</h1>
+<p>El objetivo final no es producir más documentos ni simplemente aumentar la cantidad de datos publicados.</p>
+<p>El objetivo es conseguir que la información que ya produce el país pueda <strong>trabajar conjuntamente</strong>.</p>
+<p>Que un dato producido por un organismo pueda ser localizado por otro sistema.</p>
+<p>Que una estadística pueda relacionarse con un territorio.</p>
+<p>Que una actividad económica pueda relacionarse con empleo, infraestructura o producción.</p>
+<p>Que una serie temporal pueda compararse con otra sin reconstruir manualmente sus períodos.</p>
+<p>Que un sistema pueda determinar qué significa una variable antes de utilizarla.</p>
+<p>Que una herramienta de análisis pueda consultar información proveniente de diferentes fuentes sin interpretar cada
+archivo desde cero.</p>
+<hr />
+<h1>16. Principio estructural</h1>
+<blockquote>
+<p><strong>Un país no puede planificar eficazmente aquello que no puede describir, localizar, relacionar y medir de manera
+común.</strong></p>
+</blockquote>
+<p>La interoperabilidad no significa que todos los organismos deban utilizar el mismo software, la misma base de datos o el
+mismo formato.</p>
+<p>Significa que sistemas diferentes puedan reconocer y utilizar un mismo dato sin perder su significado.</p>
+<blockquote>
+<p><strong>La normalización no consiste en obligar a todos los organismos a utilizar el mismo formato. Consiste en conseguir
+que sistemas diferentes puedan identificar, interpretar, relacionar y utilizar un mismo dato sin tener que reconstruir
+manualmente su significado.</strong></p>
+</blockquote>
+<hr />
+<h1>17. Consideración final</h1>
+<p>Este anexo constituye una <strong>propuesta técnica inicial</strong>, no una especificación normativa definitiva.</p>
+<p>Su finalidad es abrir una discusión sobre cómo podría construirse una infraestructura nacional de interoperabilidad
+aprovechando los estándares, catálogos, registros y sistemas que Argentina ya posee.</p>
+<p>El desarrollo posterior debería involucrar a los organismos técnicos competentes, especialistas en datos,
+geoinformación, estadística, administración pública, seguridad de la información, protección de datos personales,
+infraestructura tecnológica y representantes de los sectores que producen y utilizan información de interés público.</p>
+<p>La arquitectura propuesta pretende servir como punto de partida:</p>
+<blockquote>
+<p><strong>No crear información desde cero, sino conseguir que la información que ya existe pueda hablar entre sí.</strong></p>
+</blockquote>
+<!--fin-->
+                </div>
+              </div>
+            </div>
+            <a
+              href="/pages/blog/tecnica/info-publica.html"
+              style="
+                display: block;
+                margin: 0 auto;
+                width: fit-content;
+                background: var(--color-secondary);
+                color: var(--color-light);
+                border: none;
+                padding: var(--spacing-md) var(--spacing-xl);
+                border-radius: 8px;
+                font-weight: 600;
+                text-decoration: none;
+                cursor: pointer;
+                transition: all var(--transition-fast);
+                margin-bottom: var(--spacing-2xl);
+              "
+              onmouseover="
+                this.style.background = 'var(--color-warm)';
+                this.style.transform = 'translateY(-2px)';
+              "
+              onmouseout="
+                this.style.background = 'var(--color-secondary)';
+                this.style.transform = 'translateY(0)';
+              "
+            >
+              Regresar a la nota técnica
+            </a>
+
+            <!-- Footer del artículo -->
+            <footer
+              style="
+                margin-top: var(--spacing-2xl);
+                padding-top: var(--spacing-xl);
+                border-top: 1px solid var(--color-mid);
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  flex-wrap: wrap;
+                  gap: var(--spacing-md);
+                "
+              >
+                <div>
+                  <p
+                    style="
+                      color: var(--color-neutral);
+                      font-size: var(--font-size-sm);
+                      margin: 0;
+                    "
+                  >
+                    Publicado el <time datetime="">2026</time>
+                  </p>
+                </div>
+                <div style="display: flex; gap: var(--spacing-sm)">
+                  <a
+                    href="/pages/blog/tecnica/info-publica.html"
+                    style="
+                      color: var(--color-secondary);
+                      text-decoration: none;
+                      font-weight: 600;
+                    "
+                  >
+                    ← Volver al artículo
+                  </a>
+                </div>
+              </div>
+            </footer>
+          </div>
+        </article>
+      </div>
+    </main>
+    <!-- Footer -->
+    <a href="#main-content" class="back-to-top" aria-label="Volver arriba">
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </a>
+    <div id="footer"></div>
+  </body>
+</html>
