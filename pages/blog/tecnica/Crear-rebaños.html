@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crear Rebaños: IA y Educación | RESONANCIAS</title>
+    <meta name="description" content="La «Tercera Posición» en la Era de la Inteligencia Artificial Educativa. Análisis sobre el riesgo de la delegación cognitiva y el uso responsable de la IA en el aula, por Gabriel Ferré." />
+
+    <!-- URL Canónica -->
+    <link rel="canonical" href="https://resonancias.pages.dev/pages/blog/tecnica/Crear-rebaños.html" />
+
+    <!-- SEO y Accesibilidad -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Gabriel Ferré" />
+    <meta name="keywords" content="Crear rebaños" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Crear Rebaños: IA y Educación | RESONANCIAS" />
+    <meta property="og:description" content="La «Tercera Posición» en la Era de la Inteligencia Artificial Educativa. Análisis sobre el riesgo de la delegación cognitiva y el uso responsable de la IA en el aula, por Gabriel Ferré." />
+    <meta property="og:image" content="https://resonancias.pages.dev/img/tecnica/educacion-1.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:alt" content="Aula con alumnos frente a computadoras, representando el debate sobre IA en la educación" />
+    <meta property="og:url" content="https://resonancias.pages.dev/pages/blog/tecnica/Crear-reba%C3%B1os.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="RESONANCIAS" />
+    <meta property="og:locale" content="es_AR" />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Miguel_CCom5" />
+    <meta name="twitter:creator" content="@Miguel_CCom5" />
+    <meta name="twitter:title" content="Crear Rebaños: IA y Educación | RESONANCIAS" />
+    <meta name="twitter:description" content="La «Tercera Posición» en la Era de la Inteligencia Artificial Educativa. Análisis sobre el riesgo de la delegación cognitiva y el uso responsable de la IA en el aula." />
+    <meta name="twitter:image" content="https://resonancias.pages.dev/img/tecnica/educacion-1.jpg" />
+    <meta name="twitter:image:alt" content="Aula con alumnos frente a computadoras, representando el debate sobre IA en la educación" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/img/ui/favicon.png" type="image/png" />
+
+    <!-- Estilos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/assets/css/estilos.css" />
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js" defer></script>
+
+    <!-- Estilos responsivos para el layout del artículo -->
+    <style>
+      @media (max-width: 768px) {
+        .article-layout {
+          flex-direction: column !important;
+          gap: var(--spacing-lg) !important;
+        }
+        .image-card {
+          position: relative !important;
+          top: auto !important;
+          width: 100% !important;
+          min-width: auto !important;
+          margin-bottom: var(--spacing-lg) !important;
+        }
+      }
+
+      /* Fix for content overflow */
+      .md-obsidian {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        max-width: 100%;
+      }
+
+      .md-obsidian img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        display: block;
+        margin: var(--spacing-md) auto;
+      }
+
+      .md-obsidian table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+        border-collapse: collapse;
+        margin: var(--spacing-lg) 0;
+      }
+
+      /* Horizontal view and smaller screen fixes */
+      @media (max-width: 1024px) {
+        .content-card {
+          margin: var(--spacing-md) !important;
+          padding: var(--spacing-md) !important;
+          max-width: calc(100% - 2 * var(--spacing-md)) !important;
+        }
+
+        .article-content {
+          width: 100%;
+          min-width: 0;
+        }
+      }
+    </style>
+    <style>
+      /* Markdown incrustado desde Obsidian */
+      .md-obsidian h1,
+      .md-obsidian h2,
+      .md-obsidian h3,
+      .md-obsidian h4,
+      .md-obsidian h5,
+      .md-obsidian h6 {
+        margin-top: 1.6em;
+        margin-bottom: 0.6em;
+        line-height: 1.3;
+      }
+
+      .md-obsidian p {
+        margin: 0.9em 0;
+        line-height: 1.75;
+      }
+
+      .md-obsidian ul,
+      .md-obsidian ol {
+        margin: 0.9em 0 0.9em 1.6em;
+      }
+
+      .md-obsidian li {
+        margin: 0.4em 0;
+      }
+
+      .md-obsidian blockquote {
+        margin: 1.2em 0;
+        padding-left: 1em;
+        border-left: 3px solid var(--color-secondary);
+        color: var(--color-neutral);
+        font-style: italic;
+      }
+
+      .md-obsidian hr {
+        margin: 2em 0;
+        border: none;
+        border-top: 1px solid var(--color-mid);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header + menú -->
+    <div id="header"></div>
+    <div id="side-menu"></div>
+
+    <script src="/assets/js/includes.js"></script>
+    <script src="/assets/js/back-to-top.js" defer></script>
+
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Overlay para menú -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <section
+      class="works-hero"
+      style='
+        margin-top: 0 !important;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("/img/tecnica/educacion-1.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: var(--color-light);
+        padding: var(--spacing-3xl) 0;
+        text-align: center;
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+      '
+    >
+      <div class="container">
+        <h2
+          style="
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          "
+        >
+          Crear Rebaños
+        </h2>
+        <p
+          style="
+            font-size: var(--font-size-xl);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+          "
+        >
+La «Tercera Posición» en la Era de la Inteligencia Artificial Educativa        </p>
+      </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main id="main-content" role="main">
+      <!-- Artículo principal -->
+      <div class="content-card">
+        <article class="blog-post" style="padding: var(--spacing-2xl) 0">
+          <div class="container" style="max-width: 800px; margin: 0 auto">
+            <!-- Header del artículo -->
+            <header
+              class="post-header"
+              style="text-align: center; margin-bottom: var(--spacing-2xl)"
+            >
+              <h1
+                style="
+                  font-size: var(--font-size-3xl);
+                  color: var(--color-dark);
+                  margin-bottom: var(--spacing-lg);
+                "
+              >
+                Crear Rebaños
+              </h1>
+              <div
+                class="post-meta"
+                style="
+                  display: flex;
+                  justify-content: center;
+                  gap: var(--spacing-lg);
+                  color: var(--color-neutral);
+                  font-size: var(--font-size-sm);
+                  flex-wrap: wrap;
+                "
+              >
+                <span>· Gabriel Ferré</span>
+              </div>
+            </header>
+            <div
+              class="article-layout"
+              style="
+                display: flex;
+                gap: var(--spacing-xl);
+                align-items: flex-start;
+              "
+            >
+              <div
+                class="article-content"
+                style="flex: 1; line-height: 1.5; color: var(--color-dark)"
+              >
+                <div
+                  id="intro-paragraph"
+                  class="md-obsidian"
+                  style="
+                    font-size: var(--font-size-lg);
+                    margin-bottom: var(--spacing-2xl);
+                    color: var(--color-warm);
+                    position: relative;
+                  "
+                >
+                  <!-- Insertar contenido aquí -->
+<h2>Más allá del Hardware y del Estado</h2>
+<hr />
+<h3>Del fetiche del <em>hardware</em> al atajo algorítmico</h3>
+<p>El debate educativo sobre la tecnología suele caer repetidamente en el mismo falso dilema:</p>
+<ol>
+<li><strong>El absolutismo estatal-tecnófilo:</strong> Creer que la mera distribución de dispositivos o el acceso masivo a
+   herramientas digitales soluciona automáticamente los déficits formativos.</li>
+<li><strong>El tecno-pánico prohibicionista:</strong> Responsabilizar a las pantallas y a los nuevos desarrollos de todos los males
+   cognitivos, exigiendo el veto absoluto en las aulas.</li>
+</ol>
+<p>Existe una <strong>«tercera posición»</strong>: un marco analítico que entiende que la tecnología no es intrínsecamente ni la
+salvación ni la ruina, y que las políticas públicas no fallan solo por razones presupuestarias. Fallan cuando la
+sociedad y las instituciones desatienden el <strong>paradigma social y pedagógico</strong> que debe otorgar sentido, rigor y
+propósito a la herramienta.</p>
+<p>Este fenómeno no es nuevo, pero hoy alcanza su punto más crítico con la irrupción masiva de la <strong>Inteligencia Artificial
+Generativa</strong> en la educación.</p>
+<hr />
+<h3>De las <em>netbooks</em> a la IA: La lección de Conectar Igualdad</h3>
+<p>A comienzos de la década de 2010, como <strong>administrador de redes escolares</strong> en el programa <em>Conectar Igualdad</em>, viví en
+primera persona la arquitectura interna de estas dinámicas. Desde los servidores escolares y las políticas de tráfico
+local fuimos testigos de una lección contundente:</p>
+<p>En las escuelas públicas de contextos más vulnerables, los resultados iniciales del programa fueron extraordinarios.
+Cuando el dispositivo funcionaba dentro de una estructura pedagógica guiada, con servidores locales que priorizaban el
+contenido formativo y docentes acompañando el proceso, las netbooks actuaron como verdaderos motores de inclusión y
+aprendizaje.</p>
+<p>Sin embargo, cuando el soporte técnico en territorio decayó, se discontinuaron las capacitaciones y las redes escolares
+perdieron el control sobre el tráfico pedagógico, el proyecto se desplomó. Las computadoras no desaparecieron, pero
+sufrieron una degradación funcional: pasaron de ser herramientas de producción de conocimiento a convertirse en
+pantallas de consumo pasivo y entretenimiento.</p>
+<p><strong>En aquel entonces no teníamos Inteligencia Artificial</strong>, pero la dinámica social de fondo fue exactamente la misma que
+observamos hoy.</p>
+<hr />
+<h3>La delegación cognitiva en la Era de la IA</h3>
+<p>Como señala el analista Marc Vidal al examinar el histórico declive en las pruebas PISA a nivel internacional, el riesgo
+central no es el dispositivo, sino el <strong>abandono de funciones educativas y la delegación del esfuerzo mental</strong>:</p>
+<ul>
+<li><strong>El atajo algorítmico vs. la autonomía cognitiva:</strong> Así como en su momento las netbooks terminaron reducidas al
+    <em>scroll</em> infinito cuando falló el marco formativo, hoy la IA corre el riesgo de usarse como un mero sustituto del
+    pensamiento. Cuando un estudiante utiliza la IA para generar una respuesta en segundos sin pasar por el proceso
+    previo de lectura, síntesis e inferencia, no está ganando eficiencia: está transfiriendo su desarrollo cognitivo a
+    una entidad externa.</li>
+<li><strong>El arco sin arquero" de la regulación pedagógica:</strong> Cuando las instituciones y los adultos "abandonan el cuidar el
+    arco" por falta de criterio técnico o comodidad, la tecnología es cooptada por la inercia del mínimo esfuerzo.</li>
+<li><strong>El riesgo del vasallaje cognitivo:</strong> La pérdida de competencias básicas en lectura comprensiva y razonamiento
+    lógico-matemático genera ciudadanos incapaces de auditar la información que consumen, volviéndolos dependientes y
+    vulnerables frente a sistemas algorítmicos opacos.</li>
+</ul>
+    <img src="/img/tecnica/educacion-2.jpg"
+                  alt="Infraestructura eléctrica con cables de cobre como fondo, representando la dependencia material de la electrificación."
+                  style="
+                      width: 100%;
+                      height: auto;
+                      max-height: 600px;
+                      object-fit: contain;
+                      border-radius: 8px;
+                      margin-bottom: var(--spacing-md);
+                    " />              
+                  
+<hr />
+<h3>Hacia un uso responsable y ético de la IA en el aula</h3>
+<p>Frente al avance de la Inteligencia Artificial, la respuesta no puede ser ni la prohibición ingenua —imposible de
+sostener en la práctica— ni la entrega acrítica del aula a la automatización.</p>
+<p>Desde iniciativas como <a href="https://com-org.pages.dev/#ia-educacion">COM-ORG y Nexo</a>, venimos impulsando un enfoque de <strong>uso
+responsable y ético de la IA en la educación</strong>, apoyado en esta tercera posición:</p>
+<ol>
+<li><strong>La IA como copiloto, no como piloto:</strong> La Inteligencia Artificial debe emplearse para ampliar la curiosidad,
+   formular mejores preguntas, contrastar fuentes y analizar datos, nunca para saltearse la etapa de construcción de
+   modelos mentales propios.</li>
+<li><strong>Criterio antes que automatización:</strong> Para poder evaluar si una respuesta generada por una IA es válida, sesgada o
+   errónea, el estudiante necesita previamente sólidos cimientos de lectura crítica y lógica matemática. La
+   alfabetización digital no es saber usar la interfaz, sino saber juzgar el resultado.</li>
+<li><strong>Restablecer el propósito pedagógico:</strong> La escuela y la comunidad educativa deben definir para qué se usa la
+   tecnología dentro del aula. Sin una arquitectura pedagógica clara, la IA se convierte en el mecanismo definitivo para
+   la pasividad intelectual.</li>
+</ol>
+<p>La experiencia histórica de proyectos como Conectar Igualdad nos demostró que democratizar el acceso a la tecnología es
+una condición necesaria, pero insuficiente.</p>
+<p>Hoy, ante el desafío sin precedentes de la Inteligencia Artificial, la lección es más urgente que nunca: si no
+cultivamos en las aulas una cultura del esfuerzo, la investigación y el pensamiento crítico, la tecnología no emancipará
+a nuestros estudiantes, sino que terminará reduciéndolos a meros espectadores del conocimiento ajeno.</p>
+<!--fin-->
+                </div>
+              </div>
+            </div>
+
+            <footer
+              style="
+                margin-top: var(--spacing-2xl);
+                padding-top: var(--spacing-xl);
+                border-top: 1px solid var(--color-mid);
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  flex-wrap: wrap;
+                  gap: var(--spacing-md);
+                "
+              >
+                <div>📅 04/10/2026</div>
+                <div style="display: flex; gap: var(--spacing-sm)">
+                  <a
+                    href="/pages/blog/tecnica/Tecnica.html"
+                    style="
+                      color: var(--color-secondary);
+                      text-decoration: none;
+                      font-weight: 600;
+                    "
+                  >
+                    ← Volver a Técnica
+                  </a>
+                </div>
+              </div>
+            </footer>
+          </div>
+        </article>
+      </div>
+    </main>
+    <!-- Footer -->
+    <a href="#main-content" class="back-to-top" aria-label="Volver arriba">
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </a>
+    <div id="footer"></div>
+  </body>
+</html>
